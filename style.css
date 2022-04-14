@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+}
+
+.game-container {
+  background-color: #dddddd;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 329px;
+  height: 380px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 68px;
+}
+
+input {
+  font: inherit;
+  padding: 0.2em 0.5em;
+}
