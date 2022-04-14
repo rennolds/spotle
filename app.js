@@ -36,25 +36,58 @@ const handleGuess = () => {
     guess = guess.toLowerCase()
     if (artists.get(guess) != null) {
         var currentArtist = artists.get(guess)
-    }
-    else {
-        console.log("We don't have that artist.")
-    }
+        if (currentArtist.name == mysteryArtist) {
+            win()
+        }
+        else {
+            incorrectGuess(currentArtist)
+        }
 
-    if (currentArtist.name == mysteryArtist) {
-        console.log("YOU WIN!")
     }
     else {
-        console.log("Not the mystery artist.")
-        console.log("listener rank: ", currentArtist.listenerRank)
-        console.log("nationality: ", currentArtist.nationality)
-        console.log("gender: ", currentArtist.gender)
-        console.log("genre: ", currentArtist.genre)
-        console.log("debutAlbumYear: ", currentArtist.debutAlbumYear)
+        invalidArtist()
     }
+}
+
+function invalidArtist() {
+    console.log("We don't have that artist: ", searchInput.value)
+    return;
+}
+
+function win() {
+    console.log("YOU WIN!")
+    return;
+}
+
+function incorrectGuess(currentArtist) {
     
+    console.log("Not the mystery artist.")
+    console.log("listener rank: ", currentArtist.listenerRank)
+    console.log("nationality: ", currentArtist.nationality)
+    console.log("gender: ", currentArtist.gender)
+    console.log("genre: ", currentArtist.genre)
+    console.log("debutAlbumYear: ", currentArtist.debutAlbumYear)
+    return;
 }
 
 guessButton.addEventListener('click', handleGuess)
+
+//handle guess
+//set guess to lowercase
+//  check if guess is valid
+//      is entry blank (do nothing)
+//      does artist exist (if not, print "do not know ___")
+//  compare artist to mystery artist
+//      if mystery artist
+//          print mystery artist
+//          show win   
+//          add to stats
+//      if not -> deduct guess, compare criteria
+//          gender: y or n
+//          debut album year: up or down
+//          nationality: y or n
+//          listener rank: up or down
+//          genre: y or n
+//          print output, append to container
  
 
