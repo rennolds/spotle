@@ -2,6 +2,7 @@ const searchBar = document.querySelector('.search-container')
 const artistList = document.querySelector('.artist-list')
 const searchInput = document.querySelector('.search-input')
 const guessButton = document.querySelector('.guess-btn')
+const guessContainer = document.getElementById('guess-container')
 const mysteryArtist = "Justin Bieber" // eventually we need to GET the mystery artist from somewhere
 
 class Artist {
@@ -61,12 +62,45 @@ function win() {
 
 function incorrectGuess(currentArtist) {
     
-    console.log("Not the mystery artist.")
-    console.log("listener rank: ", currentArtist.listenerRank)
-    console.log("nationality: ", currentArtist.nationality)
-    console.log("gender: ", currentArtist.gender)
-    console.log("genre: ", currentArtist.genre)
-    console.log("debutAlbumYear: ", currentArtist.debutAlbumYear)
+    const guessElement = document.createElement('div');
+    guessElement.classList.add('guess');
+    guessContainer.appendChild(guessElement);
+
+    const nameElement = document.createElement('div')
+    nameElement.className = 'name'
+    nameElement.textContent = currentArtist.name
+    guessElement.append(nameElement)
+
+    const albumElement = document.createElement('div')
+    albumElement.className = 'debut-album'
+    albumElement.textContent = currentArtist.debutAlbumYear
+    guessElement.append(albumElement)
+
+    const groupElement = document.createElement('div')
+    groupElement.className = 'placeholder'
+    groupElement.textContent = "Group Size 1"
+    guessElement.append(groupElement)
+
+    const listenerRankElement = document.createElement('div')
+    listenerRankElement.className = 'listener-rank'
+    listenerRankElement.textContent = currentArtist.listenerRank
+    guessElement.append(listenerRankElement)
+
+    const genderElement = document.createElement('div')
+    genderElement.className = 'gender'
+    genderElement.textContent = currentArtist.gender
+    guessElement.append(genderElement)
+
+    const genreElement = document.createElement('div')
+    genreElement.className = 'genre'
+    genreElement.textContent = currentArtist.genre
+    guessElement.append(genreElement)
+
+    const nationalityElement = document.createElement('nationality')
+    nationalityElement.className = 'nationality'
+    nationalityElement.textContent = currentArtist.name
+    guessElement.append(nationalityElement)
+
     return;
 }
 

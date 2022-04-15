@@ -4,22 +4,25 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Play Spotle</title>
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
     </head>
     <body>
-
+        
         <div class="game-container">
             <div class="title-container">
-                <h1>Spotle</h1>
+                <h3>Spotle</h3>
             </div>
             <div class="search-container"> 
-
                 <input type="text" name="artist-list" list="artist-list" autocomplete="off" class="search-input"/>
                 <datalist id="artist-list" class="artist-list"></datalist>
                 <button class="guess-btn"> Guess </button>
             </div>
 
-            <div class="guess-container">
+            <div id="guess-container" class="guess-container">
 
             </div>
         </div>
