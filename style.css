@@ -3,7 +3,6 @@ html {
   margin: 0 auto;
   height: 100%;
   background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
-  font: "Inter";
 }
 
 .main-wrapper {
@@ -25,7 +24,8 @@ html {
   grid-row: 2;
   width: 100vw;
   height: 85vh;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .credits {
@@ -36,7 +36,96 @@ html {
   height: 5vh;
 }
 
-.game-title h3 {
+.logo h3 {
   font-size: 2rem;
   color: #ffffff;
 }
+
+button:focus {
+  outline: none;
+}
+
+button i {
+  margin-left: 3rem;
+  color: #6d7b98;
+}
+
+button {
+  position: absolute;
+  border: none;
+  background: none;
+  top: 0;
+  right: 0;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px;
+  width: 50px;
+}
+
+/* @media only screen and (max-width: 600px) {
+  input {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  input {
+    width: 20vw;
+  }
+} */
+
+input {
+  border: none;
+  height: 2.5rem;
+  width: 340px;
+  border-radius: 5px;
+  padding: 0px 40px 0px 10px;
+  font-size: 18px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+/* 
+.guess {
+  
+}
+
+.name {
+  background-color: aqua;
+  width: 107px;
+  height: 65px;
+}
+
+.genre {
+  background-color: pink;
+  width: 107px;
+  height: 65px;
+}
+
+.gender {
+  background-color: orange;
+  width: 107px;
+  height: 65px;
+}
+
+.albumYear {
+  background-color: purple;
+  width: 107px;
+  height: 65px;
+}
+
+.nationality {
+  background-color: green;
+  width: 107px;
+  height: 65px;
+}
+
+.listenerRank {
+  background-color: blue;
+  width: 107px;
+  height: 65px;
+}
+
+.group {
+  background-color: red;
+  width: 107px;
+  height: 65px;
+} */
