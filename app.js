@@ -3,7 +3,6 @@ const artistList = document.querySelector('.artist-list')
 const searchInput = document.querySelector('.search-input')
 const guessButton = document.querySelector('.guess-btn')
 const guessContainer = document.getElementById('guess-container')
-const mysteryArtist = "Justin Bieber" // eventually we need to GET the mystery artist from somewhere
 
 class Artist {
     constructor(name,listenerRank, debutAlbumYear, nationality, genre, gender) {
@@ -23,6 +22,7 @@ artists.set('ed sheeran', new Artist("Ed Sheeran",3,2011,"English","Pop","Male")
 artists.set('dua lipa', new Artist("Dua Lipa",4,2017,"English","Pop","Female"))
 artists.set('taylor swift', new Artist("Taylor Swift",5,2006,"American","Pop","Female"))
 artists.set('coldplay', new Artist("Coldplay",6,2000,"American","Alternative","Male"))
+const mysteryArtist = artists.get("justin bieber")
 
 artists.forEach(artist => {
     const optionElement = document.createElement('option')
@@ -32,12 +32,11 @@ artists.forEach(artist => {
 })
 
 const handleGuess = () => {
-    console.log("Guessed!")
     let guess = searchInput.value
     guess = guess.toLowerCase()
     if (artists.get(guess) != null) {
         var currentArtist = artists.get(guess)
-        if (currentArtist.name == mysteryArtist) {
+        if (currentArtist.name == mysteryArtist.name) {
             win()
         }
         else {
@@ -67,38 +66,54 @@ function incorrectGuess(currentArtist) {
     guessContainer.appendChild(guessElement);
 
     const nameElement = document.createElement('div')
-    nameElement.className = 'name'
+    nameElement.classList.add('name');
     nameElement.textContent = currentArtist.name
     guessElement.append(nameElement)
 
     const albumElement = document.createElement('div')
-    albumElement.className = 'debut-album'
-    albumElement.textContent = currentArtist.debutAlbumYear
+    if (currentArtist.debutAlbumYear == mysteryArtist.debutAlbumYear) {
+        albumElement.classList.add('correct');
+    }
+    albumElement.classList.add('debut-album');
+    albumElement.textContent = 'Debut Album Year ' + currentArtist.debutAlbumYear
     guessElement.append(albumElement)
 
     const groupElement = document.createElement('div')
-    groupElement.className = 'placeholder'
+    
+    groupElement.classList.add('placeholder');
     groupElement.textContent = "Group Size 1"
     guessElement.append(groupElement)
 
     const listenerRankElement = document.createElement('div')
-    listenerRankElement.className = 'listener-rank'
-    listenerRankElement.textContent = currentArtist.listenerRank
+    if (currentArtist.listenerRank == mysteryArtist.listenerRank) {
+        listenerRankElement.classList.add('correct');
+    }
+    listenerRankElement.classList.add('listener-rank');
+    listenerRankElement.textContent = 'Listener Rank # ' + currentArtist.listenerRank
     guessElement.append(listenerRankElement)
 
     const genderElement = document.createElement('div')
-    genderElement.className = 'gender'
-    genderElement.textContent = currentArtist.gender
+    if (currentArtist.gender == mysteryArtist.gender) {
+        genderElement.classList.add('correct');
+    }
+    genderElement.classList.add('gender');
+    genderElement.textContent = 'Gender ' + currentArtist.gender
     guessElement.append(genderElement)
 
     const genreElement = document.createElement('div')
-    genreElement.className = 'genre'
-    genreElement.textContent = currentArtist.genre
+    if (currentArtist.genre == mysteryArtist.genre) {
+        genreElement.classList.add('correct');
+    }
+    genreElement.classList.add('genre');
+    genreElement.textContent = 'Genre ' + currentArtist.genre
     guessElement.append(genreElement)
 
     const nationalityElement = document.createElement('nationality')
-    nationalityElement.className = 'nationality'
-    nationalityElement.textContent = currentArtist.name
+    if (currentArtist.nationality == mysteryArtist.nationality) {
+        nationalityElement.classList.add('correct');
+    }
+    nationalityElement.classList.add('nationality');
+    nationalityElement.textContent = 'Nationality ' + currentArtist.nationality
     guessElement.append(nationalityElement)
 
     return;

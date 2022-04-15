@@ -7,19 +7,20 @@
 body {
   min-height: 100vh;
   background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+  overflow: hidden;
 }
 
 .game-container {
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 340px;
-  height: 100%;
+  width: 20%;
+  height: 100vh;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 68px;
+  margin-top: 5rem;
 }
 
 input {
@@ -28,10 +29,17 @@ input {
   height: 120%;
 }
 
+.header-container {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
 .search-container {
-  padding-top: 20px;
-  margin-top: 25px;
+  padding-top: 1rem;
   width: 100%;
+  height: 15%;
+  margin-top: 2rem;
 }
 
 .title-container {
@@ -44,10 +52,10 @@ input {
 
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 2em;
   color: #FFFFFF;
   width: 100%;
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
 
@@ -64,47 +72,52 @@ input {
 .name {
   grid-column: 1 / 4;
   grid-row: 1;
-  background-color: red;
-  
 }
 
 
 .debut-album {
   grid-column: 1;
   grid-row: 2;
-  background-color: blue;
+  background: rgba(229, 229, 229, 0.25);
 }
 
 .placeholder {
   grid-column: 2;
   grid-row: 2;
-  background-color: orange;
+  background: rgba(229, 229, 229, 0.25);
 }
 
 
 .listener-rank {
   grid-column: 3;
   grid-row: 2;
-  background-color: pink;
+  background: rgba(229, 229, 229, 0.25);
 }
 
 .gender {
   grid-column: 1;
   grid-row: 3;
-  background-color: green;
+  background: rgba(229, 229, 229, 0.25);
 }
 
 .genre {
   grid-column: 2;
   grid-row: 3;
-  background-color: grey;
+  background: rgba(229, 229, 229, 0.25);
 }
 
 .nationality {
   grid-column: 3;
   grid-row: 3;
-  background-color: purple;
+  background: rgba(229, 229, 229, 0.25);
 }
 
+.correct {
+  background-color: #6AD074;
+  fill-opacity: 50%;
+}
 
-
+.close {
+  background-color: #FFF500;
+  fill-opacity: 30%;
+}

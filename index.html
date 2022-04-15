@@ -13,15 +13,16 @@
     <body>
         
         <div class="game-container">
-            <div class="title-container">
-                <h3>Spotle</h3>
+            <div class="header-container">
+                <div class="title-container">
+                    <h3>Spotle</h3>
+                </div>
+                <div class="search-container"> 
+                    <input type="text" name="artist-list" list="artist-list" autocomplete="off" class="search-input"/>
+                    <datalist id="artist-list" class="artist-list"></datalist>
+                    <button class="guess-btn"> Guess </button>
+                </div>
             </div>
-            <div class="search-container"> 
-                <input type="text" name="artist-list" list="artist-list" autocomplete="off" class="search-input"/>
-                <datalist id="artist-list" class="artist-list"></datalist>
-                <button class="guess-btn"> Guess </button>
-            </div>
-
             <div id="guess-container" class="guess-container">
 
             </div>
