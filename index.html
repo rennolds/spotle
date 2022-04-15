@@ -2,7 +2,7 @@
 <html lang-="en">
     <head>
         <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Play Spotle</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,21 +11,23 @@
 
     </head>
     <body>
-        
-        <div class="game-container">
-            <div class="header-container">
-                <div class="title-container">
-                    <h3>Spotle</h3>
-                </div>
-                <div class="search-container"> 
-                    <input type="text" name="artist-list" list="artist-list" autocomplete="off" class="search-input"/>
-                    <datalist id="artist-list" class="artist-list"></datalist>
-                    <button class="guess-btn"> Guess </button>
-                </div>
-            </div>
-            <div id="guess-container" class="guess-container">
+        <header></header>
+        <div class="game-container-scroller">
+                <div class ="game-container">
+                    <div class="header-container">
+                        <div class="title-container">
+                            <h3>Spotle</h3>
+                        </div>
+                        <div class="search-container"> 
+                            <input type="text" name="artist-list" list="artist-list" autocomplete="off" class="search-input"/>
+                            <datalist id="artist-list" class="artist-list"></datalist>
+                            <button class="guess-btn"> Guess </button>
+                        </div>
+                    </div>
+                    <div id="guess-container" class="guess-container">
 
-            </div>
+                    </div>
+                </div>
         </div>
 
     <script src="app.js"></script>

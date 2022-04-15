@@ -74,6 +74,9 @@ function incorrectGuess(currentArtist) {
     if (currentArtist.debutAlbumYear == mysteryArtist.debutAlbumYear) {
         albumElement.classList.add('correct');
     }
+    else if (Math.abs(currentArtist.debutAlbumYear - mysteryArtist.debutAlbumYear) <= 5) {
+        
+    }
     albumElement.classList.add('debut-album');
     albumElement.textContent = 'Debut Album Year ' + currentArtist.debutAlbumYear
     guessElement.append(albumElement)
