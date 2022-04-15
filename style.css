@@ -1,53 +1,98 @@
 body,
 html {
   margin: 0 auto;
+  width: 100%;
   height: 100%;
   background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+  font-family: 'Inter'
 }
 
 .main-wrapper {
-  display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 3;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+header {
+  width: 100vw;
+  height: 80px;
+  display: inline-block;
 }
 
 .logo {
-  grid-column: 1;
-  grid-row: 1;
-  background-color: green;
-  width: 100vw;
-  height: 10vh;
+  width: 800px;
+  height: 100%;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
-.game-container {
-  grid-column: 1;
-  grid-row: 2;
-  width: 100vw;
-  height: 85vh;
-  display: flex;
-  justify-content: center;
-}
-
-.credits {
-  grid-column: 1;
-  grid-row: 3;
-  background-color: red;
-  width: 100vw;
-  height: 5vh;
+.logo img {
+  float: left;
+  display: inline;
+  width: 10%;
 }
 
 .logo h3 {
-  font-size: 2rem;
-  color: #ffffff;
+  color: #ffff;
+  font-size: 2rem; 
+  float: left;
+  display: inline;
+  width: 49%;
+  margin-left: 1rem;
+  margin-top: 1.3rem;
+
 }
 
-button:focus {
+.game-container {
+  margin-top: 5rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+
+.credits {
+  height: 10vh;
+  width: 100vw;
+}
+
+.guesses {
+  color: #FFFF;
+}
+
+.guessRow1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.guessRow2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-container {
+  width: 340px;
+  background: #ffffff;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.15);
+  position: sticky;
+}
+
+input {
+  width:100%;
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 18px;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+}
+
+input:focus {
   outline: none;
-}
-
-button i {
-  margin-left: 3rem;
-  color: #6d7b98;
 }
 
 button {
@@ -58,74 +103,95 @@ button {
   right: 0;
   height: 50px;
   line-height: 50px;
-  padding: 0px;
+  padding: 0;
   width: 50px;
 }
 
-/* @media only screen and (max-width: 600px) {
-  input {
-    width: 80vw;
-  }
+button:focus {
+  outline: none;
 }
 
-@media screen and (min-width: 800px) {
-  input {
-    width: 20vw;
-  }
-} */
-
-input {
-  border: none;
-  height: 2.5rem;
-  width: 340px;
-  border-radius: 5px;
-  padding: 0px 40px 0px 10px;
-  font-size: 18px;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+button i {
+  width: 100%;
+  color: #6d7b98;
+  line-height: 50px;
+  font-size: 22px;
 }
-/* 
-.guess {
-  
+
+.results {
+  padding: 0px;
+}
+
+.results ul {
+  margin: 0; 
+  padding: 0; 
+}
+
+.results ul li {
+  list-style: none;
+  border-radius: 3px;
+  opacity: 0;
+  display: none;
+  padding: 8px 12px;
+  transition: all .5s linear;
+}
+
+.show .results ul li {
+  opacity: 1;
+  display: block;
+}
+
+.show .results {
+  padding: 10px;
+}
+
+.results ul li:hover {
+  background: #ececec
 }
 
 .name {
-  background-color: aqua;
-  width: 107px;
-  height: 65px;
+  background-color: blue;
+  width: 150px;
+  height: 50px;
 }
 
 .genre {
-  background-color: pink;
-  width: 107px;
-  height: 65px;
+  background-color: red;
+  width: 50px;
+  height: 50px;
 }
 
 .gender {
-  background-color: orange;
-  width: 107px;
-  height: 65px;
+  background-color: green;
+  width: 50px;
+  height: 50px;
 }
 
 .albumYear {
-  background-color: purple;
-  width: 107px;
-  height: 65px;
+  background-color: orange;
+  width: 50px;
+  height: 50px;
 }
 
 .nationality {
-  background-color: green;
-  width: 107px;
-  height: 65px;
+  background-color: yellow;
+  width: 50px;
+  height: 50px;
 }
 
 .listenerRank {
-  background-color: blue;
-  width: 107px;
-  height: 65px;
+  background-color: pink;
+  width: 50px;
+  height: 50px;
 }
 
 .group {
-  background-color: red;
-  width: 107px;
-  height: 65px;
-} */
+  background-color: purple;
+  width: 50px;
+  height: 50px;
+}
+
+.credits {
+  font-size: 20px;
+  color: #ffff;
+}
