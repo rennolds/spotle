@@ -12,27 +12,40 @@
 
     </head>
     <body>
-        <header></header>
-        <div class="game-container-scroller">
+        <div= class="main-wrapper">
+            <div class="logo"></div>
+
             <div class="game-container">
-                <div class="header-container">
-                    <div class="title-container">
-                        <h3>Spotle</h3>
+                <div class="game-title"> 
+                    <h3>Spotle</h3>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" name="search" id="search" placeholder="Type to search" autocomplete="chrome-off">
+                    <button class='guess-btn'><i class="fa fa-search"></i></button>
+                    <div class="results">
+                        <ul>
+                        </ul>
                     </div>
-                        <div class="wrapper">
-                            <input type="text" name="search" id="search" placeholder="Type to search" autocomplete="chrome-off">
-                            <button class='guess-btn'><i class="fa fa-search"></i></button>
-                            <div class="results">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
+                </div>
+                
+                <div class="guess-container">
+                    <div class="guess">
+                        <div class="name"></div>
+                        <div class="genre"></div>
+                        <div class="gender"></div>
+                        <div class="albumYear"></div>
+                        <div class="nationality"></div>
+                        <div class="listenerRank"></div>
+                        <div class="group"></div>
                     </div>
-                    <div class="guess-container">
-                        
-                    </div>
+                </div>
                 
             </div>
+
+               
+
+            <div class="credits"></div>
         </div>
     <script src="app.js"></script>
     </body>
