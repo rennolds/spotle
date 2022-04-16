@@ -1,10 +1,50 @@
-const searchBar = document.querySelector('.search-container')
-const artistList = document.querySelector('.artist-list')
-const searchInput = document.querySelector('.search-input')
-const guessButton = document.querySelector('.guess-btn')
-const guessContainer = document.getElementById('guess-container')
+let searchable = [
+    'Coldplay',
+    'Justin Bieber',
+    'Ed Sheeran',
+    'Taylor Swift',
+    'The Weeknd',
+    'Dua Lipa',
+  ];
+  
+  const searchInput = document.getElementById('search');
+  const searchWrapper = document.querySelector('.search-container');
+  const resultsWrapper = document.querySelector('.results');
+  const guessContainer = document.querySelector('.guess-container');
+  const guessButton = document.querySelector('.guess-btn');
+  
+  searchInput.addEventListener('keyup', () => {
+    let results = [];
+    let input = searchInput.value;
+    if (input.length) {
+      results = searchable.filter((item) => {
+        return item.toLowerCase().includes(input.toLowerCase());
+      });
+    }
+    renderResults(results);
+  });
+  
+  function renderResults(results) {
+    if (!results.length) {
+      return searchWrapper.classList.remove('show');
+    }
+  
+    const content = results
+      .map((item) => {
+        return `<li>${item}</li>`;
+      })
+      .join('');
+  
+    searchWrapper.classList.add('show');
+    resultsWrapper.innerHTML = `<ul>${content}</ul>`;
+  }
 
-class Artist {
+  resultsWrapper.addEventListener("click", function() {
+      var clickedElement = document.querySelector('li:hover');
+      searchInput.value = clickedElement.innerHTML;
+  }); 
+
+  class Artist {
     constructor(name,listenerRank, debutAlbumYear, nationality, genre, gender) {
         this.name = name;
         this.listenerRank = listenerRank;
@@ -15,6 +55,7 @@ class Artist {
     }
 }
 
+
 var artists = new Map();
 artists.set('the weeknd', new Artist("The Weeknd",1,2013,"Canadian","Pop","Male"))
 artists.set('justin bieber', new Artist("Justin Bieber",2,2010,"Canadian","Pop","Male"))
@@ -23,13 +64,6 @@ artists.set('dua lipa', new Artist("Dua Lipa",4,2017,"English","Pop","Female"))
 artists.set('taylor swift', new Artist("Taylor Swift",5,2006,"American","Pop","Female"))
 artists.set('coldplay', new Artist("Coldplay",6,2000,"American","Alternative","Male"))
 const mysteryArtist = artists.get("justin bieber")
-
-artists.forEach(artist => {
-    const optionElement = document.createElement('option')
-    optionElement.setAttribute('id', artist.name)
-    optionElement.textContent = artist.name
-    artistList.append(optionElement)
-})
 
 const handleGuess = () => {
     let guess = searchInput.value
@@ -63,83 +97,17 @@ function incorrectGuess(currentArtist) {
     
     const guessElement = document.createElement('div');
     guessElement.classList.add('guess');
-    guessContainer.appendChild(guessElement);
-
-    const nameElement = document.createElement('div')
-    nameElement.classList.add('name');
-    nameElement.textContent = currentArtist.name
-    guessElement.append(nameElement)
-
-    const albumElement = document.createElement('div')
-    if (currentArtist.debutAlbumYear == mysteryArtist.debutAlbumYear) {
-        albumElement.classList.add('correct');
-    }
-    else if (Math.abs(currentArtist.debutAlbumYear - mysteryArtist.debutAlbumYear) <= 5) {
-        
-    }
-    albumElement.classList.add('debut-album');
-    albumElement.textContent = 'Debut Album Year ' + currentArtist.debutAlbumYear
-    guessElement.append(albumElement)
-
-    const groupElement = document.createElement('div')
     
-    groupElement.classList.add('placeholder');
-    groupElement.textContent = "Group Size 1"
-    guessElement.append(groupElement)
+    const row1 = document.createElement('div');
+    row1.classList.add('guessRow');
 
-    const listenerRankElement = document.createElement('div')
-    if (currentArtist.listenerRank == mysteryArtist.listenerRank) {
-        listenerRankElement.classList.add('correct');
-    }
-    listenerRankElement.classList.add('listener-rank');
-    listenerRankElement.textContent = 'Listener Rank # ' + currentArtist.listenerRank
-    guessElement.append(listenerRankElement)
 
-    const genderElement = document.createElement('div')
-    if (currentArtist.gender == mysteryArtist.gender) {
-        genderElement.classList.add('correct');
-    }
-    genderElement.classList.add('gender');
-    genderElement.textContent = 'Gender ' + currentArtist.gender
-    guessElement.append(genderElement)
-
-    const genreElement = document.createElement('div')
-    if (currentArtist.genre == mysteryArtist.genre) {
-        genreElement.classList.add('correct');
-    }
-    genreElement.classList.add('genre');
-    genreElement.textContent = 'Genre ' + currentArtist.genre
-    guessElement.append(genreElement)
-
-    const nationalityElement = document.createElement('nationality')
-    if (currentArtist.nationality == mysteryArtist.nationality) {
-        nationalityElement.classList.add('correct');
-    }
-    nationalityElement.classList.add('nationality');
-    nationalityElement.textContent = 'Nationality ' + currentArtist.nationality
-    guessElement.append(nationalityElement)
+    guessElement.append('row1');
+    guessElement.append('row2');
+    guessElement.append('row3');
+    guessContainer.prepend(guessElement);
 
     return;
 }
 
 guessButton.addEventListener('click', handleGuess)
-
-//handle guess
-//set guess to lowercase
-//  check if guess is valid
-//      is entry blank (do nothing)
-//      does artist exist (if not, print "do not know ___")
-//  compare artist to mystery artist
-//      if mystery artist
-//          print mystery artist
-//          show win   
-//          add to stats
-//      if not -> deduct guess, compare criteria
-//          gender: y or n
-//          debut album year: up or down
-//          nationality: y or n
-//          listener rank: up or down
-//          genre: y or n
-//          print output, append to container
- 
-

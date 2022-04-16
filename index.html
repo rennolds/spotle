@@ -7,29 +7,104 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css" type="text/css"/>
-
     </head>
     <body>
-        <header></header>
-        <div class="game-container-scroller">
-                <div class ="game-container">
-                    <div class="header-container">
-                        <div class="title-container">
-                            <h3>Spotle</h3>
-                        </div>
-                        <div class="search-container"> 
-                            <input type="text" name="artist-list" list="artist-list" autocomplete="off" class="search-input"/>
-                            <datalist id="artist-list" class="artist-list"></datalist>
-                            <button class="guess-btn"> Guess </button>
-                        </div>
-                    </div>
-                    <div id="guess-container" class="guess-container">
+        <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="resources\Spotify_Logo__White.png">
+                <h3>Spotle</h3>
+            </div>
+        </header>
 
+        <div class="main-wrapper">
+
+            <div class="game-container">
+                <div class="remaining-guesses">
+                    <div class="guesses">Guess 1 of 6</div>
+                </div>
+                <div class="search-container">
+                    <input type="text" name="search" id="search" placeholder="Type to search" autocomplete="chrome-off">
+                    <button class='guess-btn'><i class="fa fa-search"></i></button>
+                    <div class="results">
+                        <ul>
+
+                        </ul>
                     </div>
                 </div>
-        </div>
+                
+                <div class="outer-guess-container">
+                    <div class="guess-container">
 
+                        <div class="guess">
+                            <div class="guessRow"> 
+                                <div class="item">Drake</div>
+                            </div>
+                            <div class="guessRow">
+                                <div class="item">Info</div>
+                                <div class="item-long">Info</div>
+                                <div class="item">Info</div>
+                            </div>
+                            <div class="guessRow">
+                                <div class="item-long">Info</div>
+                                <div class="item">Info</div>
+                                <div class="item-long">Info</div>
+                            </div>
+                        </div>
+                        <div class="guess">
+                            <div class="guessRow"> 
+                                <div class="item">Drake</div>
+                            </div>
+                            <div class="guessRow">
+                                <div class="item">Info</div>
+                                <div class="item-long">Info</div>
+                                <div class="item">Info</div>
+                            </div>
+                            <div class="guessRow">
+                                <div class="item-long">Info</div>
+                                <div class="item">Info</div>
+                                <div class="item-long">Info</div>
+                            </div>
+                        </div>
+                        <div class="guess">
+                            <div class="guessRow"> 
+                                <div class="item">Drake</div>
+                            </div>
+                            <div class="guessRow">
+                                <div class="item">Info</div>
+                                <div class="item-long">Info</div>
+                                <div class="item">Info</div>
+                            </div>
+                            <div class="guessRow">
+                                <div class="item-long">Info</div>
+                                <div class="item">Info</div>
+                                <div class="item-long">Info</div>
+                            </div>
+                        </div>
+                        <div class="guess">
+                            <div class="guessRow"> 
+                                <div class="item">Drake</div>
+                            </div>
+                            <div class="guessRow">
+                                <div class="item">Info</div>
+                                <div class="item-long">Info</div>
+                                <div class="item">Info</div>
+                            </div>
+                            <div class="guessRow">
+                                <div class="item-long">Info</div>
+                                <div class="item">Info</div>
+                                <div class="item-long">Info</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="credits">tommy did some of this</div> 
     <script src="app.js"></script>
     </body>
 </html>
