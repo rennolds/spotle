@@ -2,90 +2,79 @@ body,
 html {
   margin: 0 auto;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
-  font-family: 'Inter'
-}
-
-.main-wrapper {
-  width: 100vw;
   height: 100vh;
+  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+  background-attachment: fixed;
+  font-family: 'Inter';
+  position: relative;
+  justify-content: space-between;
   display: flex;
   flex-direction: column;
-  align-items: center;
-} 
-
-header {
-  width: 100vw;
-  height: 80px;
-  display: inline-block;
-}
-
-.logo {
-  width: 800px;
-  height: 100%;
-  margin-top: 1rem;
-  margin-left: 1rem;
 }
 
 .logo img {
-  float: left;
-  display: inline;
-  width: 10%;
+  height: 100px;
 }
 
 .logo h3 {
   color: #ffff;
-  font-size: 2rem; 
-  float: left;
-  display: inline;
-  width: 49%;
+  font: inherit;
+  font-size: 40px;
   margin-left: 1rem;
-  margin-top: 1.3rem;
-
 }
 
-.game-container {
-  margin-top: 5rem;
-  position: absolute;
+.logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  height: 90vh;
+  margin-left: 20px;
 }
 
-.credits {
-  height: 10vh;
-  width: 100vw;
+header {
+  position: sticky;
+  top: 0;
 }
 
 .guesses {
   color: #FFFF;
+  position: sticky;
+  top: 25px;
 }
 
-.guessRow1 {
-  display: flex;
-  flex-direction: row;
+.game-container {
+  position: relative;
 }
 
-.guessRow2 {
+.game-container .remaining-guesses {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  position: sticky;
+  top: 25px;
+}
+
+.remaining-guesses .guesses {
+  width: 340px;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
 }
 
 .search-container {
   width: 340px;
-  background: #ffffff;
   margin: auto;
   border-radius: 5px;
   box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.15);
   position: sticky;
+  top: 50px;
+  margin-bottom: 25px;
 }
 
 input {
   width:100%;
   border: none;
-  height: 50px;
+  height: 40px;
   border-radius: 5px;
   font-size: 18px;
   box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
@@ -114,12 +103,16 @@ button:focus {
 button i {
   width: 100%;
   color: #6d7b98;
-  line-height: 50px;
-  font-size: 22px;
+  cursor: pointer;
 }
 
 .results {
   padding: 0px;
+  position: absolute;
+  top: 50px;
+  background-color: #ffff;
+  max-width: 320px;
+  width: 100%;
 }
 
 .results ul {
@@ -149,49 +142,64 @@ button i {
   background: #ececec
 }
 
-.name {
-  background-color: blue;
-  width: 150px;
-  height: 50px;
+.guess-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.genre {
-  background-color: red;
-  width: 50px;
-  height: 50px;
+.outer-guess-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gender {
-  background-color: green;
-  width: 50px;
-  height: 50px;
+.outer-guess-container .guess-container {
+  width: 340px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
 }
 
-.albumYear {
-  background-color: orange;
-  width: 50px;
-  height: 50px;
+.guess .guessRow {
+  display: flex;
+  direction: row;
+  flex: 1;
+  border: 1px solid black;
 }
 
-.nationality {
-  background-color: yellow;
-  width: 50px;
+.guess .guessRow .item {
+  border: 1px solid black;
   height: 50px;
+  flex: 1;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.listenerRank {
-  background-color: pink;
-  width: 50px;
+.guess .guessRow .item-long {
+  border: 1px solid black;
   height: 50px;
+  flex: 1.5;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.group {
-  background-color: purple;
-  width: 50px;
-  height: 50px;
+.guess {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
 }
 
 .credits {
   font-size: 20px;
   color: #ffff;
-}
+  margin-left: 1rem;
+  display: flex;
+  align-self: flex-start;
+} 

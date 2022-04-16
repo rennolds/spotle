@@ -8,7 +8,7 @@ let searchable = [
   ];
   
   const searchInput = document.getElementById('search');
-  const searchWrapper = document.querySelector('.wrapper');
+  const searchWrapper = document.querySelector('.search-container');
   const resultsWrapper = document.querySelector('.results');
   const guessContainer = document.querySelector('.guess-container');
   const guessButton = document.querySelector('.guess-btn');
@@ -39,6 +39,11 @@ let searchable = [
     resultsWrapper.innerHTML = `<ul>${content}</ul>`;
   }
 
+  resultsWrapper.addEventListener("click", function() {
+      var clickedElement = document.querySelector('li:hover');
+      searchInput.value = clickedElement.innerHTML;
+  }); 
+
   class Artist {
     constructor(name,listenerRank, debutAlbumYear, nationality, genre, gender) {
         this.name = name;
@@ -49,6 +54,7 @@ let searchable = [
         this.gender = gender;
     }
 }
+
 
 var artists = new Map();
 artists.set('the weeknd', new Artist("The Weeknd",1,2013,"Canadian","Pop","Male"))
@@ -91,61 +97,15 @@ function incorrectGuess(currentArtist) {
     
     const guessElement = document.createElement('div');
     guessElement.classList.add('guess');
-    guessContainer.append(guessElement);
-
-    const nameElement = document.createElement('div')
-    nameElement.classList.add('name');
-    nameElement.textContent = currentArtist.name
-    guessElement.append(nameElement)
-
-    const albumElement = document.createElement('div')
-    if (currentArtist.debutAlbumYear == mysteryArtist.debutAlbumYear) {
-        albumElement.classList.add('correct');
-    }
-    else if (Math.abs(currentArtist.debutAlbumYear - mysteryArtist.debutAlbumYear) <= 5) {
-        
-    }
-    albumElement.classList.add('debut-album');
-    albumElement.textContent = 'Debut Album Year ' + currentArtist.debutAlbumYear
-    guessElement.append(albumElement)
-
-    const groupElement = document.createElement('div')
     
-    groupElement.classList.add('placeholder');
-    groupElement.textContent = "Group Size 1"
-    guessElement.append(groupElement)
+    const row1 = document.createElement('div');
+    row1.classList.add('guessRow');
 
-    const listenerRankElement = document.createElement('div')
-    if (currentArtist.listenerRank == mysteryArtist.listenerRank) {
-        listenerRankElement.classList.add('correct');
-    }
-    listenerRankElement.classList.add('listener-rank');
-    listenerRankElement.textContent = 'Listener Rank # ' + currentArtist.listenerRank
-    guessElement.append(listenerRankElement)
 
-    const genderElement = document.createElement('div')
-    if (currentArtist.gender == mysteryArtist.gender) {
-        genderElement.classList.add('correct');
-    }
-    genderElement.classList.add('gender');
-    genderElement.textContent = 'Gender ' + currentArtist.gender
-    guessElement.append(genderElement)
-
-    const genreElement = document.createElement('div')
-    if (currentArtist.genre == mysteryArtist.genre) {
-        genreElement.classList.add('correct');
-    }
-    genreElement.classList.add('genre');
-    genreElement.textContent = 'Genre ' + currentArtist.genre
-    guessElement.append(genreElement)
-
-    const nationalityElement = document.createElement('nationality')
-    if (currentArtist.nationality == mysteryArtist.nationality) {
-        nationalityElement.classList.add('correct');
-    }
-    nationalityElement.classList.add('nationality');
-    nationalityElement.textContent = 'Nationality ' + currentArtist.nationality
-    guessElement.append(nationalityElement)
+    guessElement.append('row1');
+    guessElement.append('row2');
+    guessElement.append('row3');
+    guessContainer.prepend(guessElement);
 
     return;
 }

@@ -33,7 +33,15 @@ html {
 
 
 .logo h3 {
-
+  position: absolute;
+  width: 141px;
+  height: 54px;
+  left: 110px;
+  top: -20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 54px;
   color: #ffffff;
 }
 
