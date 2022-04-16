@@ -155,7 +155,6 @@ button i {
 
 .outer-guess-container .guess-container {
   width: 340px;
-  background-color: grey;
   display: flex;
   justify-content: center;
 }
@@ -164,29 +163,70 @@ button i {
   display: flex;
   direction: row;
   flex: 1;
-  border: 1px solid black;
+}
+
+.guess .guessRow .item-name {
+  height: 65px;
+  flex: 1;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  color: #FFFF;
+  font-size: 150%;
 }
 
 .guess .guessRow .item {
-  border: 1px solid black;
-  height: 50px;
+  background-color: #E5E5E540;
+  height: 65px;
   flex: 1;
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 5px;
+  color: #FFFF;
+}
+
+.data {
+  font-size: 140%;
 }
 
 .guess .guessRow .item-long {
-  border: 1px solid black;
-  height: 50px;
+  background-color: #E5E5E540;
+  height: 65px;
   flex: 1.5;
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+  color: #FFFF;
+  flex-direction: column;
+}
+
+.item img {
+  margin-top: .2rem;
+  width: 80%;
+}
+
+.item-name img {
+  width: 25%;
+  margin-right: .8rem;
+}
+
+.correct {
+  background-color: rgba(106,208,116,.8) !important;
+}
+
+.close {
+  background-color: rgba(255,245,0,.7) !important;
 }
 
 .guess {
