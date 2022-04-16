@@ -12,6 +12,23 @@ html {
   flex-direction: column;
 }
 
+#intro {
+  color: #ffff;
+}
+
+#intro .intro-example-title {
+  margin-top: 2rem;
+}
+
+#intro .intro-description {
+  margin-top: 2rem;
+}
+
+#intro .intro-border {
+  border-bottom: 1px solid #677272;
+  margin-top: 2rem;
+}
+
 .logo img {
   height: 100px;
 }
@@ -237,9 +254,25 @@ button i {
 }
 
 .credits {
-  font-size: 20px;
   color: #ffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
   margin-left: 1rem;
   display: flex;
   align-self: flex-start;
+  margin-bottom: .4rem;
 } 
+
+.credits .made-by {
+  margin-right: 1rem;
+  padding-right: 1rem;
+}
+
+.credits .spotify-credit {
+
+}
+
+.credits a {
+  color: #6AD074;
+}
