@@ -30,7 +30,7 @@ csv("top1000artists.csv").then((data) => {
    }
 });
 
-
+  const gameContainer = document.querySelector('.game-container');
   const searchInput = document.getElementById('search');
   const searchWrapper = document.querySelector('.search-container');
   const resultsWrapper = document.querySelector('.results');
@@ -42,6 +42,8 @@ csv("top1000artists.csv").then((data) => {
   let guessCount = 1;
   let guessedArtists = [];
   
+  
+
   //handles autocomplete 
   searchInput.addEventListener('keyup', () => {
     let results = [];
@@ -75,6 +77,10 @@ csv("top1000artists.csv").then((data) => {
       searchInput.value = clickedElement.innerHTML;
       searchWrapper.classList.remove('show');
   }); 
+
+  gameContainer.addEventListener('click', () => {
+    searchWrapper.classList.remove('show');
+  });
 
 artists.set('the weeknd', new Artist("The Weeknd",1,2013,"Canada","Pop","Male"));
 artists.set('justin bieber', new Artist("Justin Bieber",2,2010,"Canada","Pop","Male"));

@@ -29,6 +29,75 @@ html {
   margin-top: 2rem;
 }
 
+.win-overlay {
+  height: 493px;
+  width: 290px;
+  position: absolute;
+  left: 50%;
+  margin-top: 7rem;
+  transform: translate(-50%, 0);
+  position: absolute;
+  background-color: #EFEFEF;
+  z-index: 1;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.win-overlay .exit-btn img {
+  height: 15px;
+  width: 15px;
+  background-color: #ffff;
+  float: right;
+  margin-right: .5rem;
+  margin-top: .5rem;
+}
+
+.win-overlay .congratulations {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  height: 10%;
+  margin-top: 1.5rem;
+}
+
+.win-overlay .album-container {
+    margin-bottom: 1rem;
+}
+
+
+.win-overlay .next-spotle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  margin-top: 2rem;
+}
+
+.win-overlay .timer {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  height: 10%;
+  color: #000000;
+}
+
+.win-overlay .share-btn {
+  border-radius: 5px;
+  width: 175px;
+  height: 50px;
+  background-color: rgba(106,208,116);
+  color: #ffff;
+  font-weight: bold;
+  font-size: 15px;
+  position: relative;
+}
+
+
 .logo img {
   height: 100px;
 }
@@ -48,17 +117,8 @@ html {
 }
 
 
-
-header {
-  position: sticky;
-  top: 0;
-}
-
-
 .guesses {
   color: #FFFF;
-  position: sticky;
-  top: 25px;
 }
 
 .game-container {
@@ -69,8 +129,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  position: sticky;
-  top: 25px;
+
 }
 
 .remaining-guesses .guesses {
@@ -86,7 +145,6 @@ header {
   margin: auto;
   border-radius: 5px;
   box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.15);
-  position: sticky;
   margin-bottom: 25px;
   display: flex;
   flex-direction: row;
@@ -128,8 +186,10 @@ button i {
   position: absolute;
   top: 50px;
   background-color: #ffff;
+  opacity: 90%;
   max-width: 320px;
   width: 100%;
+  border-radius: 4px;
 }
 
 .results ul {
@@ -316,21 +376,44 @@ button i {
 
 
 @media screen and (min-width: 320px) and (max-width: 786px) {
-	header {
-    position: relative;
+	.results {
+    margin-top: 1rem;
   }
 
-  .game-container .remaining-guesses {
+  .credits {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 787px) {
+  header {
     position: sticky;
+    position: -webkit-sticky;
+    top: 0;
   }
 
   .guesses {
+
+  }
+
+  .search-container {
+
+  }
+
+  .game-container .remaining-guesses {
+
+  }
+
+  body {
+  }
+
+  .guess-container {
+
+  }
+
+  .credits {
     position: sticky;
+    bottom: 5px;
   }
-
-  .logo {
-    margin-bottom: .2rem;
-  }
-
-
 }
+
