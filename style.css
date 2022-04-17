@@ -47,10 +47,13 @@ html {
   margin-left: 20px;
 }
 
+
+
 header {
   position: sticky;
   top: 0;
 }
+
 
 .guesses {
   color: #FFFF;
@@ -84,12 +87,15 @@ header {
   border-radius: 5px;
   box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.15);
   position: sticky;
-  top: 50px;
   margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 input {
-  width:100%;
+  width: 100%;
   border: none;
   height: 40px;
   border-radius: 5px;
@@ -105,12 +111,7 @@ button {
   position: absolute;
   border: none;
   background: none;
-  top: 0;
-  right: 0;
-  height: 50px;
-  line-height: 50px;
-  padding: 0;
-  width: 50px;
+  margin-right: .2rem;
 }
 
 button:focus {
@@ -118,7 +119,6 @@ button:focus {
 }
 
 button i {
-  width: 100%;
   color: #6d7b98;
   cursor: pointer;
 }
@@ -254,6 +254,7 @@ button i {
   margin-top: 25px;
 }
 
+
 .credits {
   color: #ffff;
   font-style: normal;
@@ -274,6 +275,62 @@ button i {
   color: #6AD074;
 }
 
-#somemp3 {
-  visibility: hidden;
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes transitionOut {
+  from {
+    opacity: 1;
+    transform: rotateY(-10deg);
+  }
+  to {
+    opacity: 0;
+    transform: rotateY(0);
+  }
+}
+
+.game-container {
+  animation: transitionIn 2s;
+}
+
+.hidden {
+  animation: transitionOut 1s;
+  display: none;
+}
+
+.credits {
+  animation: transitionIn 1s;
+}
+
+.logo {
+  animation: transitionIn 1s;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 786px) {
+	header {
+    position: relative;
+  }
+
+  .game-container .remaining-guesses {
+    position: sticky;
+  }
+
+  .guesses {
+    position: sticky;
+  }
+
+  .logo {
+    margin-bottom: .2rem;
+  }
+
+
 }

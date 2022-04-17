@@ -104,7 +104,7 @@ const handleGuess = () => {
     if (currentArtist.name == mysteryArtist.name) {
       if (firstGuess) {
         firstGuess = false;
-        intro.parentNode.removeChild(intro);
+        intro.classList.add('hidden');
       }
       win();
       return;
@@ -117,7 +117,7 @@ const handleGuess = () => {
     
     if (firstGuess) {
       firstGuess = false;
-      intro.parentNode.removeChild(intro);
+      intro.classList.add('hidden');
     }
     
     incorrectGuess(currentArtist);
