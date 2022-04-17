@@ -236,6 +236,7 @@ button i {
 .item-name img {
   width: 25%;
   margin-right: .8rem;
+  border-radius: 50%;
 }
 
 .correct {
@@ -271,4 +272,8 @@ button i {
 
 .credits a {
   color: #6AD074;
+}
+
+#somemp3 {
+  visibility: hidden;
 }

@@ -1,13 +1,36 @@
+// if (guess == "drake") {
+//   const rollSound = new Audio("https://p.scdn.co/mp3-preview/997cd19a9e46b086516c57114a4ba6da5b078d91?cid=98f79e400795491cbc5f69b713465708");
+//   rollSound.play();
+// } for later
+class Artist {
+  constructor(name,listenerRank, debutAlbumYear, nationality, genre, gender) {
+      this.name = name;
+      this.listenerRank = listenerRank;
+      this.debutAlbumYear = debutAlbumYear;
+      this.nationality = nationality;
+      this.genre = genre;
+      this.gender = gender;
+  }
+}
+
+var artists = new Map();
+
 let searchable = [
-    'Coldplay',
-    'Justin Bieber',
-    'Ed Sheeran',
-    'Taylor Swift',
-    'The Weeknd',
-    'Dua Lipa',
-    'Drake',
-  ];
-  
+
+];
+
+
+
+import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
+csv("top1000artists.csv").then((data) => {
+   console.log(data);
+   for (var i = 0; i < data.length; i++) {
+      //set artists and searchable here
+      searchable.push(data[i].Artist);
+   }
+});
+
+
   const searchInput = document.getElementById('search');
   const searchWrapper = document.querySelector('.search-container');
   const resultsWrapper = document.querySelector('.results');
@@ -23,9 +46,9 @@ let searchable = [
   searchInput.addEventListener('keyup', () => {
     let results = [];
     let input = searchInput.value;
-    if (input.length) {
-      results = searchable.filter((item) => {
-        return item.toLowerCase().includes(input.toLowerCase());
+    if (input.length > 2) {
+        results = searchable.filter((item) => {
+        return item.toLowerCase().startsWith(input.toLowerCase());
       });
     }
     renderResults(results);
@@ -53,19 +76,6 @@ let searchable = [
       searchWrapper.classList.remove('show');
   }); 
 
-  class Artist {
-    constructor(name,listenerRank, debutAlbumYear, nationality, genre, gender) {
-        this.name = name;
-        this.listenerRank = listenerRank;
-        this.debutAlbumYear = debutAlbumYear;
-        this.nationality = nationality;
-        this.genre = genre;
-        this.gender = gender;
-    }
-}
-
-
-var artists = new Map();
 artists.set('the weeknd', new Artist("The Weeknd",1,2013,"Canada","Pop","Male"));
 artists.set('justin bieber', new Artist("Justin Bieber",2,2010,"Canada","Pop","Male"));
 artists.set('ed sheeran', new Artist("Ed Sheeran",3,2011,"England","Pop","Male"));
