@@ -159,6 +159,10 @@ function win(guess) {
     return;
 }
 
+function loss() {
+  console.log('lost');
+}
+
 function incorrectGuess(guess) {
 
     printGuess(guess);
@@ -166,9 +170,10 @@ function incorrectGuess(guess) {
     console.log('mystery: ' + mysteryArtist.name);
 
     guessCount++;
-    guessCountContainer.innerHTML = "Guess " + guessCount + " of 6";
-    if (guessCount == 7) {
+    guessCountContainer.innerHTML = "Guess " + guessCount + " of 10";
+    if (guessCount == 11) {
       console.log("lost");
+      lost();
     }
 
     guessedArtists.push(guess.name);
