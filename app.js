@@ -171,6 +171,7 @@ function incorrectGuess(guess) {
 
     guessCount++;
     guessCountContainer.innerHTML = "Guess " + guessCount + " of 10";
+  
     if (guessCount == 11) {
       console.log("lost");
       lost();
