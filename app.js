@@ -177,6 +177,7 @@ function printGuess(guess) {
   nameElement.innerHTML = guess.name;
   const imageArtist = document.createElement('img');
   imageArtist.src = guess.imageUri;
+  imageArtist.alt = guess.name;
   
   //add image to nameElement div
   nameElement.prepend(imageArtist);
@@ -237,6 +238,7 @@ function printGuess(guess) {
 
   const imageNationality = document.createElement('img');
   imageNationality.src = 'resources\\nationalities\\' + guess.nationality + '.png';
+  imageNationality.alt = guess.nationality;
   nationalityElement.innerHTML = "Nationality ";
   nationalityElement.append(imageNationality);
 
