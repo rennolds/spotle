@@ -166,8 +166,8 @@ function incorrectGuess(guess) {
     console.log('mystery: ' + mysteryArtist.name);
 
     guessCount++;
-    guessCountContainer.innerHTML = "Guess " + guessCount + " of 6";
-    if (guessCount == 7) {
+    guessCountContainer.innerHTML = "Guess " + guessCount + " of 10";
+    if (guessCount == 10) {
       console.log("lost");
     }
 
