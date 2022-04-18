@@ -30,7 +30,6 @@ html {
 }
 
 .win-overlay {
-  display: none;
   height: 493px;
   width: 290px;
   position: absolute;
@@ -42,6 +41,10 @@ html {
   z-index: 1;
   text-align: center;
   border-radius: 5px;
+}
+
+.display-none {
+  display: none;
 }
 
 .win-overlay .exit-btn img {
