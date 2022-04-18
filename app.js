@@ -83,6 +83,7 @@ searchInput.addEventListener('keyup', () => {
   resultsWrapper.addEventListener("click", function() {
       var clickedElement = document.querySelector('li:hover');
       searchInput.value = clickedElement.innerHTML;
+      handleGuess();
       searchWrapper.classList.remove('show');
   }); 
 
