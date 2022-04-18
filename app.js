@@ -17,14 +17,12 @@ class Artist {
 
 const artists = new Map();
 
-const searchable = [
-
-];
+const searchable = [];
 
 
 
 import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
-csv("resources/round_1_test.csv").then((data) => {
+csv("resources/round_2_test.csv").then((data) => {
    for (var i = 0; i < data.length; i++) {
       searchable.push(data[i].Artist);
       var x;
@@ -34,7 +32,7 @@ csv("resources/round_1_test.csv").then((data) => {
       else {
         x = 'Female';
       }
-      artists.set(data[i].Artist.toLowerCase(), new Artist(data[i].Artist, i+1, data[i].image_uri, data[i].genre, 2007, x, data[i].Country, data[i].GroupSize));
+      artists.set(data[i].Artist.toLowerCase(), new Artist(data[i].Artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].Country, data[i].GroupSize));
       //console.log(typeof data[i].Artist);
       //console.log(data[i].Artist.toLowerCase());
    }
@@ -51,7 +49,8 @@ const guessCountContainer = document.querySelector('.guesses');
 let firstGuess = true;
 let guessCount = 1;
 let guessedArtists = [];
-  
+var mysteryArtist = artists.get('drake');
+
   
 
   //handles autocomplete 
@@ -251,5 +250,11 @@ function printGuess(guess) {
 
   guessContainer.prepend(guessElement);
 }
+
+function getMysteryArtist(name) {
+  return artists.get('drake');
+}
+
+console.log(getMysteryArtist('10'));
 
 guessButton.addEventListener('click', handleGuess);
