@@ -25,10 +25,10 @@ csv("resources/round_4_test.csv").then((data) => {
       searchable.push(data[i].artist);
 
       var x;
-      if (data[i].Gender == "m"){
+      if (data[i].gender == "m"){
         x = 'Male';
       }
-      else if (data[i].Gender == "f") {
+      else if (data[i].gender == "f") {
         x = 'Female';
       }
       else {
