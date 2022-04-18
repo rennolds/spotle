@@ -44,7 +44,7 @@ const guessContainer = document.querySelector('.guess-container');
 const guessButton = document.querySelector('.guess-btn');
 const intro = document.getElementById('intro');
 const guessCountContainer = document.querySelector('.guesses');
-const winOverlay = document.querySelector('.win-overlay');
+const winOverlay = document.getElementById('win-overlay');
 const infoPrompt = document.querySelector('.info-prompt');
 let firstGuess = true;
 let guessCount = 1;
@@ -153,7 +153,8 @@ function win(guess) {
     printGuess(guess);
     const rollSound = new Audio("https://p.scdn.co/mp3-preview/997cd19a9e46b086516c57114a4ba6da5b078d91?cid=98f79e400795491cbc5f69b713465708");
     rollSound.play();
-    winOverlay.classList.remove('display-none');
+    winOverlay.classList.remove('win-overlay-hide');
+    winOverlay.classList.add('win-overlay');
 
     return;
 }

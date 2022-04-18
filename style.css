@@ -47,8 +47,10 @@ html {
   width: 290px;
   position: absolute;
   left: 50%;
+  text-align: center;
   margin-top: 7rem;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  animation: win-appears ease-in 2s;
   position: absolute;
   background-color: #EFEFEF;
   z-index: 1;
@@ -56,8 +58,31 @@ html {
   border-radius: 5px;
 }
 
-.display-none {
-  opacity: 0;
+@keyframes win-appears {
+  0% {
+    opacity: 0;
+    transform: translateX(1000px) translateY(0px);
+  }
+  62% {
+    transform: skewX(0deg) translateX(30px);
+  }
+  70% {
+    transform: skew(-20deg);
+  }
+  80% {
+    transform: skew(0deg) translate(0);
+  }
+  90% {
+    transform: skew(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.win-overlay-hide {
+  display: none;  
 }
 
 .win-overlay .exit-btn img {
@@ -206,7 +231,7 @@ button i {
   opacity: 90%;
   max-width: 320px;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 3rem;
   border-radius: 4px;
 }
 
