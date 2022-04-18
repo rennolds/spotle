@@ -16,10 +16,8 @@ class Artist {
 }
 
 const artists = new Map();
-
 const searchable = [];
-
-
+var mysteryArtist;
 
 import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
 csv("resources/round_2_test.csv").then((data) => {
@@ -32,10 +30,11 @@ csv("resources/round_2_test.csv").then((data) => {
       else {
         x = 'Female';
       }
-      artists.set(data[i].Artist.toLowerCase(), new Artist(data[i].Artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].Country, data[i].GroupSize));
+      artists.set(data[i].Artist.toLowerCase(), new Artist(data[i].Artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].Country.toLowerCase(), data[i].GroupSize));
       //console.log(typeof data[i].Artist);
       //console.log(data[i].Artist.toLowerCase());
    }
+  mysteryArtist = artists.get('drake');
 });
  
 const gameContainer = document.querySelector('.game-container');
@@ -49,9 +48,7 @@ const guessCountContainer = document.querySelector('.guesses');
 let firstGuess = true;
 let guessCount = 1;
 let guessedArtists = [];
-var mysteryArtist = artists.get('drake');
 
-  
 
   //handles autocomplete 
 searchInput.addEventListener('keyup', () => {
@@ -98,12 +95,14 @@ var mysteryArtist = new Artist();
 //console.log('ccurrent: ' + mysteryArtist);
 //console.log(artists);
 
-
+console.log("outside of functoin: " + artists.get('drake'));
 //handle guess when player searches for an artist
 const handleGuess = () => {
     let guess = searchInput.value
+    console.log('guess; ' + guess);
     searchInput.value = ""; //make search bar empty 
     searchWrapper.classList.remove('show'); //hide results
+    console.log('guess in loewrcase: ' + guess);
     guess = guess.toLowerCase() //make guess lowercase
 
     if (guess == "") { //empty guess, do nothing
@@ -115,12 +114,13 @@ const handleGuess = () => {
     }
     
     var currentArtist = artists.get(guess);
+   
     if (currentArtist.name == mysteryArtist.name) {
       if (firstGuess) {
         firstGuess = false;
         intro.classList.add('hidden');
       }
-      win();
+      win(currentArtist);
       return;
     }
 
@@ -142,14 +142,17 @@ function invalidArtist() {
     return;
 }
 
-function win() {
+function win(guess) {
     console.log("YOU WIN!")
+    printGuess(guess);
     return;
 }
 
 function incorrectGuess(guess) {
 
     printGuess(guess);
+    console.log('guess: ' + guess.name);
+    console.log('mystery: ' + mysteryArtist.name);
 
     guessCount++;
     guessCountContainer.innerHTML = "Guess " + guessCount + " of 6";
@@ -200,10 +203,27 @@ function printGuess(guess) {
 
   albumElement.innerHTML = "Debut Album " 
   albumSpan.innerHTML = guess.debutAlbumYear;
+
+  if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear)
+    albumElement.classList.add('correct');
+  else if (Math.abs(guess.listenerRank - mysteryArtist.listenerRank) <= 10) {
+    albumElement.classList.add('close');
+  }
+
   groupElement.innerHTML = "Group Size "
   groupSpan.innerHTML = guess.groupSize;
+
+  if (guess.groupSize == mysteryArtist.groupSize)
+    groupElement.classList.add('correct');
+
   listenerRankElement.innerHTML = "Listener Rank ";
   listenerRankSpan.innerHTML = guess.listenerRank;
+
+  if (guess.listenerRank == mysteryArtist.listenerRank)
+    listenerRankElement.classList.add('correct');
+  else if (Math.abs(guess.listenerRank - mysteryArtist.listenerRank) <= 10) {
+    listenerRankElement.classList.add('close');
+  }
 
   albumElement.append(albumSpan);
   groupElement.append(groupSpan);
@@ -233,12 +253,22 @@ function printGuess(guess) {
   genreElement.innerHTML = "Genre ";
   genreSpan.innerHTML = guess.genre;
 
+  if (guess.genre == mysteryArtist.genre)
+    genreElement.classList.add('correct');
+
+  if (guess.gender == mysteryArtist.gender)
+    genderElement.classList.add('correct');
+
   genderElement.append(genderSpan);
   genreElement.append(genreSpan);
 
   const imageNationality = document.createElement('img');
   imageNationality.src = 'resources\\nationalities\\' + guess.nationality + '.png';
   imageNationality.alt = guess.nationality;
+
+  if (guess.nationality == mysteryArtist.nationality)
+    nationalityElement.classList.add('correct');
+
   nationalityElement.innerHTML = "Nationality ";
   nationalityElement.append(imageNationality);
 
@@ -252,11 +282,5 @@ function printGuess(guess) {
 
   guessContainer.prepend(guessElement);
 }
-
-function getMysteryArtist(name) {
-  return artists.get('drake');
-}
-
-console.log(getMysteryArtist('10'));
 
 guessButton.addEventListener('click', handleGuess);
