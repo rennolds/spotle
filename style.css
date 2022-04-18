@@ -452,12 +452,16 @@ button i {
   }
 
   .results {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 
   .credits {
     position: sticky;
     bottom: 5px;
+  }
+
+  .win-overlay {
+    margin-top: 2rem;
   }
 }
 
