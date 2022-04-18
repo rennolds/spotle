@@ -439,10 +439,6 @@ button i {
 
 
 @media screen and (min-width: 320px) and (max-width: 786px) {
-	.results {
-    margin-top: 1rem;
-  }
-
   .credits {
     margin-top: 1rem;
   }
@@ -455,23 +451,8 @@ button i {
     top: 0;
   }
 
-  .guesses {
-
-  }
-
-  .search-container {
-
-  }
-
-  .game-container .remaining-guesses {
-
-  }
-
-  body {
-  }
-
-  .guess-container {
-
+  .results {
+    margin-top: 3rem;
   }
 
   .credits {
