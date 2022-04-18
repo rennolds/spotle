@@ -53,7 +53,7 @@ html {
   left: 50%;
   text-align: center;
   margin-top: 7rem;
-  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   animation: win-appears ease-in 2s;
   position: absolute;
   background-color: #EFEFEF;
