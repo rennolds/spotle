@@ -51,6 +51,7 @@ const intro = document.getElementById('intro');
 const guessCountContainer = document.querySelector('.guesses');
 const winOverlay = document.getElementById('win-overlay');
 const infoPrompt = document.querySelector('.info-prompt');
+const timer = document.querySelector('.timer');
 let firstGuess = true;
 let guessCount = 1;
 let guessedArtists = [];
@@ -128,6 +129,7 @@ const handleGuess = () => {
         intro.classList.add('hidden');
       }
       win(currentArtist);
+
       return;
     }
 
@@ -161,7 +163,31 @@ function win(guess) {
     winOverlay.classList.remove('win-overlay-hide');
     winOverlay.classList.add('win-overlay');
 
+    
+    calculateHMSleft();
+    setInterval(calculateHMSleft, 1000);
+    //display
+
     return;
+}
+
+    
+
+
+  
+
+
+function  calculateHMSleft() {
+  var now = new Date();
+  var hoursleft = 23-now.getHours();
+  var minutesleft = 59-now.getMinutes();
+  var secondsleft = 59-now.getSeconds();
+
+  //format 0 prefixes
+  if(minutesleft<10) minutesleft = "0"+minutesleft;
+  if(secondsleft<10) secondsleft = "0"+secondsleft;  
+
+  timer.innerHTML = hoursleft+":"+minutesleft+":"+secondsleft
 }
 
 function loss() {
