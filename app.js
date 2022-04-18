@@ -19,17 +19,22 @@ const searchable = [];
 var mysteryArtist;
 
 import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
-csv("resources/round_2_test.csv").then((data) => {
+csv("resources/round_4_test.csv").then((data) => {
    for (var i = 0; i < data.length; i++) {
-      searchable.push(data[i].Artist);
+  
+      searchable.push(data[i].artist);
+
       var x;
       if (data[i].Gender == "m"){
         x = 'Male';
       }
-      else {
+      else if (data[i].Gender == "f") {
         x = 'Female';
       }
-      artists.set(data[i].Artist.toLowerCase(), new Artist(data[i].Artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].Country.toLowerCase(), data[i].GroupSize));
+      else {
+        x = 'Other';
+      }
+      artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
       //console.log(typeof data[i].Artist);
       //console.log(data[i].Artist.toLowerCase());
    }

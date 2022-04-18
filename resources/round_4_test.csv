@@ -1,1001 +1,1001 @@
-artist,image_uri,genre,year,gender,country,group_size,
-Drake,https://i.scdn.co/image/ab6761610000e5eb9e46a78c5cd2f7a8e7669980,Rap,2009,m,ca,1,
-Ed Sheeran,https://i.scdn.co/image/ab6761610000e5eb12a2ef08d00dd7451a6dbed6,Rap,2011,m,uk,1,
-Bad Bunny,https://i.scdn.co/image/ab6761610000e5eb6ad57a3cb26ae3ffd0f28f22,Rap,2018,m,pr,1,
-The Weeknd,https://i.scdn.co/image/ab6761610000e5eb2f71b65ef483ed75a8b40437,Rap,2011,m,ca,1,
-Ariana Grande,https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952,Rap,2013,f,us,1,
-Justin Bieber,https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36,Rap,2009,m,ca,1,
-Taylor Swift,https://i.scdn.co/image/ab6761610000e5eb9e3acf1eaf3b8846e836f441,Rap,2006,f,us,1,
-Eminem,https://i.scdn.co/image/ab6761610000e5eba00b11c129b27a88fc72f36b,Rap,1999,m,us,1,
-Post Malone,https://i.scdn.co/image/ab6761610000e5ebe07d6b0f2fcc2f2ba6bdc3ce,Rap,2016,m,us,1,
-BTS,https://i.scdn.co/image/ab6761610000e5eb82a5d58059f81867b871d8b6,Rap,2013,m,kr,7,
-J Balvin,https://i.scdn.co/image/ab6761610000e5eb5d0fc400392250a750a9403e,Rap,2012,m,co,1,
-Kanye West,https://i.scdn.co/image/ab6761610000e5eb867008a971fae0f4d913f63a,Rap,2004,m,us,1,
-Billie Eilish,https://i.scdn.co/image/ab6761610000e5ebd8b9980db67272cb4d2c3daf,Rap,2019,f,us,1,
-Juice WRLD,https://i.scdn.co/image/ab6761610000e5eb1908e1a8b79abf71d5598944,Rap,2018,m,us,1,
-Coldplay,https://i.scdn.co/image/ab6761610000e5eb865a3301762a8fce048cb469,Rap,2000,m,uk,4,
-XXXTENTACION,https://i.scdn.co/image/ab6761610000e5ebf0c20db5ef6c6fbe5135d2e4,Rap,2017,m,us,1,
-Ozuna,https://i.scdn.co/image/ab6761610000e5ebe9cd20f3cea76432155607da,Rap,2017,m,pr,1,
-Khalid,https://i.scdn.co/image/ab6761610000e5eb31072db9da0311ecfabe96bf,Rap,2017,m,us,1,
-Dua Lipa,https://i.scdn.co/image/ab6761610000e5ebd42a27db3286b58553da8858,Rap,2015,f,us,1,
-Imagine Dragons,https://i.scdn.co/image/ab6761610000e5eb920dc1f617550de8388f368e,Rap,2012,m,us,4,
-Travis Scott,https://i.scdn.co/image/ab6761610000e5ebe707b87e3f65997f6c09bfff,Rap,2015,m,us,1,
-Rihanna,https://i.scdn.co/image/ab6761610000e5eb019d6873a01987cbe35888cd,Rap,2005,f,us,1,
-Maroon 5,https://i.scdn.co/image/ab6761610000e5eb288ac05481cedc5bddb5b11b,Rap,2002,m,us,7,
-Shawn Mendes,https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db,Rap,2015,m,ca,1,
-David Guetta,https://i.scdn.co/image/ab6761610000e5eb75348e1aade2645ad9c58829,Rap,2002,m,fr,1,
-Bruno Mars,https://i.scdn.co/image/ab6761610000e5ebc36dd9eb55fb0db4911f25dd,Rap,2010,m,us,1,
-Calvin Harris,https://i.scdn.co/image/ab6761610000e5eb578905d5539cff25568dc097,Rap,2007,m,uk,1,
-Daddy Yankee,https://i.scdn.co/image/ab6761610000e5eb2204cb5a314573e202f20f8d,Rap,2002,m,pr,1,
-Sam Smith,https://i.scdn.co/image/ab6761610000e5ebe5a4f8ec6996364b2f824fcb,Rap,2014,m,uk,1,
-Queen,https://i.scdn.co/image/b040846ceba13c3e9c125d68389491094e7f2982,Rap,1973,m,uk,2,
-Kendrick Lamar,https://i.scdn.co/image/ab6761610000e5ebee29d711d7afd1e882486e1a,Rap,2010,m,us,1,
-The Chainsmokers,https://i.scdn.co/image/ab6761610000e5eb3c02f4fb4cc9187c488afd50,Rap,2016,m,us,2,
-One Direction,https://i.scdn.co/image/5bb443424a1ad71603c43d67f5af1a04da6bb3c8,Rap,2012,m,uk,5,
-Chris Brown,https://i.scdn.co/image/ab6761610000e5ebba4309876dbc0ef3222c5512,Rap,2005,m,us,1,
-BeyoncÈ,https://i.scdn.co/image/ab6761610000e5ebd3d058be8485c8583703b6d2,Rap,2003,f,us,1,
-Future,https://i.scdn.co/image/ab6761610000e5eb888112f96c607aa2c6a1ffe8,Rap,2012,m,us,1,
-Nicki Minaj,https://i.scdn.co/image/ab6761610000e5ebaf3459f7c235fd25daf7f84f,Rap,2010,f,us,1,
-Lady Gaga,https://i.scdn.co/image/ab6761610000e5eb749ba770a33230206f8fe159,Rap,2008,f,us,1,
-J. Cole,https://i.scdn.co/image/ab6761610000e5ebadd503b411a712e277895c8a,Rap,2011,m,us,1,
-Halsey,https://i.scdn.co/image/ab6761610000e5ebdade5a33a51db8b049787d7f,Rap,2015,f,us,1,
-Anuel AA,https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5,Rap,2018,m,pr,1,
-Selena Gomez,https://i.scdn.co/image/ab6761610000e5eba5205abffd84341e5bace828,Rap,2013,f,us,1,
-Adele,https://i.scdn.co/image/ab6761610000e5eb68f6e5892075d7f22615bd17,Rap,2008,f,uk,1,
-The Beatles,https://i.scdn.co/image/ab6761610000e5ebe9348cc01ff5d55971b22433,Rap,1963,m,uk,4,
-Sia,https://i.scdn.co/image/ab6761610000e5ebe8637c96a7aa2917eae3c54d,Rap,2003,f,au,1,
-Maluma,https://i.scdn.co/image/ab6761610000e5ebd371e6537d5a4fbe3582d198,Rap,2012,m,co,1,
-Twenty One Pilots,https://i.scdn.co/image/ab6761610000e5eb196972172c37d934d9ca8093,Rap,2009,m,us,2,
-Marshmello,https://i.scdn.co/image/ab6761610000e5eba91af711541f8807ed7f0676,Rap,2016,m,us,1,
-Lil Uzi Vert,https://i.scdn.co/image/ab6761610000e5eb879835ea4e3a0f0b8cf1c7b4,Rap,2015,m,us,1,
-Linkin Park,https://i.scdn.co/image/ab6761610000e5eb34e5aa6afc1ba147bfbb0677,Rap,2000,m,us,6,
-Katy Perry,https://i.scdn.co/image/ab6761610000e5ebdc9dcb7e4a97b4552e1224d6,Rap,2008,f,us,1,
-Kygo,https://i.scdn.co/image/ab6761610000e5eb6567299e3c53cf2a250fbdce,Rap,2016,m,no,1,
-Avicii,https://i.scdn.co/image/ab6761610000e5eb09bf4814c6585e1f69dfeef7,Rap,2013,m,se,1,
-Farruko,https://i.scdn.co/image/ab6761610000e5eb4fd89b40d4798b2ae7348c7d,Rap,2010,m,pr,1,
-Lana Del Rey,https://i.scdn.co/image/ab6761610000e5ebc5903678d3db18e271e42be0,Rap,2011,f,us,1,
-Camila Cabello,https://i.scdn.co/image/ab6761610000e5ebec05963eab63676a539fef13,Rap,2018,f,us,1,
-Rauw Alejandro,https://i.scdn.co/image/ab6761610000e5eb754fd19c86184acc854b79a6,Rap,2019,m,pr,1,
-Jason Derulo,https://i.scdn.co/image/ab6761610000e5eb654972693e0efed3f3f4d090,Rap,2010,m,us,1,
-Red Hot Chili Peppers,https://i.scdn.co/image/ab6761610000e5ebb0dd96d5c6fcd8b068834373,Rap,1984,m,us,4,
-Demi Lovato,https://i.scdn.co/image/ab6761610000e5eb99c4e0564b8d23a3d0645af1,Rap,2008,f,us,1,
-Arctic Monkeys,https://i.scdn.co/image/ab6761610000e5eb39f37a34b404169fdca52dc8,Rap,2006,m,uk,4,
-Shakira,https://i.scdn.co/image/ab6761610000e5ebded9d5f8bb8611aad61df058,Rap,1995,f,co,1,
-Doja Cat,https://i.scdn.co/image/ab6761610000e5eb727a2ac15afe659be999beba,Rap,2018,f,us,1,
-Nicky Jam,https://i.scdn.co/image/ab6761610000e5eb4d248e406d79c79932931383,Rap,2001,m,us,1,
-KAROL G,https://i.scdn.co/image/ab6761610000e5eb5f2a184720aa12c1f0aef516,Rap,2017,f,co,1,
-OneRepublic,https://i.scdn.co/image/ab6761610000e5eb77bf00f67e21f514dc44c485,Rap,2007,m,us,6,
-Harry Styles,https://i.scdn.co/image/ab6761610000e5eb5464c6450a88d073a3f117b0,Rap,2017,m,uk,1,
-Miley Cyrus,https://i.scdn.co/image/ab6761610000e5eb02651b19050d8bf64b18d40a,Rap,2007,f,us,1,
-Michael Jackson,https://i.scdn.co/image/ab6761610000e5eba2a0b9e3448c1e702de9dc90,Rap,1972,m,us,1,
-Martin Garrix,https://i.scdn.co/image/ab6761610000e5eb66d17ee8690d2e8d94ee7387,Rap,2019,m,nl,1,
-Pitbull,https://i.scdn.co/image/ab6761610000e5eb2dc40ac263ef07c16a95af4e,Rap,2004,m,us,1,
-G-Eazy,https://i.scdn.co/image/ab6761610000e5ebe818f7ca0d47f038a9aa246a,Rap,2012,m,us,1,
-Sebastian Yatra,https://i.scdn.co/image/ab6761610000e5eb28cc5ee1d7ba49cdc7dde27b,Rap,2018,m,ca,1,
-Charlie Puth,https://i.scdn.co/image/ab6761610000e5eb0d890ffd0e0bea5f904f1a9f,Rap,2015,m,us,1,
-Cardi B,https://i.scdn.co/image/ab6761610000e5eba3de342056c0e1284cbc109d,Rap,2016,f,us,1,
-Panic! At The Disco,https://i.scdn.co/image/ab6761610000e5eb84776fe119fa6503fdffb0f8,Rap,2005,m,us,4,
-Major Lazer,https://i.scdn.co/image/ab6761610000e5eb133f44ab343b35c715a4ac97,Rap,2009,m,us,3,
-Ellie Goulding,https://i.scdn.co/image/ab6761610000e5ebaa972cb3308ccbeeff38666a,Rap,2010,f,uk,1,
-DaBaby,https://i.scdn.co/image/ab6761610000e5eb5ace68c56849548db7f102be,Rap,2016,m,us,1,
-Lil Wayne,https://i.scdn.co/image/ab6761610000e5ebc63aded6f4bf4d06d1377106,Rap,1999,m,us,1,
-21 Savage,https://i.scdn.co/image/ab6761610000e5ebe01decbaa565f3feaaade6a9,Rap,2016,m,us,1,
-Young Thug,https://i.scdn.co/image/ab6761610000e5eb547d2b41c9f2c97318aad0ed,Rap,2011,m,us,1,
-Lil Baby,https://i.scdn.co/image/ab6761610000e5eb2161ef3bab0e5e922a1c297d,Rap,2017,m,us,1,
-Wiz Khalifa,https://i.scdn.co/image/ab6761610000e5eb4bdf6db5203f2a0e44002620,Rap,2006,m,us,1,
-Sech,https://i.scdn.co/image/ab6761610000e5eba760b68c06ca08e6dce6b45c,Rap,2018,m,pa,1,
-Mac Miller,https://i.scdn.co/image/ab6761610000e5ebed3b89aa602145fde71a163a,Rap,2010,m,us,1,
-Pop Smoke,https://i.scdn.co/image/ab6761610000e5eb597f9edd2cd1a892d4412b09,Rap,2019,m,us,1,
-Myke Towers,https://i.scdn.co/image/ab6761610000e5eb9b7677e5bdee54a0ae0c8262,Rap,2016,m,pr,1,
-Metallica,https://i.scdn.co/image/ab6761610000e5eb8101d13bdd630b0889acd2fd,Rap,1983,m,us,4,
-Fall Out Boy,https://i.scdn.co/image/ab6761610000e5eb1443b137c8941b9c73237a27,Rap,2003,m,us,4,
-Diplo,https://i.scdn.co/image/ab6761610000e5ebee376ee0e88042b34dee6e62,Rap,2004,m,us,1,
-Lil Peep,https://i.scdn.co/image/ab6761610000e5eb6685f03de475c4efb27da3c4,Rap,2016,m,us,1,
-Logic,https://i.scdn.co/image/ab6761610000e5ebc0f43abdba90d508842d7367,Rap,2014,m,us,1,
-Migos,https://i.scdn.co/image/ab6761610000e5ebf4593f7b778219838d858c34,Rap,2011,m,us,3,
-Lil Nas X,https://i.scdn.co/image/ab6761610000e5ebab6bd6e450cbc7629a9a2381,Rap,2021,m,us,1,
-Tyga,https://i.scdn.co/image/ab6761610000e5eb9f4efad614109d3094975cdd,Rap,2012,m,us,1,
-P!nk,https://i.scdn.co/image/ab6761610000e5eb6ec3754d5db2e333b9434c75,Rap,2000,f,us,1,
-John Mayer,https://i.scdn.co/image/ab6761610000e5eb265ef5547ecff4dabd6352bf,Rap,1999,m,us,1,
-Alan Walker,https://i.scdn.co/image/ab6761610000e5ebc02d416c309a68b04dc94576,Rap,2018,m,no,1,
-AC/DC,https://i.scdn.co/image/ab6761610000e5ebc4c77549095c86acb4e77b37,Rap,1976,m,uk,5,
-Little Mix,https://i.scdn.co/image/ab6761610000e5eb08cd53940cbf5813ee5fe565,Rap,2012,f,uk,3,
-ZAYN,https://i.scdn.co/image/ab6761610000e5eb9fbf7133dfc04d4cd44ccd36,Rap,2016,m,uk,1,
-DJ Snake,https://i.scdn.co/image/ab6761610000e5ebf2855e25f1d9c8a20bcc85ae,Rap,2016,m,fr,1,
-Lauv,https://i.scdn.co/image/ab6761610000e5eb5af53f295e6c42529fbd0873,Rap,2018,m,us,1,
-James Arthur,https://i.scdn.co/image/ab6761610000e5eb6867a4ce52401bd378bb5179,Rap,2013,m,uk,1,
-Trippie Redd,https://i.scdn.co/image/ab6761610000e5eb32f8f4df5e7b05a7e4d170ca,Rap,2017,m,us,1,
-Macklemore,https://i.scdn.co/image/ab6761610000e5eb57df9bb5680b96f5b4811fc2,Rap,2005,m,us,1,
-Olivia Rodrigo,https://i.scdn.co/image/ab6761610000e5ebee954a3b5418065c2fe253fb,Rap,2021,f,us,1,
-Kodak Black,https://i.scdn.co/image/ab6761610000e5eb4bd22c1711d22aa647a61097,Rap,2014,m,us,1,
-Zedd,https://i.scdn.co/image/ab6761610000e5eb1751e951b4969c4ae957a328,Rap,2012,m,ru,1,
-Gunna,https://i.scdn.co/image/ab6761610000e5eb803f228472451496cb2f5b88,Rap,2016,m,us,1,
-A$AP Rocky,https://i.scdn.co/image/ab6761610000e5eb6d5529e3962a16bd267bfeb2,Rap,2011,m,us,1,
-A Boogie Wit da Hoodie,https://i.scdn.co/image/ab6761610000e5eb7dc556a6a7893f87b9be23b3,Rap,2016,m,us,1,
-NF,https://i.scdn.co/image/ab6761610000e5eb2ddbc93688aa74431df384ea,Rap,2015,m,us,1,
-5 Seconds of Summer,https://i.scdn.co/image/ab6761610000e5eb5f6a7d9d3fa9cb7edf77b1ca,Rap,2014,m,us,4,
-Frank Ocean,https://i.scdn.co/image/ab6761610000e5ebfbc3faec4a370d8393bee7f1,Rap,2012,m,us,1,
-Bob Marley & The Wailers,https://i.scdn.co/image/b5aae2067db80f694a980e596e7f49618c1206c9,Rap,1971,x,jm,8,
-Elton John,https://i.scdn.co/image/ab6761610000e5eb0a7388b95df960b5c0da8970,Rap,1969,m,uk,1,
-TiÎsto,https://i.scdn.co/image/ab6761610000e5eb8cb651b2e77c6d30b1de15e4,Rap,1997,m,ul,1,
-YoungBoy Never Broke Again,https://i.scdn.co/image/ab6761610000e5eba213bd0d2152db1ce9c8da70,Rap,2016,m,us,1,
-Robin Schulz,https://i.scdn.co/image/ab6761610000e5eb7886f753d19bacd490d5acca,Rap,2014,m,de,1,
-Green Day,https://i.scdn.co/image/ab6761610000e5eb047eac333eff0be4abe32cbf,Rap,1991,m,us,3,
-Metro Boomin,https://i.scdn.co/image/ab6761610000e5eb40134b72d4fd5a20a52419b5,Rap,2014,m,us,1,
-Bebe Rexha,https://i.scdn.co/image/ab6761610000e5ebabfac786f093c4da55c99d4e,Rap,2018,f,us,1,
-Romeo Santos,https://i.scdn.co/image/ab6761610000e5eb0d2f605c23090747230416db,Rap,2012,m,us,1,
-Justin Timberlake,https://i.scdn.co/image/ab6761610000e5eb9d3f9efc8e0030306e583cef,Rap,2002,m,us,1,
-"Tyler, The Creator",https://i.scdn.co/image/ab6761610000e5eb8278b782cbb5a3963db88ada,Rap,2011,m,us,1,
-DJ Khaled,https://i.scdn.co/image/ab6761610000e5ebbf921114b7f19be97ce29647,Rap,2007,m,us,1,
-Clean Bandit,https://i.scdn.co/image/ab6761610000e5eb7a487027eb0c10af725d5410,Rap,2014,x,uk,3,
-Luis Miguel,https://i.scdn.co/image/ab6761610000e5eb6481401e529e475116702a29,Rap,1982,m,mx,1,
-Anne-Marie,https://i.scdn.co/image/ab6761610000e5eb1e553befc24937f68be6dbea,Rap,2018,f,uk,1,
-Zara Larsson,https://i.scdn.co/image/ab6761610000e5eba63a2b0ceb57eb509d67c90f,Rap,2014,f,se,1,
-Lewis Capaldi,https://i.scdn.co/image/ab6761610000e5eb15cbff23945b9e4b2afa5348,Rap,2019,m,uk,1,
-SZA,https://i.scdn.co/image/ab6761610000e5eb529f2198b3e9e77c0d5a665b,Rap,2014,f,us,1,
-Black Eyed Peas,https://i.scdn.co/image/ab6761610000e5eb26b00ac49e5fc94a222b953f,Rap,1998,x,us,4,
-Michael BublÈ,https://i.scdn.co/image/ab6761610000e5ebef8cf61fea4923d2bde68200,Rap,2003,m,ca,1,
-Machine Gun Kelly,https://i.scdn.co/image/ab6761610000e5eb1fd54eb6e30d0bc8f633621e,Rap,2012,m,us,1,
-Enrique Iglesias,https://i.scdn.co/image/ab6761610000e5ebe784d82734a77def7f967703,Rap,1995,m,es,1,
-Nirvana,https://i.scdn.co/image/84282c28d851a700132356381fcfbadc67ff498b,Rap,1989,m,us,3,
-Pink Floyd,https://i.scdn.co/image/e69f71e2be4b67b82af90fb8e9d805715e0684fa,Rap,1967,m,uk,3,
-BLACKPINK,https://i.scdn.co/image/ab6761610000e5eb9f73197444a8a6b016f4a546,Rap,2018,f,kr,4,
-JAY-Z,https://i.scdn.co/image/ab6761610000e5ebc75afcd5a9027f60eaebb5e4,Rap,1996,m,us,1,
-$uicideboy$,https://i.scdn.co/image/ab6761610000e5eb84c3e162cc178d07010560d2,Rap,2014,m,us,2,
-The Rolling Stones,https://i.scdn.co/image/ab6761610000e5ebd3cb15a8570cce5a63af63d8,Rap,1964,m,uk,3,
-Ty Dolla $ign,https://i.scdn.co/image/ab6761610000e5ebd9dde4a54073dbd58fb91c7d,Rap,2014,m,us,1,
-Flo Rida,https://i.scdn.co/image/ab6761610000e5eb655ca8f3196953554b479452,Rap,2008,m,us,1,
-Luis Fonsi,https://i.scdn.co/image/ab6761610000e5ebec1cd67f4c17468f335206eb,Rap,1998,m,pr,1,
-Britney Spears,https://i.scdn.co/image/ab6761610000e5ebf2ac13247b26025069dbdc4e,Rap,1999,m,us,1,
-blackbear,https://i.scdn.co/image/ab6761610000e5ebe23a1ce692e974395caa9caf,Rap,2015,m,us,1,
-MarÌlia MendonÁa,https://i.scdn.co/image/ab6761610000e5eb59035f0b5c852aabd865a080,Rap,2016,f,br,1,
-Jonas Blue,https://i.scdn.co/image/ab6761610000e5ebb2e0eba220cd2dd0446f5073,Rap,2018,m,uk,1,
-Guns N' Roses,https://i.scdn.co/image/ab6761610000e5eb50defaf9fc059a1efc541f4c,Rap,1987,m,us,5,
-Russ,https://i.scdn.co/image/ab6761610000e5eb4197510727b638d8b2c6e824,Rap,2012,m,us,1,
-Fleetwood Mac,https://i.scdn.co/image/ab6761610000e5eb249d55f2d68a44637905c57e,Rap,1968,x,uk,5,
-Anitta,https://i.scdn.co/image/ab6761610000e5eb847940395e7b755f626ad139,Rap,2013,f,us,1,
-Reik,https://i.scdn.co/image/ab6761610000e5eb7ef75910e15bba278b939a70,Rap,2005,m,mx,3,
-Kid Cudi,https://i.scdn.co/image/ab6761610000e5eb876faa285687786c3d314ae0,Rap,2009,m,us,1,
-Bastille,https://i.scdn.co/image/ab6761610000e5ebfb7a0fe5a0e33cf5325fcd91,Rap,2013,m,uk,4,
-Banda MS de Sergio Liz·rraga,https://i.scdn.co/image/ab6761610000e5ebbbea577c2181208f77d1fb49,Rap,2006,m,mx,18,
-2Pac,https://i.scdn.co/image/ab6761610000e5eb8b010945f9d218d19d255f9b,Rap,1991,m,us,1,
-Childish Gambino,https://i.scdn.co/image/ab6761610000e5eb3ef779aa0d271adb2b6a3ded,Rap,2011,m,us,1,
-The Neighbourhood,https://i.scdn.co/image/ab6761610000e5ebdf0b5ac84376a0a4b2166816,Rap,2013,m,us,5,
-50 Cent,https://i.scdn.co/image/dd031b9c5d1b6eba4a691cd89c954255aae787f2,Rap,2003,m,us,1,
-Polo G,https://i.scdn.co/image/ab6761610000e5ebdec41838906c58af1c29c9da,Rap,2019,m,us,1,
-The Kid LAROI,https://i.scdn.co/image/ab6761610000e5eb152a7ee8fc0469aaeb015f02,Rap,2020,m,au,1,
-Gorillaz,https://i.scdn.co/image/ab6761610000e5eb7284ae7f774c3b71a6e5ce64,Rap,2001,x,uk,4,
-Lorde,https://i.scdn.co/image/ab6761610000e5ebc4902f080d3620b3e6da80c3,Rap,2013,f,nz,1,
-Camilo,https://i.scdn.co/image/ab6761610000e5eb4afae4c45be4b6e04e28874d,Rap,2020,m,co,1,
-Usher,https://i.scdn.co/image/ab6761610000e5eb2e42d906f4f9f672359e7379,Rap,1994,m,us,1,
-Becky G,https://i.scdn.co/image/ab6761610000e5eb653ae0ed6e7bef49386b2f93,Rap,2019,f,us,1,
-Jhay Cortez,https://i.scdn.co/image/ab6761610000e5ebbbeb7f1f3a9b011b73156dc0,Rap,2018,m,pr,1,
-Alessia Cara,https://i.scdn.co/image/ab6761610000e5ebe74b7398634a741f74858dc7,Rap,2015,f,ca,1,
-Skrillex,https://i.scdn.co/image/ab6761610000e5eb3b4b7eaaf58759b58626de37,Rap,2010,m,us,1,
-David Bowie,https://i.scdn.co/image/ab6761610000e5ebb78f77c5583ae99472dd4a49,Rap,1967,m,uk,1,
-Mariah Carey,https://i.scdn.co/image/ab6761610000e5eb7a5ff0c75fad74b2352f3680,Rap,1990,f,us,1,
-Hozier,https://i.scdn.co/image/ab6761610000e5eb9ba4d95b74bacff4d5747f61,Rap,2014,m,ie,1,
-Big Sean,https://i.scdn.co/image/ab6761610000e5eb89dccc0a0b3d818c8d5fb711,Rap,2011,m,us,1,
-Ava Max,https://i.scdn.co/image/ab6761610000e5eb34669af44674f43cb34bf84b,Rap,2020,f,us,1,
-French Montana,https://i.scdn.co/image/ab6761610000e5eb4817f2b6ca81e55e2c1f79d9,Rap,2008,m,us,1,
-Meek Mill,https://i.scdn.co/image/ab6761610000e5eb238b2a30c741d42a4c91b7b7,Rap,2011,m,us,1,
-Frank Sinatra,https://i.scdn.co/image/fc4e0f474fb4c4cb83617aa884dc9fd9822d4411,Rap,1946,m,us,1,
-Foo Fighters,https://i.scdn.co/image/ab6761610000e5eb9a43b87b50cd3d03544bb3e5,Rap,1995,m,us,6,
-The Killers,https://i.scdn.co/image/ab6761610000e5eb207b21f3ed0ee96adce3166a,Rap,2004,m,us,4,
-Luke Combs,https://i.scdn.co/image/ab6761610000e5eb3bb53b78b41e9fd4fae79750,Rap,2017,m,us,1,
-blink-182,https://i.scdn.co/image/ab6761610000e5eb0721a0eb3b04c76895b53a8d,Rap,1994,m,us,3,
-Tory Lanez,https://i.scdn.co/image/ab6761610000e5ebbd5d3e1b363c3e26710661c3,Rap,2016,m,ca,1,
-U2,https://i.scdn.co/image/ab6761610000e5eb4ecf08103fb2de53f1aabc39,Rap,1980,m,ie,4,
-Led Zeppelin,https://i.scdn.co/image/207803ce008388d3427a685254f9de6a8f61dc2e,Rap,1969,m,uk,4,
-Meghan Trainor,https://i.scdn.co/image/ab6761610000e5ebd19673ac57b9693ae943837e,Rap,2015,f,us,1,
-Daft Punk,https://i.scdn.co/image/ab6761610000e5eb96d66c60658005885d1135ce,Rap,1997,m,fr,2,
-Radiohead,https://i.scdn.co/image/ab6761610000e5eba03696716c9ee605006047fd,Rap,1993,m,us,5,
-John Legend,https://i.scdn.co/image/ab6761610000e5eb8f2bf07f58f571ae430ff1be,Rap,2003,m,us,1,
-Manuel Turizo,https://i.scdn.co/image/ab6761610000e5ebe6ff47d799219745add4c754,Rap,2019,m,co,1,
-Rae Sremmurd,https://i.scdn.co/image/ab6761610000e5eb7cf71f9d765ad1e0f1d27ab3,Rap,2015,m,us,2,
-Roddy Ricch,https://i.scdn.co/image/ab6761610000e5eb9c30c6b69a55d48decd71600,Rap,2018,m,us,1,
-Rita Ora,https://i.scdn.co/image/ab6761610000e5eb484ddaa955c4c03a46ef8d8d,Rap,2012,f,uk,1,
-System Of A Down,https://i.scdn.co/image/ab6761610000e5eb60063d3451ade8f9fab397c2,Rap,1998,m,us,4,
-Playboi Carti,https://i.scdn.co/image/ab6761610000e5eb504ff11d788162fbf8078654,Rap,2016,m,us,1,
-Joji,https://i.scdn.co/image/ab6761610000e5eb28f8b68ea703b22fc0c8be11,Rap,2018,m,jp,1,
-The 1975,https://i.scdn.co/image/ab6761610000e5eb592231ad18aab7a47772a958,Rap,2012,m,uk,4,
-Jorge & Mateus,https://i.scdn.co/image/ab6761610000e5ebd43977ee9db55f8155d3161b,Rap,2007,m,br,2,
-Mumford & Sons,https://i.scdn.co/image/ab6761610000e5eb63065c48a5e377efda61f229,Rap,2009,m,uk,4,
-Muse,https://i.scdn.co/image/ab6761610000e5eb02fffd59f8dd3d45b2e7ef30,Rap,1999,m,uk,3,
-Troye Sivan,https://i.scdn.co/image/ab6761610000e5eb002eedc44fefe085daae10e4,Rap,2015,m,au,1,
-Jack Johnson,https://i.scdn.co/image/ab6761610000e5eb9555a0b3231117c8cde1fca7,Rap,2001,m,us,1,
-6ix9ine,https://i.scdn.co/image/ab6761610000e5eb0f9be189941db077530d5ae0,Rap,2017,m,us,1,
-Elvis Presley,https://i.scdn.co/image/ab6761610000e5eb9a93e273380982dff84c0d7c,Rap,1956,m,us,1,
-Snoop Dogg,https://i.scdn.co/image/ab6761610000e5eb9a398209a4ef3360dce2dec4,Rap,1993,m,us,1,
-Gucci Mane,https://i.scdn.co/image/ab6761610000e5ebb9b77f64bd278ffde2c94428,Rap,2005,m,us,1,
-The Notorious B.I.G.,https://i.scdn.co/image/1b4858fbd24046a81cace5ee18d19c868262b91f,Rap,1994,m,us,1,
-Bazzi,https://i.scdn.co/image/ab6761610000e5ebe016d0d0b7f954032253ea7e,Rap,2018,m,us,1,
-Christina Aguilera,https://i.scdn.co/image/ab6761610000e5eb3f18af91a6b9ef2a6791c09d,Rap,1999,f,us,1,
-Don Omar,https://i.scdn.co/image/ab6761610000e5eb86d04a127819956aef61e351,Rap,2003,m,pr,1,
-Paramore,https://i.scdn.co/image/ab6761610000e5eb9516c288651f7db15bad1beb,Rap,2005,x,us,3,
-Swae Lee,https://i.scdn.co/image/ab6761610000e5eb1489b2b245307f3bc5d51291,Rap,2018,m,us,1,
-Paulo Londra,https://i.scdn.co/image/ab6761610000e5eba8d1d46523149557e9df850f,Rap,2019,m,ar,1,
-Felix Jaehn,https://i.scdn.co/image/ab6761610000e5ebe7edcca41d2f5df425f3b34a,Rap,2018,m,de,1,
-Christian Nodal,https://i.scdn.co/image/ab6761610000e5eb901f63bb5259807626e0f31a,Rap,2017,m,mx,1,
-Bon Jovi,https://i.scdn.co/image/ab6761610000e5eb0b8d424042d51bb8ee412ffe,Rap,1984,m,us,5,
-Melanie Martinez,https://i.scdn.co/image/ab6761610000e5eb2d9f656f3f15165cd5cf8e5a,Rap,2015,f,us,1,
-Hailee Steinfeld,https://i.scdn.co/image/ab6761610000e5eb3b575926851ffbfc337e271b,Rap,2016,f,us,1,
-Megan Thee Stallion,https://i.scdn.co/image/ab6761610000e5ebfb87d5f73ea5b7faa3cd9694,Rap,2017,f,us,1,
-Slipknot,https://i.scdn.co/image/ab6761610000e5ebf0a5deed446cf15482289b9d,Rap,1999,m,us,5,
-Henrique & Juliano,https://i.scdn.co/image/ab6761610000e5eb3f3fa33960346d34155cc631,Rap,2012,m,br,2,
-Dalex,https://i.scdn.co/image/ab6761610000e5ebd1d344eba13e66f0cef274b6,Rap,2014,m,us,1,
-Labrinth,https://i.scdn.co/image/ab6761610000e5eb72a7311386470c1fbf81734d,Rap,2012,m,uk,1,
-Oasis,https://i.scdn.co/image/ab6761610000e5eb89aff1367f1c02cfe17dd0b3,Rap,1994,m,uk,4,
-Tame Impala,https://i.scdn.co/image/ab6761610000e5eb90357ef28b3a012a1d1b2fa2,Rap,2010,m,au,5,
-The Lumineers,https://i.scdn.co/image/ab6761610000e5ebc79f78fd72a3e5faf699a8be,Rap,2012,x,us,5,
-Julia Michaels,https://i.scdn.co/image/ab6761610000e5eb9c3cf97e7f1fb6555d5208b7,Rap,2017,f,us,1,
-Sean Paul,https://i.scdn.co/image/ab6761610000e5eb60c3e9abe7327c0097738f22,Rap,2000,m,jm,1,
-Alicia Keys,https://i.scdn.co/image/ab6761610000e5eb660e5023d1e67bdbb285da25,Rap,2001,f,us,1,
-Cheat Codes,https://i.scdn.co/image/ab6761610000e5ebcb544b5e96678d7b37f46d14,Rap,2021,m,us,3,
-Ne-Yo,https://i.scdn.co/image/ab6761610000e5eba213bd0d2152db1ce9c8da70,Rap,2016,m,us,1,
-Jess Glynne,https://i.scdn.co/image/ab6761610000e5eb7d800f202dd15af03179876b,Rap,2015,f,uk,1,
-Disclosure,https://i.scdn.co/image/ab6761610000e5ebdb837f585ebd024a0221a814,Rap,2013,m,uk,2,
-Justin Quiles,https://i.scdn.co/image/ab6761610000e5eb72c5328e1f38d3697dd14590,Rap,2015,m,us,1,
-Florida Georgia Line,https://i.scdn.co/image/ab6761610000e5ebaa2d9bd207a62adc3edf6631,Rap,2012,m,us,2,
-Kings of Leon,https://i.scdn.co/image/ab6761610000e5eb8fbd402cfd8cc6ce926a2229,Rap,2003,m,us,4,
-Gusttavo Lima,https://i.scdn.co/image/ab6761610000e5eb08922485b69454372c9275c8,Rap,2009,m,br,1,
-TWICE,https://i.scdn.co/image/ab6761610000e5eb464ef353e1a7c72f67de8158,Rap,2016,f,kr,9,
-Tove Lo,https://i.scdn.co/image/ab6761610000e5eb9171e0a70190a6de61a47832,Rap,2014,f,se,1,
-Fifth Harmony,https://i.scdn.co/image/ab6761610000e5eb5acb3cb0a8b87d3952738b97,Rap,2014,f,us,4,
-Zion & Lennox,https://i.scdn.co/image/ab6761610000e5eb27ff7e14b21618be77c64e0d,Rap,2004,m,pr,2,
-6LACK,https://i.scdn.co/image/ab6761610000e5eb7a528fcb316c5b58d6be0511,Rap,2016,m,us,1,
-Alesso,https://i.scdn.co/image/ab6761610000e5ebb5712a1a45f469f906023e7f,Rap,2015,m,se,1,
-Chance the Rapper,https://i.scdn.co/image/ab6761610000e5ebc654cd5b897dea358f9e3da1,Rap,2012,m,us,1,
-Luke Bryan,https://i.scdn.co/image/ab6761610000e5eb0a0118141480bfeab409f764,Rap,2007,m,us,1,
-Five Finger Death Punch,https://i.scdn.co/image/ab6761610000e5eb376e2b4db1209bc343daaf35,Rap,2007,m,us,5,
-Natti Natasha,https://i.scdn.co/image/ab6761610000e5eb79ab63d9d39c26f456e11db5,Rap,2012,f,do,1,
-Morgan Wallen,https://i.scdn.co/image/ab6761610000e5eb0da5abcc5c0aef0c3cc573d0,Rap,2018,m,us,1,
-The Script,https://i.scdn.co/image/ab6761610000e5ebf01bf904b446e4a043acb867,Rap,2008,m,ie,3,
-ABBA,https://i.scdn.co/image/ab6761610000e5eb118de0c58b11e1fd54b66640,Rap,1973,x,se,4,
-Madonna,https://i.scdn.co/image/ab6761610000e5eb720c7a54c11c7c21762a65d1,Rap,1983,f,us,1,
-ZÈ Neto & Cristiano,https://i.scdn.co/image/ab6761610000e5ebcae88dfecbbf4e2189c2da77,Rap,2012,m,br,2,
-Florence + The Machine,https://i.scdn.co/image/ab6761610000e5ebe3c37f869b830d1cf1ec829a,Rap,2009,x,uk,4,
-Jason Mraz,https://i.scdn.co/image/ab6761610000e5ebce8d5be6690c6964069ab8e0,Rap,2002,m,us,1,
-Galantis,https://i.scdn.co/image/ab6761610000e5eb2ca90cb37bf1557d385b9d48,Rap,2015,m,se,2,
-Morat,https://i.scdn.co/image/ab6761610000e5eb6847cff2c1f6d85b6455ef23,Rap,2016,m,co,4,
-Creedence Clearwater Revival,https://i.scdn.co/image/ab6761610000e5ebd2e2b04b7ba5d60b72f54506,Rap,1968,m,us,4,
-Piso 21,https://i.scdn.co/image/ab6761610000e5ebf9d0bb4d6fa234f2616321ce,Rap,2014,m,co,4,
-Nickelback,https://i.scdn.co/image/ab6761610000e5eb4200380f93aab2e4b85c8beb,Rap,1996,m,ca,4,
-Whitney Houston,https://i.scdn.co/image/ab6761610000e5ebcd9f60ab57585bf3b77ecc51,Rap,1985,f,us,1,
-Glee Cast,https://i.scdn.co/image/5b5a95f260ac429405e871777e3c17c9126c30ad,Rap,2009,x,us,1,
-Bruce Springsteen,https://i.scdn.co/image/ab6761610000e5ebd0cb49906c4f8080a5813d95,Rap,1973,m,us,1,
-Alok,https://i.scdn.co/image/ab6761610000e5eb83c76c9545193b431a44a8f6,Rap,2017,m,us,1,
-Lenny Tav·rez,https://i.scdn.co/image/ab6761610000e5eb3da6d515e399ae789ef563f3,Rap,2021,m,pr,1,
-Kevin Gates,https://i.scdn.co/image/ab6761610000e5eb6899e286f75ca723f5d961d8,Rap,2009,m,us,1,
-Jack Harlow,https://i.scdn.co/image/ab6761610000e5ebed3a04c76cbc92b97f59c3c0,Rap,2016,m,us,1,
-Kehlani,https://i.scdn.co/image/ab6761610000e5ebd2657bcafcb300d90816523f,Rap,2014,f,us,1,
-Rammstein,https://i.scdn.co/image/ab6761610000e5eb39a93f3d5cdbcdf4a2ce88e5,Rap,1995,m,de,6,
-Avril Lavigne,https://i.scdn.co/image/ab6761610000e5ebb0472fb072403737786ac79a,Rap,2002,f,ca,1,
-Niall Horan,https://i.scdn.co/image/ab6761610000e5eb80c7323d8b64397c278f86df,Rap,2017,m,ie,1,
-Macklemore & Ryan Lewis,https://i.scdn.co/image/ab6761610000e5eb3c2f1ba4c1a3de141e63d775,Rap,2012,m,us,2,
-Jonas Brothers,https://i.scdn.co/image/ab6761610000e5eb142120beb4014a7f8abd0cf0,Rap,2006,m,us,3,
-My Chemical Romance,https://i.scdn.co/image/ab6761610000e5eb9c00ad0308287b38b8fdabc2,Rap,2002,m,us,5,
-Arcangel,https://i.scdn.co/image/ab6761610000e5eb094836334a3e352ba839fefc,Rap,2008,m,us,1,
-Kane Brown,https://i.scdn.co/image/ab6761610000e5eb0cd7da117d4a7b084ef3ac9b,Rap,2016,m,us,1,
-Bryson Tiller,https://i.scdn.co/image/ab6761610000e5eb078fdd734b7f0aa782328428,Rap,2015,m,us,1,
-Capital Bra,https://i.scdn.co/image/ab6761610000e5eb0732c998ff1a2a602b2eefe8,Rap,2016,m,de,1,
-Lil Pump,https://i.scdn.co/image/ab6761610000e5eb726e109c49131b6ed60ae8a0,Rap,2017,m,us,1,
-Bring Me The Horizon,https://i.scdn.co/image/ab6761610000e5eb07603145b500ea5408074053,Rap,2006,m,us,5,
-Alejandro Fern·ndez,https://i.scdn.co/image/ab6761610000e5eb452691cfa37fdd5b3417ed0d,Rap,1992,m,mx,1,
-Kelly Clarkson,https://i.scdn.co/image/ab6761610000e5eb118cd1f3261f08d957105996,Rap,2003,f,us,1,
-Wisin,https://i.scdn.co/image/ab6761610000e5eb3553659bf06fbaa0a6c313d1,Rap,2004,m,pr,1,
-Vance Joy,https://i.scdn.co/image/ab6761610000e5eb8f074ec8c25406680bf26422,Rap,2014,m,au,1,
-Ryan Lewis,https://i.scdn.co/image/ab6761610000e5eb6396e61aab044c5d655f115c,Rap,2012,m,us,1,
-Thomas Rhett,https://i.scdn.co/image/ab6761610000e5ebfabe24b83a375fa379244b89,Rap,2013,m,us,1,
-Johnny Cash,https://i.scdn.co/image/ab6761610000e5eb152cf48cf9541c7061570857,Rap,1957,m,us,1,
-NAV,https://i.scdn.co/image/ab6761610000e5ebf276b6e4b25bb6fb7b942ab2,Rap,2017,m,ca,1,
-Jennifer Lopez,https://i.scdn.co/image/ab6761610000e5ebe53dfc65e7e9ef8360bd1f48,Rap,1999,f,us,1,
-James Bay,https://i.scdn.co/image/ab6761610000e5eb0f2ac623808c5f14ac7a87e5,Rap,2014,m,uk,1,
-Lil Tjay,https://i.scdn.co/image/ab6761610000e5ebbc1085cf5d08b85cd1836ca2,Rap,2019,m,us,1,
-YG,https://i.scdn.co/image/ab6761610000e5eba11093dfc6bc303eb550604f,Rap,2011,m,us,1,
-YNW Melly,https://i.scdn.co/image/ab6761610000e5eb4da4a196cc973f65b68fe67b,Rap,2018,m,us,1,
-Amy Winehouse,https://i.scdn.co/image/ab6761610000e5eb2ceb023b10da17590878e88c,Rap,2003,f,uk,1,
-Stevie Wonder,https://i.scdn.co/image/c59faacbed7aa770266bad048660810eca204108,Rap,1962,m,us,1,
-Pearl Jam,https://i.scdn.co/image/ab6761610000e5eb122d1145d880736383742ebc,Rap,1991,m,us,5,
-Duki,https://i.scdn.co/image/ab6761610000e5ebe3a604976226d95cf7f3ab01,Rap,2019,m,ar,1,
-Lil Tecca,https://i.scdn.co/image/ab6761610000e5ebf9b1521167f731d99bd51a07,Rap,2019,m,us,1,
-Disturbed,https://i.scdn.co/image/ab6761610000e5eb5ce90284f506122159649e81,Rap,2000,m,us,4,
-Glass Animals,https://i.scdn.co/image/ab6761610000e5eb66b27eccb69756f8eceabc23,Rap,2014,m,uk,4,
-Hans Zimmer,https://i.scdn.co/image/ab6761610000e5eb371632043a8c12bb7eeeaf9d,Rap,1989,m,de,1,
-Aerosmith,https://i.scdn.co/image/ab6761610000e5ebc5733401b4689b2064458e7d,Rap,1973,m,us,5,
-Lil Skies,https://i.scdn.co/image/ab6761610000e5eb1c91ee64878b36dcee243160,Rap,2017,m,us,1,
-Dr. Dre,https://i.scdn.co/image/83d2489cade1dadcdc533ddbcd74993d0ca6d4cb,Rap,1999,m,us,1,
-Flume,https://i.scdn.co/image/ab6761610000e5ebdcbf7ddf047dd267e4de8978,Rap,2012,m,au,1,
-Miguel,https://i.scdn.co/image/ab6761610000e5eb02eeb5305fa7bdd9ddca42fc,Rap,2010,m,us,1,
-Tones And I,https://i.scdn.co/image/ab6761610000e5ebc468ecc742697a09bd389ff7,Rap,2021,m,au,1,
-Backstreet Boys,https://i.scdn.co/image/ab6761610000e5eb8bb4e2d7bba236bf79f3c18a,Rap,1996,m,us,5,
-Nio Garcia,https://i.scdn.co/image/ab6761610000e5eb8d1c47252032fd1e42e32fb0,Rap,2020,m,pr,1,
-Wisin & Yandel,https://i.scdn.co/image/ab6761610000e5eb812644afc20cab37c72a8ba9,Rap,2000,m,pr,2,
-Man·,https://i.scdn.co/image/ab6761610000e5eb152dcec8175d19fb12eeb8e0,Rap,1990,m,mx,4,
-Kesha,https://i.scdn.co/image/ab6761610000e5ebf271138f95fbe8188d909d50,Rap,2010,f,us,1,
-Phil Collins,https://i.scdn.co/image/31fbe64783eb5d493161640bd599dceafc615c6d,Rap,1981,m,uk,1,
-Akon,https://i.scdn.co/image/ab6761610000e5eba78e61963a85ee2a4cbf3587,Rap,2005,m,us,1,
-Jason Aldean,https://i.scdn.co/image/ab6761610000e5ebf7b3f3710e285bf79a953af8,Rap,2005,m,us,1,
-Three Days Grace,https://i.scdn.co/image/ab6761610000e5eb3626be769b238e2a35010613,Rap,2003,m,us,4,
-Jeremih,https://i.scdn.co/image/ab6761610000e5eb3af4da599e9d15f3b90f7c44,Rap,2009,m,us,1,
-Matheus & Kauan,https://i.scdn.co/image/ab6761610000e5eb9f00a411505f5c9de4e81f11,Rap,2013,m,br,2,
-Eagles,https://i.scdn.co/image/ab6761610000e5eb0767e116a2307495e37cd7fb,Rap,1972,m,us,5,
-Dan + Shay,https://i.scdn.co/image/ab6761610000e5eb1e6f4e64dc26772155d61ce2,Rap,2014,m,us,2,
-Yandel,https://i.scdn.co/image/ab6761610000e5eb812644afc20cab37c72a8ba9,Rap,2000,m,pr,1,
-24kGoldn,https://i.scdn.co/image/ab6761610000e5ebe32a61d17ecbe732a99d6d92,Rap,2019,m,us,1,
-Avenged Sevenfold,https://i.scdn.co/image/ab6761610000e5eb79f3717a5219e95296bfb56d,Rap,2002,m,us,5,
-Billy Joel,https://i.scdn.co/image/ab6761610000e5ebc152fc4fed805e8a82ed950b,Rap,1971,m,us,1,
-The Strokes,https://i.scdn.co/image/ab6761610000e5eb64d74f5985cb66b2f7b60e93,Rap,2001,m,us,5,
-The Offspring,https://i.scdn.co/image/ab6761610000e5ebd7c5bbf32459922a72ec0d31,Rap,1989,m,us,4,
-Wesley Safad„o,https://i.scdn.co/image/ab6761610000e5eb471f55511bcf90942ecc02cd,Rap,2012,m,br,1,
-Steve Aoki,https://i.scdn.co/image/ab6761610000e5eb7c4240b7951da248f3404e42,Rap,2010,m,us,1,
-Prince Royce,https://i.scdn.co/image/ab6761610000e5ebbd046575b09d8ec4865dad62,Rap,2010,m,us,1,
-George Ezra,https://i.scdn.co/image/ab6761610000e5ebfdc751d4099c1ffddb2a0e45,Rap,2014,m,uk,1,
-Jul,https://i.scdn.co/image/ab6761610000e5eb9c3cf97e7f1fb6555d5208b7,Rap,2017,m,fr,1,
-Lin-Manuel Miranda,https://i.scdn.co/image/84dc87cca456089fc5cfa2d7593d9d960ca4553f,Rap,2008,m,us,1,
-Jessie J,https://i.scdn.co/image/ab6761610000e5ebf416e763269013a66d7fe5a2,Rap,2017,f,uk,1,
-CÈline Dion,https://i.scdn.co/image/ab6761610000e5eb357f2a87bf92208767a48e7e,Rap,1987,f,ca,1,
-Lil Mosey,https://i.scdn.co/image/ab6761610000e5eb6363ba88283df039d680d42a,Rap,2018,m,us,1,
-Ninho,https://i.scdn.co/image/ab6761610000e5ebc968daf72ace243d8edcbfc4,Rap,2014,m,fr,1,
-benny blanco,https://i.scdn.co/image/ab6761610000e5eb766d2fb038033d3fbde69f89,Rap,2018,m,us,1,
-Anderson .Paak,https://i.scdn.co/image/ab6761610000e5eb96287bd47570ff13f0c01496,Rap,2014,m,us,1,
-Aventura,https://i.scdn.co/image/ab6761610000e5eb4cd0464ef7d8eb8521f72dd8,Rap,1999,m,us,4,
-2 Chainz,https://i.scdn.co/image/ab6761610000e5ebf556662d187b9191c421be1c,Rap,2010,m,us,1,
-Alejandro Sanz,https://i.scdn.co/image/ab6761610000e5eb45b242f20217176f7e83857b,Rap,1991,m,es,1,
-Ricardo Arjona,https://i.scdn.co/image/ab6761610000e5eb9b7e4f8e868dc2adfe6c3f4d,Rap,1992,m,gt,1,
-Passenger,https://i.scdn.co/image/ab6761610000e5ebdbd2f0ea9bcda93594152d7d,Rap,2007,m,uk,1,
-Calibre 50,https://i.scdn.co/image/ab6761610000e5ebd2d4c8c4ed1c2763bb1e703d,Rap,2010,m,mx,4,
-Ricky Martin,https://i.scdn.co/image/ab6761610000e5eb5adf5dd58debcc7290d79234,Rap,1991,m,pr,1,
-H.E.R.,https://i.scdn.co/image/ab6761610000e5eb7b05445e212ac49d9ed4c310,Rap,2016,f,us,1,
-Lukas Graham,https://i.scdn.co/image/ab6761610000e5eb5779a85774a3e2a2a5000254,Rap,2012,m,dk,1,
-Lizzo,https://i.scdn.co/image/ab6761610000e5ebf616fa3045d6a1912e43bcd3,Rap,2014,f,us,1,
-Trey Songz,https://i.scdn.co/image/ab6761610000e5ebfd7cca32a58a9bb263fb5c4a,Rap,2005,m,us,1,
-CNCO,https://i.scdn.co/image/ab6761610000e5ebae9279fc395fec19f47872d3,Rap,2016,m,us,5,
-Cartel De Santa,https://i.scdn.co/image/ab6761610000e5ebbd172041a059e4b6e46e2cfc,Rap,2002,m,mx,2,
-Mark Ronson,https://i.scdn.co/image/ab6761610000e5eb105cc9628c315b29d299fbb4,Rap,2003,m,uk,1,
-Don Toliver,https://i.scdn.co/image/ab6761610000e5ebb99b82c644fb2a558dc28cd4,Rap,2018,m,us,1,
-Pentatonix,https://i.scdn.co/image/ab6761610000e5eb2b9297b71a8bf3deef948e32,Rap,2012,x,us,5,
-Foster The People,https://i.scdn.co/image/ab6761610000e5ebb5a3c9a9ca40824e0f44ea78,Rap,2011,m,us,3,
-Train,https://i.scdn.co/image/ab6761610000e5eb9ac5323dcebb1c7b80dcaf64,Rap,1998,m,us,7,
-Pablo Albor·n,https://i.scdn.co/image/ab6761610000e5ebbc08e6f94a9b13d907accdd2,Rap,2011,m,es,1,
-Marc Anthony,https://i.scdn.co/image/ab6761610000e5ebea64d3b81527134c0d65f341,Rap,1991,m,us,1,
-Arijit Singh,https://i.scdn.co/image/ab6761610000e5ebb2b70762d89a9d76c772b3b6,Rap,2012,m,in,1,
-Daniel Caesar,https://i.scdn.co/image/ab6761610000e5eb718d4447dae6ba98072371f2,Rap,2015,m,ca,1,
-Fetty Wap,https://i.scdn.co/image/ab6761610000e5eb8ffb1b02e4435c5176b28ed2,Rap,2015,m,us,1,
-Bob Dylan,https://i.scdn.co/image/ab6772690000c46cf79ca05dcc1581c712bf3658,Rap,1962,m,us,1,
-Rex Orange County,https://i.scdn.co/image/ab6761610000e5eb50013041518600229448921d,Rap,2016,m,uk,1,
-Maiara & Maraisa,https://i.scdn.co/image/ab6761610000e5eb5c4fb6e84b60ed2ba517f815,Rap,2014,f,br,2,
-Dire Straits,https://i.scdn.co/image/54a86ecf1de16b17e2ed000a9ca8a1590c9a3b80,Rap,1978,m,uk,4,
-Bee Gees,https://i.scdn.co/image/1d5a05673975ba0c378cd280344e000b0b865620,Rap,1965,m,uk,3,
-James Blunt,https://i.scdn.co/image/ab6761610000e5eb26a02137047e11808e913c33,Rap,2004,m,uk,1,
-Bryan Adams,https://i.scdn.co/image/ab6761610000e5eb8009ff2c16ef26e06e4d6623,Rap,1980,m,ca,1,
-Lil Durk,https://i.scdn.co/image/ab6761610000e5eb6a61d3a33451c301dbb8edb3,Rap,2012,m,us,1,
-Lost Frequencies,https://i.scdn.co/image/ab6761610000e5ebbc210a69deab4609b29209af,Rap,2016,m,be,1,
-Quavo,https://i.scdn.co/image/ab6761610000e5eb183948c3e9f7b459b2d6cd7a,Rap,2017,m,us,1,
-R3HAB,https://i.scdn.co/image/ab6761610000e5eb67828d8c05c5e2acf8f03e1e,Rap,2017,m,nl,1,
-Jeremy Zucker,https://i.scdn.co/image/ab6761610000e5eb97e6df979e0c39443a6aa0e4,Rap,2017,m,us,1,
-Alec Benjamin,https://i.scdn.co/image/ab6761610000e5eb72c4ca30476ce87954961a10,Rap,2018,m,us,1,
-Boyce Avenue,https://i.scdn.co/image/ab6761610000e5ebaa5fdba75703df74c3be99a7,Rap,2009,m,us,3,
-ScHoolboy Q,https://i.scdn.co/image/ab6761610000e5ebe697a7ddf7af3a306428fa73,Rap,2011,m,us,1,
-Ski Mask The Slump God,https://i.scdn.co/image/ab6761610000e5ebc422e139e232c73565c7c3d6,Rap,2018,m,us,1,
-John Williams,https://i.scdn.co/image/ab6761610000e5eb86b13e4d2e65ebf694384ef4,Rap,1885,m,us,1,
-MÂneskin,https://i.scdn.co/image/ab6761610000e5ebb760340fd14e8ea7e6775253,Rap,2017,x,it,4,
-Outkast,https://i.scdn.co/image/ab6761610000e5eb0cb3f95b9f8f7337e135a925,Rap,1994,m,us,2,
-ROSALÕA,https://i.scdn.co/image/ab6761610000e5ebd7bb678bef6d2f26110cae49,Rap,2017,f,es,1,
-Bizarrap,https://i.scdn.co/image/ab6761610000e5eb14707b9c34a4b2b6a3d38316,Rap,2017,m,ar,1,
-LANY,https://i.scdn.co/image/ab6761610000e5eb417454f70dfe686c18caeb2a,Rap,2017,m,us,3,
-Sam Hunt,https://i.scdn.co/image/ab6761610000e5ebcfe679f9692377accaa9cec7,Rap,2014,m,us,1,
-PARTYNEXTDOOR,https://i.scdn.co/image/ab6761610000e5eb4e3dee8baac75dad1fea791e,Rap,2013,m,ca,1,
-Danny Ocean,https://i.scdn.co/image/ab6761610000e5eb5f8bb457ee2815cc276ddb9d,Rap,2019,m,ve,1,
-Disney,https://i.scdn.co/image/ab6761610000e5ebc698d53b77db34027b00f853,Rap,2006,x,us,1,
-JhenÈ Aiko,https://i.scdn.co/image/ab6761610000e5eb9f9eab124df9f1ff148ebfe5,Rap,2013,f,us,1,
-Cage The Elephant,https://i.scdn.co/image/ab6761610000e5eb7d994f7e137c10249de19455,Rap,2008,m,us,6,
-Rels B,https://i.scdn.co/image/ab6761610000e5eb168aaae1f668397b95bc25be,Rap,2015,m,es,1,
-Offset,https://i.scdn.co/image/ab6761610000e5eb0eb6434fb8d560e3fe0a3d55,Rap,2017,m,us,1,
-Charli XCX,https://i.scdn.co/image/ab6761610000e5eb576cb43281160e345f728b71,Rap,2013,f,uk,1,
-Dean Lewis,https://i.scdn.co/image/ab6761610000e5eb99b860f154b349bd0a2368c3,Rap,2019,m,au,1,
-Liam Payne,https://i.scdn.co/image/ab6761610000e5eb6b873bf2d3bc2ed6401325c4,Rap,2019,m,uk,1,
-Conan Gray,https://i.scdn.co/image/ab6761610000e5ebd3a1193ab04e0fb2b297e619,Rap,2020,m,us,1,
-Hillsong Worship,https://i.scdn.co/image/ab6761610000e5eb3fa351bcd2f7a8f06a7bc3ba,Rap,1992,m,au,11,
-Sigala,https://i.scdn.co/image/ab6761610000e5eb8422afa6e7b0c977636bfebd,Rap,2018,m,uk,1,
-Blake Shelton,https://i.scdn.co/image/ab6761610000e5eb2a4a5dc761b33ba726404539,Rap,2001,m,us,1,
-ILLENIUM,https://i.scdn.co/image/ab6761610000e5eb6b5fbf615ada187ce5e425c8,Rap,2016,m,us,1,
-Nelly,https://i.scdn.co/image/3677690af58abb70a5c5fd58d69db4d1ad705d4f,Rap,2000,m,us,1,
-Summer Walker,https://i.scdn.co/image/ab6761610000e5eb4714179bf23941c0aec4b474,Rap,2018,f,us,1,
-The Vamps,https://i.scdn.co/image/ab6761610000e5eb77ef80571a40d9d19cf52208,Rap,2014,m,uk,4,
-alt-J,https://i.scdn.co/image/ab6761610000e5eb3fb5214e667e278a20878a6b,Rap,2012,m,uk,3,
-Rudimental,https://i.scdn.co/image/ab6761610000e5eb7754288b5354d082e84bc917,Rap,2013,m,uk,4,
-BROCKHAMPTON,https://i.scdn.co/image/ab6761610000e5ebdc3c21f68fa721ebcf439dae,Rap,2016,m,us,17,
-Lil Yachty,https://i.scdn.co/image/ab6761610000e5ebbf4a90e0755532ddfbe0fe11,Rap,2016,m,us,1,
-Bibi Blocksberg,https://i.scdn.co/image/ab6761610000e5eb12733dec1314ca5c0e2ddb3f,Rap,1980,x,us,1,
-Marvin Gaye,https://i.scdn.co/image/cf79bd3e5c787e2ec152eeb1ea5538b0d4cf1434,Rap,1961,m,us,1,
-Mike Posner,https://i.scdn.co/image/ab6761610000e5eb828ec647d02336d097280341,Rap,2009,m,us,1,
-The Police,https://i.scdn.co/image/1f73a61faca2942cd5ea29c2143184db8645f0b3,Rap,1978,m,uk,3,
-The Black Keys,https://i.scdn.co/image/ab6761610000e5ebae537808bd15be9f7031e99b,Rap,1999,m,us,2,
-Jax Jones,https://i.scdn.co/image/ab6761610000e5eb866f2a7fc5dffca7c22e5b7b,Rap,2019,m,uk,1,
-Iron Maiden,https://i.scdn.co/image/ab6761610000e5ebdc52c8e309e46aa8430a0fa0,Rap,1980,m,uk,6,
-Armin van Buuren,https://i.scdn.co/image/ab6761610000e5ebcb523e707ad2402a3af78afc,Rap,2003,m,nl,1,
-Zac Brown Band,https://i.scdn.co/image/ab6761610000e5eb12ceb4992010d61f30078e24,Rap,2008,m,us,8,
-Chris Stapleton,https://i.scdn.co/image/ab6761610000e5eba0c87c8f329b436eac8b9784,Rap,2015,m,us,1,
-Maren Morris,https://i.scdn.co/image/ab6761610000e5eb55d1c6092ceb9ce09c32ec5e,Rap,2017,f,us,1,
-Rise Against,https://i.scdn.co/image/ab6761610000e5eb8e19de59bac2628eb8929156,Rap,2003,m,us,4,
-Carlos Vives,https://i.scdn.co/image/ab6761610000e5eb5fd6eb73c6f13b82e5f0d2ed,Rap,1994,m,co,1,
-Bon Iver,https://i.scdn.co/image/ab6761610000e5eb67be065df01f37a3880216be,Rap,2008,m,us,1,
-Juanes,https://i.scdn.co/image/ab6761610000e5eb250f1e78d9f8b375b33e5ad6,Rap,2000,m,co,1,
-A$AP Ferg,https://i.scdn.co/image/ab6761610000e5ebf1122f644f19ba22750d2bd8,Rap,2013,m,us,1,
-Skillet,https://i.scdn.co/image/ab6761610000e5eb5796c88846b0bbecb07fccfc,Rap,1996,x,us,4,
-Birdy,https://i.scdn.co/image/ab6761610000e5eb6d428fc500a8ba292aae8eeb,Rap,2011,f,uk,1,
-Destiny's Child,https://i.scdn.co/image/ab6761610000e5ebf75e64532704bd6acf0b4e76,Rap,1998,f,us,3,
-Madison Beer,https://i.scdn.co/image/ab6761610000e5ebf6dd8fddf50fcd117fef100b,Rap,2018,f,us,1,
-Tate McRae,https://i.scdn.co/image/ab6761610000e5eb05b70f90124c7e3ec23d0706,Rap,2017,f,ca,1,
-Soda Stereo,https://i.scdn.co/image/ab6761610000e5eb4a6d2f5e161c011cdb9cef69,Rap,1983,m,ar,3,
-The Doors,https://i.scdn.co/image/ab6761610000e5eb440959e022afc20e819050bd,Rap,1967,m,us,4,
-JP Cooper,https://i.scdn.co/image/ab6761610000e5eb28dd5fb1d08130ecfaaee780,Rap,2017,m,uk,1,
-Papa Roach,https://i.scdn.co/image/ab6761610000e5eb48214edcac1d4e701870592a,Rap,2000,m,us,4,
-Tim McGraw,https://i.scdn.co/image/ab6761610000e5eb194fcad1eb614d9eba7de1cb,Rap,1993,m,us,1,
-Carly Rae Jepsen,https://i.scdn.co/image/ab6761610000e5eb5af2a316744be4d785d5d0c1,Rap,2008,f,ca,1,
-EXO,https://i.scdn.co/image/ab6761610000e5eb465b1b62cf6eca8f851aaabc,Rap,2013,m,kr,9,
-Lunay,https://i.scdn.co/image/ab6761610000e5eb1db8a4795dc8b97abc1f6f11,Rap,2019,m,pr,1,
-Why Don't We,https://i.scdn.co/image/ab6761610000e5eb9160fac7a1ecb8ee89a633ac,Rap,2018,m,us,5,
-Bradley Cooper,https://i.scdn.co/image/ab6761610000e5eb9400a1dccee9f0df97847c0f,Rap,2018,m,us,1,
-The Cure,https://i.scdn.co/image/7ca743e822b80133971ccf5c70fcbd77a4f4f508,Rap,1979,m,uk,5,
-Becky Hill,https://i.scdn.co/image/ab6761610000e5eb04ef17a8d226f7854fc8c62d,Rap,2016,f,uk,1,
-Os Barıes Da Pisadinha,https://i.scdn.co/image/ab6761610000e5eb3a0010ed62a8a628629ddab7,Rap,2019,m,br,2,
-Mau y Ricky,https://i.scdn.co/image/ab6761610000e5eb510a7065a55766ec6206047f,Rap,2019,m,ve,2,
-Mabel,https://i.scdn.co/image/ab6761610000e5ebd7383d5b28dca9207c4ab728,Rap,2019,f,se,1,
-Weezer,https://i.scdn.co/image/ab6761610000e5eb7d6493f1716643ff37ef74da,Rap,1994,m,us,4,
-Korn,https://i.scdn.co/image/ab6761610000e5eb29af2ffb6f4ddd6324f878bc,Rap,1994,m,us,5,
-Eric Church,https://i.scdn.co/image/ab6761610000e5eb16270287e763424c8105beb8,Rap,2006,m,us,1,
-SAINt JHN,https://i.scdn.co/image/ab6761610000e5eb2a1356370e5fce1b25df0ac9,Rap,2018,m,us,1,
-Kali Uchis,https://i.scdn.co/image/ab6761610000e5ebc0e4ab64af28b59e1d49bc86,Rap,2015,f,us,1,
-Noah Cyrus,https://i.scdn.co/image/ab6761610000e5eb2240c4dd98d88f478113f632,Rap,2020,m,us,1,
-Calum Scott,https://i.scdn.co/image/ab6761610000e5eb8d9366c69233e844582cc215,Rap,2018,m,uk,1,
-T.I.,https://i.scdn.co/image/ab6761610000e5eb12057d342f33c61b3768f2bc,Rap,2001,m,us,1,
-RAF Camora,https://i.scdn.co/image/ab6761610000e5ebaf5f61e03f53afbd814020c6,Rap,2008,m,at,1,
-Iggy Azalea,https://i.scdn.co/image/ab6761610000e5eb698a6abf2897a8fc8283cc0c,Rap,2014,f,au,1,
-Paul McCartney,https://i.scdn.co/image/ab6761610000e5eb03bf2fe26e397122faa3d323,Rap,1967,m,uk,1,
-MEDUZA,https://i.scdn.co/image/ab6761610000e5eb0250d43f727734741aad6423,Rap,2019,m,it,3,
-Joan Sebastian,https://i.scdn.co/image/ab6761610000e5eb5686584438168677d344427b,Rap,1990,m,mx,1,
-NLE Choppa,https://i.scdn.co/image/ab6761610000e5eb519065f878e37f78e069c8ad,Rap,2019,m,us,1,
-Journey,https://i.scdn.co/image/ab6761610000e5eba700dbc2c4c3431c1d86b3c1,Rap,1975,m,us,5,
-iann dior,https://i.scdn.co/image/ab6761610000e5eb2aeeeb3db9b941db74d2cfe2,Rap,2019,m,us,1,
-Grupo Firme,https://i.scdn.co/image/ab6761610000e5eb2fc779723cefd8fba3083ce1,Rap,2017,m,mx,7,
-Norah Jones,https://i.scdn.co/image/ab6761610000e5eb38b431c35d7c9f7bbcb2378a,Rap,2002,f,us,1,
-Juan Gabriel,https://i.scdn.co/image/022102638a204d6cb0bb6276ba2656f9c92bf2c3,Rap,1971,m,mx,1,
-Jesse & Joy,https://i.scdn.co/image/ab6761610000e5ebaa2e120075652341890059e9,Rap,2006,x,mx,2,
-Vicente Fern·ndez,https://i.scdn.co/image/ab6761610000e5eb124d1d79d7838c9dd095f9e6,Rap,1958,m,mx,1,
-MARINA,https://i.scdn.co/image/ab6761610000e5eb951d80a1db6ae486a5ce5f36,Rap,2010,f,uk,1,
-Kenny Chesney,https://i.scdn.co/image/ab6761610000e5ebe5289a2a13c374dd34a97247,Rap,1994,m,us,1,
-Depeche Mode,https://i.scdn.co/image/ab6761610000e5eb8ada6bad4c9b276b7fd24874,Rap,1981,m,uk,4,
-Normani,https://i.scdn.co/image/ab6761610000e5eb88df630d05d2a188ecf14777,Rap,2018,f,us,1,
-Simon & Garfunkel,https://i.scdn.co/image/afde2fdd14f8c8ca23393f257e3a369a234a24b6,Rap,1964,m,us,2,
-AminÈ,https://i.scdn.co/image/ab6761610000e5eb1f98760ed5b47b21eaf56e8f,Rap,2017,m,us,1,
-Imanbek,https://i.scdn.co/image/ab6772690000c46c09bedc30a908e616665228df,Rap,2019,m,kz,1,
-The Game,https://i.scdn.co/image/ab6761610000e5eba657aa5506945d264e147244,Rap,2003,m,us,1,
-PNL,https://i.scdn.co/image/ab6761610000e5eb51767bb5e3e3add66699344b,Rap,2015,m,fr,2,
-Breaking Benjamin,https://i.scdn.co/image/ab6761610000e5eb43f5e5cf145e783d5859fb9a,Rap,2002,m,us,5,
-Nick Jonas,https://i.scdn.co/image/ab6761610000e5eb225866e7b8ec2b75733d5a27,Rap,2014,m,us,1,
-Bonez MC,https://i.scdn.co/image/ab6761610000e5eb7a2606eb583bb12fe7a982da,Rap,2012,m,de,1,
-The Beach Boys,https://i.scdn.co/image/ab6761610000e5eb92602f233ce2295748f44603,Rap,1962,m,us,5,
-George Michael,https://i.scdn.co/image/ab6761610000e5ebf8b74c36ba6c31fc0f58783c,Rap,1987,m,uk,1,
-Jon Bellion,https://i.scdn.co/image/ab6761610000e5ebe0c2c39a5bc940f905aa02f3,Rap,2013,m,us,1,
-X Ambassadors,https://i.scdn.co/image/ab6761610000e5eb8f08efd0e601988cd94a3d9c,Rap,2013,m,us,3,
-The xx,https://i.scdn.co/image/ab6761610000e5eb193bce41687d1869f8c7593f,Rap,2009,x,uk,3,
-Stray Kids,https://i.scdn.co/image/ab6761610000e5ebb6501e0b3fcde145838f4724,Rap,2018,m,kr,8,
-KHEA,https://i.scdn.co/image/ab6761610000e5eb16d81001af30e58bd1d7de4f,Rap,2020,m,ar,1,
-bbno$,https://i.scdn.co/image/ab6761610000e5eb6bca811e558018074bbc1b05,Rap,2018,m,ca,1,
-Sabrina Carpenter,https://i.scdn.co/image/ab6761610000e5eb8340df48ff7f6fea7003437e,Rap,2015,f,us,1,
-Christina Perri,https://i.scdn.co/image/ab6761610000e5eb44e7c361649ba5a9dbbdff47,Rap,2011,f,us,1,
-Hillsong UNITED,https://i.scdn.co/image/ab6761610000e5eb955338e9d0a2662fa21a4a02,Rap,1999,m,au,11,
-AJR,https://i.scdn.co/image/ab6761610000e5eb0f3bcc7b3d23e7cbece03012,Rap,2013,m,us,3,
-R.E.M.,https://i.scdn.co/image/ab6761610000e5eb6334ab6a83196f36475ada7f,Rap,1983,m,us,4,
-Matoma,https://i.scdn.co/image/ab6761610000e5ebbe38ea40ebab8967b2c7a81a,Rap,2018,m,no,1,
-Rich The Kid,https://i.scdn.co/image/ab6761610000e5eb059569db8ca2f11e5e7cdf16,Rap,2018,m,us,1,
-C. Tangana,https://i.scdn.co/image/ab6761610000e5ebdfb9d2cb6a43021d9002a10e,Rap,2017,m,es,1,
-Ufo361,https://i.scdn.co/image/ab6761610000e5eb644a971fd6a129e4105e0a80,Rap,2016,m,de,1,
-"Earth, Wind & Fire",https://i.scdn.co/image/9fd0a9822140cce668ee15263e1f73730152dff0,Rap,1971,m,us,9,
-Jimi Hendrix,https://i.scdn.co/image/ab6761610000e5eb31f6ab67e6025de876475814,Rap,1967,m,us,1,
-La Arrolladora Banda El LimÛn De Rene Camacho,https://i.scdn.co/image/ab6761610000e5eb5d5605d4692f064bb6b09659,Rap,1997,m,mx,16,
-Los ¡ngeles Azules,https://i.scdn.co/image/ab6761610000e5eb7e8894328a07bee2e0881ba6,Rap,1993,x,mx,6,
-Volbeat,https://i.scdn.co/image/ab6761610000e5eb7d4bb8c4283f4aeb61f61e98,Rap,2007,m,dk,4,
-Milky Chance,https://i.scdn.co/image/ab6761610000e5eb1342d9a0c1a91021b6eb708b,Rap,2013,m,de,2,
-The Fray,https://i.scdn.co/image/ab6761610000e5eb0f1175c762fb80f71469b344,Rap,2005,m,us,4,
-Stormzy,https://i.scdn.co/image/ab6761610000e5ebcd5dbc48254bfbdd35c1403b,Rap,2014,m,uk,1,
-KYLE,https://i.scdn.co/image/ab6761610000e5eb2f57d73b774e9a1553248612,Rap,2013,m,us,1,
-Van Morrison,https://i.scdn.co/image/ab6761610000e5eb5885f6c2d3ecf8e08bdfa472,Rap,1967,m,ie,1,
-Years & Years,https://i.scdn.co/image/ab6761610000e5eb5a00879e258b7c4e76816e52,Rap,2015,m,uk,1,
-Robbie Williams,https://i.scdn.co/image/ab6761610000e5eb15709ba37709bc245a116a1c,Rap,1997,m,uk,1,
-Cali Y El Dandee,https://i.scdn.co/image/ab6761610000e5eb784890c6300d555ded68ca10,Rap,2012,m,co,2,
-Sam Feldt,https://i.scdn.co/image/ab6761610000e5eb0d0d98740752e38c56661b78,Rap,2016,m,nl,1,
-El Alfa,https://i.scdn.co/image/ab6761610000e5eba97f2c907b36d3c1d8e58397,Rap,2017,m,do,1,
-Shinedown,https://i.scdn.co/image/ab6761610000e5eb4c77bf7e6fb86af71571f803,Rap,2003,m,us,4,
-Lynyrd Skynyrd,https://i.scdn.co/image/ab6761610000e5eb451eb07ddc6e68d3e474c2bf,Rap,1973,m,us,5,
-Eric Clapton,https://i.scdn.co/image/ab6772690000c46ca60e8f215103f6841d8a83f0,Rap,1966,m,uk,1,
-Rick Ross,https://i.scdn.co/image/ab6761610000e5eb8196a8109c28a8b8aca28fae,Rap,2006,m,us,1,
-Kid Ink,https://i.scdn.co/image/ab6761610000e5eb39345e9059608b051a900e22,Rap,2012,m,us,1,
-Dave,https://i.scdn.co/image/ab6761610000e5ebf638289c7621609519d8ad24,Rap,2019,m,uk,1,
-DNCE,https://i.scdn.co/image/ab6761610000e5eba290ca663e0f4a1007634d79,Rap,2016,x,us,4,
-Dimitri Vegas & Like Mike,https://i.scdn.co/image/ab6761610000e5eb02ccfd8ad7d5a445fb1766bc,Rap,2016,m,gr,2,
-All Time Low,https://i.scdn.co/image/ab6761610000e5eb6aa4d0d5295afc0b7bacec49,Rap,2006,m,us,4,
-Dermot Kennedy,https://i.scdn.co/image/ab6761610000e5eb6e295a69e6e93b9c4ce415b4,Rap,2019,m,ie,1,
-T-Pain,https://i.scdn.co/image/ab6761610000e5ebae63c2a8e43c2d4dc37a9aed,Rap,2005,m,us,1,
-Quinn XCII,https://i.scdn.co/image/ab6761610000e5eb0365e9002c91999a1f7d950d,Rap,2016,m,us,1,
-Daryl Hall & John Oates,https://i.scdn.co/image/ab6761610000e5ebae81417d966e209b735b1160,Rap,1970,m,us,2,
-Rage Against The Machine,https://i.scdn.co/image/ddb4a2ad4585d914d9e6993f6ddf50d33e48089e,Rap,1992,m,us,4,
-The Smiths,https://i.scdn.co/image/481b980af463122013e4578c08fb8c5cbfaed1e9,Rap,1984,m,us,4,
-Grey,https://i.scdn.co/image/ab6761610000e5eb27a494c15f30ca2f08ddd05b,Rap,2013,m,us,2,
-The Cranberries,https://i.scdn.co/image/143c01f407ed64a4b3bcbc92d24c05ef80981251,Rap,1993,x,ie,4,
-Of Monsters and Men,https://i.scdn.co/image/ab6761610000e5ebce5451b5cc60faf1992e969a,Rap,2011,x,is,5,
-The White Stripes,https://i.scdn.co/image/ab6761610000e5eb6b9ae52aa437ce42b77e8fcf,Rap,1999,x,us,2,
-Nelly Furtado,https://i.scdn.co/image/ab6761610000e5eb4cd5711d0422af7209cdf37a,Rap,2000,f,ca,1,
-MGMT,https://i.scdn.co/image/ab6761610000e5eb089bb3257ef5b3fab2a3c90d,Rap,2002,m,us,2,
-B.o.B,https://i.scdn.co/image/ab6761610000e5eb8c518d4a4e60eff246453b0a,Rap,2009,m,us,1,
-Samra,https://i.scdn.co/image/ab6761610000e5eb434a7526f8a622e4b3c3bb79,Rap,2019,m,de,1,
-Van Halen,https://i.scdn.co/image/ab6761610000e5ebd8475001d2700686e1008dfb,Rap,1978,m,us,4,
-Aya Nakamura,https://i.scdn.co/image/ab6761610000e5ebd097fdbe85a171a0483a2611,Rap,2017,f,fr,1,
-Black Sabbath,https://i.scdn.co/image/5931700f9515dd6587230130beb615e0549e47dc,Rap,1970,m,uk,4,
-Jay Wheeler,https://i.scdn.co/image/ab6761610000e5eb1e85cfd7346402dd9c3c4421,Rap,2019,m,pr,1,
-Hollywood Undead,https://i.scdn.co/image/ab6761610000e5eb7fa4eae2283454a067613275,Rap,2008,m,us,5,
-Rag'n'Bone Man,https://i.scdn.co/image/ab6761610000e5ebd37c6045418dc479c99ade2c,Rap,2012,m,uk,1,
-Plan B,https://i.scdn.co/image/eb21793908d1eabe0fba02659bdff4e4a4b3724a,Rap,2002,m,uk,1,
-Rod Stewart,https://i.scdn.co/image/ab6761610000e5eb1d3e6633d1da408fc103a9ec,Rap,1969,m,uk,1,
-Brytiago,https://i.scdn.co/image/ab6761610000e5eb05108cfc479c324db5c053e2,Rap,2020,m,pr,1,
-Sabaton,https://i.scdn.co/image/ab6761610000e5eb97d68537c39dc8bcebbd9e6c,Rap,2010,m,se,5,
-Prince,https://i.scdn.co/image/ab6761610000e5ebbd046575b09d8ec4865dad62,Rap,2010,m,us,1,
-A Day To Remember,https://i.scdn.co/image/ab6761610000e5ebd68cc4a136f816a999500f0d,Rap,2005,m,us,5,
-Keith Urban,https://i.scdn.co/image/ab6761610000e5eb011f9b2f5c8e0dac63aa5b73,Rap,1997,m,us,1,
-Pedro CapÛ,https://i.scdn.co/image/ab6761610000e5ebc73c83fbde2c56b922157c07,Rap,2007,m,pr,1,
-Red Velvet,https://i.scdn.co/image/ab6761610000e5eb8a8415e72dedaa552259d0c1,Rap,2015,f,kr,5,
-TINI,https://i.scdn.co/image/ab6761610000e5ebdf85ea23b7036c45c24d654c,Rap,2016,x,sa,1,
-Enya,https://i.scdn.co/image/0f6e6c9ab85e148d02a095c870a94f5aa8318148,Rap,1987,f,ie,1,
-Maria Becerra,https://i.scdn.co/image/ab6761610000e5eb8e31992499e6cabcc944a48b,Rap,2021,f,ar,1,
-Kodaline,https://i.scdn.co/image/ab6761610000e5eb7c64797040b8cc285e9a1839,Rap,2013,m,ie,4,
-PnB Rock,https://i.scdn.co/image/ab6761610000e5eb4962230cc9649e2083ac1665,Rap,2015,m,us,1,
-Clairo,https://i.scdn.co/image/ab6761610000e5eb370f4e30deba6da178db36fe,Rap,2019,f,us,1,
-Andy Grammer,https://i.scdn.co/image/ab6761610000e5eb496050692471e28190f815f0,Rap,2011,m,us,1,
-Damso,https://i.scdn.co/image/ab6761610000e5eb6d1dac9cd0d24eee082f5410,Rap,2016,m,be,1,
-Rod Wave,https://i.scdn.co/image/ab6761610000e5eb69dc893d0ea9e44a34f97cc9,Rap,2018,m,us,1,
-Juan Mag·n,https://i.scdn.co/image/ab6761610000e5eb874c860c7fea4f5c97d4e6d9,Rap,2012,m,es,1,
-ODESZA,https://i.scdn.co/image/ab6761610000e5eb1b00f0413d659ee91b505f70,Rap,2012,m,us,2,
-RAYE,https://i.scdn.co/image/ab6761610000e5eb01b577d3a134a7ddb9cb15ba,Rap,2020,f,uk,1,
-Mustard,https://i.scdn.co/image/ab6761610000e5eb36d700e57ae8be93479963a0,Rap,2014,x,us,1,
-Evanescence,https://i.scdn.co/image/ab6761610000e5eb7c952c071462e72795697bc0,Rap,2003,x,us,5,
-Aretha Franklin,https://i.scdn.co/image/ab6761610000e5ebf12270128127ba170f90097d,Rap,1956,f,us,1,
-Ludovico Einaudi,https://i.scdn.co/image/ab6761610000e5eb41b332cbe960237714e82408,Rap,1994,m,it,1,
-Carrie Underwood,https://i.scdn.co/image/ab6761610000e5ebc1c077c305eb4b2bcac25fd5,Rap,2005,f,us,1,
-Casper Magico,https://i.scdn.co/image/ab6761610000e5eb39c7b3827cb696dd0c8807e7,Rap,2020,m,pr,1,
-De La Ghetto,https://i.scdn.co/image/ab6761610000e5eb210d835d7261a68bb2a63e5a,Rap,2008,m,us,1,
-El Fantasma,https://i.scdn.co/image/ab6761610000e5eba4470ac564487199e5c01cb1,Rap,2016,m,mx,1,
-Sfera Ebbasta,https://i.scdn.co/image/ab6761610000e5ebe5e18232c680cd969031c394,Rap,2015,m,it,1,
-Topic,https://i.scdn.co/image/ab6761610000e5eb699095f3deab4580b7c2448f,Rap,2015,m,de,1,
-Joyner Lucas,https://i.scdn.co/image/ab6761610000e5ebe6f64ccadc3ed5dae6b5fbe4,Rap,2015,m,us,1,
-Sublime,https://i.scdn.co/image/ab6761610000e5ebe726280500259dbdb97a8be4,Rap,1991,m,us,3,
-George Strait,https://i.scdn.co/image/ab6761610000e5eb77f28b2422efbabde324291c,Rap,1981,m,us,1,
-Goodboys,https://i.scdn.co/image/ab6761610000e5eb46eac2a44d81065de348cfa7,Rap,2019,m,uk,2,
-Shaggy,https://i.scdn.co/image/ab6761610000e5eb4f49b447350fa63936242776,Rap,1993,m,jm,1,
-Carlos Rivera,https://i.scdn.co/image/ab6761610000e5ebd471aab52533508e4bcf9ba4,Rap,2007,m,mx,1,
-Nas,https://i.scdn.co/image/ab6761610000e5ebab6bd6e450cbc7629a9a2381,Rap,2021,m,us,1,
-Scorpions,https://i.scdn.co/image/ab6761610000e5eb7440170c0628c2945da819c3,Rap,1972,m,de,5,
-GIMS,https://i.scdn.co/image/ab6761610000e5eb6dbfa852af972bc6c80c469b,Rap,2013,m,fr,1,
-Sum 41,https://i.scdn.co/image/ab6761610000e5eba79683a6e828e1a86341414c,Rap,2000,m,ca,5,
-Melendi,https://i.scdn.co/image/ab6761610000e5eb69b92908b14aa8f0b4cd175d,Rap,2003,m,es,1,
-WALK THE MOON,https://i.scdn.co/image/ab6761610000e5ebab9610e36fae856c0fd9b46b,Rap,2012,m,us,4,
-Bing Crosby,https://i.scdn.co/image/ab6761610000e5eb0ba8db83b01de120a6f2312c,Rap,1932,m,us,1,
-Ozzy Osbourne,https://i.scdn.co/image/ab6761610000e5eb3ecde30988e6b9ae379d878e,Rap,1981,m,uk,1,
-Natanael Cano,https://i.scdn.co/image/ab6761610000e5eb615df07b39adb4ddcccd4270,Rap,2019,m,mx,1,
-Axwell /\ Ingrosso,https://i.scdn.co/image/ab6761610000e5eb9f6e5d736809c4cb40d59a7e,Rap,2017,m,se,2,
-Luan Santana,https://i.scdn.co/image/ab6761610000e5eb39cae04e8ce2c03c35d5f9cf,Rap,2009,m,br,1,
-TOTO,https://i.scdn.co/image/ab6761610000e5eba59a5bcab211f964fe9bfb06,Rap,1978,m,us,6,
-Ali Gatie,https://i.scdn.co/image/ab6761610000e5eb9c396dfe3b553c3dafd2fefe,Rap,2019,m,ca,1,
-MC Kevinho,https://i.scdn.co/image/ab6761610000e5eb45c107fdae8bce4b0f357c2b,Rap,2014,m,br,1,
-Astrid S,https://i.scdn.co/image/ab6761610000e5ebdda6f23f364765044ee1c62a,Rap,2020,f,no,1,
-3 Doors Down,https://i.scdn.co/image/ab6761610000e5ebe259ee48201f121644cdf8a2,Rap,2000,m,us,5,
-JosÈ JosÈ,https://i.scdn.co/image/ab6761610000e5eb18129b218ae9c07848ddc759,Rap,2010,m,mx,1,
-Nacho,https://i.scdn.co/image/ab6761610000e5eb12052c3be2df2033c8b34860,Rap,2018,m,ve,1,
-Two Door Cinema Club,https://i.scdn.co/image/ab6761610000e5ebdd4c0f90744cf7e079b93dc4,Rap,2010,m,ie,3,
-Marilyn Manson,https://i.scdn.co/image/ab6761610000e5eb9e2dae585750a8d6055f4e35,Rap,1994,m,us,1,
-SEVENTEEN,https://i.scdn.co/image/ab6761610000e5eb6bec4103baf476076ee9ecfa,Rap,2016,m,kr,13,
-Don Diablo,https://i.scdn.co/image/ab6761610000e5ebd0c6f816e695c39b0cbb22c3,Rap,2009,m,nl,3,
-League of Legends,https://i.scdn.co/image/ab6761610000e5eb1c2306662a30b657f6118e23,Rap,2015,x,sa,1,
-Ella Mai,https://i.scdn.co/image/ab6761610000e5eb173a42b51755d3075d67831c,Rap,2018,f,uk,1,
-Seeb,https://i.scdn.co/image/ab6761610000e5ebfd68725168b533c320eea5a0,Rap,2020,m,no,2,
-David Bisbal,https://i.scdn.co/image/ab6761610000e5eb20d6518a838a8dc7bfdb540e,Rap,2002,m,es,1,
-Aitana,https://i.scdn.co/image/ab6761610000e5ebf6bb550ba25406f25bf6365d,Rap,2018,f,es,1,
-Wale,https://i.scdn.co/image/ab6761610000e5eb0e1f90bdff70c339838dcf90,Rap,2008,m,us,1,
-Dolly Parton,https://i.scdn.co/image/ab6761610000e5eb20ee5dd7929b2eb0b8886cac,Rap,1964,f,us,1,
-Sido,https://i.scdn.co/image/ab6761610000e5ebb4e80e0576308cf6f6e90ed0,Rap,2002,m,de,1,
-The Smashing Pumpkins,https://i.scdn.co/image/ab6761610000e5ebbe2f365d2999abe2cc48f6d3,Rap,1991,m,us,4,
-Afrojack,https://i.scdn.co/image/ab6761610000e5eb549aa0ce64b4b9797b24e3be,Rap,2010,m,nl,1,
-Danna Paola,https://i.scdn.co/image/ab6761610000e5ebfd42f7d16d0a5c30c09e50ea,Rap,2002,f,mx,1,
-Louis Tomlinson,https://i.scdn.co/image/ab6761610000e5eb926f5a032b7d7ac4700a0bc0,Rap,2020,m,uk,1,
-Bibi und Tina,https://i.scdn.co/image/ab6761610000e5eb7c93e8d336783ba8f72905f3,Rap,1991,x,sa,2,
-ZoÈ,https://i.scdn.co/image/ab6761610000e5eb355b8221a1f933163295f10d,Rap,2019,m,mx,5,
-Jorja Smith,https://i.scdn.co/image/ab6761610000e5eb98ed49090b6c6d814ccb0709,Rap,2018,f,uk,1,
-Tainy,https://i.scdn.co/image/ab6761610000e5eb0b4ecb49d9dcd631a07a1315,Rap,2006,m,pr,1,
-Swedish House Mafia,https://i.scdn.co/image/ab6761610000e5eb0c05adcae61ac479afe35c8e,Rap,2010,m,se,3,
-Electric Light Orchestra,https://i.scdn.co/image/ab6761610000e5eb3f289b61b4d965ce54e31841,Rap,1971,m,uk,7,
-Banda El Recodo,https://i.scdn.co/image/ab6761610000e5eb2de8a704feecf3bc5c4bce98,Rap,1990,m,mx,17,
-Luciano,https://i.scdn.co/image/ab6761610000e5eb7c79a26af7f4b435ec8c6b95,Rap,1963,m,jm,1,
-Marco Antonio SolÌs,https://i.scdn.co/image/ab6761610000e5ebf7422a4a2b7f13531f22e38b,Rap,1995,m,mx,1,
-Bryant Myers,https://i.scdn.co/image/ab6761610000e5eb5332f98f95b18ad1ffa4e0fc,Rap,2018,m,pr,1,
-Tom Odell,https://i.scdn.co/image/ab6761610000e5eb5a4cb04df4203d1f1642fc6e,Rap,2013,m,uk,1,
-Jaden,https://i.scdn.co/image/ab6761610000e5eb0376b56af63682d48579fa85,Rap,2014,m,us,1,
-Kacey Musgraves,https://i.scdn.co/image/ab6761610000e5ebd123e4c884d1a5e2edff1895,Rap,2013,f,us,1,
-Arizona Zervas,https://i.scdn.co/image/ab6761610000e5eb468826ad12d3746ab61d8fcd,Rap,2016,m,us,1,
-Colbie Caillat,https://i.scdn.co/image/ab6761610000e5eba57068d54bbd15a74234630e,Rap,2007,f,us,1,
-Portugal. The Man,https://i.scdn.co/image/ab6761610000e5eb6f851a3bf42183505dadb791,Rap,2006,m,us,5,
-Rascal Flatts,https://i.scdn.co/image/ab6761610000e5ebb2423171f56fa27d89e26207,Rap,2000,m,us,3,
-Mac DeMarco,https://i.scdn.co/image/ab6761610000e5ebc7a7b191db13668f1a6d863d,Rap,2012,m,ca,1,
-R. Kelly,https://i.scdn.co/image/b81390065f0c65c26270a4ca1d2ceae3e30efed6,Rap,1992,m,us,1,
-gnash,https://i.scdn.co/image/ab67616d0000b27301ef37f07e070f38298fc6c4,Rap,2021,m,us,1,
-Lord Huron,https://i.scdn.co/image/ab6761610000e5eb1d4e4e7e3c5d8fa494fc5f10,Rap,2012,m,us,4,
-Martin Jensen,https://i.scdn.co/image/ab6761610000e5ebda1144fb20f96075198f3295,Rap,2015,m,dk,1,
-Ms. Lauryn Hill,https://i.scdn.co/image/ccb108f19352e88d6e69b1093d75a2be5efa1c99,Rap,1996,f,us,1,
-Desiigner,https://i.scdn.co/image/ab6761610000e5ebc527efb478bf740148492e1b,Rap,2016,m,us,1,
-Joel Corry,https://i.scdn.co/image/ab6761610000e5eb0c0cb708b81ed5dc699d1556,Rap,2015,m,uk,1,
-Hardwell,https://i.scdn.co/image/ab6761610000e5eb1cbb1805834e1767a18a328b,Rap,2011,m,nl,1,
-Kontra K,https://i.scdn.co/image/ab6761610000e5eb0da20567da1e50018f44d977,Rap,2010,m,de,1,
-The Clash,https://i.scdn.co/image/ab470b275daa38351810a1eb91d107ebdb821302,Rap,1977,m,uk,4,
-Annie Lennox,https://i.scdn.co/image/fb1b39783fdc9625bcba0837e7da9882969eaa03,Rap,1981,f,uk,1,
-Feid,https://i.scdn.co/image/ab6761610000e5ebfdcf9dce127c236a7aadf076,Rap,2015,m,co,1,
-M83,https://i.scdn.co/image/ab6761610000e5eb5f5afb81942abd41d32dc2b5,Rap,2001,m,fr,2,
-Noriel,https://i.scdn.co/image/ab6761610000e5ebf67825837cb85a913d244d93,Rap,2016,m,pr,1,
-Mike WiLL Made-It,https://i.scdn.co/image/ab6761610000e5ebcf6300412921aa724a28addc,Rap,2011,m,us,1,
-Jessie Reyez,https://i.scdn.co/image/ab6761610000e5ebf416e763269013a66d7fe5a2,Rap,2017,f,ca,1,
-Apache 207,https://i.scdn.co/image/ab6761610000e5ebda15d930c6fa42d2ca52a19e,Rap,2019,m,de,1,
-Westlife,https://i.scdn.co/image/ab6761610000e5ebceead049d538f0b5087041dd,Rap,1999,m,ie,5,
-Leon Bridges,https://i.scdn.co/image/ab6761610000e5ebc1493f8c442935b396753e21,Rap,2015,m,us,1,
-Vampire Weekend,https://i.scdn.co/image/ab6761610000e5eb44829ac83c4538a8cf7e9f40,Rap,2008,m,us,4,
-DMX,https://i.scdn.co/image/ab6772690000c46c3074f51af22630a1c86da016,Rap,1998,m,us,1,
-The Kooks,https://i.scdn.co/image/ab6761610000e5eb720d6b8dd091334f38fb49ad,Rap,2006,m,uk,4,
-Elevation Worship,https://i.scdn.co/image/ab6761610000e5ebb10fd90c8d4446fa75af0de7,Rap,2010,x,us,6,
-Thirty Seconds To Mars,https://i.scdn.co/image/ab6761610000e5eb9cd2312e93fba5ce64ce55e1,Rap,2002,m,us,3,
-Eladio Carrion,https://i.scdn.co/image/ab6761610000e5eb195cf1ae5db3ba7c22eb3412,Rap,2020,m,us,1,
-Olly Murs,https://i.scdn.co/image/ab6761610000e5eba8a2cbe16d3db5e795ca786e,Rap,2010,m,uk,1,
-Sara Bareilles,https://i.scdn.co/image/ab6761610000e5eb0bae7cfd3b32b10154e0b8b3,Rap,2004,f,us,1,
-NEFFEX,https://i.scdn.co/image/ab6761610000e5eb3a7d849b89d6ba9f5bd81639,Rap,2018,m,us,2,
-Cosculluela,https://i.scdn.co/image/ab6761610000e5ebf9f2283d080e3581a63daf79,Rap,2010,m,pr,1,
-Stromae,https://i.scdn.co/image/ab6761610000e5eb5e22bd1057446fccb9fce27c,Rap,2010,f,be,1,
-OMI,https://i.scdn.co/image/2777a98213ec412317ea177edc8615e2fdee8be5,Rap,2015,m,jm,1,
-Mÿ,https://i.scdn.co/image/ab6761610000e5eb0da5abcc5c0aef0c3cc573d0,Rap,2018,f,dk,1,
-Loud Luxury,https://i.scdn.co/image/ab6761610000e5eb1ff87d822ecba6f5d8a50583,Rap,2020,m,ca,2,
-Alan Jackson,https://i.scdn.co/image/43fdc2605725f488299398758ffb2c46e6ee7d38,Rap,1989,m,us,1,
-Wham!,https://i.scdn.co/image/028bf41acbd7858a4a8acf688a392d4ee9e369ef,Rap,1983,m,uk,2,
-Joey Bada$$,https://i.scdn.co/image/ab6761610000e5eb333952098daec907060f95d1,Rap,2012,m,us,1,
-KISS,https://i.scdn.co/image/ab6761610000e5eb4e85269a1f35917eddeadefd,Rap,1974,m,us,4,
-Chief Keef,https://i.scdn.co/image/ab6761610000e5eb32b8f233fa03ac70fa97781a,Rap,2012,m,us,1,
-Mitski,https://i.scdn.co/image/ab6761610000e5ebafb309e27fdb45e093958f9c,Rap,2012,f,us,1,
-Fergie,https://i.scdn.co/image/ab6761610000e5eb1fd1c6d465e03a904d63c9b5,Rap,2006,f,us,1,
-Owl City,https://i.scdn.co/image/ab6761610000e5eb1e597cf8abddb78b3cc42aaa,Rap,2007,m,us,1,
-Moneybagg Yo,https://i.scdn.co/image/ab6761610000e5eb9d566d7d5ca673f9af94f4ce,Rap,2016,m,us,1,
-Chencho Corleone,https://i.scdn.co/image/ab6761610000e5eb86f7bcc04d9cab90818de71a,Rap,2018,m,pr,1,
-Bethel Music,https://i.scdn.co/image/ab6761610000e5eb03d47933adccb65876193eac,Rap,2010,x,us,15,
-Queens of the Stone Age,https://i.scdn.co/image/ab6761610000e5ebc194721f2ca5433bc78b0e74,Rap,1998,m,us,5,
-Ha*Ash,https://i.scdn.co/image/ab6761610000e5eb522eaf2cd77ab79d0586c605,Rap,2003,f,us,2,
-Gwen Stefani,https://i.scdn.co/image/ab6761610000e5eb71a84376c2d99dbc4eba4097,Rap,2004,f,us,1,
-Nekfeu,https://i.scdn.co/image/4b29b23a7dc7ac866210d93d4a5287c95941696c,Rap,2015,m,fr,1,
-Stefflon Don,https://i.scdn.co/image/ab6761610000e5eb42d173a47d12d2aff5184802,Rap,2016,f,uk,1,
-Pharrell Williams,https://i.scdn.co/image/ab6761610000e5ebccba36eeae66d1280b8d1ede,Rap,2006,m,us,1,
-Snow Patrol,https://i.scdn.co/image/ab6761610000e5eb02dd5c821135e146eb2bfc85,Rap,1994,m,ie,5,
-Internet Money,https://i.scdn.co/image/ab6761610000e5eb30cc15d302e22803fcb5ad34,Rap,2020,m,us,1,
-Nat King Cole,https://i.scdn.co/image/ab6761610000e5eb410d394a57e185889a2740ac,Rap,1952,m,us,1,
-Chelsea Cutler,https://i.scdn.co/image/ab6761610000e5ebf85d0a01d61b294e8fa0891d,Rap,2018,f,us,1,
-Louis Armstrong,https://i.scdn.co/image/ab6772690000c46c4a0e9d5e55f9f3721c3243c5,Rap,1923,m,us,1,
-Conor Maynard,https://i.scdn.co/image/ab6761610000e5eb69dd60374a54388085648072,Rap,2012,m,uk,1,
-Dilsinho,https://i.scdn.co/image/ab6761610000e5eb43ead0bbba359fa6e27a22cf,Rap,2014,m,br,1,
-Aloe Blacc,https://i.scdn.co/image/ab6761610000e5eb560df03f8fee7731d18a9488,Rap,2005,m,us,1,
-Ciara,https://i.scdn.co/image/ab6761610000e5eba1d2211731d7f54a4bc4e490,Rap,2004,f,us,1,
-Keane,https://i.scdn.co/image/ab6761610000e5eb6fa4f7efaf78eb1bc0486d27,Rap,2004,m,uk,5,
-Dean Martin,https://i.scdn.co/image/492d4ece2bf7c87952be47359f038182fbf15d9d,Rap,1950,m,us,1,
-Willy William,https://i.scdn.co/image/ab6761610000e5ebdde80699594b5d8641951c82,Rap,2012,m,fr,1,
-Mˆtley Cr¸e,https://i.scdn.co/image/ab6761610000e5eb4a4a8001924448a7e9a7e725,Rap,1981,m,us,4,
-Ruth B.,https://i.scdn.co/image/ab6761610000e5ebc36cd1cebde513411c2e1504,Rap,2017,f,ca,1,
-Ella Fitzgerald,https://i.scdn.co/image/3c1d23141059785c8a863137d176319329dc17ef,Rap,1947,f,us,1,
-Denzel Curry,https://i.scdn.co/image/ab6761610000e5ebb00f2e31d509ddc6fa0eb24b,Rap,2015,m,us,1,
-James TW,https://i.scdn.co/image/ab6761610000e5eb3c0a1c0a096b40ff63de4dc0,Rap,2019,m,us,1,
-Dierks Bentley,https://i.scdn.co/image/ab6761610000e5eb216761ffe7a997ad324be2bf,Rap,2003,m,us,1,
-Lady A,https://i.scdn.co/image/ab6761610000e5eb749ba770a33230206f8fe159,Rap,2008,x,us,3,
-Charlie Brown Jr.,https://i.scdn.co/image/ab6761610000e5ebc409f8e59d6abb96f1b9e06f,Rap,1997,x,us,1,
-Sting,https://i.scdn.co/image/ab6761610000e5eb9fdb4dab484a9f12e347c216,Rap,1985,m,uk,1,
-MAX,https://i.scdn.co/image/ab6761610000e5eb34669af44674f43cb34bf84b,Rap,2020,f,jp,4,
-Regard,https://i.scdn.co/image/ab6761610000e5ebf2463642042d6e99c687b42c,Rap,2016,m,xk,1,
-Old Dominion,https://i.scdn.co/image/ab6761610000e5eb148820356b44d642c6715f3f,Rap,2015,m,us,5,
-The Jackson 5,https://i.scdn.co/image/19f768d93f6c80f7d4ca5b906e1c0376a3704389,Rap,1969,m,us,5,
-Thalia,https://i.scdn.co/image/ab6761610000e5eb1afdb4b3c2ffc005d366134e,Rap,1990,f,mx,1,
-Limp Bizkit,https://i.scdn.co/image/4654955890cb62a6abe9daadfd2b3ecdee8036e4,Rap,1997,m,us,5,
-WILLOW,https://i.scdn.co/image/ab6761610000e5eb787b04112f1dbd7c8bce18b9,Rap,2015,f,us,1,
-Two Feet,https://i.scdn.co/image/ab6761610000e5ebfcaa268ce48afd467463ef76,Rap,2018,m,us,1,
-Vintage Culture,https://i.scdn.co/image/ab6761610000e5eb92b73e7c017ab5359781fe1b,Rap,2013,m,br,1,
-Leona Lewis,https://i.scdn.co/image/ab6761610000e5ebe9cf3862b8027eb5b9f6b831,Rap,2007,f,uk,1,
-Sleeping At Last,https://i.scdn.co/image/ab6761610000e5ebc988b524786872b000cb549f,Rap,2003,m,us,3,
-Blueface,https://i.scdn.co/image/ab6761610000e5ebec1036e155af0cd446b6600f,Rap,2018,m,us,1,
-Kelly Rowland,https://i.scdn.co/image/ab6761610000e5eb7c614a2b3cedfc53e4679c2e,Rap,2002,f,us,1,
-La Oreja de Van Gogh,https://i.scdn.co/image/ab6761610000e5ebc9ea82332c05d870ce3cfe6e,Rap,1998,x,es,5,
-ANAVIT”RIA,https://i.scdn.co/image/ab6761610000e5eb7ff4c284a04f220d32ddeee2,Rap,2016,f,br,2,
-Martin Solveig,https://i.scdn.co/image/ab6761610000e5eb2d6fb5d94a32063560e07014,Rap,2000,m,fr,1,
-Dynoro,https://i.scdn.co/image/ab6761610000e5eb71c0e657e2c507f83aeb1627,Rap,2017,m,lt,1,
-Booba,https://i.scdn.co/image/ab6761610000e5eb96b3ab10e89bad078d125c3a,Rap,2002,m,fr,1,
-Bill Withers,https://i.scdn.co/image/96b85aec6907206572527e1eeec6569d5e977a38,Rap,1971,m,us,1,
-Miranda Lambert,https://i.scdn.co/image/ab6761610000e5ebd155caf6e83268ad61be09cd,Rap,2005,f,us,1,
-Oliver Heldens,https://i.scdn.co/image/ab6761610000e5eb7ac8d51e0117b2e331aa38aa,Rap,2015,m,nl,1,
-John Newman,https://i.scdn.co/image/ab6761610000e5ebdace8bf652b063de3a0e343f,Rap,2013,m,uk,1,
-Mon Laferte,https://i.scdn.co/image/ab6761610000e5ebb507cfeb76f25ef8d10fc2f2,Rap,2011,f,cl,1,
-Lofi Fruits Music,https://i.scdn.co/image/ab6761610000e5eb3f8ce769e7a4c355b247b0eb,Rap,2019,x,us,1,
-fun.,https://i.scdn.co/image/37bc85c957e17d3463ae40da1c8ade6bb5ecd546,Rap,2009,m,us,3,
-Trevor Daniel,https://i.scdn.co/image/ab6761610000e5ebb453cf5adb1e1fc2e6bfabb3,Rap,2020,m,us,1,
-Lee Brice,https://i.scdn.co/image/ab6761610000e5ebdda79571deaba197ad4793e2,Rap,2010,m,us,1,
-Santana,https://i.scdn.co/image/e1bfc98896b3638caa59ef227d52fb1a2208375d,Rap,1969,m,us,1,
-Lalo Ebratt,https://i.scdn.co/image/ab6761610000e5eb176d8579da88e3e9ddf1bcda,Rap,2018,m,co,1,
-Ezhel,https://i.scdn.co/image/ab6761610000e5ebdfbabf5f1338d03c97799cd3,Rap,2017,m,tr,1,
-Los Temerarios,https://i.scdn.co/image/ab6761610000e5eb282bed40bfeb28455afeeed2,Rap,1983,m,mx,2,
-CHVRCHES,https://i.scdn.co/image/ab6761610000e5ebea72be78f2a71616661b982e,Rap,2013,x,uk,3,
-Cigarettes After Sex,https://i.scdn.co/image/ab6761610000e5eb184c693111b41bc7f101ce8a,Rap,2017,m,us,3,
-girl in red,https://i.scdn.co/image/ab6761610000e5eb05b8c8f98561880f045ed2c2,Rap,2021,f,no,1,
-The Who,https://i.scdn.co/image/9cd709cabb4a614b4f1dd9ec256a5f30e21f0150,Rap,1965,m,uk,4,
-Ben Howard,https://i.scdn.co/image/ab6761610000e5eb7f6d3ce714aba5b2c38212dc,Rap,2011,m,uk,1,
-John Lennon,https://i.scdn.co/image/ab6761610000e5eb207c6849d1a1f4480e6aa222,Rap,1968,m,uk,1,
-Alice In Chains,https://i.scdn.co/image/ab6761610000e5eb6114a63659d0d5c0a801f733,Rap,1990,m,us,4,
-Lil Dicky,https://i.scdn.co/image/ab6761610000e5eb6a2d6dc14edc0c58cfee9683,Rap,2015,m,us,1,
-Calle 13,https://i.scdn.co/image/edabfb79fbf3d71ad9d0961a7b199a1470fe5372,Rap,2005,m,pr,1,
-Michael Silverman,https://i.scdn.co/image/ab6761610000e5ebd00227965860b698b447d5a0,Rap,2007,m,us,1,
-Sade,https://i.scdn.co/image/ab6761610000e5eb92883b0e094a36d2f43ad284,Rap,1984,f,uk,1,
-Roxette,https://i.scdn.co/image/ab6761610000e5eb347ca7e9f41f3ff8e2b19034,Rap,1986,x,se,2,
-LuÌsa Sonza,https://i.scdn.co/image/ab6761610000e5ebacb6cbf4b0ae94dc812f77f6,Rap,2019,f,br,1,
-Saweetie,https://i.scdn.co/image/ab6761610000e5eb08508fea5d4e92cf4d221834,Rap,2018,f,us,1,
-Ghostemane,https://i.scdn.co/image/ab6761610000e5eb05fe4ce6473b6f00ad5aca73,Rap,2015,m,us,1,
-Daya,https://i.scdn.co/image/ab6761610000e5eb1bd4d403a7428035b381a535,Rap,2016,f,us,1,
-Surfaces,https://i.scdn.co/image/ab6761610000e5eb15425e51091c49d07b3bca64,Rap,2017,m,us,2,
-Gera MX,https://i.scdn.co/image/ab6761610000e5eb6b41a8ebf8835aa23586fbfb,Rap,2015,m,mx,1,
-Miracle Tones,https://i.scdn.co/image/ab6761610000e5eb397a7a1c7bbae495a35e8694,Rap,2019,x,sa,1,
-Jack ‹,https://i.scdn.co/image/065e6f73d82db92ddaecf1ca779e833c274da17f,Rap,2015,m,us,2,
-Gerardo Ortiz,https://i.scdn.co/image/ab6761610000e5ebcb687db0a712bf03959c4e4b,Rap,2009,m,us,1,
-beabadoobee,https://i.scdn.co/image/ab6761610000e5ebc8b4ad8a13f54ee2a5184838,Rap,2018,f,ph,1,
-Bruno & Marrone,https://i.scdn.co/image/ab6761610000e5eb6a0ec2243b2929c14a1dea8e,Rap,1994,m,br,2,
-The Pussycat Dolls,https://i.scdn.co/image/ab6761610000e5eb292575f7d081016e04dff9ee,Rap,2005,f,us,5,
-Shania Twain,https://i.scdn.co/image/ab6761610000e5ebf04cbe533ce2d55373f49b2b,Rap,1993,f,ca,1,
-MKTO,https://i.scdn.co/image/ab6761610000e5ebbc861f3d1ba68614d3a301b4,Rap,2012,m,us,2,
-MAGIC!,https://i.scdn.co/image/ab6761610000e5eb39c7b3827cb696dd0c8807e7,Rap,2020,x,us,1,
-Brent Faiyaz,https://i.scdn.co/image/ab6761610000e5eb2749cce858c97642feda7a92,Rap,2017,m,us,1,
-TOMORROW X TOGETHER,https://i.scdn.co/image/ab6761610000e5ebe808489e4855c3e16e4844c3,Rap,2019,m,kr,5,
-Kylie Minogue,https://i.scdn.co/image/ab6761610000e5ebab2720cd7161ed8a2a203f3a,Rap,1988,f,au,1,
-Chris Young,https://i.scdn.co/image/ab6761610000e5eb41e02a666bde7ef22ea984dc,Rap,2006,m,us,1,
-Niska,https://i.scdn.co/image/ab6761610000e5eb027ff0ef7c6a7de05221b608,Rap,2015,m,fr,1,
-Incubus,https://i.scdn.co/image/ab6761610000e5ebbaebf3a81961bdf7173ab959,Rap,1997,m,us,5,
-Gryffin,https://i.scdn.co/image/ab6761610000e5ebc4298db5a8443051eda464bb,Rap,2019,m,us,1,
-Mike Perry,https://i.scdn.co/image/ab6761610000e5eb4ca7ccebc2f9e6c281cd6ff3,Rap,2016,m,se,1,
-Powfu,https://i.scdn.co/image/ab6761610000e5ebdf64d381c8277dce8f96c0a5,Rap,2020,m,ca,1,
-Tee Grizzley,https://i.scdn.co/image/ab6761610000e5ebdd7c31746f90d2c9a9ae403c,Rap,2017,m,us,1,
-Oliver Tree,https://i.scdn.co/image/ab6761610000e5eb8920b53de80984ecf97ea3cb,Rap,2020,m,us,1,
-Arcade Fire,https://i.scdn.co/image/ab6761610000e5eba044e15eee771205956dcbf8,Rap,2004,x,ca,6,
-Yo Gotti,https://i.scdn.co/image/ab6761610000e5eb2ffce7144cd40e08aa81f2a2,Rap,2006,m,us,1,
-Los Tigres Del Norte,https://i.scdn.co/image/ab6761610000e5ebc08bf49ef165cfcc73962be9,Rap,1984,m,mx,5,
-Gigi D'Agostino,https://i.scdn.co/image/ab6761610000e5ebc2ebdffb99dac3e70cfa6ec7,Rap,1999,m,it,1,
-Sean Kingston,https://i.scdn.co/image/ab6761610000e5eb5d853b34ef123ce2da768c95,Rap,2008,m,jm,1,
-Seether,https://i.scdn.co/image/ab6761610000e5ebae16317ddc36675cf6de4826,Rap,2002,m,za,4,
-Angus & Julia Stone,https://i.scdn.co/image/ab6761610000e5eb6991d9d87155e48247e2caf0,Rap,2007,x,au,2,
-Taio Cruz,https://i.scdn.co/image/ab6761610000e5eb153171480a6f22912253b9f1,Rap,2008,m,uk,1,
-Sin Bandera,https://i.scdn.co/image/ab6761610000e5ebc6bb3345a8a898bd01283a36,Rap,2001,m,mx,1,
-Paul Simon,https://i.scdn.co/image/ab6761610000e5eb1f764c8f69b595efe77e1c45,Rap,1965,m,us,1,
-Bullet For My Valentine,https://i.scdn.co/image/ab6761610000e5eb083627f7d306f40cd7ff8893,Rap,2005,m,uk,4,
-Dennis Lloyd,https://i.scdn.co/image/ab6761610000e5eb03a549a526f43c676492b910,Rap,2021,m,il,1,
-Nina Simone,https://i.scdn.co/image/ab6761610000e5eb136c51c848c26a6cce7f9e56,Rap,1958,f,us,1,
-Chayanne,https://i.scdn.co/image/ab6761610000e5ebf93c0ad33e51f43d8e7426c3,Rap,1984,m,pr,1,
-Simple Plan,https://i.scdn.co/image/ab6761610000e5eb14be52ba7ed12e0177ebe08b,Rap,2004,m,ca,5,
-Jon Pardi,https://i.scdn.co/image/ab6761610000e5eb9ab434ef1b8d8aff5fce625d,Rap,2014,m,us,1,
-Kollegah,https://i.scdn.co/image/ab6761610000e5eb8549d982a3e6e48d929f0058,Rap,2005,m,de,1,
-Beret,https://i.scdn.co/image/ab6761610000e5ebbe52891d50a358943a830701,Rap,2016,m,us,4,
-FrÈdÈric Chopin,https://i.scdn.co/image/ab6761610000e5ebe55372097569b7b56b439365,Rap,2009,m,pl,1,
-Rich Brian,https://i.scdn.co/image/ab6761610000e5eb39d2db28841d007ee7f8d782,Rap,2018,m,id,1,
-Jasmine Thompson,https://i.scdn.co/image/ab6761610000e5eb9e6143483dc36287e2ceb6cb,Rap,2013,f,uk,1,
-Lionel Richie,https://i.scdn.co/image/ab6761610000e5eb002684808eb17d8b3645b57c,Rap,1982,m,us,1,
-Junior H,https://i.scdn.co/image/ab6761610000e5ebb16c368126de1ac35eee5362,Rap,2019,m,mx,1,
-Santa Fe Klan,https://i.scdn.co/image/ab6761610000e5eb553937c97ad35e9744216ba6,Rap,2017,m,mx,1,
-Darell,https://i.scdn.co/image/ab6761610000e5eb58e637c9f4c9a120ea6d29f7,Rap,2016,m,pr,1,
-AJ Tracey,https://i.scdn.co/image/ab6761610000e5ebe6abb3f6a94e65798db7d73c,Rap,2019,m,uk,1,
-Summer Cem,https://i.scdn.co/image/ab6761610000e5eb26537d95e9d3f9ed5debb43c,Rap,2010,m,de,1,
-TKKG,https://i.scdn.co/image/ab6761610000e5eb332bec55998b0124ed7c362b,Rap,2001,x,sa,1,
-Bea Miller,https://i.scdn.co/image/ab6761610000e5ebc6de66e3b6928e0ecf3f9b0c,Rap,2015,f,us,1,
-Max Richter,https://i.scdn.co/image/ab6761610000e5ebbce84a4b1311b0b4c60c0215,Rap,2002,m,uk,1,
-Yung Gravy,https://i.scdn.co/image/ab6761610000e5ebcf385b6b5778a421826b4083,Rap,2018,m,us,1,
-Greeicy,https://i.scdn.co/image/ab6761610000e5eb3f92d719fe7223ad9fdd2be6,Rap,2019,f,co,1,
-Nipsey Hussle,https://i.scdn.co/image/ab6761610000e5ebe9edae8fe232af1d2995c991,Rap,2009,m,us,1,
-*NSYNC,https://i.scdn.co/image/c56cf0cc89c8ecfec7145cf065ea2006d0706605,Rap,1997,m,us,5,
-IU,https://i.scdn.co/image/ab6761610000e5eb006ff3c0136a71bfb9928d34,Rap,2009,f,kr,1,
-Gente De Zona,https://i.scdn.co/image/ab6761610000e5eb2357c57a1496db97ed8a8a34,Rap,2008,m,cu,2,
-KSI,https://i.scdn.co/image/ab6761610000e5ebcb4ae963f0c01900f3e17712,Rap,2019,m,uk,1,
-Lily Allen,https://i.scdn.co/image/ab6761610000e5eb4816f55146bf03d294005165,Rap,2006,f,uk,1,
-Otis Redding,https://i.scdn.co/image/4ad89c805aff0fb76b01b6b62b39e21fcd8943c3,Rap,1964,m,us,1,
-LUDMILLA,https://i.scdn.co/image/ab6761610000e5eb551a86e4f23c9125316c603b,Rap,2014,f,br,1,
-Dido,https://i.scdn.co/image/ab6761610000e5eb87150e785bd32b08bf0ba550,Rap,1999,f,uk,1,
-will.i.am,https://i.scdn.co/image/ab6761610000e5ebc9ab8da6f7a3ce02f0b16fd8,Rap,2001,m,us,1,
-Die drei !!!,https://i.scdn.co/image/ab6761610000e5eb893d6ee4bb02e21096e1114d,Rap,2009,x,sa,1,
-Guaynaa,https://i.scdn.co/image/ab6761610000e5eb710db427ce36c07d6902f1e9,Rap,2020,m,pr,1,
-The National,https://i.scdn.co/image/ab6761610000e5eb9bdd753a468500e06a864226,Rap,2001,m,us,5,
-JID,https://i.scdn.co/image/ab6761610000e5eb52a6fa5f05c26ac257c6feda,Rap,2017,m,us,1,
-Selena,https://i.scdn.co/image/ab6761610000e5eba5205abffd84341e5bace828,Rap,2013,f,us,1,
-Juicy J,https://i.scdn.co/image/ab6761610000e5eb116fc50265ef72d7e66723a5,Rap,2002,m,us,1,
-Chase Atlantic,https://i.scdn.co/image/ab6761610000e5eb41c31bcb75f9f1817e597041,Rap,2017,m,au,3,
-Tina Turner,https://i.scdn.co/image/cf860c0e880d74dafe187f732c0093af95fda142,Rap,1978,f,us,1,
-Kiiara,https://i.scdn.co/image/ab6761610000e5eb3a50ec3bc61d904970f4dd1b,Rap,2020,f,us,1,
-Tom Walker,https://i.scdn.co/image/ab6761610000e5eb76b94ef622e91b1a44c6f883,Rap,2019,m,uk,1,
-Beastie Boys,https://i.scdn.co/image/705bcd56dc5dbf9ebc578a3ba8094e6d622862c2,Rap,1986,m,us,3,
-Felipe Ara˙jo,https://i.scdn.co/image/ab6761610000e5ebdc56054ca3624d6a27a39278,Rap,2017,m,br,1,
-Tears For Fears,https://i.scdn.co/image/ab6761610000e5eb42ed2cb48c231f545a5a3dad,Rap,1983,m,uk,2,
-Mother Mother,https://i.scdn.co/image/ab6761610000e5eb61493120c1f08589dfadf9a0,Rap,2007,mixed mmmff,ca,5,
-Wolfgang Amadeus Mozart,https://i.scdn.co/image/ab6761610000e5eb65174e0dfe4f23369a27c993,Rap,1995,m,at,1,
-Yusuf / Cat Stevens,https://i.scdn.co/image/ab6761610000e5ebcff97c36c1d9a2a1d421966c,Rap,1967,x,us,1,
-Brad Paisley,https://i.scdn.co/image/ab6761610000e5eb49b3eca30283993e5794c6ef,Rap,1999,m,us,1,
-Ice Cube,https://i.scdn.co/image/ab6761610000e5eb650e79afafd00492e33d7b8c,Rap,1990,m,us,1,
-SofÌa Reyes,https://i.scdn.co/image/ab6761610000e5eb1630ace4444837a538d34048,Rap,2017,f,mx,1,
-Tracy Chapman,https://i.scdn.co/image/965060777aeacb43659097cddc16b741785a508f,Rap,1988,f,us,1,
-Neil Young,https://i.scdn.co/image/ab6772690000c46c49b91a07c864561ba7c78ba7,Rap,2017,m,us,1,
-Cyndi Lauper,https://i.scdn.co/image/ab6761610000e5eb05d7972efdf59f2e713f2ddc,Rap,1983,f,us,1,
-Mary J. Blige,https://i.scdn.co/image/ab6761610000e5eb59f9f1ee5a9d2d917813e70f,Rap,1992,f,us,1,
-Kevin Roldan,https://i.scdn.co/image/ab6761610000e5eb3e25b08cfa4ab49f04c55c45,Rap,2017,m,co,1,
-Olivia O'Brien,https://i.scdn.co/image/ab6761610000e5eb80a0b3bb31a4cc110bcc20b7,Rap,2019,f,us,1,
-Dominic Fike,https://i.scdn.co/image/ab6761610000e5eb436d45fb9b11ad089e0e3c11,Rap,2018,m,us,1,
-Deftones,https://i.scdn.co/image/ab6761610000e5eb4b2da0b72cab26ac518f1f0d,Rap,1995,m,us,5,
-CRO,https://i.scdn.co/image/ab6761610000e5eba6f88c86470fd6350f4a5535,Rap,1993,x,us,1,
-NCT 127,https://i.scdn.co/image/ab6761610000e5eb0b97c25d93d822c38ac9eaaf,Rap,2016,m,kr,7,
-Oh Wonder,https://i.scdn.co/image/ab6761610000e5eb269dc6a0f88d0b4db4e19dd9,Rap,2015,mixed mf,uk,2,
-Mr. Probz,https://i.scdn.co/image/ab6761610000e5eb4665e17c6cad3616d170dfeb,Rap,2013,m,nl,1,
-Ramin Djawadi,https://i.scdn.co/image/ab6761610000e5eb91e7dd670bc7d3ec7d1cbc6f,Rap,2007,m,de,1,
-Lenny Kravitz,https://i.scdn.co/image/ab6761610000e5eb7e8726da6b15e258be59c13b,Rap,1989,m,us,1,
-Yellow Claw,https://i.scdn.co/image/ab6761610000e5eb935c33066d5c8094f876ed70,Rap,2015,m,nl,2,
-Lupe Fiasco,https://i.scdn.co/image/ab6761610000e5eb17e0a43f3aaa0c48410c4b68,Rap,2006,m,us,1,
-Brett Young,https://i.scdn.co/image/ab6761610000e5ebb2883d0a99c6e43909c88ee1,Rap,2017,m,us,1,
-The Score,https://i.scdn.co/image/ab6761610000e5ebc1fded2a185c54df399fe63a,Rap,2017,m,us,2,
-Ferrugem,https://i.scdn.co/image/ab6761610000e5eb1df1d4185435fa91433931bf,Rap,2015,m,br,1,
-Wallows,https://i.scdn.co/image/ab6761610000e5ebb31e2c447cae669973be25b1,Rap,2019,m,us,3,
-Blur,https://i.scdn.co/image/ab6761610000e5ebfc71f603260f36bb53f2b29c,Rap,1991,m,uk,4,
-MatuÍ,https://i.scdn.co/image/ab6761610000e5ebf9f3437fe3ca3a832e6bd096,Rap,2020,m,br,1,
-Audioslave,https://i.scdn.co/image/ab6761610000e5ebd230aee424ec1acc85143fca,Rap,2002,m,us,4,
-RÌo Roma,https://i.scdn.co/image/ab6761610000e5eb68c2164a213ca52f65fbd22f,Rap,2011,m,mx,2,
-KALEO,https://i.scdn.co/image/ab6761610000e5ebece7abde99be7145c0cbbe21,Rap,2013,m,is,5,
-Cash Cash,https://i.scdn.co/image/ab6761610000e5eb152cf48cf9541c7061570857,Rap,1957,m,us,3,
-Jowell & Randy,https://i.scdn.co/image/ab6761610000e5eb1919bd779536bbcb3a186150,Rap,2007,m,pr,2,
-deadmau5,https://i.scdn.co/image/ab6761610000e5ebc5ceb05f152103b2b70d3b07,Rap,2006,m,ca,1,
-Granular,https://i.scdn.co/image/ab67616d0000b273bce4fa4688f58b6162a149e9,Rap,2017,x,sa,1,
-ZZ Top,https://i.scdn.co/image/684172db801f534639d3f047dc8095da623892e3,Rap,1970,m,us,3,
-Pineapple StormTv,https://i.scdn.co/image/ab6761610000e5ebe915b03e0d384550b452d024,Rap,2021,x,sa,1,
-Lil Kleine,https://i.scdn.co/image/ab6761610000e5ebe02b34087c8b5755b84e9d00,Rap,2016,m,nl,1,
-Julieta Venegas,https://i.scdn.co/image/ab6761610000e5ebbc5aa2e1c5632844b4dd518d,Rap,1998,f,mx,1,
-Will Smith,https://i.scdn.co/image/ab6761610000e5eb787b04112f1dbd7c8bce18b9,Rap,2015,m,us,1,
-Petit Biscuit,https://i.scdn.co/image/ab6761610000e5eb536b525b401e04a57e639f69,Rap,2017,m,fr,1,
-Alex Rose,https://i.scdn.co/image/ab6761610000e5eb7efb39a544c39ab5ac017bb0,Rap,2019,m,pr,1,
-Natiruts,https://i.scdn.co/image/ab6761610000e5eb3606796c2dc2a806e5e2f0bc,Rap,1998,m,br,3,
-Skepta,https://i.scdn.co/image/ab6761610000e5ebba2a0554603cc961338b4a1b,Rap,2007,m,uk,1,
-DJ Luian,https://i.scdn.co/image/ab6761610000e5eba32aa35dccd565cf8bebf94f,Rap,2015,m,pr,1,
-Giveon,https://i.scdn.co/image/ab6761610000e5eb7a55ce9ad0aab3a8b8b6ac5f,Rap,2020,m,us,1,
-Nicki Nicole,https://i.scdn.co/image/ab6761610000e5ebc4339841ed995cedbc0cff4e,Rap,2019,f,ar,1,
-JoaquÌn Sabina,https://i.scdn.co/image/ab6761610000e5ebd30f9a429e2aa4eb9d1ddf21,Rap,1978,m,es,1,
-DENNIS,https://i.scdn.co/image/ab6761610000e5eb03a549a526f43c676492b910,Rap,2021,m,il,1,
-Falling In Reverse,https://i.scdn.co/image/ab6761610000e5ebb62f45887d003e15cdb75696,Rap,2011,m,uis,5,
-Natalia Lafourcade,https://i.scdn.co/image/ab6761610000e5eb00d55232d7308bcad3108e42,Rap,2002,f,mx,1,
-Mc Don Juan,https://i.scdn.co/image/ab6761610000e5eb54cf878f728ea417cca52678,Rap,2019,m,br,1,
-Toby Keith,https://i.scdn.co/image/ab6761610000e5eb1b6b9d83cfd806b328496207,Rap,1994,m,us,1,
-Timbaland,https://i.scdn.co/image/ab6761610000e5eb2ec030557b0529c01639529b,Rap,1997,m,us,1,
-Tech N9ne,https://i.scdn.co/image/ab6761610000e5ebf2f6845f7e0187bb82cca89f,Rap,1999,m,us,1,
-Cher,https://i.scdn.co/image/ab6761610000e5ebed896a298ee61f6cec91abc4,Rap,2006,f,us,1,
-Gustavo Cerati,https://i.scdn.co/image/ab6761610000e5eb9fe420929b841704e6ef7c70,Rap,1992,m,ar,1,
-Dadju,https://i.scdn.co/image/ab67616d0000b27303bb9e103697ae15187f16d8,Rap,2017,m,fr,1,
-Mambo Kingz,https://i.scdn.co/image/ab6761610000e5eb881ed0aa97cc8420685dc90e,Rap,2015,m,pr,2,
-Baby Lullaby Academy,https://i.scdn.co/image/ab67616d0000b273b11162ca9ed88437eefa6cac,Rap,2014,x,sa,1,
-AURORA,https://i.scdn.co/image/ab6761610000e5eb1cf32251011d049c26855ae4,Rap,2014,f,no,1,
-Tori Kelly,https://i.scdn.co/image/ab6761610000e5eb99cc6e6af1e04a142709f617,Rap,2015,f,us,1,
-BÿRNS,https://i.scdn.co/image/ab6761610000e5eb6308e79c621076395807b455,Rap,2015,m,us,1,
-Spice Girls,https://i.scdn.co/image/ab6761610000e5ebcf4a1dced6258416eb219e36,Rap,1996,f,uk,5,
-TLC,https://i.scdn.co/image/ab6761610000e5eb7356ae4581e46319f99c813a,Rap,1992,f,us,3,
-Tungevaag,https://i.scdn.co/image/ab6761610000e5ebee900a94daea7f23be2327a1,Rap,2015,m,no,1,
-Sasha Alex Sloan,https://i.scdn.co/image/ab6761610000e5ebe16b5f57641d79dbc975675e,Rap,2020,f,us,1,
-The Goo Goo Dolls,https://i.scdn.co/image/ab6761610000e5ebbbc7ea7e83564c927c25774c,Rap,1987,m,us,3,
-Kris Kross Amsterdam,https://i.scdn.co/image/ab6761610000e5ebfd4cde6df031ed434eb744aa,Rap,2015,m,nl,3,
-Jay Chou,https://i.scdn.co/image/ab6761610000e5eba9989f6b9885c7aedc29c557,Rap,2000,m,tw,1,
-Pink Sweat$,https://i.scdn.co/image/ab6761610000e5eb2822fcd3337b030199b3861a,Rap,2021,m,us,1,
-Vince Staples,https://i.scdn.co/image/ab6761610000e5eb53054f8bc7e0153daefe12cc,Rap,2014,m,us,1,
-La Adictiva Banda San JosÈ de Mesillas,https://i.scdn.co/image/ab6761610000e5eb18129b218ae9c07848ddc759,Rap,2010,m,mx,17,
-Lykke Li,https://i.scdn.co/image/ab6761610000e5eb0bf8a86c8e3a34bb4934abb7,Rap,2008,f,se,1,
-Bruno Martini,https://i.scdn.co/image/ab6761610000e5eb826de4d67a791e8f5e058139,Rap,2021,m,br,1,
-Alina Baraz,https://i.scdn.co/image/ab6761610000e5eb02f21536c1a061577538597b,Rap,2015,f,us,1,
-Maggie Lindemann,https://i.scdn.co/image/ab6761610000e5eb407c4473a9f99528f59443ca,Rap,2021,f,us,1,
-Jack & Jack,https://i.scdn.co/image/ab6761610000e5eb9555a0b3231117c8cde1fca7,Rap,2001,m,us,2,
-Lauren Daigle,https://i.scdn.co/image/ab6761610000e5eb3f153e668b6ef3534b937673,Rap,2015,f,us,1,
-Melim,https://i.scdn.co/image/ab6761610000e5ebe47d73e3c02e350d98ab91eb,Rap,2018,x,br,3,
-Dread Mar I,https://i.scdn.co/image/ab6761610000e5eb2d7e2fd5cf6d093294dfab6e,Rap,2006,m,ar,1,
-YUNGBLUD,https://i.scdn.co/image/ab6761610000e5eb9bfe2cce40ef158ecd0362f0,Rap,2018,m,uk,1,
-The All-American Rejects,https://i.scdn.co/image/ab6761610000e5ebb57332e3fc2b97bb33577e65,Rap,2002,m,us,4,
-Tyler Childers,https://i.scdn.co/image/ab6761610000e5eb192fe49fd00a709b5e34f440,Rap,2011,m,us,1,
-Evaluna Montaner,https://i.scdn.co/image/ab6761610000e5eb8e311e40ac5a8708707e58ae,Rap,2019,f,ve,1,
-Pabllo Vittar,https://i.scdn.co/image/ab6761610000e5ebfbc31a0700e25e662e7f6602,Rap,2017,f,br,1,
-Alvaro Soler,https://i.scdn.co/image/ab6761610000e5eb337022f30103ba3d1081611d,Rap,2016,m,es,1,
-Supertramp,https://i.scdn.co/image/eebed895cad509b17c7c6faf47f21f1fc35e8829,Rap,1969,m,uk,5,
-Salmo,https://i.scdn.co/image/ab6761610000e5ebce2d962434747d6ff3325640,Rap,1997,m,it,1,
-Willie Nelson,https://i.scdn.co/image/ab6772690000c46ca07b9db029b749adaba3c618,Rap,1962,m,us,1,
-Bunbury,https://i.scdn.co/image/ab6761610000e5ebfbd4d3ee2ef5070e0aa234c0,Rap,1997,m,es,1,
-Juan Luis Guerra 4.40,https://i.scdn.co/image/ab6761610000e5ebaa60935c3c4dc4a0fd48759e,Rap,1985,m,do,1,
-Gavin James,https://i.scdn.co/image/ab6761610000e5eb8543ab05e98a92300a9368d2,Rap,2014,m,ie,1,
-Beck,https://i.scdn.co/image/ab6761610000e5eb653ae0ed6e7bef49386b2f93,Rap,2019,m,us,1,
-Duke Dumont,https://i.scdn.co/image/ab6761610000e5eb208e2d15d19c97801c0bd5fc,Rap,2020,m,uk,1,
-Counting Crows,https://i.scdn.co/image/ab6761610000e5eba6f88c86470fd6350f4a5535,Rap,1993,m,us,7,
-Emeli SandÈ,https://i.scdn.co/image/ab6761610000e5ebf0d110798c1846a3effbf792,Rap,2012,f,uk,1,
-Icona Pop,https://i.scdn.co/image/ab6761610000e5eb10296b38c7ecf2b02e278b67,Rap,2012,f,se,2,
-Burna Boy,https://i.scdn.co/image/ab6761610000e5eb1e6f47b5beb55b52cbece502,Rap,2013,m,ng,1,
-MC Kevin o Chris,https://i.scdn.co/image/ab6761610000e5eb961c0a496810b0ea93bbd9aa,Rap,2020,m,br,1,
-Gloria Trevi,https://i.scdn.co/image/ab6761610000e5eb6701b206dff93bd992eacdbb,Rap,1989,f,mx,1,
-Trueno,https://i.scdn.co/image/ab6761610000e5eb374aa48c47b60b9347fbf2b2,Rap,2020,m,ar,1,
-Foreigner,https://i.scdn.co/image/ab6761610000e5ebb338d6964565206f741d5ad1,Rap,1977,m,uk,7,
-Pixies,https://i.scdn.co/image/ab6761610000e5eb01a03b759e148c92c6db1262,Rap,1987,x,us,4,
-Simone & Simaria,https://i.scdn.co/image/ab6761610000e5eb1f12525ea1aa1b78d4a7782d,Rap,2004,f,br,2,
-The Temptations,https://i.scdn.co/image/ab6761610000e5eb3f0f76df1047720f2e57fc35,Rap,1964,m,us,5,
-Talking Heads,https://i.scdn.co/image/e4c5b04fce8706c87663357b1f78522a3a5c641b,Rap,1977,x,us,4,
-Gotye,https://i.scdn.co/image/713664fded8bdd28ed84f4b2054815af92999b9c,Rap,2003,m,be,1,
-The Head And The Heart,https://i.scdn.co/image/ab6761610000e5ebc1332a509f6d8382c6d8996a,Rap,2011,x,us,6,
-Cristian Castro,https://i.scdn.co/image/45025bd1014527e8f113b22fa647da7a142c3d6c,Rap,1997,m,mx,1,
-Jeezy,https://i.scdn.co/image/ab6761610000e5eba97e266f85999f6113e551af,Rap,2003,m,us,1,
-Hombres G,https://i.scdn.co/image/ab6761610000e5eb04c4062671c216a926f425f2,Rap,1985,m,es,4,
-Capo Plaza,https://i.scdn.co/image/ab6761610000e5ebce3a6ac0130806e84e12b865,Rap,2016,m,it,1,
-Marracash,https://i.scdn.co/image/ab6761610000e5eb6de4419d90a5d68c308a4f31,Rap,2008,m,it,1,
-ZHU,https://i.scdn.co/image/ab6761610000e5eb5cc7aca0b30b4214a4dc154e,Rap,2015,m,us,1,
-Ruel,https://i.scdn.co/image/ab6761610000e5eb0fa22dcc72a09bf9115479b2,Rap,2019,m,au,1,
-Jacquees,https://i.scdn.co/image/ab6761610000e5ebb13d32c402395ea1bdfb87ee,Rap,2014,m,us,1,
-Salaam Remi,https://i.scdn.co/image/ab6761610000e5eba4d76be80873bd859f4c4b43,Rap,1999,m,us,1,
-Gustavo Mioto,https://i.scdn.co/image/ab6761610000e5eb5361149937004b8165005b96,Rap,2015,m,br,1,
-SCH,https://i.scdn.co/image/ab6761610000e5ebe697a7ddf7af3a306428fa73,Rap,2011,m,fr,1,
-Lil Xan,https://i.scdn.co/image/ab6761610000e5eb8fe03caab903761dd757714a,Rap,2018,m,us,1,
-Alanis Morissette,https://i.scdn.co/image/ab6772690000c46ce8cb0dc811f7064ac07180ae,Rap,1995,f,ca,1,
-Diego & Victor Hugo,https://i.scdn.co/image/ab6761610000e5eb3fc676479cb8496755d60855,Rap,2014,m,br,1,
-Thiaguinho,https://i.scdn.co/image/ab6761610000e5eb5a95fc6d6dbdc6acbb676787,Rap,2008,m,br,1,
-CafÈ Tacvba,https://i.scdn.co/image/ab6761610000e5ebf38da67f8b1ee80e75a9eab7,Rap,1992,m,mx,4,
-Baby Keem,https://i.scdn.co/image/ab6761610000e5ebd6f2323c1971fd5a70cd0255,Rap,2018,m,us,1,
-Canserbero,https://i.scdn.co/image/ab6761610000e5eba91405d63c939682e4efdcbc,Rap,2008,m,ve,1,
-Zendaya,https://i.scdn.co/image/fba29219867535aaed72b65c2cb363040cb98103,Rap,2013,f,us,1,
-Dustin Lynch,https://i.scdn.co/image/ab6761610000e5eb81cd620ab4e2adb53d83c5f9,Rap,2012,m,us,1,
-Megadeth,https://i.scdn.co/image/ab6761610000e5ebace132cb20a3fd6725d5e27d,Rap,1985,m,us,4,
-Beach House,https://i.scdn.co/image/ab6761610000e5ebb3e38a46a56a423d8f741c09,Rap,2006,m,us,2,
-Frenna,https://i.scdn.co/image/ab6761610000e5ebc71d11d348ab55b4c9b9e6a2,Rap,2016,m,nl,1,
-Sam Cooke,https://i.scdn.co/image/ab6761610000e5eb41aaa3a05d2ddba59454273e,Rap,1958,m,us,1,
-MF DOOM,https://i.scdn.co/image/ab6761610000e5eb1ca139a174e216880498dc16,Rap,1999,m,uk,1,
-Silk Sonic,https://i.scdn.co/image/ab6772690000c46ca3ebb27ba9a55044f32af6e1,Rap,2021,m,us,2,
-Eurythmics,https://i.scdn.co/image/ab6761610000e5eb145a01fb993c3088fe6ac5e7,Rap,1981,x,uk,2,
-A Tribe Called Quest,https://i.scdn.co/image/ab6761610000e5eb774d73ae6796b6f437d89db9,Rap,1990,m,us,4,
-Pantera,https://i.scdn.co/image/ab21b012c14655da99190faeada6d5ed95273c98,Rap,1990,m,us,4,
-Laura Pausini,https://i.scdn.co/image/ab6761610000e5eba1ca264aff097f33f02a9938,Rap,1993,f,it,1,
-Missy Elliott,https://i.scdn.co/image/ab6761610000e5ebf6691f40d906f097e9fbaa4c,Rap,1997,f,us,1,
-Brantley Gilbert,https://i.scdn.co/image/ab6761610000e5eb891ad6bfade113366ffb7698,Rap,2009,m,us,1,
-Johann Sebastian Bach,https://i.scdn.co/image/a2ec08fe69ecec2748fbc764aede8f1b03ae8f88,Rap,1989,m,de,1,
-Craig David,https://i.scdn.co/image/ab6761610000e5ebe193dec6d352ccc0d3ed0221,Rap,2000,m,uk,1,
-Snakehips,https://i.scdn.co/image/ab6761610000e5ebaee5ac218c1afcaf2ad96ac9,Rap,2014,m,uk,2,
-(G)I-DLE,https://i.scdn.co/image/ab6761610000e5ebc54e9b09db7f35f5bbb0efd4,Rap,2022,f,kr,6,
-Ben&Ben,https://i.scdn.co/image/ab6761610000e5eb80e7c24a90d629c98d4dfa8f,Rap,2019,x,ph,9,
-Brett Eldredge,https://i.scdn.co/image/ab6761610000e5eb0911914cb6c9b01bd1c01aaf,Rap,2013,m,us,1,
-Grouplove,https://i.scdn.co/image/ab6761610000e5eb515b012eec849c8c5b844121,Rap,2011,x,us,5,
-Aleman,https://i.scdn.co/image/ab6761610000e5eb6c1d2882997b15d14a7a7661,Rap,2014,m,mx,1,
-Andrea Bocelli,https://i.scdn.co/image/ab6761610000e5eb289ac142bb94d4e5d92dea75,Rap,1994,m,it,1,
-Kelsea Ballerini,https://i.scdn.co/image/ab6761610000e5ebfcac93226387eadc9f32a611,Rap,2015,f,us,1,
-AWOLNATION,https://i.scdn.co/image/ab6761610000e5eb830294a83aeb6ab0b2dc928e,Rap,2011,m,us,4,
-Ultimo,https://i.scdn.co/image/ab67616d0000b273dce73288ff878f0f7cb3ffe3,Rap,2009,m,it,1,
-Benjamin Bl¸mchen,https://i.scdn.co/image/ab6761610000e5ebdda660380d0c92b8a62342aa,Rap,1977,x,sa,1,
-M.I.A.,https://i.scdn.co/image/ab6761610000e5ebee0343832cf2bbf09a0c697d,Rap,2005,f,uk,1,
-R‹F‹S DU SOL,https://i.scdn.co/image/ab6761610000e5eba5d83556275bb22511f57624,Rap,2013,m,au,1,
-Gemitaiz,https://i.scdn.co/image/ab6761610000e5eb7da5f11d322585184fcfb2bd,Rap,2012,m,it,1,
-Gzuz,https://i.scdn.co/image/ab6761610000e5eb27e9ee06a37237cdc18c02a8,Rap,2014,m,de,1,
-Tinie Tempah,https://i.scdn.co/image/ab6761610000e5ebb3ba872f2db68e17e01d3cbd,Rap,2010,m,uk,1,
-RIN,https://i.scdn.co/image/ab6761610000e5eb7033d99b85ed729210093ab3,Rap,2017,m,hr,1,
-Dave Matthews Band,https://i.scdn.co/image/ab6761610000e5ebc04724201a3cd1a81d7bba05,Rap,1993,m,us,7,
-Death Cab for Cutie,https://i.scdn.co/image/ab6761610000e5ebd05eab817560171764525159,Rap,1998,m,us,5,
-Los Enanitos Verdes,https://i.scdn.co/image/0a44319db623b112c3fddca7a1ef88b5756265cd,Rap,1986,m,ar,3,
-Empire of the Sun,https://i.scdn.co/image/ab6761610000e5ebe51c443e9e8c1952c80357b4,Rap,2008,m,au,2,
-Lil Jon,https://i.scdn.co/image/ab6761610000e5eb74a2a7ebb781d816f14664af,Rap,1999,m,us,1,
-Leonard Cohen,https://i.scdn.co/image/ab6761610000e5ebd09c1295779cfb71683cee99,Rap,1967,m,ca,1,
-Official HIGE DANdism,https://i.scdn.co/image/ab6761610000e5eb092745f452dbfc2324076290,Rap,2015,m,jp,4,
-Night Lovell,https://i.scdn.co/image/ab6761610000e5ebe9d55242d13e8a1208f168c2,Rap,2014,m,ca,1,
-Ashnikko,https://i.scdn.co/image/ab6761610000e5eb8f4d36b43fa094d32a167f1e,Rap,2021,f,us,1,
-Shoreline Mafia,https://i.scdn.co/image/ab6761610000e5ebd743a46378a38932956af6ca,Rap,2017,m,us,4,
-The Kinks,https://i.scdn.co/image/ab6761610000e5eb8f8013de1cd216cfdd7a4848,Rap,1964,m,uk,4,
-ONE OK ROCK,https://i.scdn.co/image/ab6761610000e5eb8777e097ef122463984c708f,Rap,2007,m,jp,4,
-Darius Rucker,https://i.scdn.co/image/ab6761610000e5eb8e55820ddd384472abd0b832,Rap,2002,m,us,1,
-Los Bukis,https://i.scdn.co/image/ab6761610000e5ebf965d7facfd674f3780158a7,Rap,1977,m,mx,6,
-Foals,https://i.scdn.co/image/ab6761610000e5eb043ff2197d468e03e77361cb,Rap,2008,m,uk,3,
-Kina,https://i.scdn.co/image/ab6761610000e5eb3ca993fe49862bca8c23a39c,Rap,2018,f,us,1,
-BIGBANG,https://i.scdn.co/image/ab6761610000e5eb597a4257d0022e2ac837fa7d,Rap,2006,m,kr,4,
-Upchurch,https://i.scdn.co/image/ab6761610000e5ebe2acadb5969621e6f8e5c847,Rap,2015,m,us,1,
+Ôªøartist,image_uri,genre,year,gender,country,group_size
+Drake,https://i.scdn.co/image/ab6761610000e5eb9e46a78c5cd2f7a8e7669980,Rap,2009,m,ca,1
+Ed Sheeran,https://i.scdn.co/image/ab6761610000e5eb12a2ef08d00dd7451a6dbed6,Rap,2011,m,uk,1
+Bad Bunny,https://i.scdn.co/image/ab6761610000e5eb6ad57a3cb26ae3ffd0f28f22,Rap,2018,m,pr,1
+The Weeknd,https://i.scdn.co/image/ab6761610000e5eb2f71b65ef483ed75a8b40437,Rap,2011,m,ca,1
+Ariana Grande,https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952,Rap,2013,f,us,1
+Justin Bieber,https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36,Rap,2009,m,ca,1
+Taylor Swift,https://i.scdn.co/image/ab6761610000e5eb9e3acf1eaf3b8846e836f441,Rap,2006,f,us,1
+Eminem,https://i.scdn.co/image/ab6761610000e5eba00b11c129b27a88fc72f36b,Rap,1999,m,us,1
+Post Malone,https://i.scdn.co/image/ab6761610000e5ebe07d6b0f2fcc2f2ba6bdc3ce,Rap,2016,m,us,1
+BTS,https://i.scdn.co/image/ab6761610000e5eb82a5d58059f81867b871d8b6,Rap,2013,m,kr,7
+J Balvin,https://i.scdn.co/image/ab6761610000e5eb5d0fc400392250a750a9403e,Rap,2012,m,co,1
+Kanye West,https://i.scdn.co/image/ab6761610000e5eb867008a971fae0f4d913f63a,Rap,2004,m,us,1
+Billie Eilish,https://i.scdn.co/image/ab6761610000e5ebd8b9980db67272cb4d2c3daf,Rap,2019,f,us,1
+Juice WRLD,https://i.scdn.co/image/ab6761610000e5eb1908e1a8b79abf71d5598944,Rap,2018,m,us,1
+Coldplay,https://i.scdn.co/image/ab6761610000e5eb865a3301762a8fce048cb469,Rap,2000,m,uk,4
+XXXTENTACION,https://i.scdn.co/image/ab6761610000e5ebf0c20db5ef6c6fbe5135d2e4,Rap,2017,m,us,1
+Ozuna,https://i.scdn.co/image/ab6761610000e5ebe9cd20f3cea76432155607da,Rap,2017,m,pr,1
+Khalid,https://i.scdn.co/image/ab6761610000e5eb31072db9da0311ecfabe96bf,Rap,2017,m,us,1
+Dua Lipa,https://i.scdn.co/image/ab6761610000e5ebd42a27db3286b58553da8858,Rap,2015,f,us,1
+Imagine Dragons,https://i.scdn.co/image/ab6761610000e5eb920dc1f617550de8388f368e,Rap,2012,m,us,4
+Travis Scott,https://i.scdn.co/image/ab6761610000e5ebe707b87e3f65997f6c09bfff,Rap,2015,m,us,1
+Rihanna,https://i.scdn.co/image/ab6761610000e5eb019d6873a01987cbe35888cd,Rap,2005,f,us,1
+Maroon 5,https://i.scdn.co/image/ab6761610000e5eb288ac05481cedc5bddb5b11b,Rap,2002,m,us,7
+Shawn Mendes,https://i.scdn.co/image/ab6761610000e5eb46e7a06fa6dfefaed6a3f0db,Rap,2015,m,ca,1
+David Guetta,https://i.scdn.co/image/ab6761610000e5eb75348e1aade2645ad9c58829,Rap,2002,m,fr,1
+Bruno Mars,https://i.scdn.co/image/ab6761610000e5ebc36dd9eb55fb0db4911f25dd,Rap,2010,m,us,1
+Calvin Harris,https://i.scdn.co/image/ab6761610000e5eb578905d5539cff25568dc097,Rap,2007,m,uk,1
+Daddy Yankee,https://i.scdn.co/image/ab6761610000e5eb2204cb5a314573e202f20f8d,Rap,2002,m,pr,1
+Sam Smith,https://i.scdn.co/image/ab6761610000e5ebe5a4f8ec6996364b2f824fcb,Rap,2014,m,uk,1
+Queen,https://i.scdn.co/image/b040846ceba13c3e9c125d68389491094e7f2982,Rap,1973,m,uk,2
+Kendrick Lamar,https://i.scdn.co/image/ab6761610000e5ebee29d711d7afd1e882486e1a,Rap,2010,m,us,1
+The Chainsmokers,https://i.scdn.co/image/ab6761610000e5eb3c02f4fb4cc9187c488afd50,Rap,2016,m,us,2
+One Direction,https://i.scdn.co/image/5bb443424a1ad71603c43d67f5af1a04da6bb3c8,Rap,2012,m,uk,5
+Chris Brown,https://i.scdn.co/image/ab6761610000e5ebba4309876dbc0ef3222c5512,Rap,2005,m,us,1
+Beyonc√©,https://i.scdn.co/image/ab6761610000e5ebd3d058be8485c8583703b6d2,Rap,2003,f,us,1
+Future,https://i.scdn.co/image/ab6761610000e5eb888112f96c607aa2c6a1ffe8,Rap,2012,m,us,1
+Nicki Minaj,https://i.scdn.co/image/ab6761610000e5ebaf3459f7c235fd25daf7f84f,Rap,2010,f,us,1
+Lady Gaga,https://i.scdn.co/image/ab6761610000e5eb749ba770a33230206f8fe159,Rap,2008,f,us,1
+J. Cole,https://i.scdn.co/image/ab6761610000e5ebadd503b411a712e277895c8a,Rap,2011,m,us,1
+Halsey,https://i.scdn.co/image/ab6761610000e5ebdade5a33a51db8b049787d7f,Rap,2015,f,us,1
+Anuel AA,https://i.scdn.co/image/ab6761610000e5ebc5c589b667f600c299552ee5,Rap,2018,m,pr,1
+Selena Gomez,https://i.scdn.co/image/ab6761610000e5eba5205abffd84341e5bace828,Rap,2013,f,us,1
+Adele,https://i.scdn.co/image/ab6761610000e5eb68f6e5892075d7f22615bd17,Rap,2008,f,uk,1
+The Beatles,https://i.scdn.co/image/ab6761610000e5ebe9348cc01ff5d55971b22433,Rap,1963,m,uk,4
+Sia,https://i.scdn.co/image/ab6761610000e5ebe8637c96a7aa2917eae3c54d,Rap,2003,f,au,1
+Maluma,https://i.scdn.co/image/ab6761610000e5ebd371e6537d5a4fbe3582d198,Rap,2012,m,co,1
+Twenty One Pilots,https://i.scdn.co/image/ab6761610000e5eb196972172c37d934d9ca8093,Rap,2009,m,us,2
+Marshmello,https://i.scdn.co/image/ab6761610000e5eba91af711541f8807ed7f0676,Rap,2016,m,us,1
+Lil Uzi Vert,https://i.scdn.co/image/ab6761610000e5eb879835ea4e3a0f0b8cf1c7b4,Rap,2015,m,us,1
+Linkin Park,https://i.scdn.co/image/ab6761610000e5eb34e5aa6afc1ba147bfbb0677,Rap,2000,m,us,6
+Katy Perry,https://i.scdn.co/image/ab6761610000e5ebdc9dcb7e4a97b4552e1224d6,Rap,2008,f,us,1
+Kygo,https://i.scdn.co/image/ab6761610000e5eb6567299e3c53cf2a250fbdce,Rap,2016,m,no,1
+Avicii,https://i.scdn.co/image/ab6761610000e5eb09bf4814c6585e1f69dfeef7,Rap,2013,m,se,1
+Farruko,https://i.scdn.co/image/ab6761610000e5eb4fd89b40d4798b2ae7348c7d,Rap,2010,m,pr,1
+Lana Del Rey,https://i.scdn.co/image/ab6761610000e5ebc5903678d3db18e271e42be0,Rap,2011,f,us,1
+Camila Cabello,https://i.scdn.co/image/ab6761610000e5ebec05963eab63676a539fef13,Rap,2018,f,us,1
+Rauw Alejandro,https://i.scdn.co/image/ab6761610000e5eb754fd19c86184acc854b79a6,Rap,2019,m,pr,1
+Jason Derulo,https://i.scdn.co/image/ab6761610000e5eb654972693e0efed3f3f4d090,Rap,2010,m,us,1
+Red Hot Chili Peppers,https://i.scdn.co/image/ab6761610000e5ebb0dd96d5c6fcd8b068834373,Rap,1984,m,us,4
+Demi Lovato,https://i.scdn.co/image/ab6761610000e5eb99c4e0564b8d23a3d0645af1,Rap,2008,f,us,1
+Arctic Monkeys,https://i.scdn.co/image/ab6761610000e5eb39f37a34b404169fdca52dc8,Rap,2006,m,uk,4
+Shakira,https://i.scdn.co/image/ab6761610000e5ebded9d5f8bb8611aad61df058,Rap,1995,f,co,1
+Doja Cat,https://i.scdn.co/image/ab6761610000e5eb727a2ac15afe659be999beba,Rap,2018,f,us,1
+Nicky Jam,https://i.scdn.co/image/ab6761610000e5eb4d248e406d79c79932931383,Rap,2001,m,us,1
+KAROL G,https://i.scdn.co/image/ab6761610000e5eb5f2a184720aa12c1f0aef516,Rap,2017,f,co,1
+OneRepublic,https://i.scdn.co/image/ab6761610000e5eb77bf00f67e21f514dc44c485,Rap,2007,m,us,6
+Harry Styles,https://i.scdn.co/image/ab6761610000e5eb5464c6450a88d073a3f117b0,Rap,2017,m,uk,1
+Miley Cyrus,https://i.scdn.co/image/ab6761610000e5eb02651b19050d8bf64b18d40a,Rap,2007,f,us,1
+Michael Jackson,https://i.scdn.co/image/ab6761610000e5eba2a0b9e3448c1e702de9dc90,Rap,1972,m,us,1
+Martin Garrix,https://i.scdn.co/image/ab6761610000e5eb66d17ee8690d2e8d94ee7387,Rap,2019,m,nl,1
+Pitbull,https://i.scdn.co/image/ab6761610000e5eb2dc40ac263ef07c16a95af4e,Rap,2004,m,us,1
+G-Eazy,https://i.scdn.co/image/ab6761610000e5ebe818f7ca0d47f038a9aa246a,Rap,2012,m,us,1
+Sebastian Yatra,https://i.scdn.co/image/ab6761610000e5eb28cc5ee1d7ba49cdc7dde27b,Rap,2018,m,ca,1
+Charlie Puth,https://i.scdn.co/image/ab6761610000e5eb0d890ffd0e0bea5f904f1a9f,Rap,2015,m,us,1
+Cardi B,https://i.scdn.co/image/ab6761610000e5eba3de342056c0e1284cbc109d,Rap,2016,f,us,1
+Panic! At The Disco,https://i.scdn.co/image/ab6761610000e5eb84776fe119fa6503fdffb0f8,Rap,2005,m,us,4
+Major Lazer,https://i.scdn.co/image/ab6761610000e5eb133f44ab343b35c715a4ac97,Rap,2009,m,us,3
+Ellie Goulding,https://i.scdn.co/image/ab6761610000e5ebaa972cb3308ccbeeff38666a,Rap,2010,f,uk,1
+DaBaby,https://i.scdn.co/image/ab6761610000e5eb5ace68c56849548db7f102be,Rap,2016,m,us,1
+Lil Wayne,https://i.scdn.co/image/ab6761610000e5ebc63aded6f4bf4d06d1377106,Rap,1999,m,us,1
+21 Savage,https://i.scdn.co/image/ab6761610000e5ebe01decbaa565f3feaaade6a9,Rap,2016,m,us,1
+Young Thug,https://i.scdn.co/image/ab6761610000e5eb547d2b41c9f2c97318aad0ed,Rap,2011,m,us,1
+Lil Baby,https://i.scdn.co/image/ab6761610000e5eb2161ef3bab0e5e922a1c297d,Rap,2017,m,us,1
+Wiz Khalifa,https://i.scdn.co/image/ab6761610000e5eb4bdf6db5203f2a0e44002620,Rap,2006,m,us,1
+Sech,https://i.scdn.co/image/ab6761610000e5eba760b68c06ca08e6dce6b45c,Rap,2018,m,pa,1
+Mac Miller,https://i.scdn.co/image/ab6761610000e5ebed3b89aa602145fde71a163a,Rap,2010,m,us,1
+Pop Smoke,https://i.scdn.co/image/ab6761610000e5eb597f9edd2cd1a892d4412b09,Rap,2019,m,us,1
+Myke Towers,https://i.scdn.co/image/ab6761610000e5eb9b7677e5bdee54a0ae0c8262,Rap,2016,m,pr,1
+Metallica,https://i.scdn.co/image/ab6761610000e5eb8101d13bdd630b0889acd2fd,Rap,1983,m,us,4
+Fall Out Boy,https://i.scdn.co/image/ab6761610000e5eb1443b137c8941b9c73237a27,Rap,2003,m,us,4
+Diplo,https://i.scdn.co/image/ab6761610000e5ebee376ee0e88042b34dee6e62,Rap,2004,m,us,1
+Lil Peep,https://i.scdn.co/image/ab6761610000e5eb6685f03de475c4efb27da3c4,Rap,2016,m,us,1
+Logic,https://i.scdn.co/image/ab6761610000e5ebc0f43abdba90d508842d7367,Rap,2014,m,us,1
+Migos,https://i.scdn.co/image/ab6761610000e5ebf4593f7b778219838d858c34,Rap,2011,m,us,3
+Lil Nas X,https://i.scdn.co/image/ab6761610000e5ebab6bd6e450cbc7629a9a2381,Rap,2021,m,us,1
+Tyga,https://i.scdn.co/image/ab6761610000e5eb9f4efad614109d3094975cdd,Rap,2012,m,us,1
+P!nk,https://i.scdn.co/image/ab6761610000e5eb6ec3754d5db2e333b9434c75,Rap,2000,f,us,1
+John Mayer,https://i.scdn.co/image/ab6761610000e5eb265ef5547ecff4dabd6352bf,Rap,1999,m,us,1
+Alan Walker,https://i.scdn.co/image/ab6761610000e5ebc02d416c309a68b04dc94576,Rap,2018,m,no,1
+AC/DC,https://i.scdn.co/image/ab6761610000e5ebc4c77549095c86acb4e77b37,Rap,1976,m,uk,5
+Little Mix,https://i.scdn.co/image/ab6761610000e5eb08cd53940cbf5813ee5fe565,Rap,2012,f,uk,3
+ZAYN,https://i.scdn.co/image/ab6761610000e5eb9fbf7133dfc04d4cd44ccd36,Rap,2016,m,uk,1
+DJ Snake,https://i.scdn.co/image/ab6761610000e5ebf2855e25f1d9c8a20bcc85ae,Rap,2016,m,fr,1
+Lauv,https://i.scdn.co/image/ab6761610000e5eb5af53f295e6c42529fbd0873,Rap,2018,m,us,1
+James Arthur,https://i.scdn.co/image/ab6761610000e5eb6867a4ce52401bd378bb5179,Rap,2013,m,uk,1
+Trippie Redd,https://i.scdn.co/image/ab6761610000e5eb32f8f4df5e7b05a7e4d170ca,Rap,2017,m,us,1
+Macklemore,https://i.scdn.co/image/ab6761610000e5eb57df9bb5680b96f5b4811fc2,Rap,2005,m,us,1
+Olivia Rodrigo,https://i.scdn.co/image/ab6761610000e5ebee954a3b5418065c2fe253fb,Rap,2021,f,us,1
+Kodak Black,https://i.scdn.co/image/ab6761610000e5eb4bd22c1711d22aa647a61097,Rap,2014,m,us,1
+Zedd,https://i.scdn.co/image/ab6761610000e5eb1751e951b4969c4ae957a328,Rap,2012,m,ru,1
+Gunna,https://i.scdn.co/image/ab6761610000e5eb803f228472451496cb2f5b88,Rap,2016,m,us,1
+A$AP Rocky,https://i.scdn.co/image/ab6761610000e5eb6d5529e3962a16bd267bfeb2,Rap,2011,m,us,1
+A Boogie Wit da Hoodie,https://i.scdn.co/image/ab6761610000e5eb7dc556a6a7893f87b9be23b3,Rap,2016,m,us,1
+NF,https://i.scdn.co/image/ab6761610000e5eb2ddbc93688aa74431df384ea,Rap,2015,m,us,1
+5 Seconds of Summer,https://i.scdn.co/image/ab6761610000e5eb5f6a7d9d3fa9cb7edf77b1ca,Rap,2014,m,us,4
+Frank Ocean,https://i.scdn.co/image/ab6761610000e5ebfbc3faec4a370d8393bee7f1,Rap,2012,m,us,1
+Bob Marley & The Wailers,https://i.scdn.co/image/b5aae2067db80f694a980e596e7f49618c1206c9,Rap,1971,x,jm,8
+Elton John,https://i.scdn.co/image/ab6761610000e5eb0a7388b95df960b5c0da8970,Rap,1969,m,uk,1
+Ti√´sto,https://i.scdn.co/image/ab6761610000e5eb8cb651b2e77c6d30b1de15e4,Rap,1997,m,ul,1
+YoungBoy Never Broke Again,https://i.scdn.co/image/ab6761610000e5eba213bd0d2152db1ce9c8da70,Rap,2016,m,us,1
+Robin Schulz,https://i.scdn.co/image/ab6761610000e5eb7886f753d19bacd490d5acca,Rap,2014,m,de,1
+Green Day,https://i.scdn.co/image/ab6761610000e5eb047eac333eff0be4abe32cbf,Rap,1991,m,us,3
+Metro Boomin,https://i.scdn.co/image/ab6761610000e5eb40134b72d4fd5a20a52419b5,Rap,2014,m,us,1
+Bebe Rexha,https://i.scdn.co/image/ab6761610000e5ebabfac786f093c4da55c99d4e,Rap,2018,f,us,1
+Romeo Santos,https://i.scdn.co/image/ab6761610000e5eb0d2f605c23090747230416db,Rap,2012,m,us,1
+Justin Timberlake,https://i.scdn.co/image/ab6761610000e5eb9d3f9efc8e0030306e583cef,Rap,2002,m,us,1
+"Tyler, The Creator",https://i.scdn.co/image/ab6761610000e5eb8278b782cbb5a3963db88ada,Rap,2011,m,us,1
+DJ Khaled,https://i.scdn.co/image/ab6761610000e5ebbf921114b7f19be97ce29647,Rap,2007,m,us,1
+Clean Bandit,https://i.scdn.co/image/ab6761610000e5eb7a487027eb0c10af725d5410,Rap,2014,x,uk,3
+Luis Miguel,https://i.scdn.co/image/ab6761610000e5eb6481401e529e475116702a29,Rap,1982,m,mx,1
+Anne-Marie,https://i.scdn.co/image/ab6761610000e5eb1e553befc24937f68be6dbea,Rap,2018,f,uk,1
+Zara Larsson,https://i.scdn.co/image/ab6761610000e5eba63a2b0ceb57eb509d67c90f,Rap,2014,f,se,1
+Lewis Capaldi,https://i.scdn.co/image/ab6761610000e5eb15cbff23945b9e4b2afa5348,Rap,2019,m,uk,1
+SZA,https://i.scdn.co/image/ab6761610000e5eb529f2198b3e9e77c0d5a665b,Rap,2014,f,us,1
+Black Eyed Peas,https://i.scdn.co/image/ab6761610000e5eb26b00ac49e5fc94a222b953f,Rap,1998,x,us,4
+Michael Bubl√©,https://i.scdn.co/image/ab6761610000e5ebef8cf61fea4923d2bde68200,Rap,2003,m,ca,1
+Machine Gun Kelly,https://i.scdn.co/image/ab6761610000e5eb1fd54eb6e30d0bc8f633621e,Rap,2012,m,us,1
+Enrique Iglesias,https://i.scdn.co/image/ab6761610000e5ebe784d82734a77def7f967703,Rap,1995,m,es,1
+Nirvana,https://i.scdn.co/image/84282c28d851a700132356381fcfbadc67ff498b,Rap,1989,m,us,3
+Pink Floyd,https://i.scdn.co/image/e69f71e2be4b67b82af90fb8e9d805715e0684fa,Rap,1967,m,uk,3
+BLACKPINK,https://i.scdn.co/image/ab6761610000e5eb9f73197444a8a6b016f4a546,Rap,2018,f,kr,4
+JAY-Z,https://i.scdn.co/image/ab6761610000e5ebc75afcd5a9027f60eaebb5e4,Rap,1996,m,us,1
+$uicideboy$,https://i.scdn.co/image/ab6761610000e5eb84c3e162cc178d07010560d2,Rap,2014,m,us,2
+The Rolling Stones,https://i.scdn.co/image/ab6761610000e5ebd3cb15a8570cce5a63af63d8,Rap,1964,m,uk,3
+Ty Dolla $ign,https://i.scdn.co/image/ab6761610000e5ebd9dde4a54073dbd58fb91c7d,Rap,2014,m,us,1
+Flo Rida,https://i.scdn.co/image/ab6761610000e5eb655ca8f3196953554b479452,Rap,2008,m,us,1
+Luis Fonsi,https://i.scdn.co/image/ab6761610000e5ebec1cd67f4c17468f335206eb,Rap,1998,m,pr,1
+Britney Spears,https://i.scdn.co/image/ab6761610000e5ebf2ac13247b26025069dbdc4e,Rap,1999,m,us,1
+blackbear,https://i.scdn.co/image/ab6761610000e5ebe23a1ce692e974395caa9caf,Rap,2015,m,us,1
+Mar√≠lia Mendon√ßa,https://i.scdn.co/image/ab6761610000e5eb59035f0b5c852aabd865a080,Rap,2016,f,br,1
+Jonas Blue,https://i.scdn.co/image/ab6761610000e5ebb2e0eba220cd2dd0446f5073,Rap,2018,m,uk,1
+Guns N' Roses,https://i.scdn.co/image/ab6761610000e5eb50defaf9fc059a1efc541f4c,Rap,1987,m,us,5
+Russ,https://i.scdn.co/image/ab6761610000e5eb4197510727b638d8b2c6e824,Rap,2012,m,us,1
+Fleetwood Mac,https://i.scdn.co/image/ab6761610000e5eb249d55f2d68a44637905c57e,Rap,1968,x,uk,5
+Anitta,https://i.scdn.co/image/ab6761610000e5eb847940395e7b755f626ad139,Rap,2013,f,us,1
+Reik,https://i.scdn.co/image/ab6761610000e5eb7ef75910e15bba278b939a70,Rap,2005,m,mx,3
+Kid Cudi,https://i.scdn.co/image/ab6761610000e5eb876faa285687786c3d314ae0,Rap,2009,m,us,1
+Bastille,https://i.scdn.co/image/ab6761610000e5ebfb7a0fe5a0e33cf5325fcd91,Rap,2013,m,uk,4
+Banda MS de Sergio Liz√°rraga,https://i.scdn.co/image/ab6761610000e5ebbbea577c2181208f77d1fb49,Rap,2006,m,mx,18
+2Pac,https://i.scdn.co/image/ab6761610000e5eb8b010945f9d218d19d255f9b,Rap,1991,m,us,1
+Childish Gambino,https://i.scdn.co/image/ab6761610000e5eb3ef779aa0d271adb2b6a3ded,Rap,2011,m,us,1
+The Neighbourhood,https://i.scdn.co/image/ab6761610000e5ebdf0b5ac84376a0a4b2166816,Rap,2013,m,us,5
+50 Cent,https://i.scdn.co/image/dd031b9c5d1b6eba4a691cd89c954255aae787f2,Rap,2003,m,us,1
+Polo G,https://i.scdn.co/image/ab6761610000e5ebdec41838906c58af1c29c9da,Rap,2019,m,us,1
+The Kid LAROI,https://i.scdn.co/image/ab6761610000e5eb152a7ee8fc0469aaeb015f02,Rap,2020,m,au,1
+Gorillaz,https://i.scdn.co/image/ab6761610000e5eb7284ae7f774c3b71a6e5ce64,Rap,2001,x,uk,4
+Lorde,https://i.scdn.co/image/ab6761610000e5ebc4902f080d3620b3e6da80c3,Rap,2013,f,nz,1
+Camilo,https://i.scdn.co/image/ab6761610000e5eb4afae4c45be4b6e04e28874d,Rap,2020,m,co,1
+Usher,https://i.scdn.co/image/ab6761610000e5eb2e42d906f4f9f672359e7379,Rap,1994,m,us,1
+Becky G,https://i.scdn.co/image/ab6761610000e5eb653ae0ed6e7bef49386b2f93,Rap,2019,f,us,1
+Jhay Cortez,https://i.scdn.co/image/ab6761610000e5ebbbeb7f1f3a9b011b73156dc0,Rap,2018,m,pr,1
+Alessia Cara,https://i.scdn.co/image/ab6761610000e5ebe74b7398634a741f74858dc7,Rap,2015,f,ca,1
+Skrillex,https://i.scdn.co/image/ab6761610000e5eb3b4b7eaaf58759b58626de37,Rap,2010,m,us,1
+David Bowie,https://i.scdn.co/image/ab6761610000e5ebb78f77c5583ae99472dd4a49,Rap,1967,m,uk,1
+Mariah Carey,https://i.scdn.co/image/ab6761610000e5eb7a5ff0c75fad74b2352f3680,Rap,1990,f,us,1
+Hozier,https://i.scdn.co/image/ab6761610000e5eb9ba4d95b74bacff4d5747f61,Rap,2014,m,ie,1
+Big Sean,https://i.scdn.co/image/ab6761610000e5eb89dccc0a0b3d818c8d5fb711,Rap,2011,m,us,1
+Ava Max,https://i.scdn.co/image/ab6761610000e5eb34669af44674f43cb34bf84b,Rap,2020,f,us,1
+French Montana,https://i.scdn.co/image/ab6761610000e5eb4817f2b6ca81e55e2c1f79d9,Rap,2008,m,us,1
+Meek Mill,https://i.scdn.co/image/ab6761610000e5eb238b2a30c741d42a4c91b7b7,Rap,2011,m,us,1
+Frank Sinatra,https://i.scdn.co/image/fc4e0f474fb4c4cb83617aa884dc9fd9822d4411,Rap,1946,m,us,1
+Foo Fighters,https://i.scdn.co/image/ab6761610000e5eb9a43b87b50cd3d03544bb3e5,Rap,1995,m,us,6
+The Killers,https://i.scdn.co/image/ab6761610000e5eb207b21f3ed0ee96adce3166a,Rap,2004,m,us,4
+Luke Combs,https://i.scdn.co/image/ab6761610000e5eb3bb53b78b41e9fd4fae79750,Rap,2017,m,us,1
+blink-182,https://i.scdn.co/image/ab6761610000e5eb0721a0eb3b04c76895b53a8d,Rap,1994,m,us,3
+Tory Lanez,https://i.scdn.co/image/ab6761610000e5ebbd5d3e1b363c3e26710661c3,Rap,2016,m,ca,1
+U2,https://i.scdn.co/image/ab6761610000e5eb4ecf08103fb2de53f1aabc39,Rap,1980,m,ie,4
+Led Zeppelin,https://i.scdn.co/image/207803ce008388d3427a685254f9de6a8f61dc2e,Rap,1969,m,uk,4
+Meghan Trainor,https://i.scdn.co/image/ab6761610000e5ebd19673ac57b9693ae943837e,Rap,2015,f,us,1
+Daft Punk,https://i.scdn.co/image/ab6761610000e5eb96d66c60658005885d1135ce,Rap,1997,m,fr,2
+Radiohead,https://i.scdn.co/image/ab6761610000e5eba03696716c9ee605006047fd,Rap,1993,m,us,5
+John Legend,https://i.scdn.co/image/ab6761610000e5eb8f2bf07f58f571ae430ff1be,Rap,2003,m,us,1
+Manuel Turizo,https://i.scdn.co/image/ab6761610000e5ebe6ff47d799219745add4c754,Rap,2019,m,co,1
+Rae Sremmurd,https://i.scdn.co/image/ab6761610000e5eb7cf71f9d765ad1e0f1d27ab3,Rap,2015,m,us,2
+Roddy Ricch,https://i.scdn.co/image/ab6761610000e5eb9c30c6b69a55d48decd71600,Rap,2018,m,us,1
+Rita Ora,https://i.scdn.co/image/ab6761610000e5eb484ddaa955c4c03a46ef8d8d,Rap,2012,f,uk,1
+System Of A Down,https://i.scdn.co/image/ab6761610000e5eb60063d3451ade8f9fab397c2,Rap,1998,m,us,4
+Playboi Carti,https://i.scdn.co/image/ab6761610000e5eb504ff11d788162fbf8078654,Rap,2016,m,us,1
+Joji,https://i.scdn.co/image/ab6761610000e5eb28f8b68ea703b22fc0c8be11,Rap,2018,m,jp,1
+The 1975,https://i.scdn.co/image/ab6761610000e5eb592231ad18aab7a47772a958,Rap,2012,m,uk,4
+Jorge & Mateus,https://i.scdn.co/image/ab6761610000e5ebd43977ee9db55f8155d3161b,Rap,2007,m,br,2
+Mumford & Sons,https://i.scdn.co/image/ab6761610000e5eb63065c48a5e377efda61f229,Rap,2009,m,uk,4
+Muse,https://i.scdn.co/image/ab6761610000e5eb02fffd59f8dd3d45b2e7ef30,Rap,1999,m,uk,3
+Troye Sivan,https://i.scdn.co/image/ab6761610000e5eb002eedc44fefe085daae10e4,Rap,2015,m,au,1
+Jack Johnson,https://i.scdn.co/image/ab6761610000e5eb9555a0b3231117c8cde1fca7,Rap,2001,m,us,1
+6ix9ine,https://i.scdn.co/image/ab6761610000e5eb0f9be189941db077530d5ae0,Rap,2017,m,us,1
+Elvis Presley,https://i.scdn.co/image/ab6761610000e5eb9a93e273380982dff84c0d7c,Rap,1956,m,us,1
+Snoop Dogg,https://i.scdn.co/image/ab6761610000e5eb9a398209a4ef3360dce2dec4,Rap,1993,m,us,1
+Gucci Mane,https://i.scdn.co/image/ab6761610000e5ebb9b77f64bd278ffde2c94428,Rap,2005,m,us,1
+The Notorious B.I.G.,https://i.scdn.co/image/1b4858fbd24046a81cace5ee18d19c868262b91f,Rap,1994,m,us,1
+Bazzi,https://i.scdn.co/image/ab6761610000e5ebe016d0d0b7f954032253ea7e,Rap,2018,m,us,1
+Christina Aguilera,https://i.scdn.co/image/ab6761610000e5eb3f18af91a6b9ef2a6791c09d,Rap,1999,f,us,1
+Don Omar,https://i.scdn.co/image/ab6761610000e5eb86d04a127819956aef61e351,Rap,2003,m,pr,1
+Paramore,https://i.scdn.co/image/ab6761610000e5eb9516c288651f7db15bad1beb,Rap,2005,x,us,3
+Swae Lee,https://i.scdn.co/image/ab6761610000e5eb1489b2b245307f3bc5d51291,Rap,2018,m,us,1
+Paulo Londra,https://i.scdn.co/image/ab6761610000e5eba8d1d46523149557e9df850f,Rap,2019,m,ar,1
+Felix Jaehn,https://i.scdn.co/image/ab6761610000e5ebe7edcca41d2f5df425f3b34a,Rap,2018,m,de,1
+Christian Nodal,https://i.scdn.co/image/ab6761610000e5eb901f63bb5259807626e0f31a,Rap,2017,m,mx,1
+Bon Jovi,https://i.scdn.co/image/ab6761610000e5eb0b8d424042d51bb8ee412ffe,Rap,1984,m,us,5
+Melanie Martinez,https://i.scdn.co/image/ab6761610000e5eb2d9f656f3f15165cd5cf8e5a,Rap,2015,f,us,1
+Hailee Steinfeld,https://i.scdn.co/image/ab6761610000e5eb3b575926851ffbfc337e271b,Rap,2016,f,us,1
+Megan Thee Stallion,https://i.scdn.co/image/ab6761610000e5ebfb87d5f73ea5b7faa3cd9694,Rap,2017,f,us,1
+Slipknot,https://i.scdn.co/image/ab6761610000e5ebf0a5deed446cf15482289b9d,Rap,1999,m,us,5
+Henrique & Juliano,https://i.scdn.co/image/ab6761610000e5eb3f3fa33960346d34155cc631,Rap,2012,m,br,2
+Dalex,https://i.scdn.co/image/ab6761610000e5ebd1d344eba13e66f0cef274b6,Rap,2014,m,us,1
+Labrinth,https://i.scdn.co/image/ab6761610000e5eb72a7311386470c1fbf81734d,Rap,2012,m,uk,1
+Oasis,https://i.scdn.co/image/ab6761610000e5eb89aff1367f1c02cfe17dd0b3,Rap,1994,m,uk,4
+Tame Impala,https://i.scdn.co/image/ab6761610000e5eb90357ef28b3a012a1d1b2fa2,Rap,2010,m,au,5
+The Lumineers,https://i.scdn.co/image/ab6761610000e5ebc79f78fd72a3e5faf699a8be,Rap,2012,x,us,5
+Julia Michaels,https://i.scdn.co/image/ab6761610000e5eb9c3cf97e7f1fb6555d5208b7,Rap,2017,f,us,1
+Sean Paul,https://i.scdn.co/image/ab6761610000e5eb60c3e9abe7327c0097738f22,Rap,2000,m,jm,1
+Alicia Keys,https://i.scdn.co/image/ab6761610000e5eb660e5023d1e67bdbb285da25,Rap,2001,f,us,1
+Cheat Codes,https://i.scdn.co/image/ab6761610000e5ebcb544b5e96678d7b37f46d14,Rap,2021,m,us,3
+Ne-Yo,https://i.scdn.co/image/ab6761610000e5eba213bd0d2152db1ce9c8da70,Rap,2016,m,us,1
+Jess Glynne,https://i.scdn.co/image/ab6761610000e5eb7d800f202dd15af03179876b,Rap,2015,f,uk,1
+Disclosure,https://i.scdn.co/image/ab6761610000e5ebdb837f585ebd024a0221a814,Rap,2013,m,uk,2
+Justin Quiles,https://i.scdn.co/image/ab6761610000e5eb72c5328e1f38d3697dd14590,Rap,2015,m,us,1
+Florida Georgia Line,https://i.scdn.co/image/ab6761610000e5ebaa2d9bd207a62adc3edf6631,Rap,2012,m,us,2
+Kings of Leon,https://i.scdn.co/image/ab6761610000e5eb8fbd402cfd8cc6ce926a2229,Rap,2003,m,us,4
+Gusttavo Lima,https://i.scdn.co/image/ab6761610000e5eb08922485b69454372c9275c8,Rap,2009,m,br,1
+TWICE,https://i.scdn.co/image/ab6761610000e5eb464ef353e1a7c72f67de8158,Rap,2016,f,kr,9
+Tove Lo,https://i.scdn.co/image/ab6761610000e5eb9171e0a70190a6de61a47832,Rap,2014,f,se,1
+Fifth Harmony,https://i.scdn.co/image/ab6761610000e5eb5acb3cb0a8b87d3952738b97,Rap,2014,f,us,4
+Zion & Lennox,https://i.scdn.co/image/ab6761610000e5eb27ff7e14b21618be77c64e0d,Rap,2004,m,pr,2
+6LACK,https://i.scdn.co/image/ab6761610000e5eb7a528fcb316c5b58d6be0511,Rap,2016,m,us,1
+Alesso,https://i.scdn.co/image/ab6761610000e5ebb5712a1a45f469f906023e7f,Rap,2015,m,se,1
+Chance the Rapper,https://i.scdn.co/image/ab6761610000e5ebc654cd5b897dea358f9e3da1,Rap,2012,m,us,1
+Luke Bryan,https://i.scdn.co/image/ab6761610000e5eb0a0118141480bfeab409f764,Rap,2007,m,us,1
+Five Finger Death Punch,https://i.scdn.co/image/ab6761610000e5eb376e2b4db1209bc343daaf35,Rap,2007,m,us,5
+Natti Natasha,https://i.scdn.co/image/ab6761610000e5eb79ab63d9d39c26f456e11db5,Rap,2012,f,do,1
+Morgan Wallen,https://i.scdn.co/image/ab6761610000e5eb0da5abcc5c0aef0c3cc573d0,Rap,2018,m,us,1
+The Script,https://i.scdn.co/image/ab6761610000e5ebf01bf904b446e4a043acb867,Rap,2008,m,ie,3
+ABBA,https://i.scdn.co/image/ab6761610000e5eb118de0c58b11e1fd54b66640,Rap,1973,x,se,4
+Madonna,https://i.scdn.co/image/ab6761610000e5eb720c7a54c11c7c21762a65d1,Rap,1983,f,us,1
+Z√© Neto & Cristiano,https://i.scdn.co/image/ab6761610000e5ebcae88dfecbbf4e2189c2da77,Rap,2012,m,br,2
+Florence + The Machine,https://i.scdn.co/image/ab6761610000e5ebe3c37f869b830d1cf1ec829a,Rap,2009,x,uk,4
+Jason Mraz,https://i.scdn.co/image/ab6761610000e5ebce8d5be6690c6964069ab8e0,Rap,2002,m,us,1
+Galantis,https://i.scdn.co/image/ab6761610000e5eb2ca90cb37bf1557d385b9d48,Rap,2015,m,se,2
+Morat,https://i.scdn.co/image/ab6761610000e5eb6847cff2c1f6d85b6455ef23,Rap,2016,m,co,4
+Creedence Clearwater Revival,https://i.scdn.co/image/ab6761610000e5ebd2e2b04b7ba5d60b72f54506,Rap,1968,m,us,4
+Piso 21,https://i.scdn.co/image/ab6761610000e5ebf9d0bb4d6fa234f2616321ce,Rap,2014,m,co,4
+Nickelback,https://i.scdn.co/image/ab6761610000e5eb4200380f93aab2e4b85c8beb,Rap,1996,m,ca,4
+Whitney Houston,https://i.scdn.co/image/ab6761610000e5ebcd9f60ab57585bf3b77ecc51,Rap,1985,f,us,1
+Glee Cast,https://i.scdn.co/image/5b5a95f260ac429405e871777e3c17c9126c30ad,Rap,2009,x,us,1
+Bruce Springsteen,https://i.scdn.co/image/ab6761610000e5ebd0cb49906c4f8080a5813d95,Rap,1973,m,us,1
+Alok,https://i.scdn.co/image/ab6761610000e5eb83c76c9545193b431a44a8f6,Rap,2017,m,us,1
+Lenny Tav√°rez,https://i.scdn.co/image/ab6761610000e5eb3da6d515e399ae789ef563f3,Rap,2021,m,pr,1
+Kevin Gates,https://i.scdn.co/image/ab6761610000e5eb6899e286f75ca723f5d961d8,Rap,2009,m,us,1
+Jack Harlow,https://i.scdn.co/image/ab6761610000e5ebed3a04c76cbc92b97f59c3c0,Rap,2016,m,us,1
+Kehlani,https://i.scdn.co/image/ab6761610000e5ebd2657bcafcb300d90816523f,Rap,2014,f,us,1
+Rammstein,https://i.scdn.co/image/ab6761610000e5eb39a93f3d5cdbcdf4a2ce88e5,Rap,1995,m,de,6
+Avril Lavigne,https://i.scdn.co/image/ab6761610000e5ebb0472fb072403737786ac79a,Rap,2002,f,ca,1
+Niall Horan,https://i.scdn.co/image/ab6761610000e5eb80c7323d8b64397c278f86df,Rap,2017,m,ie,1
+Macklemore & Ryan Lewis,https://i.scdn.co/image/ab6761610000e5eb3c2f1ba4c1a3de141e63d775,Rap,2012,m,us,2
+Jonas Brothers,https://i.scdn.co/image/ab6761610000e5eb142120beb4014a7f8abd0cf0,Rap,2006,m,us,3
+My Chemical Romance,https://i.scdn.co/image/ab6761610000e5eb9c00ad0308287b38b8fdabc2,Rap,2002,m,us,5
+Arcangel,https://i.scdn.co/image/ab6761610000e5eb094836334a3e352ba839fefc,Rap,2008,m,us,1
+Kane Brown,https://i.scdn.co/image/ab6761610000e5eb0cd7da117d4a7b084ef3ac9b,Rap,2016,m,us,1
+Bryson Tiller,https://i.scdn.co/image/ab6761610000e5eb078fdd734b7f0aa782328428,Rap,2015,m,us,1
+Capital Bra,https://i.scdn.co/image/ab6761610000e5eb0732c998ff1a2a602b2eefe8,Rap,2016,m,de,1
+Lil Pump,https://i.scdn.co/image/ab6761610000e5eb726e109c49131b6ed60ae8a0,Rap,2017,m,us,1
+Bring Me The Horizon,https://i.scdn.co/image/ab6761610000e5eb07603145b500ea5408074053,Rap,2006,m,us,5
+Alejandro Fern√°ndez,https://i.scdn.co/image/ab6761610000e5eb452691cfa37fdd5b3417ed0d,Rap,1992,m,mx,1
+Kelly Clarkson,https://i.scdn.co/image/ab6761610000e5eb118cd1f3261f08d957105996,Rap,2003,f,us,1
+Wisin,https://i.scdn.co/image/ab6761610000e5eb3553659bf06fbaa0a6c313d1,Rap,2004,m,pr,1
+Vance Joy,https://i.scdn.co/image/ab6761610000e5eb8f074ec8c25406680bf26422,Rap,2014,m,au,1
+Ryan Lewis,https://i.scdn.co/image/ab6761610000e5eb6396e61aab044c5d655f115c,Rap,2012,m,us,1
+Thomas Rhett,https://i.scdn.co/image/ab6761610000e5ebfabe24b83a375fa379244b89,Rap,2013,m,us,1
+Johnny Cash,https://i.scdn.co/image/ab6761610000e5eb152cf48cf9541c7061570857,Rap,1957,m,us,1
+NAV,https://i.scdn.co/image/ab6761610000e5ebf276b6e4b25bb6fb7b942ab2,Rap,2017,m,ca,1
+Jennifer Lopez,https://i.scdn.co/image/ab6761610000e5ebe53dfc65e7e9ef8360bd1f48,Rap,1999,f,us,1
+James Bay,https://i.scdn.co/image/ab6761610000e5eb0f2ac623808c5f14ac7a87e5,Rap,2014,m,uk,1
+Lil Tjay,https://i.scdn.co/image/ab6761610000e5ebbc1085cf5d08b85cd1836ca2,Rap,2019,m,us,1
+YG,https://i.scdn.co/image/ab6761610000e5eba11093dfc6bc303eb550604f,Rap,2011,m,us,1
+YNW Melly,https://i.scdn.co/image/ab6761610000e5eb4da4a196cc973f65b68fe67b,Rap,2018,m,us,1
+Amy Winehouse,https://i.scdn.co/image/ab6761610000e5eb2ceb023b10da17590878e88c,Rap,2003,f,uk,1
+Stevie Wonder,https://i.scdn.co/image/c59faacbed7aa770266bad048660810eca204108,Rap,1962,m,us,1
+Pearl Jam,https://i.scdn.co/image/ab6761610000e5eb122d1145d880736383742ebc,Rap,1991,m,us,5
+Duki,https://i.scdn.co/image/ab6761610000e5ebe3a604976226d95cf7f3ab01,Rap,2019,m,ar,1
+Lil Tecca,https://i.scdn.co/image/ab6761610000e5ebf9b1521167f731d99bd51a07,Rap,2019,m,us,1
+Disturbed,https://i.scdn.co/image/ab6761610000e5eb5ce90284f506122159649e81,Rap,2000,m,us,4
+Glass Animals,https://i.scdn.co/image/ab6761610000e5eb66b27eccb69756f8eceabc23,Rap,2014,m,uk,4
+Hans Zimmer,https://i.scdn.co/image/ab6761610000e5eb371632043a8c12bb7eeeaf9d,Rap,1989,m,de,1
+Aerosmith,https://i.scdn.co/image/ab6761610000e5ebc5733401b4689b2064458e7d,Rap,1973,m,us,5
+Lil Skies,https://i.scdn.co/image/ab6761610000e5eb1c91ee64878b36dcee243160,Rap,2017,m,us,1
+Dr. Dre,https://i.scdn.co/image/83d2489cade1dadcdc533ddbcd74993d0ca6d4cb,Rap,1999,m,us,1
+Flume,https://i.scdn.co/image/ab6761610000e5ebdcbf7ddf047dd267e4de8978,Rap,2012,m,au,1
+Miguel,https://i.scdn.co/image/ab6761610000e5eb02eeb5305fa7bdd9ddca42fc,Rap,2010,m,us,1
+Tones And I,https://i.scdn.co/image/ab6761610000e5ebc468ecc742697a09bd389ff7,Rap,2021,m,au,1
+Backstreet Boys,https://i.scdn.co/image/ab6761610000e5eb8bb4e2d7bba236bf79f3c18a,Rap,1996,m,us,5
+Nio Garcia,https://i.scdn.co/image/ab6761610000e5eb8d1c47252032fd1e42e32fb0,Rap,2020,m,pr,1
+Wisin & Yandel,https://i.scdn.co/image/ab6761610000e5eb812644afc20cab37c72a8ba9,Rap,2000,m,pr,2
+Man√°,https://i.scdn.co/image/ab6761610000e5eb152dcec8175d19fb12eeb8e0,Rap,1990,m,mx,4
+Kesha,https://i.scdn.co/image/ab6761610000e5ebf271138f95fbe8188d909d50,Rap,2010,f,us,1
+Phil Collins,https://i.scdn.co/image/31fbe64783eb5d493161640bd599dceafc615c6d,Rap,1981,m,uk,1
+Akon,https://i.scdn.co/image/ab6761610000e5eba78e61963a85ee2a4cbf3587,Rap,2005,m,us,1
+Jason Aldean,https://i.scdn.co/image/ab6761610000e5ebf7b3f3710e285bf79a953af8,Rap,2005,m,us,1
+Three Days Grace,https://i.scdn.co/image/ab6761610000e5eb3626be769b238e2a35010613,Rap,2003,m,us,4
+Jeremih,https://i.scdn.co/image/ab6761610000e5eb3af4da599e9d15f3b90f7c44,Rap,2009,m,us,1
+Matheus & Kauan,https://i.scdn.co/image/ab6761610000e5eb9f00a411505f5c9de4e81f11,Rap,2013,m,br,2
+Eagles,https://i.scdn.co/image/ab6761610000e5eb0767e116a2307495e37cd7fb,Rap,1972,m,us,5
+Dan + Shay,https://i.scdn.co/image/ab6761610000e5eb1e6f4e64dc26772155d61ce2,Rap,2014,m,us,2
+Yandel,https://i.scdn.co/image/ab6761610000e5eb812644afc20cab37c72a8ba9,Rap,2000,m,pr,1
+24kGoldn,https://i.scdn.co/image/ab6761610000e5ebe32a61d17ecbe732a99d6d92,Rap,2019,m,us,1
+Avenged Sevenfold,https://i.scdn.co/image/ab6761610000e5eb79f3717a5219e95296bfb56d,Rap,2002,m,us,5
+Billy Joel,https://i.scdn.co/image/ab6761610000e5ebc152fc4fed805e8a82ed950b,Rap,1971,m,us,1
+The Strokes,https://i.scdn.co/image/ab6761610000e5eb64d74f5985cb66b2f7b60e93,Rap,2001,m,us,5
+The Offspring,https://i.scdn.co/image/ab6761610000e5ebd7c5bbf32459922a72ec0d31,Rap,1989,m,us,4
+Wesley Safad√£o,https://i.scdn.co/image/ab6761610000e5eb471f55511bcf90942ecc02cd,Rap,2012,m,br,1
+Steve Aoki,https://i.scdn.co/image/ab6761610000e5eb7c4240b7951da248f3404e42,Rap,2010,m,us,1
+Prince Royce,https://i.scdn.co/image/ab6761610000e5ebbd046575b09d8ec4865dad62,Rap,2010,m,us,1
+George Ezra,https://i.scdn.co/image/ab6761610000e5ebfdc751d4099c1ffddb2a0e45,Rap,2014,m,uk,1
+Jul,https://i.scdn.co/image/ab6761610000e5eb9c3cf97e7f1fb6555d5208b7,Rap,2017,m,fr,1
+Lin-Manuel Miranda,https://i.scdn.co/image/84dc87cca456089fc5cfa2d7593d9d960ca4553f,Rap,2008,m,us,1
+Jessie J,https://i.scdn.co/image/ab6761610000e5ebf416e763269013a66d7fe5a2,Rap,2017,f,uk,1
+C√©line Dion,https://i.scdn.co/image/ab6761610000e5eb357f2a87bf92208767a48e7e,Rap,1987,f,ca,1
+Lil Mosey,https://i.scdn.co/image/ab6761610000e5eb6363ba88283df039d680d42a,Rap,2018,m,us,1
+Ninho,https://i.scdn.co/image/ab6761610000e5ebc968daf72ace243d8edcbfc4,Rap,2014,m,fr,1
+benny blanco,https://i.scdn.co/image/ab6761610000e5eb766d2fb038033d3fbde69f89,Rap,2018,m,us,1
+Anderson .Paak,https://i.scdn.co/image/ab6761610000e5eb96287bd47570ff13f0c01496,Rap,2014,m,us,1
+Aventura,https://i.scdn.co/image/ab6761610000e5eb4cd0464ef7d8eb8521f72dd8,Rap,1999,m,us,4
+2 Chainz,https://i.scdn.co/image/ab6761610000e5ebf556662d187b9191c421be1c,Rap,2010,m,us,1
+Alejandro Sanz,https://i.scdn.co/image/ab6761610000e5eb45b242f20217176f7e83857b,Rap,1991,m,es,1
+Ricardo Arjona,https://i.scdn.co/image/ab6761610000e5eb9b7e4f8e868dc2adfe6c3f4d,Rap,1992,m,gt,1
+Passenger,https://i.scdn.co/image/ab6761610000e5ebdbd2f0ea9bcda93594152d7d,Rap,2007,m,uk,1
+Calibre 50,https://i.scdn.co/image/ab6761610000e5ebd2d4c8c4ed1c2763bb1e703d,Rap,2010,m,mx,4
+Ricky Martin,https://i.scdn.co/image/ab6761610000e5eb5adf5dd58debcc7290d79234,Rap,1991,m,pr,1
+H.E.R.,https://i.scdn.co/image/ab6761610000e5eb7b05445e212ac49d9ed4c310,Rap,2016,f,us,1
+Lukas Graham,https://i.scdn.co/image/ab6761610000e5eb5779a85774a3e2a2a5000254,Rap,2012,m,dk,1
+Lizzo,https://i.scdn.co/image/ab6761610000e5ebf616fa3045d6a1912e43bcd3,Rap,2014,f,us,1
+Trey Songz,https://i.scdn.co/image/ab6761610000e5ebfd7cca32a58a9bb263fb5c4a,Rap,2005,m,us,1
+CNCO,https://i.scdn.co/image/ab6761610000e5ebae9279fc395fec19f47872d3,Rap,2016,m,us,5
+Cartel De Santa,https://i.scdn.co/image/ab6761610000e5ebbd172041a059e4b6e46e2cfc,Rap,2002,m,mx,2
+Mark Ronson,https://i.scdn.co/image/ab6761610000e5eb105cc9628c315b29d299fbb4,Rap,2003,m,uk,1
+Don Toliver,https://i.scdn.co/image/ab6761610000e5ebb99b82c644fb2a558dc28cd4,Rap,2018,m,us,1
+Pentatonix,https://i.scdn.co/image/ab6761610000e5eb2b9297b71a8bf3deef948e32,Rap,2012,x,us,5
+Foster The People,https://i.scdn.co/image/ab6761610000e5ebb5a3c9a9ca40824e0f44ea78,Rap,2011,m,us,3
+Train,https://i.scdn.co/image/ab6761610000e5eb9ac5323dcebb1c7b80dcaf64,Rap,1998,m,us,7
+Pablo Albor√°n,https://i.scdn.co/image/ab6761610000e5ebbc08e6f94a9b13d907accdd2,Rap,2011,m,es,1
+Marc Anthony,https://i.scdn.co/image/ab6761610000e5ebea64d3b81527134c0d65f341,Rap,1991,m,us,1
+Arijit Singh,https://i.scdn.co/image/ab6761610000e5ebb2b70762d89a9d76c772b3b6,Rap,2012,m,in,1
+Daniel Caesar,https://i.scdn.co/image/ab6761610000e5eb718d4447dae6ba98072371f2,Rap,2015,m,ca,1
+Fetty Wap,https://i.scdn.co/image/ab6761610000e5eb8ffb1b02e4435c5176b28ed2,Rap,2015,m,us,1
+Bob Dylan,https://i.scdn.co/image/ab6772690000c46cf79ca05dcc1581c712bf3658,Rap,1962,m,us,1
+Rex Orange County,https://i.scdn.co/image/ab6761610000e5eb50013041518600229448921d,Rap,2016,m,uk,1
+Maiara & Maraisa,https://i.scdn.co/image/ab6761610000e5eb5c4fb6e84b60ed2ba517f815,Rap,2014,f,br,2
+Dire Straits,https://i.scdn.co/image/54a86ecf1de16b17e2ed000a9ca8a1590c9a3b80,Rap,1978,m,uk,4
+Bee Gees,https://i.scdn.co/image/1d5a05673975ba0c378cd280344e000b0b865620,Rap,1965,m,uk,3
+James Blunt,https://i.scdn.co/image/ab6761610000e5eb26a02137047e11808e913c33,Rap,2004,m,uk,1
+Bryan Adams,https://i.scdn.co/image/ab6761610000e5eb8009ff2c16ef26e06e4d6623,Rap,1980,m,ca,1
+Lil Durk,https://i.scdn.co/image/ab6761610000e5eb6a61d3a33451c301dbb8edb3,Rap,2012,m,us,1
+Lost Frequencies,https://i.scdn.co/image/ab6761610000e5ebbc210a69deab4609b29209af,Rap,2016,m,be,1
+Quavo,https://i.scdn.co/image/ab6761610000e5eb183948c3e9f7b459b2d6cd7a,Rap,2017,m,us,1
+R3HAB,https://i.scdn.co/image/ab6761610000e5eb67828d8c05c5e2acf8f03e1e,Rap,2017,m,nl,1
+Jeremy Zucker,https://i.scdn.co/image/ab6761610000e5eb97e6df979e0c39443a6aa0e4,Rap,2017,m,us,1
+Alec Benjamin,https://i.scdn.co/image/ab6761610000e5eb72c4ca30476ce87954961a10,Rap,2018,m,us,1
+Boyce Avenue,https://i.scdn.co/image/ab6761610000e5ebaa5fdba75703df74c3be99a7,Rap,2009,m,us,3
+ScHoolboy Q,https://i.scdn.co/image/ab6761610000e5ebe697a7ddf7af3a306428fa73,Rap,2011,m,us,1
+Ski Mask The Slump God,https://i.scdn.co/image/ab6761610000e5ebc422e139e232c73565c7c3d6,Rap,2018,m,us,1
+John Williams,https://i.scdn.co/image/ab6761610000e5eb86b13e4d2e65ebf694384ef4,Rap,1885,m,us,1
+M√•neskin,https://i.scdn.co/image/ab6761610000e5ebb760340fd14e8ea7e6775253,Rap,2017,x,it,4
+Outkast,https://i.scdn.co/image/ab6761610000e5eb0cb3f95b9f8f7337e135a925,Rap,1994,m,us,2
+ROSAL√çA,https://i.scdn.co/image/ab6761610000e5ebd7bb678bef6d2f26110cae49,Rap,2017,f,es,1
+Bizarrap,https://i.scdn.co/image/ab6761610000e5eb14707b9c34a4b2b6a3d38316,Rap,2017,m,ar,1
+LANY,https://i.scdn.co/image/ab6761610000e5eb417454f70dfe686c18caeb2a,Rap,2017,m,us,3
+Sam Hunt,https://i.scdn.co/image/ab6761610000e5ebcfe679f9692377accaa9cec7,Rap,2014,m,us,1
+PARTYNEXTDOOR,https://i.scdn.co/image/ab6761610000e5eb4e3dee8baac75dad1fea791e,Rap,2013,m,ca,1
+Danny Ocean,https://i.scdn.co/image/ab6761610000e5eb5f8bb457ee2815cc276ddb9d,Rap,2019,m,ve,1
+Disney,https://i.scdn.co/image/ab6761610000e5ebc698d53b77db34027b00f853,Rap,2006,x,us,1
+Jhen√© Aiko,https://i.scdn.co/image/ab6761610000e5eb9f9eab124df9f1ff148ebfe5,Rap,2013,f,us,1
+Cage The Elephant,https://i.scdn.co/image/ab6761610000e5eb7d994f7e137c10249de19455,Rap,2008,m,us,6
+Rels B,https://i.scdn.co/image/ab6761610000e5eb168aaae1f668397b95bc25be,Rap,2015,m,es,1
+Offset,https://i.scdn.co/image/ab6761610000e5eb0eb6434fb8d560e3fe0a3d55,Rap,2017,m,us,1
+Charli XCX,https://i.scdn.co/image/ab6761610000e5eb576cb43281160e345f728b71,Rap,2013,f,uk,1
+Dean Lewis,https://i.scdn.co/image/ab6761610000e5eb99b860f154b349bd0a2368c3,Rap,2019,m,au,1
+Liam Payne,https://i.scdn.co/image/ab6761610000e5eb6b873bf2d3bc2ed6401325c4,Rap,2019,m,uk,1
+Conan Gray,https://i.scdn.co/image/ab6761610000e5ebd3a1193ab04e0fb2b297e619,Rap,2020,m,us,1
+Hillsong Worship,https://i.scdn.co/image/ab6761610000e5eb3fa351bcd2f7a8f06a7bc3ba,Rap,1992,m,au,11
+Sigala,https://i.scdn.co/image/ab6761610000e5eb8422afa6e7b0c977636bfebd,Rap,2018,m,uk,1
+Blake Shelton,https://i.scdn.co/image/ab6761610000e5eb2a4a5dc761b33ba726404539,Rap,2001,m,us,1
+ILLENIUM,https://i.scdn.co/image/ab6761610000e5eb6b5fbf615ada187ce5e425c8,Rap,2016,m,us,1
+Nelly,https://i.scdn.co/image/3677690af58abb70a5c5fd58d69db4d1ad705d4f,Rap,2000,m,us,1
+Summer Walker,https://i.scdn.co/image/ab6761610000e5eb4714179bf23941c0aec4b474,Rap,2018,f,us,1
+The Vamps,https://i.scdn.co/image/ab6761610000e5eb77ef80571a40d9d19cf52208,Rap,2014,m,uk,4
+alt-J,https://i.scdn.co/image/ab6761610000e5eb3fb5214e667e278a20878a6b,Rap,2012,m,uk,3
+Rudimental,https://i.scdn.co/image/ab6761610000e5eb7754288b5354d082e84bc917,Rap,2013,m,uk,4
+BROCKHAMPTON,https://i.scdn.co/image/ab6761610000e5ebdc3c21f68fa721ebcf439dae,Rap,2016,m,us,17
+Lil Yachty,https://i.scdn.co/image/ab6761610000e5ebbf4a90e0755532ddfbe0fe11,Rap,2016,m,us,1
+Bibi Blocksberg,https://i.scdn.co/image/ab6761610000e5eb12733dec1314ca5c0e2ddb3f,Rap,1980,x,us,1
+Marvin Gaye,https://i.scdn.co/image/cf79bd3e5c787e2ec152eeb1ea5538b0d4cf1434,Rap,1961,m,us,1
+Mike Posner,https://i.scdn.co/image/ab6761610000e5eb828ec647d02336d097280341,Rap,2009,m,us,1
+The Police,https://i.scdn.co/image/1f73a61faca2942cd5ea29c2143184db8645f0b3,Rap,1978,m,uk,3
+The Black Keys,https://i.scdn.co/image/ab6761610000e5ebae537808bd15be9f7031e99b,Rap,1999,m,us,2
+Jax Jones,https://i.scdn.co/image/ab6761610000e5eb866f2a7fc5dffca7c22e5b7b,Rap,2019,m,uk,1
+Iron Maiden,https://i.scdn.co/image/ab6761610000e5ebdc52c8e309e46aa8430a0fa0,Rap,1980,m,uk,6
+Armin van Buuren,https://i.scdn.co/image/ab6761610000e5ebcb523e707ad2402a3af78afc,Rap,2003,m,nl,1
+Zac Brown Band,https://i.scdn.co/image/ab6761610000e5eb12ceb4992010d61f30078e24,Rap,2008,m,us,8
+Chris Stapleton,https://i.scdn.co/image/ab6761610000e5eba0c87c8f329b436eac8b9784,Rap,2015,m,us,1
+Maren Morris,https://i.scdn.co/image/ab6761610000e5eb55d1c6092ceb9ce09c32ec5e,Rap,2017,f,us,1
+Rise Against,https://i.scdn.co/image/ab6761610000e5eb8e19de59bac2628eb8929156,Rap,2003,m,us,4
+Carlos Vives,https://i.scdn.co/image/ab6761610000e5eb5fd6eb73c6f13b82e5f0d2ed,Rap,1994,m,co,1
+Bon Iver,https://i.scdn.co/image/ab6761610000e5eb67be065df01f37a3880216be,Rap,2008,m,us,1
+Juanes,https://i.scdn.co/image/ab6761610000e5eb250f1e78d9f8b375b33e5ad6,Rap,2000,m,co,1
+A$AP Ferg,https://i.scdn.co/image/ab6761610000e5ebf1122f644f19ba22750d2bd8,Rap,2013,m,us,1
+Skillet,https://i.scdn.co/image/ab6761610000e5eb5796c88846b0bbecb07fccfc,Rap,1996,x,us,4
+Birdy,https://i.scdn.co/image/ab6761610000e5eb6d428fc500a8ba292aae8eeb,Rap,2011,f,uk,1
+Destiny's Child,https://i.scdn.co/image/ab6761610000e5ebf75e64532704bd6acf0b4e76,Rap,1998,f,us,3
+Madison Beer,https://i.scdn.co/image/ab6761610000e5ebf6dd8fddf50fcd117fef100b,Rap,2018,f,us,1
+Tate McRae,https://i.scdn.co/image/ab6761610000e5eb05b70f90124c7e3ec23d0706,Rap,2017,f,ca,1
+Soda Stereo,https://i.scdn.co/image/ab6761610000e5eb4a6d2f5e161c011cdb9cef69,Rap,1983,m,ar,3
+The Doors,https://i.scdn.co/image/ab6761610000e5eb440959e022afc20e819050bd,Rap,1967,m,us,4
+JP Cooper,https://i.scdn.co/image/ab6761610000e5eb28dd5fb1d08130ecfaaee780,Rap,2017,m,uk,1
+Papa Roach,https://i.scdn.co/image/ab6761610000e5eb48214edcac1d4e701870592a,Rap,2000,m,us,4
+Tim McGraw,https://i.scdn.co/image/ab6761610000e5eb194fcad1eb614d9eba7de1cb,Rap,1993,m,us,1
+Carly Rae Jepsen,https://i.scdn.co/image/ab6761610000e5eb5af2a316744be4d785d5d0c1,Rap,2008,f,ca,1
+EXO,https://i.scdn.co/image/ab6761610000e5eb465b1b62cf6eca8f851aaabc,Rap,2013,m,kr,9
+Lunay,https://i.scdn.co/image/ab6761610000e5eb1db8a4795dc8b97abc1f6f11,Rap,2019,m,pr,1
+Why Don't We,https://i.scdn.co/image/ab6761610000e5eb9160fac7a1ecb8ee89a633ac,Rap,2018,m,us,5
+Bradley Cooper,https://i.scdn.co/image/ab6761610000e5eb9400a1dccee9f0df97847c0f,Rap,2018,m,us,1
+The Cure,https://i.scdn.co/image/7ca743e822b80133971ccf5c70fcbd77a4f4f508,Rap,1979,m,uk,5
+Becky Hill,https://i.scdn.co/image/ab6761610000e5eb04ef17a8d226f7854fc8c62d,Rap,2016,f,uk,1
+Os Bar√µes Da Pisadinha,https://i.scdn.co/image/ab6761610000e5eb3a0010ed62a8a628629ddab7,Rap,2019,m,br,2
+Mau y Ricky,https://i.scdn.co/image/ab6761610000e5eb510a7065a55766ec6206047f,Rap,2019,m,ve,2
+Mabel,https://i.scdn.co/image/ab6761610000e5ebd7383d5b28dca9207c4ab728,Rap,2019,f,se,1
+Weezer,https://i.scdn.co/image/ab6761610000e5eb7d6493f1716643ff37ef74da,Rap,1994,m,us,4
+Korn,https://i.scdn.co/image/ab6761610000e5eb29af2ffb6f4ddd6324f878bc,Rap,1994,m,us,5
+Eric Church,https://i.scdn.co/image/ab6761610000e5eb16270287e763424c8105beb8,Rap,2006,m,us,1
+SAINt JHN,https://i.scdn.co/image/ab6761610000e5eb2a1356370e5fce1b25df0ac9,Rap,2018,m,us,1
+Kali Uchis,https://i.scdn.co/image/ab6761610000e5ebc0e4ab64af28b59e1d49bc86,Rap,2015,f,us,1
+Noah Cyrus,https://i.scdn.co/image/ab6761610000e5eb2240c4dd98d88f478113f632,Rap,2020,m,us,1
+Calum Scott,https://i.scdn.co/image/ab6761610000e5eb8d9366c69233e844582cc215,Rap,2018,m,uk,1
+T.I.,https://i.scdn.co/image/ab6761610000e5eb12057d342f33c61b3768f2bc,Rap,2001,m,us,1
+RAF Camora,https://i.scdn.co/image/ab6761610000e5ebaf5f61e03f53afbd814020c6,Rap,2008,m,at,1
+Iggy Azalea,https://i.scdn.co/image/ab6761610000e5eb698a6abf2897a8fc8283cc0c,Rap,2014,f,au,1
+Paul McCartney,https://i.scdn.co/image/ab6761610000e5eb03bf2fe26e397122faa3d323,Rap,1967,m,uk,1
+MEDUZA,https://i.scdn.co/image/ab6761610000e5eb0250d43f727734741aad6423,Rap,2019,m,it,3
+Joan Sebastian,https://i.scdn.co/image/ab6761610000e5eb5686584438168677d344427b,Rap,1990,m,mx,1
+NLE Choppa,https://i.scdn.co/image/ab6761610000e5eb519065f878e37f78e069c8ad,Rap,2019,m,us,1
+Journey,https://i.scdn.co/image/ab6761610000e5eba700dbc2c4c3431c1d86b3c1,Rap,1975,m,us,5
+iann dior,https://i.scdn.co/image/ab6761610000e5eb2aeeeb3db9b941db74d2cfe2,Rap,2019,m,us,1
+Grupo Firme,https://i.scdn.co/image/ab6761610000e5eb2fc779723cefd8fba3083ce1,Rap,2017,m,mx,7
+Norah Jones,https://i.scdn.co/image/ab6761610000e5eb38b431c35d7c9f7bbcb2378a,Rap,2002,f,us,1
+Juan Gabriel,https://i.scdn.co/image/022102638a204d6cb0bb6276ba2656f9c92bf2c3,Rap,1971,m,mx,1
+Jesse & Joy,https://i.scdn.co/image/ab6761610000e5ebaa2e120075652341890059e9,Rap,2006,x,mx,2
+Vicente Fern√°ndez,https://i.scdn.co/image/ab6761610000e5eb124d1d79d7838c9dd095f9e6,Rap,1958,m,mx,1
+MARINA,https://i.scdn.co/image/ab6761610000e5eb951d80a1db6ae486a5ce5f36,Rap,2010,f,uk,1
+Kenny Chesney,https://i.scdn.co/image/ab6761610000e5ebe5289a2a13c374dd34a97247,Rap,1994,m,us,1
+Depeche Mode,https://i.scdn.co/image/ab6761610000e5eb8ada6bad4c9b276b7fd24874,Rap,1981,m,uk,4
+Normani,https://i.scdn.co/image/ab6761610000e5eb88df630d05d2a188ecf14777,Rap,2018,f,us,1
+Simon & Garfunkel,https://i.scdn.co/image/afde2fdd14f8c8ca23393f257e3a369a234a24b6,Rap,1964,m,us,2
+Amin√©,https://i.scdn.co/image/ab6761610000e5eb1f98760ed5b47b21eaf56e8f,Rap,2017,m,us,1
+Imanbek,https://i.scdn.co/image/ab6772690000c46c09bedc30a908e616665228df,Rap,2019,m,kz,1
+The Game,https://i.scdn.co/image/ab6761610000e5eba657aa5506945d264e147244,Rap,2003,m,us,1
+PNL,https://i.scdn.co/image/ab6761610000e5eb51767bb5e3e3add66699344b,Rap,2015,m,fr,2
+Breaking Benjamin,https://i.scdn.co/image/ab6761610000e5eb43f5e5cf145e783d5859fb9a,Rap,2002,m,us,5
+Nick Jonas,https://i.scdn.co/image/ab6761610000e5eb225866e7b8ec2b75733d5a27,Rap,2014,m,us,1
+Bonez MC,https://i.scdn.co/image/ab6761610000e5eb7a2606eb583bb12fe7a982da,Rap,2012,m,de,1
+The Beach Boys,https://i.scdn.co/image/ab6761610000e5eb92602f233ce2295748f44603,Rap,1962,m,us,5
+George Michael,https://i.scdn.co/image/ab6761610000e5ebf8b74c36ba6c31fc0f58783c,Rap,1987,m,uk,1
+Jon Bellion,https://i.scdn.co/image/ab6761610000e5ebe0c2c39a5bc940f905aa02f3,Rap,2013,m,us,1
+X Ambassadors,https://i.scdn.co/image/ab6761610000e5eb8f08efd0e601988cd94a3d9c,Rap,2013,m,us,3
+The xx,https://i.scdn.co/image/ab6761610000e5eb193bce41687d1869f8c7593f,Rap,2009,x,uk,3
+Stray Kids,https://i.scdn.co/image/ab6761610000e5ebb6501e0b3fcde145838f4724,Rap,2018,m,kr,8
+KHEA,https://i.scdn.co/image/ab6761610000e5eb16d81001af30e58bd1d7de4f,Rap,2020,m,ar,1
+bbno$,https://i.scdn.co/image/ab6761610000e5eb6bca811e558018074bbc1b05,Rap,2018,m,ca,1
+Sabrina Carpenter,https://i.scdn.co/image/ab6761610000e5eb8340df48ff7f6fea7003437e,Rap,2015,f,us,1
+Christina Perri,https://i.scdn.co/image/ab6761610000e5eb44e7c361649ba5a9dbbdff47,Rap,2011,f,us,1
+Hillsong UNITED,https://i.scdn.co/image/ab6761610000e5eb955338e9d0a2662fa21a4a02,Rap,1999,m,au,11
+AJR,https://i.scdn.co/image/ab6761610000e5eb0f3bcc7b3d23e7cbece03012,Rap,2013,m,us,3
+R.E.M.,https://i.scdn.co/image/ab6761610000e5eb6334ab6a83196f36475ada7f,Rap,1983,m,us,4
+Matoma,https://i.scdn.co/image/ab6761610000e5ebbe38ea40ebab8967b2c7a81a,Rap,2018,m,no,1
+Rich The Kid,https://i.scdn.co/image/ab6761610000e5eb059569db8ca2f11e5e7cdf16,Rap,2018,m,us,1
+C. Tangana,https://i.scdn.co/image/ab6761610000e5ebdfb9d2cb6a43021d9002a10e,Rap,2017,m,es,1
+Ufo361,https://i.scdn.co/image/ab6761610000e5eb644a971fd6a129e4105e0a80,Rap,2016,m,de,1
+"Earth, Wind & Fire",https://i.scdn.co/image/9fd0a9822140cce668ee15263e1f73730152dff0,Rap,1971,m,us,9
+Jimi Hendrix,https://i.scdn.co/image/ab6761610000e5eb31f6ab67e6025de876475814,Rap,1967,m,us,1
+La Arrolladora Banda El Lim√≥n De Rene Camacho,https://i.scdn.co/image/ab6761610000e5eb5d5605d4692f064bb6b09659,Rap,1997,m,mx,16
+Los √Ångeles Azules,https://i.scdn.co/image/ab6761610000e5eb7e8894328a07bee2e0881ba6,Rap,1993,x,mx,6
+Volbeat,https://i.scdn.co/image/ab6761610000e5eb7d4bb8c4283f4aeb61f61e98,Rap,2007,m,dk,4
+Milky Chance,https://i.scdn.co/image/ab6761610000e5eb1342d9a0c1a91021b6eb708b,Rap,2013,m,de,2
+The Fray,https://i.scdn.co/image/ab6761610000e5eb0f1175c762fb80f71469b344,Rap,2005,m,us,4
+Stormzy,https://i.scdn.co/image/ab6761610000e5ebcd5dbc48254bfbdd35c1403b,Rap,2014,m,uk,1
+KYLE,https://i.scdn.co/image/ab6761610000e5eb2f57d73b774e9a1553248612,Rap,2013,m,us,1
+Van Morrison,https://i.scdn.co/image/ab6761610000e5eb5885f6c2d3ecf8e08bdfa472,Rap,1967,m,ie,1
+Years & Years,https://i.scdn.co/image/ab6761610000e5eb5a00879e258b7c4e76816e52,Rap,2015,m,uk,1
+Robbie Williams,https://i.scdn.co/image/ab6761610000e5eb15709ba37709bc245a116a1c,Rap,1997,m,uk,1
+Cali Y El Dandee,https://i.scdn.co/image/ab6761610000e5eb784890c6300d555ded68ca10,Rap,2012,m,co,2
+Sam Feldt,https://i.scdn.co/image/ab6761610000e5eb0d0d98740752e38c56661b78,Rap,2016,m,nl,1
+El Alfa,https://i.scdn.co/image/ab6761610000e5eba97f2c907b36d3c1d8e58397,Rap,2017,m,do,1
+Shinedown,https://i.scdn.co/image/ab6761610000e5eb4c77bf7e6fb86af71571f803,Rap,2003,m,us,4
+Lynyrd Skynyrd,https://i.scdn.co/image/ab6761610000e5eb451eb07ddc6e68d3e474c2bf,Rap,1973,m,us,5
+Eric Clapton,https://i.scdn.co/image/ab6772690000c46ca60e8f215103f6841d8a83f0,Rap,1966,m,uk,1
+Rick Ross,https://i.scdn.co/image/ab6761610000e5eb8196a8109c28a8b8aca28fae,Rap,2006,m,us,1
+Kid Ink,https://i.scdn.co/image/ab6761610000e5eb39345e9059608b051a900e22,Rap,2012,m,us,1
+Dave,https://i.scdn.co/image/ab6761610000e5ebf638289c7621609519d8ad24,Rap,2019,m,uk,1
+DNCE,https://i.scdn.co/image/ab6761610000e5eba290ca663e0f4a1007634d79,Rap,2016,x,us,4
+Dimitri Vegas & Like Mike,https://i.scdn.co/image/ab6761610000e5eb02ccfd8ad7d5a445fb1766bc,Rap,2016,m,gr,2
+All Time Low,https://i.scdn.co/image/ab6761610000e5eb6aa4d0d5295afc0b7bacec49,Rap,2006,m,us,4
+Dermot Kennedy,https://i.scdn.co/image/ab6761610000e5eb6e295a69e6e93b9c4ce415b4,Rap,2019,m,ie,1
+T-Pain,https://i.scdn.co/image/ab6761610000e5ebae63c2a8e43c2d4dc37a9aed,Rap,2005,m,us,1
+Quinn XCII,https://i.scdn.co/image/ab6761610000e5eb0365e9002c91999a1f7d950d,Rap,2016,m,us,1
+Daryl Hall & John Oates,https://i.scdn.co/image/ab6761610000e5ebae81417d966e209b735b1160,Rap,1970,m,us,2
+Rage Against The Machine,https://i.scdn.co/image/ddb4a2ad4585d914d9e6993f6ddf50d33e48089e,Rap,1992,m,us,4
+The Smiths,https://i.scdn.co/image/481b980af463122013e4578c08fb8c5cbfaed1e9,Rap,1984,m,us,4
+Grey,https://i.scdn.co/image/ab6761610000e5eb27a494c15f30ca2f08ddd05b,Rap,2013,m,us,2
+The Cranberries,https://i.scdn.co/image/143c01f407ed64a4b3bcbc92d24c05ef80981251,Rap,1993,x,ie,4
+Of Monsters and Men,https://i.scdn.co/image/ab6761610000e5ebce5451b5cc60faf1992e969a,Rap,2011,x,is,5
+The White Stripes,https://i.scdn.co/image/ab6761610000e5eb6b9ae52aa437ce42b77e8fcf,Rap,1999,x,us,2
+Nelly Furtado,https://i.scdn.co/image/ab6761610000e5eb4cd5711d0422af7209cdf37a,Rap,2000,f,ca,1
+MGMT,https://i.scdn.co/image/ab6761610000e5eb089bb3257ef5b3fab2a3c90d,Rap,2002,m,us,2
+B.o.B,https://i.scdn.co/image/ab6761610000e5eb8c518d4a4e60eff246453b0a,Rap,2009,m,us,1
+Samra,https://i.scdn.co/image/ab6761610000e5eb434a7526f8a622e4b3c3bb79,Rap,2019,m,de,1
+Van Halen,https://i.scdn.co/image/ab6761610000e5ebd8475001d2700686e1008dfb,Rap,1978,m,us,4
+Aya Nakamura,https://i.scdn.co/image/ab6761610000e5ebd097fdbe85a171a0483a2611,Rap,2017,f,fr,1
+Black Sabbath,https://i.scdn.co/image/5931700f9515dd6587230130beb615e0549e47dc,Rap,1970,m,uk,4
+Jay Wheeler,https://i.scdn.co/image/ab6761610000e5eb1e85cfd7346402dd9c3c4421,Rap,2019,m,pr,1
+Hollywood Undead,https://i.scdn.co/image/ab6761610000e5eb7fa4eae2283454a067613275,Rap,2008,m,us,5
+Rag'n'Bone Man,https://i.scdn.co/image/ab6761610000e5ebd37c6045418dc479c99ade2c,Rap,2012,m,uk,1
+Plan B,https://i.scdn.co/image/eb21793908d1eabe0fba02659bdff4e4a4b3724a,Rap,2002,m,uk,1
+Rod Stewart,https://i.scdn.co/image/ab6761610000e5eb1d3e6633d1da408fc103a9ec,Rap,1969,m,uk,1
+Brytiago,https://i.scdn.co/image/ab6761610000e5eb05108cfc479c324db5c053e2,Rap,2020,m,pr,1
+Sabaton,https://i.scdn.co/image/ab6761610000e5eb97d68537c39dc8bcebbd9e6c,Rap,2010,m,se,5
+Prince,https://i.scdn.co/image/ab6761610000e5ebbd046575b09d8ec4865dad62,Rap,2010,m,us,1
+A Day To Remember,https://i.scdn.co/image/ab6761610000e5ebd68cc4a136f816a999500f0d,Rap,2005,m,us,5
+Keith Urban,https://i.scdn.co/image/ab6761610000e5eb011f9b2f5c8e0dac63aa5b73,Rap,1997,m,us,1
+Pedro Cap√≥,https://i.scdn.co/image/ab6761610000e5ebc73c83fbde2c56b922157c07,Rap,2007,m,pr,1
+Red Velvet,https://i.scdn.co/image/ab6761610000e5eb8a8415e72dedaa552259d0c1,Rap,2015,f,kr,5
+TINI,https://i.scdn.co/image/ab6761610000e5ebdf85ea23b7036c45c24d654c,Rap,2016,x,sa,1
+Enya,https://i.scdn.co/image/0f6e6c9ab85e148d02a095c870a94f5aa8318148,Rap,1987,f,ie,1
+Maria Becerra,https://i.scdn.co/image/ab6761610000e5eb8e31992499e6cabcc944a48b,Rap,2021,f,ar,1
+Kodaline,https://i.scdn.co/image/ab6761610000e5eb7c64797040b8cc285e9a1839,Rap,2013,m,ie,4
+PnB Rock,https://i.scdn.co/image/ab6761610000e5eb4962230cc9649e2083ac1665,Rap,2015,m,us,1
+Clairo,https://i.scdn.co/image/ab6761610000e5eb370f4e30deba6da178db36fe,Rap,2019,f,us,1
+Andy Grammer,https://i.scdn.co/image/ab6761610000e5eb496050692471e28190f815f0,Rap,2011,m,us,1
+Damso,https://i.scdn.co/image/ab6761610000e5eb6d1dac9cd0d24eee082f5410,Rap,2016,m,be,1
+Rod Wave,https://i.scdn.co/image/ab6761610000e5eb69dc893d0ea9e44a34f97cc9,Rap,2018,m,us,1
+Juan Mag√°n,https://i.scdn.co/image/ab6761610000e5eb874c860c7fea4f5c97d4e6d9,Rap,2012,m,es,1
+ODESZA,https://i.scdn.co/image/ab6761610000e5eb1b00f0413d659ee91b505f70,Rap,2012,m,us,2
+RAYE,https://i.scdn.co/image/ab6761610000e5eb01b577d3a134a7ddb9cb15ba,Rap,2020,f,uk,1
+Mustard,https://i.scdn.co/image/ab6761610000e5eb36d700e57ae8be93479963a0,Rap,2014,x,us,1
+Evanescence,https://i.scdn.co/image/ab6761610000e5eb7c952c071462e72795697bc0,Rap,2003,x,us,5
+Aretha Franklin,https://i.scdn.co/image/ab6761610000e5ebf12270128127ba170f90097d,Rap,1956,f,us,1
+Ludovico Einaudi,https://i.scdn.co/image/ab6761610000e5eb41b332cbe960237714e82408,Rap,1994,m,it,1
+Carrie Underwood,https://i.scdn.co/image/ab6761610000e5ebc1c077c305eb4b2bcac25fd5,Rap,2005,f,us,1
+Casper Magico,https://i.scdn.co/image/ab6761610000e5eb39c7b3827cb696dd0c8807e7,Rap,2020,m,pr,1
+De La Ghetto,https://i.scdn.co/image/ab6761610000e5eb210d835d7261a68bb2a63e5a,Rap,2008,m,us,1
+El Fantasma,https://i.scdn.co/image/ab6761610000e5eba4470ac564487199e5c01cb1,Rap,2016,m,mx,1
+Sfera Ebbasta,https://i.scdn.co/image/ab6761610000e5ebe5e18232c680cd969031c394,Rap,2015,m,it,1
+Topic,https://i.scdn.co/image/ab6761610000e5eb699095f3deab4580b7c2448f,Rap,2015,m,de,1
+Joyner Lucas,https://i.scdn.co/image/ab6761610000e5ebe6f64ccadc3ed5dae6b5fbe4,Rap,2015,m,us,1
+Sublime,https://i.scdn.co/image/ab6761610000e5ebe726280500259dbdb97a8be4,Rap,1991,m,us,3
+George Strait,https://i.scdn.co/image/ab6761610000e5eb77f28b2422efbabde324291c,Rap,1981,m,us,1
+Goodboys,https://i.scdn.co/image/ab6761610000e5eb46eac2a44d81065de348cfa7,Rap,2019,m,uk,2
+Shaggy,https://i.scdn.co/image/ab6761610000e5eb4f49b447350fa63936242776,Rap,1993,m,jm,1
+Carlos Rivera,https://i.scdn.co/image/ab6761610000e5ebd471aab52533508e4bcf9ba4,Rap,2007,m,mx,1
+Nas,https://i.scdn.co/image/ab6761610000e5ebab6bd6e450cbc7629a9a2381,Rap,2021,m,us,1
+Scorpions,https://i.scdn.co/image/ab6761610000e5eb7440170c0628c2945da819c3,Rap,1972,m,de,5
+GIMS,https://i.scdn.co/image/ab6761610000e5eb6dbfa852af972bc6c80c469b,Rap,2013,m,fr,1
+Sum 41,https://i.scdn.co/image/ab6761610000e5eba79683a6e828e1a86341414c,Rap,2000,m,ca,5
+Melendi,https://i.scdn.co/image/ab6761610000e5eb69b92908b14aa8f0b4cd175d,Rap,2003,m,es,1
+WALK THE MOON,https://i.scdn.co/image/ab6761610000e5ebab9610e36fae856c0fd9b46b,Rap,2012,m,us,4
+Bing Crosby,https://i.scdn.co/image/ab6761610000e5eb0ba8db83b01de120a6f2312c,Rap,1932,m,us,1
+Ozzy Osbourne,https://i.scdn.co/image/ab6761610000e5eb3ecde30988e6b9ae379d878e,Rap,1981,m,uk,1
+Natanael Cano,https://i.scdn.co/image/ab6761610000e5eb615df07b39adb4ddcccd4270,Rap,2019,m,mx,1
+Axwell /\ Ingrosso,https://i.scdn.co/image/ab6761610000e5eb9f6e5d736809c4cb40d59a7e,Rap,2017,m,se,2
+Luan Santana,https://i.scdn.co/image/ab6761610000e5eb39cae04e8ce2c03c35d5f9cf,Rap,2009,m,br,1
+TOTO,https://i.scdn.co/image/ab6761610000e5eba59a5bcab211f964fe9bfb06,Rap,1978,m,us,6
+Ali Gatie,https://i.scdn.co/image/ab6761610000e5eb9c396dfe3b553c3dafd2fefe,Rap,2019,m,ca,1
+MC Kevinho,https://i.scdn.co/image/ab6761610000e5eb45c107fdae8bce4b0f357c2b,Rap,2014,m,br,1
+Astrid S,https://i.scdn.co/image/ab6761610000e5ebdda6f23f364765044ee1c62a,Rap,2020,f,no,1
+3 Doors Down,https://i.scdn.co/image/ab6761610000e5ebe259ee48201f121644cdf8a2,Rap,2000,m,us,5
+Jos√© Jos√©,https://i.scdn.co/image/ab6761610000e5eb18129b218ae9c07848ddc759,Rap,2010,m,mx,1
+Nacho,https://i.scdn.co/image/ab6761610000e5eb12052c3be2df2033c8b34860,Rap,2018,m,ve,1
+Two Door Cinema Club,https://i.scdn.co/image/ab6761610000e5ebdd4c0f90744cf7e079b93dc4,Rap,2010,m,ie,3
+Marilyn Manson,https://i.scdn.co/image/ab6761610000e5eb9e2dae585750a8d6055f4e35,Rap,1994,m,us,1
+SEVENTEEN,https://i.scdn.co/image/ab6761610000e5eb6bec4103baf476076ee9ecfa,Rap,2016,m,kr,13
+Don Diablo,https://i.scdn.co/image/ab6761610000e5ebd0c6f816e695c39b0cbb22c3,Rap,2009,m,nl,3
+League of Legends,https://i.scdn.co/image/ab6761610000e5eb1c2306662a30b657f6118e23,Rap,2015,x,sa,1
+Ella Mai,https://i.scdn.co/image/ab6761610000e5eb173a42b51755d3075d67831c,Rap,2018,f,uk,1
+Seeb,https://i.scdn.co/image/ab6761610000e5ebfd68725168b533c320eea5a0,Rap,2020,m,no,2
+David Bisbal,https://i.scdn.co/image/ab6761610000e5eb20d6518a838a8dc7bfdb540e,Rap,2002,m,es,1
+Aitana,https://i.scdn.co/image/ab6761610000e5ebf6bb550ba25406f25bf6365d,Rap,2018,f,es,1
+Wale,https://i.scdn.co/image/ab6761610000e5eb0e1f90bdff70c339838dcf90,Rap,2008,m,us,1
+Dolly Parton,https://i.scdn.co/image/ab6761610000e5eb20ee5dd7929b2eb0b8886cac,Rap,1964,f,us,1
+Sido,https://i.scdn.co/image/ab6761610000e5ebb4e80e0576308cf6f6e90ed0,Rap,2002,m,de,1
+The Smashing Pumpkins,https://i.scdn.co/image/ab6761610000e5ebbe2f365d2999abe2cc48f6d3,Rap,1991,m,us,4
+Afrojack,https://i.scdn.co/image/ab6761610000e5eb549aa0ce64b4b9797b24e3be,Rap,2010,m,nl,1
+Danna Paola,https://i.scdn.co/image/ab6761610000e5ebfd42f7d16d0a5c30c09e50ea,Rap,2002,f,mx,1
+Louis Tomlinson,https://i.scdn.co/image/ab6761610000e5eb926f5a032b7d7ac4700a0bc0,Rap,2020,m,uk,1
+Bibi und Tina,https://i.scdn.co/image/ab6761610000e5eb7c93e8d336783ba8f72905f3,Rap,1991,x,sa,2
+Zo√©,https://i.scdn.co/image/ab6761610000e5eb355b8221a1f933163295f10d,Rap,2019,m,mx,5
+Jorja Smith,https://i.scdn.co/image/ab6761610000e5eb98ed49090b6c6d814ccb0709,Rap,2018,f,uk,1
+Tainy,https://i.scdn.co/image/ab6761610000e5eb0b4ecb49d9dcd631a07a1315,Rap,2006,m,pr,1
+Swedish House Mafia,https://i.scdn.co/image/ab6761610000e5eb0c05adcae61ac479afe35c8e,Rap,2010,m,se,3
+Electric Light Orchestra,https://i.scdn.co/image/ab6761610000e5eb3f289b61b4d965ce54e31841,Rap,1971,m,uk,7
+Banda El Recodo,https://i.scdn.co/image/ab6761610000e5eb2de8a704feecf3bc5c4bce98,Rap,1990,m,mx,17
+Luciano,https://i.scdn.co/image/ab6761610000e5eb7c79a26af7f4b435ec8c6b95,Rap,1963,m,jm,1
+Marco Antonio Sol√≠s,https://i.scdn.co/image/ab6761610000e5ebf7422a4a2b7f13531f22e38b,Rap,1995,m,mx,1
+Bryant Myers,https://i.scdn.co/image/ab6761610000e5eb5332f98f95b18ad1ffa4e0fc,Rap,2018,m,pr,1
+Tom Odell,https://i.scdn.co/image/ab6761610000e5eb5a4cb04df4203d1f1642fc6e,Rap,2013,m,uk,1
+Jaden,https://i.scdn.co/image/ab6761610000e5eb0376b56af63682d48579fa85,Rap,2014,m,us,1
+Kacey Musgraves,https://i.scdn.co/image/ab6761610000e5ebd123e4c884d1a5e2edff1895,Rap,2013,f,us,1
+Arizona Zervas,https://i.scdn.co/image/ab6761610000e5eb468826ad12d3746ab61d8fcd,Rap,2016,m,us,1
+Colbie Caillat,https://i.scdn.co/image/ab6761610000e5eba57068d54bbd15a74234630e,Rap,2007,f,us,1
+Portugal. The Man,https://i.scdn.co/image/ab6761610000e5eb6f851a3bf42183505dadb791,Rap,2006,m,us,5
+Rascal Flatts,https://i.scdn.co/image/ab6761610000e5ebb2423171f56fa27d89e26207,Rap,2000,m,us,3
+Mac DeMarco,https://i.scdn.co/image/ab6761610000e5ebc7a7b191db13668f1a6d863d,Rap,2012,m,ca,1
+R. Kelly,https://i.scdn.co/image/b81390065f0c65c26270a4ca1d2ceae3e30efed6,Rap,1992,m,us,1
+gnash,https://i.scdn.co/image/ab67616d0000b27301ef37f07e070f38298fc6c4,Rap,2021,m,us,1
+Lord Huron,https://i.scdn.co/image/ab6761610000e5eb1d4e4e7e3c5d8fa494fc5f10,Rap,2012,m,us,4
+Martin Jensen,https://i.scdn.co/image/ab6761610000e5ebda1144fb20f96075198f3295,Rap,2015,m,dk,1
+Ms. Lauryn Hill,https://i.scdn.co/image/ccb108f19352e88d6e69b1093d75a2be5efa1c99,Rap,1996,f,us,1
+Desiigner,https://i.scdn.co/image/ab6761610000e5ebc527efb478bf740148492e1b,Rap,2016,m,us,1
+Joel Corry,https://i.scdn.co/image/ab6761610000e5eb0c0cb708b81ed5dc699d1556,Rap,2015,m,uk,1
+Hardwell,https://i.scdn.co/image/ab6761610000e5eb1cbb1805834e1767a18a328b,Rap,2011,m,nl,1
+Kontra K,https://i.scdn.co/image/ab6761610000e5eb0da20567da1e50018f44d977,Rap,2010,m,de,1
+The Clash,https://i.scdn.co/image/ab470b275daa38351810a1eb91d107ebdb821302,Rap,1977,m,uk,4
+Annie Lennox,https://i.scdn.co/image/fb1b39783fdc9625bcba0837e7da9882969eaa03,Rap,1981,f,uk,1
+Feid,https://i.scdn.co/image/ab6761610000e5ebfdcf9dce127c236a7aadf076,Rap,2015,m,co,1
+M83,https://i.scdn.co/image/ab6761610000e5eb5f5afb81942abd41d32dc2b5,Rap,2001,m,fr,2
+Noriel,https://i.scdn.co/image/ab6761610000e5ebf67825837cb85a913d244d93,Rap,2016,m,pr,1
+Mike WiLL Made-It,https://i.scdn.co/image/ab6761610000e5ebcf6300412921aa724a28addc,Rap,2011,m,us,1
+Jessie Reyez,https://i.scdn.co/image/ab6761610000e5ebf416e763269013a66d7fe5a2,Rap,2017,f,ca,1
+Apache 207,https://i.scdn.co/image/ab6761610000e5ebda15d930c6fa42d2ca52a19e,Rap,2019,m,de,1
+Westlife,https://i.scdn.co/image/ab6761610000e5ebceead049d538f0b5087041dd,Rap,1999,m,ie,5
+Leon Bridges,https://i.scdn.co/image/ab6761610000e5ebc1493f8c442935b396753e21,Rap,2015,m,us,1
+Vampire Weekend,https://i.scdn.co/image/ab6761610000e5eb44829ac83c4538a8cf7e9f40,Rap,2008,m,us,4
+DMX,https://i.scdn.co/image/ab6772690000c46c3074f51af22630a1c86da016,Rap,1998,m,us,1
+The Kooks,https://i.scdn.co/image/ab6761610000e5eb720d6b8dd091334f38fb49ad,Rap,2006,m,uk,4
+Elevation Worship,https://i.scdn.co/image/ab6761610000e5ebb10fd90c8d4446fa75af0de7,Rap,2010,x,us,6
+Thirty Seconds To Mars,https://i.scdn.co/image/ab6761610000e5eb9cd2312e93fba5ce64ce55e1,Rap,2002,m,us,3
+Eladio Carrion,https://i.scdn.co/image/ab6761610000e5eb195cf1ae5db3ba7c22eb3412,Rap,2020,m,us,1
+Olly Murs,https://i.scdn.co/image/ab6761610000e5eba8a2cbe16d3db5e795ca786e,Rap,2010,m,uk,1
+Sara Bareilles,https://i.scdn.co/image/ab6761610000e5eb0bae7cfd3b32b10154e0b8b3,Rap,2004,f,us,1
+NEFFEX,https://i.scdn.co/image/ab6761610000e5eb3a7d849b89d6ba9f5bd81639,Rap,2018,m,us,2
+Cosculluela,https://i.scdn.co/image/ab6761610000e5ebf9f2283d080e3581a63daf79,Rap,2010,m,pr,1
+Stromae,https://i.scdn.co/image/ab6761610000e5eb5e22bd1057446fccb9fce27c,Rap,2010,f,be,1
+OMI,https://i.scdn.co/image/2777a98213ec412317ea177edc8615e2fdee8be5,Rap,2015,m,jm,1
+M√ò,https://i.scdn.co/image/ab6761610000e5eb0da5abcc5c0aef0c3cc573d0,Rap,2018,f,dk,1
+Loud Luxury,https://i.scdn.co/image/ab6761610000e5eb1ff87d822ecba6f5d8a50583,Rap,2020,m,ca,2
+Alan Jackson,https://i.scdn.co/image/43fdc2605725f488299398758ffb2c46e6ee7d38,Rap,1989,m,us,1
+Wham!,https://i.scdn.co/image/028bf41acbd7858a4a8acf688a392d4ee9e369ef,Rap,1983,m,uk,2
+Joey Bada$$,https://i.scdn.co/image/ab6761610000e5eb333952098daec907060f95d1,Rap,2012,m,us,1
+KISS,https://i.scdn.co/image/ab6761610000e5eb4e85269a1f35917eddeadefd,Rap,1974,m,us,4
+Chief Keef,https://i.scdn.co/image/ab6761610000e5eb32b8f233fa03ac70fa97781a,Rap,2012,m,us,1
+Mitski,https://i.scdn.co/image/ab6761610000e5ebafb309e27fdb45e093958f9c,Rap,2012,f,us,1
+Fergie,https://i.scdn.co/image/ab6761610000e5eb1fd1c6d465e03a904d63c9b5,Rap,2006,f,us,1
+Owl City,https://i.scdn.co/image/ab6761610000e5eb1e597cf8abddb78b3cc42aaa,Rap,2007,m,us,1
+Moneybagg Yo,https://i.scdn.co/image/ab6761610000e5eb9d566d7d5ca673f9af94f4ce,Rap,2016,m,us,1
+Chencho Corleone,https://i.scdn.co/image/ab6761610000e5eb86f7bcc04d9cab90818de71a,Rap,2018,m,pr,1
+Bethel Music,https://i.scdn.co/image/ab6761610000e5eb03d47933adccb65876193eac,Rap,2010,x,us,15
+Queens of the Stone Age,https://i.scdn.co/image/ab6761610000e5ebc194721f2ca5433bc78b0e74,Rap,1998,m,us,5
+Ha*Ash,https://i.scdn.co/image/ab6761610000e5eb522eaf2cd77ab79d0586c605,Rap,2003,f,us,2
+Gwen Stefani,https://i.scdn.co/image/ab6761610000e5eb71a84376c2d99dbc4eba4097,Rap,2004,f,us,1
+Nekfeu,https://i.scdn.co/image/4b29b23a7dc7ac866210d93d4a5287c95941696c,Rap,2015,m,fr,1
+Stefflon Don,https://i.scdn.co/image/ab6761610000e5eb42d173a47d12d2aff5184802,Rap,2016,f,uk,1
+Pharrell Williams,https://i.scdn.co/image/ab6761610000e5ebccba36eeae66d1280b8d1ede,Rap,2006,m,us,1
+Snow Patrol,https://i.scdn.co/image/ab6761610000e5eb02dd5c821135e146eb2bfc85,Rap,1994,m,ie,5
+Internet Money,https://i.scdn.co/image/ab6761610000e5eb30cc15d302e22803fcb5ad34,Rap,2020,m,us,1
+Nat King Cole,https://i.scdn.co/image/ab6761610000e5eb410d394a57e185889a2740ac,Rap,1952,m,us,1
+Chelsea Cutler,https://i.scdn.co/image/ab6761610000e5ebf85d0a01d61b294e8fa0891d,Rap,2018,f,us,1
+Louis Armstrong,https://i.scdn.co/image/ab6772690000c46c4a0e9d5e55f9f3721c3243c5,Rap,1923,m,us,1
+Conor Maynard,https://i.scdn.co/image/ab6761610000e5eb69dd60374a54388085648072,Rap,2012,m,uk,1
+Dilsinho,https://i.scdn.co/image/ab6761610000e5eb43ead0bbba359fa6e27a22cf,Rap,2014,m,br,1
+Aloe Blacc,https://i.scdn.co/image/ab6761610000e5eb560df03f8fee7731d18a9488,Rap,2005,m,us,1
+Ciara,https://i.scdn.co/image/ab6761610000e5eba1d2211731d7f54a4bc4e490,Rap,2004,f,us,1
+Keane,https://i.scdn.co/image/ab6761610000e5eb6fa4f7efaf78eb1bc0486d27,Rap,2004,m,uk,5
+Dean Martin,https://i.scdn.co/image/492d4ece2bf7c87952be47359f038182fbf15d9d,Rap,1950,m,us,1
+Willy William,https://i.scdn.co/image/ab6761610000e5ebdde80699594b5d8641951c82,Rap,2012,m,fr,1
+M√∂tley Cr√ºe,https://i.scdn.co/image/ab6761610000e5eb4a4a8001924448a7e9a7e725,Rap,1981,m,us,4
+Ruth B.,https://i.scdn.co/image/ab6761610000e5ebc36cd1cebde513411c2e1504,Rap,2017,f,ca,1
+Ella Fitzgerald,https://i.scdn.co/image/3c1d23141059785c8a863137d176319329dc17ef,Rap,1947,f,us,1
+Denzel Curry,https://i.scdn.co/image/ab6761610000e5ebb00f2e31d509ddc6fa0eb24b,Rap,2015,m,us,1
+James TW,https://i.scdn.co/image/ab6761610000e5eb3c0a1c0a096b40ff63de4dc0,Rap,2019,m,us,1
+Dierks Bentley,https://i.scdn.co/image/ab6761610000e5eb216761ffe7a997ad324be2bf,Rap,2003,m,us,1
+Lady A,https://i.scdn.co/image/ab6761610000e5eb749ba770a33230206f8fe159,Rap,2008,x,us,3
+Charlie Brown Jr.,https://i.scdn.co/image/ab6761610000e5ebc409f8e59d6abb96f1b9e06f,Rap,1997,x,us,1
+Sting,https://i.scdn.co/image/ab6761610000e5eb9fdb4dab484a9f12e347c216,Rap,1985,m,uk,1
+MAX,https://i.scdn.co/image/ab6761610000e5eb34669af44674f43cb34bf84b,Rap,2020,f,jp,4
+Regard,https://i.scdn.co/image/ab6761610000e5ebf2463642042d6e99c687b42c,Rap,2016,m,xk,1
+Old Dominion,https://i.scdn.co/image/ab6761610000e5eb148820356b44d642c6715f3f,Rap,2015,m,us,5
+The Jackson 5,https://i.scdn.co/image/19f768d93f6c80f7d4ca5b906e1c0376a3704389,Rap,1969,m,us,5
+Thalia,https://i.scdn.co/image/ab6761610000e5eb1afdb4b3c2ffc005d366134e,Rap,1990,f,mx,1
+Limp Bizkit,https://i.scdn.co/image/4654955890cb62a6abe9daadfd2b3ecdee8036e4,Rap,1997,m,us,5
+WILLOW,https://i.scdn.co/image/ab6761610000e5eb787b04112f1dbd7c8bce18b9,Rap,2015,f,us,1
+Two Feet,https://i.scdn.co/image/ab6761610000e5ebfcaa268ce48afd467463ef76,Rap,2018,m,us,1
+Vintage Culture,https://i.scdn.co/image/ab6761610000e5eb92b73e7c017ab5359781fe1b,Rap,2013,m,br,1
+Leona Lewis,https://i.scdn.co/image/ab6761610000e5ebe9cf3862b8027eb5b9f6b831,Rap,2007,f,uk,1
+Sleeping At Last,https://i.scdn.co/image/ab6761610000e5ebc988b524786872b000cb549f,Rap,2003,m,us,3
+Blueface,https://i.scdn.co/image/ab6761610000e5ebec1036e155af0cd446b6600f,Rap,2018,m,us,1
+Kelly Rowland,https://i.scdn.co/image/ab6761610000e5eb7c614a2b3cedfc53e4679c2e,Rap,2002,f,us,1
+La Oreja de Van Gogh,https://i.scdn.co/image/ab6761610000e5ebc9ea82332c05d870ce3cfe6e,Rap,1998,x,es,5
+ANAVIT√ìRIA,https://i.scdn.co/image/ab6761610000e5eb7ff4c284a04f220d32ddeee2,Rap,2016,f,br,2
+Martin Solveig,https://i.scdn.co/image/ab6761610000e5eb2d6fb5d94a32063560e07014,Rap,2000,m,fr,1
+Dynoro,https://i.scdn.co/image/ab6761610000e5eb71c0e657e2c507f83aeb1627,Rap,2017,m,lt,1
+Booba,https://i.scdn.co/image/ab6761610000e5eb96b3ab10e89bad078d125c3a,Rap,2002,m,fr,1
+Bill Withers,https://i.scdn.co/image/96b85aec6907206572527e1eeec6569d5e977a38,Rap,1971,m,us,1
+Miranda Lambert,https://i.scdn.co/image/ab6761610000e5ebd155caf6e83268ad61be09cd,Rap,2005,f,us,1
+Oliver Heldens,https://i.scdn.co/image/ab6761610000e5eb7ac8d51e0117b2e331aa38aa,Rap,2015,m,nl,1
+John Newman,https://i.scdn.co/image/ab6761610000e5ebdace8bf652b063de3a0e343f,Rap,2013,m,uk,1
+Mon Laferte,https://i.scdn.co/image/ab6761610000e5ebb507cfeb76f25ef8d10fc2f2,Rap,2011,f,cl,1
+Lofi Fruits Music,https://i.scdn.co/image/ab6761610000e5eb3f8ce769e7a4c355b247b0eb,Rap,2019,x,us,1
+fun.,https://i.scdn.co/image/37bc85c957e17d3463ae40da1c8ade6bb5ecd546,Rap,2009,m,us,3
+Trevor Daniel,https://i.scdn.co/image/ab6761610000e5ebb453cf5adb1e1fc2e6bfabb3,Rap,2020,m,us,1
+Lee Brice,https://i.scdn.co/image/ab6761610000e5ebdda79571deaba197ad4793e2,Rap,2010,m,us,1
+Santana,https://i.scdn.co/image/e1bfc98896b3638caa59ef227d52fb1a2208375d,Rap,1969,m,us,1
+Lalo Ebratt,https://i.scdn.co/image/ab6761610000e5eb176d8579da88e3e9ddf1bcda,Rap,2018,m,co,1
+Ezhel,https://i.scdn.co/image/ab6761610000e5ebdfbabf5f1338d03c97799cd3,Rap,2017,m,tr,1
+Los Temerarios,https://i.scdn.co/image/ab6761610000e5eb282bed40bfeb28455afeeed2,Rap,1983,m,mx,2
+CHVRCHES,https://i.scdn.co/image/ab6761610000e5ebea72be78f2a71616661b982e,Rap,2013,x,uk,3
+Cigarettes After Sex,https://i.scdn.co/image/ab6761610000e5eb184c693111b41bc7f101ce8a,Rap,2017,m,us,3
+girl in red,https://i.scdn.co/image/ab6761610000e5eb05b8c8f98561880f045ed2c2,Rap,2021,f,no,1
+The Who,https://i.scdn.co/image/9cd709cabb4a614b4f1dd9ec256a5f30e21f0150,Rap,1965,m,uk,4
+Ben Howard,https://i.scdn.co/image/ab6761610000e5eb7f6d3ce714aba5b2c38212dc,Rap,2011,m,uk,1
+John Lennon,https://i.scdn.co/image/ab6761610000e5eb207c6849d1a1f4480e6aa222,Rap,1968,m,uk,1
+Alice In Chains,https://i.scdn.co/image/ab6761610000e5eb6114a63659d0d5c0a801f733,Rap,1990,m,us,4
+Lil Dicky,https://i.scdn.co/image/ab6761610000e5eb6a2d6dc14edc0c58cfee9683,Rap,2015,m,us,1
+Calle 13,https://i.scdn.co/image/edabfb79fbf3d71ad9d0961a7b199a1470fe5372,Rap,2005,m,pr,1
+Michael Silverman,https://i.scdn.co/image/ab6761610000e5ebd00227965860b698b447d5a0,Rap,2007,m,us,1
+Sade,https://i.scdn.co/image/ab6761610000e5eb92883b0e094a36d2f43ad284,Rap,1984,f,uk,1
+Roxette,https://i.scdn.co/image/ab6761610000e5eb347ca7e9f41f3ff8e2b19034,Rap,1986,x,se,2
+Lu√≠sa Sonza,https://i.scdn.co/image/ab6761610000e5ebacb6cbf4b0ae94dc812f77f6,Rap,2019,f,br,1
+Saweetie,https://i.scdn.co/image/ab6761610000e5eb08508fea5d4e92cf4d221834,Rap,2018,f,us,1
+Ghostemane,https://i.scdn.co/image/ab6761610000e5eb05fe4ce6473b6f00ad5aca73,Rap,2015,m,us,1
+Daya,https://i.scdn.co/image/ab6761610000e5eb1bd4d403a7428035b381a535,Rap,2016,f,us,1
+Surfaces,https://i.scdn.co/image/ab6761610000e5eb15425e51091c49d07b3bca64,Rap,2017,m,us,2
+Gera MX,https://i.scdn.co/image/ab6761610000e5eb6b41a8ebf8835aa23586fbfb,Rap,2015,m,mx,1
+Miracle Tones,https://i.scdn.co/image/ab6761610000e5eb397a7a1c7bbae495a35e8694,Rap,2019,x,sa,1
+Jack √ú,https://i.scdn.co/image/065e6f73d82db92ddaecf1ca779e833c274da17f,Rap,2015,m,us,2
+Gerardo Ortiz,https://i.scdn.co/image/ab6761610000e5ebcb687db0a712bf03959c4e4b,Rap,2009,m,us,1
+beabadoobee,https://i.scdn.co/image/ab6761610000e5ebc8b4ad8a13f54ee2a5184838,Rap,2018,f,ph,1
+Bruno & Marrone,https://i.scdn.co/image/ab6761610000e5eb6a0ec2243b2929c14a1dea8e,Rap,1994,m,br,2
+The Pussycat Dolls,https://i.scdn.co/image/ab6761610000e5eb292575f7d081016e04dff9ee,Rap,2005,f,us,5
+Shania Twain,https://i.scdn.co/image/ab6761610000e5ebf04cbe533ce2d55373f49b2b,Rap,1993,f,ca,1
+MKTO,https://i.scdn.co/image/ab6761610000e5ebbc861f3d1ba68614d3a301b4,Rap,2012,m,us,2
+MAGIC!,https://i.scdn.co/image/ab6761610000e5eb39c7b3827cb696dd0c8807e7,Rap,2020,x,us,1
+Brent Faiyaz,https://i.scdn.co/image/ab6761610000e5eb2749cce858c97642feda7a92,Rap,2017,m,us,1
+TOMORROW X TOGETHER,https://i.scdn.co/image/ab6761610000e5ebe808489e4855c3e16e4844c3,Rap,2019,m,kr,5
+Kylie Minogue,https://i.scdn.co/image/ab6761610000e5ebab2720cd7161ed8a2a203f3a,Rap,1988,f,au,1
+Chris Young,https://i.scdn.co/image/ab6761610000e5eb41e02a666bde7ef22ea984dc,Rap,2006,m,us,1
+Niska,https://i.scdn.co/image/ab6761610000e5eb027ff0ef7c6a7de05221b608,Rap,2015,m,fr,1
+Incubus,https://i.scdn.co/image/ab6761610000e5ebbaebf3a81961bdf7173ab959,Rap,1997,m,us,5
+Gryffin,https://i.scdn.co/image/ab6761610000e5ebc4298db5a8443051eda464bb,Rap,2019,m,us,1
+Mike Perry,https://i.scdn.co/image/ab6761610000e5eb4ca7ccebc2f9e6c281cd6ff3,Rap,2016,m,se,1
+Powfu,https://i.scdn.co/image/ab6761610000e5ebdf64d381c8277dce8f96c0a5,Rap,2020,m,ca,1
+Tee Grizzley,https://i.scdn.co/image/ab6761610000e5ebdd7c31746f90d2c9a9ae403c,Rap,2017,m,us,1
+Oliver Tree,https://i.scdn.co/image/ab6761610000e5eb8920b53de80984ecf97ea3cb,Rap,2020,m,us,1
+Arcade Fire,https://i.scdn.co/image/ab6761610000e5eba044e15eee771205956dcbf8,Rap,2004,x,ca,6
+Yo Gotti,https://i.scdn.co/image/ab6761610000e5eb2ffce7144cd40e08aa81f2a2,Rap,2006,m,us,1
+Los Tigres Del Norte,https://i.scdn.co/image/ab6761610000e5ebc08bf49ef165cfcc73962be9,Rap,1984,m,mx,5
+Gigi D'Agostino,https://i.scdn.co/image/ab6761610000e5ebc2ebdffb99dac3e70cfa6ec7,Rap,1999,m,it,1
+Sean Kingston,https://i.scdn.co/image/ab6761610000e5eb5d853b34ef123ce2da768c95,Rap,2008,m,jm,1
+Seether,https://i.scdn.co/image/ab6761610000e5ebae16317ddc36675cf6de4826,Rap,2002,m,za,4
+Angus & Julia Stone,https://i.scdn.co/image/ab6761610000e5eb6991d9d87155e48247e2caf0,Rap,2007,x,au,2
+Taio Cruz,https://i.scdn.co/image/ab6761610000e5eb153171480a6f22912253b9f1,Rap,2008,m,uk,1
+Sin Bandera,https://i.scdn.co/image/ab6761610000e5ebc6bb3345a8a898bd01283a36,Rap,2001,m,mx,1
+Paul Simon,https://i.scdn.co/image/ab6761610000e5eb1f764c8f69b595efe77e1c45,Rap,1965,m,us,1
+Bullet For My Valentine,https://i.scdn.co/image/ab6761610000e5eb083627f7d306f40cd7ff8893,Rap,2005,m,uk,4
+Dennis Lloyd,https://i.scdn.co/image/ab6761610000e5eb03a549a526f43c676492b910,Rap,2021,m,il,1
+Nina Simone,https://i.scdn.co/image/ab6761610000e5eb136c51c848c26a6cce7f9e56,Rap,1958,f,us,1
+Chayanne,https://i.scdn.co/image/ab6761610000e5ebf93c0ad33e51f43d8e7426c3,Rap,1984,m,pr,1
+Simple Plan,https://i.scdn.co/image/ab6761610000e5eb14be52ba7ed12e0177ebe08b,Rap,2004,m,ca,5
+Jon Pardi,https://i.scdn.co/image/ab6761610000e5eb9ab434ef1b8d8aff5fce625d,Rap,2014,m,us,1
+Kollegah,https://i.scdn.co/image/ab6761610000e5eb8549d982a3e6e48d929f0058,Rap,2005,m,de,1
+Beret,https://i.scdn.co/image/ab6761610000e5ebbe52891d50a358943a830701,Rap,2016,m,us,4
+Fr√©d√©ric Chopin,https://i.scdn.co/image/ab6761610000e5ebe55372097569b7b56b439365,Rap,2009,m,pl,1
+Rich Brian,https://i.scdn.co/image/ab6761610000e5eb39d2db28841d007ee7f8d782,Rap,2018,m,id,1
+Jasmine Thompson,https://i.scdn.co/image/ab6761610000e5eb9e6143483dc36287e2ceb6cb,Rap,2013,f,uk,1
+Lionel Richie,https://i.scdn.co/image/ab6761610000e5eb002684808eb17d8b3645b57c,Rap,1982,m,us,1
+Junior H,https://i.scdn.co/image/ab6761610000e5ebb16c368126de1ac35eee5362,Rap,2019,m,mx,1
+Santa Fe Klan,https://i.scdn.co/image/ab6761610000e5eb553937c97ad35e9744216ba6,Rap,2017,m,mx,1
+Darell,https://i.scdn.co/image/ab6761610000e5eb58e637c9f4c9a120ea6d29f7,Rap,2016,m,pr,1
+AJ Tracey,https://i.scdn.co/image/ab6761610000e5ebe6abb3f6a94e65798db7d73c,Rap,2019,m,uk,1
+Summer Cem,https://i.scdn.co/image/ab6761610000e5eb26537d95e9d3f9ed5debb43c,Rap,2010,m,de,1
+TKKG,https://i.scdn.co/image/ab6761610000e5eb332bec55998b0124ed7c362b,Rap,2001,x,sa,1
+Bea Miller,https://i.scdn.co/image/ab6761610000e5ebc6de66e3b6928e0ecf3f9b0c,Rap,2015,f,us,1
+Max Richter,https://i.scdn.co/image/ab6761610000e5ebbce84a4b1311b0b4c60c0215,Rap,2002,m,uk,1
+Yung Gravy,https://i.scdn.co/image/ab6761610000e5ebcf385b6b5778a421826b4083,Rap,2018,m,us,1
+Greeicy,https://i.scdn.co/image/ab6761610000e5eb3f92d719fe7223ad9fdd2be6,Rap,2019,f,co,1
+Nipsey Hussle,https://i.scdn.co/image/ab6761610000e5ebe9edae8fe232af1d2995c991,Rap,2009,m,us,1
+*NSYNC,https://i.scdn.co/image/c56cf0cc89c8ecfec7145cf065ea2006d0706605,Rap,1997,m,us,5
+IU,https://i.scdn.co/image/ab6761610000e5eb006ff3c0136a71bfb9928d34,Rap,2009,f,kr,1
+Gente De Zona,https://i.scdn.co/image/ab6761610000e5eb2357c57a1496db97ed8a8a34,Rap,2008,m,cu,2
+KSI,https://i.scdn.co/image/ab6761610000e5ebcb4ae963f0c01900f3e17712,Rap,2019,m,uk,1
+Lily Allen,https://i.scdn.co/image/ab6761610000e5eb4816f55146bf03d294005165,Rap,2006,f,uk,1
+Otis Redding,https://i.scdn.co/image/4ad89c805aff0fb76b01b6b62b39e21fcd8943c3,Rap,1964,m,us,1
+LUDMILLA,https://i.scdn.co/image/ab6761610000e5eb551a86e4f23c9125316c603b,Rap,2014,f,br,1
+Dido,https://i.scdn.co/image/ab6761610000e5eb87150e785bd32b08bf0ba550,Rap,1999,f,uk,1
+will.i.am,https://i.scdn.co/image/ab6761610000e5ebc9ab8da6f7a3ce02f0b16fd8,Rap,2001,m,us,1
+Die drei !!!,https://i.scdn.co/image/ab6761610000e5eb893d6ee4bb02e21096e1114d,Rap,2009,x,sa,1
+Guaynaa,https://i.scdn.co/image/ab6761610000e5eb710db427ce36c07d6902f1e9,Rap,2020,m,pr,1
+The National,https://i.scdn.co/image/ab6761610000e5eb9bdd753a468500e06a864226,Rap,2001,m,us,5
+JID,https://i.scdn.co/image/ab6761610000e5eb52a6fa5f05c26ac257c6feda,Rap,2017,m,us,1
+Selena,https://i.scdn.co/image/ab6761610000e5eba5205abffd84341e5bace828,Rap,2013,f,us,1
+Juicy J,https://i.scdn.co/image/ab6761610000e5eb116fc50265ef72d7e66723a5,Rap,2002,m,us,1
+Chase Atlantic,https://i.scdn.co/image/ab6761610000e5eb41c31bcb75f9f1817e597041,Rap,2017,m,au,3
+Tina Turner,https://i.scdn.co/image/cf860c0e880d74dafe187f732c0093af95fda142,Rap,1978,f,us,1
+Kiiara,https://i.scdn.co/image/ab6761610000e5eb3a50ec3bc61d904970f4dd1b,Rap,2020,f,us,1
+Tom Walker,https://i.scdn.co/image/ab6761610000e5eb76b94ef622e91b1a44c6f883,Rap,2019,m,uk,1
+Beastie Boys,https://i.scdn.co/image/705bcd56dc5dbf9ebc578a3ba8094e6d622862c2,Rap,1986,m,us,3
+Felipe Ara√∫jo,https://i.scdn.co/image/ab6761610000e5ebdc56054ca3624d6a27a39278,Rap,2017,m,br,1
+Tears For Fears,https://i.scdn.co/image/ab6761610000e5eb42ed2cb48c231f545a5a3dad,Rap,1983,m,uk,2
+Mother Mother,https://i.scdn.co/image/ab6761610000e5eb61493120c1f08589dfadf9a0,Rap,2007,mixed mmmff,ca,5
+Wolfgang Amadeus Mozart,https://i.scdn.co/image/ab6761610000e5eb65174e0dfe4f23369a27c993,Rap,1995,m,at,1
+Yusuf / Cat Stevens,https://i.scdn.co/image/ab6761610000e5ebcff97c36c1d9a2a1d421966c,Rap,1967,x,us,1
+Brad Paisley,https://i.scdn.co/image/ab6761610000e5eb49b3eca30283993e5794c6ef,Rap,1999,m,us,1
+Ice Cube,https://i.scdn.co/image/ab6761610000e5eb650e79afafd00492e33d7b8c,Rap,1990,m,us,1
+Sof√≠a Reyes,https://i.scdn.co/image/ab6761610000e5eb1630ace4444837a538d34048,Rap,2017,f,mx,1
+Tracy Chapman,https://i.scdn.co/image/965060777aeacb43659097cddc16b741785a508f,Rap,1988,f,us,1
+Neil Young,https://i.scdn.co/image/ab6772690000c46c49b91a07c864561ba7c78ba7,Rap,2017,m,us,1
+Cyndi Lauper,https://i.scdn.co/image/ab6761610000e5eb05d7972efdf59f2e713f2ddc,Rap,1983,f,us,1
+Mary J. Blige,https://i.scdn.co/image/ab6761610000e5eb59f9f1ee5a9d2d917813e70f,Rap,1992,f,us,1
+Kevin Roldan,https://i.scdn.co/image/ab6761610000e5eb3e25b08cfa4ab49f04c55c45,Rap,2017,m,co,1
+Olivia O'Brien,https://i.scdn.co/image/ab6761610000e5eb80a0b3bb31a4cc110bcc20b7,Rap,2019,f,us,1
+Dominic Fike,https://i.scdn.co/image/ab6761610000e5eb436d45fb9b11ad089e0e3c11,Rap,2018,m,us,1
+Deftones,https://i.scdn.co/image/ab6761610000e5eb4b2da0b72cab26ac518f1f0d,Rap,1995,m,us,5
+CRO,https://i.scdn.co/image/ab6761610000e5eba6f88c86470fd6350f4a5535,Rap,1993,x,us,1
+NCT 127,https://i.scdn.co/image/ab6761610000e5eb0b97c25d93d822c38ac9eaaf,Rap,2016,m,kr,7
+Oh Wonder,https://i.scdn.co/image/ab6761610000e5eb269dc6a0f88d0b4db4e19dd9,Rap,2015,mixed mf,uk,2
+Mr. Probz,https://i.scdn.co/image/ab6761610000e5eb4665e17c6cad3616d170dfeb,Rap,2013,m,nl,1
+Ramin Djawadi,https://i.scdn.co/image/ab6761610000e5eb91e7dd670bc7d3ec7d1cbc6f,Rap,2007,m,de,1
+Lenny Kravitz,https://i.scdn.co/image/ab6761610000e5eb7e8726da6b15e258be59c13b,Rap,1989,m,us,1
+Yellow Claw,https://i.scdn.co/image/ab6761610000e5eb935c33066d5c8094f876ed70,Rap,2015,m,nl,2
+Lupe Fiasco,https://i.scdn.co/image/ab6761610000e5eb17e0a43f3aaa0c48410c4b68,Rap,2006,m,us,1
+Brett Young,https://i.scdn.co/image/ab6761610000e5ebb2883d0a99c6e43909c88ee1,Rap,2017,m,us,1
+The Score,https://i.scdn.co/image/ab6761610000e5ebc1fded2a185c54df399fe63a,Rap,2017,m,us,2
+Ferrugem,https://i.scdn.co/image/ab6761610000e5eb1df1d4185435fa91433931bf,Rap,2015,m,br,1
+Wallows,https://i.scdn.co/image/ab6761610000e5ebb31e2c447cae669973be25b1,Rap,2019,m,us,3
+Blur,https://i.scdn.co/image/ab6761610000e5ebfc71f603260f36bb53f2b29c,Rap,1991,m,uk,4
+Matu√™,https://i.scdn.co/image/ab6761610000e5ebf9f3437fe3ca3a832e6bd096,Rap,2020,m,br,1
+Audioslave,https://i.scdn.co/image/ab6761610000e5ebd230aee424ec1acc85143fca,Rap,2002,m,us,4
+R√≠o Roma,https://i.scdn.co/image/ab6761610000e5eb68c2164a213ca52f65fbd22f,Rap,2011,m,mx,2
+KALEO,https://i.scdn.co/image/ab6761610000e5ebece7abde99be7145c0cbbe21,Rap,2013,m,is,5
+Cash Cash,https://i.scdn.co/image/ab6761610000e5eb152cf48cf9541c7061570857,Rap,1957,m,us,3
+Jowell & Randy,https://i.scdn.co/image/ab6761610000e5eb1919bd779536bbcb3a186150,Rap,2007,m,pr,2
+deadmau5,https://i.scdn.co/image/ab6761610000e5ebc5ceb05f152103b2b70d3b07,Rap,2006,m,ca,1
+Granular,https://i.scdn.co/image/ab67616d0000b273bce4fa4688f58b6162a149e9,Rap,2017,x,sa,1
+ZZ Top,https://i.scdn.co/image/684172db801f534639d3f047dc8095da623892e3,Rap,1970,m,us,3
+Pineapple StormTv,https://i.scdn.co/image/ab6761610000e5ebe915b03e0d384550b452d024,Rap,2021,x,sa,1
+Lil Kleine,https://i.scdn.co/image/ab6761610000e5ebe02b34087c8b5755b84e9d00,Rap,2016,m,nl,1
+Julieta Venegas,https://i.scdn.co/image/ab6761610000e5ebbc5aa2e1c5632844b4dd518d,Rap,1998,f,mx,1
+Will Smith,https://i.scdn.co/image/ab6761610000e5eb787b04112f1dbd7c8bce18b9,Rap,2015,m,us,1
+Petit Biscuit,https://i.scdn.co/image/ab6761610000e5eb536b525b401e04a57e639f69,Rap,2017,m,fr,1
+Alex Rose,https://i.scdn.co/image/ab6761610000e5eb7efb39a544c39ab5ac017bb0,Rap,2019,m,pr,1
+Natiruts,https://i.scdn.co/image/ab6761610000e5eb3606796c2dc2a806e5e2f0bc,Rap,1998,m,br,3
+Skepta,https://i.scdn.co/image/ab6761610000e5ebba2a0554603cc961338b4a1b,Rap,2007,m,uk,1
+DJ Luian,https://i.scdn.co/image/ab6761610000e5eba32aa35dccd565cf8bebf94f,Rap,2015,m,pr,1
+Giveon,https://i.scdn.co/image/ab6761610000e5eb7a55ce9ad0aab3a8b8b6ac5f,Rap,2020,m,us,1
+Nicki Nicole,https://i.scdn.co/image/ab6761610000e5ebc4339841ed995cedbc0cff4e,Rap,2019,f,ar,1
+Joaqu√≠n Sabina,https://i.scdn.co/image/ab6761610000e5ebd30f9a429e2aa4eb9d1ddf21,Rap,1978,m,es,1
+DENNIS,https://i.scdn.co/image/ab6761610000e5eb03a549a526f43c676492b910,Rap,2021,m,il,1
+Falling In Reverse,https://i.scdn.co/image/ab6761610000e5ebb62f45887d003e15cdb75696,Rap,2011,m,uis,5
+Natalia Lafourcade,https://i.scdn.co/image/ab6761610000e5eb00d55232d7308bcad3108e42,Rap,2002,f,mx,1
+Mc Don Juan,https://i.scdn.co/image/ab6761610000e5eb54cf878f728ea417cca52678,Rap,2019,m,br,1
+Toby Keith,https://i.scdn.co/image/ab6761610000e5eb1b6b9d83cfd806b328496207,Rap,1994,m,us,1
+Timbaland,https://i.scdn.co/image/ab6761610000e5eb2ec030557b0529c01639529b,Rap,1997,m,us,1
+Tech N9ne,https://i.scdn.co/image/ab6761610000e5ebf2f6845f7e0187bb82cca89f,Rap,1999,m,us,1
+Cher,https://i.scdn.co/image/ab6761610000e5ebed896a298ee61f6cec91abc4,Rap,2006,f,us,1
+Gustavo Cerati,https://i.scdn.co/image/ab6761610000e5eb9fe420929b841704e6ef7c70,Rap,1992,m,ar,1
+Dadju,https://i.scdn.co/image/ab67616d0000b27303bb9e103697ae15187f16d8,Rap,2017,m,fr,1
+Mambo Kingz,https://i.scdn.co/image/ab6761610000e5eb881ed0aa97cc8420685dc90e,Rap,2015,m,pr,2
+Baby Lullaby Academy,https://i.scdn.co/image/ab67616d0000b273b11162ca9ed88437eefa6cac,Rap,2014,x,sa,1
+AURORA,https://i.scdn.co/image/ab6761610000e5eb1cf32251011d049c26855ae4,Rap,2014,f,no,1
+Tori Kelly,https://i.scdn.co/image/ab6761610000e5eb99cc6e6af1e04a142709f617,Rap,2015,f,us,1
+B√òRNS,https://i.scdn.co/image/ab6761610000e5eb6308e79c621076395807b455,Rap,2015,m,us,1
+Spice Girls,https://i.scdn.co/image/ab6761610000e5ebcf4a1dced6258416eb219e36,Rap,1996,f,uk,5
+TLC,https://i.scdn.co/image/ab6761610000e5eb7356ae4581e46319f99c813a,Rap,1992,f,us,3
+Tungevaag,https://i.scdn.co/image/ab6761610000e5ebee900a94daea7f23be2327a1,Rap,2015,m,no,1
+Sasha Alex Sloan,https://i.scdn.co/image/ab6761610000e5ebe16b5f57641d79dbc975675e,Rap,2020,f,us,1
+The Goo Goo Dolls,https://i.scdn.co/image/ab6761610000e5ebbbc7ea7e83564c927c25774c,Rap,1987,m,us,3
+Kris Kross Amsterdam,https://i.scdn.co/image/ab6761610000e5ebfd4cde6df031ed434eb744aa,Rap,2015,m,nl,3
+Jay Chou,https://i.scdn.co/image/ab6761610000e5eba9989f6b9885c7aedc29c557,Rap,2000,m,tw,1
+Pink Sweat$,https://i.scdn.co/image/ab6761610000e5eb2822fcd3337b030199b3861a,Rap,2021,m,us,1
+Vince Staples,https://i.scdn.co/image/ab6761610000e5eb53054f8bc7e0153daefe12cc,Rap,2014,m,us,1
+La Adictiva Banda San Jos√© de Mesillas,https://i.scdn.co/image/ab6761610000e5eb18129b218ae9c07848ddc759,Rap,2010,m,mx,17
+Lykke Li,https://i.scdn.co/image/ab6761610000e5eb0bf8a86c8e3a34bb4934abb7,Rap,2008,f,se,1
+Bruno Martini,https://i.scdn.co/image/ab6761610000e5eb826de4d67a791e8f5e058139,Rap,2021,m,br,1
+Alina Baraz,https://i.scdn.co/image/ab6761610000e5eb02f21536c1a061577538597b,Rap,2015,f,us,1
+Maggie Lindemann,https://i.scdn.co/image/ab6761610000e5eb407c4473a9f99528f59443ca,Rap,2021,f,us,1
+Jack & Jack,https://i.scdn.co/image/ab6761610000e5eb9555a0b3231117c8cde1fca7,Rap,2001,m,us,2
+Lauren Daigle,https://i.scdn.co/image/ab6761610000e5eb3f153e668b6ef3534b937673,Rap,2015,f,us,1
+Melim,https://i.scdn.co/image/ab6761610000e5ebe47d73e3c02e350d98ab91eb,Rap,2018,x,br,3
+Dread Mar I,https://i.scdn.co/image/ab6761610000e5eb2d7e2fd5cf6d093294dfab6e,Rap,2006,m,ar,1
+YUNGBLUD,https://i.scdn.co/image/ab6761610000e5eb9bfe2cce40ef158ecd0362f0,Rap,2018,m,uk,1
+The All-American Rejects,https://i.scdn.co/image/ab6761610000e5ebb57332e3fc2b97bb33577e65,Rap,2002,m,us,4
+Tyler Childers,https://i.scdn.co/image/ab6761610000e5eb192fe49fd00a709b5e34f440,Rap,2011,m,us,1
+Evaluna Montaner,https://i.scdn.co/image/ab6761610000e5eb8e311e40ac5a8708707e58ae,Rap,2019,f,ve,1
+Pabllo Vittar,https://i.scdn.co/image/ab6761610000e5ebfbc31a0700e25e662e7f6602,Rap,2017,f,br,1
+Alvaro Soler,https://i.scdn.co/image/ab6761610000e5eb337022f30103ba3d1081611d,Rap,2016,m,es,1
+Supertramp,https://i.scdn.co/image/eebed895cad509b17c7c6faf47f21f1fc35e8829,Rap,1969,m,uk,5
+Salmo,https://i.scdn.co/image/ab6761610000e5ebce2d962434747d6ff3325640,Rap,1997,m,it,1
+Willie Nelson,https://i.scdn.co/image/ab6772690000c46ca07b9db029b749adaba3c618,Rap,1962,m,us,1
+Bunbury,https://i.scdn.co/image/ab6761610000e5ebfbd4d3ee2ef5070e0aa234c0,Rap,1997,m,es,1
+Juan Luis Guerra 4.40,https://i.scdn.co/image/ab6761610000e5ebaa60935c3c4dc4a0fd48759e,Rap,1985,m,do,1
+Gavin James,https://i.scdn.co/image/ab6761610000e5eb8543ab05e98a92300a9368d2,Rap,2014,m,ie,1
+Beck,https://i.scdn.co/image/ab6761610000e5eb653ae0ed6e7bef49386b2f93,Rap,2019,m,us,1
+Duke Dumont,https://i.scdn.co/image/ab6761610000e5eb208e2d15d19c97801c0bd5fc,Rap,2020,m,uk,1
+Counting Crows,https://i.scdn.co/image/ab6761610000e5eba6f88c86470fd6350f4a5535,Rap,1993,m,us,7
+Emeli Sand√©,https://i.scdn.co/image/ab6761610000e5ebf0d110798c1846a3effbf792,Rap,2012,f,uk,1
+Icona Pop,https://i.scdn.co/image/ab6761610000e5eb10296b38c7ecf2b02e278b67,Rap,2012,f,se,2
+Burna Boy,https://i.scdn.co/image/ab6761610000e5eb1e6f47b5beb55b52cbece502,Rap,2013,m,ng,1
+MC Kevin o Chris,https://i.scdn.co/image/ab6761610000e5eb961c0a496810b0ea93bbd9aa,Rap,2020,m,br,1
+Gloria Trevi,https://i.scdn.co/image/ab6761610000e5eb6701b206dff93bd992eacdbb,Rap,1989,f,mx,1
+Trueno,https://i.scdn.co/image/ab6761610000e5eb374aa48c47b60b9347fbf2b2,Rap,2020,m,ar,1
+Foreigner,https://i.scdn.co/image/ab6761610000e5ebb338d6964565206f741d5ad1,Rap,1977,m,uk,7
+Pixies,https://i.scdn.co/image/ab6761610000e5eb01a03b759e148c92c6db1262,Rap,1987,x,us,4
+Simone & Simaria,https://i.scdn.co/image/ab6761610000e5eb1f12525ea1aa1b78d4a7782d,Rap,2004,f,br,2
+The Temptations,https://i.scdn.co/image/ab6761610000e5eb3f0f76df1047720f2e57fc35,Rap,1964,m,us,5
+Talking Heads,https://i.scdn.co/image/e4c5b04fce8706c87663357b1f78522a3a5c641b,Rap,1977,x,us,4
+Gotye,https://i.scdn.co/image/713664fded8bdd28ed84f4b2054815af92999b9c,Rap,2003,m,be,1
+The Head And The Heart,https://i.scdn.co/image/ab6761610000e5ebc1332a509f6d8382c6d8996a,Rap,2011,x,us,6
+Cristian Castro,https://i.scdn.co/image/45025bd1014527e8f113b22fa647da7a142c3d6c,Rap,1997,m,mx,1
+Jeezy,https://i.scdn.co/image/ab6761610000e5eba97e266f85999f6113e551af,Rap,2003,m,us,1
+Hombres G,https://i.scdn.co/image/ab6761610000e5eb04c4062671c216a926f425f2,Rap,1985,m,es,4
+Capo Plaza,https://i.scdn.co/image/ab6761610000e5ebce3a6ac0130806e84e12b865,Rap,2016,m,it,1
+Marracash,https://i.scdn.co/image/ab6761610000e5eb6de4419d90a5d68c308a4f31,Rap,2008,m,it,1
+ZHU,https://i.scdn.co/image/ab6761610000e5eb5cc7aca0b30b4214a4dc154e,Rap,2015,m,us,1
+Ruel,https://i.scdn.co/image/ab6761610000e5eb0fa22dcc72a09bf9115479b2,Rap,2019,m,au,1
+Jacquees,https://i.scdn.co/image/ab6761610000e5ebb13d32c402395ea1bdfb87ee,Rap,2014,m,us,1
+Salaam Remi,https://i.scdn.co/image/ab6761610000e5eba4d76be80873bd859f4c4b43,Rap,1999,m,us,1
+Gustavo Mioto,https://i.scdn.co/image/ab6761610000e5eb5361149937004b8165005b96,Rap,2015,m,br,1
+SCH,https://i.scdn.co/image/ab6761610000e5ebe697a7ddf7af3a306428fa73,Rap,2011,m,fr,1
+Lil Xan,https://i.scdn.co/image/ab6761610000e5eb8fe03caab903761dd757714a,Rap,2018,m,us,1
+Alanis Morissette,https://i.scdn.co/image/ab6772690000c46ce8cb0dc811f7064ac07180ae,Rap,1995,f,ca,1
+Diego & Victor Hugo,https://i.scdn.co/image/ab6761610000e5eb3fc676479cb8496755d60855,Rap,2014,m,br,1
+Thiaguinho,https://i.scdn.co/image/ab6761610000e5eb5a95fc6d6dbdc6acbb676787,Rap,2008,m,br,1
+Caf√© Tacvba,https://i.scdn.co/image/ab6761610000e5ebf38da67f8b1ee80e75a9eab7,Rap,1992,m,mx,4
+Baby Keem,https://i.scdn.co/image/ab6761610000e5ebd6f2323c1971fd5a70cd0255,Rap,2018,m,us,1
+Canserbero,https://i.scdn.co/image/ab6761610000e5eba91405d63c939682e4efdcbc,Rap,2008,m,ve,1
+Zendaya,https://i.scdn.co/image/fba29219867535aaed72b65c2cb363040cb98103,Rap,2013,f,us,1
+Dustin Lynch,https://i.scdn.co/image/ab6761610000e5eb81cd620ab4e2adb53d83c5f9,Rap,2012,m,us,1
+Megadeth,https://i.scdn.co/image/ab6761610000e5ebace132cb20a3fd6725d5e27d,Rap,1985,m,us,4
+Beach House,https://i.scdn.co/image/ab6761610000e5ebb3e38a46a56a423d8f741c09,Rap,2006,m,us,2
+Frenna,https://i.scdn.co/image/ab6761610000e5ebc71d11d348ab55b4c9b9e6a2,Rap,2016,m,nl,1
+Sam Cooke,https://i.scdn.co/image/ab6761610000e5eb41aaa3a05d2ddba59454273e,Rap,1958,m,us,1
+MF DOOM,https://i.scdn.co/image/ab6761610000e5eb1ca139a174e216880498dc16,Rap,1999,m,uk,1
+Silk Sonic,https://i.scdn.co/image/ab6772690000c46ca3ebb27ba9a55044f32af6e1,Rap,2021,m,us,2
+Eurythmics,https://i.scdn.co/image/ab6761610000e5eb145a01fb993c3088fe6ac5e7,Rap,1981,x,uk,2
+A Tribe Called Quest,https://i.scdn.co/image/ab6761610000e5eb774d73ae6796b6f437d89db9,Rap,1990,m,us,4
+Pantera,https://i.scdn.co/image/ab21b012c14655da99190faeada6d5ed95273c98,Rap,1990,m,us,4
+Laura Pausini,https://i.scdn.co/image/ab6761610000e5eba1ca264aff097f33f02a9938,Rap,1993,f,it,1
+Missy Elliott,https://i.scdn.co/image/ab6761610000e5ebf6691f40d906f097e9fbaa4c,Rap,1997,f,us,1
+Brantley Gilbert,https://i.scdn.co/image/ab6761610000e5eb891ad6bfade113366ffb7698,Rap,2009,m,us,1
+Johann Sebastian Bach,https://i.scdn.co/image/a2ec08fe69ecec2748fbc764aede8f1b03ae8f88,Rap,1989,m,de,1
+Craig David,https://i.scdn.co/image/ab6761610000e5ebe193dec6d352ccc0d3ed0221,Rap,2000,m,uk,1
+Snakehips,https://i.scdn.co/image/ab6761610000e5ebaee5ac218c1afcaf2ad96ac9,Rap,2014,m,uk,2
+(G)I-DLE,https://i.scdn.co/image/ab6761610000e5ebc54e9b09db7f35f5bbb0efd4,Rap,2022,f,kr,6
+Ben&Ben,https://i.scdn.co/image/ab6761610000e5eb80e7c24a90d629c98d4dfa8f,Rap,2019,x,ph,9
+Brett Eldredge,https://i.scdn.co/image/ab6761610000e5eb0911914cb6c9b01bd1c01aaf,Rap,2013,m,us,1
+Grouplove,https://i.scdn.co/image/ab6761610000e5eb515b012eec849c8c5b844121,Rap,2011,x,us,5
+Aleman,https://i.scdn.co/image/ab6761610000e5eb6c1d2882997b15d14a7a7661,Rap,2014,m,mx,1
+Andrea Bocelli,https://i.scdn.co/image/ab6761610000e5eb289ac142bb94d4e5d92dea75,Rap,1994,m,it,1
+Kelsea Ballerini,https://i.scdn.co/image/ab6761610000e5ebfcac93226387eadc9f32a611,Rap,2015,f,us,1
+AWOLNATION,https://i.scdn.co/image/ab6761610000e5eb830294a83aeb6ab0b2dc928e,Rap,2011,m,us,4
+Ultimo,https://i.scdn.co/image/ab67616d0000b273dce73288ff878f0f7cb3ffe3,Rap,2009,m,it,1
+Benjamin Bl√ºmchen,https://i.scdn.co/image/ab6761610000e5ebdda660380d0c92b8a62342aa,Rap,1977,x,sa,1
+M.I.A.,https://i.scdn.co/image/ab6761610000e5ebee0343832cf2bbf09a0c697d,Rap,2005,f,uk,1
+R√úF√úS DU SOL,https://i.scdn.co/image/ab6761610000e5eba5d83556275bb22511f57624,Rap,2013,m,au,1
+Gemitaiz,https://i.scdn.co/image/ab6761610000e5eb7da5f11d322585184fcfb2bd,Rap,2012,m,it,1
+Gzuz,https://i.scdn.co/image/ab6761610000e5eb27e9ee06a37237cdc18c02a8,Rap,2014,m,de,1
+Tinie Tempah,https://i.scdn.co/image/ab6761610000e5ebb3ba872f2db68e17e01d3cbd,Rap,2010,m,uk,1
+RIN,https://i.scdn.co/image/ab6761610000e5eb7033d99b85ed729210093ab3,Rap,2017,m,hr,1
+Dave Matthews Band,https://i.scdn.co/image/ab6761610000e5ebc04724201a3cd1a81d7bba05,Rap,1993,m,us,7
+Death Cab for Cutie,https://i.scdn.co/image/ab6761610000e5ebd05eab817560171764525159,Rap,1998,m,us,5
+Los Enanitos Verdes,https://i.scdn.co/image/0a44319db623b112c3fddca7a1ef88b5756265cd,Rap,1986,m,ar,3
+Empire of the Sun,https://i.scdn.co/image/ab6761610000e5ebe51c443e9e8c1952c80357b4,Rap,2008,m,au,2
+Lil Jon,https://i.scdn.co/image/ab6761610000e5eb74a2a7ebb781d816f14664af,Rap,1999,m,us,1
+Leonard Cohen,https://i.scdn.co/image/ab6761610000e5ebd09c1295779cfb71683cee99,Rap,1967,m,ca,1
+Official HIGE DANdism,https://i.scdn.co/image/ab6761610000e5eb092745f452dbfc2324076290,Rap,2015,m,jp,4
+Night Lovell,https://i.scdn.co/image/ab6761610000e5ebe9d55242d13e8a1208f168c2,Rap,2014,m,ca,1
+Ashnikko,https://i.scdn.co/image/ab6761610000e5eb8f4d36b43fa094d32a167f1e,Rap,2021,f,us,1
+Shoreline Mafia,https://i.scdn.co/image/ab6761610000e5ebd743a46378a38932956af6ca,Rap,2017,m,us,4
+The Kinks,https://i.scdn.co/image/ab6761610000e5eb8f8013de1cd216cfdd7a4848,Rap,1964,m,uk,4
+ONE OK ROCK,https://i.scdn.co/image/ab6761610000e5eb8777e097ef122463984c708f,Rap,2007,m,jp,4
+Darius Rucker,https://i.scdn.co/image/ab6761610000e5eb8e55820ddd384472abd0b832,Rap,2002,m,us,1
+Los Bukis,https://i.scdn.co/image/ab6761610000e5ebf965d7facfd674f3780158a7,Rap,1977,m,mx,6
+Foals,https://i.scdn.co/image/ab6761610000e5eb043ff2197d468e03e77361cb,Rap,2008,m,uk,3
+Kina,https://i.scdn.co/image/ab6761610000e5eb3ca993fe49862bca8c23a39c,Rap,2018,f,us,1
+BIGBANG,https://i.scdn.co/image/ab6761610000e5eb597a4257d0022e2ac837fa7d,Rap,2006,m,kr,4
+Upchurch,https://i.scdn.co/image/ab6761610000e5ebe2acadb5969621e6f8e5c847,Rap,2015,m,us,1
