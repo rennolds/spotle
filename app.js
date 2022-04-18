@@ -3,58 +3,70 @@
 //   rollSound.play();
 // } for later
 class Artist {
-  constructor(name,listenerRank, debutAlbumYear, nationality, genre, gender) {
+  constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize) {
       this.name = name;
       this.listenerRank = listenerRank;
+      this.imageUri = imageUri;
+      this.genre = genre;
       this.debutAlbumYear = debutAlbumYear;
       this.nationality = nationality;
-      this.genre = genre;
       this.gender = gender;
+      this.groupSize = groupSize;
   }
 }
 
-var artists = new Map();
+const artists = new Map();
 
-let searchable = [
+const searchable = [
 
 ];
 
 
 
 import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
-csv("top1000artists.csv").then((data) => {
-   console.log(data);
+csv("resources/round_1_test.csv").then((data) => {
    for (var i = 0; i < data.length; i++) {
-      //set artists and searchable here
       searchable.push(data[i].Artist);
+      var x;
+      if (data[i].Gender == "m"){
+        x = 'Male';
+      }
+      else {
+        x = 'Female';
+      }
+      artists.set(data[i].Artist.toLowerCase(), new Artist(data[i].Artist, i+1, data[i].image_uri, data[i].genre, 2007, x, data[i].Country, data[i].GroupSize));
+      //console.log(typeof data[i].Artist);
+      //console.log(data[i].Artist.toLowerCase());
    }
 });
-
-  const gameContainer = document.querySelector('.game-container');
-  const searchInput = document.getElementById('search');
-  const searchWrapper = document.querySelector('.search-container');
-  const resultsWrapper = document.querySelector('.results');
-  const guessContainer = document.querySelector('.guess-container');
-  const guessButton = document.querySelector('.guess-btn');
-  const intro = document.getElementById('intro');
-  const guessCountContainer = document.querySelector('.guesses');
-  let firstGuess = true;
-  let guessCount = 1;
-  let guessedArtists = [];
+ 
+const gameContainer = document.querySelector('.game-container');
+const searchInput = document.getElementById('search');
+const searchWrapper = document.querySelector('.search-container');
+const resultsWrapper = document.querySelector('.results');
+const guessContainer = document.querySelector('.guess-container');
+const guessButton = document.querySelector('.guess-btn');
+const intro = document.getElementById('intro');
+const guessCountContainer = document.querySelector('.guesses');
+let firstGuess = true;
+let guessCount = 1;
+let guessedArtists = [];
   
   
 
   //handles autocomplete 
-  searchInput.addEventListener('keyup', () => {
-    let results = [];
-    let input = searchInput.value;
-    if (input.length > 2) {
-        results = searchable.filter((item) => {
-        return item.toLowerCase().startsWith(input.toLowerCase());
-      });
-    }
-    renderResults(results);
-  });
+searchInput.addEventListener('keyup', () => {
+  let results = [];
+  let input = searchInput.value;
+  if (input.length > 2) {
+      results = searchable.filter((item) => {
+      return item.toLowerCase().startsWith(input.toLowerCase());
+    });
+  }
+  renderResults(results);
+});
+
+
   
   function renderResults(results) {
     if (!results.length) {
@@ -82,14 +94,11 @@ csv("top1000artists.csv").then((data) => {
     searchWrapper.classList.remove('show');
   });
 
-artists.set('the weeknd', new Artist("The Weeknd",1,2013,"Canada","Pop","Male"));
-artists.set('justin bieber', new Artist("Justin Bieber",2,2010,"Canada","Pop","Male"));
-artists.set('ed sheeran', new Artist("Ed Sheeran",3,2011,"England","Pop","Male"));
-artists.set('dua lipa', new Artist("Dua Lipa",4,2017,"England","Pop","Female"));
-artists.set('taylor swift', new Artist("Taylor Swift",5,2006,"United States","Pop","Female"));
-artists.set('coldplay', new Artist("Coldplay",6,2000,"United States","Alternative","Male"));
-artists.set('drake', new Artist("Drake", 7, 2006, "Canada", "Rap",  "Male"));
-const mysteryArtist = artists.get("justin bieber")
+var mysteryArtist = new Artist();
+//mysteryArtist = artists.get('drake');
+//console.log('ccurrent: ' + mysteryArtist);
+//console.log(artists);
+
 
 //handle guess when player searches for an artist
 const handleGuess = () => {
@@ -155,6 +164,7 @@ function incorrectGuess(guess) {
 }
 
 function printGuess(guess) {
+  
   const guessElement = document.createElement('div');
   guessElement.classList.add('guess');
 
@@ -167,7 +177,7 @@ function printGuess(guess) {
   nameElement.classList.add('item-name');
   nameElement.innerHTML = guess.name;
   const imageArtist = document.createElement('img');
-  imageArtist.src = "resources\\artists\\" + guess.name + ".jpg";
+  imageArtist.src = guess.imageUri;
   
   //add image to nameElement div
   nameElement.prepend(imageArtist);
@@ -190,8 +200,8 @@ function printGuess(guess) {
 
   albumElement.innerHTML = "Debut Album " 
   albumSpan.innerHTML = guess.debutAlbumYear;
-  groupElement.innerHTML = "Group Size";
-  groupSpan.innerHTML = "1";
+  groupElement.innerHTML = "Group Size "
+  groupSpan.innerHTML = guess.groupSize;
   listenerRankElement.innerHTML = "Listener Rank ";
   listenerRankSpan.innerHTML = guess.listenerRank;
 
@@ -242,4 +252,4 @@ function printGuess(guess) {
   guessContainer.prepend(guessElement);
 }
 
-guessButton.addEventListener('click', handleGuess)
+guessButton.addEventListener('click', handleGuess);

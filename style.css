@@ -30,6 +30,7 @@ html {
 }
 
 .win-overlay {
+  display: none;
   height: 493px;
   width: 290px;
   position: absolute;
