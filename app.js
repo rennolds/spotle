@@ -52,6 +52,7 @@ const guessCountContainer = document.querySelector('.guesses');
 const winOverlay = document.getElementById('win-overlay');
 const infoPrompt = document.querySelector('.info-prompt');
 const timer = document.querySelector('.timer');
+const shareBtn = document.querySelector('.share-btn');
 let firstGuess = true;
 let guessCount = 1;
 let guessedArtists = [];
@@ -162,7 +163,6 @@ function win(guess) {
     rollSound.play();
     winOverlay.classList.remove('win-overlay-hide');
     winOverlay.classList.add('win-overlay');
-
     
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
@@ -170,12 +170,6 @@ function win(guess) {
 
     return;
 }
-
-    
-
-
-  
-
 
 function  calculateHMSleft() {
   var now = new Date();
@@ -188,6 +182,26 @@ function  calculateHMSleft() {
   if(secondsleft<10) secondsleft = "0"+secondsleft;  
 
   timer.innerHTML = hoursleft+":"+minutesleft+":"+secondsleft
+}
+
+function handleShare() {
+  //copy to clipboard
+  var textToCopy = "Spotle #1 \n\n🎵";
+  var textToCopy2 = "";
+  
+  for (var i = 1; i < guessCount; i++)
+  {
+    textToCopy2 = textToCopy2.concat("","⬜");
+  }
+
+  var textToCopy3 = "🟩🎵\n\n";
+  var textToCopy4 = "spotle.io";
+
+  let result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
+
+  navigator.clipboard.writeText(result)
+    .then(() => { console.log('copied'); })
+    .catch((error) => { alert(`Copy failed! ${error}`) })
 }
 
 function loss() {
@@ -332,3 +346,4 @@ function printGuess(guess) {
 }
 
 guessButton.addEventListener('click', handleGuess);
+shareBtn.addEventListener('click', handleShare);
