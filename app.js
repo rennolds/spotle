@@ -45,6 +45,7 @@ const guessButton = document.querySelector('.guess-btn');
 const intro = document.getElementById('intro');
 const guessCountContainer = document.querySelector('.guesses');
 const winOverlay = document.querySelector('.win-overlay');
+const infoPrompt = document.querySelector('.info-prompt');
 let firstGuess = true;
 let guessCount = 1;
 let guessedArtists = [];
@@ -139,7 +140,11 @@ const handleGuess = () => {
 }
 
 function invalidArtist() {
-    console.log("We don't have that artist: ", searchInput.value)
+    infoPrompt.classList.add('info-prompt-transform');
+    console.log('here 1');
+    setTimeout(() => {infoPrompt.classList.remove('info-prompt-transform')}, 3000);
+    console.log('here 2');
+    
     return;
 }
 
