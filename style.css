@@ -20,6 +20,29 @@ html {
   opacity: 0;
 }
 
+.green-example {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.yellow-example {
+  margin-bottom: 1rem;
+}
+.green {
+  font-weight: bold;
+  background-color: rgba(106,208,116,.8);
+}
+
+.yellow {
+  font-weight: bold;
+  background-color: rgba(255,245,0,.7);
+}
+
+.grey {
+  font-weight: bold;
+  background-color: #E5E5E540;
+}
+
 .info-prompt-transform {
   animation: error 4s;
 }
@@ -84,6 +107,10 @@ html {
     opacity: 1;
     transform: translate(-50%, 0);
   }
+}
+
+.win-overlay .share-btn:hover {
+  cursor: pointer;
 }
 
 .win-overlay-hide {
