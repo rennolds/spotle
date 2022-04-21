@@ -506,5 +506,10 @@ button i {
   .win-overlay {
     margin-top: 2rem;
   }
+
+  .win-overlay .exit-btn img {
+    height: 25px;
+    width: 25px;
+  }
 }
 

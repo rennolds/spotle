@@ -242,9 +242,9 @@ function incorrectGuess(guess) {
     console.log('mystery: ' + mysteryArtist.name);
 
     guessCount++;
-    guessCountContainer.innerHTML = "Guess " + guessCount + " of 10";
+    guessCountContainer.innerHTML = "Guess " + guessCount + " of 8";
   
-    if (guessCount == 11) {
+    if (guessCount == 9) {
       console.log("lost");
       lost();
     }
