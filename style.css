@@ -83,6 +83,9 @@ html {
   z-index: 1;
   text-align: center;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -117,13 +120,22 @@ html {
   display: none;  
 }
 
+.win-overlay .exit-btn {
+  height: 15px;
+  width: 15px;
+  background-color: #EFEFEF;
+  margin-top: .5rem;
+  align-self: flex-end;
+  margin-right: 1rem;
+}
+
+.win-overlay .exit-btn:hover {
+  cursor: pointer;
+}
+
 .win-overlay .exit-btn img {
   height: 15px;
   width: 15px;
-  background-color: #ffff;
-  float: right;
-  margin-right: .5rem;
-  margin-top: .5rem;
 }
 
 .win-overlay .congratulations {
