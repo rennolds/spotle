@@ -38,7 +38,7 @@ csv("resources/round_4_test.csv").then((data) => {
       //console.log(typeof data[i].Artist);
       //console.log(data[i].Artist.toLowerCase());
    }
-  mysteryArtist = artists.get('katy perry');
+  mysteryArtist = artists.get('justin timberlake');
 });
  
 const gameContainer = document.querySelector('.game-container');
@@ -162,7 +162,7 @@ function win(guess) {
 
     winOverlay.classList.remove('win-overlay-hide');
     winOverlay.classList.add('win-overlay');
-    const rollSound = new Audio("https://p.scdn.co/mp3-preview/fbd6ac6006af48fdd315ad042f8e020c081d2852?cid=98f79e400795491cbc5f69b713465708");
+    const rollSound = new Audio("https://p.scdn.co/mp3-preview/3af350f8ed4f9c7ba17773cb79a9b5804846838e?cid=98f79e400795491cbc5f69b713465708");
     rollSound.play();
     
     calculateHMSleft();
