@@ -267,9 +267,10 @@ function printGuess(guess) {
   albumElement.innerHTML = "Debut Album " 
   albumSpan.innerHTML = guess.debutAlbumYear;
 
-  if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear)
+  if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear) {
     albumElement.classList.add('correct');
-  else if (Math.abs(guess.listenerRank - mysteryArtist.listenerRank) <= 10) {
+  }
+  else if (Math.abs(guess.debutAlbumYear - mysteryArtist.debutAlbumYear) <= 10) {
     albumElement.classList.add('close');
   }
 
@@ -282,8 +283,9 @@ function printGuess(guess) {
   listenerRankElement.innerHTML = "Listener Rank ";
   listenerRankSpan.innerHTML = guess.listenerRank;
 
-  if (guess.listenerRank == mysteryArtist.listenerRank)
+  if (guess.listenerRank == mysteryArtist.listenerRank) {
     listenerRankElement.classList.add('correct');
+  }
   else if (Math.abs(guess.listenerRank - mysteryArtist.listenerRank) <= 10) {
     listenerRankElement.classList.add('close');
   }
