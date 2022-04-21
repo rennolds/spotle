@@ -139,6 +139,10 @@ html {
     margin-bottom: 1rem;
 }
 
+.album-container img {
+  width: 80%;
+}
+
 
 .win-overlay .next-spotle {
   font-family: 'Inter';

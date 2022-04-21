@@ -38,7 +38,7 @@ csv("resources/round_4_test.csv").then((data) => {
       //console.log(typeof data[i].Artist);
       //console.log(data[i].Artist.toLowerCase());
    }
-  mysteryArtist = artists.get('drake');
+  mysteryArtist = artists.get('katy perry');
 });
  
 const gameContainer = document.querySelector('.game-container');
@@ -159,10 +159,11 @@ function invalidArtist() {
 function win(guess) {
     console.log("YOU WIN!")
     printGuess(guess);
-    const rollSound = new Audio("https://p.scdn.co/mp3-preview/997cd19a9e46b086516c57114a4ba6da5b078d91?cid=98f79e400795491cbc5f69b713465708");
-    rollSound.play();
+
     winOverlay.classList.remove('win-overlay-hide');
     winOverlay.classList.add('win-overlay');
+    const rollSound = new Audio("https://p.scdn.co/mp3-preview/fbd6ac6006af48fdd315ad042f8e020c081d2852?cid=98f79e400795491cbc5f69b713465708");
+    rollSound.play();
     
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
