@@ -141,20 +141,42 @@ html {
 .win-overlay .congratulations {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  height: 10%;
   margin-top: 1.5rem;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
 }
 
-.win-overlay .album-container {
-    margin-bottom: 1rem;
+.win-overlay .win-todays {
+  display: flex;
+  flex-direction: column;
+}
+
+.win-todays .todays-artist {
+  align-self: flex-start;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-bottom: .2rem;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.win-todays .todays-name {
+  margin-top: .75rem;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .album-container img {
-  width: 80%;
+  width: 200px;
+  height: 200px;
 }
-
 
 .win-overlay .next-spotle {
   font-family: 'Inter';
@@ -163,7 +185,6 @@ html {
   font-size: 20px;
   line-height: 24px;
   color: #000000;
-  margin-top: 2rem;
 }
 
 .win-overlay .timer {
@@ -172,19 +193,27 @@ html {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  height: 10%;
   color: #000000;
+  
 }
 
 .win-overlay .share-btn {
   border-radius: 5px;
-  width: 175px;
-  height: 50px;
+  width: 176px;
+  height: 52px;
   background-color: rgba(106,208,116);
   color: #ffff;
   font-weight: bold;
   font-size: 15px;
   position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.win-overlay .win-share {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
@@ -485,6 +514,9 @@ button i {
   .credits {
     margin-top: 1rem;
   }
+  .win-overlay {
+    margin-top: -1rem;
+  }
 }
 
 @media screen and (min-width: 787px) {
@@ -505,11 +537,6 @@ button i {
 
   .win-overlay {
     margin-top: 2rem;
-  }
-
-  .win-overlay .exit-btn img {
-    height: 25px;
-    width: 25px;
   }
 }
 
