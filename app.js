@@ -70,6 +70,12 @@ searchInput.addEventListener('keyup', () => {
   renderResults(results);
 });
 
+searchInput.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    handleGuess();
+  }
+});
+
 
   
   function renderResults(results) {
