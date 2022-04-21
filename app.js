@@ -217,20 +217,19 @@ function handleShare() {
 
   if (navigator.share) { 
     navigator.share({
-       title: 'WebShare API Demo',
-       url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
+       text: result
      }).then(() => {
        console.log('Thanks for sharing!');
      })
      .catch(console.error);
      } else {
-         
+      navigator.clipboard.writeText(result)
+      .then(() => { console.log('copied'); })
+      .catch((error) => { alert(`Copy failed! ${error}`) })
+  }
      }
 
-  navigator.clipboard.writeText(result)
-    .then(() => { console.log('copied'); })
-    .catch((error) => { alert(`Copy failed! ${error}`) })
-}
+  
 
 function loss() {
   console.log('lost');
