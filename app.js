@@ -35,8 +35,6 @@ csv("resources/round_4_test.csv").then((data) => {
         x = 'Other';
       }
       artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
-      //console.log(typeof data[i].Artist);
-      //console.log(data[i].Artist.toLowerCase());
    }
   mysteryArtist = artists.get('the script');
 });
@@ -114,12 +112,7 @@ exitBtn.addEventListener('click', () => {
     searchWrapper.classList.remove('show');
   });
 
-var mysteryArtist = new Artist();
-//mysteryArtist = artists.get('drake');
-//console.log('ccurrent: ' + mysteryArtist);
-//console.log(artists);
 
-console.log("outside of functoin: " + artists.get('drake'));
 //handle guess when player searches for an artist
 const handleGuess = () => {
     let guess = searchInput.value
@@ -202,7 +195,7 @@ function  calculateHMSleft() {
 
 function handleShare() {
   //copy to clipboard
-  var textToCopy = "Spotle #1 \n\n🎵";
+  var textToCopy = "Spotle #2 \n\n🎵";
   var textToCopy2 = "";
   
   for (var i = 1; i < guessCount; i++)
@@ -242,7 +235,7 @@ function incorrectGuess(guess) {
     console.log('mystery: ' + mysteryArtist.name);
 
     guessCount++;
-    guessCountContainer.innerHTML = "Guess " + guessCount + " of 8";
+    guessCountContainer.innerHTML = "Guess #" + guessCount;
   
     if (guessCount == 9) {
       console.log("lost");
