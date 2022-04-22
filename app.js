@@ -38,7 +38,7 @@ csv("resources/round_4_test.csv").then((data) => {
       //console.log(typeof data[i].Artist);
       //console.log(data[i].Artist.toLowerCase());
    }
-  mysteryArtist = artists.get('justin timberlake');
+  mysteryArtist = artists.get('the script');
 });
  
 const gameContainer = document.querySelector('.game-container');
@@ -54,7 +54,7 @@ const infoPrompt = document.querySelector('.info-prompt');
 const timer = document.querySelector('.timer');
 const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
-const rollSound = new Audio("https://p.scdn.co/mp3-preview/3af350f8ed4f9c7ba17773cb79a9b5804846838e?cid=98f79e400795491cbc5f69b713465708");
+const rollSound = new Audio("https://p.scdn.co/mp3-preview/ce8ee2cff5b6dc753c71091b1f1696941a15c1ee?cid=98f79e400795491cbc5f69b713465708");
 let firstGuess = true;
 let guessCount = 1;
 let guessedArtists = [];
