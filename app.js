@@ -333,9 +333,9 @@ for (var i = 0; i < data.length; i++) {
     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
 }
 
-// var mysteryArtistSong;
-// var mysteryArtistImage;
-// var mysteryArtistName;
+var mysteryArtistSong;
+var mysteryArtistImage;
+var mysteryArtistName;
 // var today = new Date();
 // const yyyy = today.getFullYear();
 // let mm = today.getMonth() + 1; // Months start at 0!
