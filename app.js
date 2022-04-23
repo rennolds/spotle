@@ -74,219 +74,219 @@ const africa = [
   'ZM',
 ]
 
-const asia = [
-  AF,
-  AZ,
-  BH,
-  BD,
-  AM,
-  BT,
-  IO,
-  BN,
-  MM,
-  KH,
-  LK,
-  CN,
-  TW,
-  CX,
-  CC,
-  CY,
-  GE,
-  PS,
-  HK,
-  IN,
-  ID,
-  IR,
-  IQ,
-  IL,
-  JP,
-  KZ,
-  JO,
-  KP,
-  KR,
-  KW,
-  KG,
-  LA,
-  LB,
-  MO,
-  MY,
-  MV,
-  MN,
-  OM,
-  NP,
-  PK,
-  PH,
-  TL,
-  QA,
-  RU,
-  SA,
-  SG,
-  VN,
-  SY,
-  TJ,
-  TH,
-  AE,
-  TR,
-  TM,
-  UZ,
-  YE,
-  XE,
-  XD,
-  XS,
-]
+// const asia = [
+//   AF,
+//   AZ,
+//   BH,
+//   BD,
+//   AM,
+//   BT,
+//   IO,
+//   BN,
+//   MM,
+//   KH,
+//   LK,
+//   CN,
+//   TW,
+//   CX,
+//   CC,
+//   CY,
+//   GE,
+//   PS,
+//   HK,
+//   IN,
+//   ID,
+//   IR,
+//   IQ,
+//   IL,
+//   JP,
+//   KZ,
+//   JO,
+//   KP,
+//   KR,
+//   KW,
+//   KG,
+//   LA,
+//   LB,
+//   MO,
+//   MY,
+//   MV,
+//   MN,
+//   OM,
+//   NP,
+//   PK,
+//   PH,
+//   TL,
+//   QA,
+//   RU,
+//   SA,
+//   SG,
+//   VN,
+//   SY,
+//   TJ,
+//   TH,
+//   AE,
+//   TR,
+//   TM,
+//   UZ,
+//   YE,
+//   XE,
+//   XD,
+//   XS,
+// ]
 
-const europe = [
-  AL,
-  AD,
-  AZ,
-  AT,
-  AM,
-  BE,
-  BA,
-  BG,
-  BY,
-  HR,
-  CY,
-  CZ,
-  DK,
-  EE,
-  FO,
-  FI,
-  AX,
-  FR,
-  GE,
-  DE,
-  GI,
-  GR,
-  VA,
-  HU,
-  IS,
-  IE,
-  IT,
-  KZ,
-  LV,
-  LI,
-  LT,
-  LU,
-  MT,
-  MC,
-  MD,
-  ME,
-  NL,
-  NO,
-  PL,
-  PT,
-  RO,
-  RU,
-  SM,
-  RS,
-  SK,
-  SI,
-  ES,
-  SJ,
-  SE,
-  CH,
-  TR,
-  UA,
-  MK,
-  GB,
-  GG,
-  JE,
-  IM,
-]
+// const europe = [
+//   AL,
+//   AD,
+//   AZ,
+//   AT,
+//   AM,
+//   BE,
+//   BA,
+//   BG,
+//   BY,
+//   HR,
+//   CY,
+//   CZ,
+//   DK,
+//   EE,
+//   FO,
+//   FI,
+//   AX,
+//   FR,
+//   GE,
+//   DE,
+//   GI,
+//   GR,
+//   VA,
+//   HU,
+//   IS,
+//   IE,
+//   IT,
+//   KZ,
+//   LV,
+//   LI,
+//   LT,
+//   LU,
+//   MT,
+//   MC,
+//   MD,
+//   ME,
+//   NL,
+//   NO,
+//   PL,
+//   PT,
+//   RO,
+//   RU,
+//   SM,
+//   RS,
+//   SK,
+//   SI,
+//   ES,
+//   SJ,
+//   SE,
+//   CH,
+//   TR,
+//   UA,
+//   MK,
+//   GB,
+//   GG,
+//   JE,
+//   IM,
+// ]
 
-const north_america = [
-  AG,
-  BS,
-  BB,
-  BM,
-  BZ,
-  VG,
-  CA,
-  KY,
-  CR,
-  CU,
-  DM,
-  DO,
-  SV,
-  GL,
-  GD,
-  GP,
-  GT,
-  HT,
-  HN,
-  JM,
-  MQ,
-  MX,
-  MS,
-  AN,
-  CW,
-  AW,
-  SX,
-  BQ,
-  NI,
-  UM,
-  PA,
-  PR,
-  BL,
-  KN,
-  AI,
-  LC,
-  MF,
-  PM,
-  VC,
-  TT,
-  TC,
-  US,
-  VI,
-]
+// const north_america = [
+//   AG,
+//   BS,
+//   BB,
+//   BM,
+//   BZ,
+//   VG,
+//   CA,
+//   KY,
+//   CR,
+//   CU,
+//   DM,
+//   DO,
+//   SV,
+//   GL,
+//   GD,
+//   GP,
+//   GT,
+//   HT,
+//   HN,
+//   JM,
+//   MQ,
+//   MX,
+//   MS,
+//   AN,
+//   CW,
+//   AW,
+//   SX,
+//   BQ,
+//   NI,
+//   UM,
+//   PA,
+//   PR,
+//   BL,
+//   KN,
+//   AI,
+//   LC,
+//   MF,
+//   PM,
+//   VC,
+//   TT,
+//   TC,
+//   US,
+//   VI,
+// ]
 
-const oceania = [
-  AS,
-  AU,
-  SB,
-  CK,
-  FJ,
-  PF,
-  KI,
-  GU,
-  NR,
-  NC,
-  VU,
-  NZ,
-  NU,
-  NF,
-  MP,
-  UM,
-  FM,
-  MH,
-  PW,
-  PG,
-  PN,
-  TK,
-  TO,
-  TV,
-  WF,
-  WS,
-  XX,
-]
+// const oceania = [
+//   AS,
+//   AU,
+//   SB,
+//   CK,
+//   FJ,
+//   PF,
+//   KI,
+//   GU,
+//   NR,
+//   NC,
+//   VU,
+//   NZ,
+//   NU,
+//   NF,
+//   MP,
+//   UM,
+//   FM,
+//   MH,
+//   PW,
+//   PG,
+//   PN,
+//   TK,
+//   TO,
+//   TV,
+//   WF,
+//   WS,
+//   XX,
+// ]
 
-const south_america = [
-  AR,
-  BO,
-  BR,
-  CL,
-  CO,
-  EC,
-  FK,
-  GF,
-  GY,
-  PY,
-  PE,
-  SR,
-  UY,
-  VE,
-]
+// const south_america = [
+//   AR,
+//   BO,
+//   BR,
+//   CL,
+//   CO,
+//   EC,
+//   FK,
+//   GF,
+//   GY,
+//   PY,
+//   PE,
+//   SR,
+//   UY,
+//   VE,
+// ]
 
 
 
@@ -348,28 +348,28 @@ for (var i = 0; i < data.length; i++) {
     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
 }
 
-var mysteryArtistSong;
-var mysteryArtistImage;
-var mysteryArtistName;
-var today = new Date();
-const yyyy = today.getFullYear();
-let mm = today.getMonth() + 1; // Months start at 0!
-let dd = today.getDate();
+// var mysteryArtistSong;
+// var mysteryArtistImage;
+// var mysteryArtistName;
+// var today = new Date();
+// const yyyy = today.getFullYear();
+// let mm = today.getMonth() + 1; // Months start at 0!
+// let dd = today.getDate();
 
-if (dd < 10) dd = '0' + dd;
-if (mm < 10) mm = '0' + mm;
+// if (dd < 10) dd = '0' + dd;
+// if (mm < 10) mm = '0' + mm;
 
-today = mm + '/' + dd + '/' + yyyy;
-const mysteryData = await csv("resources/mysteryArtists.csv");
-for (var i = 0; i < mysteryData.length; i++) {
-  if (mysteryData[i].date == today) {
-    mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
-    mysteryArtistSong = mysteryData[i].song_uri;
-    mysteryArtistImage = mysteryData[i].image_uri;
-    mysteryArtistName = mysteryData[i].artist;
-    i = 1000;
-  }
-}
+// today = mm + '/' + dd + '/' + yyyy;
+// const mysteryData = await csv("resources/mysteryArtists.csv");
+// for (var i = 0; i < mysteryData.length; i++) {
+//   if (mysteryData[i].date == today) {
+//     mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
+//     mysteryArtistSong = mysteryData[i].song_uri;
+//     mysteryArtistImage = mysteryData[i].image_uri;
+//     mysteryArtistName = mysteryData[i].artist;
+//     i = 1000;
+//   }
+// }
 
 //mysteryArtist = artists.get('ariana grande'); 
 const gameContainer = document.querySelector('.game-container');
@@ -387,47 +387,47 @@ const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
-const rollSound = new Audio(mysteryArtistSong);
+//const rollSound = new Audio(mysteryArtistSong);
 let firstGuess = true;
 let guessedArtists = [];
 
 albumImg.src = mysteryArtistImage;
 todaysName.innerHTML = mysteryArtistName;
 
-function getCookie (name) {
-	let value = `; ${document.cookie}`;
-	let parts = value.split(`; ${name}=`);
-	if (parts.length === 2) return parts.pop().split(';').shift();
-}
+// function getCookie (name) {
+// 	let value = `; ${document.cookie}`;
+// 	let parts = value.split(`; ${name}=`);
+// 	if (parts.length === 2) return parts.pop().split(';').shift();
+// }
 
-var cookie_expires = "";
-var date = new Date();
-var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
-const expires = "; expires=" + midnight.toGMTString();
-let guessCount = 1;
+// var cookie_expires = "";
+// var date = new Date();
+// var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+// const expires = "; expires=" + midnight.toGMTString();
+// let guessCount = 1;
 
-if (getCookie('visited') != null) {
-  console.log('remembered');
-  guessCount = getCookie('guessCount');
-  guessCountContainer.innerHTML = "Guess #" + guessCount;
+// if (getCookie('visited') != null) {
+//   console.log('remembered');
+//   guessCount = getCookie('guessCount');
+//   guessCountContainer.innerHTML = "Guess #" + guessCount;
 
-  if (guessCount > 1) {
-    intro.classList.add('hidden');
-  }
-  printPreviousGuesses();
-  //print guesses function
+//   if (guessCount > 1) {
+//     intro.classList.add('hidden');
+//   }
+//   printPreviousGuesses();
+//   //print guesses function
 
-  if (getCookie('won')) {
-    intro.classList.add('hidden');
-    searchInput.setAttribute('readonly', true);
-    win(mysteryArtist);
-  }
-}
-else {
-  console.log('new person');
-  document.cookie = 'visited = 1' + expires;
-  document.cookie = 'guessCount = 1' + expires;
-}
+//   if (getCookie('won')) {
+//     intro.classList.add('hidden');
+//     searchInput.setAttribute('readonly', true);
+//     win(mysteryArtist);
+//   }
+// }
+// else {
+//   console.log('new person');
+//   document.cookie = 'visited = 1' + expires;
+//   document.cookie = 'guessCount = 1' + expires;
+// }
 
 
 //handles autocomplete 
@@ -452,9 +452,9 @@ searchInput.addEventListener('keypress', function (e) {
 
 exitBtn.addEventListener('click', () => {
   winOverlay.classList.add('win-overlay-hide');
-  if (rollSound != null) {
-    rollSound.pause();
-  }
+  // if (rollSound != null) {
+  //   rollSound.pause();
+  // }
   console.log('exit clicked');
 });
 
@@ -541,14 +541,14 @@ function win(guess) {
     guessCount++;
     guessCountContainer.innerHTML = "Guess #" + guessCount;
 
-    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
-    document.cookie = "won=1" + expires;
+    // document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    // document.cookie = "won=1" + expires;
     printGuess(guess);
 
     winOverlay.classList.remove('win-overlay-hide');
     winOverlay.classList.add('win-overlay');
     
-    rollSound.play();
+    //rollSound.play();
     
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
@@ -610,8 +610,8 @@ function loss() {
 function incorrectGuess(guess) {
 
     guessCount++;
-    document.cookie = "guessCount = " + String(guessCount) + expires;
-    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    // document.cookie = "guessCount = " + String(guessCount) + expires;
+    // document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
     printGuess(guess); 
     guessCountContainer.innerHTML = "Guess #" + guessCount;
     guessedArtists.push(guess.name);
