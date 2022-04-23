@@ -345,16 +345,16 @@ for (var i = 0; i < data.length; i++) {
 // if (mm < 10) mm = '0' + mm;
 
 // today = mm + '/' + dd + '/' + yyyy;
-// const mysteryData = await csv("resources/mysteryArtists.csv");
-// for (var i = 0; i < mysteryData.length; i++) {
-//   if (mysteryData[i].date == today) {
-//     mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
-//     mysteryArtistSong = mysteryData[i].song_uri;
-//     mysteryArtistImage = mysteryData[i].image_uri;
-//     mysteryArtistName = mysteryData[i].artist;
-//     i = 1000;
-//   }
-// }
+const mysteryData = await csv("resources/mysteryArtists.csv");
+for (var i = 0; i < mysteryData.length; i++) {
+  if (mysteryData[i].date == today) {
+    mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
+    mysteryArtistSong = mysteryData[i].song_uri;
+    mysteryArtistImage = mysteryData[i].image_uri;
+    mysteryArtistName = mysteryData[i].artist;
+    i = 1000;
+  }
+}
 
 var mysteryArtist = artists.get('ariana grande'); 
 const gameContainer = document.querySelector('.game-container');
