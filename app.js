@@ -379,40 +379,39 @@ let guessedArtists = [];
 //albumImg.src = mysteryArtistImage;
 //todaysName.innerHTML = mysteryArtistName;
 
-// function getCookie (name) {
-// 	let value = `; ${document.cookie}`;
-// 	let parts = value.split(`; ${name}=`);
-// 	if (parts.length === 2) return parts.pop().split(';').shift();
-// }
+function getCookie (name) {
+	let value = `; ${document.cookie}`;
+	let parts = value.split(`; ${name}=`);
+	if (parts.length === 2) return parts.pop().split(';').shift();
+}
 
-// var cookie_expires = "";
-// var date = new Date();
-// var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
-// const expires = "; expires=" + midnight.toGMTString();
-// let guessCount = 1;
+var cookie_expires = "";
+var date = new Date();
+var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+const expires = "; expires=" + midnight.toGMTString();
 
-// if (getCookie('visited') != null) {
-//   console.log('remembered');
-//   guessCount = getCookie('guessCount');
-//   guessCountContainer.innerHTML = "Guess #" + guessCount;
+if (getCookie('visited') != null) {
+  console.log('remembered');
+  guessCount = getCookie('guessCount');
+  guessCountContainer.innerHTML = "Guess #" + guessCount;
 
-//   if (guessCount > 1) {
-//     intro.classList.add('hidden');
-//   }
-//   printPreviousGuesses();
-//   //print guesses function
+  if (guessCount > 1) {
+    intro.classList.add('hidden');
+  }
+  printPreviousGuesses();
+  //print guesses function
 
-//   if (getCookie('won')) {
-//     intro.classList.add('hidden');
-//     searchInput.setAttribute('readonly', true);
-//     win(mysteryArtist);
-//   }
-// }
-// else {
-//   console.log('new person');
-//   document.cookie = 'visited = 1' + expires;
-//   document.cookie = 'guessCount = 1' + expires;
-// }
+  if (getCookie('won')) {
+    intro.classList.add('hidden');
+    searchInput.setAttribute('readonly', true);
+    win(mysteryArtist);
+  }
+}
+else {
+  console.log('new person');
+  document.cookie = 'visited = 1' + expires;
+  document.cookie = 'guessCount = 1' + expires;
+}
 
 
 //handles autocomplete 
@@ -526,8 +525,8 @@ function win(guess) {
     guessCount++;
     guessCountContainer.innerHTML = "Guess #" + guessCount;
 
-    // document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
-    // document.cookie = "won=1" + expires;
+    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    document.cookie = "won=1" + expires;
     printGuess(guess);
 
     winOverlay.classList.remove('win-overlay-hide');
@@ -595,8 +594,8 @@ function loss() {
 function incorrectGuess(guess) {
 
     guessCount++;
-    // document.cookie = "guessCount = " + String(guessCount) + expires;
-    // document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    document.cookie = "guessCount = " + String(guessCount) + expires;
+    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
     printGuess(guess); 
     guessCountContainer.innerHTML = "Guess #" + guessCount;
     guessedArtists.push(guess.name);
