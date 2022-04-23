@@ -270,7 +270,7 @@ function handleShare() {
   var textToCopy = "Spotle #2 \n\n🎵";
   var textToCopy2 = "";
   
-  for (var i = 1; i < guessCount; i++)
+  for (var i = 1; i < guessCount - 1; i++)
   {
     textToCopy2 = textToCopy2.concat("","⬜");
   }
