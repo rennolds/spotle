@@ -317,9 +317,7 @@ import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
 
 const data = await csv("resources/round_4_test.csv");
 for (var i = 0; i < data.length; i++) {
-  
   searchable.push(data[i].artist);
-  
   var x;
   if (data[i].gender == "m"){
     x = 'Male';
@@ -345,18 +343,17 @@ if (dd < 10) dd = '0' + dd;
 if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
-const mysteryData = csv("resources/mysteryArtists.csv");
+const mysteryData = await csv("resources/mysteryArtists.csv");
+console.log(mysteryData);
 for (var i = 0; i < mysteryData.length; i++) {
   if (mysteryData[i].date == today) {
     mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
     mysteryArtistSong = mysteryData[i].song_uri;
     mysteryArtistImage = mysteryData[i].image_uri;
     mysteryArtistName = mysteryData[i].artist;
-    i = 1000;
   }
 }
 
-var mysteryArtist = artists.get('ariana grande'); 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
 const searchWrapper = document.querySelector('.search-container');
@@ -754,12 +751,7 @@ function printPreviousGuesses() {
   for (var i = 0; i < guessCount - 1; i++) {
     var temp = "guess" + String(i+1);
     var tempStr = getCookie(temp).toLowerCase();
-
-    console.log('tempstr: ' + tempStr);
     var tempArtist = artists.get(getCookie(temp).toLowerCase());
-    var artist2 = artists.get('justin bieber');
-    console.log(artist2);
-    console.log('temp artist = ' + tempArtist);
     printGuess(tempArtist);
   }
 }
