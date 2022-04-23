@@ -115,6 +115,7 @@ if (getCookie('visited') != null) {
   //print guesses function
 
   if (getCookie('won')) {
+    intro.classList.add('hidden');
     win(mysteryArtist);
   }
 }

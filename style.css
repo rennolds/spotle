@@ -75,7 +75,6 @@ html {
   position: absolute;
   left: 50%;
   text-align: center;
-  margin-top: 7rem;
   transform: translate(-50%, 0);
   animation: win-appears ease-in 2s;
   position: absolute;
@@ -433,6 +432,9 @@ button i {
   margin-top: 25px;
 }
 
+.main-wrapper {
+  margin-top: -3rem;
+}
 
 .credits {
   color: #ffff;
