@@ -353,10 +353,13 @@ for (var i = 0; i < data.length; i++) {
 //   }
 // }
 
+
 async function getMysteryData() {
   const result = await csv("resources/mysteryArtists.csv")
     console.log(result);
 }
+
+getMysteryData();
 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
