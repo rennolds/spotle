@@ -131,28 +131,28 @@ var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23,
 const expires = "; expires=" + midnight.toGMTString();
 let guessCount = 1;
 
-if (getCookie('visited') != null) {
-  console.log('remembered');
-  guessCount = getCookie('guessCount');
-  guessCountContainer.innerHTML = "Guess #" + guessCount;
+// if (getCookie('visited') != null) {
+//   console.log('remembered');
+//   guessCount = getCookie('guessCount');
+//   guessCountContainer.innerHTML = "Guess #" + guessCount;
 
-  if (guessCount > 1) {
-    intro.classList.add('hidden');
-  }
-  printPreviousGuesses();
-  //print guesses function
+//   if (guessCount > 1) {
+//     intro.classList.add('hidden');
+//   }
+//   printPreviousGuesses();
+//   //print guesses function
 
-  if (getCookie('won')) {
-    intro.classList.add('hidden');
-    searchInput.setAttribute('readonly', true);
-    win(mysteryArtist);
-  }
-}
-else {
-  console.log('new person');
-  document.cookie = 'visited = 1' + expires;
-  document.cookie = 'guessCount = 1' + expires;
-}
+//   if (getCookie('won')) {
+//     intro.classList.add('hidden');
+//     searchInput.setAttribute('readonly', true);
+//     win(mysteryArtist);
+//   }
+// }
+// else {
+//   console.log('new person');
+//   document.cookie = 'visited = 1' + expires;
+//   document.cookie = 'guessCount = 1' + expires;
+// }
 
 
 //handles autocomplete 
