@@ -73,7 +73,7 @@ for (var i = 0; i < data.length; i++) {
     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
 }
 
-mysteryArtist = artists.get('the script'); 
+mysteryArtist = artists.get('ariana grande'); 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
 const searchWrapper = document.querySelector('.search-container');
@@ -87,7 +87,7 @@ const infoPrompt = document.querySelector('.info-prompt');
 const timer = document.querySelector('.timer');
 const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
-const rollSound = new Audio("https://p.scdn.co/mp3-preview/ce8ee2cff5b6dc753c71091b1f1696941a15c1ee?cid=98f79e400795491cbc5f69b713465708");
+const rollSound = new Audio(" https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b71346570");
 let firstGuess = true;
 let guessedArtists = [];
 
@@ -350,12 +350,25 @@ function printGuess(guess) {
 
   albumElement.innerHTML = "Debut Album " 
   albumSpan.innerHTML = guess.debutAlbumYear;
+  const albumArrowContainer = document.createElement('div');
+  albumArrowContainer.classList.add('arrow-container');
+  albumArrowContainer.append(albumSpan);
 
   if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear) {
     albumElement.classList.add('correct');
   }
   else if (Math.abs(guess.debutAlbumYear - mysteryArtist.debutAlbumYear) <= 5) {
     albumElement.classList.add('close');
+  }
+
+  const albumArrowImg = document.createElement('img');
+  if (guess.debutAlbumYear - mysteryArtist.debutAlbumYear > 0) {
+    albumArrowImg.src = 'resources/keyboard_down.svg';
+    albumArrowContainer.append(albumArrowImg);
+  }
+  if (guess.debutAlbumYear - mysteryArtist.debutAlbumYear < 0) {
+    albumArrowImg.src = 'resources/keyboard_up.svg';
+    albumArrowContainer.append(albumArrowImg);
   }
 
   groupElement.innerHTML = "Group Size "
@@ -365,7 +378,10 @@ function printGuess(guess) {
     groupElement.classList.add('correct');
 
   listenerRankElement.innerHTML = "Listener Rank ";
+  const listenerRankArrowContainer = document.createElement('div');
+  listenerRankArrowContainer.classList.add('arrow-container');
   listenerRankSpan.innerHTML = guess.listenerRank;
+  listenerRankArrowContainer.append(listenerRankSpan);
 
   if (guess.listenerRank == mysteryArtist.listenerRank) {
     listenerRankElement.classList.add('correct');
@@ -374,9 +390,19 @@ function printGuess(guess) {
     listenerRankElement.classList.add('close');
   }
 
-  albumElement.append(albumSpan);
+  const listenerRankArrowImg = document.createElement('img');
+  if (guess.listenerRank - mysteryArtist.listenerRank > 0) {
+    listenerRankArrowImg.src = 'resources/keyboard_down.svg';
+    listenerRankArrowContainer.append(listenerRankArrowImg);
+  }
+  if (guess.listenerRank - mysteryArtist.listenerRank < 0) {
+    listenerRankArrowImg.src = 'resources/keyboard_up.svg';
+    listenerRankArrowContainer.append(listenerRankArrowImg);
+  }
+
+  albumElement.append(albumArrowContainer);
   groupElement.append(groupSpan);
-  listenerRankElement.append(listenerRankSpan);
+  listenerRankElement.append(listenerRankArrowContainer);
 
   row2.append(albumElement);
   row2.append(groupElement);

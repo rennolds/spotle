@@ -389,20 +389,29 @@ button i {
   color: #FFFF;
 }
 
-.item-long svg {
-  align-self: flex-end;
+.item-long .arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  font-size: 130%;
 }
 
-.item-long .arrow-container {
+
+.item .arrow-container {
   display: flex;
   justify-content: center;
   margin-left: 1rem;
 }
 
-
-.data {
+.item .data {
   font-size: 140%;
 }
+
+.item-long .data {
+  font-size: 150%;
+}
+
 
 .guess .guessRow .item-long {
   background-color: #E5E5E540;
