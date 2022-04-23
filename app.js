@@ -68,7 +68,7 @@ for (var i = 0; i < data.length; i++) {
     x = 'Female';
   }
   else {
-    x = 'Other';
+    x = 'Mixed';
   }
     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
 }
@@ -109,9 +109,8 @@ if (getCookie('visited') != null) {
   guessCountContainer.innerHTML = "Guess #" + guessCount;
 
   if (guessCount != 1) {
-  intro.classList.add('hidden');
+    intro.classList.add('hidden');
   }
-  
   printPreviousGuesses();
   //print guesses function
 
@@ -121,6 +120,7 @@ if (getCookie('visited') != null) {
 }
 else {
   console.log('new person');
+  intro.classList.remove('hidden');
   document.cookie = 'visited = 1' + expires;
   document.cookie = 'guessCount = 1' + expires;
 }

@@ -217,13 +217,14 @@ html {
 
 
 .logo img {
-  height: 100px;
+  height: 60px;
 }
 
 .logo h3 {
   color: #ffff;
-  font: inherit;
-  font-size: 40px;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 35px;
   margin-left: 1rem;
 }
 
@@ -233,7 +234,6 @@ html {
   align-items: center;
   margin-left: 20px;
 }
-
 
 .guesses {
   color: #FFFF;
