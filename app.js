@@ -302,7 +302,7 @@ class Artist {
       this.groupSize = groupSize;
   }
 }
-
+let guessCount = 1;
 const artists = new Map();
 const searchable = [];
 var mysteryArtist;
@@ -371,7 +371,7 @@ for (var i = 0; i < data.length; i++) {
 //   }
 // }
 
-//mysteryArtist = artists.get('ariana grande'); 
+var mysteryArtist = artists.get('ariana grande'); 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
 const searchWrapper = document.querySelector('.search-container');
@@ -391,8 +391,8 @@ const todaysName = document.querySelector('.todays-name');
 let firstGuess = true;
 let guessedArtists = [];
 
-albumImg.src = mysteryArtistImage;
-todaysName.innerHTML = mysteryArtistName;
+//albumImg.src = mysteryArtistImage;
+//todaysName.innerHTML = mysteryArtistName;
 
 // function getCookie (name) {
 // 	let value = `; ${document.cookie}`;
@@ -750,8 +750,8 @@ function printGuess(guess) {
 
   if (guess.nationality == mysteryArtist.nationality)
     nationalityElement.classList.add('correct');
-  else if (getContinent(guess.nationality) == getContinent(mysteryArtist.nationality))
-    nationalityElement.classList.add('close');
+  // else if (getContinent(guess.nationality) == getContinent(mysteryArtist.nationality))
+  //   nationalityElement.classList.add('close');
   nationalityElement.innerHTML = "Nationality ";
   nationalityElement.append(imageNationality);
 
@@ -780,27 +780,27 @@ function printPreviousGuesses() {
   }
 }
 
-function getContinent(countryCode) {
-  if (north_america.includes(countryCode.toUpperCase())) {
-    return 'North America';
-  }
-  if (europe.includes(countryCode.toUpperCase())) {
-    return 'Europe';
-  }
-  if (oceania.includes(countryCode.toUpperCase())) {
-    return 'Oceania';
-  }
-  if (south_america.includes(countryCode.toUpperCase())) {
-    return 'South America';
-  }
-  if (asia.includes(countryCode.toUpperCase())) {
-    return 'Asia';
-  }
-  if (africa.includes(countryCode.toUpperCase())) {
-    return 'Africa';
-  }
-  return 'Error';
-}
+// function getContinent(countryCode) {
+//   if (north_america.includes(countryCode.toUpperCase())) {
+//     return 'North America';
+//   }
+//   if (europe.includes(countryCode.toUpperCase())) {
+//     return 'Europe';
+//   }
+//   if (oceania.includes(countryCode.toUpperCase())) {
+//     return 'Oceania';
+//   }
+//   if (south_america.includes(countryCode.toUpperCase())) {
+//     return 'South America';
+//   }
+//   if (asia.includes(countryCode.toUpperCase())) {
+//     return 'Asia';
+//   }
+//   if (africa.includes(countryCode.toUpperCase())) {
+//     return 'Africa';
+//   }
+//   return 'Error';
+// }
 
 guessButton.addEventListener('click', handleGuess);
 shareBtn.addEventListener('click', handleShare);
