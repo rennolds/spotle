@@ -273,8 +273,6 @@ const south_america = [
   'VE',
 ]
 
-
-
 class Artist {
   constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize) {
       this.name = name;
@@ -344,10 +342,25 @@ if (dd < 10) dd = '0' + dd;
 if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
-// console.log(mysteryData);
 
-
-
+if (today == '04/23/2022') {
+  mysteryArtist = artists.get('ariana grande');
+  mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
+  mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
+  mysteryArtistName = 'Ariana Grande';
+}
+else if (today == '04/24/2022') {
+  mysteryArtist = artists.get('fall out boy');
+  mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
+  mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
+  mysteryArtistName = 'Fall Out Boy';
+ }
+ else if (today == '04/25/2022') {
+  mysteryArtist = artists.get('bruno mars');
+  mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
+  mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
+  mysteryArtistName = 'Bruno Mars';
+ }
 
 // async function getMysteryData() {
 //   const result = await csv("resources/mysteryArtists.csv")
@@ -364,10 +377,7 @@ today = mm + '/' + dd + '/' + yyyy;
 // }
 
 // getMysteryData();
-mysteryArtist = artists.get('ariana grande');
-mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
-mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
-mysteryArtistName = 'Ariana Grande';
+
 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
@@ -448,9 +458,9 @@ searchInput.addEventListener('keypress', function (e) {
 
 exitBtn.addEventListener('click', () => {
   winOverlay.classList.add('win-overlay-hide');
-  // if (rollSound != null) {
-  //   rollSound.pause();
-  // }
+  if (rollSound != null) {
+    rollSound.pause();
+  }
   console.log('exit clicked');
 });
 
@@ -544,7 +554,7 @@ function win(guess) {
     winOverlay.classList.remove('win-overlay-hide');
     winOverlay.classList.add('win-overlay');
     
-    //rollSound.play();
+    rollSound.play();
     
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
