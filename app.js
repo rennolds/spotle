@@ -108,7 +108,7 @@ if (getCookie('visited') != null) {
   guessCount = getCookie('guessCount');
   guessCountContainer.innerHTML = "Guess #" + guessCount;
 
-  if (guessCount != 1) {
+  if (guessCount > 1) {
     intro.classList.add('hidden');
   }
   printPreviousGuesses();
@@ -120,7 +120,6 @@ if (getCookie('visited') != null) {
 }
 else {
   console.log('new person');
-  intro.classList.remove('hidden');
   document.cookie = 'visited = 1' + expires;
   document.cookie = 'guessCount = 1' + expires;
 }
