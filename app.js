@@ -345,7 +345,7 @@ var mysteryArtistName;
 // if (mm < 10) mm = '0' + mm;
 
 // today = mm + '/' + dd + '/' + yyyy;
-const mysteryData = await csv("resources/mysteryArtists.csv");
+const mysteryData = csv("resources/mysteryArtists.csv");
 for (var i = 0; i < mysteryData.length; i++) {
   if (mysteryData[i].date == today) {
     mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
