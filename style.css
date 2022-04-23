@@ -125,12 +125,9 @@ html {
 }
 
 .win-overlay .exit-btn {
-  height: 15px;
-  width: 15px;
   background-color: #EFEFEF;
   margin-top: .5rem;
   align-self: flex-end;
-  margin-right: 1.5rem;
 }
 
 .win-overlay .exit-btn:hover {
@@ -558,6 +555,10 @@ button i {
 
   .win-overlay {
     margin-top: 2rem;
+  }
+
+  .exit-btn {
+    
   }
 }
 
