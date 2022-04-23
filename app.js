@@ -73,10 +73,7 @@ for (var i = 0; i < data.length; i++) {
     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
 }
 
-mysteryArtist = artists.get('the script');
-
-
- 
+mysteryArtist = artists.get('the script'); 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
 const searchWrapper = document.querySelector('.search-container');
@@ -110,10 +107,17 @@ if (getCookie('visited') != null) {
   console.log('remembered');
   guessCount = getCookie('guessCount');
   guessCountContainer.innerHTML = "Guess #" + guessCount;
-  intro.classList.add('hidden');
 
+  if (guessCount != 1) {
+  intro.classList.add('hidden');
+  }
+  
   printPreviousGuesses();
   //print guesses function
+
+  if (getCookie('won')) {
+    win(mysteryArtist);
+  }
 }
 else {
   console.log('new person');
@@ -228,7 +232,12 @@ function invalidArtist() {
 }
 
 function win(guess) {
-    console.log("YOU WIN!")
+
+    guessCount++;
+    guessCountContainer.innerHTML = "Guess #" + guessCount;
+
+    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    document.cookie = "won=1" + expires;
     printGuess(guess);
 
     winOverlay.classList.remove('win-overlay-hide');
