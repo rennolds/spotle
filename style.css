@@ -389,6 +389,17 @@ button i {
   color: #FFFF;
 }
 
+.item-long svg {
+  align-self: flex-end;
+}
+
+.item-long .arrow-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+
 .data {
   font-size: 140%;
 }
