@@ -116,6 +116,7 @@ if (getCookie('visited') != null) {
 
   if (getCookie('won')) {
     intro.classList.add('hidden');
+    searchInput.setAttribute('readonly', true);
     win(mysteryArtist);
   }
 }
@@ -128,6 +129,7 @@ else {
 
 //handles autocomplete 
 searchInput.addEventListener('keyup', () => {
+  
   let results = [];
   let input = searchInput.value;
   if (input.length > 2) {
@@ -247,6 +249,8 @@ function win(guess) {
     
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
+
+    searchInput.setAttribute('readonly', true);
     //display
 
     return;
