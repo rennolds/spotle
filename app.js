@@ -1,6 +1,20 @@
-// if (guess == "drake") {
-//   
-// } for later
+
+
+// var guess_cookie_name = "guessCount";
+// var guess_cookie_value = 0;
+  
+// var won_cookie_name = "hasWon";
+// var won_cookie_value = 0;
+
+// var visited_cookie_name = "visited";
+// var visited_cookie_value = 1;
+
+// document.cookie = visited_cookie_name + "=" + visited_cookie_value + cookie_expires;
+// document.cookie = guess_cookie_name + "=" + guessCount + cookie_expires;
+// document.cookie = won_cookie_name + "=" + won_cookie_value + cookie_expires;
+
+
+
 class Artist {
   constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize) {
       this.name = name;
@@ -19,25 +33,49 @@ const searchable = [];
 var mysteryArtist;
 
 import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
-csv("resources/round_4_test.csv").then((data) => {
-   for (var i = 0; i < data.length; i++) {
+// csv("resources/round_4_test.csv").then((data) => {
+//    for (var i = 0; i < data.length; i++) {
   
-      searchable.push(data[i].artist);
+//       searchable.push(data[i].artist);
 
-      var x;
-      if (data[i].gender == "m"){
-        x = 'Male';
-      }
-      else if (data[i].gender == "f") {
-        x = 'Female';
-      }
-      else {
-        x = 'Other';
-      }
-      artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
-   }
-  mysteryArtist = artists.get('the script');
-});
+//       var x;
+//       if (data[i].gender == "m"){
+//         x = 'Male';
+//       }
+//       else if (data[i].gender == "f") {
+//         x = 'Female';
+//       }
+//       else {
+//         x = 'Other';
+//       }
+//       artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
+//    }
+//   mysteryArtist = artists.get('the script');
+  
+//   setTimeout(() => {  console.log("World!"); }, 10000);
+// });
+
+const data = await csv("resources/round_4_test.csv");
+for (var i = 0; i < data.length; i++) {
+  
+  searchable.push(data[i].artist);
+  
+  var x;
+  if (data[i].gender == "m"){
+    x = 'Male';
+  }
+  else if (data[i].gender == "f") {
+    x = 'Female';
+  }
+  else {
+    x = 'Other';
+  }
+    artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
+}
+
+mysteryArtist = artists.get('the script');
+
+
  
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
@@ -54,11 +92,37 @@ const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const rollSound = new Audio("https://p.scdn.co/mp3-preview/ce8ee2cff5b6dc753c71091b1f1696941a15c1ee?cid=98f79e400795491cbc5f69b713465708");
 let firstGuess = true;
-let guessCount = 1;
 let guessedArtists = [];
 
+function getCookie (name) {
+	let value = `; ${document.cookie}`;
+	let parts = value.split(`; ${name}=`);
+	if (parts.length === 2) return parts.pop().split(';').shift();
+}
 
-  //handles autocomplete 
+var cookie_expires = "";
+var date = new Date();
+var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+const expires = "; expires=" + midnight.toGMTString();
+let guessCount = 1;
+
+if (getCookie('visited') != null) {
+  console.log('remembered');
+  guessCount = getCookie('guessCount');
+  guessCountContainer.innerHTML = "Guess #" + guessCount;
+  intro.classList.add('hidden');
+
+  printPreviousGuesses();
+  //print guesses function
+}
+else {
+  console.log('new person');
+  document.cookie = 'visited = 1' + expires;
+  document.cookie = 'guessCount = 1' + expires;
+}
+
+
+//handles autocomplete 
 searchInput.addEventListener('keyup', () => {
   let results = [];
   let input = searchInput.value;
@@ -115,11 +179,10 @@ exitBtn.addEventListener('click', () => {
 
 //handle guess when player searches for an artist
 const handleGuess = () => {
+
     let guess = searchInput.value
-    console.log('guess; ' + guess);
     searchInput.value = ""; //make search bar empty 
     searchWrapper.classList.remove('show'); //hide results
-    console.log('guess in loewrcase: ' + guess);
     guess = guess.toLowerCase() //make guess lowercase
 
     if (guess == "") { //empty guess, do nothing
@@ -230,18 +293,11 @@ function loss() {
 
 function incorrectGuess(guess) {
 
-    printGuess(guess);
-    console.log('guess: ' + guess.name);
-    console.log('mystery: ' + mysteryArtist.name);
-
     guessCount++;
+    document.cookie = "guessCount = " + String(guessCount) + expires;
+    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    printGuess(guess); 
     guessCountContainer.innerHTML = "Guess #" + guessCount;
-  
-    if (guessCount == 9) {
-      console.log("lost");
-      lost();
-    }
-
     guessedArtists.push(guess.name);
 
     return;
@@ -365,6 +421,20 @@ function printGuess(guess) {
   guessElement.append(row3);
 
   guessContainer.prepend(guessElement);
+}
+
+function printPreviousGuesses() {
+  for (var i = 0; i < guessCount - 1; i++) {
+    var temp = "guess" + String(i+1);
+    var tempStr = getCookie(temp).toLowerCase();
+
+    console.log('tempstr: ' + tempStr);
+    var tempArtist = artists.get(getCookie(temp).toLowerCase());
+    var artist2 = artists.get('justin bieber');
+    console.log(artist2);
+    console.log('temp artist = ' + tempArtist);
+    printGuess(tempArtist);
+  }
 }
 
 guessButton.addEventListener('click', handleGuess);

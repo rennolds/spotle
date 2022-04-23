@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "d3-fetch": "^3.0.1"
+    "d3-fetch": "^3.0.1",
+    "js-cookie": "^3.0.1"
   }
 }
