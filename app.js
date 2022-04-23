@@ -291,28 +291,6 @@ const searchable = [];
 
 
 import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
-// csv("resources/round_4_test.csv").then((data) => {
-//    for (var i = 0; i < data.length; i++) {
-  
-//       searchable.push(data[i].artist);
-
-//       var x;
-//       if (data[i].gender == "m"){
-//         x = 'Male';
-//       }
-//       else if (data[i].gender == "f") {
-//         x = 'Female';
-//       }
-//       else {
-//         x = 'Other';
-//       }
-//       artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
-//    }
-//   mysteryArtist = artists.get('the script');
-  
-//   setTimeout(() => {  console.log("World!"); }, 10000);
-// });
-
 const data = await csv("resources/round_4_test.csv");
 for (var i = 0; i < data.length; i++) {
   searchable.push(data[i].artist);
