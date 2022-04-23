@@ -290,7 +290,7 @@ class Artist {
 let guessCount = 1;
 const artists = new Map();
 const searchable = [];
-var mysteryArtist;
+
 
 import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
 // csv("resources/round_4_test.csv").then((data) => {
@@ -331,35 +331,43 @@ for (var i = 0; i < data.length; i++) {
     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
 }
 
-// var mysteryArtistSong;
-// var mysteryArtistImage;
-// var mysteryArtistName;
-// var today = new Date();
-// const yyyy = today.getFullYear();
-// let mm = today.getMonth() + 1; // Months start at 0!
-// let dd = today.getDate();
+var mysteryArtistSong;
+var mysteryArtistImage;
+var mysteryArtistName;
+var mysteryArtist;
+var today = new Date();
+const yyyy = today.getFullYear();
+let mm = today.getMonth() + 1; // Months start at 0!
+let dd = today.getDate();
 
-// if (dd < 10) dd = '0' + dd;
-// if (mm < 10) mm = '0' + mm;
+if (dd < 10) dd = '0' + dd;
+if (mm < 10) mm = '0' + mm;
 
-// today = mm + '/' + dd + '/' + yyyy;
+today = mm + '/' + dd + '/' + yyyy;
 // console.log(mysteryData);
-// for (var i = 0; i < mysteryData.length; i++) {
-//   if (mysteryData[i].date == today) {
-//     mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
-//     mysteryArtistSong = mysteryData[i].song_uri;
-//     mysteryArtistImage = mysteryData[i].image_uri;
-//     mysteryArtistName = mysteryData[i].artist;
-//   }
+
+
+
+
+// async function getMysteryData() {
+//   const result = await csv("resources/mysteryArtists.csv")
+//     console.log(result);
+//     for (var i = 0; i < result.length; i++) {
+//       if (result[i].date == today) {
+//         console.log('got here');
+//         mysteryArtist = artists.get(result[i].artist.toLowerCase());
+//         mysteryArtistSong = result[i].song_uri;
+//         mysteryArtistImage = result[i].image_uri;
+//         mysteryArtistName = result[i].artist;
+//       }
+//     }
 // }
 
-
-async function getMysteryData() {
-  const result = await csv("resources/mysteryArtists.csv")
-    console.log(result);
-}
-
-getMysteryData();
+// getMysteryData();
+mysteryArtist = artists.get('ariana grande');
+mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
+mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
+mysteryArtistName = 'Ariana Grande';
 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
