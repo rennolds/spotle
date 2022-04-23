@@ -336,15 +336,15 @@ for (var i = 0; i < data.length; i++) {
 var mysteryArtistSong;
 var mysteryArtistImage;
 var mysteryArtistName;
-// var today = new Date();
-// const yyyy = today.getFullYear();
-// let mm = today.getMonth() + 1; // Months start at 0!
-// let dd = today.getDate();
+var today = new Date();
+const yyyy = today.getFullYear();
+let mm = today.getMonth() + 1; // Months start at 0!
+let dd = today.getDate();
 
-// if (dd < 10) dd = '0' + dd;
-// if (mm < 10) mm = '0' + mm;
+if (dd < 10) dd = '0' + dd;
+if (mm < 10) mm = '0' + mm;
 
-// today = mm + '/' + dd + '/' + yyyy;
+today = mm + '/' + dd + '/' + yyyy;
 const mysteryData = csv("resources/mysteryArtists.csv");
 for (var i = 0; i < mysteryData.length; i++) {
   if (mysteryData[i].date == today) {
@@ -372,12 +372,12 @@ const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
-//const rollSound = new Audio(mysteryArtistSong);
+const rollSound = new Audio(mysteryArtistSong);
 let firstGuess = true;
 let guessedArtists = [];
 
-//albumImg.src = mysteryArtistImage;
-//todaysName.innerHTML = mysteryArtistName;
+albumImg.src = mysteryArtistImage;
+todaysName.innerHTML = mysteryArtistName;
 
 function getCookie (name) {
 	let value = `; ${document.cookie}`;
