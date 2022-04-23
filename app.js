@@ -73,7 +73,30 @@ for (var i = 0; i < data.length; i++) {
     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
 }
 
-mysteryArtist = artists.get('ariana grande'); 
+var mysteryArtistSong;
+var mysteryArtistImage;
+var mysteryArtistName;
+var today = new Date();
+const yyyy = today.getFullYear();
+let mm = today.getMonth() + 1; // Months start at 0!
+let dd = today.getDate();
+
+if (dd < 10) dd = '0' + dd;
+if (mm < 10) mm = '0' + mm;
+
+today = mm + '/' + dd + '/' + yyyy;
+const mysteryData = await csv("resources/mysteryArtists.csv");
+for (var i = 0; i < mysteryData.length; i++) {
+  if (mysteryData[i].date == today) {
+    mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
+    mysteryArtistSong = mysteryData[i].song_uri;
+    mysteryArtistImage = mysteryData[i].image_uri;
+    mysteryArtistName = mysteryData[i].artist;
+    i = 1000;
+  }
+}
+
+//mysteryArtist = artists.get('ariana grande'); 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
 const searchWrapper = document.querySelector('.search-container');
@@ -87,9 +110,14 @@ const infoPrompt = document.querySelector('.info-prompt');
 const timer = document.querySelector('.timer');
 const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
-const rollSound = new Audio(" https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b71346570");
+const albumImg = document.querySelector('.album-img');
+const todaysName = document.querySelector('.todays-name');
+const rollSound = new Audio(mysteryArtistSong);
 let firstGuess = true;
 let guessedArtists = [];
+
+albumImg.src = mysteryArtistImage;
+todaysName.innerHTML = mysteryArtistName;
 
 function getCookie (name) {
 	let value = `; ${document.cookie}`;
@@ -116,6 +144,7 @@ if (getCookie('visited') != null) {
 
   if (getCookie('won')) {
     intro.classList.add('hidden');
+    searchInput.setAttribute('readonly', true);
     win(mysteryArtist);
   }
 }
@@ -128,6 +157,7 @@ else {
 
 //handles autocomplete 
 searchInput.addEventListener('keyup', () => {
+  
   let results = [];
   let input = searchInput.value;
   if (input.length > 2) {
@@ -247,6 +277,8 @@ function win(guess) {
     
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
+
+    searchInput.setAttribute('readonly', true);
     //display
 
     return;
@@ -392,11 +424,11 @@ function printGuess(guess) {
 
   const listenerRankArrowImg = document.createElement('img');
   if (guess.listenerRank - mysteryArtist.listenerRank > 0) {
-    listenerRankArrowImg.src = 'resources/keyboard_down.svg';
+    listenerRankArrowImg.src = 'resources/keyboard_up.svg';
     listenerRankArrowContainer.append(listenerRankArrowImg);
   }
   if (guess.listenerRank - mysteryArtist.listenerRank < 0) {
-    listenerRankArrowImg.src = 'resources/keyboard_up.svg';
+    listenerRankArrowImg.src = 'resources/keyboard_down.svg';
     listenerRankArrowContainer.append(listenerRankArrowImg);
   }
 
