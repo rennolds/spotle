@@ -424,11 +424,11 @@ function printGuess(guess) {
 
   const listenerRankArrowImg = document.createElement('img');
   if (guess.listenerRank - mysteryArtist.listenerRank > 0) {
-    listenerRankArrowImg.src = 'resources/keyboard_down.svg';
+    listenerRankArrowImg.src = 'resources/keyboard_up.svg';
     listenerRankArrowContainer.append(listenerRankArrowImg);
   }
   if (guess.listenerRank - mysteryArtist.listenerRank < 0) {
-    listenerRankArrowImg.src = 'resources/keyboard_up.svg';
+    listenerRankArrowImg.src = 'resources/keyboard_down.svg';
     listenerRankArrowContainer.append(listenerRankArrowImg);
   }
 
