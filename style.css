@@ -113,6 +113,11 @@ html {
 
 .win-overlay .share-btn:hover {
   cursor: pointer;
+  
+}
+
+.win-overlay .share-btn:onclick {
+  background-color: #178f41;
 }
 
 .win-overlay-hide {
@@ -125,16 +130,11 @@ html {
   background-color: #EFEFEF;
   margin-top: .5rem;
   align-self: flex-end;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .win-overlay .exit-btn:hover {
   cursor: pointer;
-}
-
-.win-overlay .exit-btn img {
-  height: 15px;
-  width: 15px;
 }
 
 .win-overlay .congratulations {
@@ -199,13 +199,14 @@ html {
   border-radius: 5px;
   width: 176px;
   height: 52px;
-  background-color: rgba(106,208,116);
+  background-color: #1Db954;
   color: #ffff;
   font-weight: bold;
   font-size: 15px;
   position: relative;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  border-radius: 100px;
 }
 
 .win-overlay .win-share {
