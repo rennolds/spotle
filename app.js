@@ -331,27 +331,31 @@ for (var i = 0; i < data.length; i++) {
     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
 }
 
-var mysteryArtistSong;
-var mysteryArtistImage;
-var mysteryArtistName;
-var today = new Date();
-const yyyy = today.getFullYear();
-let mm = today.getMonth() + 1; // Months start at 0!
-let dd = today.getDate();
+// var mysteryArtistSong;
+// var mysteryArtistImage;
+// var mysteryArtistName;
+// var today = new Date();
+// const yyyy = today.getFullYear();
+// let mm = today.getMonth() + 1; // Months start at 0!
+// let dd = today.getDate();
 
-if (dd < 10) dd = '0' + dd;
-if (mm < 10) mm = '0' + mm;
+// if (dd < 10) dd = '0' + dd;
+// if (mm < 10) mm = '0' + mm;
 
-today = mm + '/' + dd + '/' + yyyy;
-const mysteryData = await csv("resources/mysteryArtists.csv");
-console.log(mysteryData);
-for (var i = 0; i < mysteryData.length; i++) {
-  if (mysteryData[i].date == today) {
-    mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
-    mysteryArtistSong = mysteryData[i].song_uri;
-    mysteryArtistImage = mysteryData[i].image_uri;
-    mysteryArtistName = mysteryData[i].artist;
-  }
+// today = mm + '/' + dd + '/' + yyyy;
+// console.log(mysteryData);
+// for (var i = 0; i < mysteryData.length; i++) {
+//   if (mysteryData[i].date == today) {
+//     mysteryArtist = artists.get(mysteryData[i].artist.toLowerCase());
+//     mysteryArtistSong = mysteryData[i].song_uri;
+//     mysteryArtistImage = mysteryData[i].image_uri;
+//     mysteryArtistName = mysteryData[i].artist;
+//   }
+// }
+
+async function getMysteryData() {
+  const result = await csv("resources/mysteryArtists.csv")
+    console.log(result);
 }
 
 const gameContainer = document.querySelector('.game-container');
