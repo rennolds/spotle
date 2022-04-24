@@ -286,26 +286,91 @@ class Artist {
   }
 }
 let guessCount = 1;
-const artists = new Map();
+let artists = {};
 const searchable = [];
 
 
-import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
-const data = await csv("resources/round_4_test.csv");
-for (var i = 0; i < data.length; i++) {
-  searchable.push(data[i].artist);
-  var x;
-  if (data[i].gender == "m"){
-    x = 'Male';
+// import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
+// const data = await csv("resources/round_4_test.csv");
+// for (var i = 0; i < data.length; i++) {
+//   searchable.push(data[i].artist);
+//   var x;
+//   if (data[i].gender == "m"){
+//     x = 'Male';
+//   }
+//   else if (data[i].gender == "f") {
+//     x = 'Female';
+//   }
+//   else {
+//     x = 'Mixed';
+//   }
+//     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
+// }
+
+
+// const getArtists = (callback) => {
+//   const request = new XMLHttpRequest();
+
+//   request.addEventListener('readystatechange', () => {
+//     if (request.readyState === 4 && request.status === 200) {
+//       const data = JSON.parse(request.responseText);
+//       callback(undefined, data);
+//     } else if (request.readyState === 4) {
+//       callback('could not fetch data', undefined);
+//     }
+//   });
+
+//   request.open('GET', 'resources/round_5_test.json');
+//   request.send();
+// };
+
+// getArtists((err, data) => {
+//   console.log('callback fired');
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     //console.log(data);
+    
+//     for (var i = 0; i < data.length; i++) {
+//         searchable.push(data[i].artist);
+//         var x;
+//         if (data[i].gender == "m"){
+//           x = 'Male';
+//         }
+//         else if (data[i].gender == "f") {
+//           x = 'Female';
+//         }
+//         else {
+//           x = 'Mixed';
+//         }
+//           artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size);
+//       }
+//   }
+//   //console.log(artists['drake']);
+//   //console.log(artists);
+// });
+
+await fetch('resources/round_5_test.json').then(function (response) {
+  return response.json();
+}).then(function (data) {
+  for (var i = 0; i < data.length; i++) {
+    searchable.push(data[i].artist);
+    var x;
+    if (data[i].gender == "m"){
+      x = 'Male';
+    }
+    else if (data[i].gender == "f") {
+      x = 'Female';
+    }
+    else {
+      x = 'Mixed';
+   }
+    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size);
   }
-  else if (data[i].gender == "f") {
-    x = 'Female';
-  }
-  else {
-    x = 'Mixed';
-  }
-    artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
-}
+}).catch (function (error) {
+  console.log('something went wrong reading json');
+  console.error(error);
+});
 
 var mysteryArtistSong;
 var mysteryArtistImage;
@@ -323,21 +388,21 @@ if (mm < 10) mm = '0' + mm;
 today = mm + '/' + dd + '/' + yyyy;
 
 if (today == '04/23/2022') {
-  mysteryArtist = artists.get('ariana grande');
+  mysteryArtist = artists['ariana grande'];
   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
   mysteryArtistName = 'Ariana Grande';
   spotleNumber = 2;
 }
 else if (today == '04/24/2022') {
-  mysteryArtist = artists.get('fall out boy');
+  mysteryArtist = artists['fall out boy'];
   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
   mysteryArtistName = 'Fall Out Boy';
   spotleNumber = 3;
  }
  else if (today == '04/25/2022') {
-  mysteryArtist = artists.get('bruno mars');
+  mysteryArtist = artists['bruno mars'];
   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
   mysteryArtistName = 'Bruno Mars';
@@ -493,12 +558,12 @@ const handleGuess = () => {
     if (guess == "") { //empty guess, do nothing
       return;
     }
-    if (artists.get(guess) == null) { //invalid artist, not in top 500
+    if (artists[guess] == null) { //invalid artist, not in top 500
       invalidArtist();
       return;
     }
     
-    var currentArtist = artists.get(guess);
+    var currentArtist = artists[guess];
    
     if (currentArtist.name == mysteryArtist.name) {
       if (firstGuess) {
@@ -771,7 +836,7 @@ function printPreviousGuesses() {
   for (var i = 0; i < guessCount - 1; i++) {
     var temp = "guess" + String(i+1);
     var tempStr = getCookie(temp).toLowerCase();
-    var tempArtist = artists.get(getCookie(temp).toLowerCase());
+    var tempArtist = artists[getCookie(temp).toLowerCase()];
     printGuess(tempArtist);
   }
 }
