@@ -376,12 +376,14 @@ const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
+var rollSound;
+
 try {
-  const rollSound = new Audio(mysteryArtistSong);
-} catch(error) {
-  console.error(error);
-  console.log('audio failed to load');
+  rollSound = new Audio(mysteryArtistSong);
+} catch {
+  console.log('failed to get audio');
 }
+
 
 let firstGuess = true;
 let guessedArtists = [];
