@@ -289,67 +289,6 @@ let guessCount = 1;
 let artists = {};
 const searchable = [];
 
-
-// import {csv} from "https://cdn.skypack.dev/d3-fetch@3";
-// const data = await csv("resources/round_4_test.csv");
-// for (var i = 0; i < data.length; i++) {
-//   searchable.push(data[i].artist);
-//   var x;
-//   if (data[i].gender == "m"){
-//     x = 'Male';
-//   }
-//   else if (data[i].gender == "f") {
-//     x = 'Female';
-//   }
-//   else {
-//     x = 'Mixed';
-//   }
-//     artists.set(data[i].artist.toLowerCase(), new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size));
-// }
-
-
-// const getArtists = (callback) => {
-//   const request = new XMLHttpRequest();
-
-//   request.addEventListener('readystatechange', () => {
-//     if (request.readyState === 4 && request.status === 200) {
-//       const data = JSON.parse(request.responseText);
-//       callback(undefined, data);
-//     } else if (request.readyState === 4) {
-//       callback('could not fetch data', undefined);
-//     }
-//   });
-
-//   request.open('GET', 'resources/round_5_test.json');
-//   request.send();
-// };
-
-// getArtists((err, data) => {
-//   console.log('callback fired');
-//   if(err) {
-//     console.log(err);
-//   } else {
-//     //console.log(data);
-    
-//     for (var i = 0; i < data.length; i++) {
-//         searchable.push(data[i].artist);
-//         var x;
-//         if (data[i].gender == "m"){
-//           x = 'Male';
-//         }
-//         else if (data[i].gender == "f") {
-//           x = 'Female';
-//         }
-//         else {
-//           x = 'Mixed';
-//         }
-//           artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size);
-//       }
-//   }
-//   //console.log(artists['drake']);
-//   //console.log(artists);
-// });
-
 await fetch('resources/round_5_test.json').then(function (response) {
   return response.json();
 }).then(function (data) {
