@@ -311,6 +311,7 @@ var mysteryArtistSong;
 var mysteryArtistImage;
 var mysteryArtistName;
 var mysteryArtist;
+var spotleNumber;
 var today = new Date();
 const yyyy = today.getFullYear();
 let mm = today.getMonth() + 1; // Months start at 0!
@@ -326,18 +327,21 @@ if (today == '04/23/2022') {
   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
   mysteryArtistName = 'Ariana Grande';
+  spotleNumber = 2;
 }
 else if (today == '04/24/2022') {
   mysteryArtist = artists.get('fall out boy');
   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
   mysteryArtistName = 'Fall Out Boy';
+  spotleNumber = 3;
  }
  else if (today == '04/25/2022') {
   mysteryArtist = artists.get('bruno mars');
   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
   mysteryArtistName = 'Bruno Mars';
+  spotleNumber = 4;
  }
 
 // async function getMysteryData() {
@@ -372,7 +376,13 @@ const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
-const rollSound = new Audio(mysteryArtistSong);
+try {
+  const rollSound = new Audio(mysteryArtistSong);
+} catch(error) {
+  console.error(error);
+  console.log('audio failed to load');
+}
+
 let firstGuess = true;
 let guessedArtists = [];
 
@@ -532,7 +542,12 @@ function win(guess) {
     winOverlay.classList.remove('win-overlay-hide');
     winOverlay.classList.add('win-overlay');
     
-    rollSound.play();
+    try {
+    rollSound.play(); 
+    } catch(error) {
+      console.error(error);
+      console.log('no audio to play');
+    }
     
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
@@ -558,7 +573,7 @@ function  calculateHMSleft() {
 
 function handleShare() {
   //copy to clipboard
-  var textToCopy = "Spotle #2 \n\n🎵";
+  var textToCopy = "Spotle #" + spotleNumber + " \n\n🎵";
   var textToCopy2 = "";
   
   for (var i = 1; i < guessCount - 1; i++)
