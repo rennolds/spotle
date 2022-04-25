@@ -386,19 +386,18 @@ button i {
   color: #FFFF;
 }
 
-.item-long .arrow-container {
+.arrow-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 1rem;
 }
 
-
-.item .arrow-container {
-  display: flex;
-  justify-content: center;
-  margin-left: 1rem;
+.correct .arrow-container .data {
+  margin-left: -1rem;
 }
+
+
 
 .item .data {
   font-size: 140%;

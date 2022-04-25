@@ -666,10 +666,13 @@ function printGuess(guess) {
 
   const albumElement = document.createElement('div');
   const albumSpan = document.createElement('span');
+  albumSpan.classList.add('data');
   const groupElement = document.createElement('div');
   const groupSpan = document.createElement('span');
+  groupSpan.classList.add('data');
   const listenerRankElement = document.createElement('div');
   const listenerRankSpan = document.createElement('span');
+  listenerRankSpan.classList.add('data');
 
   albumElement.classList.add('item-long');
   groupElement.classList.add('item');
@@ -741,10 +744,13 @@ function printGuess(guess) {
 
   const genderElement = document.createElement('div');
   const genderSpan = document.createElement('span');
+  genderSpan.classList.add('data');
   const genreElement = document.createElement('div');
   const genreSpan = document.createElement('span');
+  genreSpan.classList.add('data');
   const nationalityElement = document.createElement('div');
   const nationalitySpan = document.createElement('span');
+  nationalitySpan.classList.add('data');
 
   genderElement.classList.add('item');
   genreElement.classList.add('item-long');
