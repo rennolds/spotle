@@ -326,27 +326,44 @@ if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
 
-if (today == '04/23/2022') {
-  mysteryArtist = artists['ariana grande'];
-  mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
-  mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
-  mysteryArtistName = 'Ariana Grande';
-  spotleNumber = 2;
-}
-else if (today == '04/24/2022') {
-  mysteryArtist = artists['fall out boy'];
-  mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
-  mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
-  mysteryArtistName = 'Fall Out Boy';
-  spotleNumber = 3;
- }
- else if (today == '04/25/2022') {
-  mysteryArtist = artists['bruno mars'];
-  mysteryArtistSong = 'https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708';
-  mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5';
-  mysteryArtistName = 'Bruno Mars';
-  spotleNumber = 4;
- }
+// if (today == '04/23/2022') {
+//   mysteryArtist = artists['ariana grande'];
+//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
+//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
+//   mysteryArtistName = 'Ariana Grande';
+//   spotleNumber = 2;
+// }
+// else if (today == '04/24/2022') {
+//   mysteryArtist = artists['fall out boy'];
+//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
+//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
+//   mysteryArtistName = 'Fall Out Boy';
+//   spotleNumber = 3;
+//  }
+//  else if (today == '04/25/2022') {
+//   mysteryArtist = artists['bruno mars'];
+//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708';
+//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5';
+//   mysteryArtistName = 'Bruno Mars';
+//   spotleNumber = 4;
+//  }
+
+ await fetch('resources/mysteryArtists.json').then(function (response) {
+  return response.json();
+}).then(function (data) {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].date == today) {
+      mysteryArtist = artists[data[i].artist.toLowerCase()];
+      mysteryArtistSong = data[i].song_uri;
+      mysteryArtistImage = data[i].image_uri;
+      mysteryArtistName = data[i].artist;
+      spotleNumber = i + 1;
+    }
+  }
+}).catch (function (error) {
+  console.log('something went wrong reading mystery artist data');
+  console.error(error);
+});
 
 // async function getMysteryData() {
 //   const result = await csv("resources/mysteryArtists.csv")
