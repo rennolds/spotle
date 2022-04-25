@@ -342,8 +342,8 @@ else if (today == '04/24/2022') {
  }
  else if (today == '04/25/2022') {
   mysteryArtist = artists['bruno mars'];
-  mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
-  mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
+  mysteryArtistSong = 'https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708';
+  mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5';
   mysteryArtistName = 'Bruno Mars';
   spotleNumber = 4;
  }
@@ -605,8 +605,6 @@ function handleShare() {
       .catch((error) => { alert(`Copy failed! ${error}`) })
   }
      }
-
-  
 
 function loss() {
   console.log('lost');
