@@ -437,7 +437,11 @@ if (getCookie('visited') != null) {
   if (getCookie('won')) {
     intro.classList.add('hidden');
     searchInput.setAttribute('readonly', true);
-    win(mysteryArtist);
+    printGuess(mysteryArtist);
+    //win(mysteryArtist);
+    setTimeout(() => {
+      win(mysteryArtist);
+    }, 1000);
   }
 }
 else {
@@ -526,7 +530,13 @@ const handleGuess = () => {
         firstGuess = false;
         intro.classList.add('hidden');
       }
-      win(currentArtist);
+      
+      printGuess(currentArtist);
+      //win(currentArtist);
+
+      setTimeout(() => {
+        win(mysteryArtist);
+      }, 1250);
 
       return;
     }
@@ -560,7 +570,7 @@ function win(guess) {
 
     document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
     document.cookie = "won=1" + expires;
-    printGuess(guess);
+    
 
     winOverlay.classList.remove('win-overlay-hide');
     winOverlay.classList.add('win-overlay');
@@ -684,14 +694,25 @@ function printGuess(guess) {
   albumArrowContainer.classList.add('arrow-container');
   albumArrowContainer.append(albumSpan);
 
-  if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear) {
-    albumElement.classList.add('correct');
-  }
-  else if (Math.abs(guess.debutAlbumYear - mysteryArtist.debutAlbumYear) <= 5) {
-    albumElement.classList.add('close');
-  }
+  
 
   const albumArrowImg = document.createElement('img');
+  
+
+  groupElement.innerHTML = "Group Size "
+  groupSpan.innerHTML = guess.groupSize;
+  
+
+  listenerRankElement.innerHTML = "Listener Rank ";
+  const listenerRankArrowContainer = document.createElement('div');
+  listenerRankArrowContainer.classList.add('arrow-container');
+  listenerRankSpan.innerHTML = guess.listenerRank;
+  listenerRankArrowContainer.append(listenerRankSpan);
+
+  
+
+  const listenerRankArrowImg = document.createElement('img');
+
   if (guess.debutAlbumYear - mysteryArtist.debutAlbumYear > 0) {
     albumArrowImg.src = 'resources/keyboard_down.svg';
     albumArrowContainer.append(albumArrowImg);
@@ -700,27 +721,6 @@ function printGuess(guess) {
     albumArrowImg.src = 'resources/keyboard_up.svg';
     albumArrowContainer.append(albumArrowImg);
   }
-
-  groupElement.innerHTML = "Group Size "
-  groupSpan.innerHTML = guess.groupSize;
-
-  if (guess.groupSize == mysteryArtist.groupSize)
-    groupElement.classList.add('correct');
-
-  listenerRankElement.innerHTML = "Listener Rank ";
-  const listenerRankArrowContainer = document.createElement('div');
-  listenerRankArrowContainer.classList.add('arrow-container');
-  listenerRankSpan.innerHTML = guess.listenerRank;
-  listenerRankArrowContainer.append(listenerRankSpan);
-
-  if (guess.listenerRank == mysteryArtist.listenerRank) {
-    listenerRankElement.classList.add('correct');
-  }
-  else if (Math.abs(guess.listenerRank - mysteryArtist.listenerRank) <= 50) {
-    listenerRankElement.classList.add('close');
-  }
-
-  const listenerRankArrowImg = document.createElement('img');
   if (guess.listenerRank - mysteryArtist.listenerRank > 0) {
     listenerRankArrowImg.src = 'resources/keyboard_up.svg';
     listenerRankArrowContainer.append(listenerRankArrowImg);
@@ -729,6 +729,7 @@ function printGuess(guess) {
     listenerRankArrowImg.src = 'resources/keyboard_down.svg';
     listenerRankArrowContainer.append(listenerRankArrowImg);
   }
+  
 
   albumElement.append(albumArrowContainer);
   groupElement.append(groupSpan);
@@ -761,11 +762,7 @@ function printGuess(guess) {
   genreElement.innerHTML = "Genre ";
   genreSpan.innerHTML = guess.genre;
 
-  if (guess.genre == mysteryArtist.genre)
-    genreElement.classList.add('correct');
-
-  if (guess.gender == mysteryArtist.gender)
-    genderElement.classList.add('correct');
+  
 
   genderElement.append(genderSpan);
   genreElement.append(genreSpan);
@@ -774,10 +771,7 @@ function printGuess(guess) {
   imageNationality.src = 'resources\\nationalities\\' + guess.nationality + '.png';
   imageNationality.alt = guess.nationality;
 
-  if (guess.nationality == mysteryArtist.nationality)
-    nationalityElement.classList.add('correct');
-  else if (getContinent(guess.nationality) == getContinent(mysteryArtist.nationality))
-    nationalityElement.classList.add('close');
+
   nationalityElement.innerHTML = "Nationality ";
   nationalityElement.append(imageNationality);
 
@@ -791,41 +785,61 @@ function printGuess(guess) {
 
   guessContainer.prepend(guessElement);
 
-  nationalityElement.classList.add('flip-in');
-  listenerRankElement.classList.add('flip-in');
-  genreElement.classList.add('flip-in');
-  genderElement.classList.add('flip-in');
-  groupElement.classList.add('flip-in');
-  albumElement.classList.add('flip-in');
   setTimeout(() => {
-    nationalityElement.classList.add(state);
-    listenerRankElement.classList.add(state);
-    genreElement.classList.add(state);
-    genderElement.classList.add(state);
-    groupElement.classList.add(state);
-    albumElement.classList.add(state);
+    comapareToMysteryArtist(nationalityElement,albumElement,listenerRankElement,genreElement,genderElement,groupElement, guess);
+  }, 1000);
+  
+  
+  
+}
+
+function comapareToMysteryArtist(nationalityElement,albumElement,listenerRankElement,genreElement,genderElement,groupElement,guess) {
+  if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear) {
+    flipDiv(albumElement, 'correct');
+  }
+  else if (Math.abs(guess.debutAlbumYear - mysteryArtist.debutAlbumYear) <= 5) {
+    flipDiv(albumElement, 'close');
+  }
+  
+  if (guess.groupSize == mysteryArtist.groupSize) {
+    flipDiv(groupElement, 'correct');
+  }
+
+  if (guess.listenerRank == mysteryArtist.listenerRank) {
+    flipDiv(listenerRankElement, 'correct');
+  }
+  else if (Math.abs(guess.listenerRank - mysteryArtist.listenerRank) <= 50) {
+    flipDiv(listenerRankElement, 'close');
+  }
+
+  if (guess.genre == mysteryArtist.genre) {
+    flipDiv(genreElement, 'correct');
+  }
+
+  if (guess.gender == mysteryArtist.gender) {
+    flipDiv(genderElement, 'correct');
+  }
+
+  if (guess.nationality == mysteryArtist.nationality) {
+    flipDiv(nationalityElement, 'correct');
+  }
+  else if (getContinent(guess.nationality) == getContinent(mysteryArtist.nationality)) {
+    flipDiv(nationalityElement, 'close');
+  }
+}
+
+function flipDiv(div, state) {
+  div.classList.add('flip-in');
+
+  setTimeout(() => {
+    div.classList.add(state);
     }, 250);
   setTimeout(() => {
-    nationalityElement.classList.remove('flip-in');
-    nationalityElement.classList.add('flip-out');
-    listenerRankElement.classList.remove('flip-in');
-    listenerRankElement.classList.add('flip-out');
-    genreElement.classList.remove('flip-in');
-    genreElement.classList.add('flip-out');
-    genderElement.classList.remove('flip-in');
-    genderElement.classList.add('flip-out');
-    groupElement.classList.remove('flip-in');
-    groupElement.classList.add('flip-out');
-    albumElement.classList.remove('flip-in');
-    albumElement.classList.add('flip-out');
+    div.classList.remove('flip-in');
+    div.classList.add('flip-out');
   }, 250);
   setTimeout(() => {
-    nationalityElement.classList.remove('flip-out');
-    listenerRankElement.classList.remove('flip-out');
-    genreElement.classList.remove('flip-out');
-    genderElement.classList.remove('flip-out');
-    groupElement.classList.remove('flip-out');
-    albumElement.classList.remove('flip-out');
+    div.classList.remove('flip-out'); 
   }, 1500);
 }
 
