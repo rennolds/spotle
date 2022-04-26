@@ -437,7 +437,7 @@ if (getCookie('visited') != null) {
   if (getCookie('won')) {
     intro.classList.add('hidden');
     searchInput.setAttribute('readonly', true);
-    printGuess(mysteryArtist);
+    printGuess(mysteryArtist,1);
     //win(mysteryArtist);
     setTimeout(() => {
       win(mysteryArtist);
@@ -531,7 +531,7 @@ const handleGuess = () => {
         intro.classList.add('hidden');
       }
       
-      printGuess(currentArtist);
+      printGuess(currentArtist,1);
       //win(currentArtist);
 
       setTimeout(() => {
@@ -642,14 +642,14 @@ function incorrectGuess(guess) {
     guessCount++;
     document.cookie = "guessCount = " + String(guessCount) + expires;
     document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
-    printGuess(guess); 
+    printGuess(guess,0); 
     guessCountContainer.innerHTML = "Guess #" + guessCount;
     guessedArtists.push(guess.name);
 
     return;
 }
 
-function printGuess(guess) {
+function printGuess(guess,won) {
   
   const guessElement = document.createElement('div');
   guessElement.classList.add('guess');
@@ -694,8 +694,6 @@ function printGuess(guess) {
   albumArrowContainer.classList.add('arrow-container');
   albumArrowContainer.append(albumSpan);
 
-  
-
   const albumArrowImg = document.createElement('img');
   
 
@@ -708,8 +706,6 @@ function printGuess(guess) {
   listenerRankArrowContainer.classList.add('arrow-container');
   listenerRankSpan.innerHTML = guess.listenerRank;
   listenerRankArrowContainer.append(listenerRankSpan);
-
-  
 
   const listenerRankArrowImg = document.createElement('img');
 
@@ -729,7 +725,6 @@ function printGuess(guess) {
     listenerRankArrowImg.src = 'resources/keyboard_down.svg';
     listenerRankArrowContainer.append(listenerRankArrowImg);
   }
-  
 
   albumElement.append(albumArrowContainer);
   groupElement.append(groupSpan);
@@ -762,8 +757,6 @@ function printGuess(guess) {
   genreElement.innerHTML = "Genre ";
   genreSpan.innerHTML = guess.genre;
 
-  
-
   genderElement.append(genderSpan);
   genreElement.append(genreSpan);
 
@@ -784,16 +777,20 @@ function printGuess(guess) {
   guessElement.append(row3);
 
   guessContainer.prepend(guessElement);
-
-  setTimeout(() => {
-    comapareToMysteryArtist(nationalityElement,albumElement,listenerRankElement,genreElement,genderElement,groupElement, guess);
-  }, 1000);
-  
-  
-  
+  if(!won) {
+    setTimeout(() => {
+      comapareToMysteryArtist(nationalityElement,albumElement,listenerRankElement,genreElement,genderElement,groupElement, guess);
+    }, 1000);
+  }
+  else {
+    setTimeout(() => {
+      flipWinner(nationalityElement,albumElement,listenerRankElement,genreElement,genderElement,groupElement, guess);
+    }, 1000);
+  }
 }
 
 function comapareToMysteryArtist(nationalityElement,albumElement,listenerRankElement,genreElement,genderElement,groupElement,guess) {
+  
   if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear) {
     flipDiv(albumElement, 'correct');
   }
@@ -828,6 +825,17 @@ function comapareToMysteryArtist(nationalityElement,albumElement,listenerRankEle
   }
 }
 
+function flipWinner(nationalityElement,albumElement,listenerRankElement,genreElement,genderElement,groupElement) {
+  console.log('got here');
+  flipDiv(listenerRankElement, 'hot-pink');
+  flipDiv(albumElement, 'neon-green');
+  flipDiv(genreElement, 'blue');
+  flipDiv(genderElement,'pink');
+  flipDiv(groupElement,'green');
+  flipDiv(nationalityElement, 'cyan');
+  
+}
+
 function flipDiv(div, state) {
   div.classList.add('flip-in');
 
@@ -848,7 +856,7 @@ function printPreviousGuesses() {
     var temp = "guess" + String(i+1);
     var tempStr = getCookie(temp).toLowerCase();
     var tempArtist = artists[getCookie(temp).toLowerCase()];
-    printGuess(tempArtist);
+    printGuess(tempArtist,0);
   }
 }
 

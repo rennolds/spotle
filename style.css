@@ -562,19 +562,31 @@ button i {
 
 @keyframes flip-in {
   from {
+    -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -o-transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -o-transform: rotate(-90deg);
   }
 }
 
 @keyframes flip-out {
   from {
+    -webkit-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -o-transform: rotate(-90deg);
   }
   to {
+    -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -o-transform: rotate(0deg);
   }
 }
 
@@ -587,3 +599,22 @@ button i {
   animation: flip-out 250ms;
   animation-fill-mode: forwards;
 }
+
+.pink {
+  background-color: #FE89e3 !important;
+}
+
+.hot-pink {
+  background-color: #fd2cb4 !important;
+}
+
+
+
+.blue {
+  background-color: #4001f4 !important;
+}
+
+
+
+
+
