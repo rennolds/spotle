@@ -672,5 +672,11 @@ button i {
 }
 
 @keyframes beat{
-	to { transform: scale(1.025); }
+	to { 
+    transform: scale(1.025); 
+    -webkit-transition: scale(1.025); 
+    -moz-transition: scale(1.025); 
+    -o-transition: scale(1.025); 
+    -ms-transition: scale(1.025); 
+  }
 }
