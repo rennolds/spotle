@@ -652,6 +652,10 @@ function loss() {
   console.log('lost');
   document.cookie = "lost = " + "1" + expires;
 
+  if (guessCountContainer.classList.contains('last-guess')) {
+    guessCountContainer.classList.remove('last-guess');
+  }
+
   congratulations.innerHTML = "Good try. Next time!";
 
   setTimeout(() => {
