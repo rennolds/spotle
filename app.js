@@ -790,6 +790,43 @@ function printGuess(guess) {
   guessElement.append(row3);
 
   guessContainer.prepend(guessElement);
+
+  nationalityElement.classList.add('flip-in');
+  listenerRankElement.classList.add('flip-in');
+  genreElement.classList.add('flip-in');
+  genderElement.classList.add('flip-in');
+  groupElement.classList.add('flip-in');
+  albumElement.classList.add('flip-in');
+  setTimeout(() => {
+    nationalityElement.classList.add(state);
+    listenerRankElement.classList.add(state);
+    genreElement.classList.add(state);
+    genderElement.classList.add(state);
+    groupElement.classList.add(state);
+    albumElement.classList.add(state);
+    }, 250);
+  setTimeout(() => {
+    nationalityElement.classList.remove('flip-in');
+    nationalityElement.classList.add('flip-out');
+    listenerRankElement.classList.remove('flip-in');
+    listenerRankElement.classList.add('flip-out');
+    genreElement.classList.remove('flip-in');
+    genreElement.classList.add('flip-out');
+    genderElement.classList.remove('flip-in');
+    genderElement.classList.add('flip-out');
+    groupElement.classList.remove('flip-in');
+    groupElement.classList.add('flip-out');
+    albumElement.classList.remove('flip-in');
+    albumElement.classList.add('flip-out');
+  }, 250);
+  setTimeout(() => {
+    nationalityElement.classList.remove('flip-out');
+    listenerRankElement.classList.remove('flip-out');
+    genreElement.classList.remove('flip-out');
+    genderElement.classList.remove('flip-out');
+    groupElement.classList.remove('flip-out');
+    albumElement.classList.remove('flip-out');
+  }, 1500);
 }
 
 function printPreviousGuesses() {
