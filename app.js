@@ -775,7 +775,7 @@ function printGuess(guess) {
 
   setTimeout(() => {
     checkCriteria(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement, guess);
-    }, 1000);
+    }, 750);
   
   
     
