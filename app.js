@@ -563,7 +563,13 @@ function win(guess) {
     printGuess(guess);
 
    
-    
+    try {
+      rollSound.play(); 
+      rollSound.pause();
+      } catch(error) {
+        console.error(error);
+        console.log('no audio to play');
+      }
     
     
     setTimeout(() => {
