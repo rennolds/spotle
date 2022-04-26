@@ -783,17 +783,33 @@ function printGuess(guess) {
 
   guessContainer.prepend(guessElement);
 
-  setTimeout(() => {
-    checkCriteria(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement, guess);
-    }, 750);
-  
+  if (guess.listenerRank != mysteryArtist.listenerRank) {
+    setTimeout(() => {
+      checkCriteria(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement, guess);
+      }, 750);
+  }
+  else {
+    setTimeout(() => {
+      flipWinner(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement);
+      }, 750);
+  }
   
     
 }
 
+function flipWinner(nationalityElement, genreElement, genderElement, groupElement, albumElement, listenerRankElement) {
+  flipDiv(nationalityElement,'test2');
+  flipDiv(genreElement, 'test1');
+  flipDiv(genderElement, 'blue');
+  flipDiv(groupElement, 'test2');
+  flipDiv(albumElement, 'test3');
+  flipDiv(listenerRankElement,'blue');
+
+}
+
 
 function checkCriteria(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement, guess) {
-  if (guess.nationality == mysteryArtist.nationality) {
+  if (guess.nationality === mysteryArtist.nationality) {
     //nationalityElement.classList.add('correct');
     flipDiv(nationalityElement, 'correct');
   }
@@ -802,17 +818,17 @@ function checkCriteria(nationalityElement, genreElement, genderElement, groupEle
     flipDiv(nationalityElement, 'close');
   }
 
-  if (guess.genre == mysteryArtist.genre) {
+  if (guess.genre === mysteryArtist.genre) {
     //genreElement.classList.add('correct');
     flipDiv(genreElement, 'correct');
   }
 
-  if (guess.gender == mysteryArtist.gender) {
+  if (guess.gender === mysteryArtist.gender) {
     //genderElement.classList.add('correct');
     flipDiv(genderElement, 'correct');
   }
 
-  if (guess.listenerRank == mysteryArtist.listenerRank) {
+  if (guess.listenerRank === mysteryArtist.listenerRank) {
     //listenerRankElement.classList.add('correct');
     flipDiv(listenerRankElement, 'correct');
   }
@@ -821,12 +837,12 @@ function checkCriteria(nationalityElement, genreElement, genderElement, groupEle
     flipDiv(listenerRankElement, 'close');
   }
 
-  if (guess.groupSize == mysteryArtist.groupSize) {
+  if (guess.groupSize === mysteryArtist.groupSize) {
     //groupElement.classList.add('correct');
     flipDiv(groupElement, 'correct');
   }
 
-  if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear) {
+  if (guess.debutAlbumYear === mysteryArtist.debutAlbumYear) {
     flipDiv(albumElement, 'correct');
     //albumElement.classList.add('correct');
   }

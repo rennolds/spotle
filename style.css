@@ -584,16 +584,46 @@ button i {
   animation-fill-mode: forwards;
 }
 
-.pink {
-  background-color: #FE89e3 !important;
+.red {
+  background-color: #e7115b !important;
 }
 
-.hot-pink {
-  background-color: #fd2cb4 !important;
+.red .arrow-container .data {
+  margin-left: -1rem;
 }
 
+.test3 {
+  background-color: #ba9ac8 !important;
+  color: #ffeb33 !important;
+}
 
+.test3 .arrow-container .data {
+  margin-left: -1rem;
+}
+
+.hot-pink .arrow-container .data {
+  margin-left: -1rem;
+}
 
 .blue {
   background-color: #4001f4 !important;
+  color: #cef564 !important;
+}
+
+.blue .arrow-container .data {
+  margin-left: -1rem;
+}
+
+.green {
+  background-color: #25856b !important;
+}
+
+.test1 {
+  background-color: #9cf0e1 !important;
+  color: #cb1482 !important;
+}
+
+.test2 {
+  background-color: #c4f970 !important;
+  color: #fd2cb4 !important; 
 }
