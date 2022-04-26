@@ -562,15 +562,21 @@ function win(guess) {
     document.cookie = "won=1" + expires;
     printGuess(guess);
 
-    winOverlay.classList.remove('win-overlay-hide');
-    winOverlay.classList.add('win-overlay');
+   
     
-    try {
-    rollSound.play(); 
-    } catch(error) {
-      console.error(error);
-      console.log('no audio to play');
-    }
+    
+    
+    setTimeout(() => {
+      winOverlay.classList.remove('win-overlay-hide');
+      winOverlay.classList.add('win-overlay');
+      try {
+        rollSound.play(); 
+        } catch(error) {
+          console.error(error);
+          console.log('no audio to play');
+        }
+      }, 1000);
+    
     
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
@@ -749,8 +755,6 @@ function printGuess(guess) {
   genderSpan.innerHTML = guess.gender;
   genreElement.innerHTML = "Genre ";
   genreSpan.innerHTML = guess.genre;
-
-  
 
   genderElement.append(genderSpan);
   genreElement.append(genreSpan);
