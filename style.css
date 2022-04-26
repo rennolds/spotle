@@ -595,6 +595,11 @@ button i {
 .test3 {
   background-color: #ba9ac8 !important;
   color: #ffeb33 !important;
+  -webkit-transition: background-color 2000ms linear;
+  -moz-transition: background-color 2000ms linear;
+  -o-transition: background-color 2000ms linear;
+  -ms-transition: background-color 2000ms linear;
+  transition: background-color 2000ms linear;
 }
 
 .test3 .arrow-container .data {
@@ -608,6 +613,11 @@ button i {
 .blue {
   background-color: #4001f4 !important;
   color: #cef564 !important;
+  -webkit-transition: background-color 2000ms linear;
+  -moz-transition: background-color 2000ms linear;
+  -o-transition: background-color 2000ms linear;
+  -ms-transition: background-color 2000ms linear;
+  transition: background-color 2000ms linear;
 }
 
 .blue .arrow-container .data {
@@ -621,9 +631,46 @@ button i {
 .test1 {
   background-color: #9cf0e1 !important;
   color: #cb1482 !important;
+  -webkit-transition: background-color 2000ms linear;
+  -moz-transition: background-color 2000ms linear;
+  -o-transition: background-color 2000ms linear;
+  -ms-transition: background-color 2000ms linear;
+  transition: background-color 2000ms linear;
 }
 
 .test2 {
   background-color: #c4f970 !important;
   color: #fd2cb4 !important; 
+  -webkit-transition: background-color 2000ms linear;
+  -moz-transition: background-color 2000ms linear;
+  -o-transition: background-color 2000ms linear;
+  -ms-transition: background-color 2000ms linear;
+  transition: background-color 2000ms linear;
+}
+
+@keyframes bg-transition {
+  0% {
+  background-color: rgba(106,208,116,.8);
+  color: #ffff;
+  }
+
+  100% {
+    background-color: #ba9ac8;
+    color: #ffeb33;
+  }
+}
+
+.placeholder .arrow-container .data {
+  margin-left: -1rem;
+}
+
+.last-guess {
+  color: #6AD074;
+  animation: beat .25s infinite alternate;
+	transform-origin: center;
+  transition:all 1s linear;
+}
+
+@keyframes beat{
+	to { transform: scale(1.025); }
 }

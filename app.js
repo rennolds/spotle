@@ -397,6 +397,7 @@ const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
+const congratulations = document.querySelector('.congratulations');
 var rollSound;
 
 try {
@@ -426,10 +427,13 @@ const expires = "; expires=" + midnight.toGMTString();
 if (getCookie('visited') != null) {
   console.log('remembered');
   guessCount = getCookie('guessCount');
-  guessCountContainer.innerHTML = "Guess #" + guessCount;
+  guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
 
   if (guessCount > 1) {
     intro.classList.add('hidden');
+  }
+  if (guessCount == 10 && !(getCookie('won'))) {
+    guessCountContainer.classList.add('last-guess');
   }
   printPreviousGuesses();
   //print guesses function
@@ -438,6 +442,13 @@ if (getCookie('visited') != null) {
     intro.classList.add('hidden');
     searchInput.setAttribute('readonly', true);
     win(mysteryArtist);
+  }
+  if (getCookie('lost')) {
+    intro.classList.add('hidden');
+    searchInput.setAttribute('readonly', true);
+    guessCountContainer.innerHTML = "Nice try...";
+    loss();
+
   }
 }
 else {
@@ -556,7 +567,6 @@ function invalidArtist() {
 function win(guess) {
 
     guessCount++;
-    guessCountContainer.innerHTML = "Guess #" + guessCount;
 
     document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
     document.cookie = "won=1" + expires;
@@ -575,13 +585,14 @@ function win(guess) {
     setTimeout(() => {
       winOverlay.classList.remove('win-overlay-hide');
       winOverlay.classList.add('win-overlay');
+      guessCountContainer.innerHTML = "Guess " + String(guessCount - 1) + " of 10";
       try {
         rollSound.play(); 
         } catch(error) {
           console.error(error);
           console.log('no audio to play');
         }
-      }, 1000);
+      }, 1200);
     
     
     calculateHMSleft();
@@ -637,6 +648,28 @@ function handleShare() {
 
 function loss() {
   console.log('lost');
+  document.cookie = "lost = " + "1" + expires;
+
+  congratulations.innerHTML = "Good try. Next time!";
+
+  setTimeout(() => {
+    winOverlay.classList.remove('win-overlay-hide');
+    winOverlay.classList.add('win-overlay');
+  
+    try {
+      rollSound.play(); 
+      } catch(error) {
+        console.error(error);
+        console.log('no audio to play');
+      }
+    }, 1000);
+
+  
+  
+  calculateHMSleft();
+  setInterval(calculateHMSleft, 1000);
+
+  searchInput.setAttribute('readonly', true);
 }
 
 function incorrectGuess(guess) {
@@ -645,8 +678,17 @@ function incorrectGuess(guess) {
     document.cookie = "guessCount = " + String(guessCount) + expires;
     document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
     printGuess(guess); 
-    guessCountContainer.innerHTML = "Guess #" + guessCount;
+    guessCountContainer.innerHTML = "Guess " + guessCount + " of 10";
     guessedArtists.push(guess.name);
+
+    if (guessCount == 10) {
+      guessCountContainer.classList.add('last-guess');
+    }
+    if (guessCount > 10) {
+      guessCountContainer.innerHTML = "Nice try...";
+      loss();
+      console.log('here');
+    }
 
     return;
 }
@@ -707,6 +749,9 @@ function printGuess(guess) {
     albumArrowImg.src = 'resources/keyboard_up.svg';
     albumArrowContainer.append(albumArrowImg);
   }
+  if (guess.debutAlbumYear == mysteryArtist.debutAlbumYear) {
+    albumElement.classList.add('placeholder');
+  }
 
   groupElement.innerHTML = "Group Size "
   groupSpan.innerHTML = guess.groupSize;
@@ -729,6 +774,9 @@ function printGuess(guess) {
   if (guess.listenerRank - mysteryArtist.listenerRank < 0) {
     listenerRankArrowImg.src = 'resources/keyboard_down.svg';
     listenerRankArrowContainer.append(listenerRankArrowImg);
+  }
+  if (guess.listenerRank == mysteryArtist.listenerRank) {
+    listenerRankElement.classList.add('placeholder');
   }
 
   albumElement.append(albumArrowContainer);
@@ -790,22 +838,36 @@ function printGuess(guess) {
   }
   else {
     setTimeout(() => {
-      flipWinner(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement);
+      flipWinnerGreen(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement);
       }, 750);
   }
   
     
 }
 
-function flipWinner(nationalityElement, genreElement, genderElement, groupElement, albumElement, listenerRankElement) {
+function flipWinnerGreen(nationalityElement, genreElement, genderElement, groupElement, albumElement, listenerRankElement) {
+  flipDiv(nationalityElement,'correct');
+  flipDiv(genreElement, 'correct');
+  flipDiv(genderElement, 'correct');
+  flipDiv(groupElement, 'correct');
+  flipDiv(albumElement, 'correct');
+  flipDiv(listenerRankElement,'correct');
+
+  setTimeout(() => {
+    flipWinnerColor(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement);
+    }, 500);
+  
+}
+
+function flipWinnerColor(nationalityElement, genreElement, genderElement, groupElement, albumElement, listenerRankElement) {
   flipDiv(nationalityElement,'test2');
   flipDiv(genreElement, 'test1');
   flipDiv(genderElement, 'blue');
   flipDiv(groupElement, 'test2');
   flipDiv(albumElement, 'test3');
   flipDiv(listenerRankElement,'blue');
-
 }
+
 
 
 function checkCriteria(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement, guess) {
