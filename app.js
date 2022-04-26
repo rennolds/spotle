@@ -566,9 +566,11 @@ function invalidArtist() {
 
 function win(guess) {
 
-    guessCount++;
+    if (guessCountContainer.classList.contains('last-guess')) {
+      guessCountContainer.classList.remove('last-guess');
+    }
 
-    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
     document.cookie = "won=1" + expires;
     printGuess(guess);
 
@@ -585,7 +587,7 @@ function win(guess) {
     setTimeout(() => {
       winOverlay.classList.remove('win-overlay-hide');
       winOverlay.classList.add('win-overlay');
-      guessCountContainer.innerHTML = "Guess " + String(guessCount - 1) + " of 10";
+      guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
       try {
         rollSound.play(); 
         } catch(error) {
