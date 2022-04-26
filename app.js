@@ -289,6 +289,8 @@ let guessCount = 1;
 let artists = {};
 const searchable = [];
 
+const errorViv = document.querySelector('.error');
+
 await fetch('resources/round_5_test.json').then(function (response) {
   return response.json();
 }).then(function (data) {
@@ -307,9 +309,23 @@ await fetch('resources/round_5_test.json').then(function (response) {
     artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size);
   }
 }).catch (function (error) {
+  errorViv.innerHTML = errorViv.innerHTML + " JSON failed";
+  errorViv.classList.remove('error');
+  errorViv.classList.add('error-show');
   console.log('something went wrong reading json');
   console.error(error);
 });
+
+if (searchable.length == 0) {
+  errorViv.innerHTML = errorViv.innerHTML + " no searchable artists";
+  errorViv.classList.remove('error');
+  errorViv.classList.add('error-show');
+}
+if (artists.length == 0) {
+  errorViv.innerHTML = errorViv.innerHTML + " no artists";
+  errorViv.classList.remove('error');
+  errorViv.classList.add('error-show');
+}
 
 var mysteryArtistSong;
 var mysteryArtistImage;
@@ -362,6 +378,9 @@ today = mm + '/' + dd + '/' + yyyy;
   }
 }).catch (function (error) {
   console.log('something went wrong reading mystery artist data');
+  errorViv.innerHTML = errorViv.innerHTML + " mystery artist failed";
+  errorViv.classList.remove('error');
+  errorViv.classList.add('error-show');
   console.error(error);
 });
 
@@ -404,6 +423,9 @@ try {
   rollSound = new Audio(mysteryArtistSong);
 } catch {
   console.log('failed to get audio');
+  errorViv.innerHTML = errorViv.innerHTML + " failed to get audio";
+  errorViv.classList.remove('error');
+  errorViv.classList.add('error-show');
 }
 
 
@@ -665,6 +687,7 @@ function loss() {
     try {
       rollSound.play(); 
       } catch(error) {
+
         console.error(error);
         console.log('no audio to play');
       }

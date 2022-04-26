@@ -678,3 +678,16 @@ button i {
     -ms-transition: scale(1.025); 
   }
 }
+
+.error {
+  font-size: 300%;
+  font: inerhit;
+  color:#ffff;
+  display: none;
+}
+
+.error-show {
+  font-size: 300%;
+  font: inerhit;
+  color:#ffff;
+}
