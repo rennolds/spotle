@@ -643,7 +643,7 @@ function  calculateHMSleft() {
 
 function handleShare() {
   //copy to clipboard
-  var textToCopy = "Spotle #" + spotleNumber + " \n\n🎵";
+  var textToCopy = "Spotle #" + spotleNumber + "🎧\n\n";
   var textToCopy2 = "";
   
   for (var i = 1; i < guessCount - 1; i++)
@@ -651,7 +651,7 @@ function handleShare() {
     textToCopy2 = textToCopy2.concat("","⬜");
   }
 
-  var textToCopy3 = "🟩🎵\n\n";
+  var textToCopy3 = "🟩\n\n";
   var textToCopy4 = "spotle.io";
 
   let result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
