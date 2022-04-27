@@ -171,6 +171,7 @@ html {
 .album-container img {
   width: 200px;
   height: 200px;
+  border-radius: .2rem;
 }
 
 .win-overlay .next-spotle {
