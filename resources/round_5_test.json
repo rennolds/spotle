@@ -100,7 +100,7 @@
   },
   {
     "artist": "Kanye West",
-    "image_uri": "https://i.scdn.co/image/ab6761610000e5eb867008a971fae0f4d913f63a",
+    "image_uri": "resources/kanye.jpeg",
     "genre": "Hip Hop",
     "year": 2004,
     "gender": "m",
@@ -271,7 +271,7 @@
   },
   {
     "artist": "Kendrick Lamar",
-    "image_uri": "https://i.scdn.co/image/ab6761610000e5ebee29d711d7afd1e882486e1a",
+    "image_uri": "resources/kendrick.jpeg",
     "genre": "Hip Hop",
     "year": 2010,
     "gender": "m",
