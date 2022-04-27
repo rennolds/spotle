@@ -258,6 +258,7 @@ html {
 
 .search-container {
   width: 340px;
+  border-radius: 1.625rem;
   margin: auto;
   background-color: inherit;
   border: none;
