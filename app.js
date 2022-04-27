@@ -882,9 +882,9 @@ function flipWinnerGreen(nationalityElement, genreElement, genderElement, groupE
   flipDiv(albumElement, 'correct');
   flipDiv(listenerRankElement,'correct');
 
-  setTimeout(() => {
-    flipWinnerColor(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement);
-    }, 500);
+  // setTimeout(() => {
+  //   flipWinnerColor(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement);
+  //   }, 500);
   
 }
 
