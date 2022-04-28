@@ -419,6 +419,9 @@ const todaysName = document.querySelector('.todays-name');
 const congratulations = document.querySelector('.congratulations');
 const muteBtn = document.querySelector('.mute-btn');
 const muteImg = document.querySelector('.mute-img');
+const helpExitBtn = document.querySelector('.help-exit-btn');
+const helpBtn = document.querySelector('.help-btn');
+const helpOverlay = document.querySelector('.help-overlay');
 var rollSound;
 
 try {
@@ -1019,3 +1022,13 @@ function getContinent(countryCode) {
 guessButton.addEventListener('click', handleGuess);
 shareBtn.addEventListener('click', handleShare);
 muteBtn.addEventListener('click', handleMute);
+helpBtn.addEventListener('click', function () {
+  if (helpOverlay.classList.contains('hidden'))
+    helpOverlay.classList.remove('hidden');
+  else
+    helpOverlay.classList.add('hidden');
+});
+
+helpExitBtn.addEventListener('click', function() {
+  helpOverlay.classList.add('hidden');
+});

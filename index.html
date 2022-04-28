@@ -21,12 +21,39 @@
                 <h3>Spotle</h3>
             </div>
             <div class="nav-btns">
-                <div class="help-btn hidden"> <img src='resources/help_icon.svg'></div>
+                <div class="help-btn"> <img src='resources/help_icon.svg'></div>
                 <div class="mute-btn"> <img class='mute-img' src='resources/volume_on.svg'> </div>
             </div>
         </header>
-        <div class="help-overlay hide">
-
+        <div class="help-overlay hidden">
+            <button class="help-exit-btn"><img src='resources/exit_white.svg' alt="exit button"></button>
+            <div class="help-header">
+            </div>
+            <div class="help-description">
+                ATTRIBUTES
+            </div>
+            <div class="help-attributes">
+                <ul>
+                    <li>DEBUT ALBUM YEAR
+                        <div class='list-item'>Debut album year will turn <span class="yellow">YELLOW</span> when within 5 years of the mystery artist's debut album year. A down arrow indicates the mystery artists album came out earlier than your guess, while a top arrow indicates it was more recently.</div>
+                    </li>
+                    <li>GROUP SIZE
+                        <div class='list-item'>Group Size indicates how many members are in the group (for example, Justin Bieber is group size one, The Beatles are group size four).</div>
+                    </li>
+                    <li>LISTENER RANK
+                        <div class='list-item'>The artists ranking on Spotify by streams. An up arrow indicates the mystery artist is more popular than your guess is - down arrow is the oppsite. <span class='yellow'>YELLOW</span> indicates your guess was within 50 of the mystery artist.</div>
+                    </li>
+                    <li>GENDER
+                        <div class='list-item'>Refers to the artists gender. For bands such as Paramore, gender will be mixed.</div>
+                    </li>
+                    <li>GENRE
+                        <div class='list-item'>The artists genre. We've limited the genres to keep the game simple: Rock, Pop, Hip Hop, Country, and Electronic.</div>
+                    </li>
+                    <li>NATIONALITY
+                        <div class='list-item'>Nationality will turn <span class='yellow'>YELLOW</span> when the nationality of the artist you guessed is on the right continent as the mystery artist's nationality.</div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div id="win-overlay" class="win-overlay-hide"> 
             <button class="exit-btn"><img src='resources/exit.svg' alt="exit button"></button>
@@ -90,11 +117,10 @@
                                     </div>
                                 </div>
                                 <div class="intro-border"></div>
-                                <div class="green-example"><span class="green">GREEN</span> means that criteria matches the mystery artists criteria</div>
-                                <div class="yellow-example"><span class="yellow">YELLOW</span> means different things depending on the criteria. For listener rank, you got within 50. For album year, you got within 5. For nationality, it's on the right continent.</div>
-                                <div class="grey-example"><span class="grey">GREY</span> means the criteria doesn't match</div>
+                                <div class="green-example"><span class="green">GREEN</span> indicates the attribute matches the mystery artist's attribute</div>
+                                <div class="yellow-example"><span class="yellow">YELLOW</span> indicates a close guess. Click the question mark for more info</div>
+                                <div class="grey-example"><span class="grey">GREY</span> means the attribute doesn't match</div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
