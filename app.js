@@ -418,6 +418,7 @@ const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
 const congratulations = document.querySelector('.congratulations');
 const muteBtn = document.querySelector('.mute-btn');
+const muteImg = document.querySelector('.mute-img');
 var rollSound;
 
 try {
@@ -452,6 +453,10 @@ if (getCookie('visited') != null) {
   guessCount = getCookie('guessCount');
   guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
 
+  if (getCookie('mute') == 1) {
+    muteImg.src = 'resources/volume_off.svg';
+  }
+
   if (guessCount > 1) {
     intro.classList.add('hidden');
   }
@@ -476,6 +481,7 @@ if (getCookie('visited') != null) {
 }
 else {
   console.log('new person');
+  document.cookie = 'mute = 0' + expires;
   document.cookie = 'visited = 1' + expires;
   document.cookie = 'guessCount = 1' + expires;
 }
@@ -599,8 +605,10 @@ function win(guess) {
 
    
     try {
-      rollSound.play(); 
-      rollSound.pause();
+      if (getCookie('mute') == 0) {
+        rollSound.play(); 
+        rollSound.pause();
+      }
       } catch(error) {
         console.error(error);
         console.log('no audio to play');
@@ -612,7 +620,9 @@ function win(guess) {
       winOverlay.classList.add('win-overlay');
       guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
       try {
-        rollSound.play(); 
+        if(getCookie('mute') == 0) {
+          rollSound.play(); 
+        }
         } catch(error) {
           console.error(error);
           console.log('no audio to play');
@@ -686,7 +696,8 @@ function loss() {
     winOverlay.classList.add('win-overlay');
   
     try {
-      rollSound.play(); 
+      if (getCookie('mute') == 0)
+        rollSound.play(); 
       } catch(error) {
 
         console.error(error);
@@ -967,6 +978,20 @@ function flipDiv(div, state) {
   }, 1500);
 }
 
+function handleMute() {
+  if (getCookie('mute') == 0) {
+    //mute
+    document.cookie = 'mute = 1' + expires;
+    muteImg.src = 'resources/volume_off.svg';
+  }
+  else {
+    //unmute
+    document.cookie = 'mute = 0' + expires;
+    muteImg.src = 'resources/volume_on.svg';
+
+  }
+}
+
 function getContinent(countryCode) {
   if (north_america.includes(countryCode.toUpperCase())) {
     return 'North America';
@@ -991,3 +1016,4 @@ function getContinent(countryCode) {
 
 guessButton.addEventListener('click', handleGuess);
 shareBtn.addEventListener('click', handleShare);
+muteBtn.addEventListener('click', handleMute);

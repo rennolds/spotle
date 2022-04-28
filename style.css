@@ -716,7 +716,8 @@ button i {
 .mute-btn img {
   height: 30px;
   width: 30px;
-  margin-left: .65rem;
+  margin-left: .75rem;
+  margin-right: .2rem;
 }
 
 
