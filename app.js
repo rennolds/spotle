@@ -417,6 +417,7 @@ const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
 const congratulations = document.querySelector('.congratulations');
+const muteBtn = document.querySelector('.mute-btn');
 var rollSound;
 
 try {

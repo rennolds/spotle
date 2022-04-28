@@ -714,21 +714,22 @@ button i {
 
 
 .mute-btn img {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
+  margin-left: .5rem;
 }
 
 
 .help-btn img {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
 }
 
 .nav-btns {
   display: flex;
   flex-direction: row;
   margin-left: auto;
-  margin-top: 2rem;
+  margin-top: 2.2rem;
   margin-right: 1rem;
   margin-bottom: 1.65rem;
   position: relative;
