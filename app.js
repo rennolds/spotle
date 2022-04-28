@@ -481,7 +481,7 @@ if (getCookie('visited') != null) {
 }
 else {
   console.log('new person');
-  document.cookie = 'mute = 0' + expires;
+  document.cookie = 'mute = 0';
   document.cookie = 'visited = 1' + expires;
   document.cookie = 'guessCount = 1' + expires;
 }
@@ -981,12 +981,14 @@ function flipDiv(div, state) {
 function handleMute() {
   if (getCookie('mute') == 0) {
     //mute
-    document.cookie = 'mute = 1' + expires;
+    document.cookie = 'mute = 1';
     muteImg.src = 'resources/volume_off.svg';
+
+    rollSound.pause();
   }
   else {
     //unmute
-    document.cookie = 'mute = 0' + expires;
+    document.cookie = 'mute = 0';
     muteImg.src = 'resources/volume_on.svg';
 
   }
