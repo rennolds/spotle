@@ -546,6 +546,16 @@ button i {
   .win-overlay {
     margin-top: -1rem;
   }
+
+  .help-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mute-btn img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media screen and (min-width: 787px) {
@@ -701,3 +711,32 @@ button i {
   font: inerhit;
   color:#ffff;
 }
+
+
+.mute-btn img {
+  height: 40px;
+  width: 40px;
+}
+
+
+.help-btn img {
+  height: 40px;
+  width: 40px;
+}
+
+.nav-btns {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  margin-bottom: 1.65rem;
+  position: relative;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
