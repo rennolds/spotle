@@ -729,15 +729,27 @@ button i {
   width: 30px;
 }
 
+.help-btn {
+  height: 40px;
+  width: 40px;
+}
+
+.mute-btn {
+  height: 40px;
+  width: 40px;
+}
+
 .nav-btns {
   display: flex;
   flex-direction: row;
   margin-left: auto;
   margin-top: 2.2rem;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   margin-bottom: 1.65rem;
   position: relative;
 }
+
+
 
 header {
   display: flex;
