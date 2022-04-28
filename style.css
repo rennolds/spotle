@@ -87,6 +87,28 @@ html {
   align-items: center;
 }
 
+.help-overlay {
+  width: 340px;
+  height: 667px;
+  top: 200px;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, 0);
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(353.51deg, #3E3E3E 4.26%, #101010 19.85%, #101010 60.5%, #343434 82.04%, #5C5C5C 99.15%);
+  border-radius: 10px;
+}
+
+.hide {
+  display: none;
+}
+
 
 @keyframes win-appears {
   0% {
@@ -546,14 +568,8 @@ button i {
     margin-top: -1rem;
   }
 
-  .help-btn img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .mute-btn img {
-    width: 20px;
-    height: 20px;
+  .help-overlay {
+    margin-top: -1rem;
   }
 }
 
@@ -730,13 +746,11 @@ button i {
 }
 
 .help-btn {
-  height: 40px;
-  width: 40px;
+  height: 50px;
 }
 
 .mute-btn {
-  height: 40px;
-  width: 40px;
+  height: 100%;
 }
 
 .nav-btns {
@@ -744,7 +758,7 @@ button i {
   flex-direction: row;
   margin-left: auto;
   margin-top: 2.2rem;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
   margin-bottom: 1.65rem;
   position: relative;
 }
