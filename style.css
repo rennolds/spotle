@@ -716,7 +716,7 @@ button i {
 .mute-btn img {
   height: 30px;
   width: 30px;
-  margin-left: .5rem;
+  margin-left: .65rem;
 }
 
 
@@ -737,6 +737,8 @@ button i {
 
 header {
   display: flex;
+  animation: transitionIn 2s;
+  -webkit-animation: transitionIn 2s;
   flex-direction: row;
   width: 100%;
 }
