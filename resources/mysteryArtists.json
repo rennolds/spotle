@@ -37,8 +37,14 @@
   },
   {
     "date": "04/29/2022",
-    "artist": "Blake Shelton",
-    "song_uri": "https://p.scdn.co/mp3-preview/beb49ca298dbd0f55b2b1b1861322ae3275f67a7?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273acf99661b45380007ad598cb"
+    "artist": "Twenty One Pilots",
+    "song_uri": "https://p.scdn.co/mp3-preview/c6011d475d777067dbe2907abd3ae133e8b2a828?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273de03bfc2991fd5bcfde65ba3"
+  },
+  {
+    "date": "04/30/2022",
+    "artist": "Pitbull",
+    "song_uri": "https://p.scdn.co/mp3-preview/9c744f3343092c3b52930c6010e0b4b9b8d93765?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f2486b438645e97b523e4f90"
   }
 ]
