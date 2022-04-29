@@ -25,6 +25,11 @@ html {
   margin-bottom: 1rem;
 }
 
+.yellow-example {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .green {
   font-weight: bold;
   background-color: rgba(106,208,116,.8);
@@ -50,16 +55,16 @@ html {
 }
 
 #intro .intro-example-title {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 #intro .intro-description {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 #intro .intro-border {
   border-bottom: 1px solid #677272;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 #intro .intro-music-warning {
