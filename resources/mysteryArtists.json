@@ -46,5 +46,35 @@
     "artist": "Pitbull",
     "song_uri": "https://p.scdn.co/mp3-preview/9c744f3343092c3b52930c6010e0b4b9b8d93765?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273f2486b438645e97b523e4f90"
+  },
+  {
+    "date": "05/01/2022",
+    "artist": "Backstreet Boys",
+    "song_uri": "https://p.scdn.co/mp3-preview/c958906cd52f47679869b11088d2bd6e1d7bf8e4?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c999354430ff7eac3e0d9bc8"
+  },
+  {
+    "date": "05/02/2022",
+    "artist": "The Chainsmokers",
+    "song_uri": "https://p.scdn.co/mp3-preview/5b5c3ae091f821ba0f038d89743fe4e8da7f99a6?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738d2cfad007b9431f48aef135"
+  },
+  {
+    "date": "05/03/2022",
+    "artist": "Megan Thee Stallion",
+    "song_uri": "https://p.scdn.co/mp3-preview/afb43f252630ed1de5ffaa49c88fd5e06ba17f3f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27320fbc17fcb9376bc76a1b510"
+  },
+  {
+    "date": "05/04/2022",
+    "artist": "Pink Floyd",
+    "song_uri": "https://p.scdn.co/mp3-preview/71f0b73c37bc4d421098daf687c79ca596dffba7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe"
+  },
+  {
+    "date": "05/05/2022",
+    "artist": "Olivia Rodrigo",
+    "song_uri": "https://p.scdn.co/mp3-preview/3849f6e821a9f55bc736e53791b8d88938e3034e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a"
   }
 ]

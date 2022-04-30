@@ -660,7 +660,7 @@ function handleShare() {
   var textToCopy = "Spotle #" + spotleNumber + "🎧\n\n";
   var textToCopy2 = "";
   
-  for (var i = 1; i < guessCount - 1; i++)
+  for (var i = 1; i < guessCount; i++)
   {
     textToCopy2 = textToCopy2.concat("","⬜");
   }
