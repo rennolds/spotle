@@ -326,7 +326,7 @@
   {
     "artist": "Nicki Minaj",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebaf3459f7c235fd25daf7f84f",
-    "genre": "Pop",
+    "genre": "Hip Hop",
     "year": 2010,
     "gender": "f",
     "country": "us",
@@ -668,7 +668,7 @@
   {
     "artist": "Cardi B",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eba3de342056c0e1284cbc109d",
-    "genre": "Pop",
+    "genre": "Hip Hop",
     "year": 2016,
     "gender": "f",
     "country": "us",
@@ -1694,7 +1694,7 @@
   {
     "artist": "Meghan Trainor",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd19673ac57b9693ae943837e",
-    "genre": "Pop",
+    "genre": "Hip Hop",
     "year": 2015,
     "gender": "f",
     "country": "us",
@@ -3458,7 +3458,7 @@
   {
     "artist": "LANY",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb417454f70dfe686c18caeb2a",
-    "genre": "Latin",
+    "genre": "Pop",
     "year": 2017,
     "gender": "m",
     "country": "us",
