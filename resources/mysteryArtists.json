@@ -82,5 +82,48 @@
     "artist": "Kanye West",
     "song_uri": "https://p.scdn.co/mp3-preview/23771e17f5cc8853beee8ffee1ddc99fdefbcfa1?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27326f7f19c7f0381e56156c94a"
+  },
+  {
+    "date": "05/07/2022",
+    "artist": "WILLOW",
+    "song_uri": "https://p.scdn.co/mp3-preview/8194bda5bfc5d98a7fdcccae507a70141bd8f66c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273024ea7e883a713a3ad552a71"
+  },
+  {
+    "date": "05/08/2022",
+    "artist": "Carly Rae Jepsen",
+    "song_uri": "https://p.scdn.co/mp3-preview/0e832a7f2198e5943d5554aa435b743591e062c8?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a111f7769013f1731e9c697c"
+  },
+  {
+    "date": "05/09/2022",
+    "artist": "Mariah Carey",
+    "song_uri": "https://p.scdn.co/mp3-preview/f5af258af1bce0f99e260987bd50eda282609be5?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273749e9bfa78277f30ad2c9a9c"
+  },
+  {
+    "date": "05/10/2022",
+    "artist": "Queen",
+    "song_uri": "https://p.scdn.co/mp3-preview/c3e18dc90fd2acaec0f694beadc02a4f702aec9f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27393c65b02f4a72cd6eccf446d"
+  },
+  {
+    "date": "05/11/2022",
+    "artist": "Fetty Wap",
+    "song_uri": "https://p.scdn.co/mp3-preview/1bfdf966666378a6984063ef0631860e5286d587?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731769fa68b9643ca67c4d44ce"
+  },
+  {
+    "date": "05/12/2022",
+    "artist": "Chris Brown",
+    "song_uri": "https://p.scdn.co/mp3-preview/9bac31f7abf2c1a427edf7aceecbca6b8c66603c?cid=98f79e400795491cbc5f69b71346570",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b0d747e54b78eb460dcb9316"
+  },
+  {
+    "date": "05/13/2022",
+    "artist": "DNCE",
+    "song_uri": "https://p.scdn.co/mp3-preview/d38dbc8ab27b8603e7f8231bad36e7f130b58462?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738d0a75346badc30c8b845be9"
   }
+
 ]
