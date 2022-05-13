@@ -673,7 +673,7 @@ function handleShare() {
     result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
   }
   else {
-    result = "⬜⬜⬜⬜⬜⬜⬜⬜⬜❌"
+    result = textToCopy.concat('⬜⬜⬜⬜⬜⬜⬜⬜⬜❌\n\n', textToCopy4);
   }
 
   if (navigator.share) { 
