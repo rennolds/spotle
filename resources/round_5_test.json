@@ -1145,7 +1145,7 @@
   {
     "artist": "DJ Khaled",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebbf921114b7f19be97ce29647",
-    "genre": "Hip Hop",
+    "genre": "Pop",
     "year": 2007,
     "gender": "m",
     "country": "us",
@@ -1622,7 +1622,7 @@
   {
     "artist": "Frank Sinatra",
     "image_uri": "https://i.scdn.co/image/fc4e0f474fb4c4cb83617aa884dc9fd9822d4411",
-    "genre": "X",
+    "genre": "Jazz",
     "year": 1946,
     "gender": "m",
     "country": "us",
@@ -6707,7 +6707,7 @@
   {
     "artist": "Surfaces",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb15425e51091c49d07b3bca64",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2017,
     "gender": "m",
     "country": "us",
