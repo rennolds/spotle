@@ -768,6 +768,7 @@ button i {
 .last-guess {
   animation: beat .25s infinite alternate;
 	transform-origin: center;
+  color: #E00043;
 }
 
 @keyframes beat{
