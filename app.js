@@ -668,7 +668,13 @@ function handleShare() {
   var textToCopy3 = "🟩\n\n";
   var textToCopy4 = "spotle.io";
 
-  let result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
+  var result = "";
+  if (getCookie('won')) {
+    result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
+  }
+  else {
+    result = "⬜⬜⬜⬜⬜⬜⬜⬜⬜❌"
+  }
 
   if (navigator.share) { 
     navigator.share({
