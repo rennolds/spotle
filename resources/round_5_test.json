@@ -128,7 +128,7 @@
   {
     "artist": "Coldplay",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb865a3301762a8fce048cb469",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2000,
     "gender": "m",
     "country": "uk",
@@ -1091,7 +1091,7 @@
   {
     "artist": "Green Day",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb047eac333eff0be4abe32cbf",
-    "genre": "X",
+    "genre": "Rock",
     "year": 1991,
     "gender": "m",
     "country": "us",
@@ -1577,7 +1577,7 @@
   {
     "artist": "Hozier",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9ba4d95b74bacff4d5747f61",
-    "genre": "X",
+    "genre": "Alternative",
     "year": 2014,
     "gender": "m",
     "country": "ie",
