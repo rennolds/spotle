@@ -304,6 +304,24 @@
     "artist": "Linkin Park",
     "song_uri": "https://p.scdn.co/mp3-preview/90436e1bcbbc3c0cac97fa40305aaf86f309a573?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273e2f039481babe23658fc719a"
+  },
+  {
+    "date": "06/13/2022",
+    "artist": "Eminem",
+    "song_uri": "https://p.scdn.co/mp3-preview/1d63d428f0ac2ffe2f4434265031124747363500?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736ca5c90113b30c3c43ffb8f4"
+  },
+  {
+    "date": "06/14/2022",
+    "artist": "Kesha",
+    "song_uri": "https://p.scdn.co/mp3-preview/de2458fef52b0290e47bbdcf555d7f14b91b434d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737a6339d6ddfd579f77559b3c"
+  },
+  {
+    "date": "06/15/2022",
+    "artist": "Blake Shelton",
+    "song_uri": "https://p.scdn.co/mp3-preview/462ed45aa32d848c90a4be54002e4014a6c1d66e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273de2b6ae73697b2da4d3e9c27"
   }
  
 
