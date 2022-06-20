@@ -352,7 +352,38 @@
     "artist": "Avicii",
     "song_uri": "https://p.scdn.co/mp3-preview/d1ba8ac33684933ab4bcbc194276a08974005660?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273ffb343926530168be4724dd4"
+  },
+  {
+    "date": "06/21/2022",
+    "artist": "J. Cole",
+    "song_uri": "https://p.scdn.co/mp3-preview/1b0830cdae4e0ea251fc7fe9b2a8216f98bd7c06?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c6e0948bbb0681ff29cdbae8"
+  },
+  {
+    "date": "06/22/2022",
+    "artist": "Mumford & Sons",
+    "song_uri": "https://p.scdn.co/mp3-preview/a679c8f65021509550b9e2831638716e54cb367f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e5d3f32e37004060183a5fc5"
+  },
+  {
+    "date": "06/23/2022",
+    "artist": "Iggy Azalea",
+    "song_uri": "https://p.scdn.co/mp3-preview/f12fe0733e8f0049a1091a22c2dad43a09a740e7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b1c6cf12c9fb4f9014b711ba"
+  },
+  {
+    "date": "06/24/2022",
+    "artist": "Cage The Elephant",
+    "song_uri": "https://p.scdn.co/mp3-preview/e03d61e828e448a03a599054a2c0cae7876363d5?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e4800c920780ac18d4ab6730"
+  },
+  {
+    "date": "06/25/2022",
+    "artist": "Macklemore",
+    "song_uri": "https://p.scdn.co/mp3-preview/2db35d0fa2155ae786b4382e38266e805de28c77?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27351245bae78fd3afa47e90453"
   }
+  
  
 
 ]

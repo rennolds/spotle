@@ -1658,7 +1658,7 @@
   {
     "artist": "blink-182",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb0721a0eb3b04c76895b53a8d",
-    "genre": "Punk",
+    "genre": "Rock",
     "year": 1994,
     "gender": "m",
     "country": "us",
@@ -4079,7 +4079,7 @@
   {
     "artist": "Iggy Azalea",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb698a6abf2897a8fc8283cc0c",
-    "genre": "Pop",
+    "genre": "Hip Hop",
     "year": 2014,
     "gender": "f",
     "country": "au",

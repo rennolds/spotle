@@ -550,9 +550,12 @@ exitBtn.addEventListener('click', () => {
 const handleGuess = () => {
 
     let guess = searchInput.value
+    console.log("Guess ------>" + guess)
     searchInput.value = ""; //make search bar empty 
     searchWrapper.classList.remove('show'); //hide results
     guess = guess.toLowerCase() //make guess lowercase
+    guess = guess.replace('amp;', '');
+  
 
     if (guess == "") { //empty guess, do nothing
       return;
