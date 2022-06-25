@@ -2576,7 +2576,7 @@
   {
     "artist": "Ryan Lewis",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb6396e61aab044c5d655f115c",
-    "genre": "",
+    "genre": "Hip Hop",
     "year": 2012,
     "gender": "m",
     "country": "us",
@@ -4304,7 +4304,7 @@
   {
     "artist": "George Michael",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebf8b74c36ba6c31fc0f58783c",
-    "genre": "",
+    "genre": "Pop",
     "year": 1987,
     "gender": "m",
     "country": "uk",
@@ -5645,7 +5645,7 @@
   {
     "artist": "R. Kelly",
     "image_uri": "https://i.scdn.co/image/b81390065f0c65c26270a4ca1d2ceae3e30efed6",
-    "genre": "",
+    "genre": "R&B",
     "year": 1992,
     "gender": "m",
     "country": "us",
@@ -5654,7 +5654,7 @@
   {
     "artist": "gnash",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27301ef37f07e070f38298fc6c4",
-    "genre": "",
+    "genre": "Hip Hop",
     "year": 2021,
     "gender": "m",
     "country": "us",
@@ -5663,7 +5663,7 @@
   {
     "artist": "Lord Huron",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb1d4e4e7e3c5d8fa494fc5f10",
-    "genre": "Folk",
+    "genre": "Alternative",
     "year": 2012,
     "gender": "m",
     "country": "us",
@@ -5888,7 +5888,7 @@
   {
     "artist": "NEFFEX",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb3a7d849b89d6ba9f5bd81639",
-    "genre": "",
+    "genre": "Electronic",
     "year": 2018,
     "gender": "m",
     "country": "us",
@@ -6023,7 +6023,7 @@
   {
     "artist": "Chencho Corleone",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb86f7bcc04d9cab90818de71a",
-    "genre": "",
+    "genre": "x",
     "year": 2018,
     "gender": "m",
     "country": "pr",
@@ -6473,7 +6473,7 @@
   {
     "artist": "John Newman",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebdace8bf652b063de3a0e343f",
-    "genre": "",
+    "genre": "Pop",
     "year": 2013,
     "gender": "m",
     "country": "uk",
@@ -7418,7 +7418,7 @@
   {
     "artist": "Yusuf / Cat Stevens",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebcff97c36c1d9a2a1d421966c",
-    "genre": "Folk",
+    "genre": "Alternative",
     "year": 1967,
     "gender": "x",
     "country": "us",
@@ -8372,7 +8372,7 @@
   {
     "artist": "The Head And The Heart",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebc1332a509f6d8382c6d8996a",
-    "genre": "Folk",
+    "genre": "Alternative",
     "year": 2011,
     "gender": "x",
     "country": "us",
@@ -8606,7 +8606,7 @@
   {
     "artist": "Silk Sonic",
     "image_uri": "https://i.scdn.co/image/ab6772690000c46ca3ebb27ba9a55044f32af6e1",
-    "genre": "",
+    "genre": "R&B",
     "year": 2021,
     "gender": "m",
     "country": "us",
