@@ -611,7 +611,7 @@ function win(guess) {
       var winStreak = parseInt(getCookie("winStreak"));
       document.cookie = "winStreak=" + (winStreak + 1);
     }
-    winStreakContainer.innerHTML = "Current Streak: " + getCookie("winStreak");
+    winStreakContainer.innerHTML = "Current Streak: " + getCookie("winStreak") + " 🎶";
     document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
     document.cookie = "won=1" + expires;
     printGuess(guess);
@@ -704,7 +704,7 @@ function loss() {
   console.log('lost');
   document.cookie = "lost = " + "1" + expires;
   document.cookie = "winStreak = " + "0";
-  winStreakContainer.innerHTML = "Current Streak: " + getCookie("winStreak");
+  winStreakContainer.innerHTML = "Current Streak: " + getCookie("winStreak") + " 🎶";
 
   if (guessCountContainer.classList.contains('last-guess')) {
     guessCountContainer.classList.remove('last-guess');
