@@ -81,7 +81,7 @@ html {
 }
 
 .win-overlay {
-  height: 493px;
+  height: 535px;
   width: 290px;
   position: absolute;
   left: 50%;
@@ -270,6 +270,15 @@ html {
   color: #000000;
 }
 
+.win-overlay .current-streak {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
 .win-overlay .timer {
   font-family: 'Inter';
   font-style: normal;
@@ -298,6 +307,7 @@ html {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 

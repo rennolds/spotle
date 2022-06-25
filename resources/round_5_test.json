@@ -1136,7 +1136,7 @@
   {
     "artist": "Tyler, The Creator",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb8278b782cbb5a3963db88ada",
-    "genre": "",
+    "genre": "Hip Hop",
     "year": 2011,
     "gender": "m",
     "country": "us",
@@ -2945,7 +2945,7 @@
   {
     "artist": "The Offspring",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd7c5bbf32459922a72ec0d31",
-    "genre": "Punk",
+    "genre": "Rock",
     "year": 1989,
     "gender": "m",
     "country": "us",
@@ -3773,7 +3773,7 @@
   {
     "artist": "Rise Against",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb8e19de59bac2628eb8929156",
-    "genre": "Punk",
+    "genre": "Rock",
     "year": 2003,
     "gender": "m",
     "country": "us",
@@ -5204,7 +5204,7 @@
   {
     "artist": "Sum 41",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eba79683a6e828e1a86341414c",
-    "genre": "Punk",
+    "genre": "Rock",
     "year": 2000,
     "gender": "m",
     "country": "ca",
@@ -7031,7 +7031,7 @@
   {
     "artist": "Simple Plan",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb14be52ba7ed12e0177ebe08b",
-    "genre": "Punk",
+    "genre": "Rock",
     "year": 2004,
     "gender": "m",
     "country": "ca",

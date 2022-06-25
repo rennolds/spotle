@@ -422,6 +422,7 @@ const muteImg = document.querySelector('.mute-img');
 const helpExitBtn = document.querySelector('.help-exit-btn');
 const helpBtn = document.querySelector('.help-btn');
 const helpOverlay = document.querySelector('.help-overlay');
+const winStreakContainer = document.querySelector('.current-streak');
 var rollSound;
 
 try {
@@ -485,6 +486,7 @@ if (getCookie('visited') != null) {
 else {
   console.log('new person');
   document.cookie = 'mute = 0';
+  document.cookie = 'winStreak = 0';
   document.cookie = 'visited = 1' + expires;
   document.cookie = 'guessCount = 1' + expires;
 }
@@ -605,6 +607,11 @@ function win(guess) {
       guessCountContainer.classList.remove('last-guess');
     }
 
+    if (!getCookie("won")) {
+      var winStreak = parseInt(getCookie("winStreak"));
+      document.cookie = "winStreak=" + (winStreak + 1);
+    }
+    winStreakContainer.innerHTML = "Current Streak: " + getCookie("winStreak");
     document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
     document.cookie = "won=1" + expires;
     printGuess(guess);
@@ -696,6 +703,8 @@ function handleShare() {
 function loss() {
   console.log('lost');
   document.cookie = "lost = " + "1" + expires;
+  document.cookie = "winStreak = " + "0";
+  winStreakContainer.innerHTML = "Current Streak: " + getCookie("winStreak");
 
   if (guessCountContainer.classList.contains('last-guess')) {
     guessCountContainer.classList.remove('last-guess');
