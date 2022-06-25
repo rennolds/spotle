@@ -128,7 +128,7 @@
   {
     "artist": "Coldplay",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb865a3301762a8fce048cb469",
-    "genre": "Pop",
+    "genre": "Alternative",
     "year": 2000,
     "gender": "m",
     "country": "uk",
@@ -299,7 +299,7 @@
   {
     "artist": "Chris Brown",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebba4309876dbc0ef3222c5512",
-    "genre": "Pop",
+    "genre": "R%B",
     "year": 2005,
     "gender": "m",
     "country": "us",
@@ -542,7 +542,7 @@
   {
     "artist": "Arctic Monkeys",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb39f37a34b404169fdca52dc8",
-    "genre": "Rock",
+    "genre": "Alternative",
     "year": 2006,
     "gender": "m",
     "country": "uk",
@@ -623,7 +623,7 @@
   {
     "artist": "Martin Garrix",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb66d17ee8690d2e8d94ee7387",
-    "genre": "Pop",
+    "genre": "Electronic",
     "year": 2019,
     "gender": "m",
     "country": "nl",
@@ -677,7 +677,7 @@
   {
     "artist": "Panic! At The Disco",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb84776fe119fa6503fdffb0f8",
-    "genre": "Rock",
+    "genre": "Pop",
     "year": 2005,
     "gender": "m",
     "country": "us",
@@ -794,7 +794,7 @@
   {
     "artist": "Metallica",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb8101d13bdd630b0889acd2fd",
-    "genre": "Rock",
+    "genre": "Metal",
     "year": 1983,
     "gender": "m",
     "country": "us",
@@ -920,7 +920,7 @@
   {
     "artist": "DJ Snake",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebf2855e25f1d9c8a20bcc85ae",
-    "genre": "Pop",
+    "genre": "Electronic",
     "year": 2016,
     "gender": "m",
     "country": "fr",
@@ -956,7 +956,7 @@
   {
     "artist": "Macklemore",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb57df9bb5680b96f5b4811fc2",
-    "genre": "Pop",
+    "genre": "Hip Hop",
     "year": 2005,
     "gender": "m",
     "country": "us",
@@ -983,7 +983,7 @@
   {
     "artist": "Zedd",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb1751e951b4969c4ae957a328",
-    "genre": "Pop",
+    "genre": "Electronic",
     "year": 2012,
     "gender": "m",
     "country": "ru",
@@ -1062,9 +1062,9 @@
     "group_size": 1
   },
   {
-    "artist": "Ti�sto",
+    "artist": "Tiesto",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb8cb651b2e77c6d30b1de15e4",
-    "genre": "X",
+    "genre": "Electronic",
     "year": 1997,
     "gender": "m",
     "country": "ul",
@@ -1118,7 +1118,7 @@
   {
     "artist": "Romeo Santos",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb0d2f605c23090747230416db",
-    "genre": "X",
+    "genre": "Latin",
     "year": 2012,
     "gender": "m",
     "country": "us",
@@ -1145,7 +1145,7 @@
   {
     "artist": "DJ Khaled",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebbf921114b7f19be97ce29647",
-    "genre": "Pop",
+    "genre": "Hip Hop",
     "year": 2007,
     "gender": "m",
     "country": "us",
@@ -1199,7 +1199,7 @@
   {
     "artist": "SZA",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb529f2198b3e9e77c0d5a665b",
-    "genre": "Pop",
+    "genre": "R&B",
     "year": 2014,
     "gender": "f",
     "country": "us",
@@ -1226,7 +1226,7 @@
   {
     "artist": "Machine Gun Kelly",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb1fd54eb6e30d0bc8f633621e",
-    "genre": "Hip Hop",
+    "genre": "Rock",
     "year": 2012,
     "gender": "m",
     "country": "us",
@@ -1307,7 +1307,7 @@
   {
     "artist": "Flo Rida",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb655ca8f3196953554b479452",
-    "genre": "Pop",
+    "genre": "Hip Hop",
     "year": 2008,
     "gender": "m",
     "country": "us",
@@ -1334,16 +1334,16 @@
   {
     "artist": "blackbear",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe23a1ce692e974395caa9caf",
-    "genre": "Pop",
+    "genre": "Hip Hop",
     "year": 2015,
     "gender": "m",
     "country": "us",
     "group_size": 1
   },
   {
-    "artist": "Mar�lia Mendon�a",
+    "artist": "Marilia Mendonca",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb59035f0b5c852aabd865a080",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2016,
     "gender": "f",
     "country": "br",
@@ -1352,7 +1352,7 @@
   {
     "artist": "Jonas Blue",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebb2e0eba220cd2dd0446f5073",
-    "genre": "Pop",
+    "genre": "Electronic",
     "year": 2018,
     "gender": "m",
     "country": "uk",
@@ -1388,7 +1388,7 @@
   {
     "artist": "Anitta",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb847940395e7b755f626ad139",
-    "genre": "X",
+    "genre": "Latin",
     "year": 2013,
     "gender": "f",
     "country": "us",
@@ -1422,7 +1422,7 @@
     "group_size": 4
   },
   {
-    "artist": "Banda MS de Sergio Liz�rraga",
+    "artist": "Banda MS de Sergio Lizarraga",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebbbea577c2181208f77d1fb49",
     "genre": "X",
     "year": 2006,
@@ -1487,7 +1487,7 @@
   {
     "artist": "Gorillaz",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb7284ae7f774c3b71a6e5ce64",
-    "genre": "Hip Hop",
+    "genre": "Alternative",
     "year": 2001,
     "gender": "x",
     "country": "uk",
@@ -1523,7 +1523,7 @@
   {
     "artist": "Becky G",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb653ae0ed6e7bef49386b2f93",
-    "genre": "Latin",
+    "genre": "Pop",
     "year": 2019,
     "gender": "f",
     "country": "us",
@@ -1640,7 +1640,7 @@
   {
     "artist": "The Killers",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb207b21f3ed0ee96adce3166a",
-    "genre": "Rock",
+    "genre": "Alternative",
     "year": 2004,
     "gender": "m",
     "country": "us",
@@ -1712,7 +1712,7 @@
   {
     "artist": "Radiohead",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eba03696716c9ee605006047fd",
-    "genre": "Rock",
+    "genre": "Alternative",
     "year": 1993,
     "gender": "m",
     "country": "us",
@@ -1793,7 +1793,7 @@
   {
     "artist": "The 1975",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb592231ad18aab7a47772a958",
-    "genre": "Rock",
+    "genre": "Alternative",
     "year": 2012,
     "gender": "m",
     "country": "uk",
@@ -1811,7 +1811,7 @@
   {
     "artist": "Mumford & Sons",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb63065c48a5e377efda61f229",
-    "genre": "Pop",
+    "genre": "Alternative",
     "year": 2009,
     "gender": "m",
     "country": "uk",
@@ -1838,7 +1838,7 @@
   {
     "artist": "Jack Johnson",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9555a0b3231117c8cde1fca7",
-    "genre": "X",
+    "genre": "Rock",
     "year": 2001,
     "gender": "m",
     "country": "us",
@@ -1856,7 +1856,7 @@
   {
     "artist": "Elvis Presley",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9a93e273380982dff84c0d7c",
-    "genre": "X",
+    "genre": "Rock",
     "year": 1956,
     "gender": "m",
     "country": "us",
@@ -2009,7 +2009,7 @@
   {
     "artist": "Henrique & Juliano",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb3f3fa33960346d34155cc631",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2012,
     "gender": "m",
     "country": "br",
@@ -2045,7 +2045,7 @@
   {
     "artist": "Tame Impala",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb90357ef28b3a012a1d1b2fa2",
-    "genre": "X",
+    "genre": "Alternative",
     "year": 2010,
     "gender": "m",
     "country": "au",
@@ -2054,7 +2054,7 @@
   {
     "artist": "The Lumineers",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebc79f78fd72a3e5faf699a8be",
-    "genre": "Pop",
+    "genre": "Alternative",
     "year": 2012,
     "gender": "x",
     "country": "us",
@@ -2369,7 +2369,7 @@
   {
     "artist": "Glee Cast",
     "image_uri": "https://i.scdn.co/image/5b5a95f260ac429405e871777e3c17c9126c30ad",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2009,
     "gender": "x",
     "country": "us",
@@ -2423,7 +2423,7 @@
   {
     "artist": "Kehlani",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd2657bcafcb300d90816523f",
-    "genre": "Pop",
+    "genre": "R&B",
     "year": 2014,
     "gender": "f",
     "country": "us",
@@ -2657,7 +2657,7 @@
   {
     "artist": "Amy Winehouse",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb2ceb023b10da17590878e88c",
-    "genre": "X",
+    "genre": "R%B",
     "year": 2003,
     "gender": "f",
     "country": "uk",
@@ -2666,7 +2666,7 @@
   {
     "artist": "Stevie Wonder",
     "image_uri": "https://i.scdn.co/image/c59faacbed7aa770266bad048660810eca204108",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1962,
     "gender": "m",
     "country": "us",
@@ -2675,7 +2675,7 @@
   {
     "artist": "Pearl Jam",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb122d1145d880736383742ebc",
-    "genre": "X",
+    "genre": "Alternative",
     "year": 1991,
     "gender": "m",
     "country": "us",
@@ -2720,7 +2720,7 @@
   {
     "artist": "Hans Zimmer",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb371632043a8c12bb7eeeaf9d",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 1989,
     "gender": "m",
     "country": "de",
@@ -2952,9 +2952,9 @@
     "group_size": 4
   },
   {
-    "artist": "Wesley Safad�o",
+    "artist": "Wesley Safadao",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb471f55511bcf90942ecc02cd",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2012,
     "gender": "m",
     "country": "br",
@@ -2999,7 +2999,7 @@
   {
     "artist": "Lin-Manuel Miranda",
     "image_uri": "https://i.scdn.co/image/84dc87cca456089fc5cfa2d7593d9d960ca4553f",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2008,
     "gender": "m",
     "country": "us",
@@ -3053,7 +3053,7 @@
   {
     "artist": "Anderson .Paak",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb96287bd47570ff13f0c01496",
-    "genre": "X",
+    "genre": "Hip Hop",
     "year": 2014,
     "gender": "m",
     "country": "us",
@@ -3197,7 +3197,7 @@
   {
     "artist": "Pentatonix",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb2b9297b71a8bf3deef948e32",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2012,
     "gender": "x",
     "country": "us",
@@ -3242,7 +3242,7 @@
   {
     "artist": "Arijit Singh",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebb2b70762d89a9d76c772b3b6",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2012,
     "gender": "m",
     "country": "in",
@@ -3305,7 +3305,7 @@
   {
     "artist": "Bee Gees",
     "image_uri": "https://i.scdn.co/image/1d5a05673975ba0c378cd280344e000b0b865620",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1965,
     "gender": "m",
     "country": "uk",
@@ -3386,7 +3386,7 @@
   {
     "artist": "Boyce Avenue",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebaa5fdba75703df74c3be99a7",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2009,
     "gender": "m",
     "country": "us",
@@ -3420,7 +3420,7 @@
     "group_size": 1
   },
   {
-    "artist": "M�neskin",
+    "artist": "Maneskin",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebb760340fd14e8ea7e6775253",
     "genre": "Rock",
     "year": 2017,
@@ -3438,7 +3438,7 @@
     "group_size": 2
   },
   {
-    "artist": "ROSAL�A",
+    "artist": "ROSALIA",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd7bb678bef6d2f26110cae49",
     "genre": "R&B",
     "year": 2017,
@@ -3494,7 +3494,7 @@
   {
     "artist": "Disney",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebc698d53b77db34027b00f853",
-    "genre": "",
+    "genre": "Entertainment",
     "year": 2006,
     "gender": "x",
     "country": "us",
@@ -3602,7 +3602,7 @@
   {
     "artist": "ILLENIUM",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb6b5fbf615ada187ce5e425c8",
-    "genre": "X",
+    "genre": "Electronic",
     "year": 2016,
     "gender": "m",
     "country": "us",
@@ -3674,7 +3674,7 @@
   {
     "artist": "Bibi Blocksberg",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb12733dec1314ca5c0e2ddb3f",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 1980,
     "gender": "x",
     "country": "us",
@@ -3683,7 +3683,7 @@
   {
     "artist": "Marvin Gaye",
     "image_uri": "https://i.scdn.co/image/cf79bd3e5c787e2ec152eeb1ea5538b0d4cf1434",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1961,
     "gender": "m",
     "country": "us",
@@ -3791,7 +3791,7 @@
   {
     "artist": "Bon Iver",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb67be065df01f37a3880216be",
-    "genre": "Indie",
+    "genre": "Alternative",
     "year": 2008,
     "gender": "m",
     "country": "us",
@@ -3944,7 +3944,7 @@
   {
     "artist": "Bradley Cooper",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9400a1dccee9f0df97847c0f",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2018,
     "gender": "m",
     "country": "us",
@@ -4052,7 +4052,7 @@
   {
     "artist": "Calum Scott",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb8d9366c69233e844582cc215",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2018,
     "gender": "m",
     "country": "uk",
@@ -4205,7 +4205,7 @@
   {
     "artist": "Depeche Mode",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb8ada6bad4c9b276b7fd24874",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1981,
     "gender": "m",
     "country": "uk",
@@ -4331,7 +4331,7 @@
   {
     "artist": "The xx",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb193bce41687d1869f8c7593f",
-    "genre": "X",
+    "genre": "Rock",
     "year": 2009,
     "gender": "x",
     "country": "uk",
@@ -4511,7 +4511,7 @@
   {
     "artist": "Stormzy",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebcd5dbc48254bfbdd35c1403b",
-    "genre": "X",
+    "genre": "Hip Hop",
     "year": 2014,
     "gender": "m",
     "country": "uk",
@@ -4709,7 +4709,7 @@
   {
     "artist": "The Smiths",
     "image_uri": "https://i.scdn.co/image/481b980af463122013e4578c08fb8c5cbfaed1e9",
-    "genre": "X",
+    "genre": "Rock",
     "year": 1984,
     "gender": "m",
     "country": "us",
@@ -4736,7 +4736,7 @@
   {
     "artist": "Of Monsters and Men",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebce5451b5cc60faf1992e969a",
-    "genre": "X",
+    "genre": "Alternative",
     "year": 2011,
     "gender": "x",
     "country": "is",
@@ -4799,7 +4799,7 @@
   {
     "artist": "Aya Nakamura",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd097fdbe85a171a0483a2611",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2017,
     "gender": "f",
     "country": "fr",
@@ -4835,7 +4835,7 @@
   {
     "artist": "Rag'n'Bone Man",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd37c6045418dc479c99ade2c",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2012,
     "gender": "m",
     "country": "uk",
@@ -4853,7 +4853,7 @@
   {
     "artist": "Rod Stewart",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb1d3e6633d1da408fc103a9ec",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1969,
     "gender": "m",
     "country": "uk",
@@ -4889,7 +4889,7 @@
   {
     "artist": "A Day To Remember",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd68cc4a136f816a999500f0d",
-    "genre": "X",
+    "genre": "Rock",
     "year": 2005,
     "gender": "m",
     "country": "us",
@@ -4934,7 +4934,7 @@
   {
     "artist": "Enya",
     "image_uri": "https://i.scdn.co/image/0f6e6c9ab85e148d02a095c870a94f5aa8318148",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1987,
     "gender": "f",
     "country": "ie",
@@ -5015,7 +5015,7 @@
   {
     "artist": "ODESZA",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb1b00f0413d659ee91b505f70",
-    "genre": "X",
+    "genre": "Electronic",
     "year": 2012,
     "gender": "m",
     "country": "us",
@@ -5042,7 +5042,7 @@
   {
     "artist": "Evanescence",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb7c952c071462e72795697bc0",
-    "genre": "Metal",
+    "genre": "Rock",
     "year": 2003,
     "gender": "x",
     "country": "us",
@@ -5051,7 +5051,7 @@
   {
     "artist": "Aretha Franklin",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebf12270128127ba170f90097d",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1956,
     "gender": "f",
     "country": "us",
@@ -5222,7 +5222,7 @@
   {
     "artist": "WALK THE MOON",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebab9610e36fae856c0fd9b46b",
-    "genre": "Pop",
+    "genre": "Alternative",
     "year": 2012,
     "gender": "m",
     "country": "us",
@@ -5231,7 +5231,7 @@
   {
     "artist": "Bing Crosby",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb0ba8db83b01de120a6f2312c",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1932,
     "gender": "m",
     "country": "us",
@@ -5375,7 +5375,7 @@
   {
     "artist": "League of Legends",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb1c2306662a30b657f6118e23",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2015,
     "gender": "x",
     "country": "sa",
@@ -5636,7 +5636,7 @@
   {
     "artist": "Mac DeMarco",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebc7a7b191db13668f1a6d863d",
-    "genre": "Indie",
+    "genre": "Alternative",
     "year": 2012,
     "gender": "m",
     "country": "ca",
@@ -5681,7 +5681,7 @@
   {
     "artist": "Ms. Lauryn Hill",
     "image_uri": "https://i.scdn.co/image/ccb108f19352e88d6e69b1093d75a2be5efa1c99",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1996,
     "gender": "f",
     "country": "us",
@@ -5753,7 +5753,7 @@
   {
     "artist": "M83",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb5f5afb81942abd41d32dc2b5",
-    "genre": "X",
+    "genre": "Alternative",
     "year": 2001,
     "gender": "m",
     "country": "fr",
@@ -5951,7 +5951,7 @@
   {
     "artist": "Wham!",
     "image_uri": "https://i.scdn.co/image/028bf41acbd7858a4a8acf688a392d4ee9e369ef",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1983,
     "gender": "m",
     "country": "uk",
@@ -5987,7 +5987,7 @@
   {
     "artist": "Mitski",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebafb309e27fdb45e093958f9c",
-    "genre": "Indie",
+    "genre": "Alternative",
     "year": 2012,
     "gender": "f",
     "country": "us",
@@ -6113,7 +6113,7 @@
   {
     "artist": "Nat King Cole",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb410d394a57e185889a2740ac",
-    "genre": "X",
+    "genre": "Jazz",
     "year": 1952,
     "gender": "m",
     "country": "us",
@@ -6131,7 +6131,7 @@
   {
     "artist": "Louis Armstrong",
     "image_uri": "https://i.scdn.co/image/ab6772690000c46c4a0e9d5e55f9f3721c3243c5",
-    "genre": "X",
+    "genre": "Jazz",
     "year": 1923,
     "gender": "m",
     "country": "us",
@@ -6176,7 +6176,7 @@
   {
     "artist": "Keane",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb6fa4f7efaf78eb1bc0486d27",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2004,
     "gender": "m",
     "country": "uk",
@@ -6185,7 +6185,7 @@
   {
     "artist": "Dean Martin",
     "image_uri": "https://i.scdn.co/image/492d4ece2bf7c87952be47359f038182fbf15d9d",
-    "genre": "X",
+    "genre": "Country",
     "year": 1950,
     "gender": "m",
     "country": "us",
@@ -6194,7 +6194,7 @@
   {
     "artist": "Willy William",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebdde80699594b5d8641951c82",
-    "genre": "X",
+    "genre": "Electronic",
     "year": 2012,
     "gender": "m",
     "country": "fr",
@@ -6221,7 +6221,7 @@
   {
     "artist": "Ella Fitzgerald",
     "image_uri": "https://i.scdn.co/image/3c1d23141059785c8a863137d176319329dc17ef",
-    "genre": "X",
+    "genre": "Jazz",
     "year": 1947,
     "gender": "f",
     "country": "us",
@@ -6275,7 +6275,7 @@
   {
     "artist": "Sting",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9fdb4dab484a9f12e347c216",
-    "genre": "X",
+    "genre": "Rock",
     "year": 1985,
     "gender": "m",
     "country": "uk",
@@ -6311,7 +6311,7 @@
   {
     "artist": "The Jackson 5",
     "image_uri": "https://i.scdn.co/image/19f768d93f6c80f7d4ca5b906e1c0376a3704389",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1969,
     "gender": "m",
     "country": "us",
@@ -6365,7 +6365,7 @@
   {
     "artist": "Leona Lewis",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe9cf3862b8027eb5b9f6b831",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2007,
     "gender": "f",
     "country": "uk",
@@ -6446,7 +6446,7 @@
   {
     "artist": "Bill Withers",
     "image_uri": "https://i.scdn.co/image/96b85aec6907206572527e1eeec6569d5e977a38",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1971,
     "gender": "m",
     "country": "us",
@@ -6599,7 +6599,7 @@
   {
     "artist": "Ben Howard",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb7f6d3ce714aba5b2c38212dc",
-    "genre": "X",
+    "genre": "Alternative",
     "year": 2011,
     "gender": "m",
     "country": "uk",
@@ -6644,7 +6644,7 @@
   {
     "artist": "Michael Silverman",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd00227965860b698b447d5a0",
-    "genre": "X",
+    "genre": "Classical",
     "year": 2007,
     "gender": "m",
     "country": "us",
@@ -6653,7 +6653,7 @@
   {
     "artist": "Sade",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb92883b0e094a36d2f43ad284",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1984,
     "gender": "f",
     "country": "uk",
@@ -6725,7 +6725,7 @@
   {
     "artist": "Miracle Tones",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb397a7a1c7bbae495a35e8694",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2019,
     "gender": "x",
     "country": "sa",
@@ -6743,7 +6743,7 @@
   {
     "artist": "Gerardo Ortiz",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebcb687db0a712bf03959c4e4b",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2009,
     "gender": "m",
     "country": "us",
@@ -6959,7 +6959,7 @@
   {
     "artist": "Angus & Julia Stone",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb6991d9d87155e48247e2caf0",
-    "genre": "Indie",
+    "genre": "Alternative",
     "year": 2007,
     "gender": "x",
     "country": "au",
@@ -7094,7 +7094,7 @@
   {
     "artist": "Lionel Richie",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb002684808eb17d8b3645b57c",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1982,
     "gender": "m",
     "country": "us",
@@ -7130,7 +7130,7 @@
   {
     "artist": "AJ Tracey",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe6abb3f6a94e65798db7d73c",
-    "genre": "X",
+    "genre": "Hip Hop",
     "year": 2019,
     "gender": "m",
     "country": "uk",
@@ -7148,7 +7148,7 @@
   {
     "artist": "TKKG",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb332bec55998b0124ed7c362b",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2001,
     "gender": "x",
     "country": "sa",
@@ -7166,7 +7166,7 @@
   {
     "artist": "Max Richter",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebbce84a4b1311b0b4c60c0215",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2002,
     "gender": "m",
     "country": "uk",
@@ -7247,7 +7247,7 @@
   {
     "artist": "Otis Redding",
     "image_uri": "https://i.scdn.co/image/4ad89c805aff0fb76b01b6b62b39e21fcd8943c3",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1964,
     "gender": "m",
     "country": "us",
@@ -7256,7 +7256,7 @@
   {
     "artist": "LUDMILLA",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb551a86e4f23c9125316c603b",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2014,
     "gender": "f",
     "country": "br",
@@ -7346,7 +7346,7 @@
   {
     "artist": "Tina Turner",
     "image_uri": "https://i.scdn.co/image/cf860c0e880d74dafe187f732c0093af95fda142",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1978,
     "gender": "f",
     "country": "us",
@@ -7391,7 +7391,7 @@
   {
     "artist": "Tears For Fears",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb42ed2cb48c231f545a5a3dad",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1983,
     "gender": "m",
     "country": "uk",
@@ -7454,7 +7454,7 @@
   {
     "artist": "Tracy Chapman",
     "image_uri": "https://i.scdn.co/image/965060777aeacb43659097cddc16b741785a508f",
-    "genre": "X",
+    "genre": "Rock",
     "year": 1988,
     "gender": "f",
     "country": "us",
@@ -7472,7 +7472,7 @@
   {
     "artist": "Cyndi Lauper",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb05d7972efdf59f2e713f2ddc",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1983,
     "gender": "f",
     "country": "us",
@@ -7571,7 +7571,7 @@
   {
     "artist": "Lenny Kravitz",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb7e8726da6b15e258be59c13b",
-    "genre": "X",
+    "genre": "Rock",
     "year": 1989,
     "gender": "m",
     "country": "us",
@@ -7652,7 +7652,7 @@
   {
     "artist": "Audioslave",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd230aee424ec1acc85143fca",
-    "genre": "X",
+    "genre": "Alternative",
     "year": 2002,
     "gender": "m",
     "country": "us",
@@ -7760,7 +7760,7 @@
   {
     "artist": "Petit Biscuit",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb536b525b401e04a57e639f69",
-    "genre": "X",
+    "genre": "Electronic",
     "year": 2017,
     "gender": "m",
     "country": "fr",
@@ -7787,7 +7787,7 @@
   {
     "artist": "Skepta",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebba2a0554603cc961338b4a1b",
-    "genre": "X",
+    "genre": "Hip Hop",
     "year": 2007,
     "gender": "m",
     "country": "uk",
@@ -7931,7 +7931,7 @@
   {
     "artist": "Baby Lullaby Academy",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11162ca9ed88437eefa6cac",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 2014,
     "gender": "x",
     "country": "sa",
@@ -8003,7 +8003,7 @@
   {
     "artist": "The Goo Goo Dolls",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebbbc7ea7e83564c927c25774c",
-    "genre": "X",
+    "genre": "Rock",
     "year": 1987,
     "gender": "m",
     "country": "us",
@@ -8030,7 +8030,7 @@
   {
     "artist": "Pink Sweat$",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb2822fcd3337b030199b3861a",
-    "genre": "X",
+    "genre": "R&B",
     "year": 2021,
     "gender": "m",
     "country": "us",
@@ -8093,7 +8093,7 @@
   {
     "artist": "Jack & Jack",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9555a0b3231117c8cde1fca7",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2001,
     "gender": "m",
     "country": "us",
@@ -8111,7 +8111,7 @@
   {
     "artist": "Melim",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe47d73e3c02e350d98ab91eb",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2018,
     "gender": "x",
     "country": "br",
@@ -8147,7 +8147,7 @@
   {
     "artist": "Tyler Childers",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb192fe49fd00a709b5e34f440",
-    "genre": "Indie",
+    "genre": "Alternative",
     "year": 2011,
     "gender": "m",
     "country": "us",
@@ -8345,7 +8345,7 @@
   {
     "artist": "The Temptations",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb3f0f76df1047720f2e57fc35",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1964,
     "gender": "m",
     "country": "us",
@@ -8588,7 +8588,7 @@
   {
     "artist": "Sam Cooke",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb41aaa3a05d2ddba59454273e",
-    "genre": "X",
+    "genre": "R&B",
     "year": 1958,
     "gender": "m",
     "country": "us",
@@ -8678,7 +8678,7 @@
   {
     "artist": "Craig David",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe193dec6d352ccc0d3ed0221",
-    "genre": "X",
+    "genre": "R&B",
     "year": 2000,
     "gender": "m",
     "country": "uk",
@@ -8705,7 +8705,7 @@
   {
     "artist": "Ben&Ben",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb80e7c24a90d629c98d4dfa8f",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2019,
     "gender": "x",
     "country": "ph",
@@ -8775,9 +8775,9 @@
     "group_size": 1
   },
   {
-    "artist": "Benjamin Bl�mchen",
+    "artist": "Benjamin Blumchen",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebdda660380d0c92b8a62342aa",
-    "genre": "X",
+    "genre": "Entertainment",
     "year": 1977,
     "gender": "x",
     "country": "sa",
@@ -8786,7 +8786,7 @@
   {
     "artist": "M.I.A.",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebee0343832cf2bbf09a0c697d",
-    "genre": "X",
+    "genre": "Hip Hop",
     "year": 2005,
     "gender": "f",
     "country": "uk",
@@ -8840,7 +8840,7 @@
   {
     "artist": "Dave Matthews Band",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebc04724201a3cd1a81d7bba05",
-    "genre": "X",
+    "genre": "Alternative",
     "year": 1993,
     "gender": "m",
     "country": "us",
@@ -8885,7 +8885,7 @@
   {
     "artist": "Leonard Cohen",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd09c1295779cfb71683cee99",
-    "genre": "X",
+    "genre": "Rock",
     "year": 1967,
     "gender": "m",
     "country": "ca",
@@ -8894,7 +8894,7 @@
   {
     "artist": "Official HIGE DANdism",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb092745f452dbfc2324076290",
-    "genre": "X",
+    "genre": "Pop",
     "year": 2015,
     "gender": "m",
     "country": "jp",
@@ -8939,7 +8939,7 @@
   {
     "artist": "ONE OK ROCK",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb8777e097ef122463984c708f",
-    "genre": "X",
+    "genre": "Rock",
     "year": 2007,
     "gender": "m",
     "country": "jp",
@@ -8957,7 +8957,7 @@
   {
     "artist": "Los Bukis",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebf965d7facfd674f3780158a7",
-    "genre": "X",
+    "genre": "Pop",
     "year": 1977,
     "gender": "m",
     "country": "mx",
