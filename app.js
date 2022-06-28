@@ -610,10 +610,11 @@ function win(guess) {
     if (!getCookie("won")) {
       var winStreak = parseInt(getCookie("winStreak"));
       document.cookie = "winStreak=" + (winStreak + 1);
+      document.cookie = "won=1" + expires;
     }
-    winStreakContainer.innerHTML = "Current Streak: " + getCookie("winStreak") + " 🎶";
+    winStreakContainer.innerHTML = "Current Streak: " + getCookie("winStreak") + " 🎶"
     document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
-    document.cookie = "won=1" + expires;
+   
     printGuess(guess);
 
    
