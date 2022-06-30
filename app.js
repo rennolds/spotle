@@ -487,7 +487,7 @@ else {
   console.log('new person');
   document.cookie = 'mute = 0';
   document.cookie = 'winStreak = 0';
-  document.cookie = 'visited = 1' + expires;
+  document.cookie = 'visited = 1';
   document.cookie = 'guessCount = 1' + expires;
 }
 
