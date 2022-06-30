@@ -299,7 +299,7 @@
   {
     "artist": "Chris Brown",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebba4309876dbc0ef3222c5512",
-    "genre": "R%B",
+    "genre": "R&B",
     "year": 2005,
     "gender": "m",
     "country": "us",
@@ -1199,7 +1199,7 @@
   {
     "artist": "SZA",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5eb529f2198b3e9e77c0d5a665b",
-    "genre": "R&amp;B",
+    "genre": "R&B",
     "year": 2014,
     "gender": "f",
     "country": "us",
