@@ -289,8 +289,6 @@ let guessCount = 1;
 let artists = {};
 const searchable = [];
 
-const errorViv = document.querySelector('.error');
-
 await fetch('resources/round_5_test.json').then(function (response) {
   return response.json();
 }).then(function (data) {
@@ -309,23 +307,9 @@ await fetch('resources/round_5_test.json').then(function (response) {
     artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size);
   }
 }).catch (function (error) {
-  errorViv.innerHTML = errorViv.innerHTML + " JSON failed";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
-  console.log('something went wrong reading json');
   console.error(error);
 });
 
-if (searchable.length == 0) {
-  errorViv.innerHTML = errorViv.innerHTML + " no searchable artists";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
-}
-if (artists.length == 0) {
-  errorViv.innerHTML = errorViv.innerHTML + " no artists";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
-}
 
 var mysteryArtistSong;
 var mysteryArtistImage;
@@ -342,28 +326,6 @@ if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
 
-// if (today == '04/23/2022') {
-//   mysteryArtist = artists['ariana grande'];
-//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
-//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
-//   mysteryArtistName = 'Ariana Grande';
-//   spotleNumber = 2;
-// }
-// else if (today == '04/24/2022') {
-//   mysteryArtist = artists['fall out boy'];
-//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
-//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
-//   mysteryArtistName = 'Fall Out Boy';
-//   spotleNumber = 3;
-//  }
-//  else if (today == '04/25/2022') {
-//   mysteryArtist = artists['bruno mars'];
-//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708';
-//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5';
-//   mysteryArtistName = 'Bruno Mars';
-//   spotleNumber = 4;
-//  }
-
  await fetch('resources/mysteryArtists.json').then(function (response) {
   return response.json();
 }).then(function (data) {
@@ -374,31 +336,15 @@ today = mm + '/' + dd + '/' + yyyy;
       mysteryArtistImage = data[i].image_uri;
       mysteryArtistName = data[i].artist;
       spotleNumber = i + 1;
+      console.log("mystery artist found: " + mysteryArtistName);
     }
   }
 }).catch (function (error) {
   console.log('something went wrong reading mystery artist data');
-  errorViv.innerHTML = errorViv.innerHTML + " mystery artist failed";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
   console.error(error);
 });
 
-// async function getMysteryData() {
-//   const result = await csv("resources/mysteryArtists.csv")
-//     console.log(result);
-//     for (var i = 0; i < result.length; i++) {
-//       if (result[i].date == today) {
-//         console.log('got here');
-//         mysteryArtist = artists.get(result[i].artist.toLowerCase());
-//         mysteryArtistSong = result[i].song_uri;
-//         mysteryArtistImage = result[i].image_uri;
-//         mysteryArtistName = result[i].artist;
-//       }
-//     }
-// }
 
-// getMysteryData();
 
 
 const gameContainer = document.querySelector('.game-container');
@@ -429,9 +375,6 @@ try {
   rollSound = new Audio(mysteryArtistSong);
 } catch {
   console.log('failed to get audio');
-  errorViv.innerHTML = errorViv.innerHTML + " failed to get audio";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
 }
 
 
