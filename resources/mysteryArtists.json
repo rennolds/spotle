@@ -580,8 +580,12 @@
     "artist": "Bob Marley",
     "song_uri": "https://p.scdn.co/mp3-preview/cd547cf59938b97baeaf33c2bb86febeaf021243?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731c40418d1c37d727e8e91b04"
+  },
+  {
+    "date": "07/30/2022",
+    "artist": "P!nk",
+    "song_uri": "https://p.scdn.co/mp3-preview/128669ff038e13b680277a3dd1913f766a0c1cb5?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2735a45d5041e4ffcb9f756f740"
   }
-
- 
 
 ]
