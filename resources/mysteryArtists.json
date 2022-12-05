@@ -1318,5 +1318,47 @@
     "artist": "Bruno Mars",
     "song_uri": "https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5"
+  },
+  {
+    "date": "12/04/2022",
+    "artist": "Ariana Grande",
+    "song_uri": "https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605"
+  },
+  {
+    "date": "12/05/2022",
+    "artist": "Fall Out Boy",
+    "song_uri": "https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5"
+  },
+  {
+    "date": "12/06/2022",
+    "artist": "Bruno Mars",
+    "song_uri": "https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5"
+  },
+  {
+    "date": "12/07/2022",
+    "artist": "Halsey",
+    "song_uri": "https://p.scdn.co/mp3-preview/401f2dd43e382b45a6ef44a9f0b2d0edfffd9d9c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737636e1c9e67eaafc9f49aefd"
+  },
+  {
+    "date": "12/08/2022",
+    "artist": "Kendrick Lamar",
+    "song_uri": "https://p.scdn.co/mp3-preview/29e5b097f91b7f04953283c2e46e08302f037f27?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699"
+  },
+  {
+    "date": "12/09/2022",
+    "artist": "OutKast",
+    "song_uri": "https://p.scdn.co/mp3-preview/5957b021be09bcb859d4d490bf36c88a52d793c7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736a6387ab37f64034cdc7b367"
+  },
+  {
+    "date": "12/10/2022",
+    "artist": "Twenty One Pilots",
+    "song_uri": "https://p.scdn.co/mp3-preview/c6011d475d777067dbe2907abd3ae133e8b2a828?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273de03bfc2991fd5bcfde65ba3"
   }
 ]
