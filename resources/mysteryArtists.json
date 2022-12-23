@@ -1441,8 +1441,14 @@
   },
   {
     "date": "12/24/2022",
-    "artist": "Michael Jackson",
-    "song_uri": "https://p.scdn.co/mp3-preview/71638a1eac196a5daa9fbf152693585e323d8558?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734121faee8df82c526cbab2be"
+    "artist": "Justin Bieber",
+    "song_uri": "https://p.scdn.co/mp3-preview/b1d8ae6e830851c89f237d0b64b5e37ceac60573?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730315efc555d5a157b0392652"
+  },
+  {
+    "date": "12/25/2022",
+    "artist": "Mariah Carey",
+    "song_uri": "https://p.scdn.co/mp3-preview/0d3f660241b04b1e95ae43decced213696114ad0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734246e3158421f5abb75abc4f"
   }
 ]
