@@ -1450,5 +1450,41 @@
     "artist": "Mariah Carey",
     "song_uri": "https://p.scdn.co/mp3-preview/0d3f660241b04b1e95ae43decced213696114ad0?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2734246e3158421f5abb75abc4f"
+  },
+  {
+    "date": "12/26/2022",
+    "artist": "JAY-Z",
+    "song_uri": "https://p.scdn.co/mp3-preview/1151a23733984e0205bb3c184c9d981704eb3c3a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734a767758e8ebe2443591c9fd"
+  },
+  {
+    "date": "12/27/2022",
+    "artist": "Luke Bryan",
+    "song_uri": "https://p.scdn.co/mp3-preview/233bbb1b2e76364671f584d633725627b094f87c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273dab325d38db91d858446d4b4"
+  },
+  {
+    "date": "12/28/2022",
+    "artist": "Mac Miller",
+    "song_uri": "https://p.scdn.co/mp3-preview/bf03ddff4fe0da5164998c42f2d4a7b0f7bc1497?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27350570144b4a9a459406f9a3d"
+  },
+  {
+    "date": "12/29/2022",
+    "artist": "The Cure",
+    "song_uri": "https://p.scdn.co/mp3-preview/958e347444599fa593cb2d86459e67ad18719c72?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e410fa31e3dfcc7521cde86d"
+  },
+  {
+    "date": "12/30/2022",
+    "artist": "Jonas Brothers",
+    "song_uri": "https://p.scdn.co/mp3-preview/b2a53f557ee0b4aabd483d4297be4184af41b62a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736052733814bd844a5955f1b1"
+  },
+  {
+    "date": "12/31/2022",
+    "artist": "Harry Styles",
+    "song_uri": "https://p.scdn.co/mp3-preview/f0c2adc40766cd8c1ec3f2bc6e1cc293a77ba684?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732e8ed79e177ff6011076f5f0"
   }
 ]
