@@ -1486,5 +1486,65 @@
     "artist": "Harry Styles",
     "song_uri": "https://p.scdn.co/mp3-preview/f0c2adc40766cd8c1ec3f2bc6e1cc293a77ba684?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2732e8ed79e177ff6011076f5f0"
+  },
+  {
+    "date": "01/01/2023",
+    "artist": "Drake",
+    "song_uri": "https://p.scdn.co/mp3-preview/997cd19a9e46b086516c57114a4ba6da5b078d91?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f907de96b9a4fbc04accc0d5"
+  },
+  {
+    "date": "01/02/2023",
+    "artist": "The Strokes",
+    "song_uri": "https://p.scdn.co/mp3-preview/e280a3376379b8525712d0c94c341575afc79822?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27313f2466b83507515291acce4"
+  },
+  {
+    "date": "01/03/2023",
+    "artist": "Earth, Wind & Fire",
+    "song_uri": "https://p.scdn.co/mp3-preview/0537091c76250e4c5909f088134788a5c4101985?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734dd033f4cf3a0a58059cde69"
+  },
+  {
+    "date": "01/04/2023",
+    "artist": "Linkin Park",
+    "song_uri": "https://p.scdn.co/mp3-preview/90436e1bcbbc3c0cac97fa40305aaf86f309a573?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e2f039481babe23658fc719a"
+  },
+  {
+    "date": "01/05/2023",
+    "artist": "Eminem",
+    "song_uri": "https://p.scdn.co/mp3-preview/1d63d428f0ac2ffe2f4434265031124747363500?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736ca5c90113b30c3c43ffb8f4"
+  },
+  {
+    "date": "01/06/2023",
+    "artist": "Kesha",
+    "song_uri": "https://p.scdn.co/mp3-preview/de2458fef52b0290e47bbdcf555d7f14b91b434d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737a6339d6ddfd579f77559b3c"
+  },
+  {
+    "date": "01/07/2023",
+    "artist": "Blake Shelton",
+    "song_uri": "https://p.scdn.co/mp3-preview/462ed45aa32d848c90a4be54002e4014a6c1d66e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273de2b6ae73697b2da4d3e9c27"
+  },
+  {
+    "date": "01/08/2023",
+    "artist": "Nirvana",
+    "song_uri": "https://p.scdn.co/mp3-preview/9781673a70278effbced98841341a2321e846a62?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e175a19e530c898d167d39bf"
+  },
+  {
+    "date": "01/09/2023",
+    "artist": "Paramore",
+    "song_uri": "https://p.scdn.co/mp3-preview/c95e281bf76899c1d7a0cf22afeb832e32fc061f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bee754528c08d5ff6799a1eb"
+  },
+  {
+    "date": "01/10/2023",
+    "artist": "The Kid LAROI",
+    "song_uri": "https://p.scdn.co/mp3-preview/ac8171f8f8adc90bf412ede4cc9eaee2766915b2?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738e6551a2944764bc8e33a960"
   }
 ]
