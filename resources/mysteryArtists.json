@@ -1546,5 +1546,29 @@
     "artist": "The Kid LAROI",
     "song_uri": "https://p.scdn.co/mp3-preview/ac8171f8f8adc90bf412ede4cc9eaee2766915b2?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2738e6551a2944764bc8e33a960"
+  },
+  {
+    "date": "01/11/2023",
+    "artist": "Taylor Swift",
+    "song_uri": "https://p.scdn.co/mp3-preview/5d487e1f146e6ed789453e2b0df95bee80124ddf?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273318443aab3531a0558e79a4d"
+  },
+  {
+    "date": "01/12/2023",
+    "artist": "Billie Eilish",
+    "song_uri": "https://p.scdn.co/mp3-preview/96cd58badeeabc3c3037b4649571c8fb6b8ebd60?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce"
+  },
+  {
+    "date": "01/13/2023",
+    "artist": "50 Cent",
+    "song_uri": "https://p.scdn.co/mp3-preview/91d3abbce4ea8c8809aca213a7aea87991ad4280?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f7f74100d5cc850e01172cbf"
+  },
+  {
+    "date": "01/14/2023",
+    "artist": "Green Day",
+    "song_uri": "https://p.scdn.co/mp3-preview/2d63c6b93eb7a6af1018472d0f0a93a924fef412?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27308a1b1e0674086d3f1995e1b"
   }
 ]
