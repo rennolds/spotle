@@ -1567,8 +1567,32 @@
   },
   {
     "date": "01/14/2023",
-    "artist": "Green Day",
-    "song_uri": "https://p.scdn.co/mp3-preview/2d63c6b93eb7a6af1018472d0f0a93a924fef412?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b27308a1b1e0674086d3f1995e1b"
+    "artist": "WALK THE MOON",
+    "song_uri": "https://p.scdn.co/mp3-preview/78558b79e4571208d3bf6e6a80d06e3f23511abd?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27343294cfa2688055c9d821bf3"
+  },
+  {
+    "date": "01/15/2023",
+    "artist": "Tyler, The Creator",
+    "song_uri": "https://p.scdn.co/mp3-preview/ffe2a8087b844352de557c4856249fcea85f3d35?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57"
+  },
+  {
+    "date": "01/16/2023",
+    "artist": "Lil Nas X",
+    "song_uri": "https://p.scdn.co/mp3-preview/d62f4961618e4b4d40d823a11c6a6c1bf3fbd649?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273be82673b5f79d9658ec0a9fd"
+  },
+  {
+    "date": "01/17/2023",
+    "artist": "Selena Gomez",
+    "song_uri": "https://p.scdn.co/mp3-preview/b96d1c40ff6badba96c7f764ef5a13282120a4c5?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732abcc266597eb46f897a8666"
+  },
+  {
+    "date": "01/18/2023",
+    "artist": "Bad Bunny",
+    "song_uri": "https://p.scdn.co/mp3-preview/4658112a470b70c3cf7f32472ff81c1144fe5529?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27349d694203245f241a1bcaa72"
   }
-]
+] 
