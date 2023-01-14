@@ -348,16 +348,18 @@ async function fetchMysteryArtist() {
 
 var decodedArtist;
 var queryString = window.location.search;
+const challengeGame = (queryString ? true : false);
 
 queryString = queryString.substring(1)
 
-console.log("QUERY STRING --->", queryString);
 
-if (!queryString) {
+
+if (!challengeGame) {
 
   await fetchMysteryArtist();
+
 }
-if (queryString) {
+else {
 
   decodedArtist = atob(queryString);
   decodedArtist = decodedArtist.toLowerCase();
@@ -385,6 +387,7 @@ const shareBtn = document.querySelector('.share-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
+const todaysMessage = document.querySelector('.todays-artist');
 const congratulations = document.querySelector('.congratulations');
 const muteBtn = document.querySelector('.mute-btn');
 const muteImg = document.querySelector('.mute-img');
@@ -398,7 +401,6 @@ try {
 } catch {
   console.log('failed to get audio');
 }
-
 
 let firstGuess = true;
 let guessedArtists = [];
@@ -417,42 +419,44 @@ var date = new Date();
 var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
 const expires = "; expires=" + midnight.toGMTString();
 
-if (getCookie('visited') != null) {
-  console.log('remembered');
-  guessCount = getCookie('guessCount');
-  guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
+if (getCookie('mute') == 1) {
+  muteImg.src = 'resources/volume_off.svg';
+} 
 
-  if (getCookie('mute') == 1) {
-    muteImg.src = 'resources/volume_off.svg';
-  }
+if (!challengeGame) {
+  if (getCookie('visited') != null) {
+    console.log('remembered');
+    guessCount = getCookie('guessCount');
+    guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
 
-  if (guessCount > 1) {
-    intro.classList.add('hidden');
-  }
-  if (guessCount == 10 && !(getCookie('won'))) {
-    guessCountContainer.classList.add('last-guess');
-  }
-  printPreviousGuesses();
-  //print guesses function
+    if (guessCount > 1) {
+      intro.classList.add('hidden');
+    }
+    if (guessCount == 10 && !(getCookie('won'))) {
+      guessCountContainer.classList.add('last-guess');
+    }
+    printPreviousGuesses();
+    //print guesses function
 
-  if (getCookie('won')) {
-    intro.classList.add('hidden');
-    searchInput.setAttribute('readonly', true);
-    win(mysteryArtist);
-  }
-  if (getCookie('lost')) {
-    intro.classList.add('hidden');
-    searchInput.setAttribute('readonly', true);
-    guessCountContainer.innerHTML = "Nice try...";
-    loss();
+    if (getCookie('won')) {
+      intro.classList.add('hidden');
+      searchInput.setAttribute('readonly', true);
+      win(mysteryArtist);
+    }
+    if (getCookie('lost')) {
+      intro.classList.add('hidden');
+      searchInput.setAttribute('readonly', true);
+      guessCountContainer.innerHTML = "Nice try...";
+      loss();
 
+    }
   }
-}
-else {
-  console.log('new person');
-  document.cookie = 'mute = 0';
-  document.cookie = 'visited = 1' + expires;
-  document.cookie = 'guessCount = 1' + expires;
+  else {
+    console.log('new person');
+    document.cookie = 'mute = 0';
+    document.cookie = 'visited = 1' + expires;
+    document.cookie = 'guessCount = 1' + expires;
+  }
 }
 
 
@@ -571,11 +575,64 @@ function win(guess) {
       guessCountContainer.classList.remove('last-guess');
     }
 
+    console.log("guess count --> ", guessCount)
+    if (challengeGame) {
+      todaysMessage.innerHTML = "The artist was...";
+      congratulations.innerHTML = ""
+    }
+
     document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
     document.cookie = "won=1" + expires;
     printGuess(guess);
 
-   
+    if (!challengeGame) {
+
+      switch (guessCount) {
+        case 1:
+          congratulations.innerHTML = "Wow. Are they your favorite?"
+          break;
+        
+        case 2:
+          congratulations.innerHTML = "Did you cheat...?"
+          break;  
+        
+        case 3:
+          congratulations.innerHTML = "You are a Spotify Savant!"
+          break;
+      
+        case 4:
+          congratulations.innerHTML = "4/10...incredible!"
+          break;  
+          
+        case 5:
+          congratulations.innerHTML = "Five. Impressive."
+          break;
+        
+        case 6:
+          congratulations.innerHTML = "Tell your friends!"
+          break;  
+        
+        case 7:
+          congratulations.innerHTML = "Congrats!"
+          break;
+      
+        case 8:
+          congratulations.innerHTML = "Good job, not great...but good."
+          break; 
+
+        case 9:
+          congratulations.innerHTML = "Nice, that was close!"
+          break;
+      
+        case 10:
+          congratulations.innerHTML = "Last guess! On the buzzer!"
+          break; 
+      }
+    }
+    else {
+      congratulations.innerHTML = "Tell your friend... too easy."
+    }
+
     try {
       if (getCookie('mute') == 0) {
         rollSound.play(); 
@@ -585,7 +642,6 @@ function win(guess) {
         console.error(error);
         console.log('no audio to play');
       }
-    
     
     setTimeout(() => {
       winOverlay.classList.remove('win-overlay-hide');
@@ -601,9 +657,10 @@ function win(guess) {
         }
       }, 1200);
     
-    
-    calculateHMSleft();
-    setInterval(calculateHMSleft, 1000);
+    if (!challengeGame) {
+      calculateHMSleft();
+      setInterval(calculateHMSleft, 1000);
+    }
 
     searchInput.setAttribute('readonly', true);
     //display
@@ -626,7 +683,13 @@ function  calculateHMSleft() {
 
 function handleShare() {
   //copy to clipboard
-  var textToCopy = "Spotle #" + spotleNumber + "🎧\n\n";
+  var textToCopy
+  if (!challengeGame) {
+    textToCopy = "Spotle #" + spotleNumber + "🎧\n\n";
+  }
+  else {
+    textToCopy = "Spotle Challenge 🎧\n\n"
+  }
   var textToCopy2 = "";
   
   for (var i = 1; i < guessCount; i++)
@@ -667,7 +730,13 @@ function loss() {
     guessCountContainer.classList.remove('last-guess');
   }
 
-  congratulations.innerHTML = "Good try. Next time!";
+  if (!challengeGame) {
+    congratulations.innerHTML = "Good try. Next time!";
+  }
+  else {
+    congratulations.innerHTML = "Tough serve...";
+  }
+
 
   setTimeout(() => {
     winOverlay.classList.remove('win-overlay-hide');
@@ -932,6 +1001,7 @@ function checkCriteria(nationalityElement, genreElement, genderElement, groupEle
     flipDiv(albumElement, 'close');
   }
 }
+
 function printPreviousGuesses() {
   for (var i = 0; i < guessCount - 1; i++) {
     var temp = "guess" + String(i+1);
