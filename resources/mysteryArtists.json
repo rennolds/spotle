@@ -1600,5 +1600,17 @@
     "artist": "P!nk",
     "song_uri": "https://p.scdn.co/mp3-preview/4805ab360cac4be440dcc833961fa01f2039b1b8?cid=98f79e400795491cbc5f69b71346570",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2736f3451faa271fbe470685f34"
+  },
+  {
+    "date": "01/20/2022",
+    "artist": "Rihanna",
+    "song_uri": "https://p.scdn.co/mp3-preview/60cff530f860b1961df9c74df2cb1d50ef5df103?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b9ff0a5f40d3406aed5e5e3b"
+  },
+  {
+    "date": "01/21/2022",
+    "artist": "5 Seconds of Summer",
+    "song_uri": "https://p.scdn.co/mp3-preview/b26976b3ae4e74fa17e86cfb0631d8442e35963a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27393432e914046a003229378da"
   }
 ] 
