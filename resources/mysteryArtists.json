@@ -1602,15 +1602,21 @@
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2736f3451faa271fbe470685f34"
   },
   {
-    "date": "01/20/2022",
+    "date": "01/20/2023",
     "artist": "Rihanna",
     "song_uri": "https://p.scdn.co/mp3-preview/60cff530f860b1961df9c74df2cb1d50ef5df103?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273b9ff0a5f40d3406aed5e5e3b"
   },
   {
-    "date": "01/21/2022",
+    "date": "01/21/2023",
     "artist": "5 Seconds of Summer",
     "song_uri": "https://p.scdn.co/mp3-preview/b26976b3ae4e74fa17e86cfb0631d8442e35963a?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27393432e914046a003229378da"
+  },
+  {
+    "date": "01/22/2023",
+    "artist": "Daft Punk",
+    "song_uri": "https://p.scdn.co/mp3-preview/a13551566573594eb4d12c396775b3fb0fca6e66?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731d5cf960a92bb8b03fc2be7f"
   }
 ] 
