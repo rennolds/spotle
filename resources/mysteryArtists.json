@@ -1618,5 +1618,11 @@
     "artist": "Daft Punk",
     "song_uri": "https://p.scdn.co/mp3-preview/a13551566573594eb4d12c396775b3fb0fca6e66?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731d5cf960a92bb8b03fc2be7f"
+  },
+  {
+    "date": "01/23/2023",
+    "artist": "Doja Cat",
+    "song_uri": "https://p.scdn.co/mp3-preview/7825a58b6e1a9c4e550191223a18a3b268643d0a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27382b243023b937fd579a35533"
   }
 ] 
