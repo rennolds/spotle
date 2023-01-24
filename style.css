@@ -845,7 +845,9 @@ button i {
   position: relative;
 }
 
-
+.help-guess {
+  position: relative;
+}
 
 header {
   display: flex;
