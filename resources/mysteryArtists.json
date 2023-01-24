@@ -1630,5 +1630,11 @@
     "artist": "Queen",
     "song_uri": "https://p.scdn.co/mp3-preview/c3e18dc90fd2acaec0f694beadc02a4f702aec9f?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27393c65b02f4a72cd6eccf446d"
+  },
+  {
+    "date": "01/25/2023",
+    "artist": "Avril Lavigne",
+    "song_uri": "https://p.scdn.co/mp3-preview/a483f9955188f39637f4fd143ef47d47fbc55edf?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273476cdf5837ae39eee951cc15"
   }
 ] 
