@@ -1636,5 +1636,17 @@
     "artist": "Avril Lavigne",
     "song_uri": "https://p.scdn.co/mp3-preview/a483f9955188f39637f4fd143ef47d47fbc55edf?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273476cdf5837ae39eee951cc15"
+  },
+  {
+    "date": "01/26/2023",
+    "artist": "Bon Iver",
+    "song_uri": "https://p.scdn.co/mp3-preview/5d2b2e083488546aa75061deaccde85a5837b109?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bf7c317a63c4f128b8823406"
+  },
+  {
+    "date": "01/27/2023",
+    "artist": "My Chemical Romance",
+    "song_uri": "https://p.scdn.co/mp3-preview/826f3461c8b7b6207e81bb15f2ebf90f01538582?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27317f77fab7e8f18d5f9fee4a1"
   }
 ] 
