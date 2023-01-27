@@ -1648,5 +1648,29 @@
     "artist": "My Chemical Romance",
     "song_uri": "https://p.scdn.co/mp3-preview/826f3461c8b7b6207e81bb15f2ebf90f01538582?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27317f77fab7e8f18d5f9fee4a1"
+  },
+  {
+    "date": "01/28/2023",
+    "artist": "Florida Georgia Line",
+    "song_uri": "https://p.scdn.co/mp3-preview/773b44828533fafac2eefa658ec7b88f85bec23e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f5601676db551cb2a09e70a0"
+  },
+  {
+    "date": "01/29/2023",
+    "artist": "Skrillex",
+    "song_uri": "https://p.scdn.co/mp3-preview/da21c15529d48320249428240ed74bfd90dc4d6d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736081278cb62df2757d55633b"
+  },
+  {
+    "date": "01/30/2023",
+    "artist": "The Police",
+    "song_uri": "https://p.scdn.co/mp3-preview/4d8861bdc6a87ce2a5578ecb2fc1b65c5d8cb4f8?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c8e97cafeb2acb85b21a777e"
+  },
+  {
+    "date": "01/31/2023",
+    "artist": "Black Eyed Peas",
+    "song_uri": "https://p.scdn.co/mp3-preview/a380d9cd4fc72df56cb71b0965c51c7e51ddaab3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27329a42ba069a854c9078377b4"
   }
 ] 
