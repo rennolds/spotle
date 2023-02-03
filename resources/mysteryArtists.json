@@ -1690,5 +1690,41 @@
     "artist": "Lady GaGa",
     "song_uri": "https://p.scdn.co/mp3-preview/e9aeb6d6d57c00cf4c1bf1f2ad4fd915147222b7?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273631810af03785dbad83f5c81"
+  },
+  {
+    "date": "02/04/2023",
+    "artist": "Katy Perry",
+    "song_uri": "https://p.scdn.co/mp3-preview/1df30fc9a11b825b0a8ca4f304dee3210e2edd87?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cd3978ebe35d93a07249b97f"
+  },
+  {
+    "date": "02/05/2023",
+    "artist": "Maroon 5",
+    "song_uri": "https://p.scdn.co/mp3-preview/a2d747c97ba5cd6af6ddb2e4c8cdf9e8ec5e5628?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27392f2d790c6a97b195f66d51e"
+  },
+  {
+    "date": "02/06/2023",
+    "artist": "The Fray",
+    "song_uri": "https://p.scdn.co/mp3-preview/3896c6ba6208b692e7b04a8651d289a1ae4bcf2b?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27359b8b957f164ce660919f1f4"
+  },
+  {
+    "date": "02/07/2023",
+    "artist": "Fetty Wap",
+    "song_uri": "https://p.scdn.co/mp3-preview/1bfdf966666378a6984063ef0631860e5286d587?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731769fa68b9643ca67c4d44ce"
+  },
+  {
+    "date": "02/08/2023",
+    "artist": "Chris Brown",
+    "song_uri": "https://p.scdn.co/mp3-preview/9bac31f7abf2c1a427edf7aceecbca6b8c66603c?cid=98f79e400795491cbc5f69b71346570",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b0d747e54b78eb460dcb9316"
+  },
+  {
+    "date": "02/09/2023",
+    "artist": "Michael Jackson",
+    "song_uri": "https://p.scdn.co/mp3-preview/71638a1eac196a5daa9fbf152693585e323d8558?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734121faee8df82c526cbab2be"
   }
 ] 
