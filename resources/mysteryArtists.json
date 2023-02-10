@@ -1732,5 +1732,11 @@
     "artist": "Juice WRLD",
     "song_uri": "https://p.scdn.co/mp3-preview/ea58fe5f6c03dc8f61ed9168bfc4d404d1f486f2?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2733e0698e4ae5ffb82a005aeeb"
+  },
+   {
+    "date": "02/11/2023",
+    "artist": "Mumford & Sons",
+    "song_uri": "https://p.scdn.co/mp3-preview/a679c8f65021509550b9e2831638716e54cb367f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e5d3f32e37004060183a5fc5"
   }
 ] 
