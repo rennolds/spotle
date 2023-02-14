@@ -1750,5 +1750,11 @@
     "artist": "Frank Ocean",
     "song_uri": "https://p.scdn.co/mp3-preview/e874387e6119a7af84a941c39ff0241156b54515?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2737aede4855f6d0d738012e2e5"
+  },
+  {
+    "date": "02/14/2023",
+    "artist": "J. Cole",
+    "song_uri": "https://p.scdn.co/mp3-preview/1b0830cdae4e0ea251fc7fe9b2a8216f98bd7c06?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c6e0948bbb0681ff29cdbae8"
   }
 ] 
