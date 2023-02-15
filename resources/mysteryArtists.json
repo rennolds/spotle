@@ -1756,5 +1756,11 @@
     "artist": "J. Cole",
     "song_uri": "https://p.scdn.co/mp3-preview/1b0830cdae4e0ea251fc7fe9b2a8216f98bd7c06?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273c6e0948bbb0681ff29cdbae8"
+  },
+  {
+    "date": "02/15/2023",
+    "artist": "Olivia Rodrigo",
+    "song_uri": "https://p.scdn.co/mp3-preview/3849f6e821a9f55bc736e53791b8d88938e3034e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a"
   }
 ] 
