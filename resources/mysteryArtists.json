@@ -1762,5 +1762,11 @@
     "artist": "Olivia Rodrigo",
     "song_uri": "https://p.scdn.co/mp3-preview/3849f6e821a9f55bc736e53791b8d88938e3034e?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a"
+  },
+  {
+    "date": "02/16/2023",
+    "artist": "Madonna",
+    "song_uri": "https://p.scdn.co/mp3-preview/90cc0a8d47cc883d9b94085c979ef7e9d3e53853?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731fc9fd5d701ee05cb39b7b19"
   }
 ] 
