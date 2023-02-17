@@ -901,6 +901,10 @@ header {
 .yesterday-name {
   color: #ffff;
   margin-left: .5rem;
+  display: flex;
+  text-align: center;
+  position: relative;
+  top: 5%;
 }
 .yesterdays-artist:hover .front {
   /* transform: rotateY(180deg);  */
