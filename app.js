@@ -1,3 +1,5 @@
+document.addEventListener("touchstart", function() {}, true);
+
 const africa = [
   'DZ',
   'AO',
@@ -332,6 +334,8 @@ var mysteryArtistImage;
 var mysteryArtistName;
 var mysteryArtist;
 var spotleNumber;
+var yesterdayMysteryArtist;
+var yesterdayMysteryArtistImage;
 var today = new Date();
 const yyyy = today.getFullYear();
 let mm = today.getMonth() + 1; // Months start at 0!
@@ -341,28 +345,6 @@ if (dd < 10) dd = '0' + dd;
 if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
-
-// if (today == '04/23/2022') {
-//   mysteryArtist = artists['ariana grande'];
-//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708';
-//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605';
-//   mysteryArtistName = 'Ariana Grande';
-//   spotleNumber = 2;
-// }
-// else if (today == '04/24/2022') {
-//   mysteryArtist = artists['fall out boy'];
-//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708';
-//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5';
-//   mysteryArtistName = 'Fall Out Boy';
-//   spotleNumber = 3;
-//  }
-//  else if (today == '04/25/2022') {
-//   mysteryArtist = artists['bruno mars'];
-//   mysteryArtistSong = 'https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708';
-//   mysteryArtistImage = 'https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5';
-//   mysteryArtistName = 'Bruno Mars';
-//   spotleNumber = 4;
-//  }
 
  await fetch('resources/mysteryArtists.json').then(function (response) {
   return response.json();
@@ -374,6 +356,10 @@ today = mm + '/' + dd + '/' + yyyy;
       mysteryArtistImage = data[i].image_uri;
       mysteryArtistName = data[i].artist;
       spotleNumber = i + 1;
+
+      yesterdayMysteryArtist = data[i-1].artist;
+      yesterdayMysteryArtistImage = artists[data[i-1].artist.toLowerCase()].imageUri;
+
     }
   }
 }).catch (function (error) {
@@ -422,6 +408,11 @@ const muteImg = document.querySelector('.mute-img');
 const helpExitBtn = document.querySelector('.help-exit-btn');
 const helpBtn = document.querySelector('.help-btn');
 const helpOverlay = document.querySelector('.help-overlay');
+const yesterdayImage = document.querySelector('.yesterday-image');
+const yesterdayName = document.querySelector('.yesterday-name');
+
+yesterdayName.innerHTML += String(yesterdayMysteryArtist);
+yesterdayImage.src = yesterdayMysteryArtistImage;
 var rollSound;
 
 try {

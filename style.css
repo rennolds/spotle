@@ -858,3 +858,58 @@ header {
   width: 100%;
 }
 
+.yesterdays-artist {
+  position: flex;
+  margin-right: 8em;
+  margin-top: -.25rem;
+  justify-content: center;
+}
+.front {
+  background: transparent;
+  /* border-style: solid;
+  border-color: #178f41;
+  border-radius: 1rem; */
+  width: 150px;
+  height: 40px;
+  transition: 0.5s;
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+}
+.back {
+  background: transparent;
+  width: 120px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  direction: row;
+  flex: 1;
+  display: none;
+  justify-content: center;
+}
+.front-text {
+  color: #ffff;
+  margin-top: .5rem;
+}
+.yesterday-image {
+  border-radius: 50%;
+  object-fit: cover;
+  width:39px;
+  height:39px;
+}
+.yesterday-name {
+  color: #ffff;
+  margin-left: .5rem;
+}
+.yesterdays-artist:hover .front {
+  /* transform: rotateY(180deg);  */
+  opacity: 0;
+  animation: transitionOut .25s;
+}
+.yesterdays-artist:hover .back {
+  display: flex;
+  animation: transitionIn 3s;
+}
+
+
