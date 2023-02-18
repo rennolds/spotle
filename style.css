@@ -557,6 +557,7 @@ button i {
 }
 
 .credits {
+  position: sticky;
   color: #ffff;
   font-style: normal;
   font-weight: 500;
