@@ -30,16 +30,6 @@ html {
   opacity: 0;
 }
 
-.green-example {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.yellow-example {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .green {
   font-weight: bold;
   background-color: rgba(106,208,116,.8);
@@ -59,6 +49,15 @@ html {
   animation: error 4s;
 }
 
+.intro-example {
+  margin-bottom: 75px;
+}
+
+.intro-example-guess-text {
+  margin-top: 1.25rem;
+  font-size: 150%;
+  font-family: 'Permanent Marker', cursive;
+}
 
 #intro {
   color: #ffff;
@@ -70,11 +69,6 @@ html {
 
 #intro .intro-description {
   margin-top: 1.25rem;
-}
-
-#intro .intro-border {
-  border-bottom: 1px solid #677272;
-  margin-top: 1rem;
 }
 
 #intro .intro-music-warning {
@@ -563,6 +557,7 @@ button i {
 }
 
 .credits {
+  position: sticky;
   color: #ffff;
   font-style: normal;
   font-weight: 500;
@@ -792,20 +787,6 @@ button i {
   }
 }
 
-.error {
-  font-size: 300%;
-  font: inerhit;
-  color:#ffff;
-  display: none;
-}
-
-.error-show {
-  font-size: 300%;
-  font: inerhit;
-  color:#ffff;
-}
-
-
 .mute-btn img {
   height: 30px;
   width: 30px;
@@ -845,8 +826,8 @@ button i {
   position: relative;
 }
 
-.help-guess {
-  position: relative;
+.help-arrow {
+  position: absolute;
 }
 
 header {
@@ -866,9 +847,6 @@ header {
 }
 .front {
   background: transparent;
-  /* border-style: solid;
-  border-color: #178f41;
-  border-radius: 1rem; */
   width: 120px;
   height: 40px;
   transition: 0.5s;
