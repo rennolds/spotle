@@ -59,6 +59,10 @@ html {
   animation: error 4s;
 }
 
+.intro-example {
+  margin-bottom: 100px;
+  background-color: blue;
+}
 
 #intro {
   color: #ffff;
@@ -793,20 +797,6 @@ button i {
   }
 }
 
-.error {
-  font-size: 300%;
-  font: inerhit;
-  color:#ffff;
-  display: none;
-}
-
-.error-show {
-  font-size: 300%;
-  font: inerhit;
-  color:#ffff;
-}
-
-
 .mute-btn img {
   height: 30px;
   width: 30px;
@@ -867,9 +857,6 @@ header {
 }
 .front {
   background: transparent;
-  /* border-style: solid;
-  border-color: #178f41;
-  border-radius: 1rem; */
   width: 120px;
   height: 40px;
   transition: 0.5s;
