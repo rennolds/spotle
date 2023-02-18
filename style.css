@@ -845,8 +845,8 @@ button i {
   position: relative;
 }
 
-.help-guess {
-  position: relative;
+.help-arrow {
+  position: absolute;
 }
 
 header {
