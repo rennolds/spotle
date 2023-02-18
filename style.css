@@ -30,16 +30,6 @@ html {
   opacity: 0;
 }
 
-.green-example {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.yellow-example {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .green {
   font-weight: bold;
   background-color: rgba(106,208,116,.8);
@@ -63,6 +53,12 @@ html {
   margin-bottom: 75px;
 }
 
+.intro-example-guess-text {
+  margin-top: 1.25rem;
+  font-size: 150%;
+  font-family: 'Permanent Marker', cursive;
+}
+
 #intro {
   color: #ffff;
 }
@@ -73,11 +69,6 @@ html {
 
 #intro .intro-description {
   margin-top: 1.25rem;
-}
-
-#intro .intro-border {
-  border-bottom: 1px solid #677272;
-  margin-top: 1rem;
 }
 
 #intro .intro-music-warning {
