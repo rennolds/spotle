@@ -1,3 +1,5 @@
+document.addEventListener("touchstart", function() {}, true);
+
 const africa = [
   'DZ',
   'AO',
@@ -289,6 +291,8 @@ let guessCount = 1;
 let artists = {};
 const searchable = [];
 
+const errorViv = document.querySelector('.error');
+
 await fetch('resources/artists.json').then(function (response) {
   return response.json();
 }).then(function (data) {
@@ -304,7 +308,7 @@ await fetch('resources/artists.json').then(function (response) {
     else {
       x = 'Mixed';
    }
-    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size);
+    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size);
   }
 }).catch (function (error) {
   console.log('something went wrong reading json');
@@ -317,6 +321,8 @@ var mysteryArtistImage;
 var mysteryArtistName;
 var mysteryArtist;
 var spotleNumber;
+var yesterdayMysteryArtist;
+var yesterdayMysteryArtistImage;
 var today = new Date();
 const yyyy = today.getFullYear();
 let mm = today.getMonth() + 1; // Months start at 0!
@@ -327,18 +333,20 @@ if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
 
-async function fetchMysteryArtist() {
-  await fetch('resources/mysteryArtists.json').then(function (response) {
-    return response.json();
-  }).then(function (data) {
-    for (var i = 0; i < data.length; i++) {
-      if (data[i].date == today) {
-        mysteryArtist = artists[data[i].artist.toLowerCase()];
-        mysteryArtistSong = data[i].song_uri;
-        mysteryArtistImage = data[i].image_uri;
-        mysteryArtistName = data[i].artist;
-        spotleNumber = i + 1;
-      }
+await fetch('resources/mysteryArtists.json').then(function (response) {
+  return response.json();
+}).then(function (data) {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].date == today) {
+      mysteryArtist = artists[data[i].artist.toLowerCase()];
+      mysteryArtistSong = data[i].song_uri;
+      mysteryArtistImage = data[i].image_uri;
+      mysteryArtistName = data[i].artist;
+      spotleNumber = i + 1;
+
+      yesterdayMysteryArtist = data[i-1].artist;
+      yesterdayMysteryArtistImage = artists[data[i-1].artist.toLowerCase()].imageUri;
+
     }
   }).catch (function (error) {
     console.log('something went wrong reading mystery artist data');
@@ -394,6 +402,11 @@ const muteImg = document.querySelector('.mute-img');
 const helpExitBtn = document.querySelector('.help-exit-btn');
 const helpBtn = document.querySelector('.help-btn');
 const helpOverlay = document.querySelector('.help-overlay');
+const yesterdayImage = document.querySelector('.yesterday-image');
+const yesterdayName = document.querySelector('.yesterday-name');
+
+yesterdayName.innerHTML += String(yesterdayMysteryArtist);
+yesterdayImage.src = yesterdayMysteryArtistImage;
 var rollSound;
 
 try {
@@ -525,7 +538,6 @@ const handleGuess = () => {
     searchWrapper.classList.remove('show'); //hide results
     guess = guess.toLowerCase() //make guess lowercase
     guess = guess.replace('amp;', '');
-  
 
     if (guess == "") { //empty guess, do nothing
       return;

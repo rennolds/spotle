@@ -2,25 +2,32 @@
 <html lang-="en">
     <head>
         <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta property="og:image" content="resources\Spotify_Logo__White.png">
+        <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+        <meta property="og:image" content="resources\spotle_logo.png">
         <title>Play Spotle</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css" type="text/css"/>
-        <link rel="icon" type="image/x-icon" href="resources/favicon.png">
+        <link rel="icon" type="image/x-icon" href="resources/spotle_logo.png">
     </head>
     <body>
-        <div class="error">Hello Viv</div>
         <div class="wrapper">
         <header>
             <div class="logo">
-                <img src="resources\Spotify_Logo__White.png" alt="logo">
-                <h3>Spotle</h3>
+                <img src="resources\spotle_logo.png" alt="logo">
             </div>
             <div class="nav-btns">
+                <div class="yesterdays-artist"> 
+                    <div class="front"> 
+                        <div class="front-text">yesterdays</div>
+                    </div>
+                    <div class="back">
+                        <img class="yesterday-image">
+                        <div class="yesterday-name"></div>
+                    </div>
+                </div>
                 <div class="help-btn"> <img src='resources/help_icon.svg'></div>
                 <div class="mute-btn"> <img class='mute-img' src='resources/volume_on.svg'> </div>
             </div>
@@ -73,7 +80,6 @@
             <div class="current-streak"></div>
             
         </div>
-        <div class="main-wrapper">
             
             <div class="game-container">
                 <div class="info-prompt">Artist not in Spotify's Top 1000</div>   
@@ -96,15 +102,15 @@
                     <div class="guess-container">
                         <div id="intro">
                             
-                            <div class="intro-title">Welcome to Spotle!</div>
-                            <div class="intro-description">A mystery artist is chosen once a day from Spotify's top artists. Make a guess by using the search bar and we'll tell you which attributes match the mystery artist's. You have 10 guesses!</div>
-                            <div class="intro-music-warning">We'll play one of the mystery artist's top songs when they're revealed...volume warning...</div>
+                            <div class="intro-title">Welcome to Spotle! The Spotify-themed Wordle game!</div>
+                            <div class="intro-description">Guess the mystery artist chosen from Spotify's top artists. You have 10 guesses!</div>
+                            <div class="intro-music-warning">We'll play one of the artists bangers if you win...volume warning...</div>
                             <div class="intro-border"></div>
-                            <div class="intro-example-title">Example</div>
+                            <!-- <img class="help-guess" src="resources\help-guess.png" alt="Queen Guess"> -->
                             <div class="intro-example">
                                 <div class="guess">
                                     <div class="guessRow"> 
-                                        <div class="item-name"> <img src="resources\justinbieber.jpeg" alt="Justin Bieber">Justin Bieber</div>
+                                        <div class="item-name"> <img src="resources\artist-images\justinbieber.jpeg" alt="Justin Bieber">Justin Bieber</div>
                                     </div>
                                     <div class="guessRow">
                                         <div class="item-long close">Debut Album<div class="arrow-container"><span class="data">2009</span><img src='resources/keyboard_down.svg' alt="down arrow"></div></div>
@@ -130,7 +136,7 @@
         </div>
     </div>
     <div class="credits">
-        <div class="made-by"> made by <a href="https://twitter.com/tommyrennolds">tommy rennolds</a> & <a href="https://twitter.com/PaulPursifull">paul pursifull </a> </div>
+        <div class="made-by"> made by <a href="https://twitter.com/tommyrennolds">tommy rennolds</a> & <a href="https://twitter.com/PaulPursifull">paul pursifull</a>, not affiliated with Spotify, just fans &#x1F90D;</div>
     </div> 
         
     </script>
@@ -138,6 +144,6 @@
 
     
     
-
+    </main>
     </body>
 </html>

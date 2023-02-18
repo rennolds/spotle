@@ -10,6 +10,7 @@ html {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+  background-color: #000;
 }
 
 .info-prompt {
@@ -223,8 +224,11 @@ html {
 
 .win-overlay .congratulations {
   font-family: 'Inter';
-  font-style: normal;
   margin-top: 1.5rem;
+<<<<<<< HEAD
+=======
+  font-style: normal;
+>>>>>>> main
   font-weight: 500;
   font-size: 16px;
   text-align: center;
@@ -311,14 +315,14 @@ html {
 
 
 .logo img {
-  height: 60px;
+  height: 100px;
 }
 
 .logo h3 {
   color: #ffff;
   font-family: 'Inter';
-  font-weight: 700;
-  font-size: 35px;
+  font-style: normal;
+  font-size: 20px;
   margin-left: 1rem;
 }
 
@@ -331,6 +335,7 @@ html {
 
 .guesses {
   color: #FFFF;
+  margin-right: 1.8rem;
 }
 
 .game-container {
@@ -843,7 +848,9 @@ button i {
   position: relative;
 }
 
-
+.help-guess {
+  position: relative;
+}
 
 header {
   display: flex;
@@ -853,4 +860,63 @@ header {
   flex-direction: row;
   width: 100%;
 }
+
+.yesterdays-artist {
+  position: flex;
+  margin-right: 8em;
+  margin-top: -.25rem;
+  justify-content: center;
+}
+.front {
+  background: transparent;
+  /* border-style: solid;
+  border-color: #178f41;
+  border-radius: 1rem; */
+  width: 120px;
+  height: 40px;
+  transition: 0.5s;
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+}
+.back {
+  background: transparent;
+  width: 120px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  direction: row;
+  flex: 1;
+  display: none;
+  justify-content: center;
+}
+.front-text {
+  color: #ffff;
+  margin-top: .5rem;
+}
+.yesterday-image {
+  border-radius: 50%;
+  object-fit: cover;
+  width:39px;
+  height:39px;
+}
+.yesterday-name {
+  color: #ffff;
+  margin-left: .5rem;
+  display: flex;
+  text-align: center;
+  position: relative;
+  top: 5%;
+}
+.yesterdays-artist:hover .front {
+  /* transform: rotateY(180deg);  */
+  opacity: 0;
+  animation: transitionOut .25s;
+}
+.yesterdays-artist:hover .back {
+  display: flex;
+  animation: transitionIn 3s;
+}
+
 
