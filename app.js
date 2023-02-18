@@ -293,7 +293,7 @@ const searchable = [];
 
 const errorViv = document.querySelector('.error');
 
-await fetch('resources/round_5_test.json').then(function (response) {
+await fetch('resources/artists.json').then(function (response) {
   return response.json();
 }).then(function (data) {
   for (var i = 0; i < data.length; i++) {
@@ -308,7 +308,7 @@ await fetch('resources/round_5_test.json').then(function (response) {
     else {
       x = 'Mixed';
    }
-    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].year, x, data[i].country.toLowerCase(), data[i].group_size);
+    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size);
   }
 }).catch (function (error) {
   errorViv.innerHTML = errorViv.innerHTML + " JSON failed";
