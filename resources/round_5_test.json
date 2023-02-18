@@ -7894,9 +7894,9 @@
   },
   {
     "artist": "Cher",
-    "image_uri": "https://i.scdn.co/image/ab6761610000e5ebed896a298ee61f6cec91abc4",
-    "genre": "Hip Hop",
-    "year": 2006,
+    "image_uri": "resources/cher.jpeg",
+    "genre": "Pop",
+    "year": 1965,
     "gender": "f",
     "country": "us",
     "group_size": 1
