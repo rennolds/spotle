@@ -291,8 +291,6 @@ let guessCount = 1;
 let artists = {};
 const searchable = [];
 
-const errorViv = document.querySelector('.error');
-
 await fetch('resources/artists.json').then(function (response) {
   return response.json();
 }).then(function (data) {
@@ -311,23 +309,9 @@ await fetch('resources/artists.json').then(function (response) {
     artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size);
   }
 }).catch (function (error) {
-  errorViv.innerHTML = errorViv.innerHTML + " JSON failed";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
   console.log('something went wrong reading json');
   console.error(error);
 });
-
-if (searchable.length == 0) {
-  errorViv.innerHTML = errorViv.innerHTML + " no searchable artists";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
-}
-if (artists.length == 0) {
-  errorViv.innerHTML = errorViv.innerHTML + " no artists";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
-}
 
 var mysteryArtistSong;
 var mysteryArtistImage;
@@ -346,7 +330,7 @@ if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
 
- await fetch('resources/mysteryArtists.json').then(function (response) {
+await fetch('resources/mysteryArtists.json').then(function (response) {
   return response.json();
 }).then(function (data) {
   for (var i = 0; i < data.length; i++) {
@@ -364,28 +348,8 @@ today = mm + '/' + dd + '/' + yyyy;
   }
 }).catch (function (error) {
   console.log('something went wrong reading mystery artist data');
-  errorViv.innerHTML = errorViv.innerHTML + " mystery artist failed";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
   console.error(error);
 });
-
-// async function getMysteryData() {
-//   const result = await csv("resources/mysteryArtists.csv")
-//     console.log(result);
-//     for (var i = 0; i < result.length; i++) {
-//       if (result[i].date == today) {
-//         console.log('got here');
-//         mysteryArtist = artists.get(result[i].artist.toLowerCase());
-//         mysteryArtistSong = result[i].song_uri;
-//         mysteryArtistImage = result[i].image_uri;
-//         mysteryArtistName = result[i].artist;
-//       }
-//     }
-// }
-
-// getMysteryData();
-
 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
@@ -413,17 +377,14 @@ const yesterdayName = document.querySelector('.yesterday-name');
 
 yesterdayName.innerHTML += String(yesterdayMysteryArtist);
 yesterdayImage.src = yesterdayMysteryArtistImage;
+
 var rollSound;
 
 try {
   rollSound = new Audio(mysteryArtistSong);
 } catch {
   console.log('failed to get audio');
-  errorViv.innerHTML = errorViv.innerHTML + " failed to get audio";
-  errorViv.classList.remove('error');
-  errorViv.classList.add('error-show');
 }
-
 
 let firstGuess = true;
 let guessedArtists = [];
@@ -480,7 +441,6 @@ else {
   document.cookie = 'guessCount = 1' + expires;
 }
 
-
 //handles autocomplete 
 searchInput.addEventListener('keyup', () => {
   
@@ -535,7 +495,6 @@ exitBtn.addEventListener('click', () => {
   gameContainer.addEventListener('click', () => {
     searchWrapper.classList.remove('show');
   });
-
 
 //handle guess when player searches for an artist
 const handleGuess = () => {
@@ -706,8 +665,6 @@ function loss() {
         console.log('no audio to play');
       }
     }, 1000);
-
-  
   
   calculateHMSleft();
   setInterval(calculateHMSleft, 1000);
@@ -781,8 +738,6 @@ function printGuess(guess) {
   albumArrowContainer.classList.add('arrow-container');
   albumArrowContainer.append(albumSpan);
 
-  
-
   const albumArrowImg = document.createElement('img');
   if (guess.debutAlbumYear - mysteryArtist.debutAlbumYear > 0) {
     albumArrowImg.src = 'resources/keyboard_down.svg';
@@ -799,15 +754,11 @@ function printGuess(guess) {
   groupElement.innerHTML = "Group Size "
   groupSpan.innerHTML = guess.groupSize;
 
-  
-
   listenerRankElement.innerHTML = "Listener Rank ";
   const listenerRankArrowContainer = document.createElement('div');
   listenerRankArrowContainer.classList.add('arrow-container');
   listenerRankSpan.innerHTML = guess.listenerRank;
   listenerRankArrowContainer.append(listenerRankSpan);
-
-
 
   const listenerRankArrowImg = document.createElement('img');
   if (guess.listenerRank - mysteryArtist.listenerRank > 0) {
@@ -883,9 +834,7 @@ function printGuess(guess) {
     setTimeout(() => {
       flipWinnerGreen(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement);
       }, 750);
-  }
-  
-    
+  }  
 }
 
 function flipWinnerGreen(nationalityElement, genreElement, genderElement, groupElement, albumElement, listenerRankElement) {
@@ -895,23 +844,7 @@ function flipWinnerGreen(nationalityElement, genreElement, genderElement, groupE
   flipDiv(groupElement, 'correct');
   flipDiv(albumElement, 'correct');
   flipDiv(listenerRankElement,'correct');
-
-  // setTimeout(() => {
-  //   flipWinnerColor(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement);
-  //   }, 500);
-  
 }
-
-function flipWinnerColor(nationalityElement, genreElement, genderElement, groupElement, albumElement, listenerRankElement) {
-  flipDiv(nationalityElement,'test2');
-  flipDiv(genreElement, 'test1');
-  flipDiv(genderElement, 'blue');
-  flipDiv(groupElement, 'test2');
-  flipDiv(albumElement, 'test3');
-  flipDiv(listenerRankElement,'blue');
-}
-
-
 
 function checkCriteria(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement, guess) {
   if (guess.nationality === mysteryArtist.nationality) {
