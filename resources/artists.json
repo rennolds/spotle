@@ -1634,7 +1634,7 @@
       "track_name": "Holy (feat. Chance The Rapper)",
       "song_uri": "https://p.scdn.co/mp3-preview/8b875cef44dddc1e1da0252b48bbca2a2221d767?cid=98f79e400795491cbc5f69b713465708",
       "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431",
-      "group_size": "x",
+      "group_size": 1,
       "gender": "m"
     },
     {
@@ -11839,7 +11839,7 @@
       "track_name": "Only Love Can Hurt Like This",
       "song_uri": "https://p.scdn.co/mp3-preview/74f7ec0c6f0a993012ed5fdec17dccf71d8d0acd?cid=98f79e400795491cbc5f69b713465708",
       "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273c4576f635253db511bb43789",
-      "group_size": "1+J909",
+      "group_size": 1,
       "gender": "f"
     },
     {
