@@ -1786,5 +1786,11 @@
     "artist": "Future",
     "song_uri": "https://p.scdn.co/mp3-preview/f37b59806ccfe55ce6d1ab826e6809b466a1fe75?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27386badd635b69aea887862214"
+  },
+  {
+    "date": "02/20/2023",
+    "artist": "Cardi B",
+    "song_uri": "https://p.scdn.co/mp3-preview/4b5a31cd2fe4445038798e33787ebf0fca645f86?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a0caffda54afd0a65995bbab"
   }
 ] 
