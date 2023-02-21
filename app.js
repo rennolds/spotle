@@ -275,6 +275,16 @@ const south_america = [
   'VE',
 ]
 
+function printChallenge(artist) {
+
+  console.log('in challenge');
+  console.log(artist.name);
+
+  // print guess
+
+  // print new button that gives link 
+}
+
 class Artist {
   constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize, songUri, songImageUri) {
       this.name = name;
@@ -359,6 +369,7 @@ var decodedArtist;
 var decodedMessage;
 const queryString = window.location.search;
 const challengeGame = (queryString ? true : false);
+let creatingChallenge = false;
 
 if (!challengeGame) {
   await fetchMysteryArtist();
@@ -408,6 +419,7 @@ const todaysMessage = document.querySelector('.todays-artist');
 const congratulations = document.querySelector('.congratulations');
 const muteBtn = document.querySelector('.mute-btn');
 const muteImg = document.querySelector('.mute-img');
+const challengeBtn = document.querySelector('.challenge-btn');
 const helpExitBtn = document.querySelector('.help-exit-btn');
 const helpBtn = document.querySelector('.help-btn');
 const helpOverlay = document.querySelector('.help-overlay');
@@ -567,6 +579,7 @@ const handleGuess = () => {
     guess = guess.toLowerCase() //make guess lowercase
     guess = guess.replace('amp;', '');
 
+
     if (guess == "") { //empty guess, do nothing
       return;
     }
@@ -576,6 +589,11 @@ const handleGuess = () => {
     }
     
     var currentArtist = artists[guess];
+
+    if (creatingChallenge) {
+      printChallenge(currentArtist);
+      return;
+    }
    
     if (currentArtist.name == mysteryArtist.name) {
       if (firstGuess) {
@@ -1050,6 +1068,14 @@ function handleMute() {
   }
 }
 
+function handleChallenge() {
+  intro.classList.add('hidden');
+  const container = document.querySelector('.outer-guess-container');
+  container.classList.add('hidden');
+  guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+  creatingChallenge = true;
+}
+
 function getContinent(countryCode) {
   if (north_america.includes(countryCode.toUpperCase())) {
     return 'North America';
@@ -1075,6 +1101,7 @@ function getContinent(countryCode) {
 guessButton.addEventListener('click', handleGuess);
 shareBtn.addEventListener('click', handleShare);
 muteBtn.addEventListener('click', handleMute);
+challengeBtn.addEventListener('click', handleChallenge);
 helpBtn.addEventListener('click', function () {
   if (helpOverlay.classList.contains('hidden'))
     helpOverlay.classList.remove('hidden');
