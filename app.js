@@ -430,6 +430,7 @@ const introTitle = document.querySelector('.intro-title');
 const introDescription = document.querySelector('.intro-description');
 const introMusicWarning = document.querySelector('.intro-music-warning');
 const nextSpotle = document.querySelector('.next-spotle');
+const challengeContainer = document.querySelector('.outer-challenge-container');
 
 if (challengeGame) {
   introTitle.innerHTML = "Someone sent you a custom Spotle game. Try to guess the artist they picked!";
@@ -1074,6 +1075,7 @@ function handleChallenge() {
   container.classList.add('hidden');
   guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
   creatingChallenge = true;
+  challengeContainer.classList.remove('hidden');
 }
 
 function getContinent(countryCode) {
