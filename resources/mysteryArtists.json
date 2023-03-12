@@ -1906,5 +1906,41 @@
     "artist": "5 Seconds of Summer",
     "song_uri": "https://p.scdn.co/mp3-preview/b26976b3ae4e74fa17e86cfb0631d8442e35963a?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27393432e914046a003229378da"
+  },
+  {
+    "date": "03/12/2023",
+    "artist": "Paramore",
+    "song_uri": "https://p.scdn.co/mp3-preview/c95e281bf76899c1d7a0cf22afeb832e32fc061f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bee754528c08d5ff6799a1eb"
+  },
+  {
+    "date": "03/13/2023",
+    "artist": "Run DMC",
+    "song_uri": "https://p.scdn.co/mp3-preview/b0853b733e01eba03ccb6f1f0b4f4729ee23cf4a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273894ae4df775c6b47438991af"
+  },
+  {
+    "date": "03/14/2023",
+    "artist": "Foo Fighters",
+    "song_uri": "https://p.scdn.co/mp3-preview/29b3d410b28a70b73f55fae2197d664703682fd6?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730389027010b78a5e7dce426b"
+  },
+  {
+    "date": "03/15/2023",
+    "artist": "Ariana Grande",
+    "song_uri": "https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605"
+  },
+  {
+    "date": "03/16/2023",
+    "artist": "Luke Bryan",
+    "song_uri": "https://p.scdn.co/mp3-preview/233bbb1b2e76364671f584d633725627b094f87c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273dab325d38db91d858446d4b4"
+  },
+  {
+    "date": "03/17/2023",
+    "artist": "Usher",
+    "song_uri": "https://p.scdn.co/mp3-preview/775632d9867341c779b7238f1718f9abd1773061?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273365b3fb800c19f7ff72602da"
   }
 ] 
