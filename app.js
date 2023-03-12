@@ -373,6 +373,7 @@ var decodedMessage;
 const queryString = window.location.search;
 const challengeGame = (queryString ? true : false);
 let creatingChallenge = false;
+let challengeWin = false;
 
 if (!challengeGame) {
   await fetchMysteryArtist();
@@ -435,6 +436,10 @@ const nextSpotle = document.querySelector('.next-spotle');
 const challengeContainer = document.querySelector('.outer-challenge-container');
 const embeddedTrackContainer = document.querySelector('.embedded-track')
 const challengeArtist = document.querySelector('.challenge-artist');
+const challengeShareBtn = document.querySelector('.challenge-share-btn');
+const challengeForm = document.querySelector('.challenge-form');
+
+let sharedChallengeArtist;
 
 if (challengeGame) {
   introTitle.innerHTML = "Someone sent you a custom Spotle game. Try to guess the artist they picked!";
@@ -609,6 +614,8 @@ const handleGuess = () => {
       artistName.innerHTML = currentArtist.name;
       artistImage.src = currentArtist.imageUri;
 
+      sharedChallengeArtist = currentArtist;
+
       console.log(artistImage.src);
 
       guessCountContainer.innerHTML = "Click share to send your friend the game!"
@@ -653,8 +660,14 @@ function win(guess) {
       guessCountContainer.classList.remove('last-guess');
     }
 
-    document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
-    document.cookie = "won=1" + expires;
+    if (!challengeGame) {
+      document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
+      document.cookie = "won=1" + expires;
+    }
+    else {
+      challengeWin = true;
+    }
+
     printGuess(guess);
 
     if (!challengeGame) {
@@ -779,7 +792,17 @@ function handleShare() {
     result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
   }
   else {
-    result = textToCopy.concat('⬜⬜⬜⬜⬜⬜⬜⬜⬜❌\n\n', textToCopy4);
+    if (!challengeGame) {
+      result = textToCopy.concat('⬜⬜⬜⬜⬜⬜⬜⬜⬜❌\n\n', textToCopy4);
+    }
+    else {
+      if (challengeWin) {
+        result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
+      }
+      else {
+        result = textToCopy.concat('⬜⬜⬜⬜⬜⬜⬜⬜⬜❌\n\n', textToCopy4);
+      }
+    }
   }
 
   if (navigator.share) { 
@@ -793,8 +816,8 @@ function handleShare() {
       navigator.clipboard.writeText(result)
       .then(() => { console.log('copied'); })
       .catch((error) => { alert(`Copy failed! ${error}`) })
-  }
-     }
+    }
+}
 
 function loss() {
   console.log('lost');
@@ -1137,9 +1160,46 @@ function getContinent(countryCode) {
   return 'Error';
 }
 
+function shareChallenge() {
+  console.log(sharedChallengeArtist.name)
+
+  var artistName = sharedChallengeArtist.name;
+  var message = challengeForm.value;
+
+  if (message == "I'm not sure what to write here..." || message == "") {
+    message = '';
+  }
+
+  var encodedArtist = btoa(artistName);
+  var encodedMessage = btoa(message);
+  console.log(window.location.origin);
+  console.log(encodedArtist);
+  console.log(encodedMessage);
+
+  var url = window.location.origin + "/?artist=" + encodedArtist + "&" + "msg=" + encodedMessage;
+
+  var shareMessage = "Play my custom Spotle game! 🎧🤍";
+
+  var fullText = shareMessage + "\n\n" + url;
+
+  if (navigator.share) { 
+    navigator.share({
+       text: fullText
+     }).then(() => {
+
+     })
+     .catch(console.error);
+     } else {
+      navigator.clipboard.writeText(fullText)
+      .then(() => { console.log('copied'); })
+      .catch((error) => { alert(`Copy failed! ${error}`) })
+    }
+}
+
 guessButton.addEventListener('click', handleGuess);
 shareBtn.addEventListener('click', handleShare);
 muteBtn.addEventListener('click', handleMute);
+challengeShareBtn.addEventListener('click', shareChallenge);
 challengeBtn.addEventListener('click', toggleChallenge);
 helpBtn.addEventListener('click', function () {
   if (helpOverlay.classList.contains('hidden'))
