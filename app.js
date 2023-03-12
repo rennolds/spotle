@@ -286,7 +286,7 @@ function printChallenge(artist) {
 }
 
 class Artist {
-  constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize, songUri, songImageUri) {
+  constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize, songUri, songImageUri, embeddedTrack) {
       this.name = name;
       this.listenerRank = listenerRank;
       this.imageUri = imageUri;
@@ -297,6 +297,7 @@ class Artist {
       this.groupSize = groupSize;
       this.songUri = songUri;
       this.songImageUri = songImageUri;
+      this.embeddedTrack = embeddedTrack;
   }
 }
 let guessCount = 1;
@@ -318,7 +319,7 @@ await fetch('resources/artists.json').then(function (response) {
     else {
       x = 'Mixed';
    }
-    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size, data[i].song_uri, data[i].song_image_uri);
+    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size, data[i].song_uri, data[i].song_image_uri, data[i].embedded_track);
   }
 }).catch (function (error) {
   console.log('something went wrong reading json');
@@ -342,6 +343,8 @@ if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
 
+console.log("NOT ERRORED OUT YET");
+
 async function fetchMysteryArtist() {
   await fetch('resources/mysteryArtists.json').then(function (response) {
     return response.json();
@@ -353,7 +356,7 @@ async function fetchMysteryArtist() {
         mysteryArtistImage = data[i].image_uri;
         mysteryArtistName = data[i].artist;
         spotleNumber = i + 1;
-
+        
         yesterdayMysteryArtist = data[i-1].artist;
         yesterdayMysteryArtistImage = artists[data[i-1].artist.toLowerCase()].imageUri;
 
@@ -397,7 +400,6 @@ else {
   console.log(decodedArtist)
 
   document.body.style.background = "linear-gradient(137.28deg, #894986 -5.33%, #121212 36.26%)";
-
 }
 
 const gameContainer = document.querySelector('.game-container');
@@ -431,6 +433,7 @@ const introDescription = document.querySelector('.intro-description');
 const introMusicWarning = document.querySelector('.intro-music-warning');
 const nextSpotle = document.querySelector('.next-spotle');
 const challengeContainer = document.querySelector('.outer-challenge-container');
+const embeddedTrackContainer = document.querySelector('.embedded-track')
 
 if (challengeGame) {
   introTitle.innerHTML = "Someone sent you a custom Spotle game. Try to guess the artist they picked!";
@@ -447,8 +450,11 @@ if (challengeGame) {
   nextSpotle.classList.add('hidden');
 }
 
-yesterdayName.innerHTML += String(yesterdayMysteryArtist);
-yesterdayImage.src = yesterdayMysteryArtistImage;
+if (!challengeGame) {
+  yesterdayName.innerHTML += String(yesterdayMysteryArtist);
+  yesterdayImage.src = yesterdayMysteryArtistImage;
+}
+
 
 var rollSound;
 
@@ -592,7 +598,9 @@ const handleGuess = () => {
     var currentArtist = artists[guess];
 
     if (creatingChallenge) {
-      printChallenge(currentArtist);
+      printChallenge(currentArtist.name);
+      challengeContainer.classList.remove('hidden'); 
+      embeddedTrackContainer.src = currentArtist.embeddedTrack;
       return;
     }
    
@@ -1075,7 +1083,6 @@ function handleChallenge() {
   container.classList.add('hidden');
   guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
   creatingChallenge = true;
-  challengeContainer.classList.remove('hidden');
 }
 
 function getContinent(countryCode) {

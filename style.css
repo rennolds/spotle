@@ -444,15 +444,15 @@ button i {
 }
 
 .challenge-container {
-  background-color: blue;
-  width: 95%;
-  height: 360px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+  color: #FFF;
 }
 
 .challenge-artist {
   width: 100%;
   height: 80px;
-  background-color: red;
 }
 
 .challenge-artist img {
@@ -466,13 +466,11 @@ button i {
 .challenge-track {
   width: 100%;
   height: 113px;
-  background-color: green;
 }
 
 .challenge-form {
   width: 100%;
   height: 85px;
-  background-color: yellow;
 }
 
 .challenge-form-container {
@@ -482,23 +480,28 @@ button i {
 
 .challenge-form-input {
   width: 100%;
-  background-color: orange;
 }
 
 .challenge-explain {
   width: 100%;
-  background-color: cyan;
 }
 
 .challenge-text {
   width: 100%;
-  background-color: blanchedalmond;
 }
 
-.challenge-share {
-  height: 43px;
-  width: 100%;
-  background-color: purple;
+.challenge-share-btn {
+  border-radius: 5px;
+  width: 176px;
+  height: 52px;
+  background-color: #1Db954;
+  color: #ffff;
+  font-weight: bold;
+  font-size: 15px;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 100px;
 }
 
 .guess-container {
@@ -516,6 +519,7 @@ button i {
   width: 340px;
   display: flex;
   justify-content: center;
+  flex-direction: row;
 }
 
 .guess .guessRow {
