@@ -326,6 +326,7 @@ html {
 .guesses {
   color: #FFFF;
   margin-right: 1.8rem;
+  padding-bottom: .3rem;
 }
 
 .game-container {
@@ -566,7 +567,6 @@ button i {
   width: 340px;
   display: flex;
   justify-content: center;
-  flex-direction: row;
 }
 
 .guess .guessRow {

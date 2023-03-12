@@ -610,6 +610,8 @@ const handleGuess = () => {
       artistImage.src = currentArtist.imageUri;
 
       console.log(artistImage.src);
+
+      guessCountContainer.innerHTML = "Click share to send your friend the game!"
       return;
     }
    
@@ -1086,12 +1088,31 @@ function handleMute() {
   }
 }
 
-function handleChallenge() {
-  intro.classList.add('hidden');
+function toggleChallenge() {
+
   const container = document.querySelector('.outer-guess-container');
-  container.classList.add('hidden');
-  guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
-  creatingChallenge = true;
+    //no guesses, hide intro/show intro
+  if (getCookie('guessCount') == 1) {
+    
+    if (intro.classList.contains('hidden')) {
+      history.go(0);
+    }
+    else {
+      intro.classList.add('hidden');
+      guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+      creatingChallenge = true;
+    }
+  }
+  else {
+    if (container.classList.contains('hidden')) {
+      history.go(0);
+    }
+    else {
+      container.classList.add('hidden');
+      guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+      creatingChallenge = true;
+    }
+  }
 }
 
 function getContinent(countryCode) {
@@ -1119,7 +1140,7 @@ function getContinent(countryCode) {
 guessButton.addEventListener('click', handleGuess);
 shareBtn.addEventListener('click', handleShare);
 muteBtn.addEventListener('click', handleMute);
-challengeBtn.addEventListener('click', handleChallenge);
+challengeBtn.addEventListener('click', toggleChallenge);
 helpBtn.addEventListener('click', function () {
   if (helpOverlay.classList.contains('hidden'))
     helpOverlay.classList.remove('hidden');
