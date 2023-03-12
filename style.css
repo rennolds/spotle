@@ -187,7 +187,6 @@ html {
 
 .win-overlay .share-btn:hover {
   cursor: pointer;
-  
 }
 
 .win-overlay .share-btn:onclick {
@@ -451,11 +450,26 @@ button i {
 }
 
 .challenge-artist {
-  width: 100%;
-  height: 80px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
 }
 
-.challenge-artist img {
+.challenge-artist-name {
+  height: 65px;
+  flex: 1;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  color: #FFFF;
+  font-size: 150%;
+}
+
+.challenge-artist-img {
   margin-right: .8rem;
   border-radius: 50%;
   object-fit: cover;
@@ -463,14 +477,18 @@ button i {
   height:80px;
 }
 
-.challenge-track {
-  width: 100%;
+.challenge-track iframe {
+  border: none;
+  border-width: 0;
+  border: 0;
+  width: 360px;
   height: 113px;
 }
 
 .challenge-form {
   width: 100%;
   height: 85px;
+  align-items: center;
 }
 
 .challenge-form-container {
@@ -478,16 +496,37 @@ button i {
   height: 85px;
 }
 
-.challenge-form-input {
-  width: 100%;
+.challenge-form {
+  width: 350px;
+  height: 35px;
+
+  background: #FFFFFF;
+  border-radius: 5px;
+
 }
 
 .challenge-explain {
-  width: 100%;
+  margin-top: .5rem;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 12px;
+  color: #7B7B7B;
 }
 
 .challenge-text {
-  width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: .5rem;
+}
+
+.challenge-share {
+  justify-content: center;
+  display: flex;
 }
 
 .challenge-share-btn {
@@ -502,6 +541,14 @@ button i {
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-radius: 100px;
+}
+
+.challenge-share-btn:hover {
+  cursor: pointer;
+}
+
+.challenge-share-btn:onclick {
+  background-color: #178f41;
 }
 
 .guess-container {

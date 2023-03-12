@@ -434,6 +434,7 @@ const introMusicWarning = document.querySelector('.intro-music-warning');
 const nextSpotle = document.querySelector('.next-spotle');
 const challengeContainer = document.querySelector('.outer-challenge-container');
 const embeddedTrackContainer = document.querySelector('.embedded-track')
+const challengeArtist = document.querySelector('.challenge-artist');
 
 if (challengeGame) {
   introTitle.innerHTML = "Someone sent you a custom Spotle game. Try to guess the artist they picked!";
@@ -601,6 +602,14 @@ const handleGuess = () => {
       printChallenge(currentArtist.name);
       challengeContainer.classList.remove('hidden'); 
       embeddedTrackContainer.src = currentArtist.embeddedTrack;
+      console.log(currentArtist.imageUri);
+      var artistName = document.querySelector('.challenge-artist-name');
+      var artistImage = document.querySelector('.challenge-artist-img');
+
+      artistName.innerHTML = currentArtist.name;
+      artistImage.src = currentArtist.imageUri;
+
+      console.log(artistImage.src);
       return;
     }
    
