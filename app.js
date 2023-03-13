@@ -1115,18 +1115,23 @@ function toggleChallenge() {
     //no guesses, hide intro/show intro
 
   if (challengeGame) {
-    challengeExitBtn.classList.add('force-show');
-    console.log('in proper statement');
-    container.classList.add('hidden');
-    guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
-    winOverlay.classList.add('hidden');
-    creatingChallenge = true;
-    searchInput.removeAttribute('readonly');
-    let textContainer =  document.querySelector('.challenge-btn-text');
-    textContainer.innerHTML = "Return to Spotle";
-    if (rollSound != null) {
-      rollSound.pause();
+
+    if (!challengeContainer.classList.contains('hidden')) {
+      window.location='http://www.spotle.io';
     }
+    else {
+      container.classList.add('hidden');
+      guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+      winOverlay.classList.add('hidden');
+      creatingChallenge = true;
+      searchInput.removeAttribute('readonly');
+      let textContainer =  document.querySelector('.challenge-btn-text');
+      textContainer.innerHTML = "Return to Spotle";
+      if (rollSound != null) {
+        rollSound.pause();
+      }
+    }
+
   }
   
   if (getCookie('guessCount') == 1 && getCookie('won') != 1) {
