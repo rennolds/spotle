@@ -276,7 +276,7 @@ const south_america = [
 ]
 
 class Artist {
-  constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize) {
+  constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize, songUri, songImageUri, embeddedTrack) {
       this.name = name;
       this.listenerRank = listenerRank;
       this.imageUri = imageUri;
@@ -285,6 +285,9 @@ class Artist {
       this.nationality = nationality;
       this.gender = gender;
       this.groupSize = groupSize;
+      this.songUri = songUri;
+      this.songImageUri = songImageUri;
+      this.embeddedTrack = embeddedTrack;
   }
 }
 let guessCount = 1;
@@ -306,7 +309,7 @@ await fetch('resources/artists.json').then(function (response) {
     else {
       x = 'Mixed';
    }
-    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size);
+    artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size, data[i].song_uri, data[i].song_image_uri, data[i].embedded_track);
   }
 }).catch (function (error) {
   console.log('something went wrong reading json');
@@ -330,26 +333,56 @@ if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
 
-await fetch('resources/mysteryArtists.json').then(function (response) {
-  return response.json();
-}).then(function (data) {
-  for (var i = 0; i < data.length; i++) {
-    if (data[i].date == today) {
-      mysteryArtist = artists[data[i].artist.toLowerCase()];
-      mysteryArtistSong = data[i].song_uri;
-      mysteryArtistImage = data[i].image_uri;
-      mysteryArtistName = data[i].artist;
-      spotleNumber = i + 1;
+async function fetchMysteryArtist() {
+  await fetch('resources/mysteryArtists.json').then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].date == today) {
+        mysteryArtist = artists[data[i].artist.toLowerCase()];
+        mysteryArtistSong = data[i].song_uri;
+        mysteryArtistImage = data[i].image_uri;
+        mysteryArtistName = data[i].artist;
+        spotleNumber = i + 1;
+        
+        yesterdayMysteryArtist = data[i-1].artist;
+        yesterdayMysteryArtistImage = artists[data[i-1].artist.toLowerCase()].imageUri;
 
-      yesterdayMysteryArtist = data[i-1].artist;
-      yesterdayMysteryArtistImage = artists[data[i-1].artist.toLowerCase()].imageUri;
-
+      }
     }
-  }
-}).catch (function (error) {
-  console.log('something went wrong reading mystery artist data');
-  console.error(error);
-});
+  }).catch (function (error) {
+    console.log('something went wrong reading mystery artist data');
+    console.error(error);
+  });
+}
+
+var decodedArtist;
+var decodedMessage;
+const queryString = window.location.search;
+const challengeGame = (queryString ? true : false);
+let creatingChallenge = false;
+let challengeWin = false;
+
+if (!challengeGame) {
+  await fetchMysteryArtist();
+}
+else {
+  const urlParams = new URLSearchParams(queryString);
+  let encodedArtist = urlParams.get('artist');
+  let encodedMessage = urlParams.get('msg');
+
+  decodedArtist = atob(encodedArtist);
+  decodedArtist = decodedArtist.toLowerCase();
+
+  mysteryArtist = artists[decodedArtist];
+  mysteryArtistSong = mysteryArtist.songUri;
+  mysteryArtistImage = mysteryArtist.songImageUri;
+  mysteryArtistName = mysteryArtist.name;
+
+  decodedMessage = atob(encodedMessage);
+
+  document.body.style.background = "linear-gradient(137.28deg, #894986 -5.33%, #121212 36.26%)";
+}
 
 const gameContainer = document.querySelector('.game-container');
 const searchInput = document.getElementById('search');
@@ -363,20 +396,57 @@ const winOverlay = document.getElementById('win-overlay');
 const infoPrompt = document.querySelector('.info-prompt');
 const timer = document.querySelector('.timer');
 const shareBtn = document.querySelector('.share-btn');
+const todaysBtn = document.querySelector('.play-todays');
+const createBtn = document.querySelector('.create-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
+const todaysMessage = document.querySelector('.todays-artist');
 const congratulations = document.querySelector('.congratulations');
 const muteBtn = document.querySelector('.mute-btn');
 const muteImg = document.querySelector('.mute-img');
+const challengeBtn = document.querySelector('.challenge-btn');
 const helpExitBtn = document.querySelector('.help-exit-btn');
 const helpBtn = document.querySelector('.help-btn');
 const helpOverlay = document.querySelector('.help-overlay');
 const yesterdayImage = document.querySelector('.yesterday-image');
 const yesterdayName = document.querySelector('.yesterday-name');
+const yesterdaysArtist = document.querySelector('.yesterdays-artist');
+const introTitle = document.querySelector('.intro-title');
+const introDescription = document.querySelector('.intro-description');
+const introMusicWarning = document.querySelector('.intro-music-warning');
+const nextSpotle = document.querySelector('.next-spotle');
+const challengeContainer = document.querySelector('.outer-challenge-container');
+const embeddedTrackContainer = document.querySelector('.embedded-track')
+const challengeArtist = document.querySelector('.challenge-artist');
+const challengeShareBtn = document.querySelector('.challenge-share-btn');
+const challengeForm = document.querySelector('.challenge-form');
+const navChallengeBtn = document.querySelector('.challenge-btn');
+const challengeExitBtn = document.querySelector('.challenge-exit-btn');
 
-yesterdayName.innerHTML += String(yesterdayMysteryArtist);
-yesterdayImage.src = yesterdayMysteryArtistImage;
+let sharedChallengeArtist;
+
+if (challengeGame) {
+  introTitle.innerHTML = "Someone sent you a custom Spotle game. Try to guess the artist they picked!";
+  introDescription.innerHTML = "";
+  introMusicWarning.innerHTML = "";
+  if (decodedMessage != '') {
+    introDescription.innerHTML = "They wanted us to tell you:\n" + decodedMessage;
+  }
+
+  yesterdayImage.classList.add('hidden');
+  yesterdayName.classList.add('hidden');
+  yesterdaysArtist.classList.add('hidden');
+  timer.classList.add('hidden');
+  nextSpotle.classList.add('hidden');
+  navChallengeBtn.classList.add('hidden');
+}
+
+if (!challengeGame) {
+  yesterdayName.innerHTML += String(yesterdayMysteryArtist);
+  yesterdayImage.src = yesterdayMysteryArtistImage;
+}
+
 
 var rollSound;
 
@@ -404,34 +474,36 @@ var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23,
 const expires = "; expires=" + midnight.toGMTString();
 
 if (getCookie('visited') != null) {
-  console.log('remembered');
-  guessCount = getCookie('guessCount');
-  guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
 
   if (getCookie('mute') == 1) {
     muteImg.src = 'resources/volume_off.svg';
   }
+   
+  if (!challengeGame) {
+    console.log('remembered');
+    guessCount = getCookie('guessCount');
+    guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
 
-  if (guessCount > 1) {
-    intro.classList.add('hidden');
-  }
-  if (guessCount == 10 && !(getCookie('won'))) {
-    guessCountContainer.classList.add('last-guess');
-  }
-  printPreviousGuesses();
-  //print guesses function
+    if (guessCount > 1) {
+      intro.classList.add('hidden');
+    }
+    if (guessCount == 10 && !(getCookie('won'))) {
+      guessCountContainer.classList.add('last-guess');
+    }
+    printPreviousGuesses();
+    //print guesses function
 
-  if (getCookie('won')) {
-    intro.classList.add('hidden');
-    searchInput.setAttribute('readonly', true);
-    win(mysteryArtist);
-  }
-  if (getCookie('lost')) {
-    intro.classList.add('hidden');
-    searchInput.setAttribute('readonly', true);
-    guessCountContainer.innerHTML = "Nice try...";
-    loss();
-
+    if (getCookie('won')) {
+      intro.classList.add('hidden');
+      searchInput.setAttribute('readonly', true);
+      win(mysteryArtist);
+    }
+    if (getCookie('lost')) {
+      intro.classList.add('hidden');
+      searchInput.setAttribute('readonly', true);
+      guessCountContainer.innerHTML = "Nice try...";
+      loss();
+    }
   }
 }
 else {
@@ -506,6 +578,7 @@ const handleGuess = () => {
     guess = guess.toLowerCase() //make guess lowercase
     guess = guess.replace('amp;', '');
 
+
     if (guess == "") { //empty guess, do nothing
       return;
     }
@@ -515,6 +588,29 @@ const handleGuess = () => {
     }
     
     var currentArtist = artists[guess];
+
+    if (creatingChallenge) {
+      challengeContainer.classList.remove('hidden'); 
+
+      setTimeout(() => {
+        challengeContainer.classList.add('transition-in');
+        }, 250);
+
+      embeddedTrackContainer.src = currentArtist.embeddedTrack;
+      console.log(currentArtist.imageUri);
+      var artistName = document.querySelector('.challenge-artist-name');
+      var artistImage = document.querySelector('.challenge-artist-img');
+
+      artistName.innerHTML = currentArtist.name;
+      artistImage.src = currentArtist.imageUri;
+
+      sharedChallengeArtist = currentArtist;
+
+      console.log(artistImage.src);
+
+      guessCountContainer.innerHTML = "Click share to send your friend the game!"
+      return;
+    }
    
     if (currentArtist.name == mysteryArtist.name) {
       if (firstGuess) {
@@ -550,13 +646,71 @@ function invalidArtist() {
 
 function win(guess) {
 
+    searchInput.setAttribute('readonly', true);
+
     if (guessCountContainer.classList.contains('last-guess')) {
       guessCountContainer.classList.remove('last-guess');
     }
 
-    document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
-    document.cookie = "won=1" + expires;
+    if (!challengeGame) {
+      document.cookie = "guess" + (guessCount) + "=" + guess.name + expires;
+      document.cookie = "won=1" + expires;
+    }
+    else {
+      challengeWin = true;
+      todaysBtn.classList.remove('hidden');
+    }
+
     printGuess(guess);
+
+    if (!challengeGame) {
+
+      switch (guessCount) {
+        case 1:
+          congratulations.innerHTML = "Wow. Are they your favorite?"
+          break;
+
+        case 2:
+          congratulations.innerHTML = "Did you cheat...?"
+          break;  
+
+        case 3:
+          congratulations.innerHTML = "You are a Spotify Savant!"
+          break;
+
+        case 4:
+          congratulations.innerHTML = "4/10...incredible!"
+          break;  
+
+        case 5:
+          congratulations.innerHTML = "Five. Impressive."
+          break;
+
+        case 6:
+          congratulations.innerHTML = "Tell your friends!"
+          break;  
+
+        case 7:
+          congratulations.innerHTML = "Congrats!"
+          break;
+
+        case 8:
+          congratulations.innerHTML = "Good job, not great...but good."
+          break; 
+
+        case 9:
+          congratulations.innerHTML = "Nice, that was close!"
+          break;
+
+        case 10:
+          congratulations.innerHTML = "Last guess! On the buzzer!"
+          break; 
+      }
+    }
+    else {
+      congratulations.innerHTML = "Tell your friend it was too easy."
+      todaysMessage.innerHTML = "The artist was...";
+    }
 
    
     try {
@@ -588,7 +742,7 @@ function win(guess) {
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
 
-    searchInput.setAttribute('readonly', true);
+
     //display
 
     return;
@@ -609,8 +763,14 @@ function  calculateHMSleft() {
 
 function handleShare() {
   //copy to clipboard
-  var textToCopy = "Spotle #" + spotleNumber + "🎧\n\n";
-  var textToCopy2 = "";
+  if (challengeGame) {
+    var textToCopy = "Spotle Challenge 🎧\n\n";
+    var textToCopy2 = "";
+  }
+  else {
+    var textToCopy = "Spotle #" + spotleNumber + "🎧\n\n";
+    var textToCopy2 = "";
+  }
   
   for (var i = 1; i < guessCount; i++)
   {
@@ -625,7 +785,17 @@ function handleShare() {
     result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
   }
   else {
-    result = textToCopy.concat('⬜⬜⬜⬜⬜⬜⬜⬜⬜❌\n\n', textToCopy4);
+    if (!challengeGame) {
+      result = textToCopy.concat('⬜⬜⬜⬜⬜⬜⬜⬜⬜❌\n\n', textToCopy4);
+    }
+    else {
+      if (challengeWin) {
+        result = textToCopy.concat(textToCopy2, textToCopy3, textToCopy4);
+      }
+      else {
+        result = textToCopy.concat('⬜⬜⬜⬜⬜⬜⬜⬜⬜❌\n\n', textToCopy4);
+      }
+    }
   }
 
   if (navigator.share) { 
@@ -639,15 +809,22 @@ function handleShare() {
       navigator.clipboard.writeText(result)
       .then(() => { console.log('copied'); })
       .catch((error) => { alert(`Copy failed! ${error}`) })
-  }
-     }
+    }
+}
 
 function loss() {
   console.log('lost');
-  document.cookie = "lost = " + "1" + expires;
 
   if (guessCountContainer.classList.contains('last-guess')) {
     guessCountContainer.classList.remove('last-guess');
+  }
+
+  if (challengeGame) {
+    todaysMessage.innerHTML = "The artist was...";
+    congratulations.innerHTML = "";
+  }
+  else {
+    document.cookie = "lost = " + "1" + expires;
   }
 
   congratulations.innerHTML = "Good try. Next time!";
@@ -675,8 +852,11 @@ function loss() {
 function incorrectGuess(guess) {
 
     guessCount++;
-    document.cookie = "guessCount = " + String(guessCount) + expires;
-    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    if (!challengeGame) {
+      document.cookie = "guessCount = " + String(guessCount) + expires;
+      document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    }
+
     printGuess(guess); 
     guessCountContainer.innerHTML = "Guess " + guessCount + " of 10";
     guessedArtists.push(guess.name);
@@ -929,6 +1109,69 @@ function handleMute() {
   }
 }
 
+function toggleChallenge() {
+
+  const container = document.querySelector('.outer-guess-container');
+    //no guesses, hide intro/show intro
+
+  if (challengeGame) {
+
+    if (!challengeContainer.classList.contains('hidden')) {
+      window.location='http://www.spotle.io';
+    }
+    else {
+      container.classList.add('hidden');
+      guessCountContainer.innerHTML = "Choose an artist for your friends to guess!";
+      winOverlay.classList.add('hidden');
+      creatingChallenge = true;
+      searchInput.removeAttribute('readonly');
+      let textContainer =  document.querySelector('.challenge-btn-text');
+      textContainer.innerHTML = "Return to Spotle";
+      if (rollSound != null) {
+        rollSound.pause();
+      }
+    }
+
+  }
+  
+  if (getCookie('guessCount') == 1 && getCookie('won') != 1) {
+    if (intro.classList.contains('hidden')) {
+      if (!challengeGame)
+        history.go(0);
+    }
+    else {
+      intro.classList.add('hidden');
+      guessCountContainer.innerHTML = "Choose an artist for your friends to guess!";
+      winOverlay.classList.add('hidden');
+      creatingChallenge = true;
+      searchInput.removeAttribute('readonly');
+      let textContainer = document.querySelector('.challenge-btn-text');
+      textContainer.innerHTML = "Back to Game";
+      if (rollSound != null) {
+        rollSound.pause();
+      }
+    }
+  }
+  else {
+    if (container.classList.contains('hidden')) {
+      if (!challengeGame)
+        history.go(0);
+    }
+    else {
+      container.classList.add('hidden');
+      guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+      winOverlay.classList.add('hidden');
+      creatingChallenge = true;
+      searchInput.removeAttribute('readonly');
+      let textContainer =  document.querySelector('.challenge-btn-text');
+      textContainer.innerHTML = "Return to Spotle";
+      if (rollSound != null) {
+        rollSound.pause();
+      }
+    }
+  }
+}
+
 function getContinent(countryCode) {
   if (north_america.includes(countryCode.toUpperCase())) {
     return 'North America';
@@ -951,9 +1194,57 @@ function getContinent(countryCode) {
   return 'Error';
 }
 
+function shareChallenge() {
+  console.log(sharedChallengeArtist.name)
+
+  var artistName = sharedChallengeArtist.name;
+  var message = challengeForm.value;
+
+  if (message == "I'm not sure what to write here..." || message == "") {
+    message = '';
+  }
+
+  var encodedArtist = btoa(artistName);
+  var encodedMessage = btoa(message);
+  console.log(window.location.origin);
+  console.log(encodedArtist);
+  console.log(encodedMessage);
+
+  var url = window.location.origin + "/?artist=" + encodedArtist + "&" + "msg=" + encodedMessage;
+
+  var shareMessage = "I made a custom Spotle game, try it now! 🎧🤍";
+
+  var fullText = shareMessage + "\n\n" + url;
+
+  if (navigator.share) { 
+    navigator.share({
+       text: fullText
+     }).then(() => {
+
+     })
+     .catch(console.error);
+     } else {
+      navigator.clipboard.writeText(fullText)
+      .then(() => { console.log('copied'); })
+      .catch((error) => { alert(`Copy failed! ${error}`) })
+    }
+
+    guessCountContainer.innerHTML = "Text copied to clipboard.\t"
+}
+
+function handleTodays() {
+  window.location='http://www.spotle.io';
+}
+
 guessButton.addEventListener('click', handleGuess);
 shareBtn.addEventListener('click', handleShare);
 muteBtn.addEventListener('click', handleMute);
+challengeShareBtn.addEventListener('click', shareChallenge);
+challengeBtn.addEventListener('click', toggleChallenge);
+navChallengeBtn.addEventListener('click', toggleChallenge);
+challengeExitBtn.addEventListener('click', toggleChallenge);
+todaysBtn.addEventListener('click', handleTodays);
+createBtn.addEventListener('click', toggleChallenge);
 helpBtn.addEventListener('click', function () {
   if (helpOverlay.classList.contains('hidden'))
     helpOverlay.classList.remove('hidden');

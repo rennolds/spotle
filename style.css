@@ -85,7 +85,7 @@ html {
   animation: win-appears ease-in 2s;
   position: absolute;
   background-color: #EFEFEF;
-  z-index: 1;
+  z-index: 3;
   text-align: center;
   border-radius: 5px;
   display: flex;
@@ -185,14 +185,13 @@ html {
   }
 }
 
-.win-overlay .share-btn:hover {
+/* .win-overlay .share-btn:hover {
   cursor: pointer;
-  
 }
 
 .win-overlay .share-btn:onclick {
   background-color: #178f41;
-}
+} */
 
 .win-overlay-hide {
   display: none;  
@@ -232,8 +231,7 @@ html {
 
 .win-todays .todays-artist {
   align-self: flex-start;
-  margin-top: 1rem;
-  margin-bottom: .2rem;
+  padding-top: 2rem;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -241,11 +239,11 @@ html {
 }
 
 .win-todays .todays-name {
-  margin-top: .75rem;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
+  margin-bottom: -1rem;
 }
 
 .album-container img {
@@ -293,7 +291,6 @@ html {
   font-size: 15px;
   position: relative;
   margin-top: 2rem;
-  margin-bottom: 1rem;
   border-radius: 100px;
 }
 
@@ -327,6 +324,7 @@ html {
 .guesses {
   color: #FFFF;
   margin-right: 1.8rem;
+  padding-bottom: .3rem;
 }
 
 .game-container {
@@ -435,6 +433,188 @@ button i {
 
 .results ul li:hover {
   background: #ececec
+}
+
+.outer-challenge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: transitionIn 2s;
+}
+
+.challenge-container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+  color: #FFF;
+}
+
+.challenge-artist {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.challenge-artist-name {
+  height: 65px;
+  flex: 1;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  color: #FFFF;
+  font-size: 150%;
+}
+
+.challenge-artist-img {
+  margin-right: .8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  width:80px;
+  height:80px;
+}
+
+.challenge-track iframe {
+  border: none;
+  border-width: 0;
+  border: 0;
+  width: 360px;
+  height: 113px;
+}
+
+.challenge-form {
+  width: 100%;
+  height: 85px;
+  align-items: center;
+}
+
+.challenge-form-container {
+  width: 100%;
+  height: 85px;
+}
+
+.challenge-form {
+  width: 350px;
+  height: 35px;
+
+  background: #FFFFFF;
+  border-radius: 5px;
+
+}
+
+.challenge-explain {
+  margin-top: .5rem;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 12px;
+  color: #7B7B7B;
+}
+
+.challenge-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: .5rem;
+}
+
+.challenge-btn {
+  margin-bottom: .5rem;
+  width: 172px;
+  height: 25px;
+  font: 'Inter';
+  background: #FFFFFF;
+  border-radius: 100px;
+  display: flex;
+  margin-right: 1rem;   
+  float: right;
+  z-index: 2;
+  position: relative;
+  margin-top: -1rem;
+}
+
+.challenge-btn:hover {
+  cursor: pointer;
+}
+
+.challenge-btn-text {
+  align-self: center;
+  margin-left: 1rem;
+}
+
+.challenge-btn img {
+  width: 22px;
+  height: 22px;
+  float: left;
+  align-self: center;
+  margin-left: .1rem;
+}
+
+.challenge-exit-btn img {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  margin-left: 150px;
+}
+
+.challenge-exit-btn:hover {
+  cursor: pointer;
+}
+
+.styled-btn {
+  border-radius: 5px;
+  width: 176px;
+  height: 52px;
+  background-color: #1Db954;
+  color: #ffff;
+  font-weight: bold;
+  font-size: 15px;
+  position: relative;
+  border-radius: 100px;
+  margin-bottom: .2rem;
+  margin-top: .2rem; 
+}
+
+.styled-btn:hover {
+  cursor: pointer;
+}
+
+.styled-btn:onclick {
+  background-color: #178f41;
+}
+
+/* .play-todays-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+} */
+
+
+.challenge-share {
+  justify-content: center;
+  display: flex;
+}
+
+.challenge-share-btn {
+ margin-top: 2rem;
+}
+
+.challenge-share-btn:hover {
+  cursor: pointer;
+}
+
+.challenge-share-btn:onclick {
+  background-color: #178f41;
+}
+
+.create-btn {
+  margin-bottom: .7rem;
 }
 
 .guess-container {
@@ -613,6 +793,7 @@ button i {
     opacity: 0;
   }
 }
+
 
 .game-container {
   animation: transitionIn 2s;
@@ -822,7 +1003,6 @@ button i {
   margin-left: auto;
   margin-top: 2.2rem;
   margin-right: 1rem;
-  margin-bottom: 1.65rem;
   position: relative;
 }
 
@@ -893,5 +1073,3 @@ header {
   display: flex;
   animation: transitionIn 3s;
 }
-
-

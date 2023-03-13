@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
-        <meta property="og:image" content="resources\spotle_logo.png">
+        <meta property="og:image" content="https://spotle.io/resources/spotle_logo.png">
+        <meta property="og:image:secure_url" content="https://spotle.io/resources/spotle_logo.png"/>
         <title>Play Spotle</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css" type="text/css"/>
-        <link rel="icon" type="image/x-icon" href="resources/spotle_logo.png">
+        <link rel="icon" type="image/x-icon" href="resources/spotle_logo.png"> 
     </head>
     <body>
         <div class="wrapper">
@@ -20,19 +21,22 @@
                 <img src="resources\spotle_logo.png" alt="logo">
             </div>
             <div class="nav-btns">
-                <div class="yesterdays-artist"> 
-                    <div class="front"> 
-                        <div class="front-text">yesterdays</div>
+                    <div class="yesterdays-artist"> 
+                        <div class="front"> 
+                            <div class="front-text">yesterdays</div>
+                        </div>
+                        <div class="back">
+                            <img class="yesterday-image" src="">
+                            <div class="yesterday-name"></div>
+                        </div>
                     </div>
-                    <div class="back">
-                        <img class="yesterday-image">
-                        <div class="yesterday-name"></div>
-                    </div>
-                </div>
-                <div class="help-btn"> <img src='resources/help_icon.svg'></div>
-                <div class="mute-btn"> <img class='mute-img' src='resources/volume_on.svg'> </div>
+                    <div class="help-btn"> <img src='resources/help_icon.svg'></div>
+                    <div class="mute-btn"> <img class='mute-img' src='resources/volume_on.svg'> </div>   
             </div>
+
+            
         </header>
+        <div class="challenge-btn"> <img src='resources/stars.svg'> <div class="challenge-btn-text">Custom Game</div></div> 
         <div class="help-overlay hidden">
             <button class="help-exit-btn"><img src='resources/exit_white.svg' alt="exit button"></button>
             <div class="help-header">
@@ -74,10 +78,13 @@
                 <div class="todays-name"></div>
             </div>
             <div class="win-share">
-                <button class="share-btn">SHARE RESULT</button>
+                <button class="styled-btn share-btn">SHARE RESULT</button>
+                <button class="styled-btn play-todays hidden">PLAY TODAYS</button>
+                <button class="styled-btn create-btn">CREATE A GAME</button>
                 <div class="next-spotle">Next Spotle</div>
                 <div class="timer"></div>
             </div>
+            
             <div class="current-streak"></div>
             
         </div>
@@ -98,11 +105,47 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="outer-challenge-container hidden">
+    
+                    <div class="challenge-container">
+                 
+                        <div class="challenge-artist">
+                            <img class="challenge-artist-img" src="">
+                            <div class="challenge-artist-name"> </div>
+                            <button class="challenge-exit-btn"><img src='resources/exit_white.svg' alt="exit button"></button>
+                        </div>
+    
+                        <div class="challenge-track">
+                            <iframe class="embedded-track" src="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                        </div>
+    
+                        <div class="challenge-form-container">
+                            <div class="challenge-text">
+                                Leave a note for your friend.
+                            </div>
+
+                            <div class="challenge-form-input">
+                                <input class="challenge-form" placeholder="I'm not sure what to write here..."> 
+                            </div>
+
+                            <div class="challenge-explain">
+                                (this will be visible while guessing)
+                            </div>
+                        </div>
+
+                        <div class="challenge-share">
+                            <button class="styled-btn challenge-share-btn">SHARE GAME</button>
+                        </div>
+    
+                        
+
+                    </div>
+                </div>
                 
                 <div class="outer-guess-container">
                     <div class="guess-container">
-                        <div id="intro">
-                            
+                        <div id="intro">        
                             <div class="intro-title">Welcome to Spotle! The Spotify-themed Wordle game!</div>
                             <div class="intro-description">Guess the mystery artist chosen from Spotify's top artists. You have 10 guesses!</div>
                             <div class="intro-music-warning">We'll play one of the artists bangers if you win...volume warning.</div>
