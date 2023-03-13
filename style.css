@@ -291,7 +291,6 @@ html {
   font-size: 15px;
   position: relative;
   margin-top: 2rem;
-  margin-bottom: 1rem;
   border-radius: 100px;
 }
 
@@ -567,6 +566,8 @@ button i {
   font-size: 15px;
   position: relative;
   border-radius: 100px;
+  margin-bottom: .2rem;
+  margin-top: .2rem; 
 }
 
 .styled-btn:hover {

@@ -457,6 +457,7 @@ if (challengeGame) {
   yesterdaysArtist.classList.add('hidden');
   timer.classList.add('hidden');
   nextSpotle.classList.add('hidden');
+  navChallengeBtn.classList.add('hidden');
 }
 
 if (!challengeGame) {
