@@ -440,6 +440,7 @@ const embeddedTrackContainer = document.querySelector('.embedded-track')
 const challengeArtist = document.querySelector('.challenge-artist');
 const challengeShareBtn = document.querySelector('.challenge-share-btn');
 const challengeForm = document.querySelector('.challenge-form');
+const navChallengeBtn = document.querySelector('.challenge-btn');
 
 let sharedChallengeArtist;
 
@@ -608,6 +609,7 @@ const handleGuess = () => {
     if (creatingChallenge) {
       printChallenge(currentArtist.name);
       challengeContainer.classList.remove('hidden'); 
+      challengeContainer.classList.add('flip-in');
       embeddedTrackContainer.src = currentArtist.embeddedTrack;
       console.log(currentArtist.imageUri);
       var artistName = document.querySelector('.challenge-artist-name');
@@ -1203,6 +1205,8 @@ function shareChallenge() {
       .then(() => { console.log('copied'); })
       .catch((error) => { alert(`Copy failed! ${error}`) })
     }
+
+    guessCountContainer.innerHTML = "Share link copied to clipboard."
 }
 
 function handleTodays() {
@@ -1214,6 +1218,7 @@ shareBtn.addEventListener('click', handleShare);
 muteBtn.addEventListener('click', handleMute);
 challengeShareBtn.addEventListener('click', shareChallenge);
 challengeBtn.addEventListener('click', toggleChallenge);
+navChallengeBtn.addEventListener('click', toggleChallenge);
 todaysBtn.addEventListener('click', handleTodays);
 createBtn.addEventListener('click', toggleChallenge);
 helpBtn.addEventListener('click', function () {

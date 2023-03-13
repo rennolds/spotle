@@ -440,6 +440,7 @@ button i {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: transitionIn 2s;
 }
 
 .challenge-container {
@@ -526,6 +527,34 @@ button i {
 
 .challenge-btn {
   margin-bottom: .5rem;
+  width: 172px;
+  height: 25px;
+  font: 'Inter';
+  background: #FFFFFF;
+  border-radius: 100px;
+  display: flex;
+  margin-right: 1rem;   
+  float: right;
+  z-index: 2;
+  position: relative;
+  margin-top: -1rem;
+}
+
+.challenge-btn:hover {
+  cursor: pointer;
+}
+
+.challenge-btn-text {
+  align-self: center;
+  margin-left: 1rem;
+}
+
+.challenge-btn img {
+  width: 22px;
+  height: 22px;
+  float: left;
+  align-self: center;
+  margin-left: .1rem;
 }
 
 .styled-btn {
@@ -570,6 +599,10 @@ button i {
 
 .challenge-share-btn:onclick {
   background-color: #178f41;
+}
+
+.create-btn {
+  margin-bottom: .7rem;
 }
 
 .guess-container {
@@ -958,7 +991,6 @@ button i {
   margin-left: auto;
   margin-top: 2.2rem;
   margin-right: 1rem;
-  margin-bottom: 1.65rem;
   position: relative;
 }
 
