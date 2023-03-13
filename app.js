@@ -591,7 +591,11 @@ const handleGuess = () => {
 
     if (creatingChallenge) {
       challengeContainer.classList.remove('hidden'); 
-      challengeContainer.classList.add('flip-in');
+
+      setTimeout(() => {
+        challengeContainer.classList.add('transition-in');
+        }, 250);
+
       embeddedTrackContainer.src = currentArtist.embeddedTrack;
       console.log(currentArtist.imageUri);
       var artistName = document.querySelector('.challenge-artist-name');
@@ -1111,6 +1115,7 @@ function toggleChallenge() {
     //no guesses, hide intro/show intro
 
   if (challengeGame) {
+    challengeExitBtn.classList.add('force-show');
     console.log('in proper statement');
     container.classList.add('hidden');
     guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
