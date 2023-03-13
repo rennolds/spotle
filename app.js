@@ -661,6 +661,8 @@ function invalidArtist() {
 
 function win(guess) {
 
+    searchInput.setAttribute('readonly', true);
+
     if (guessCountContainer.classList.contains('last-guess')) {
       guessCountContainer.classList.remove('last-guess');
     }
@@ -755,7 +757,7 @@ function win(guess) {
     calculateHMSleft();
     setInterval(calculateHMSleft, 1000);
 
-    searchInput.setAttribute('readonly', true);
+
     //display
 
     return;
@@ -1135,6 +1137,12 @@ function toggleChallenge() {
       guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
       winOverlay.classList.add('hidden');
       creatingChallenge = true;
+      searchInput.setAttribute('readonly');
+      let textContainer = document.querySelectord('.challenge-btn-text');
+      textContainer.innerHTML = "Return to Spotle";
+      if (rollSound != null) {
+        rollSound.pause();
+      }
     }
   }
   else {
@@ -1146,6 +1154,12 @@ function toggleChallenge() {
       guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
       winOverlay.classList.add('hidden');
       creatingChallenge = true;
+      searchInput.removeAttribute('readonly');
+      let textContainer =  document.querySelector('.challenge-btn-text');
+      textContainer.innerHTML = "Return to Spotle";
+      if (rollSound != null) {
+        rollSound.pause();
+      }
     }
   }
 }
