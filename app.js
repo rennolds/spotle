@@ -1121,7 +1121,7 @@ function toggleChallenge() {
     }
     else {
       container.classList.add('hidden');
-      guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+      guessCountContainer.innerHTML = "Choose an artist for your friends to guess!";
       winOverlay.classList.add('hidden');
       creatingChallenge = true;
       searchInput.removeAttribute('readonly');
@@ -1141,7 +1141,7 @@ function toggleChallenge() {
     }
     else {
       intro.classList.add('hidden');
-      guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+      guessCountContainer.innerHTML = "Choose an artist for your friends to guess!";
       winOverlay.classList.add('hidden');
       creatingChallenge = true;
       searchInput.removeAttribute('readonly');
