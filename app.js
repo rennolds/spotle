@@ -821,7 +821,6 @@ function handleShare() {
 
 function loss() {
   console.log('lost');
-  document.cookie = "lost = " + "1" + expires;
 
   if (guessCountContainer.classList.contains('last-guess')) {
     guessCountContainer.classList.remove('last-guess');
@@ -829,7 +828,10 @@ function loss() {
 
   if (challengeGame) {
     todaysMessage.innerHTML = "The artist was...";
-    congratulations.innerHTML = ""
+    congratulations.innerHTML = "";
+  }
+  else {
+    document.cookie = "lost = " + "1" + expires;
   }
 
   congratulations.innerHTML = "Good try. Next time!";
@@ -857,8 +859,11 @@ function loss() {
 function incorrectGuess(guess) {
 
     guessCount++;
-    document.cookie = "guessCount = " + String(guessCount) + expires;
-    document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    if (!challengeGame) {
+      document.cookie = "guessCount = " + String(guessCount) + expires;
+      document.cookie = "guess" + (guessCount-1) + "=" + guess.name + expires;
+    }
+
     printGuess(guess); 
     guessCountContainer.innerHTML = "Guess " + guessCount + " of 10";
     guessedArtists.push(guess.name);
