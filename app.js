@@ -275,16 +275,6 @@ const south_america = [
   'VE',
 ]
 
-function printChallenge(artist) {
-
-  console.log('in challenge');
-  console.log(artist.name);
-
-  // print guess
-
-  // print new button that gives link 
-}
-
 class Artist {
   constructor(name,listenerRank, imageUri, genre, debutAlbumYear, gender, nationality, groupSize, songUri, songImageUri, embeddedTrack) {
       this.name = name;
@@ -343,8 +333,6 @@ if (mm < 10) mm = '0' + mm;
 
 today = mm + '/' + dd + '/' + yyyy;
 
-console.log("NOT ERRORED OUT YET");
-
 async function fetchMysteryArtist() {
   await fetch('resources/mysteryArtists.json').then(function (response) {
     return response.json();
@@ -383,22 +371,15 @@ else {
   let encodedArtist = urlParams.get('artist');
   let encodedMessage = urlParams.get('msg');
 
-  console.log(encodedArtist)
-  console.log(encodedMessage)
-
   decodedArtist = atob(encodedArtist);
   decodedArtist = decodedArtist.toLowerCase();
-  console.log("decoded string", decodedArtist);
 
   mysteryArtist = artists[decodedArtist];
-  console.log(mysteryArtist)
   mysteryArtistSong = mysteryArtist.songUri;
   mysteryArtistImage = mysteryArtist.songImageUri;
   mysteryArtistName = mysteryArtist.name;
 
   decodedMessage = atob(encodedMessage);
-  console.log(decodedMessage)
-  console.log(decodedArtist)
 
   document.body.style.background = "linear-gradient(137.28deg, #894986 -5.33%, #121212 36.26%)";
 }
@@ -608,7 +589,6 @@ const handleGuess = () => {
     var currentArtist = artists[guess];
 
     if (creatingChallenge) {
-      printChallenge(currentArtist.name);
       challengeContainer.classList.remove('hidden'); 
       challengeContainer.classList.add('flip-in');
       embeddedTrackContainer.src = currentArtist.embeddedTrack;
@@ -1128,9 +1108,25 @@ function toggleChallenge() {
 
   const container = document.querySelector('.outer-guess-container');
     //no guesses, hide intro/show intro
+
+  if (challengeGame) {
+    console.log('in proper statement');
+    container.classList.add('hidden');
+    guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+    winOverlay.classList.add('hidden');
+    creatingChallenge = true;
+    searchInput.removeAttribute('readonly');
+    let textContainer =  document.querySelector('.challenge-btn-text');
+    textContainer.innerHTML = "Return to Spotle";
+    if (rollSound != null) {
+      rollSound.pause();
+    }
+  }
+  
   if (getCookie('guessCount') == 1 && getCookie('won') != 1) {
     if (intro.classList.contains('hidden')) {
-      history.go(0);
+      if (!challengeGame)
+        history.go(0);
     }
     else {
       intro.classList.add('hidden');
@@ -1147,7 +1143,8 @@ function toggleChallenge() {
   }
   else {
     if (container.classList.contains('hidden')) {
-      history.go(0);
+      if (!challengeGame)
+        history.go(0);
     }
     else {
       container.classList.add('hidden');
@@ -1221,7 +1218,7 @@ function shareChallenge() {
       .catch((error) => { alert(`Copy failed! ${error}`) })
     }
 
-    guessCountContainer.innerHTML = "Share link copied to clipboard."
+    guessCountContainer.innerHTML = "Text copied to clipboard.\t"
 }
 
 function handleTodays() {
