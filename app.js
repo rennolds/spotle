@@ -1201,7 +1201,7 @@ function shareChallenge() {
 
   var url = window.location.origin + "/?artist=" + encodedArtist + "&" + "msg=" + encodedMessage;
 
-  var shareMessage = "Play my custom Spotle game! 🎧🤍";
+  var shareMessage = "I made a custom Spotle game, try it now! 🎧🤍";
 
   var fullText = shareMessage + "\n\n" + url;
 
