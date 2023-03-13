@@ -556,6 +556,17 @@ button i {
   margin-left: .1rem;
 }
 
+.challenge-exit-btn img {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  margin-left: 150px;
+}
+
+.challenge-exit-btn:hover {
+  cursor: pointer;
+}
+
 .styled-btn {
   border-radius: 5px;
   width: 176px;

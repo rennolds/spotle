@@ -422,6 +422,7 @@ const challengeArtist = document.querySelector('.challenge-artist');
 const challengeShareBtn = document.querySelector('.challenge-share-btn');
 const challengeForm = document.querySelector('.challenge-form');
 const navChallengeBtn = document.querySelector('.challenge-btn');
+const challengeExitBtn = document.querySelector('.challenge-exit-btn');
 
 let sharedChallengeArtist;
 
@@ -1133,9 +1134,9 @@ function toggleChallenge() {
       guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
       winOverlay.classList.add('hidden');
       creatingChallenge = true;
-      searchInput.setAttribute('readonly');
-      let textContainer = document.querySelectord('.challenge-btn-text');
-      textContainer.innerHTML = "Return to Spotle";
+      searchInput.removeAttribute('readonly');
+      let textContainer = document.querySelector('.challenge-btn-text');
+      textContainer.innerHTML = "Back to Game";
       if (rollSound != null) {
         rollSound.pause();
       }
@@ -1231,6 +1232,7 @@ muteBtn.addEventListener('click', handleMute);
 challengeShareBtn.addEventListener('click', shareChallenge);
 challengeBtn.addEventListener('click', toggleChallenge);
 navChallengeBtn.addEventListener('click', toggleChallenge);
+challengeExitBtn.addEventListener('click', toggleChallenge);
 todaysBtn.addEventListener('click', handleTodays);
 createBtn.addEventListener('click', toggleChallenge);
 helpBtn.addEventListener('click', function () {
