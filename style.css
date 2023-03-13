@@ -185,13 +185,13 @@ html {
   }
 }
 
-.win-overlay .share-btn:hover {
+/* .win-overlay .share-btn:hover {
   cursor: pointer;
 }
 
 .win-overlay .share-btn:onclick {
   background-color: #178f41;
-}
+} */
 
 .win-overlay-hide {
   display: none;  
@@ -231,8 +231,7 @@ html {
 
 .win-todays .todays-artist {
   align-self: flex-start;
-  margin-top: 1rem;
-  margin-bottom: .2rem;
+  padding-top: 2rem;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -240,11 +239,11 @@ html {
 }
 
 .win-todays .todays-name {
-  margin-top: .75rem;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
+  margin-bottom: -1rem;
 }
 
 .album-container img {
@@ -525,12 +524,11 @@ button i {
   margin-bottom: .5rem;
 }
 
-.challenge-share {
-  justify-content: center;
-  display: flex;
+.challenge-btn {
+  margin-bottom: .5rem;
 }
 
-.challenge-share-btn {
+.styled-btn {
   border-radius: 5px;
   width: 176px;
   height: 52px;
@@ -539,9 +537,31 @@ button i {
   font-weight: bold;
   font-size: 15px;
   position: relative;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
   border-radius: 100px;
+}
+
+.styled-btn:hover {
+  cursor: pointer;
+}
+
+.styled-btn:onclick {
+  background-color: #178f41;
+}
+
+/* .play-todays-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+} */
+
+
+.challenge-share {
+  justify-content: center;
+  display: flex;
+}
+
+.challenge-share-btn {
+ margin-top: 2rem;
 }
 
 .challenge-share-btn:hover {

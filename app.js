@@ -415,6 +415,8 @@ const winOverlay = document.getElementById('win-overlay');
 const infoPrompt = document.querySelector('.info-prompt');
 const timer = document.querySelector('.timer');
 const shareBtn = document.querySelector('.share-btn');
+const todaysBtn = document.querySelector('.play-todays');
+const createBtn = document.querySelector('.create-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
@@ -666,6 +668,7 @@ function win(guess) {
     }
     else {
       challengeWin = true;
+      todaysBtn.classList.remove('hidden');
     }
 
     printGuess(guess);
@@ -1120,14 +1123,14 @@ function toggleChallenge() {
 
   const container = document.querySelector('.outer-guess-container');
     //no guesses, hide intro/show intro
-  if (getCookie('guessCount') == 1) {
-    
+  if (getCookie('guessCount') == 1 && getCookie('won') != 1) {
     if (intro.classList.contains('hidden')) {
       history.go(0);
     }
     else {
       intro.classList.add('hidden');
       guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+      winOverlay.classList.add('hidden');
       creatingChallenge = true;
     }
   }
@@ -1138,6 +1141,7 @@ function toggleChallenge() {
     else {
       container.classList.add('hidden');
       guessCountContainer.innerHTML = "Select an artist for your friend to guess!";
+      winOverlay.classList.add('hidden');
       creatingChallenge = true;
     }
   }
@@ -1201,11 +1205,17 @@ function shareChallenge() {
     }
 }
 
+function handleTodays() {
+  window.location='http://www.spotle.io';
+}
+
 guessButton.addEventListener('click', handleGuess);
 shareBtn.addEventListener('click', handleShare);
 muteBtn.addEventListener('click', handleMute);
 challengeShareBtn.addEventListener('click', shareChallenge);
 challengeBtn.addEventListener('click', toggleChallenge);
+todaysBtn.addEventListener('click', handleTodays);
+createBtn.addEventListener('click', toggleChallenge);
 helpBtn.addEventListener('click', function () {
   if (helpOverlay.classList.contains('hidden'))
     helpOverlay.classList.remove('hidden');
