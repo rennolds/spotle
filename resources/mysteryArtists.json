@@ -1948,5 +1948,17 @@
     "artist": "Miley Cyrus",
     "song_uri": "https://p.scdn.co/mp3-preview/38622ff19d0a088d9b3335a3cecb802dcb2bb5b3?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273d6c3ad6a2a27471e1d5e8103"
+  },
+  {
+    "date": "03/19/2023",
+    "artist": "Sam Smith",
+    "song_uri": "https://p.scdn.co/mp3-preview/dad7e6d0f24ac5f4ef47c26c64cb6113d065f067?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae" 
+  },
+  {
+    "date": "03/20/2023",
+    "artist": "My Chemical Romance",
+    "song_uri": "https://p.scdn.co/mp3-preview/826f3461c8b7b6207e81bb15f2ebf90f01538582?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27317f77fab7e8f18d5f9fee4a1"
   }
 ] 
