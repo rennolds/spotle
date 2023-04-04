@@ -2050,5 +2050,17 @@
     "artist": "Polo G",
     "song_uri": "https://p.scdn.co/mp3-preview/f957b229721abd773478b3ee66c438f80f613eaa?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273339f780dfdbc38558ea0761d"
+  },
+  {
+    "date": "04/05/2023",
+    "artist": "John Legend",
+    "song_uri": "https://p.scdn.co/mp3-preview/562e8ed1dc5bf6235895b06904358e1472bfe41c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27394c9217a398f5174757c0c78"
+  },
+  {
+    "date": "04/06/2023",
+    "artist": "Surfaces",
+    "song_uri": "https://p.scdn.co/mp3-preview/985b0520becd124b35decd2ca09a91badec1c053?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733667dc27da7b24360d6050d0"
   }
 ]  
