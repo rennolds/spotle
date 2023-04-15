@@ -2116,5 +2116,35 @@
     "artist": "Demi Lovato",
     "song_uri": "https://p.scdn.co/mp3-preview/617687187e599a19ef1ca6db98d57e6061509d06?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273ed164cf1c10f028e8f528784"
+  },
+  {
+    "date": "04/16/2023",
+    "artist": "The Beatles",
+    "song_uri": "https://p.scdn.co/mp3-preview/54cc460f2c430b83b018f540c8a8c33539c1c393?cid=98f79e400795491cbc5f69b71346570",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25"
+  },
+  {
+    "date": "04/17/2023",
+    "artist": "Beyonce",
+    "song_uri": "https://p.scdn.co/mp3-preview/9354ab4f5ccdb457cb4cdf07033d1a46c8bc9c84?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730e58a0f8308c1ad403d105e7"
+  },
+  {
+    "date": "04/18/2023",
+    "artist": "Logic",
+    "song_uri": "https://p.scdn.co/mp3-preview/3bf8f4d3ea210e859802b6b98d18ea940a53d986?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cfdf40cf325b609a52457805"
+  },
+  {
+    "date": "04/19/2023",
+    "artist": "Kehlani",
+    "song_uri": "https://p.scdn.co/mp3-preview/902844ebc014bb7e883a54bc2e761e08537b1898?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cccb973e9ff7440fbaf8485e"
+  },
+  {
+    "date": "04/20/2023",
+    "artist": "FUN.",
+    "song_uri": "https://p.scdn.co/mp3-preview/ba5bc5a6ef6ee6dc8e122b22438923bf0326200f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27305fb4e9947c6edaf3836766e"
   }
 ]  
