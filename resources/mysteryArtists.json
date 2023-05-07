@@ -2242,5 +2242,17 @@
     "artist": "Britney Spears",
     "song_uri": "https://p.scdn.co/mp3-preview/d3e1b8ff763f176a91394315080b1f0b7d46fd40?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273efc6988972cb04105f002cd4"
+  },
+  {
+    "date": "05/07/2023",
+    "artist": "Fetty Wap",
+    "song_uri": "https://p.scdn.co/mp3-preview/1bfdf966666378a6984063ef0631860e5286d587?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731769fa68b9643ca67c4d44ce"
+  },
+  {
+    "date": "05/08/2023",
+    "artist": "Doja Cat",
+    "song_uri": "https://p.scdn.co/mp3-preview/7825a58b6e1a9c4e550191223a18a3b268643d0a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27382b243023b937fd579a35533"
   }
 ]  
