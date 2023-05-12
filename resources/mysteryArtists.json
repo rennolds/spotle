@@ -2278,5 +2278,11 @@
     "artist": "Sia",
     "song_uri": "https://p.scdn.co/mp3-preview/d2b686ec5e818ab56c7131a72a9d51aeccdb74ca?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273d1410c1372fab1e516328fa8"
+  },  
+  {
+    "date": "05/13/2022",
+    "artist": "Kanye West",
+    "song_uri": "https://p.scdn.co/mp3-preview/23771e17f5cc8853beee8ffee1ddc99fdefbcfa1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27326f7f19c7f0381e56156c94a"
   }
 ]  
