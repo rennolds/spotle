@@ -2332,5 +2332,23 @@
     "artist": "Spice Girls",
     "song_uri": "https://p.scdn.co/mp3-preview/66c4fdfab9106456adb12b0ce40c005cc70c92a6?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27363facc42e4a35eb3aa182b59"
+  },
+  {
+    "date": "05/22/2023",
+    "artist": "Justin Bieber",
+    "song_uri": "https://p.scdn.co/mp3-preview/b1d8ae6e830851c89f237d0b64b5e37ceac60573?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730315efc555d5a157b0392652"
+  },
+  {
+    "date": "05/23/2023",
+    "artist": "Jason Mraz",
+    "song_uri": "https://p.scdn.co/mp3-preview/975f7acc6041b1b74b5a4bdacf8843df6c51505c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730f2e51f7121539e221c51161"
+  },
+  {
+    "date": "05/24/2023",
+    "artist": "Panic! At The Disco",
+    "song_uri": "https://p.scdn.co/mp3-preview/b1c0b3b60dabbabfd3056aa470ff47ffc0fdb4bf?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27323152d9337d6c57b116ed13a"
   }
 ]  
