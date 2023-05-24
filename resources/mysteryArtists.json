@@ -2350,5 +2350,17 @@
     "artist": "Panic! At The Disco",
     "song_uri": "https://p.scdn.co/mp3-preview/b1c0b3b60dabbabfd3056aa470ff47ffc0fdb4bf?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27323152d9337d6c57b116ed13a"
+  },
+  {
+    "date": "05/25/2023",
+    "artist": "ZAYN",
+    "song_uri": "https://p.scdn.co/mp3-preview/6c223c6fd87736a7efffbba3e388ef8dc91d7089?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732bdcb339402ebd78651f09c8"
+  },
+  {
+    "date": "05/26/2023",
+    "artist": "Pop Smoke",
+    "song_uri": "https://p.scdn.co/mp3-preview/c64d85430ac0e731e7e488d7bb882c221941184a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738fe5d04b06aff90f9fe796f5"
   }
 ]  
