@@ -2368,5 +2368,17 @@
     "artist": "Avril Lavigne",
     "song_uri": "https://p.scdn.co/mp3-preview/a483f9955188f39637f4fd143ef47d47fbc55edf?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273476cdf5837ae39eee951cc15"
+  },
+  {
+    "date": "05/28/2023",
+    "artist": "Morgan Wallen",
+    "song_uri": "https://p.scdn.co/mp3-preview/8e9378ebaf88e8123840e7abe02ca3bfbcccaded?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fc1df8423733f6f3c9e8dea2"
+  },
+  {
+    "date": "05/29/2023",
+    "artist": "Adele",
+    "song_uri": "https://p.scdn.co/mp3-preview/7485e6591f4025338ae968a341d8ef9e5134dd25?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731c88166762f2e18f8f23c6f1"
   }
 ]  
