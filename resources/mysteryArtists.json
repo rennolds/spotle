@@ -2392,5 +2392,11 @@
     "artist": "Usher",
     "song_uri": "https://p.scdn.co/mp3-preview/775632d9867341c779b7238f1718f9abd1773061?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273365b3fb800c19f7ff72602da"
+  },
+  {
+    "date": "06/01/2023",
+    "artist": "John Mayer",
+    "song_uri": "https://p.scdn.co/mp3-preview/53bf61d5b633a69e578c733dc58ddeed5b9ec288?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737af5fdc5ef048a68db62b85f"
   }
 ]  
