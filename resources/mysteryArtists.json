@@ -2398,5 +2398,11 @@
     "artist": "John Mayer",
     "song_uri": "https://p.scdn.co/mp3-preview/53bf61d5b633a69e578c733dc58ddeed5b9ec288?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2737af5fdc5ef048a68db62b85f"
+  },
+  {
+    "date": "06/02/2023",
+    "artist": "Frank Ocean",
+    "song_uri": "https://p.scdn.co/mp3-preview/e874387e6119a7af84a941c39ff0241156b54515?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737aede4855f6d0d738012e2e5"
   }
 ]  
