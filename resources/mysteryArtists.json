@@ -2416,5 +2416,11 @@
     "artist": "Daft Punk",
     "song_uri": "https://p.scdn.co/mp3-preview/a13551566573594eb4d12c396775b3fb0fca6e66?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731d5cf960a92bb8b03fc2be7f"
+  },
+  {
+    "date": "06/05/2023",
+    "artist": "Billie Eilish",
+    "song_uri": "https://p.scdn.co/mp3-preview/96cd58badeeabc3c3037b4649571c8fb6b8ebd60?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce"
   }
 ]  
