@@ -2452,5 +2452,11 @@
     "artist": "Maroon 5",
     "song_uri": "https://p.scdn.co/mp3-preview/a2d747c97ba5cd6af6ddb2e4c8cdf9e8ec5e5628?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27392f2d790c6a97b195f66d51e"
+  },
+  {
+    "date": "06/11/2023",
+    "artist": "Taylor Swift",
+    "song_uri": "https://p.scdn.co/mp3-preview/5d487e1f146e6ed789453e2b0df95bee80124ddf?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273318443aab3531a0558e79a4d"
   }
 ]  
