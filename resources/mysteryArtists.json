@@ -2509,14 +2509,33 @@
   },
   {
     "date": "06/20/2023",
-    "artist": "NF",
-    "song_uri": "https://p.scdn.co/mp3-preview/33b3b115129a6e4c721e6ba2e5bad419521ffa29?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cd733919ee57d0cc466e152f"
+    "artist": "BTS",
+    "song_uri": "https://p.scdn.co/mp3-preview/740c53f438d3cb63de5d099e7253cfff9a9feabb?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27317db30ce3f081d6818a8ad49"
   },
   {
     "date": "06/21/2023",
-    "artist": "Bob Marley",
-    "song_uri": "https://p.scdn.co/mp3-preview/cd547cf59938b97baeaf33c2bb86febeaf021243?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731c40418d1c37d727e8e91b04"
+    "artist": "The 1975",
+    "song_uri": "https://p.scdn.co/mp3-preview/ab7235ad5268512841257ddaa4bdd1b57459d0a0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731f44db452a68e229650a302c"
+  },
+  {
+    "date": "06/22/2023",
+    "artist": "Twenty One Pilots",
+    "song_uri": "https://p.scdn.co/mp3-preview/c6011d475d777067dbe2907abd3ae133e8b2a828?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273de03bfc2991fd5bcfde65ba3"
+  },
+  {
+    "date": "06/23/2023",
+    "artist": "Katy Perry",
+    "song_uri": "https://p.scdn.co/mp3-preview/1df30fc9a11b825b0a8ca4f304dee3210e2edd87?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cd3978ebe35d93a07249b97f"
+  },
+  {
+    "date": "06/24/2023",
+    "artist": "Kanye West",
+    "song_uri": "https://p.scdn.co/mp3-preview/23771e17f5cc8853beee8ffee1ddc99fdefbcfa1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27326f7f19c7f0381e56156c94a"
   }
+
 ]  
