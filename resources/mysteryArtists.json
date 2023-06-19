@@ -2506,5 +2506,17 @@
     "artist": "Pink Floyd",
     "song_uri": "https://p.scdn.co/mp3-preview/71f0b73c37bc4d421098daf687c79ca596dffba7?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe"
+  },
+  {
+    "date": "06/20/2023",
+    "artist": "NF",
+    "song_uri": "https://p.scdn.co/mp3-preview/33b3b115129a6e4c721e6ba2e5bad419521ffa29?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cd733919ee57d0cc466e152f"
+  },
+  {
+    "date": "06/21/2023",
+    "artist": "Bob Marley",
+    "song_uri": "https://p.scdn.co/mp3-preview/cd547cf59938b97baeaf33c2bb86febeaf021243?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731c40418d1c37d727e8e91b04"
   }
 ]  
