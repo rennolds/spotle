@@ -177,6 +177,8 @@ const europe = [
   'UA',
   'MK',
   'GB',
+  'GB-ENG',
+  'UK',
   'GG',
   'JE',
   'IM',
