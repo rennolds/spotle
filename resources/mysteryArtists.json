@@ -2533,9 +2533,26 @@
   },
   {
     "date": "06/24/2023",
-    "artist": "Kanye West",
-    "song_uri": "https://p.scdn.co/mp3-preview/23771e17f5cc8853beee8ffee1ddc99fdefbcfa1?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b27326f7f19c7f0381e56156c94a"
+    "artist": "Green Day",
+    "song_uri": "https://p.scdn.co/mp3-preview/2d63c6b93eb7a6af1018472d0f0a93a924fef412?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27308a1b1e0674086d3f1995e1b"
+  },
+  {
+    "date": "06/25/2023",
+    "artist": "Lil Wayne",
+    "song_uri": "https://p.scdn.co/mp3-preview/31be0864703f941da0f6b2ab809ac68153451428?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27302a999c3a283b5392e57737d"
+  },
+  {
+    "date": "06/26/2023",
+    "artist": "Carly Rae Jepsen",
+    "song_uri": "https://p.scdn.co/mp3-preview/0e832a7f2198e5943d5554aa435b743591e062c8?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a111f7769013f1731e9c697c"
+  },
+  {
+    "date": "06/27/2023",
+    "artist": "Post Malone",
+    "song_uri": "https://p.scdn.co/mp3-preview/f9fb5b13fdd9f89e755eac3e16533838c59b59ae?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27355404f712deb84d0650a4b41"
   }
-
 ]  
