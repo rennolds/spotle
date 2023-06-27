@@ -2554,5 +2554,65 @@
     "artist": "Post Malone",
     "song_uri": "https://p.scdn.co/mp3-preview/f9fb5b13fdd9f89e755eac3e16533838c59b59ae?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27355404f712deb84d0650a4b41"
+  },
+  {
+    "date": "06/28/2023",
+    "artist": "Spice Girls",
+    "song_uri": "https://p.scdn.co/mp3-preview/66c4fdfab9106456adb12b0ce40c005cc70c92a6?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27363facc42e4a35eb3aa182b59"
+  },
+  {
+    "date": "06/29/2023",
+    "artist": "Childish Gambino",
+    "song_uri": "https://p.scdn.co/mp3-preview/ee4d6f2c94a17f2f63cca5434a9106d5f27ff22b?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f78c98bbf2b3c9e2a764203e"
+  },
+  {
+    "date": "06/30/2023",
+    "artist": "Adele",
+    "song_uri": "https://p.scdn.co/mp3-preview/7485e6591f4025338ae968a341d8ef9e5134dd25?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731c88166762f2e18f8f23c6f1"
+  },
+  {
+    "date": "07/01/2023",
+    "artist": "Nirvana",
+    "song_uri": "https://p.scdn.co/mp3-preview/9781673a70278effbced98841341a2321e846a62?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e175a19e530c898d167d39bf"
+  },
+  {
+    "date": "07/02/2023",
+    "artist": "Phoebe Bridgers",
+    "song_uri": "https://p.scdn.co/mp3-preview/03bd2422cb4149c93e7b1c070aade6216778634f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27368b90c3b34c3ac22856ddab8"
+  },
+  {
+    "date": "07/03/2023",
+    "artist": "Ariana Grande",
+    "song_uri": "https://p.scdn.co/mp3-preview/651f0402c22ebf353545396b35ffec207540c8dd?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605"
+  },
+  {
+    "date": "07/04/2023",
+    "artist": "WALK THE MOON",
+    "song_uri": "https://p.scdn.co/mp3-preview/78558b79e4571208d3bf6e6a80d06e3f23511abd?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27343294cfa2688055c9d821bf3"
+  },
+  {
+    "date": "07/05/2023",
+    "artist": "James Arthur",
+    "song_uri": "https://p.scdn.co/mp3-preview/9480af44f6c7c9c8edd70d87aa74cbff5532f8ba?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27320beb61f61fcbeb33b10a9ab"
+  },
+  {
+    "date": "07/06/2023",
+    "artist": "Lizzo",
+    "song_uri": "https://p.scdn.co/mp3-preview/2180ea3fbc97e37cb27686f9dd492c434c7f0f3e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fe3b1b9cb7183a94e1aafd43"
+  },
+  {
+    "date": "07/07/2023",
+    "artist": "My Chemical Romance",
+    "song_uri": "https://p.scdn.co/mp3-preview/826f3461c8b7b6207e81bb15f2ebf90f01538582?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27317f77fab7e8f18d5f9fee4a1"
   }
 ]  
