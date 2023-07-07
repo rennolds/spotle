@@ -2620,5 +2620,23 @@
     "artist": "My Chemical Romance",
     "song_uri": "https://p.scdn.co/mp3-preview/826f3461c8b7b6207e81bb15f2ebf90f01538582?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27317f77fab7e8f18d5f9fee4a1"
+  },
+  {
+    "date": "07/09/2023",
+    "artist": "Harry Styles",
+    "song_uri": "https://p.scdn.co/mp3-preview/f0c2adc40766cd8c1ec3f2bc6e1cc293a77ba684?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732e8ed79e177ff6011076f5f0"
+  },
+  {
+    "date": "07/10/2023",
+    "artist": "OutKast",
+    "song_uri": "https://p.scdn.co/mp3-preview/5957b021be09bcb859d4d490bf36c88a52d793c7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736a6387ab37f64034cdc7b367"
+  },
+  {
+    "date": "07/11/2023",
+    "artist": "Avicii",
+    "song_uri": "https://p.scdn.co/mp3-preview/d1ba8ac33684933ab4bcbc194276a08974005660?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ffb343926530168be4724dd4"
   }
 ]  
