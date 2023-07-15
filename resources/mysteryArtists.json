@@ -2668,5 +2668,25 @@
     "artist": "Jason Mraz",
     "song_uri": "https://p.scdn.co/mp3-preview/975f7acc6041b1b74b5a4bdacf8843df6c51505c?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730f2e51f7121539e221c51161"
+  },
+  {
+    "date": "07/17/2023",
+    "artist": "Florida Georgia Line",
+    "song_uri": "https://p.scdn.co/mp3-preview/773b44828533fafac2eefa658ec7b88f85bec23e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f5601676db551cb2a09e70a0"
+  },
+  {
+    "date": "07/18/2023",
+    "artist": "J. Cole",
+    "song_uri": "https://p.scdn.co/mp3-preview/1b0830cdae4e0ea251fc7fe9b2a8216f98bd7c06?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c6e0948bbb0681ff29cdbae8"
+  },
+  {
+    "date": "07/19/2023",
+    "artist": "Lorde",
+    "song_uri": "https://p.scdn.co/mp3-preview/27a83395a1c4b9938b31a4d45e2acc2656f25491?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273187331e276c898d39764cc98"
   }
+
+
 ]  
