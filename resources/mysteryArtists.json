@@ -2686,7 +2686,29 @@
     "artist": "Lorde",
     "song_uri": "https://p.scdn.co/mp3-preview/27a83395a1c4b9938b31a4d45e2acc2656f25491?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273187331e276c898d39764cc98"
+  },
+  {
+    "date": "07/20/2023",
+    "artist": "Bruno Mars",
+    "song_uri": "https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5"
+  },
+  {
+    "date": "07/21/2023",
+    "artist": "Halsey",
+    "song_uri": "https://p.scdn.co/mp3-preview/401f2dd43e382b45a6ef44a9f0b2d0edfffd9d9c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737636e1c9e67eaafc9f49aefd"
+  },
+  {
+    "date": "07/22/2023",
+    "artist": "Kendrick Lamar",
+    "song_uri": "https://p.scdn.co/mp3-preview/29e5b097f91b7f04953283c2e46e08302f037f27?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699"
+  },
+  {
+    "date": "07/23/2023",
+    "artist": "blink-182",
+    "song_uri": "https://p.scdn.co/mp3-preview/4a2a6857e0c0dacdff68accb033f18cd8c910c18?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730a4ae12eb3a9fb7e3815001c"
   }
-
-
 ]  
