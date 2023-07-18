@@ -721,6 +721,10 @@ button i {
   background-color: rgba(106,208,116,.8) !important;
 }
 
+.correct-barbie {
+  background-color: #e0218a !important;
+}
+
 .close {
   background-color: rgba(255,245,0,.7) !important;
 }

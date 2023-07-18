@@ -1020,12 +1020,26 @@ function printGuess(guess) {
 }
 
 function flipWinnerGreen(nationalityElement, genreElement, genderElement, groupElement, albumElement, listenerRankElement) {
-  flipDiv(nationalityElement,'correct');
-  flipDiv(genreElement, 'correct');
-  flipDiv(genderElement, 'correct');
-  flipDiv(groupElement, 'correct');
-  flipDiv(albumElement, 'correct');
-  flipDiv(listenerRankElement,'correct');
+  
+  if (today === "07/21/2023" || today === "07/22/2023") {
+    flipDiv(nationalityElement,'correct-barbie');
+    flipDiv(genreElement, 'correct-barbie');
+    flipDiv(genderElement, 'correct-barbie');
+    flipDiv(groupElement, 'correct-barbie');
+    flipDiv(albumElement, 'correct-barbie');
+    flipDiv(listenerRankElement,'correct-barbie');
+    shareBtn.classList.add('correct-barbie');
+    createBtn.classList.add('correct-barbie');
+  }
+  else {
+    flipDiv(nationalityElement,'correct');
+    flipDiv(genreElement, 'correct');
+    flipDiv(genderElement, 'correct');
+    flipDiv(groupElement, 'correct');
+    flipDiv(albumElement, 'correct');
+    flipDiv(listenerRankElement,'correct');
+  }
+ 
 }
 
 function checkCriteria(nationalityElement, genreElement, genderElement, groupElement, albumElement,listenerRankElement, guess) {
