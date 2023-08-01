@@ -2171,7 +2171,7 @@
     "song_uri": "https://p.scdn.co/mp3-preview/04a74c7a4c0636b4a7a7431b972f56e21cafaed0?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2736ac1ad714f815e19c2372401"
   },
-    {
+  {
     "date": "04/25/2023",
     "artist": "Marshmello",
     "song_uri": "https://p.scdn.co/mp3-preview/a4f38e5a14237b882fafa2f0dee903bee1f3fc8f?cid=98f79e400795491cbc5f69b713465708",
@@ -2770,5 +2770,11 @@
     "artist": "Avril Lavigne",
     "song_uri": "https://p.scdn.co/mp3-preview/a483f9955188f39637f4fd143ef47d47fbc55edf?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273476cdf5837ae39eee951cc15"
+  },
+  {
+    "date": "08/03/2023",
+    "artist": "Marshmello",
+    "song_uri": "https://p.scdn.co/mp3-preview/a4f38e5a14237b882fafa2f0dee903bee1f3fc8f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ae40468931087f78919b86ce"
   }
 ]  
