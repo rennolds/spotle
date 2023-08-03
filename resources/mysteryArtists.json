@@ -2782,5 +2782,11 @@
     "artist": "Coldplay",
     "song_uri": "https://p.scdn.co/mp3-preview/6c2f8687b026554bcb72cfa3c47ebd2489218d42?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2733d92b2ad5af9fbc8637425f0"
+  },
+  {
+    "date": "08/05/2023",
+    "artist": "The Beatles",
+    "song_uri": "https://p.scdn.co/mp3-preview/54cc460f2c430b83b018f540c8a8c33539c1c393?cid=98f79e400795491cbc5f69b71346570",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25"
   }
 ]  
