@@ -2788,5 +2788,11 @@
     "artist": "The Beatles",
     "song_uri": "https://p.scdn.co/mp3-preview/54cc460f2c430b83b018f540c8a8c33539c1c393?cid=98f79e400795491cbc5f69b71346570",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25"
+  },
+  {
+    "date": "08/06/2023",
+    "artist": "Travis Scott",
+    "song_uri": "https://p.scdn.co/mp3-preview/fdacf2ab74a6022499f95f0d196a6a41bea5f406?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273072e9faef2ef7b6db63834a3"
   }
 ]  
