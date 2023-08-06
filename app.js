@@ -308,7 +308,10 @@ await fetch('resources/artists.json').then(function (response) {
     else if (data[i].gender == "f") {
       x = 'Female';
     }
-    else {
+    else if (data[i].gender == "nb") {
+      x = 'Nonbinary';
+   }
+   else {
       x = 'Mixed';
    }
     artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size, data[i].song_uri, data[i].song_image_uri, data[i].embedded_track);

@@ -2794,5 +2794,17 @@
     "artist": "Travis Scott",
     "song_uri": "https://p.scdn.co/mp3-preview/fdacf2ab74a6022499f95f0d196a6a41bea5f406?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273072e9faef2ef7b6db63834a3"
+  },
+  {
+    "date": "08/07/2023",
+    "artist": "Selena Gomez",
+    "song_uri": "https://p.scdn.co/mp3-preview/b96d1c40ff6badba96c7f764ef5a13282120a4c5?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732abcc266597eb46f897a8666"
+  },
+  {
+    "date": "08/08/2023",
+    "artist": "P!nk",
+    "song_uri": "https://p.scdn.co/mp3-preview/4805ab360cac4be440dcc833961fa01f2039b1b8?cid=98f79e400795491cbc5f69b71346570",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736f3451faa271fbe470685f34"
   }
 ]  
