@@ -2824,5 +2824,17 @@
     "artist": "Queen",
     "song_uri": "https://p.scdn.co/mp3-preview/c3e18dc90fd2acaec0f694beadc02a4f702aec9f?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27393c65b02f4a72cd6eccf446d"
+  },
+  {
+    "date": "08/12/2023",
+    "artist": "Mumford & Sons",
+    "song_uri": "https://p.scdn.co/mp3-preview/a679c8f65021509550b9e2831638716e54cb367f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e5d3f32e37004060183a5fc5"
+  },
+  {
+    "date": "08/13/2023",
+    "artist": "Billie Eilish",
+    "song_uri": "https://p.scdn.co/mp3-preview/96cd58badeeabc3c3037b4649571c8fb6b8ebd60?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce"
   }
 ]  
