@@ -2872,5 +2872,29 @@
     "artist": "Daft Punk",
     "song_uri": "https://p.scdn.co/mp3-preview/a13551566573594eb4d12c396775b3fb0fca6e66?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731d5cf960a92bb8b03fc2be7f"
+  },
+  {
+    "date": "08/20/2023",
+    "artist": "Fall Out Boy",
+    "song_uri": "https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5"
+  },  
+  {
+    "date": "08/21/2023",
+    "artist": "Rihanna",
+    "song_uri": "https://p.scdn.co/mp3-preview/60cff530f860b1961df9c74df2cb1d50ef5df103?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b9ff0a5f40d3406aed5e5e3b"
+  },
+  {
+    "date": "08/22/2023",
+    "artist": "Black Eyed Peas",
+    "song_uri": "https://p.scdn.co/mp3-preview/a380d9cd4fc72df56cb71b0965c51c7e51ddaab3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27329a42ba069a854c9078377b4"
+  },
+  {
+    "date": "08/23/2023",
+    "artist": "Mac Miller",
+    "song_uri": "https://p.scdn.co/mp3-preview/bf03ddff4fe0da5164998c42f2d4a7b0f7bc1497?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27350570144b4a9a459406f9a3d"
   }
 ]  
