@@ -2920,5 +2920,29 @@
     "artist": "The Notorious B.I.G.",
     "song_uri": "https://p.scdn.co/mp3-preview/8da9fc5442bff368a762b8e9e30a6e4906a45d21?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273fde79b88e2a659c394c5ae30"
+  },
+  {
+    "date": "08/28/2023",
+    "artist": "The Police",
+    "song_uri": "https://p.scdn.co/mp3-preview/4d8861bdc6a87ce2a5578ecb2fc1b65c5d8cb4f8?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c8e97cafeb2acb85b21a777e"
+  },
+  {
+    "date": "08/29/2023",
+    "artist": "Oliver Tree",
+    "song_uri": "https://p.scdn.co/mp3-preview/5331fb98a73a8ceb6dd4206c13b7768a3facffb0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2735b1bff1152ef6d402c9b75a8"
+  },
+  {
+    "date": "08/30/2023",
+    "artist": "Blackbear",
+    "song_uri": "https://p.scdn.co/mp3-preview/04a74c7a4c0636b4a7a7431b972f56e21cafaed0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736ac1ad714f815e19c2372401"
+  },
+  {
+    "date": "08/31/2023",
+    "artist": "Marshmello",
+    "song_uri": "https://p.scdn.co/mp3-preview/a4f38e5a14237b882fafa2f0dee903bee1f3fc8f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ae40468931087f78919b86ce"
   }
 ]  
