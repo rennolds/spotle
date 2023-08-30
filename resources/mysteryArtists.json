@@ -2944,5 +2944,17 @@
     "artist": "Marshmello",
     "song_uri": "https://p.scdn.co/mp3-preview/a4f38e5a14237b882fafa2f0dee903bee1f3fc8f?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273ae40468931087f78919b86ce"
+  },
+  {
+    "date": "09/01/2023",
+    "artist": "Olivia Rodrigo",
+    "song_uri": "https://p.scdn.co/mp3-preview/3849f6e821a9f55bc736e53791b8d88938e3034e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a"
+  },
+  {
+    "date": "09/02/2023",
+    "artist": "Kanye West",
+    "song_uri": "https://p.scdn.co/mp3-preview/23771e17f5cc8853beee8ffee1ddc99fdefbcfa1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27326f7f19c7f0381e56156c94a"
   }
 ]  
