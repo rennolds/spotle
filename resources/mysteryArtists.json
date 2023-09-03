@@ -2968,5 +2968,17 @@
     "artist": "Metallica",
     "song_uri": "https://p.scdn.co/mp3-preview/c3818dcb62a5cc3701b08c3465ab93199e2786e3?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273cad4832cb7b5844343278daa"
+  },
+  {
+    "date": "09/05/2023",
+    "artist": "Two Door Cinema Club",
+    "song_uri": "https://p.scdn.co/mp3-preview/81022ecbd07f923a7ceee7acffda8cf13f1c3d49?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731d579563f814da8508cafad2"
+  },
+  {
+    "date": "09/06/2023",
+    "artist": "Shawn Mendes",
+    "song_uri": "https://p.scdn.co/mp3-preview/a7626919df05ef65b5fe020a02489933ec3b1d8d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ea3ef7697cfd5705b8f47521"
   }
 ]  
