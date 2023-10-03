@@ -3136,5 +3136,17 @@
     "artist": "Adele",
     "song_uri": "https://p.scdn.co/mp3-preview/7485e6591f4025338ae968a341d8ef9e5134dd25?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731c88166762f2e18f8f23c6f1"
+  },
+  {
+    "date": "10/03/2023",
+    "artist": "Post Malone",
+    "song_uri": "https://p.scdn.co/mp3-preview/f9fb5b13fdd9f89e755eac3e16533838c59b59ae?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27355404f712deb84d0650a4b41"
+  },
+  {
+    "date": "10/04/2023",
+    "artist": "Spice Girls",
+    "song_uri": "https://p.scdn.co/mp3-preview/66c4fdfab9106456adb12b0ce40c005cc70c92a6?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27363facc42e4a35eb3aa182b59"
   }
 ]  
