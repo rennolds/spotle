@@ -3154,5 +3154,17 @@
     "artist": "Mitski",
     "song_uri": "https://p.scdn.co/mp3-preview/aa4073085d84897475a94110ddda62b20cf96310?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273c428f67b4a9b7e1114dfc117"
+  },
+  {
+    "date": "10/06/2023",
+    "artist": "Maroon 5",
+    "song_uri": "https://p.scdn.co/mp3-preview/a2d747c97ba5cd6af6ddb2e4c8cdf9e8ec5e5628?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27392f2d790c6a97b195f66d51e"
+  },
+  {
+    "date": "10/07/2023",
+    "artist": "The Fray",
+    "song_uri": "https://p.scdn.co/mp3-preview/3896c6ba6208b692e7b04a8651d289a1ae4bcf2b?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27359b8b957f164ce660919f1f4"
   }
 ]  
