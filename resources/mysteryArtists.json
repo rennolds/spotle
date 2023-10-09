@@ -2389,7 +2389,7 @@
   },
   {
     "date": "05/31/2023",
-    "artist": "Usher",
+    "artist": "Mayer",
     "song_uri": "https://p.scdn.co/mp3-preview/775632d9867341c779b7238f1718f9abd1773061?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273365b3fb800c19f7ff72602da"
   },
@@ -3178,5 +3178,11 @@
     "artist": "The Cure",
     "song_uri": "https://p.scdn.co/mp3-preview/958e347444599fa593cb2d86459e67ad18719c72?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273e410fa31e3dfcc7521cde86d"
+  },
+  {
+    "date": "10/10/2023",
+    "artist": "Usher",
+    "song_uri": "https://p.scdn.co/mp3-preview/775632d9867341c779b7238f1718f9abd1773061?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273365b3fb800c19f7ff72602da"
   }
 ]  
