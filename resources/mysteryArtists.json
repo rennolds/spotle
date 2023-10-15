@@ -3220,5 +3220,17 @@
     "artist": "Ed Sheeran",
     "song_uri": "https://p.scdn.co/mp3-preview/229419b7fe43f4aa963e8ed8eecabc4b87c4958e?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96"
+  },
+  {
+    "date": "10/17/2023",
+    "artist": "Pink Floyd",
+    "song_uri": "https://p.scdn.co/mp3-preview/71f0b73c37bc4d421098daf687c79ca596dffba7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe"
+  },
+  {
+    "date": "10/18/2023",
+    "artist": "Swedish House Mafia",
+    "song_uri": "https://p.scdn.co/mp3-preview/68ba649e5233a128a3c95a28375dee8522892a4e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739cfe80c0c05ce104f7bab18e"
   }
 ]  
