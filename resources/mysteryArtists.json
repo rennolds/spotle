@@ -3250,5 +3250,17 @@
     "artist": "Nirvana",
     "song_uri": "https://p.scdn.co/mp3-preview/9781673a70278effbced98841341a2321e846a62?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273e175a19e530c898d167d39bf"
+  },
+  {
+    "date": "10/22/2023",
+    "artist": "Tyler, The Creator",
+    "song_uri": "https://p.scdn.co/mp3-preview/ffe2a8087b844352de557c4856249fcea85f3d35?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57"
+  },
+  {
+    "date": "10/23/2023",
+    "artist": "Selena Gomez",
+    "song_uri": "https://p.scdn.co/mp3-preview/b96d1c40ff6badba96c7f764ef5a13282120a4c5?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732abcc266597eb46f897a8666"
   }
 ]  
