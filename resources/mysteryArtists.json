@@ -3262,5 +3262,17 @@
     "artist": "Selena Gomez",
     "song_uri": "https://p.scdn.co/mp3-preview/b96d1c40ff6badba96c7f764ef5a13282120a4c5?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2732abcc266597eb46f897a8666"
+  },
+  {
+    "date": "10/24/2023",
+    "artist": "Mike Posner",
+    "song_uri": "https://p.scdn.co/mp3-preview/e31018c4bf2b03107d794cbf653abc04114a0e6d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a19be7aca4a1fcd6e8a42c62"
+  },
+  {
+    "date": "10/25/2023",
+    "artist": "Of Monsters and Men",
+    "song_uri": "https://p.scdn.co/mp3-preview/e94175a2d40b0ec7b1ac4d6ed613046f8a7f8d4d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cb3f67e8026e2e493a1e8262"
   }
 ]  
