@@ -3448,5 +3448,17 @@
     "artist": "Simple Plan",
     "song_uri": "https://p.scdn.co/mp3-preview/d9076b90bdfef3a91626332089fce81596aa1fb2?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2737e973b97ebe64cabf8e3dfa0"
+  },
+  {
+    "date": "11/24/2023",
+    "artist": "Jessie J",
+    "song_uri": "https://p.scdn.co/mp3-preview/6ce2212361fb83fa80477efae1ec1df94c26e179?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739900b995cd1a81c35c574ab0"
+  },
+  {
+    "date": "11/25/2023",
+    "artist": "Grouplove",
+    "song_uri": "https://p.scdn.co/mp3-preview/0a3f9dcbd192a5b5bc70e5e768807d1c73e41366?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d84a9bbcba91cb6a4a212b1b"
   }
 ]  
