@@ -1,5 +1,19 @@
 document.addEventListener("touchstart", function() {}, true);
 
+function getDeviceType() {
+  const userAgent = navigator.userAgent.toLowerCase();
+
+  if (userAgent.match(/mobile|iphone|ipad|ipod|android|blackberry|opera mini|iemobile|wpdesktop/i)) {
+    return 'Mobile';
+  } else if (userAgent.match(/tablet|ipad/i)) {
+    return 'Tablet';
+  } else {
+    return 'Desktop';
+  }
+}
+
+console.log(getDeviceType())
+
 const africa = [
   'DZ',
   'AO',
@@ -672,7 +686,7 @@ function win(guess) {
 
       switch (guessCount) {
         case 1:
-          congratulations.innerHTML = "Wow. Are they your favorite?"
+          congratulations.innerHTML = getDeviceType()
           break;
 
         case 2:
