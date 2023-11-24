@@ -3460,5 +3460,17 @@
     "artist": "Grouplove",
     "song_uri": "https://p.scdn.co/mp3-preview/0a3f9dcbd192a5b5bc70e5e768807d1c73e41366?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273d84a9bbcba91cb6a4a212b1b"
+  },
+  {
+    "date": "11/26/2023",
+    "artist": "Lizzo",
+    "song_uri": "https://p.scdn.co/mp3-preview/2180ea3fbc97e37cb27686f9dd492c434c7f0f3e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fe3b1b9cb7183a94e1aafd43"
+  },
+  {
+    "date": "11/27/2023",
+    "artist": "Arctic Monkeys",
+    "song_uri": "https://p.scdn.co/mp3-preview/af9a0fbdf639d748de8a6fc5e27ecc692e80430c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90"
   }
 ]  
