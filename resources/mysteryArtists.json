@@ -2280,7 +2280,7 @@
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273d1410c1372fab1e516328fa8"
   },  
   {
-    "date": "05/13/2022",
+    "date": "05/13/2023",
     "artist": "Kanye West",
     "song_uri": "https://p.scdn.co/mp3-preview/23771e17f5cc8853beee8ffee1ddc99fdefbcfa1?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27326f7f19c7f0381e56156c94a"
@@ -3472,5 +3472,173 @@
     "artist": "Arctic Monkeys",
     "song_uri": "https://p.scdn.co/mp3-preview/af9a0fbdf639d748de8a6fc5e27ecc692e80430c?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90"
+  },
+  {
+    "date": "11/28/2023",
+    "artist": "Dua Lipa",
+    "song_uri": "https://p.scdn.co/mp3-preview/acaea048f50a3b30ca24b348c84a6047373baabb?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737dd3ba455ee3390cb55b0192"
+  },
+  {
+    "date": "11/29/2023",
+    "artist": "Troye Sivan",
+    "song_uri": "https://p.scdn.co/mp3-preview/9f380859b6a10dbc8037d927545da21a047aff0a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27367103283a4eb57578a428252"
+  },
+  {
+    "date": "11/30/2023",
+    "artist": "The Beach Boys",
+    "song_uri": "https://p.scdn.co/mp3-preview/4d26851320d362129e158b9965636dd71af3400c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27308c270b3ef1602ff84ed2c05"
+  },
+  {
+    "date": "12/01/2023",
+    "artist": "Nelly",
+    "song_uri": "https://p.scdn.co/mp3-preview/c852ffca43288763a893be9866477df06b4306c3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a8b9f97b9ea065b9a857e93f"
+  },
+  {
+    "date": "12/02/2023",
+    "artist": "Ellie Goulding",
+    "song_uri": "https://p.scdn.co/mp3-preview/fc4b960b2c26720100ac18f8911900c5c6d1667e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273aaf796449ef2b13ba82353bb"
+  },
+  {
+    "date": "12/03/2023",
+    "artist": "Childish Gambino",
+    "song_uri": "https://p.scdn.co/mp3-preview/ee4d6f2c94a17f2f63cca5434a9106d5f27ff22b?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f78c98bbf2b3c9e2a764203e"
+  },
+  {
+    "date": "12/04/2023",
+    "artist": "Green Day",
+    "song_uri": "https://p.scdn.co/mp3-preview/2d63c6b93eb7a6af1018472d0f0a93a924fef412?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27308a1b1e0674086d3f1995e1b"
+  },
+  {
+    "date": "12/05/2023",
+    "artist": "Jack Harlow",
+    "song_uri": "https://p.scdn.co/mp3-preview/2f807d3954f04f0ec7b226159b4a23227428cba0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738e55edb69ca44a25b52b17bb"
+  },
+  {
+    "date": "12/06/2023",
+    "artist": "The Neighbourhood",
+    "song_uri": "https://p.scdn.co/mp3-preview/387541e6cab7e39e27acdb2c80ae6274b1182836?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738265a736a1eb838ad5a0b921"
+  },
+  {
+    "date": "12/07/2023",
+    "artist": "Dan + Shay",
+    "song_uri": "https://p.scdn.co/mp3-preview/35dde02aaaf1711d8091fbbcee913d322c1f1056?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27305e4408393e1c81a8ab1bf26"
+  },
+  {
+    "date": "12/08/2023",
+    "artist": "Billy Joel",
+    "song_uri": "https://p.scdn.co/mp3-preview/14c45e1d20b6b3a8769e1efc3c0f662b51ffacf3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273814cbc4746358a25c84c62e7"
+  },
+  {
+    "date": "12/09/2023",
+    "artist": "Iggy Azalea",
+    "song_uri": "https://p.scdn.co/mp3-preview/f12fe0733e8f0049a1091a22c2dad43a09a740e7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b1c6cf12c9fb4f9014b711ba"
+  },
+  {
+    "date": "12/10/2023",
+    "artist": "Elvis Presley",
+    "song_uri": "https://p.scdn.co/mp3-preview/5c7b79aefed9c3c55ba78d8f2a5734b42c2f7cec?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273aa509be2dd24fb6c753cf292"
+  },
+  {
+    "date": "12/11/2023",
+    "artist": "Vance Joy",
+    "song_uri": "https://p.scdn.co/mp3-preview/fe5f6f3eeac1720c920f67eedfe899ccf900a819?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a9929deb093a6617d2493b03"
+  },
+  {
+    "date": "12/12/2023",
+    "artist": "Taylor Swift",
+    "song_uri": "https://p.scdn.co/mp3-preview/5d487e1f146e6ed789453e2b0df95bee80124ddf?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273318443aab3531a0558e79a4d"
+  },
+  {
+    "date": "12/13/2023",
+    "artist": "Central Cee",
+    "song_uri": "https://p.scdn.co/mp3-preview/41105628e270a026ac9aecacd44e3373fceb9f43?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733c7d945b6baf935e8a0ebdaa"
+  },
+  {
+    "date": "12/14/2023",
+    "artist": "Sean Kingston",
+    "song_uri": "https://p.scdn.co/mp3-preview/44091d4cafefb38461f63a46ac90062359a4b8d7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736a45d20e414fbc456ecea553"
+  },
+  {
+    "date": "12/15/2023",
+    "artist": "Foster the People",
+    "song_uri": "https://p.scdn.co/mp3-preview/1bc2c0a7e77201e3ed8131f58a7d5799333486c4?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273121d5f92cf90576907dfb1e5"
+  },
+  {
+    "date": "12/16/2023",
+    "artist": "Nina Simone",
+    "song_uri": "https://p.scdn.co/mp3-preview/fa972598d83d13713041851e5122833bc40f8835?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273425e9a15a4a1b9fe123a1aa7"
+  },
+  {
+    "date": "12/17/2023",
+    "artist": "Yung Gravy",
+    "song_uri": "https://p.scdn.co/mp3-preview/66d23936071f95382d4755cbd611052dae0f63ae?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734684ae99ac25a39d60e0a23b"
+  },
+  {
+    "date": "12/18/2023",
+    "artist": "Rick Astley",
+    "song_uri": "https://p.scdn.co/mp3-preview/6bdc5c4548fd55eb3d167c8879ff63daba38cf85?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273baf89eb11ec7c657805d2da0"
+  },
+  {
+    "date": "12/19/2023",
+    "artist": "Yung Gravy",
+    "song_uri": "https://p.scdn.co/mp3-preview/66d23936071f95382d4755cbd611052dae0f63ae?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734684ae99ac25a39d60e0a23b"
+  },
+  {
+    "date": "12/20/2023",
+    "artist": "Miley Cyrus",
+    "song_uri": "https://p.scdn.co/mp3-preview/38622ff19d0a088d9b3335a3cecb802dcb2bb5b3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d6c3ad6a2a27471e1d5e8103"
+  },
+  {
+    "date": "12/21/2023",
+    "artist": "Jonas Brothers",
+    "song_uri": "https://p.scdn.co/mp3-preview/b2a53f557ee0b4aabd483d4297be4184af41b62a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736052733814bd844a5955f1b1"
+  },
+  {
+    "date": "12/22/2023",
+    "artist": "Wiz Khalifa",
+    "song_uri": "https://p.scdn.co/mp3-preview/c7ead2fb0d0be4004af5b912846138692b1fc0f9?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f8fa110661ccdfb74cbcb447"
+  },
+  {
+    "date": "12/23/2023",
+    "artist": "Michael Bublé",
+    "song_uri": "https://p.scdn.co/mp3-preview/bbeec716d16f3415c9e8fa7471a6e7eb5a454833?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732ead7786631d8dd3b59be4f0"
+  },
+  {
+    "date": "12/24/2023",
+    "artist": "Justin Bieber",
+    "song_uri": "https://p.scdn.co/mp3-preview/b1d8ae6e830851c89f237d0b64b5e37ceac60573?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730315efc555d5a157b0392652"
+  },
+  {
+    "date": "12/25/2023",
+    "artist": "Mariah Carey",
+    "song_uri": "https://p.scdn.co/mp3-preview/0d3f660241b04b1e95ae43decced213696114ad0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734246e3158421f5abb75abc4f"
   }
 ]  
