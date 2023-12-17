@@ -767,7 +767,6 @@ button i {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 200px;
   pointer-events: none; /* Allows clicks to pass through the snow layer */
   z-index: 1; /* Places the snow behind other elements */
 }
