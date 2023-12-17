@@ -439,7 +439,7 @@ function isDateBetween(start, end, dateToCheck) {
 }
 
 // Define the start and end dates
-var startDate = new Date('2023-12-17');
+var startDate = new Date('2023-12-18');
 var endDate = new Date('2023-12-25');
 
 // Create the date to check
