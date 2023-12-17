@@ -781,9 +781,8 @@ button i {
 .snowflakes-container {
   position: absolute;
   top: 0;
-  left: 0;
   width: 100vw;
-  height: 100vh; /* Adjust the height as needed */
+  height: 80vh; /* Adjust the height as needed */
   pointer-events: none; /* Allows clicks to pass through the snow layer */
   z-index: 1; /* Places the snow behind other elements */
 }
