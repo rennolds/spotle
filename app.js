@@ -432,8 +432,7 @@ const challengeExitBtn = document.querySelector('.challenge-exit-btn');
 let sharedChallengeArtist;
 
 const snowSvg = document.querySelector('.snow-overlay')
-snowSvg.width = snowSvg.parentNode.width;
-snowSvg.height = snowSvg.parentElement.height;
+
 
 if (challengeGame) {
   introTitle.innerHTML = "Someone sent you a custom Spotle game. Try to guess the artist they picked!";
