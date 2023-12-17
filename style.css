@@ -781,6 +781,9 @@ button i {
   .snow {
     width: 400px;
   }
+  .snow-container {
+    width: 400px;
+  }
 }
 
 .snowflakes-container {
