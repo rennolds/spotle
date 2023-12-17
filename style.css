@@ -774,6 +774,7 @@ button i {
 .snow {
   object-fit: cover; /* Ensure the entire container is covered by the SVG */
   width: 100vw;
+  margin-bottom: -4px;
 }
 
 .snowflakes-container {
