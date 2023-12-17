@@ -75,10 +75,6 @@ html {
   margin-top: 1rem;
 }
 
-.snow {
-  position: absolute;
-}
-
 .win-overlay {
   height: 535px;
   width: 290px;
@@ -746,7 +742,7 @@ button i {
 
 .credits {
   position: sticky;
-  color: #ffff;
+  color: black;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -767,13 +763,23 @@ button i {
 }
 
 .snow-container {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100px; /* Adjust the height as needed */
   pointer-events: none; /* Allows clicks to pass through the snow layer */
   z-index: -1; /* Places the snow behind other elements */
+}
+
+.snow-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust the height as needed */
+  pointer-events: none; /* Allows clicks to pass through the snow layer */
+  z-index: 1; /* Places the snow behind other elements */
 }
 
 .snow {
