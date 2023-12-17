@@ -3595,33 +3595,33 @@
   },
   {
     "date": "12/18/2023",
-    "artist": "The Black Keys",
-    "song_uri": "https://p.scdn.co/mp3-preview/2ad81dc04cb1e29388f918bbf948b5f812632131?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736a21b97de47168df4f0c1993"
+    "artist": "Ariana Grande",
+    "song_uri": "https://p.scdn.co/mp3-preview/b37da0d6c4e749b3e87c1c5e7bad580e9636ee2d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fb704b7e832b40f08c14629c"
   },
   {
     "date": "12/19/2023",
-    "artist": "Jason Mraz",
-    "song_uri": "https://p.scdn.co/mp3-preview/975f7acc6041b1b74b5a4bdacf8843df6c51505c?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730f2e51f7121539e221c51161"
+    "artist": "Frank Sinatra",
+    "song_uri": "https://p.scdn.co/mp3-preview/403b905aa602357cbfc5b7f276c384c9cc18d990?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273df1066335619efa75889bcfc"
   },
   {
     "date": "12/20/2023",
-    "artist": "Miley Cyrus",
-    "song_uri": "https://p.scdn.co/mp3-preview/38622ff19d0a088d9b3335a3cecb802dcb2bb5b3?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d6c3ad6a2a27471e1d5e8103"
+    "artist": "Sia",
+    "song_uri": "https://p.scdn.co/mp3-preview/d2b686ec5e818ab56c7131a72a9d51aeccdb74ca?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d1410c1372fab1e516328fa8"
   },
   {
     "date": "12/21/2023",
-    "artist": "Jonas Brothers",
-    "song_uri": "https://p.scdn.co/mp3-preview/b2a53f557ee0b4aabd483d4297be4184af41b62a?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736052733814bd844a5955f1b1"
+    "artist": "Paul McCartney",
+    "song_uri": "https://p.scdn.co/mp3-preview/a22a946c00359dca926b9e67e9cba825166497f6?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733cef016d13d82873d45af84a"
   },
   {
     "date": "12/22/2023",
-    "artist": "Wiz Khalifa",
-    "song_uri": "https://p.scdn.co/mp3-preview/c7ead2fb0d0be4004af5b912846138692b1fc0f9?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f8fa110661ccdfb74cbcb447"
+    "artist": "The Jackson 5",
+    "song_uri": "https://p.scdn.co/mp3-preview/e362cefdfda19b6f74d938c44ca962894e45e338?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27308a0fe33e91b991d2c9c9cde"
   },
   {
     "date": "12/23/2023",
@@ -3640,5 +3640,35 @@
     "artist": "Mariah Carey",
     "song_uri": "https://p.scdn.co/mp3-preview/0d3f660241b04b1e95ae43decced213696114ad0?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2734246e3158421f5abb75abc4f"
+  },
+  {
+    "date": "12/26/2023",
+    "artist": "The Black Keys",
+    "song_uri": "https://p.scdn.co/mp3-preview/2ad81dc04cb1e29388f918bbf948b5f812632131?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736a21b97de47168df4f0c1993"
+  },
+  {
+    "date": "12/27/2023",
+    "artist": "Jason Mraz",
+    "song_uri": "https://p.scdn.co/mp3-preview/975f7acc6041b1b74b5a4bdacf8843df6c51505c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730f2e51f7121539e221c51161"
+  },
+  {
+    "date": "12/28/2023",
+    "artist": "Miley Cyrus",
+    "song_uri": "https://p.scdn.co/mp3-preview/38622ff19d0a088d9b3335a3cecb802dcb2bb5b3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d6c3ad6a2a27471e1d5e8103"
+  },
+  {
+    "date": "12/29/2023",
+    "artist": "Jonas Brothers",
+    "song_uri": "https://p.scdn.co/mp3-preview/b2a53f557ee0b4aabd483d4297be4184af41b62a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736052733814bd844a5955f1b1"
+  },
+  {
+    "date": "12/30/2023",
+    "artist": "Wiz Khalifa",
+    "song_uri": "https://p.scdn.co/mp3-preview/c7ead2fb0d0be4004af5b912846138692b1fc0f9?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f8fa110661ccdfb74cbcb447"
   }
 ]  
