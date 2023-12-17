@@ -742,7 +742,7 @@ button i {
 
 .credits {
   position: sticky;
-  color: black;
+  color: #fff;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -759,7 +759,7 @@ button i {
 }
 
 .credits a {
-  color: #c54245 ;
+  color: #6AD074;
 }
 
 .snow-container {
@@ -774,7 +774,7 @@ button i {
 .snow {
   object-fit: cover; /* Ensure the entire container is covered by the SVG */
   width: 100vw;
-  margin-bottom: -4px;
+  margin-bottom: -5px;
 }
 
 .snowflakes-container {

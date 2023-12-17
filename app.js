@@ -428,10 +428,41 @@ const challengeShareBtn = document.querySelector('.challenge-share-btn');
 const challengeForm = document.querySelector('.challenge-form');
 const navChallengeBtn = document.querySelector('.challenge-btn');
 const challengeExitBtn = document.querySelector('.challenge-exit-btn');
+const snowContainer = document.querySelector('.snow-container');
+const snowflakesContainer = document.querySelector('.snowflakes-container');
+const creditsContainer = document.querySelector('.credits');
+const examplePic = document.getElementById('example-pic');
+
+// Function to check if a date is between two other dates
+function isDateBetween(start, end, dateToCheck) {
+  return dateToCheck >= start && dateToCheck <= end;
+}
+
+// Define the start and end dates
+var startDate = new Date('2023-12-17');
+var endDate = new Date('2023-12-25');
+
+// Create the date to check
+var dateToCheck = new Date();  // This will use the current date and time
+
+// Check if the date is between the specified range
+if (isDateBetween(startDate, endDate, dateToCheck)) {
+  console.log('The date is between December 18, 2023, and December 25, 2023.');
+  snowflakesContainer.classList.remove('hidden');
+  snowContainer.classList.remove('hidden');
+  creditsContainer.classList.add('hidden');
+  document.body.style.background = "linear-gradient(140deg, #811E24 0.23%, #121212 43.62%)";
+  examplePic.src = "resources/dua_lipa_santa.jpg";
+
+} else {
+  console.log('The date is outside the specified range.');
+}
 
 let sharedChallengeArtist;
 
 const snowSvg = document.querySelector('.snow-overlay')
+
+
 
 
 if (challengeGame) {
