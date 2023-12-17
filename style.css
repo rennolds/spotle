@@ -772,13 +772,15 @@ button i {
 }
 
 .snow {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   object-fit: cover; /* Ensure the entire container is covered by the SVG */
 }
 
 @media screen and (min-width: 320px) and (max-width: 786px) {
-  
+  .snow {
+    width: 400px;
+  }
 }
 
 .snowflakes-container {
