@@ -807,7 +807,7 @@ function handleShare() {
     var textToCopy2 = "";
   }
   else {
-    var textToCopy = "Spotle #" + spotleNumber + "🎧\n\n";
+    var textToCopy = "Spotle #" + spotleNumber + "🎧🎅🏻\n\n";
     var textToCopy2 = "";
   }
   
