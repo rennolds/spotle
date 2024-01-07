@@ -3718,5 +3718,11 @@
     "artist": "Foo Fighters",
     "song_uri": "https://p.scdn.co/mp3-preview/29b3d410b28a70b73f55fae2197d664703682fd6?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730389027010b78a5e7dce426b"
+  },
+  {
+    "date": "01/08/2024",
+    "artist": "Justin Timberlake",
+    "song_uri": "https://p.scdn.co/mp3-preview/3f3eadf07c7c28762b4307d63a28039048b4e63b?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d965d29d7dcf46ade5a8a7e4"
   }
 ]  
