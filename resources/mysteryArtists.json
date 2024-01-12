@@ -3748,5 +3748,17 @@
     "artist": "Morgan Wallen",
     "song_uri": "https://p.scdn.co/mp3-preview/8e9378ebaf88e8123840e7abe02ca3bfbcccaded?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273fc1df8423733f6f3c9e8dea2"
+  },
+  {
+    "date": "01/13/2024",
+    "artist": "Bruno Mars",
+    "song_uri": "https://p.scdn.co/mp3-preview/4dd37467f9f28fcd4656652578609a62467fec66?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5"
+  },
+  {
+    "date": "01/14/2024",
+    "artist": "Pitbull",
+    "song_uri": "https://p.scdn.co/mp3-preview/9c744f3343092c3b52930c6010e0b4b9b8d93765?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f2486b438645e97b523e4f90"
   }
 ]  
