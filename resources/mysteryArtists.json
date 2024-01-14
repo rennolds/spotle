@@ -3766,5 +3766,17 @@
     "artist": "Luke Bryan",
     "song_uri": "https://p.scdn.co/mp3-preview/233bbb1b2e76364671f584d633725627b094f87c?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273dab325d38db91d858446d4b4"
+  },
+  {
+    "date": "01/16/2024",
+    "artist": "SZA",
+    "song_uri": "https://p.scdn.co/mp3-preview/075a042e6e8dda12eb71427bf9f136555ece2424?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733097b1375ab17ae5bf302a0a"
+  },
+  {
+    "date": "01/17/2024",
+    "artist": "The Rolling Stones",
+    "song_uri": "https://p.scdn.co/mp3-preview/b852818d3478501eb11f31679bb7a5fb53ffae39?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bad7062c3fd2f2d037989694"
   }
 ]  
