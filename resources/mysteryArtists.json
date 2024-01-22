@@ -3808,5 +3808,23 @@
     "artist": "The Police",
     "song_uri": "https://p.scdn.co/mp3-preview/4d8861bdc6a87ce2a5578ecb2fc1b65c5d8cb4f8?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273c8e97cafeb2acb85b21a777e"
+  },
+  {
+    "date": "01/23/2024",
+    "artist": "Kendrick Lamar",
+    "song_uri": "https://p.scdn.co/mp3-preview/29e5b097f91b7f04953283c2e46e08302f037f27?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699"
+  },
+  {
+    "date": "01/24/2024",
+    "artist": "blink-182",
+    "song_uri": "https://p.scdn.co/mp3-preview/4a2a6857e0c0dacdff68accb033f18cd8c910c18?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730a4ae12eb3a9fb7e3815001c"
+  },
+  {
+    "date": "01/25/2024",
+    "artist": "Kelly Clarkson",
+    "song_uri": "https://p.scdn.co/mp3-preview/5e0aea8a16fa17c143c8f4a0c08854397093919a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27303dadde4d9d305c1c3e0d91c"
   }
 ]  
