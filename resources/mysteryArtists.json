@@ -3904,5 +3904,17 @@
     "artist": "2 Chainz",
     "song_uri": "https://p.scdn.co/mp3-preview/f39662f7e83b9a5b8758db11dc660bf1b008be2d?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273b4366694590f7164fad21fc7"
+  },
+  {
+    "date": "02/08/2024",
+    "artist": "Oasis",
+    "song_uri": "https://p.scdn.co/mp3-preview/6b7c37bb7af0b1162851fe87f4e1ed57f7799fe1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737a4c8c59851c88f6794c3cbf"
+  },
+  {
+    "date": "02/09/2024",
+    "artist": "AC/DC",
+    "song_uri": "https://p.scdn.co/mp3-preview/3589df13595d1ab1a2667db423b76c7e1e86ed73?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
   }
 ]  
