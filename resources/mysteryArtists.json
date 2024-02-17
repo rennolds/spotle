@@ -3961,14 +3961,15 @@
   },
   {
     "date": "02/17/2024",
-    "artist": "Shakira",
-    "song_uri": "https://p.scdn.co/mp3-preview/5e6f328ae98e7665cb40b4580773ea0107c5631f?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b27327ddd747545c0d0cfe7595fa"
-  },
-  {
-    "date": "02/18/2024",
     "artist": "John Mayer",
     "song_uri": "https://p.scdn.co/mp3-preview/53bf61d5b633a69e578c733dc58ddeed5b9ec288?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2737af5fdc5ef048a68db62b85f"
+  },
+  {
+    "date": "02/18/2024",
+    "artist": "Zedd",
+    "song_uri": "https://p.scdn.co/mp3-preview/0888eaf5d30f8a58b95b6a79f3e3bdf0f4a40d72?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fbe22d168a743b782a5e856a"
   }
+
 ]  
