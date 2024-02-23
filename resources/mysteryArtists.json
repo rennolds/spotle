@@ -3995,10 +3995,16 @@
     "song_uri": "https://p.scdn.co/mp3-preview/cd547cf59938b97baeaf33c2bb86febeaf021243?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731c40418d1c37d727e8e91b04"
   },
-    {
+  {
     "date": "02/23/2024",
     "artist": "Gorillaz",
     "song_uri": "https://p.scdn.co/mp3-preview/bea3d1545af1a398e89aceab0765a07b1b1e5061?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27319d85a472f328a6ed9b704cf"
+  },
+  {
+    "date": "02/24/2024",
+    "artist": "Oliver Tree",
+    "song_uri": "https://p.scdn.co/mp3-preview/5331fb98a73a8ceb6dd4206c13b7768a3facffb0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2735b1bff1152ef6d402c9b75a8"
   }
 ]  
