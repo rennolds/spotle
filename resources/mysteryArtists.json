@@ -2389,7 +2389,7 @@
   },
   {
     "date": "05/31/2023",
-    "artist": "Mayer",
+    "artist": "Usher",
     "song_uri": "https://p.scdn.co/mp3-preview/775632d9867341c779b7238f1718f9abd1773061?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273365b3fb800c19f7ff72602da"
   },
@@ -4108,5 +4108,17 @@
     "artist": "The Chainsmokers",
     "song_uri": "https://p.scdn.co/mp3-preview/5b5c3ae091f821ba0f038d89743fe4e8da7f99a6?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2738d2cfad007b9431f48aef135"
+  },
+  {
+    "date": "03/13/2024",
+    "artist": "ZAYN",
+    "song_uri": "https://p.scdn.co/mp3-preview/6c223c6fd87736a7efffbba3e388ef8dc91d7089?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732bdcb339402ebd78651f09c8"
+  },
+  {
+    "date": "03/14/2024",
+    "artist": "Pop Smoke",
+    "song_uri": "https://p.scdn.co/mp3-preview/c64d85430ac0e731e7e488d7bb882c221941184a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738fe5d04b06aff90f9fe796f5"
   }
 ]  
