@@ -4153,6 +4153,18 @@
   },
   {
     "date": "03/20/2024",
+    "artist": "Charlie Puth",
+    "song_uri": "https://p.scdn.co/mp3-preview/6644729b8705b1538514923a08eb70377d4bb12d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273eea6313204bdb8cd3e6cbc9d"
+  },
+  {
+    "date": "03/21/2024",
+    "artist": "JAY-Z",
+    "song_uri": "https://p.scdn.co/mp3-preview/1151a23733984e0205bb3c184c9d981704eb3c3a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734a767758e8ebe2443591c9fd"
+  },
+  {
+    "date": "03/22/2024",
     "artist": "Rise Against",
     "song_uri": "https://p.scdn.co/mp3-preview/f3df5f0952913627ef359b9535c52cf4d7339360?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273eaa10fffa60de320846c28be"
