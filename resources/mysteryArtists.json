@@ -4159,14 +4159,44 @@
   },
   {
     "date": "03/21/2024",
-    "artist": "JAY-Z",
-    "song_uri": "https://p.scdn.co/mp3-preview/1151a23733984e0205bb3c184c9d981704eb3c3a?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734a767758e8ebe2443591c9fd"
+    "artist": "Tame Impala",
+    "song_uri": "https://p.scdn.co/mp3-preview/21477d6bae6cd638929a0a13ca64942f43178cef?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739e1cfc756886ac782e363d79"
   },
   {
     "date": "03/22/2024",
-    "artist": "Rise Against",
-    "song_uri": "https://p.scdn.co/mp3-preview/f3df5f0952913627ef359b9535c52cf4d7339360?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273eaa10fffa60de320846c28be"
+    "artist": "Bob Dylan",
+    "song_uri": "https://p.scdn.co/mp3-preview/af04182e735852e2eeef1a7447458eafdcb65bd9?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736c86683d20c72e3874c11c6d"
+  },
+  {
+    "date": "03/23/2024",
+    "artist": "The Black Keys",
+    "song_uri": "https://p.scdn.co/mp3-preview/2ad81dc04cb1e29388f918bbf948b5f812632131?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736a21b97de47168df4f0c1993"
+  },
+  {
+    "date": "03/24/2024",
+    "artist": "Florence + The Machine",
+    "song_uri": "https://p.scdn.co/mp3-preview/0e2a7f22c4c214ced61b96ee8298939e8ea8e4e9?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730672b0f8756ae2af86e8a5ce"
+  },
+  {
+    "date": "03/25/2024",
+    "artist": "David Guetta",
+    "song_uri": "https://p.scdn.co/mp3-preview/08e77cc86cde4969b8411674a0f4eb4688a9f6a9?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273933c036cd61cd40d3f17a9c4"
+  },
+  {
+    "date": "03/26/2024",
+    "artist": "Chris Stapleton",
+    "song_uri": "https://p.scdn.co/mp3-preview/ff420867ccf77f0d187a0aa48eb4eac7c1d2ba8e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273540fc1d083eac5bcff8dad21"
+  },
+  {
+    "date": "03/27/2024",
+    "artist": "Rihanna",
+    "song_uri": "https://p.scdn.co/mp3-preview/60cff530f860b1961df9c74df2cb1d50ef5df103?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b9ff0a5f40d3406aed5e5e3b"
   }
 ]  
