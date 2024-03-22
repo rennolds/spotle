@@ -317,7 +317,6 @@ await fetch('resources/artists.json').then(function (response) {
     artists[data[i].artist.toLowerCase()] = new Artist(data[i].artist, i+1, data[i].image_uri, data[i].genre, data[i].debut_album_year, x, data[i].country.toLowerCase(), data[i].group_size, data[i].song_uri, data[i].song_image_uri, data[i].embedded_track);
   }
 }).catch (function (error) {
-  console.log('something went wrong reading json');
   console.error(error);
 });
 
@@ -356,7 +355,6 @@ async function fetchMysteryArtist() {
       }
     }
   }).catch (function (error) {
-    console.log('something went wrong reading mystery artist data');
     console.error(error);
   });
 }
@@ -449,22 +447,22 @@ var endDate = new Date('2023-12-25');
 // Create the date to check
 var dateToCheck = new Date();  // This will use the current date and time
 
-// Check if the date is between the specified range
-if (isDateBetween(startDate, endDate, dateToCheck)) {
-  console.log('The date is between December 18, 2023, and December 25, 2023.');
-  // snowflakesContainer.classList.remove('hidden');
-  snowContainer.classList.remove('hidden');
-  creditsContainer.classList.add('hidden');
-  document.body.style.background = "linear-gradient(140deg, #811E24 0.23%, #121212 43.62%)";
-  examplePic.src = "resources/dua_lipa_santa.jpg";
+// // Check if the date is between the specified range
+// if (isDateBetween(startDate, endDate, dateToCheck)) {
+//   console.log('The date is between December 18, 2023, and December 25, 2023.');
+//   snowflakesContainer.classList.remove('hidden');
+//   snowContainer.classList.remove('hidden');
+//   creditsContainer.classList.add('hidden');
+//   document.body.style.background = "linear-gradient(140deg, #811E24 0.23%, #121212 43.62%)";
+//   examplePic.src = "resources/dua_lipa_santa.jpg";
 
-} else {
-  console.log('The date is outside the specified range.');
-}
+// } else {
+//   console.log('The date is outside the specified range.');
+// }
 
 let sharedChallengeArtist;
 
-const snowSvg = document.querySelector('.snow-overlay')
+// const snowSvg = document.querySelector('.snow-overlay')
 
 
 
@@ -523,7 +521,7 @@ if (getCookie('visited') != null) {
   }
    
   if (!challengeGame) {
-    console.log('remembered');
+    // console.log('remembered');
     guessCount = getCookie('guessCount');
     guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
 
@@ -550,7 +548,7 @@ if (getCookie('visited') != null) {
   }
 }
 else {
-  console.log('new person');
+  // console.log('new person');
   document.cookie = 'mute = 0';
   document.cookie = 'visited = 1' + expires;
   document.cookie = 'guessCount = 1' + expires;
@@ -581,7 +579,7 @@ exitBtn.addEventListener('click', () => {
   if (rollSound != null) {
     rollSound.pause();
   }
-  console.log('exit clicked');
+  // console.log('exit clicked');
 });
 
   function renderResults(results) {
@@ -615,7 +613,7 @@ exitBtn.addEventListener('click', () => {
 const handleGuess = () => {
 
     let guess = searchInput.value
-    console.log("Guess ------>" + guess)
+    // console.log("Guess ------>" + guess)
     searchInput.value = ""; //make search bar empty 
     searchWrapper.classList.remove('show'); //hide results
     guess = guess.toLowerCase() //make guess lowercase
@@ -640,7 +638,7 @@ const handleGuess = () => {
         }, 250);
 
       embeddedTrackContainer.src = currentArtist.embeddedTrack;
-      console.log(currentArtist.imageUri);
+      // console.log(currentArtist.imageUri);
       var artistName = document.querySelector('.challenge-artist-name');
       var artistImage = document.querySelector('.challenge-artist-img');
 
@@ -649,7 +647,7 @@ const handleGuess = () => {
 
       sharedChallengeArtist = currentArtist;
 
-      console.log(artistImage.src);
+      // console.log(artistImage.src);
 
       guessCountContainer.innerHTML = "Click share to send your friend the game!"
       return;
@@ -666,7 +664,7 @@ const handleGuess = () => {
     }
 
     if (guessedArtists.includes(currentArtist.name)) {
-      console.log('already guessed');
+      // console.log('already guessed');
       return;
     }
     
@@ -680,9 +678,7 @@ const handleGuess = () => {
 
 function invalidArtist() {
     infoPrompt.classList.add('info-prompt-transform');
-    console.log('here 1');
     setTimeout(() => {infoPrompt.classList.remove('info-prompt-transform')}, 3000);
-    console.log('here 2');
     
     return;
 }
@@ -763,7 +759,7 @@ function win(guess) {
       }
       } catch(error) {
         console.error(error);
-        console.log('no audio to play');
+        // console.log('no audio to play');
       }
     
     
@@ -777,7 +773,7 @@ function win(guess) {
         }
         } catch(error) {
           console.error(error);
-          console.log('no audio to play');
+          // console.log('no audio to play');
         }
       }, 1200);
     
@@ -856,7 +852,7 @@ function handleShare() {
 }
 
 function loss() {
-  console.log('lost');
+  // console.log('lost');
 
   if (guessCountContainer.classList.contains('last-guess')) {
     guessCountContainer.classList.remove('last-guess');
@@ -882,7 +878,7 @@ function loss() {
       } catch(error) {
 
         console.error(error);
-        console.log('no audio to play');
+        // console.log('no audio to play');
       }
     }, 1000);
   
@@ -910,7 +906,7 @@ function incorrectGuess(guess) {
     if (guessCount > 10) {
       guessCountContainer.innerHTML = "Nice try...";
       loss();
-      console.log('here');
+      // console.log('here');
     }
 
     return;
@@ -1252,7 +1248,6 @@ function getContinent(countryCode) {
 }
 
 function shareChallenge() {
-  console.log(sharedChallengeArtist.name)
 
   var artistName = sharedChallengeArtist.name;
   var message = challengeForm.value;
@@ -1263,9 +1258,6 @@ function shareChallenge() {
 
   var encodedArtist = btoa(artistName);
   var encodedMessage = btoa(message);
-  console.log(window.location.origin);
-  console.log(encodedArtist);
-  console.log(encodedMessage);
 
   var url = window.location.origin + "/?artist=" + encodedArtist + "&" + "msg=" + encodedMessage;
 
