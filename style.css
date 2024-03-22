@@ -246,7 +246,7 @@ html {
   margin-bottom: -1rem;
 }
 
-.album-container img {
+.album-container iframe {
   width: 200px;
   height: 200px;
   border-radius: .2rem;

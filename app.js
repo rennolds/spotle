@@ -320,9 +320,10 @@ await fetch('resources/artists.json').then(function (response) {
   console.error(error);
 });
 
-var mysteryArtistSong;
-var mysteryArtistImage;
+// var mysteryArtistSong;
+// var mysteryArtistImage;
 var mysteryArtistName;
+var mysteryArtistPreview;
 var mysteryArtist;
 var spotleNumber;
 var yesterdayMysteryArtist;
@@ -344,9 +345,11 @@ async function fetchMysteryArtist() {
     for (var i = 0; i < data.length; i++) {
       if (data[i].date == today) {
         mysteryArtist = artists[data[i].artist.toLowerCase()];
-        mysteryArtistSong = data[i].song_uri;
-        mysteryArtistImage = data[i].image_uri;
-        mysteryArtistName = data[i].artist;
+        // mysteryArtistSong = data[i].song_uri;
+        // mysteryArtistImage = data[i].image_uri;
+        console.log('got iframe');
+        console.log(data[i].song_preview)
+        mysteryArtistPreview = data[i].song_preview;
         spotleNumber = i + 1;
         
         yesterdayMysteryArtist = data[i-1].artist;
@@ -378,9 +381,10 @@ else {
   decodedArtist = decodedArtist.toLowerCase();
 
   mysteryArtist = artists[decodedArtist];
-  mysteryArtistSong = mysteryArtist.songUri;
-  mysteryArtistImage = mysteryArtist.songImageUri;
+  // mysteryArtistSong = mysteryArtist.songUri;
+  // mysteryArtistImage = mysteryArtist.songImageUri;
   mysteryArtistName = mysteryArtist.name;
+  mysteryArtistPreview = mysteryArtist.song_preview;
 
   decodedMessage = atob(encodedMessage);
 
@@ -402,7 +406,7 @@ const shareBtn = document.querySelector('.share-btn');
 const todaysBtn = document.querySelector('.play-todays');
 const createBtn = document.querySelector('.create-btn');
 const exitBtn = document.querySelector('.exit-btn');
-const albumImg = document.querySelector('.album-img');
+// const albumImg = document.querySelector('.album-img');
 const todaysName = document.querySelector('.todays-name');
 const todaysMessage = document.querySelector('.todays-artist');
 const congratulations = document.querySelector('.congratulations');
@@ -430,6 +434,7 @@ const challengeExitBtn = document.querySelector('.challenge-exit-btn');
 // const snowflakesContainer = document.querySelector('.snowflakes-container');
 const creditsContainer = document.querySelector('.credits');
 const examplePic = document.getElementById('example-pic');
+const previewContainer = document.querySelector('.album-container');
 
 function isMobile() {
   const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
@@ -464,6 +469,20 @@ let sharedChallengeArtist;
 
 // const snowSvg = document.querySelector('.snow-overlay')
 
+const iframeData = mysteryArtistPreview;
+
+// Create iframe element
+const iframe = document.createElement('iframe');
+
+// Set attributes for iframe
+// iframe.setAttribute('src', iframeData.src);
+// iframe.setAttribute('width', iframeData.width);
+// iframe.setAttribute('height', iframeData.height);
+// iframe.setAttribute('frameborder', iframeData.frameborder);
+
+// Insert iframe into div
+previewContainer.innerHTML = mysteryArtistPreview;
+
 
 
 
@@ -489,18 +508,18 @@ if (!challengeGame) {
 }
 
 
-var rollSound;
+// var rollSound;
 
-try {
-  rollSound = new Audio(mysteryArtistSong);
-} catch {
-  console.log('failed to get audio');
-}
+// try {
+//   rollSound = new Audio(mysteryArtistSong);
+// } catch {
+//   console.log('failed to get audio');
+// }
 
 let firstGuess = true;
 let guessedArtists = [];
 
-albumImg.src = mysteryArtistImage;
+// albumImg.src = mysteryArtistImage;
 todaysName.innerHTML = mysteryArtistName;
 
 function getCookie (name) {
