@@ -777,20 +777,21 @@ button i {
   margin-bottom: -5px;
 }
 
-.snowflakes-container {
+/* .snowflakes-container {
   position: absolute;
   top: 0;
   width: 100vw;
-  height: 80vh; /* Adjust the height as needed */
-  pointer-events: none; /* Allows clicks to pass through the snow layer */
-  z-index: 1; /* Places the snow behind other elements */
+  height: 80vh;
+  pointer-events: none;
+  z-index: 1;
 }
+*/
 
-.snowflakes {
+/* .snowflakes {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the entire container is covered by the SVG */
-}
+  object-fit: cover; 
+} */
 
 @keyframes transitionIn {
   from {
