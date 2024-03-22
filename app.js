@@ -433,6 +433,10 @@ const snowflakesContainer = document.querySelector('.snowflakes-container');
 const creditsContainer = document.querySelector('.credits');
 const examplePic = document.getElementById('example-pic');
 
+function isMobile() {
+  const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  return regex.test(navigator.userAgent);
+}
 // Function to check if a date is between two other dates
 function isDateBetween(start, end, dateToCheck) {
   return dateToCheck >= start && dateToCheck <= end;
@@ -1269,20 +1273,25 @@ function shareChallenge() {
 
   var fullText = shareMessage + "\n\n" + url;
 
-  if (navigator.share) { 
-    navigator.share({
-       text: fullText
-     }).then(() => {
+  if (isMobile()) {
+    if (navigator.share) { 
+      navigator.share({
+        text: fullText
+      }).then(() => {
 
-     })
-     .catch(console.error);
-     } else {
-      navigator.clipboard.writeText(fullText)
-      .then(() => { console.log('copied'); })
-      .catch((error) => { alert(`Copy failed! ${error}`) })
+      })
+      .catch(console.error);
+      } else {
+        guessCountContainer.innerHTML = "Text copied to clipboard.\t"
+        navigator.clipboard.writeText(fullText)
+        .then(() => { console.log('copied'); })
+        .catch((error) => { alert(`Copy failed! ${error}`) })
+      }
     }
-
-    guessCountContainer.innerHTML = "Text copied to clipboard.\t"
+    else {
+      navigator.clipboard.writeText(fullText)
+      guessCountContainer.innerHTML = "Text copied to clipboard.\t"
+    }
 }
 
 function handleTodays() {
