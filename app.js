@@ -428,8 +428,8 @@ const challengeShareBtn = document.querySelector('.challenge-share-btn');
 const challengeForm = document.querySelector('.challenge-form');
 const navChallengeBtn = document.querySelector('.challenge-btn');
 const challengeExitBtn = document.querySelector('.challenge-exit-btn');
-const snowContainer = document.querySelector('.snow-container');
-const snowflakesContainer = document.querySelector('.snowflakes-container');
+// const snowContainer = document.querySelector('.snow-container');
+// const snowflakesContainer = document.querySelector('.snowflakes-container');
 const creditsContainer = document.querySelector('.credits');
 const examplePic = document.getElementById('example-pic');
 
@@ -452,7 +452,7 @@ var dateToCheck = new Date();  // This will use the current date and time
 // Check if the date is between the specified range
 if (isDateBetween(startDate, endDate, dateToCheck)) {
   console.log('The date is between December 18, 2023, and December 25, 2023.');
-  snowflakesContainer.classList.remove('hidden');
+  // snowflakesContainer.classList.remove('hidden');
   snowContainer.classList.remove('hidden');
   creditsContainer.classList.add('hidden');
   document.body.style.background = "linear-gradient(140deg, #811E24 0.23%, #121212 43.62%)";
