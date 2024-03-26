@@ -1298,7 +1298,7 @@ challengeBtn.addEventListener('click', toggleChallenge);
 navChallengeBtn.addEventListener('click', toggleChallenge);
 challengeExitBtn.addEventListener('click', toggleChallenge);
 todaysBtn.addEventListener('click', handleTodays);
-createBtn.addEventListener('click', toggleChallenge);
+// createBtn.addEventListener('click', toggleChallenge);
 helpBtn.addEventListener('click', function () {
   if (helpOverlay.classList.contains('hidden'))
     helpOverlay.classList.remove('hidden');
