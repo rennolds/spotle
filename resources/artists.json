@@ -4468,15 +4468,15 @@
     {
       "artist": "Florence + The Machine",
       "country": "uk",
-      "genre": "Pop",
+      "genre": "Rock",
       "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe3c37f869b830d1cf1ec829a",
       "uri": "spotify:artist:1moxjboGR7GNWYIMWsRjgG",
       "debut_album_year": 2009,
       "track_name": "Dog Days Are Over",
       "song_uri": "https://p.scdn.co/mp3-preview/0e2a7f22c4c214ced61b96ee8298939e8ea8e4e9?cid=98f79e400795491cbc5f69b713465708",
       "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2730672b0f8756ae2af86e8a5ce",
-      "group_size": 4,
-      "gender": "x",
+      "group_size": 1,
+      "gender": "f",
       "embedded_track": "https://open.spotify.com/embed/track/1YLJVmuzeM2YSUkCCaTNUB"
     },
     {
