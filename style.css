@@ -526,7 +526,7 @@ button i {
 
 .challenge-btn {
   margin-bottom: .5rem;
-  width: 172px;
+  width: 140px;
   height: 25px;
   font: 'Inter';
   background: #FFFFFF;
@@ -594,6 +594,11 @@ button i {
   justify-content: center;
   flex-direction: column;
 } */
+
+.create-btn {
+  background-color: #BA81C2;
+  margin-bottom: 17.5px;
+}
 
 
 .challenge-share {
@@ -1108,4 +1113,16 @@ header {
 .yesterdays-artist:hover .back {
   display: flex;
   animation: transitionIn 3s;
+}
+
+.harmonies-ad {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.harmonies-link {
+  color: #BA81C2;
 }
