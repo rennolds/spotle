@@ -197,7 +197,7 @@
     },
     {
       "artist": "Nicki Minaj",
-      "country": "us",
+      "country": "tt",
       "genre": "Hip Hop",
       "image_uri": "https://i.scdn.co/image/ab6761610000e5eb6a8e5e8752d1dc2dafa63f20",
       "uri": "spotify:artist:0hCNtLu0JehylgoiP8L4Gh",
@@ -2053,7 +2053,7 @@
       "track_name": "Wonderwall - Remastered",
       "song_uri": "https://p.scdn.co/mp3-preview/6b7c37bb7af0b1162851fe87f4e1ed57f7799fe1?cid=98f79e400795491cbc5f69b713465708",
       "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2737a4c8c59851c88f6794c3cbf",
-      "group_size": 4,
+      "group_size": 5,
       "gender": "m",
       "embedded_track": "https://open.spotify.com/embed/track/7ygpwy2qP3NbrxVkHvUhXY"
     },
