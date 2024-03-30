@@ -327,7 +327,11 @@ var mysteryArtist;
 var spotleNumber;
 var yesterdayMysteryArtist;
 var yesterdayMysteryArtistImage;
-var today = new Date();
+let today = new Date();
+
+today.setTime(today.getTime()+today.getTimezoneOffset()*60*1000);
+var offset = -300; //Timezone offset for EST in minutes.
+today = new Date(today.getTime() + offset*60*1000);
 const yyyy = today.getFullYear();
 let mm = today.getMonth() + 1; // Months start at 0!
 let dd = today.getDate();
@@ -789,9 +793,13 @@ function win(guess) {
 
 function  calculateHMSleft() {
   var now = new Date();
-  var hoursleft = 23-now.getHours();
-  var minutesleft = 59-now.getMinutes();
-  var secondsleft = 59-now.getSeconds();
+  now.setTime(now.getTime() + now.getTimezoneOffset()*60*1000);
+  var offset = -300;
+  var estDate = new Date(now.getTime() + offset*60*1000);
+  
+  var hoursleft = 23-estDate.getHours();
+  var minutesleft = 59-estDate.getMinutes();
+  var secondsleft = 59-estDate.getSeconds();
 
   //format 0 prefixes
   if(minutesleft<10) minutesleft = "0"+minutesleft;
