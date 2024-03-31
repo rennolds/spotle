@@ -718,7 +718,7 @@ function win(guess) {
           break;  
 
         case 3:
-          congratulations.innerHTML = "You are a Spotify Savant!"
+          congratulations.innerHTML = "You are a savant!"
           break;
 
         case 4:
@@ -1267,7 +1267,7 @@ function shareChallenge() {
   var encodedArtist = btoa(artistName);
   var encodedMessage = btoa(message);
 
-  var url = window.location.origin + "/?artist=" + encodedArtist + "&" + "msg=" + encodedMessage;
+  var url = "https://" + "spotle.io" + "/?artist=" + encodedArtist + "&" + "msg=" + encodedMessage;
 
   var shareMessage = "I made a custom Spotle game, try it now! 🎧🤍";
 
