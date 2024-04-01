@@ -515,8 +515,22 @@ function getCookie (name) {
 
 var cookie_expires = "";
 var date = new Date();
+
+date.setTime(date.getTime()+date.getTimezoneOffset()*60*1000);
+var offset = -300; //Timezone offset for EST in minutes.
+date = new Date(date.getTime() + offset*60*1000);
+
 var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
 const expires = "; expires=" + midnight.toGMTString();
+
+// var now = new Date();
+// now.setTime(now.getTime() + now.getTimezoneOffset()*60*1000);
+// var offset = -300;
+// var estDate = new Date(now.getTime() + offset*60*1000);
+
+// var hoursleft = 23-estDate.getHours();
+// var minutesleft = 59-estDate.getMinutes();
+// var secondsleft = 59-estDate.getSeconds();
 
 if (getCookie('visited') != null) {
 
