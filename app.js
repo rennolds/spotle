@@ -522,8 +522,12 @@ date = new Date(date.getTime() + offset*60*1000);
 
 var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
 const expires = "; expires=" + midnight.toGMTString();
+console.log("expires: " + expires);
+console.log("Midnight EST: " + midnight);
+console.log("Todays Gameboard: " + today);
 
 if (getCookie('visited') != null) {
+  console.log("Visited");
 
   if (getCookie('mute') == 1) {
     muteImg.src = 'resources/volume_off.svg';
@@ -531,6 +535,7 @@ if (getCookie('visited') != null) {
    
   if (!challengeGame) {
     // console.log('remembered');
+    console.log("Setting history");
     guessCount = getCookie('guessCount');
     guessCountContainer.innerHTML = "Guess " + String(guessCount) + " of 10";
 
@@ -544,6 +549,7 @@ if (getCookie('visited') != null) {
     //print guesses function
 
     if (getCookie('won')) {
+      console.log("Remembering win");
       intro.classList.add('hidden');
       searchInput.setAttribute('readonly', true);
       win(mysteryArtist);
@@ -558,6 +564,7 @@ if (getCookie('visited') != null) {
 }
 else {
   // console.log('new person');
+  console.log("New player");
   document.cookie = 'mute = 0';
   document.cookie = 'visited = 1' + expires;
   document.cookie = 'guessCount = 1' + expires;
