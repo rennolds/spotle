@@ -327,7 +327,16 @@ var mysteryArtist;
 var spotleNumber;
 var yesterdayMysteryArtist;
 var yesterdayMysteryArtistImage;
-var today = new Date();
+
+function adjustToEST(date) {
+  const utcDate = date.getTime() + (date.getTimezoneOffset() * 60000);
+  const estOffset = -5; // EST timezone offset from UTC
+  const estDate = new Date(utcDate + (3600000 * estOffset)); // Add offset for EST
+  return estDate;
+}
+
+// Get current date adjusted to EST timezone
+var today = adjustToEST(new Date());
 const yyyy = today.getFullYear();
 let mm = today.getMonth() + 1; // Months start at 0!
 let dd = today.getDate();
@@ -509,19 +518,20 @@ function getCookie (name) {
 	if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-
-var cookie_expires = "";
-var date = new Date();
-
-date.setTime(date.getTime()+date.getTimezoneOffset()*60*1000);
-var offset = -300; //Timezone offset for EST in minutes.
-date = new Date(date.getTime() + offset*60*1000);
-
-var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
-const expires = "; expires=" + midnight.toGMTString();
-console.log("expires: " + expires);
-console.log("Midnight EST: " + midnight);
-console.log("Todays Gameboard: " + today);
+var now = new Date()
+var midnightET = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    23, // 11 PM
+    59, // 59 minutes
+    59, // 59 seconds
+    999 // 999 milliseconds
+);
+midnightET.setHours(midnightET.getHours() + 1); // Move to midnight
+console.log(midnightET);
+    
+var expires = "; expires=" + midnightET.toUTCString();
 
 if (getCookie('visited') != null) {
 
