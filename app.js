@@ -327,16 +327,7 @@ var mysteryArtist;
 var spotleNumber;
 var yesterdayMysteryArtist;
 var yesterdayMysteryArtistImage;
-
-function adjustToEST(date) {
-  const utcDate = date.getTime() + (date.getTimezoneOffset() * 60000);
-  const estOffset = -5; // EST timezone offset from UTC
-  const estDate = new Date(utcDate + (3600000 * estOffset)); // Add offset for EST
-  return estDate;
-}
-
-// Get current date adjusted to EST timezone
-var today = adjustToEST(new Date());
+var today = new Date();
 const yyyy = today.getFullYear();
 let mm = today.getMonth() + 1; // Months start at 0!
 let dd = today.getDate();
@@ -518,20 +509,10 @@ function getCookie (name) {
 	if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-var now = new Date()
-var midnightET = new Date(
-    now.getFullYear(),
-    now.getMonth(),
-    now.getDate(),
-    23, // 11 PM
-    59, // 59 minutes
-    59, // 59 seconds
-    999 // 999 milliseconds
-);
-midnightET.setHours(midnightET.getHours() + 1); // Move to midnight
-console.log(midnightET);
-    
-var expires = "; expires=" + midnightET.toUTCString();
+var cookie_expires = "";
+var date = new Date();
+var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+const expires = "; expires=" + midnight.toGMTString();
 
 if (getCookie('visited') != null) {
 
@@ -808,13 +789,9 @@ function win(guess) {
 
 function  calculateHMSleft() {
   var now = new Date();
-  now.setTime(now.getTime() + now.getTimezoneOffset()*60*1000);
-  var offset = -300;
-  var estDate = new Date(now.getTime() + offset*60*1000);
-
-  var hoursleft = 23-estDate.getHours();
-  var minutesleft = 59-estDate.getMinutes();
-  var secondsleft = 59-estDate.getSeconds();
+  var hoursleft = 23-now.getHours();
+  var minutesleft = 59-now.getMinutes();
+  var secondsleft = 59-now.getSeconds();
 
   //format 0 prefixes
   if(minutesleft<10) minutesleft = "0"+minutesleft;
