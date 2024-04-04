@@ -510,20 +510,18 @@ function getCookie (name) {
 }
 
 
-var now = new Date();
-var midnightET = new Date(
-    now.getFullYear(),
-    now.getMonth(),
-    now.getDate(),
-    23, // 11 PM
-    59, // 59 minutes
-    59, // 59 seconds
-    999 // 999 milliseconds
-);
-midnightET.setHours(midnightET.getHours() + 1); // Move to midnight
-console.log(midnightET);
-    
-var expires = "; expires=" + midnightET.toUTCString();
+var cookie_expires = "";
+var date = new Date();
+
+date.setTime(date.getTime()+date.getTimezoneOffset()*60*1000);
+var offset = -300; //Timezone offset for EST in minutes.
+date = new Date(date.getTime() + offset*60*1000);
+
+var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+const expires = "; expires=" + midnight.toGMTString();
+console.log("expires: " + expires);
+console.log("Midnight EST: " + midnight);
+console.log("Todays Gameboard: " + today);
 
 if (getCookie('visited') != null) {
 
