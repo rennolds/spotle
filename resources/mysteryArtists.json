@@ -4276,5 +4276,17 @@
     "artist": "The Cure",
     "song_uri": "https://p.scdn.co/mp3-preview/958e347444599fa593cb2d86459e67ad18719c72?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273e410fa31e3dfcc7521cde86d"
+  },
+  {
+    "date": "04/10/2024",
+    "artist": "Lizzo",
+    "song_uri": "https://p.scdn.co/mp3-preview/2180ea3fbc97e37cb27686f9dd492c434c7f0f3e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fe3b1b9cb7183a94e1aafd43"
+  },
+  {
+    "date": "04/11/2024",
+    "artist": "Arctic Monkeys",
+    "song_uri": "https://p.scdn.co/mp3-preview/af9a0fbdf639d748de8a6fc5e27ecc692e80430c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90"
   }
 ]  
