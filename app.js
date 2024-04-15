@@ -837,18 +837,25 @@ function handleShare() {
     }
   }
 
-  if (navigator.share) { 
-    navigator.share({
-       text: result
-     }).then(() => {
-       console.log('Thanks for sharing!');
-     })
-     .catch(console.error);
-     } else {
-      navigator.clipboard.writeText(result)
-      .then(() => { console.log('copied'); })
-      .catch((error) => { alert(`Copy failed! ${error}`) })
+  if (isMobile()) {
+    if (navigator.share) { 
+      navigator.share({
+         text: result
+       }).then(() => {
+         console.log('Thanks for sharing!');
+       })
+       .catch(console.error);
+       } else {
+        navigator.clipboard.writeText(result)
+        .then(() => { console.log('copied'); })
+        .catch((error) => { alert(`Copy failed! ${error}`) })
     }
+  }
+  else {
+    guessCountContainer.innerHTML = "Text copied to clipboard.\t"
+    navigator.clipboard.writeText(result)
+  }
+
 }
 
 function loss() {
