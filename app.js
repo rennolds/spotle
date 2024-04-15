@@ -837,6 +837,9 @@ function handleShare() {
     }
   }
 
+  congratulations.innerHTML = "Text copied to clipboard.\t";
+  navigator.clipboard.writeText(result)
+
   if (isMobile()) {
     if (navigator.share) { 
       navigator.share({
