@@ -714,7 +714,7 @@ function win(guess) {
           break;  
 
         case 3:
-          congratulations.innerHTML = "You are a Spotify Savant!"
+          congratulations.innerHTML = "You are a savant!"
           break;
 
         case 4:
@@ -846,13 +846,14 @@ function handleShare() {
        })
        .catch(console.error);
        } else {
+        congratulations.innerHTML = "Text copied to clipboard.\t";
         navigator.clipboard.writeText(result)
         .then(() => { console.log('copied'); })
         .catch((error) => { alert(`Copy failed! ${error}`) })
     }
   }
   else {
-    guessCountContainer.innerHTML = "Text copied to clipboard.\t"
+    congratulations.innerHTML = "Text copied to clipboard.\t";
     navigator.clipboard.writeText(result)
   }
 
