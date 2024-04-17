@@ -4327,8 +4327,20 @@
   },
   {
     "date": "04/18/2024",
-    "artist": "Johnny Cash",
-    "song_uri": "https://p.scdn.co/mp3-preview/c39f499cb45648e28ca8d21bd27b66420d7a68ac?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736f4f62da3d811b6501a69ffa"
+    "artist": "Van Halen",
+    "song_uri": "https://p.scdn.co/mp3-preview/86b253d59e8485604c5cdcba34b67caa9307c17f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b414c63fb435b622238c15ed"
+  },
+  {
+    "date": "04/19/2024",
+    "artist": "6ix9ine",
+    "song_uri": "https://p.scdn.co/mp3-preview/cf9b0cda07ca3f668895ac75a60bc993ac63c6b0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730a4da3f1a72e4ecaabb76370"
+  },
+  {
+    "date": "04/20/2024",
+    "artist": "ice spice",
+    "song_uri": "https://p.scdn.co/mp3-preview/1cf80fe25ce9df3d102a15b19a8e6232bb1be794?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27316028dc1a1bc9ff0fc661ea6"
   }
 ]  
