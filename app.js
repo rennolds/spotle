@@ -554,46 +554,57 @@ else {
   document.cookie = 'guessCount = 1' + expires;
 }
 
-// Function to perform fuzzy search
 function fuzzySearch(input, searchable) {
   input = input.toLowerCase();
   const results = [];
-  // Iterate over each item in the searchable array
+
   for (let item of searchable) {
     let currentItem = item.toLowerCase();
     
-    // Check if the item starts with the input
     if (currentItem.startsWith(input)) {
-      results.push({ item, score: 1 }); // Max score for exact match
+      results.push({ item, score: 1 });
       continue;
     }
 
-    // Check for approximate matches
-    let inputIndex = 0;
-    let currentItemIndex = 0;
-    let matchCount = 0;
+    let inputLength = input.length;
+    let currentItemLength = currentItem.length;
+    let matrix = [];
 
-    while (currentItemIndex < currentItem.length) {
-      if (currentItem[currentItemIndex] === input[inputIndex]) {
-        inputIndex++;
-        matchCount++;
-      }
-      currentItemIndex++;
+    // Initialize the matrix with distances
+    for (let i = 0; i <= currentItemLength; i++) {
+      matrix[i] = [i];
+    }
+    for (let j = 0; j <= inputLength; j++) {
+      matrix[0][j] = j;
     }
 
-    // Calculate match score
-    const score = matchCount / input.length;
+    // Fill in the matrix with distances
+    for (let i = 1; i <= currentItemLength; i++) {
+      for (let j = 1; j <= inputLength; j++) {
+        if (currentItem[i - 1] === input[j - 1]) {
+          matrix[i][j] = matrix[i - 1][j - 1];
+        } else {
+          matrix[i][j] = Math.min(
+            matrix[i - 1][j - 1] + 1,
+            matrix[i][j - 1] + 1,
+            matrix[i - 1][j] + 1
+          );
+        }
+      }
+    }
 
-    // If the match score exceeds a threshold, consider it a match
-    if (score >= 0.7) {
-      results.push({ item, score });
+    // Calculate similarity score based on Levenshtein distance
+    let maxDistance = Math.max(currentItemLength, inputLength);
+    let distance = matrix[currentItemLength][inputLength];
+    let similarity = 1 - distance / maxDistance;
+
+    if (similarity >= 0.5) {
+      results.push({ item, score: similarity });
     }
   }
 
-  // Sort the results by match score (descending order)
   results.sort((a, b) => b.score - a.score);
 
-  // Limit the results to the top 10
   return results.slice(0, 10).map(result => result.item);
 }
 
