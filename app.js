@@ -554,15 +554,59 @@ else {
   document.cookie = 'guessCount = 1' + expires;
 }
 
+// Function to perform fuzzy search
+function fuzzySearch(input, searchable) {
+  input = input.toLowerCase();
+  const results = [];
+  // Iterate over each item in the searchable array
+  for (let item of searchable) {
+    let currentItem = item.toLowerCase();
+    
+    // Check if the item starts with the input
+    if (currentItem.startsWith(input)) {
+      results.push({ item, score: 1 }); // Max score for exact match
+      continue;
+    }
+
+    // Check for approximate matches
+    let inputIndex = 0;
+    let currentItemIndex = 0;
+    let matchCount = 0;
+
+    while (currentItemIndex < currentItem.length) {
+      if (currentItem[currentItemIndex] === input[inputIndex]) {
+        inputIndex++;
+        matchCount++;
+      }
+      currentItemIndex++;
+    }
+
+    // Calculate match score
+    const score = matchCount / input.length;
+
+    // If the match score exceeds a threshold, consider it a match
+    if (score >= 0.7) {
+      results.push({ item, score });
+    }
+  }
+
+  // Sort the results by match score (descending order)
+  results.sort((a, b) => b.score - a.score);
+
+  // Limit the results to the top 10
+  return results.slice(0, 10).map(result => result.item);
+}
+
 //handles autocomplete 
 searchInput.addEventListener('keyup', () => {
   
   let results = [];
   let input = searchInput.value;
-  if (input.length > 2) {
-      results = searchable.filter((item) => {
-      return item.toLowerCase().startsWith(input.toLowerCase());
-    });
+  if (input.length > 1) {
+    //   results = searchable.filter((item) => {
+    //   return item.toLowerCase().startsWith(input.toLowerCase());
+    // });
+    results = fuzzySearch(input, searchable);
   }
   renderResults(results);
 });
@@ -837,7 +881,8 @@ function handleShare() {
     }
   }
 
-  congratulations.innerHTML = "Text copied to clipboard.\t";
+  // congratulations.innerHTML = "Text copied to clipboard.\t";
+  shareBtn.innerHTML = "COPIED!";
   navigator.clipboard.writeText(result)
 
   if (isMobile()) {
@@ -849,17 +894,18 @@ function handleShare() {
        })
        .catch(console.error);
        } else {
-        congratulations.innerHTML = "Text copied to clipboard.\t";
+        // congratulations.innerHTML = "Text copied to clipboard.\t";
+        shareBtn.innerHTML = "COPIED RESULT!";
         navigator.clipboard.writeText(result)
         .then(() => { console.log('copied'); })
         .catch((error) => { alert(`Copy failed! ${error}`) })
     }
   }
   else {
-    congratulations.innerHTML = "Text copied to clipboard.\t";
+    // congratulations.innerHTML = "Text copied to clipboard.\t";
+    shareBtn.innerHTML = "COPIED RESULT!";
     navigator.clipboard.writeText(result)
   }
-
 }
 
 function loss() {
