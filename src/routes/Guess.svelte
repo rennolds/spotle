@@ -303,6 +303,7 @@
 
   export let artist;
   export let mysteryArtist;
+  export let isMostRecentGuess; // Boolean to track if the current guess is the most recent one
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
   function getRegion(region) {
@@ -343,8 +344,9 @@
     </div>
   </div>
   <div
-    class="item small {artist.group_size == mysteryArtist.group_size
-      ? 'correct'
+    class="item small {artist.group_size == mysteryArtist.group_size &&
+    isMostRecentGuess
+      ? 'correct flipping'
       : ''}"
   >
     <h3>Members</h3>
@@ -475,10 +477,6 @@
     height: 80px;
   }
 
-  .correct {
-    background: #00b011 !important;
-  }
-
   .close {
     background: rgba(255, 245, 0, 0.7);
   }
@@ -488,5 +486,9 @@
     align-items: center; /* Vertically center items */
     justify-content: center; /* Horizontally center items */
     margin-left: 10px;
+  }
+
+  .correct {
+    background-color: #00b011;
   }
 </style>
