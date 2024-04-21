@@ -1,0 +1,45 @@
+/* body,
+html {
+  /* margin: 0 auto;
+  width: 100%;
+  height: 100vh; */
+
+  /* background-attachment: fixed;
+  font-family: "Inter";
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  background-color: #000; */
+/* } */
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 600;
+  
+    color: #aaa;
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  
+  html, body {
+    overflow-x: hidden;
+  }
