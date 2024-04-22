@@ -468,12 +468,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    top: 7%;
+    margin-bottom: 25px;
   }
 
   .logo {
     position: absolute;
-    top: 10%;
     left: 50%; /* Positions the left edge of the element at the center of its containing block */
     transform: translateX(
       -50%
@@ -489,8 +489,8 @@
   }
 
   .smaller-svg svg {
-    width: 100%;
-    height: 100%;
+    width: 105%;
+    height: 105%;
   }
 
   .content {
