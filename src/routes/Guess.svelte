@@ -485,7 +485,14 @@
     display: flex;
     align-items: center; /* Vertically center items */
     justify-content: center; /* Horizontally center items */
-    margin-left: 10px;
+  }
+
+  .flex-container h2 {
+    margin-left: 15px;
+  }
+
+  .correct .flex-container h2 {
+    margin-left: -45px !important;
   }
 
   .correct {

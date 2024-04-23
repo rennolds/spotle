@@ -1,5 +1,6 @@
 <script>
   import Guess from "./Guess.svelte";
+  import Gameover from "./Gameover.svelte";
   import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
@@ -82,11 +83,25 @@
   );
 
   const artistNames = artistList.map((artist) => artist.artist);
+  let spotleNumber = -1;
+  mysteryArtistList.forEach((entry, index) => {
+    // Compare the date property of each object with today's date
+    if (entry.date === todaysDate) {
+      // If a match is found, store the index
+      spotleNumber = index;
+      // Exit the loop since we found the match
+      return;
+    }
+  });
+
   let normalGame = false;
   let splashScreen = true;
   let searchTerm = "";
   let guesses = [];
   let guessCount = 0;
+  let gameOver = false;
+  let showResults = false;
+  let result = "";
 
   function fuzzySearch(input) {
     if (input == "") {
@@ -171,9 +186,33 @@
       return;
     }
 
-    guessCount++;
     guesses.push(selectedArtist);
     guesses = guesses;
+
+    if (selectedArtist == mysteryArtist) {
+      gameOver = true;
+      showResults = true;
+      result = "W";
+      return;
+    }
+
+    if (guessCount + 1 == 10) {
+      gameOver = true;
+      showResults = true;
+      result = "L";
+      return;
+    }
+
+    guessCount++;
+  }
+
+  function handleOverlayClose() {
+    showResults = false;
+  }
+
+  function handleMenuClick() {
+    normalGame = false;
+    splashScreen = true;
   }
 </script>
 
@@ -182,18 +221,20 @@
     <div class="header">
       {#if normalGame}
         <div class="left">
-          <svg
-            width="28"
-            height="25"
-            viewBox="0 0 28 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M25.7353 20.5882C26.3018 20.5885 26.8465 20.8067 27.2565 21.1977C27.6664 21.5886 27.9103 22.1223 27.9375 22.6881C27.9648 23.254 27.7733 23.8086 27.4027 24.2371C27.0321 24.6655 26.5109 24.935 25.9471 24.9897L25.7353 25H2.20588C1.63939 24.9997 1.09471 24.7815 0.684726 24.3906C0.274738 23.9996 0.0308647 23.466 0.00364079 22.9001C-0.0235831 22.3343 0.167929 21.7797 0.538493 21.3512C0.909057 20.9227 1.43027 20.6532 1.99412 20.5985L2.20588 20.5882H25.7353ZM25.7353 10.2941C26.3203 10.2941 26.8814 10.5265 27.2951 10.9402C27.7088 11.3539 27.9412 11.915 27.9412 12.5C27.9412 13.085 27.7088 13.6461 27.2951 14.0598C26.8814 14.4735 26.3203 14.7059 25.7353 14.7059H2.20588C1.62085 14.7059 1.05977 14.4735 0.646088 14.0598C0.232405 13.6461 0 13.085 0 12.5C0 11.915 0.232405 11.3539 0.646088 10.9402C1.05977 10.5265 1.62085 10.2941 2.20588 10.2941H25.7353ZM25.7353 0C26.3203 0 26.8814 0.232405 27.2951 0.646088C27.7088 1.05977 27.9412 1.62085 27.9412 2.20588C27.9412 2.79092 27.7088 3.35199 27.2951 3.76568C26.8814 4.17936 26.3203 4.41176 25.7353 4.41176H2.20588C1.62085 4.41176 1.05977 4.17936 0.646088 3.76568C0.232405 3.35199 0 2.79092 0 2.20588C0 1.62085 0.232405 1.05977 0.646088 0.646088C1.05977 0.232405 1.62085 0 2.20588 0H25.7353Z"
-              fill="white"
-            />
-          </svg>
+          <button on:click={handleMenuClick}>
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M25.7353 20.5882C26.3018 20.5885 26.8465 20.8067 27.2565 21.1977C27.6664 21.5886 27.9103 22.1223 27.9375 22.6881C27.9648 23.254 27.7733 23.8086 27.4027 24.2371C27.0321 24.6655 26.5109 24.935 25.9471 24.9897L25.7353 25H2.20588C1.63939 24.9997 1.09471 24.7815 0.684726 24.3906C0.274738 23.9996 0.0308647 23.466 0.00364079 22.9001C-0.0235831 22.3343 0.167929 21.7797 0.538493 21.3512C0.909057 20.9227 1.43027 20.6532 1.99412 20.5985L2.20588 20.5882H25.7353ZM25.7353 10.2941C26.3203 10.2941 26.8814 10.5265 27.2951 10.9402C27.7088 11.3539 27.9412 11.915 27.9412 12.5C27.9412 13.085 27.7088 13.6461 27.2951 14.0598C26.8814 14.4735 26.3203 14.7059 25.7353 14.7059H2.20588C1.62085 14.7059 1.05977 14.4735 0.646088 14.0598C0.232405 13.6461 0 13.085 0 12.5C0 11.915 0.232405 11.3539 0.646088 10.9402C1.05977 10.5265 1.62085 10.2941 2.20588 10.2941H25.7353ZM25.7353 0C26.3203 0 26.8814 0.232405 27.2951 0.646088C27.7088 1.05977 27.9412 1.62085 27.9412 2.20588C27.9412 2.79092 27.7088 3.35199 27.2951 3.76568C26.8814 4.17936 26.3203 4.41176 25.7353 4.41176H2.20588C1.62085 4.41176 1.05977 4.17936 0.646088 3.76568C0.232405 3.35199 0 2.79092 0 2.20588C0 1.62085 0.232405 1.05977 0.646088 0.646088C1.05977 0.232405 1.62085 0 2.20588 0H25.7353Z"
+                fill="white"
+              />
+            </svg>
+          </button>
         </div>
       {/if}
 
@@ -390,6 +431,16 @@
       {#if normalGame}
         <div class="game-container">
           <div class="guesses-remaining">Guess {guessCount + 1} of 10</div>
+          {#if showResults}
+            <Gameover
+              {spotleNumber}
+              {result}
+              artist={mysteryArtistEntry}
+              {guessCount}
+              on:close={handleOverlayClose}
+            ></Gameover>
+          {/if}
+
           <div class="search-container">
             <input
               type="text"
@@ -481,11 +532,28 @@
   }
 
   .right {
-    margin-left: 40px;
+    margin-left: 50px;
+    display: flex; /* Ensure the button is aligned properly */
+    align-items: center; /* Center the button vertically */
+  }
+
+  .right svg {
+    padding-left: 8px;
   }
 
   .left {
-    margin-right: 40px;
+    margin-right: 50px;
+    display: flex; /* Ensure the button is aligned properly */
+    align-items: center; /* Center the button vertically */
+  }
+
+  .left button {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 
   .smaller-svg svg {
