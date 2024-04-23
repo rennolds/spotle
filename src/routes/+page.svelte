@@ -404,7 +404,10 @@
           <button class="styled-btn coming-soon">Spotle Streak</button>
 
           <p>play our new game!</p>
-          <button class="styled-btn purple">harmonies.io</button>
+          <button class="styled-btn purple"
+            ><a href="https://harmonies.io" target="_blank">harmonies.io</a
+            ></button
+          >
         </div>
       {/if}
 
@@ -489,6 +492,15 @@
     margin-bottom: 3px;
   }
 
+  .splash-screen button:hover {
+    transform: scale(1.075) perspective(1px);
+  }
+
+  button a {
+    color: #fff;
+    text-decoration: none; /* no underline */
+  }
+
   .container {
     position: relative;
     width: 100%;
@@ -499,7 +511,7 @@
     position: relative; /* Establishes positioning context for absolutely positioned children */
     display: flex;
     align-items: center;
-    top: 6%;
+    top: 7%;
     margin-bottom: 25px;
   }
 
