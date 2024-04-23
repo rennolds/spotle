@@ -191,6 +191,9 @@
     guesses.push(selectedArtist);
     guesses = guesses;
 
+    console.log(guesses);
+    console.log([...guesses].reverse());
+
     if (selectedArtist == mysteryArtist) {
       gameOver = true;
       showResults = true;
@@ -455,16 +458,8 @@
           </div>
 
           <div class="guess-container">
-            {#each guesses.slice().reverse() as guess, index}
-              {#if index === 0}
-                <!-- Pass isMostRecentGuess as true for the most recent guess -->
-                <Guess artist={guess} {mysteryArtist} isMostRecentGuess={true}
-                ></Guess>
-              {:else}
-                <!-- For other guesses, pass isMostRecentGuess as false -->
-                <Guess artist={guess} {mysteryArtist} isMostRecentGuess={false}
-                ></Guess>
-              {/if}
+            {#each [...guesses].reverse() as guess (guess.name)}
+              <Guess artist={guess} {mysteryArtist}></Guess>
             {/each}
           </div>
         </div>

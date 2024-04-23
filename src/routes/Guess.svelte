@@ -1,6 +1,5 @@
 <script>
-  import keyboard_down from "$lib/keyboard_down.svg";
-  import keyboard_up from "$lib/keyboard_up.svg";
+  import Icon from "./Icon.svelte";
 
   const africa = [
     "DZ",
@@ -303,7 +302,6 @@
 
   export let artist;
   export let mysteryArtist;
-  export let isMostRecentGuess; // Boolean to track if the current guess is the most recent one
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
   function getRegion(region) {
@@ -316,6 +314,7 @@
     }
     return countryName;
   }
+  console.log(artist.name);
 </script>
 
 <div class="header-row">
@@ -336,17 +335,16 @@
     <div class="flex-container">
       <h2>{artist.debut_album_year}</h2>
       {#if artist.debut_album_year > mysteryArtist.debut_album_year}
-        <img src={keyboard_up} alt="up-arrow" />
+        <Icon width={"1.5rem"} height={"1.5rem"} name={"key_up"}></Icon>
       {/if}
       {#if artist.debut_album_year < mysteryArtist.debut_album_year}
-        <img src={keyboard_down} alt="arrow-down" />
+        <Icon width={"1.5rem"} height={"1.5rem"} name={"key_down"}></Icon>
       {/if}
     </div>
   </div>
   <div
-    class="item small {artist.group_size == mysteryArtist.group_size &&
-    isMostRecentGuess
-      ? 'correct flipping'
+    class="item small {artist.group_size == mysteryArtist.group_size
+      ? 'correct'
       : ''}"
   >
     <h3>Members</h3>
@@ -365,10 +363,10 @@
     <div class="flex-container">
       <h2>#{artist.listener_rank + 1}</h2>
       {#if artist.listener_rank > mysteryArtist.listener_rank}
-        <img src={keyboard_up} alt="up-arrow" />
+        <Icon width={"1.5rem"} height={"1.5rem"} name={"key_up"}></Icon>
       {/if}
       {#if artist.listener_rank < mysteryArtist.listener_rank}
-        <img src={keyboard_down} alt="arrow-down" />
+        <Icon width={"1.5rem"} height={"1.5rem"} name={"key_down"}></Icon>
       {/if}
     </div>
   </div>
@@ -424,6 +422,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    /* transition: background-color 0s ease; */
   }
 
   .item h3,
@@ -453,13 +452,13 @@
     flex: 0.8; /* Smaller width for small items */
   }
 
-  .item img {
+  /* .item {
     margin-top: 0.1rem;
     width: 80%;
     max-height: 80%;
     margin-bottom: 5px;
     max-width: 100%;
-  }
+  } */
 
   .header-row {
     display: flex;
@@ -478,7 +477,7 @@
   }
 
   .close {
-    background: rgba(255, 245, 0, 0.7);
+    animation: flip-close 2s ease-in-out forwards;
   }
 
   .flex-container {
@@ -496,6 +495,49 @@
   }
 
   .correct {
-    background-color: #00b011;
+    /* background-color: #00b011; */
+  }
+
+  .correct {
+    animation: flip-correct 2s ease-in-out forwards;
+  }
+
+  @keyframes flip-correct {
+    0% {
+    }
+    50% {
+      transform: rotateY(0deg);
+      background-color: #454545;
+    }
+    70% {
+      transform: rotateY(180deg);
+      background-color: #454545; /* Change to the original background color */
+    }
+    100% {
+      transform: rotateY(360deg);
+      background-color: #00b011; /* Change to the green background color */
+    }
+  }
+
+  @keyframes flip-close {
+    0% {
+    }
+    50% {
+      transform: rotateY(0deg);
+      background-color: #454545;
+    }
+    70% {
+      transform: rotateY(180deg);
+      background-color: #454545; /* Change to the original background color */
+    }
+    100% {
+      transform: rotateY(360deg);
+      background-color: rgba(
+        255,
+        245,
+        0,
+        0.7
+      ); /* Change to the green background color */
+    }
   }
 </style>
