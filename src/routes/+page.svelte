@@ -1,6 +1,7 @@
 <script>
   import Guess from "./Guess.svelte";
   import Gameover from "./Gameover.svelte";
+  import Icon from "./Icon.svelte";
   import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
@@ -102,6 +103,7 @@
   let gameOver = false;
   let showResults = false;
   let result = "";
+  let muted = false;
 
   function fuzzySearch(input) {
     if (input == "") {
@@ -214,6 +216,14 @@
     normalGame = false;
     splashScreen = true;
   }
+
+  function handleMute() {
+    if (muted) {
+      muted = false;
+    } else {
+      muted = true;
+    }
+  }
 </script>
 
 <body>
@@ -222,18 +232,7 @@
       {#if normalGame}
         <div class="left">
           <button on:click={handleMenuClick}>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M25.7353 20.5882C26.3018 20.5885 26.8465 20.8067 27.2565 21.1977C27.6664 21.5886 27.9103 22.1223 27.9375 22.6881C27.9648 23.254 27.7733 23.8086 27.4027 24.2371C27.0321 24.6655 26.5109 24.935 25.9471 24.9897L25.7353 25H2.20588C1.63939 24.9997 1.09471 24.7815 0.684726 24.3906C0.274738 23.9996 0.0308647 23.466 0.00364079 22.9001C-0.0235831 22.3343 0.167929 21.7797 0.538493 21.3512C0.909057 20.9227 1.43027 20.6532 1.99412 20.5985L2.20588 20.5882H25.7353ZM25.7353 10.2941C26.3203 10.2941 26.8814 10.5265 27.2951 10.9402C27.7088 11.3539 27.9412 11.915 27.9412 12.5C27.9412 13.085 27.7088 13.6461 27.2951 14.0598C26.8814 14.4735 26.3203 14.7059 25.7353 14.7059H2.20588C1.62085 14.7059 1.05977 14.4735 0.646088 14.0598C0.232405 13.6461 0 13.085 0 12.5C0 11.915 0.232405 11.3539 0.646088 10.9402C1.05977 10.5265 1.62085 10.2941 2.20588 10.2941H25.7353ZM25.7353 0C26.3203 0 26.8814 0.232405 27.2951 0.646088C27.7088 1.05977 27.9412 1.62085 27.9412 2.20588C27.9412 2.79092 27.7088 3.35199 27.2951 3.76568C26.8814 4.17936 26.3203 4.41176 25.7353 4.41176H2.20588C1.62085 4.41176 1.05977 4.17936 0.646088 3.76568C0.232405 3.35199 0 2.79092 0 2.20588C0 1.62085 0.232405 1.05977 0.646088 0.646088C1.05977 0.232405 1.62085 0 2.20588 0H25.7353Z"
-                fill="white"
-              />
-            </svg>
+            <Icon width={"1.75rem"} height={"1.75rem"} name={"menu"}></Icon>
           </button>
         </div>
       {/if}
@@ -378,38 +377,19 @@
 
       {#if normalGame}
         <div class="right">
-          <svg
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="15" cy="15" r="15" fill="white" />
-            <path
-              d="M6 12.5137V18.6851H9.36L14.736 22.7994V8.39941L9.36 12.5137H6ZM22.8 12.5137L18.096 18.6851L22.8 12.5137ZM18.096 12.5137L22.8 18.6851L18.096 12.5137Z"
-              fill="white"
-            />
-            <path
-              d="M22.8 12.5137L18.096 18.6851M18.096 12.5137L22.8 18.6851M6 12.5137V18.6851H9.36L14.736 22.7994V8.39941L9.36 12.5137H6Z"
-              stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <svg
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M30 15C30 18.9782 28.4196 22.7936 25.6066 25.6066C22.7936 28.4196 18.9782 30 15 30C11.0218 30 7.20644 28.4196 4.3934 25.6066C1.58035 22.7936 0 18.9782 0 15C0 11.0218 1.58035 7.20644 4.3934 4.3934C7.20644 1.58035 11.0218 0 15 0C18.9782 0 22.7936 1.58035 25.6066 4.3934C28.4196 7.20644 30 11.0218 30 15ZM10.305 11.3119H11.8519C12.1106 11.3119 12.3169 11.1 12.3506 10.8431C12.5194 9.61312 13.3631 8.71688 14.8669 8.71688C16.1531 8.71688 17.3306 9.36 17.3306 10.9069C17.3306 12.0975 16.6294 12.645 15.5212 13.4775C14.2594 14.3944 13.26 15.465 13.3313 17.2031L13.3369 17.61C13.3388 17.733 13.3891 17.8503 13.4768 17.9366C13.5645 18.0229 13.6826 18.0713 13.8056 18.0712H15.3263C15.4506 18.0712 15.5698 18.0219 15.6577 17.934C15.7456 17.846 15.795 17.7268 15.795 17.6025V17.4056C15.795 16.0594 16.3069 15.6675 17.6887 14.6194C18.8306 13.7513 20.0213 12.7875 20.0213 10.7644C20.0213 7.93125 17.6287 6.5625 15.0094 6.5625C12.6337 6.5625 10.0312 7.66875 9.85313 10.8487C9.85056 10.9093 9.8604 10.9697 9.88206 11.0263C9.90371 11.0829 9.93672 11.1345 9.97904 11.1779C10.0214 11.2213 10.0721 11.2555 10.1282 11.2786C10.1842 11.3016 10.2444 11.313 10.305 11.3119ZM14.6644 23.3925C15.8081 23.3925 16.5938 22.6537 16.5938 21.6544C16.5938 20.6194 15.8063 19.8919 14.6644 19.8919C13.5694 19.8919 12.7725 20.6194 12.7725 21.6544C12.7725 22.6537 13.5675 23.3925 14.6644 23.3925Z"
-              fill="white"
-            />
-          </svg>
+          {#if muted}
+            <div class="icon-btn" on:click={handleMute}>
+              <Icon width={"1.75rem"} height={"1.75rem"} name={"mute"}></Icon>
+            </div>
+          {/if}
+          {#if !muted}
+            <div class="icon-btn" on:click={handleMute}>
+              <Icon width={"1.75rem"} height={"1.75rem"} name={"unmute"}></Icon>
+            </div>
+          {/if}
+          <div class="icon-btn">
+            <Icon width={"1.75rem"} height={"1.75rem"} name={"help"}></Icon>
+          </div>
         </div>
       {/if}
     </div>
@@ -438,6 +418,7 @@
               artist={mysteryArtistEntry}
               {guessCount}
               on:close={handleOverlayClose}
+              bind:muted
             ></Gameover>
           {/if}
 
@@ -517,9 +498,8 @@
   .header {
     position: relative; /* Establishes positioning context for absolutely positioned children */
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    top: 7%;
+    top: 6%;
     margin-bottom: 25px;
   }
 
@@ -532,13 +512,18 @@
   }
 
   .right {
-    margin-left: 50px;
-    display: flex; /* Ensure the button is aligned properly */
-    align-items: center; /* Center the button vertically */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
   }
 
-  .right svg {
-    padding-left: 8px;
+  .icon-btn {
+    margin-left: 7.5px;
+  }
+
+  .icon-btn:hover {
+    cursor: pointer;
   }
 
   .left {
@@ -657,13 +642,15 @@
   }
 
   .results ul {
-    border-radius: 3px;
-    padding: 8px 12px;
+    border-radius: 5px;
+    padding: 10px 14px;
     transition: all 0.5s linear;
   }
 
   li {
     list-style: none;
+    font-size: 120%;
+    margin-top: 2.5px;
     display: flex;
     flex-direction: start;
     justify-content: left;

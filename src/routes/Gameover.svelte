@@ -1,17 +1,29 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { onMount } from "svelte";
+
 
   export let artist;
   export let result;
   export let guessCount;
   export let spotleNumber;
+  export let muted;
 
   const dispatch = createEventDispatcher();
+  let audio;
+
+  onMount(() => {
+    if (!muted) {
+      audio.volume = 0.5;
+      audio.play();
+    } 
+  });
 
   function closeOverlay() {
     dispatch("close");
   }
 
+  let shareBtnText = "SHARE RESULT";
   let timeUntilMidnight = 0;
   let timer = null;
 
@@ -60,8 +72,46 @@
   const shareText = shareHeader + emojis + "\n" + "spotle.io";
 
   console.log(shareText);
+
+  function handleShare() {
+    navigator.clipboard.writeText(result);
+
+    function isMobile() {
+      const regex =
+        /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+      return regex.test(navigator.userAgent);
+    }
+    if (isMobile()) {
+      if (navigator.share) {
+        navigator
+          .share({
+            text: shareText,
+          })
+          .then(() => {
+            console.log("Thanks for sharing!");
+          })
+          .catch(console.error);
+      } else {
+        // congratulations.innerHTML = "Text copied to clipboard.\t";
+        shareBtnText = "COPIED RESULT";
+        navigator.clipboard
+          .writeText(shareText)
+          .then(() => {
+            console.log("copied");
+          })
+          .catch((error) => {
+            alert(`Copy failed! ${error}`);
+          });
+      }
+    } else {
+      // congratulations.innerHTML = "Text copied to clipboard.\t";
+      shareBtnText = "COPIED RESULT";
+      navigator.clipboard.writeText(result);
+    }
+  }
 </script>
 
+<audio class="hidden" src={artist.song_uri} bind:this={audio}></audio>
 <div class="overlay">
   <div class="content">
     <div class="header">{header}</div>
@@ -89,7 +139,7 @@
     </div>
     <div class="sub-header">{artist.artist}</div>
     <div class="buttons">
-      <button class="button">SHARE RESULT</button>
+      <button on:click={handleShare} class="button">{shareBtnText}</button>
       <button class="button purple"
         ><a href="https://harmonies.io" target="_blank">PLAY HARMONIES</a
         ></button
@@ -212,5 +262,9 @@
 
   .centered {
     text-align: center;
+  }
+
+  .hidden {
+    display: none;
   }
 </style>
