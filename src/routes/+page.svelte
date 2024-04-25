@@ -272,6 +272,8 @@
   function handleMenuClick() {
     normalGame = false;
     splashScreen = true;
+    playingChallenge = false;
+    createGame = false;
   }
 
   function handleMute() {
