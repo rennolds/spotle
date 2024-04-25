@@ -301,8 +301,43 @@
     // Generate the URL with encoded parameters
     const shareURL = `https://spotle.io/?artist=${encodedArtistName}&note=${encodedNote}`;
 
+    const shareText = "I made this Spotle for you! Guess the artist in 10 tries.\n\n" + shareURL;
+
     // Now you can use shareURL to share with your friend
     console.log("Share this URL:", shareURL);
+
+    function isMobile() {
+      const regex =
+        /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+      return regex.test(navigator.userAgent);
+      }
+    if (isMobile()) {
+      if (navigator.share) {
+        navigator
+          .share({
+            text: shareText,
+          })
+          .then(() => {
+            console.log("Thanks for sharing!");
+          })
+          .catch(console.error);
+      } else {
+        // congratulations.innerHTML = "Text copied to clipboard.\t";
+        createShareBtnText = "COPIED RESULT";
+        navigator.clipboard
+          .writeText(shareText)
+          .then(() => {
+            console.log("copied");
+          })
+          .catch((error) => {
+            alert(`Copy failed! ${error}`);
+          });
+      }
+    } else {
+      // congratulations.innerHTML = "Text copied to clipboard.\t";
+      createShareBtnText = "COPIED RESULT";
+      navigator.clipboard.writeText(shareText);
+    }
   }
 </script>
 

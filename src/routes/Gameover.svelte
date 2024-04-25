@@ -84,7 +84,7 @@
   console.log(shareText);
 
   function handleShare() {
-    navigator.clipboard.writeText(result);
+    navigator.clipboard.writeText(shareText);
 
     function isMobile() {
       const regex =
@@ -116,7 +116,7 @@
     } else {
       // congratulations.innerHTML = "Text copied to clipboard.\t";
       shareBtnText = "COPIED RESULT";
-      navigator.clipboard.writeText(result);
+      navigator.clipboard.writeText(shareText);
     }
   }
 </script>
