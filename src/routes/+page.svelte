@@ -1,5 +1,6 @@
 <script>
   import { browser } from "$app/environment";
+  import Help from "./Help.svelte";
   import Guess from "./Guess.svelte";
   import Gameover from "./Gameover.svelte";
   import Icon from "./Icon.svelte";
@@ -99,6 +100,7 @@
   let normalGame = false;
   let createGame = false;
   let splashScreen = true;
+  let showHelp = false;
   let searchTerm = "";
   let guesses = [];
   let guessCount = 0;
@@ -290,6 +292,15 @@
     splashScreen = false;
   }
 
+  function toggleHelp() {
+    if (showHelp) {
+      showHelp = false;
+    }
+    else {
+      showHelp = true;
+    }
+  }
+
   function handleCreateShare(artist) {
     const artistUint8Array = new TextEncoder().encode(artist.name);
     const noteUint8Array = new TextEncoder().encode(createNote);
@@ -303,7 +314,9 @@
     // Generate the URL with encoded parameters
     const shareURL = `https://spotle.io/?artist=${encodedArtistName}&note=${encodedNote}`;
 
-    const shareText = "I made this Spotle for you! Guess the artist in 10 tries.\n\n" + shareURL;
+    const shareText =
+      "I made this Spotle for you! Guess the artist in 10 tries.\n\n" +
+      shareURL;
 
     // Now you can use shareURL to share with your friend
     console.log("Share this URL:", shareURL);
@@ -312,7 +325,7 @@
       const regex =
         /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
       return regex.test(navigator.userAgent);
-      }
+    }
     if (isMobile()) {
       if (navigator.share) {
         navigator
@@ -345,6 +358,11 @@
 
 <body>
   <div class="container">
+    {#if showHelp}
+    <div class="help">
+      <Help on:close={toggleHelp}></Help>
+    </div>
+    {/if}
     <div class="header">
       {#if normalGame}
         <div class="left">
@@ -504,7 +522,7 @@
               <Icon width={"1.75rem"} height={"1.75rem"} name={"unmute"}></Icon>
             </div>
           {/if}
-          <div class="icon-btn">
+          <div class="icon-btn" on:click={toggleHelp}>
             <Icon width={"1.75rem"} height={"1.75rem"} name={"help"}></Icon>
           </div>
         </div>
@@ -515,7 +533,7 @@
         <div class="splash-screen">
           <button class="styled-btn" on:click={playGame}>PLAY</button>
           <p></p>
-          <button class="styled-btn">HOW TO PLAY</button>
+          <button class="styled-btn" on:click={toggleHelp}>HOW TO PLAY</button>
           <p></p>
           <button class="styled-btn" on:click={handleCreate}
             >CREATE A SPOTLE</button
