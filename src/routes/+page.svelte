@@ -1,4 +1,5 @@
 <script>
+  import { browser } from "$app/environment";
   import Guess from "./Guess.svelte";
   import Gameover from "./Gameover.svelte";
   import Icon from "./Icon.svelte";
@@ -76,10 +77,10 @@
   startTimer();
 
   const todaysDate = getEasternTimeDate();
-  const mysteryArtistEntry = mysteryArtistList.find(
+  let mysteryArtistEntry = mysteryArtistList.find(
     (entry) => entry.date === todaysDate
   );
-  const mysteryArtist = artists.find(
+  let mysteryArtist = artists.find(
     (artist) => artist.name === mysteryArtistEntry.artist
   );
 
@@ -96,6 +97,7 @@
   });
 
   let normalGame = false;
+  let createGame = false;
   let splashScreen = true;
   let searchTerm = "";
   let guesses = [];
@@ -104,6 +106,56 @@
   let showResults = false;
   let result = "";
   let muted = false;
+  let createGameSelection = null;
+  let createNote = "";
+  let createShareBtnText = "SHARE";
+  let playingChallenge = false;
+
+  if (browser) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const encodedArtist = urlParams.get("artist");
+    const encodedNote = urlParams.get("note");
+    if (encodedArtist) {
+      splashScreen = false;
+      normalGame = true;
+      playingChallenge = true;
+
+      // Decode the Base64 string to Uint8Array
+      const artistUint8Array = Uint8Array.from(atob(encodedArtist), (c) =>
+        c.charCodeAt(0)
+      );
+      const noteUint8Array = Uint8Array.from(atob(encodedNote), (c) =>
+        c.charCodeAt(0)
+      );
+
+      // Convert the Uint8Array to string (UTF-8 representation)
+      const decodedArtist = new TextDecoder().decode(artistUint8Array);
+      const decodedNote = new TextDecoder().decode(noteUint8Array);
+
+      // Now you can use decodedWord and decodedNote in your app
+      console.log("Decoded word:", decodedArtist);
+      console.log("Decoded note:", decodedNote);
+
+      const selectedArtist = artists.find(
+        (artist) => artist.name === decodedArtist
+      );
+      if (selectedArtist === null) {
+        playingChallenge = false;
+        splashScreen = true;
+        normalGame = false;
+      }
+
+      mysteryArtist = selectedArtist;
+
+      mysteryArtistEntry = {
+        image_uri: mysteryArtist.image_uri,
+        song_uri: mysteryArtist.song_uri,
+        artist: mysteryArtist.name,
+      };
+    }
+  }
+
+  console.log(mysteryArtistEntry);
 
   function fuzzySearch(input) {
     if (input == "") {
@@ -170,12 +222,10 @@
     splashScreen = false;
   }
 
-  function createSpotle() {
-    // Code for creating Spotle
-    // You can add functionality for creating Spotle here
-  }
-
   function handleSearch(artistName) {
+    if (filteredArtists.length == 0) {
+      return;
+    }
     searchTerm = "";
 
     if (artistName === null) {
@@ -184,31 +234,35 @@
 
     const selectedArtist = artists.find((artist) => artist.name === artistName);
 
-    if (guesses.includes(selectedArtist)) {
-      return;
+    if (!createGame) {
+      if (guesses.includes(selectedArtist)) {
+        return;
+      }
+
+      guesses.push(selectedArtist);
+      guesses = guesses;
+
+      console.log(guesses);
+      console.log([...guesses].reverse());
+
+      if (selectedArtist == mysteryArtist) {
+        gameOver = true;
+        showResults = true;
+        result = "W";
+        return;
+      }
+
+      if (guessCount + 1 == 10) {
+        gameOver = true;
+        showResults = true;
+        result = "L";
+        return;
+      }
+
+      guessCount++;
+    } else {
+      createGameSelection = selectedArtist;
     }
-
-    guesses.push(selectedArtist);
-    guesses = guesses;
-
-    console.log(guesses);
-    console.log([...guesses].reverse());
-
-    if (selectedArtist == mysteryArtist) {
-      gameOver = true;
-      showResults = true;
-      result = "W";
-      return;
-    }
-
-    if (guessCount + 1 == 10) {
-      gameOver = true;
-      showResults = true;
-      result = "L";
-      return;
-    }
-
-    guessCount++;
   }
 
   function handleOverlayClose() {
@@ -226,6 +280,29 @@
     } else {
       muted = true;
     }
+  }
+
+  function handleCreate() {
+    createGame = true;
+    normalGame = true;
+    splashScreen = false;
+  }
+
+  function handleCreateShare(artist) {
+    const artistUint8Array = new TextEncoder().encode(artist.name);
+    const noteUint8Array = new TextEncoder().encode(createNote);
+
+    // Encode the Uint8Array to Base64
+    const encodedArtistName = btoa(
+      String.fromCharCode.apply(null, artistUint8Array)
+    );
+    const encodedNote = btoa(String.fromCharCode.apply(null, noteUint8Array));
+
+    // Generate the URL with encoded parameters
+    const shareURL = `https://spotle.io/?artist=${encodedArtistName}&note=${encodedNote}`;
+
+    // Now you can use shareURL to share with your friend
+    console.log("Share this URL:", shareURL);
   }
 </script>
 
@@ -402,6 +479,10 @@
           <button class="styled-btn" on:click={playGame}>PLAY</button>
           <p></p>
           <button class="styled-btn">HOW TO PLAY</button>
+          <p></p>
+          <button class="styled-btn" on:click={handleCreate}
+            >CREATE A SPOTLE</button
+          >
 
           <p>coming soon</p>
           <button class="styled-btn coming-soon">Spotle Streak</button>
@@ -416,13 +497,20 @@
 
       {#if normalGame}
         <div class="game-container">
-          <div class="guesses-remaining">Guess {guessCount + 1} of 10</div>
-          {#if showResults}
+          <div class="guesses-remaining">
+            {#if !createGame}
+              Guess {guessCount + 1} of 10
+            {:else}
+              Pick an artist for your friend to guess.
+            {/if}
+          </div>
+          {#if showResults && !createGame}
             <Gameover
               {spotleNumber}
               {result}
               artist={mysteryArtistEntry}
               {guessCount}
+              {playingChallenge}
               on:close={handleOverlayClose}
               bind:muted
             ></Gameover>
@@ -437,12 +525,13 @@
               autocomplete="off"
               bind:value={searchTerm}
               on:keydown={(e) => {
-                if (e.key === "Enter") handleSearch(filteredArtists[0]);
+                if (e.key === "Enter")
+                  handleSearch(filteredArtists[0], createGame);
               }}
             />
             <button
               class="guess-btn"
-              on:click={() => handleSearch(filteredArtists[0])}
+              on:click={() => handleSearch(filteredArtists[0], createGame)}
               ><i class="fa fa-search fa-lg"></i></button
             >
             <ul
@@ -450,18 +539,50 @@
               style="display: {filteredArtists.length > 0 ? 'block' : 'none'}"
             >
               {#each filteredArtists as artist}
-                <li on:click={() => handleSearch(artist)}>
+                <li on:click={() => handleSearch(artist, createGame)}>
                   {artist}
                 </li>
               {/each}
             </ul>
           </div>
 
-          <div class="guess-container">
-            {#each [...guesses].reverse() as guess (guess.name)}
-              <Guess artist={guess} {mysteryArtist}></Guess>
-            {/each}
-          </div>
+          {#if !createGame}
+            <div class="guess-container">
+              {#each [...guesses].reverse() as guess (guess.name)}
+                <Guess artist={guess} {mysteryArtist}></Guess>
+              {/each}
+            </div>
+          {:else}
+            <div>
+              <!-- Create Image -->
+              {#if createGameSelection}
+                <div class="header-row">
+                  <img
+                    src={createGameSelection.image_uri}
+                    alt={createGameSelection.name}
+                  />
+                  <h2>{createGameSelection.name}</h2>
+                </div>
+
+                <p class="challenge-text">Leave a note for your friend.</p>
+
+                <input
+                  class="create-form"
+                  placeholder="I'm not sure what to write here..."
+                  bind:value={createNote}
+                />
+
+                <p class="challenge-explain">
+                  (this will be visible while guessing)
+                </p>
+                <button
+                  class="styled-btn"
+                  on:click={handleCreateShare(createGameSelection)}
+                  >{createShareBtnText}</button
+                >
+              {/if}
+            </div>
+          {/if}
         </div>
       {/if}
     </div>
@@ -679,5 +800,26 @@
   .guess-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .header-row {
+    display: flex;
+    flex-direction: row; /* Change to row */
+    align-items: center; /* Vertically center items */
+    color: #fff;
+    margin-bottom: 5px;
+    margin-top: 30px;
+  }
+
+  .header-row img {
+    margin-right: 0.8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+  }
+
+  .create-form {
+    border-radius: 5px;
   }
 </style>

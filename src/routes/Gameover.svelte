@@ -2,12 +2,12 @@
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
 
-
   export let artist;
   export let result;
   export let guessCount;
   export let spotleNumber;
   export let muted;
+  export let playingChallenge = false;
 
   const dispatch = createEventDispatcher();
   let audio;
@@ -16,7 +16,7 @@
     if (!muted) {
       audio.volume = 0.5;
       audio.play();
-    } 
+    }
   });
 
   function closeOverlay() {
@@ -55,9 +55,19 @@
   startTimer();
   let emojis = "";
   let header;
-  const shareHeader = "Spotle #" + spotleNumber + "🎧\n\n";
+  let shareHeader = "Spotle #" + spotleNumber + "🎧\n\n";
+
+  if (playingChallenge) {
+    shareHeader = "Spotle Challenge 🎧\n\n";
+  }
+
   if (result == "W") {
     header = "Another victory for da OG";
+    if (playingChallenge) {
+      shareHeader = "Spotle Challenge 🎧\n\n";
+      header = "Tell your friend it was too easy...";
+    }
+
     for (let i = 0; i < guessCount; i++) {
       emojis = emojis.concat("", "⬜");
     }
@@ -130,7 +140,11 @@
       </svg>
     </button>
     <div class="image-container">
-      <div class="image-header">Today's artist is...</div>
+      {#if !playingChallenge}
+        <div class="image-header">Today's artist is...</div>
+      {:else}
+        <div class="image-header">The artist is...</div>
+      {/if}
       <img
         class="image"
         src={artist.image_uri}
@@ -140,14 +154,22 @@
     <div class="sub-header">{artist.artist}</div>
     <div class="buttons">
       <button on:click={handleShare} class="button">{shareBtnText}</button>
-      <button class="button purple"
-        ><a href="https://harmonies.io" target="_blank">PLAY HARMONIES</a
-        ></button
-      >
+      {#if !playingChallenge}
+        <button class="button purple"
+          ><a href="https://harmonies.io" target="_blank">PLAY HARMONIES</a
+          ></button
+        >
+      {:else}
+        <button class="button"
+          ><a href="https://spotle.io">PLAY TODAYS</a></button
+        >
+      {/if}
     </div>
     <div class="centered">
-      <div>Next Spotle</div>
-      <div>{formatTime(timeUntilMidnight)}</div>
+      {#if !playingChallenge}
+        <div>Next Spotle</div>
+        <div>{formatTime(timeUntilMidnight)}</div>
+      {/if}
     </div>
   </div>
 </div>
