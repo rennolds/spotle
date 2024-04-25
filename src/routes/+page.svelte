@@ -7,6 +7,7 @@
   import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
+  import { visited, currentGameDate, guesses } from "./store.js";
 
   function getGenderLabel(code) {
     switch (code) {
@@ -37,29 +38,27 @@
     gender: getGenderLabel(artist.gender),
   }));
 
-  function getEasternTimeDate() {
+  function getLocalMidnightDate() {
     const date = new Date();
-    const easternTimeOffset = -4; // Eastern Time is UTC-4 during standard time
-    const utc = date.getTime() + date.getTimezoneOffset() * 60000;
-    const easternTime = new Date(utc + 3600000 * easternTimeOffset);
-    return easternTime.toLocaleDateString("en-US", {
-      timeZone: "America/New_York",
-    });
+    const localTimezoneOffset = date.getTimezoneOffset() / 60; // Convert minutes to hours
+    const localMidnight = new Date(date);
+    localMidnight.setHours(24 + localTimezoneOffset, 0, 0, 0); // Set to midnight local time
+    return localMidnight.toLocaleDateString("en-US");
   }
 
-  let timeUntilMidnightET = 0;
+  let timeUntilMidnightLocal = 0;
   let timer = null;
 
   function updateTimer() {
     const now = new Date();
-    const midnightET = new Date(now);
-    midnightET.setUTCHours(4, 0, 0, 0); // 4 AM UTC = Midnight ET
+    const localMidnight = new Date(now);
+    localMidnight.setHours(24, 0, 0, 0); // Set to midnight local time
 
-    if (now > midnightET) {
-      midnightET.setDate(midnightET.getDate() + 1); // Increment to next day
+    if (now > localMidnight) {
+      localMidnight.setDate(localMidnight.getDate() + 1); // Increment to next day
     }
 
-    timeUntilMidnightET = midnightET - now;
+    timeUntilMidnightLocal = localMidnight - now;
   }
 
   function formatTime(milliseconds) {
@@ -77,7 +76,15 @@
 
   startTimer();
 
-  const todaysDate = getEasternTimeDate();
+  const todaysDateUnformatted = new Date();
+  // Extract day, month, and year from the date object
+  const day = String(todaysDateUnformatted.getDate()).padStart(2, "0"); // Add leading zero if necessary
+  const month = String(todaysDateUnformatted.getMonth() + 1);
+  const year = todaysDateUnformatted.getFullYear();
+
+  // Form the date string in "DD/MM/YYYY" format
+  const todaysDate = `${month}/${day}/${year}`;
+  console.log(todaysDate);
   let mysteryArtistEntry = mysteryArtistList.find(
     (entry) => entry.date === todaysDate
   );
@@ -102,7 +109,6 @@
   let splashScreen = true;
   let showHelp = false;
   let searchTerm = "";
-  let guesses = [];
   let guessCount = 0;
   let gameOver = false;
   let showResults = false;
@@ -112,6 +118,7 @@
   let createNote = "";
   let createShareBtnText = "SHARE";
   let playingChallenge = false;
+  let challenegeGuesses = [];
 
   if (browser) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -157,7 +164,24 @@
     }
   }
 
-  console.log(mysteryArtistEntry);
+  if (!playingChallenge) {
+    if ($currentGameDate == todaysDate) {
+      guessCount = $guesses.length;
+      if (guessCount >= 10) {
+        gameOver = true;
+        showResults = true;
+        result = "L";
+      }
+      if ($guesses.some((obj) => obj.name === mysteryArtist.name)) {
+        gameOver = true;
+        result = "W";
+      }
+    } else {
+      $guesses = [];
+      $visited = true;
+      $currentGameDate = todaysDate;
+    }
+  }
 
   function fuzzySearch(input) {
     if (input == "") {
@@ -220,6 +244,9 @@
   $: filteredArtists = fuzzySearch(searchTerm);
 
   function playGame() {
+    if (gameOver == true) {
+      showResults = true;
+    }
     normalGame = true;
     splashScreen = false;
   }
@@ -237,15 +264,24 @@
     const selectedArtist = artists.find((artist) => artist.name === artistName);
 
     if (!createGame) {
-      if (guesses.includes(selectedArtist)) {
-        return;
+      if (!playingChallenge) {
+        if ($guesses.includes(selectedArtist)) {
+          return;
+        } else {
+          if (challenegeGuesses.includes(selectedArtist)) {
+            return;
+          }
+        }
       }
 
-      guesses.push(selectedArtist);
-      guesses = guesses;
-
-      console.log(guesses);
-      console.log([...guesses].reverse());
+      if (playingChallenge) {
+        challenegeGuesses.push(selectedArtist);
+        challenegeGuesses = challenegeGuesses;
+      }
+      if (!playingChallenge) {
+        $guesses.push(selectedArtist);
+        $guesses = $guesses;
+      }
 
       if (selectedArtist == mysteryArtist) {
         gameOver = true;
@@ -295,8 +331,7 @@
   function toggleHelp() {
     if (showHelp) {
       showHelp = false;
-    }
-    else {
+    } else {
       showHelp = true;
     }
   }
@@ -359,9 +394,9 @@
 <body>
   <div class="container">
     {#if showHelp}
-    <div class="help">
-      <Help on:close={toggleHelp}></Help>
-    </div>
+      <div class="help">
+        <Help on:close={toggleHelp}></Help>
+      </div>
     {/if}
     <div class="header">
       {#if normalGame}
@@ -578,6 +613,7 @@
               id="search"
               placeholder="Type a guess here..."
               autocomplete="off"
+              disabled={gameOver}
               bind:value={searchTerm}
               on:keydown={(e) => {
                 if (e.key === "Enter")
@@ -603,9 +639,15 @@
 
           {#if !createGame}
             <div class="guess-container">
-              {#each [...guesses].reverse() as guess (guess.name)}
-                <Guess artist={guess} {mysteryArtist}></Guess>
-              {/each}
+              {#if !playingChallenge}
+                {#each [...$guesses].reverse() as guess (guess.name)}
+                  <Guess artist={guess} {mysteryArtist}></Guess>
+                {/each}
+              {:else}
+                {#each [...challenegeGuesses].reverse() as guess (guess.name)}
+                  <Guess artist={guess} {mysteryArtist}></Guess>
+                {/each}
+              {/if}
             </div>
           {:else}
             <div>
@@ -641,12 +683,14 @@
         </div>
       {/if}
     </div>
+    <div class="footer">
+      <p>made by flatwhite studios</p>
+      <p>
+        &nbsp;| <a href="./privacy" target="_blank">privacy</a> |
+        <a href="https://twitter.com/Spotle_io" target="_blank">follow us!</a>
+      </p>
+    </div>
   </div>
-
-  <!-- How To Play -->
-
-  <!-- Create Spotle -->
-  <!-- Spotle Streak -->
 </body>
 
 <style>
@@ -876,5 +920,23 @@
 
   .create-form {
     border-radius: 5px;
+  }
+
+  .footer {
+    position: fixed;
+    margin-top: auto;
+    display: flex;
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footer a {
+    color: #6ad074;
+    text-decoration: underline;
   }
 </style>

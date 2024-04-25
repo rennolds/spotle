@@ -312,6 +312,9 @@
     if (countryName == "United Kingdom") {
       countryName = "UK";
     }
+    if (countryName == "South Korea") {
+      countryName = "S. Korea";
+    }
     return countryName;
   }
   console.log(artist.name);
@@ -450,6 +453,11 @@
 
   .small {
     flex: 0.8; /* Smaller width for small items */
+  }
+
+  .small img {
+    width: 68px;
+    height: 40px;
   }
 
   /* .item {

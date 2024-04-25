@@ -1,67 +1,105 @@
 <script>
-    import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from "svelte";
 
-    const dispatch = createEventDispatcher();
-    let audio;
+  const dispatch = createEventDispatcher();
+  let audio;
 
-    function closeOverlay() {
-        dispatch("close");
-    }
+  function closeOverlay() {
+    dispatch("close");
+  }
+
+  let showHowToPlay = true;
+
+  function toggleSection() {
+    showHowToPlay = !showHowToPlay;
+  }
 </script>
 
 <div class="overlay">
   <div class="content">
-
     <button on:click={closeOverlay} class="close-button">
-        <svg
-          width="20"
-          height="18"
-          viewBox="0 0 20 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M19.2099 1.7625L17.3417 0L9.93491 6.9875L2.52816 0L0.659912 1.7625L8.06666 8.75L0.659912 15.7375L2.52816 17.5L9.93491 10.5125L17.3417 17.5L19.2099 15.7375L11.8032 8.75L19.2099 1.7625Z"
-            fill="white"
-          />
-        </svg>
+      <svg
+        width="20"
+        height="18"
+        viewBox="0 0 20 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.2099 1.7625L17.3417 0L9.93491 6.9875L2.52816 0L0.659912 1.7625L8.06666 8.75L0.659912 15.7375L2.52816 17.5L9.93491 10.5125L17.3417 17.5L19.2099 15.7375L11.8032 8.75L19.2099 1.7625Z"
+          fill="white"
+        />
+      </svg>
     </button>
 
-    <h2>DEBUT ALBUM YEAR</h2>
-    <p>
-      Debut album year will turn yellow when within 5 years of the mystery
-      artist's debut album year. A down arrow indicates the mystery artists
-      album came out earlier than your guess, and vice versa.
-    </p>
-    <h2>GROUP SIZE</h2>
-    <p>
-      Group Size indicates how many members are in the group (example, Justin
-      Bieber is solo, The Beatles are group size four).
-    </p>
-    <h2>LISTENER RANK</h2>
-    <p>
-      The artists ranking on Spotify by all-time streams. An up arrow indicates
-      the mystery artist is more popular than your guess is. Yellow indicates
-      your guess was within 50 of the mystery artist.
-    </p>
-    <h2>GENDER</h2>
-    <p>When the band has men and women, gender will say mixed.</p>
-    <h2>GENRE</h2>
-    <p>
-      We've limited the genres to keep the game simple: Rock, Pop, Hip Hop,
-      Country, Alternative, R&B, K-Pop, Latin, Classical, Jazz, Metal, and
-      Electronic. This happened cause our friends argued about Green Day being
-      punk or rock.
-    </p>
-    <h2>NATIONALITY</h2>
-    <p>
-      Nationality will turn yellow when the nationality of the artist you
-      guessed is on the same continent as the mystery artist's nationality.
-    </p>
+    <div class="selector">
+      <button on:click={toggleSection} class={showHowToPlay ? "active" : ""}
+        >HOW TO PLAY</button
+      >
+      <button on:click={toggleSection} class={!showHowToPlay ? "active" : ""}
+        >ATTRIBUTES</button
+      >
+    </div>
+
+    {#if showHowToPlay}
+      <h2>how to play!</h2>
+    {:else}
+      <h2>DEBUT ALBUM YEAR</h2>
+      <p>
+        Debut album year will turn yellow when within 5 years of the mystery
+        artist's debut album year. A down arrow indicates the mystery artists
+        album came out earlier than your guess, and vice versa.
+      </p>
+      <h2>GROUP SIZE</h2>
+      <p>
+        Group Size indicates how many members are in the group (example, Justin
+        Bieber is solo, The Beatles are group size four).
+      </p>
+      <h2>LISTENER RANK</h2>
+      <p>
+        The artists ranking on Spotify by all-time streams. An up arrow
+        indicates the mystery artist is more popular than your guess is. Yellow
+        indicates your guess was within 50 of the mystery artist.
+      </p>
+      <h2>GENDER</h2>
+      <p>When the band has men and women, gender will say mixed.</p>
+      <h2>GENRE</h2>
+      <p>
+        We've limited the genres to keep the game simple: Rock, Pop, Hip Hop,
+        Country, Alternative, R&B, K-Pop, Latin, Classical, Jazz, Metal, and
+        Electronic. This happened cause our friends argued about Green Day being
+        punk or rock.
+      </p>
+      <h2>NATIONALITY</h2>
+      <p>
+        Nationality will turn yellow when the nationality of the artist you
+        guessed is on the same continent as the mystery artist's nationality.
+      </p>
+    {/if}
   </div>
 </div>
 
 <style>
+  .selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .selector button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .selector button.active {
+    background-color: #6ad074;
+    border-radius: 5px;
+  }
+
   .overlay {
     position: fixed;
     top: 0;
