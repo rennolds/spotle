@@ -24,9 +24,6 @@
     }
   }
 
-  console.log("loading");
-  console.log($muted);
-
   const artists = artistList.map((artist) => ({
     name: artist.artist,
     listener_rank: artist.index,
@@ -87,7 +84,6 @@
 
   // Form the date string in "DD/MM/YYYY" format
   const todaysDate = `${month}/${day}/${year}`;
-  console.log(todaysDate);
   let mysteryArtistEntry = mysteryArtistList.find(
     (entry) => entry.date === todaysDate
   );
@@ -142,10 +138,6 @@
       // Convert the Uint8Array to string (UTF-8 representation)
       const decodedArtist = new TextDecoder().decode(artistUint8Array);
       const decodedNote = new TextDecoder().decode(noteUint8Array);
-
-      // Now you can use decodedWord and decodedNote in your app
-      console.log("Decoded word:", decodedArtist);
-      console.log("Decoded note:", decodedNote);
 
       const selectedArtist = artists.find(
         (artist) => artist.name === decodedArtist
@@ -353,9 +345,6 @@
     const shareText =
       "I made this Spotle for you! Guess the artist in 10 tries.\n\n" +
       shareURL;
-
-    // Now you can use shareURL to share with your friend
-    console.log("Share this URL:", shareURL);
 
     function isMobile() {
       const regex =
