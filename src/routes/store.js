@@ -12,6 +12,11 @@ currentGameDate.subscribe((val) => {
     if (browser) return (localStorage.currentGameDate = val);
 });
 
+export const muted = writable(browser && localStorage.getItem("muted") || false)
+muted.subscribe((val) => {
+    if (browser) return (localStorage.muted = val);
+});
+
 let parsed = "";
 const guessesName = "guesses";
 if (browser) {

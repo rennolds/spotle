@@ -7,7 +7,7 @@
   import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
-  import { visited, currentGameDate, guesses } from "./store.js";
+  import { visited, currentGameDate, guesses, muted } from "./store.js";
 
   function getGenderLabel(code) {
     switch (code) {
@@ -23,6 +23,9 @@
         return "Unknown";
     }
   }
+
+  console.log("loading");
+  console.log($muted);
 
   const artists = artistList.map((artist) => ({
     name: artist.artist,
@@ -113,7 +116,6 @@
   let gameOver = false;
   let showResults = false;
   let result = "";
-  let muted = false;
   let createGameSelection = null;
   let createNote = "";
   let createShareBtnText = "SHARE";
@@ -169,7 +171,6 @@
       guessCount = $guesses.length;
       if (guessCount >= 10) {
         gameOver = true;
-        showResults = true;
         result = "L";
       }
       if ($guesses.some((obj) => obj.name === mysteryArtist.name)) {
@@ -315,10 +316,10 @@
   }
 
   function handleMute() {
-    if (muted) {
-      muted = false;
+    if ($muted) {
+      $muted = false;
     } else {
-      muted = true;
+      $muted = true;
     }
   }
 
@@ -547,14 +548,15 @@
 
       {#if normalGame}
         <div class="right">
-          {#if muted}
+          {#if $muted}
             <div class="icon-btn" on:click={handleMute}>
-              <Icon width={"1.75rem"} height={"1.75rem"} name={"mute"}></Icon>
+              <Icon width={"1.75rem"} height={"1.75rem"} name={"muted"}></Icon>
             </div>
           {/if}
-          {#if !muted}
+          {#if !$muted}
             <div class="icon-btn" on:click={handleMute}>
-              <Icon width={"1.75rem"} height={"1.75rem"} name={"unmute"}></Icon>
+              <Icon width={"1.75rem"} height={"1.75rem"} name={"unmuted"}
+              ></Icon>
             </div>
           {/if}
           <div class="icon-btn" on:click={toggleHelp}>
@@ -602,7 +604,7 @@
               {guessCount}
               {playingChallenge}
               on:close={handleOverlayClose}
-              bind:muted
+              muted={$muted}
             ></Gameover>
           {/if}
 
