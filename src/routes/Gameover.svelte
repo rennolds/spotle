@@ -124,7 +124,7 @@
 
 <audio class="hidden" src={artist.song_uri} bind:this={audio}></audio>
 <div class="confetti">
-  <Confetti amount="150" y={[1, 2]} x={[-1.25, 1.25]} />
+  <Confetti duration="3000" amount="250" y={[-1, 2]} x={[-1.25, 1.25]} />
 </div>
 <div class="overlay">
   <div class="content">
