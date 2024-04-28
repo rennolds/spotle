@@ -3,11 +3,18 @@
   import Help from "./Help.svelte";
   import Guess from "./Guess.svelte";
   import Gameover from "./Gameover.svelte";
+  import Countdown from "./Countdown.svelte";
   import Icon from "./Icon.svelte";
   import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
-  import { visited, currentGameDate, guesses, muted } from "./store.js";
+  import {
+    visited,
+    currentGameDate,
+    guesses,
+    muted,
+    gameOver,
+  } from "./store.js";
 
   function getGenderLabel(code) {
     switch (code) {
@@ -84,39 +91,26 @@
 
   // Form the date string in "DD/MM/YYYY" format
   const todaysDate = `${month}/${day}/${year}`;
-  let mysteryArtistEntry = mysteryArtistList.find(
-    (entry) => entry.date === todaysDate
-  );
-  let mysteryArtist = artists.find(
-    (artist) => artist.name === mysteryArtistEntry.artist
-  );
 
-  const artistNames = artistList.map((artist) => artist.artist);
-  let spotleNumber = -1;
-  mysteryArtistList.forEach((entry, index) => {
-    // Compare the date property of each object with today's date
-    if (entry.date === todaysDate) {
-      // If a match is found, store the index
-      spotleNumber = index;
-      // Exit the loop since we found the match
-      return;
-    }
-  });
-
+  let playingGame = false;
   let normalGame = false;
   let createGame = false;
   let splashScreen = true;
   let showHelp = false;
   let searchTerm = "";
   let guessCount = 0;
-  let gameOver = false;
+  let tempGameOver = false;
   let showResults = false;
   let result = "";
   let createGameSelection = null;
   let createNote = "";
   let createShareBtnText = "SHARE";
   let playingChallenge = false;
-  let challenegeGuesses = [];
+  let playingRush = false;
+  let tempGuesses = [];
+  let mysteryArtistEntry;
+  let mysteryArtist;
+  let spotleNumber = "-1";
 
   if (browser) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -124,7 +118,8 @@
     const encodedNote = urlParams.get("note");
     if (encodedArtist) {
       splashScreen = false;
-      normalGame = true;
+      playingGame = true;
+      playingRush = false;
       playingChallenge = true;
 
       // Decode the Base64 string to Uint8Array
@@ -142,10 +137,12 @@
       const selectedArtist = artists.find(
         (artist) => artist.name === decodedArtist
       );
-      if (selectedArtist === null) {
+      console.log(selectedArtist);
+      if (selectedArtist === undefined) {
+        window.location.href = window.location.href.split("?")[0];
         playingChallenge = false;
         splashScreen = true;
-        normalGame = false;
+        playingGame = false;
       }
 
       mysteryArtist = selectedArtist;
@@ -158,23 +155,19 @@
     }
   }
 
-  if (!playingChallenge) {
-    if ($currentGameDate == todaysDate) {
-      guessCount = $guesses.length;
-      if (guessCount >= 10) {
-        gameOver = true;
-        result = "L";
-      }
-      if ($guesses.some((obj) => obj.name === mysteryArtist.name)) {
-        gameOver = true;
-        result = "W";
-      }
-    } else {
-      $guesses = [];
-      $visited = true;
-      $currentGameDate = todaysDate;
-    }
-  }
+  const eligibleArtists = [
+    "Taylor Swift",
+    "Kanye West",
+    "Coldplay",
+    "Frank Ocean",
+    "Daft Punk",
+    "The Beatles",
+    "blink-182",
+    "BTS",
+    "Ariana Grande",
+  ];
+
+  const artistNames = artistList.map((artist) => artist.artist);
 
   function fuzzySearch(input) {
     if (input == "") {
@@ -237,11 +230,49 @@
   $: filteredArtists = fuzzySearch(searchTerm);
 
   function playGame() {
-    if (gameOver == true) {
+    if ($gameOver == true) {
       showResults = true;
     }
     normalGame = true;
+    playingGame = true;
     splashScreen = false;
+    playingRush = false;
+    playingChallenge = false;
+    console.log($gameOver);
+
+    if (normalGame) {
+      mysteryArtistEntry = mysteryArtistList.find(
+        (entry) => entry.date === todaysDate
+      );
+      mysteryArtist = artists.find(
+        (artist) => artist.name === mysteryArtistEntry.artist
+      );
+      mysteryArtistList.forEach((entry, index) => {
+        // Compare the date property of each object with today's date
+        if (entry.date === todaysDate) {
+          // If a match is found, store the index
+          spotleNumber = index;
+          // Exit the loop since we found the match
+          return;
+        }
+      });
+
+      if ($currentGameDate == todaysDate) {
+        guessCount = $guesses.length;
+        if (guessCount >= 10) {
+          result = "L";
+        }
+        if ($guesses.some((obj) => obj.name === mysteryArtist.name)) {
+          result = "W";
+        }
+      } else {
+        $guesses = [];
+        $visited = true;
+        $gameOver = false;
+        $currentGameDate = todaysDate;
+        guessCount = 0;
+      }
+    }
   }
 
   function handleSearch(artistName) {
@@ -256,43 +287,82 @@
 
     const selectedArtist = artists.find((artist) => artist.name === artistName);
 
-    if (!createGame) {
-      if (!playingChallenge) {
-        if ($guesses.includes(selectedArtist)) {
-          return;
-        } else {
-          if (challenegeGuesses.includes(selectedArtist)) {
-            return;
-          }
-        }
+    if (normalGame) {
+      if ($guesses.includes(selectedArtist)) {
+        return;
       }
 
-      if (playingChallenge) {
-        challenegeGuesses.push(selectedArtist);
-        challenegeGuesses = challenegeGuesses;
-      }
-      if (!playingChallenge) {
-        $guesses.push(selectedArtist);
-        $guesses = $guesses;
-      }
+      $guesses.push(selectedArtist);
+      $guesses = $guesses;
 
       if (selectedArtist == mysteryArtist) {
-        gameOver = true;
+        $gameOver = true;
         showResults = true;
         result = "W";
         return;
       }
 
       if (guessCount + 1 == 10) {
-        gameOver = true;
+        $gameOver = true;
         showResults = true;
         result = "L";
         return;
       }
 
       guessCount++;
-    } else {
+      return;
+    }
+
+    if (createGame) {
       createGameSelection = selectedArtist;
+    }
+
+    if (playingChallenge || playingRush) {
+      if (tempGameOver) {
+        return;
+      }
+      if (tempGuesses.includes(selectedArtist)) {
+        return;
+      }
+      tempGuesses.push(selectedArtist);
+      tempGuesses = tempGuesses;
+      guessCount++;
+
+      if (playingChallenge) {
+        if (selectedArtist == mysteryArtist) {
+          tempGameOver = true;
+          showResults = true;
+          result = "W";
+          return;
+        }
+
+        if (guessCount + 1 == 10) {
+          tempGameOver = true;
+          showResults = true;
+          result = "L";
+          return;
+        }
+      }
+
+      if (playingRush) {
+        if (selectedArtist == mysteryArtist) {
+          rushIndex++;
+          console.log("new artist");
+          const selectedArtist = artists.find(
+            (artist) => artist.name === eligibleArtists[rushIndex]
+          );
+          mysteryArtist = selectedArtist;
+          mysteryArtistEntry = {
+            image_uri: mysteryArtist.image_uri,
+            song_uri: mysteryArtist.song_uri,
+            artist: mysteryArtist.name,
+          };
+          tempGuesses = [];
+        }
+        if (guessCount + 1 == 30) {
+          console.log("rush game over");
+        }
+      }
     }
   }
 
@@ -301,10 +371,13 @@
   }
 
   function handleMenuClick() {
-    normalGame = false;
-    splashScreen = true;
-    playingChallenge = false;
+    if (playingChallenge) {
+      window.location.href = window.location.href.split("?")[0];
+    }
+    playingGame = false;
+    playingRush = false;
     createGame = false;
+    splashScreen = true;
   }
 
   function handleMute() {
@@ -317,8 +390,37 @@
 
   function handleCreate() {
     createGame = true;
-    normalGame = true;
+    playingGame = true;
     splashScreen = false;
+  }
+
+  let rushIndex = 0;
+  function playRush() {
+    splashScreen = false;
+    playingGame = true;
+    normalGame = false;
+    playingChallenge = false;
+    playingRush = true;
+
+    for (let i = eligibleArtists.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [eligibleArtists[i], eligibleArtists[j]] = [
+        eligibleArtists[j],
+        eligibleArtists[i],
+      ];
+    }
+    const selectedArtist = artists.find(
+      (artist) => artist.name === eligibleArtists[rushIndex]
+    );
+
+    mysteryArtist = selectedArtist;
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    guessCount = 0;
   }
 
   function toggleHelp() {
@@ -389,7 +491,7 @@
       </div>
     {/if}
     <div class="header">
-      {#if normalGame}
+      {#if playingGame}
         <div class="left">
           <button on:click={handleMenuClick}>
             <Icon width={"1.75rem"} height={"1.75rem"} name={"menu"}></Icon>
@@ -397,7 +499,7 @@
         </div>
       {/if}
 
-      <div class="logo {normalGame ? 'smaller-svg' : ''}">
+      <div class="logo {playingGame ? 'smaller-svg' : ''}">
         <svg
           width="274"
           height="64"
@@ -535,7 +637,7 @@
         </svg>
       </div>
 
-      {#if normalGame}
+      {#if playingGame}
         <div class="right">
           {#if $muted}
             <div class="icon-btn" on:click={handleMute}>
@@ -564,6 +666,7 @@
           <button class="styled-btn" on:click={handleCreate}
             >CREATE A SPOTLE</button
           >
+          <button class="styled-btn" on:click={playRush}>SPOTLE RUSH</button>
 
           <p>coming soon</p>
           <button class="styled-btn coming-soon">Spotle Streak</button>
@@ -576,14 +679,28 @@
         </div>
       {/if}
 
-      {#if normalGame}
+      {#if playingGame}
+        {#if playingRush}
+          <Countdown></Countdown>
+        {/if}
         <div class="game-container">
-          <div class="guesses-remaining">
-            {#if !createGame}
-              Guess {guessCount + 1} of 10
-            {:else}
-              Pick an artist for your friend to guess.
+          <div class="game-info-container">
+            {#if playingRush}
+              <div class="solved-spotles">
+                Solved Spotles: {rushIndex}
+              </div>
             {/if}
+            <div class="guesses-remaining">
+              {#if normalGame || playingChallenge}
+                Guess {guessCount + 1} of 10
+              {/if}
+              {#if createGame}
+                Pick an artist for your friend to guess.
+              {/if}
+              {#if playingRush}
+                Guess {guessCount + 1} of 30
+              {/if}
+            </div>
           </div>
           {#if showResults && !createGame}
             <Gameover
@@ -596,7 +713,6 @@
               muted={$muted}
             ></Gameover>
           {/if}
-
           <div class="search-container">
             <input
               type="text"
@@ -604,7 +720,6 @@
               id="search"
               placeholder="Type a guess here..."
               autocomplete="off"
-              disabled={gameOver}
               bind:value={searchTerm}
               on:keydown={(e) => {
                 if (e.key === "Enter")
@@ -630,12 +745,12 @@
 
           {#if !createGame}
             <div class="guess-container">
-              {#if !playingChallenge}
+              {#if normalGame}
                 {#each [...$guesses].reverse() as guess (guess.name)}
                   <Guess artist={guess} {mysteryArtist}></Guess>
                 {/each}
               {:else}
-                {#each [...challenegeGuesses].reverse() as guess (guess.name)}
+                {#each [...tempGuesses].reverse() as guess (guess.name)}
                   <Guess artist={guess} {mysteryArtist}></Guess>
                 {/each}
               {/if}
@@ -791,13 +906,20 @@
     color: #808080;
   }
 
+  .game-info-container {
+    display: flex;
+    justify-content: space-between; /* This will space the items evenly along the main axis */
+    width: 100%;
+  }
+
+  .solved-spotles {
+    color: #fff;
+    align-self: flex-start;
+  }
+
   .guesses-remaining {
     color: #ffff;
-    margin-right: 20px;
-    padding-bottom: 0.3rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: right;
+    align-self: flex-end;
   }
 
   .search-container {

@@ -317,7 +317,6 @@
     }
     return countryName;
   }
-  console.log(artist.name);
 </script>
 
 <div class="header-row">
@@ -338,10 +337,10 @@
     <div class="flex-container">
       <h2>{artist.debut_album_year}</h2>
       {#if artist.debut_album_year > mysteryArtist.debut_album_year}
-        <Icon width={"1.5rem"} height={"1.5rem"} name={"key_up"}></Icon>
+        <Icon width={"1.5rem"} height={"1.5rem"} name={"key_down"}></Icon>
       {/if}
       {#if artist.debut_album_year < mysteryArtist.debut_album_year}
-        <Icon width={"1.5rem"} height={"1.5rem"} name={"key_down"}></Icon>
+        <Icon width={"1.5rem"} height={"1.5rem"} name={"key_up"}></Icon>
       {/if}
     </div>
   </div>

@@ -17,6 +17,11 @@ muted.subscribe((val) => {
     if (browser) return (localStorage.muted = val);
 });
 
+export const gameOver = writable(browser && localStorage.getItem("gameOver") || false)
+muted.subscribe((val) => {
+    if (browser) return (localStorage.gameOver = val);
+});
+
 let parsed = "";
 const guessesName = "guesses";
 if (browser) {

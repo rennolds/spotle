@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
+  import { Confetti } from "svelte-confetti";
 
   export let artist;
   export let result;
@@ -122,6 +123,9 @@
 </script>
 
 <audio class="hidden" src={artist.song_uri} bind:this={audio}></audio>
+<div class="confetti">
+  <Confetti amount="150" y={[1, 2]} x={[-1.25, 1.25]} />
+</div>
 <div class="overlay">
   <div class="content">
     <div class="header">{header}</div>
@@ -184,7 +188,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 1000;
   }
 
   .content {
@@ -288,5 +292,12 @@
 
   .hidden {
     display: none;
+  }
+
+  .confetti {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
   }
 </style>
