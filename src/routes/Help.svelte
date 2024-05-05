@@ -42,7 +42,11 @@
     </div>
 
     {#if showHowToPlay}
-      <h2>how to play!</h2>
+      <div class="step-text">
+        <h2>01 &nbsp;</h2>
+        <h2>Guess an artist</h2>
+      </div>
+      <div class="help-svg"></div>
     {:else}
       <h2>DEBUT ALBUM YEAR</h2>
       <p>
@@ -151,5 +155,10 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+  }
+
+  .step-text {
+    display: flex;
+    flex-direction: row;
   }
 </style>
