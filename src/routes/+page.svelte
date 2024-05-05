@@ -241,6 +241,8 @@
     console.log($gameOver);
 
     if (normalGame) {
+      console.log(todaysDate);
+
       mysteryArtistEntry = mysteryArtistList.find(
         (entry) => entry.date === todaysDate
       );

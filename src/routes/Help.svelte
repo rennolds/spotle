@@ -42,11 +42,27 @@
     </div>
 
     {#if showHowToPlay}
+    <div class="step">
       <div class="step-text">
-        <h2>01 &nbsp;</h2>
-        <h2>Guess an artist</h2>
+        <h2 class="step-number">01 &nbsp;</h2>
+        <h2 class="step-name">Guess an artist</h2>
       </div>
       <div class="help-svg"></div>
+    </div>
+    <div class="step">
+      <div class="step-text">
+        <h2 class="step-number">01 &nbsp;</h2>
+        <h2 class="step-name">Guess an artist</h2>
+      </div>
+      <div class="help-svg"></div>
+    </div>
+    <div class="step">
+      <div class="step-text">
+        <h2 class="step-number">01 &nbsp;</h2>
+        <h2 class="step-name">Guess an artist</h2>
+      </div>
+      <div class="help-svg"></div>
+    </div>
     {:else}
       <h2>DEBUT ALBUM YEAR</h2>
       <p>
@@ -160,5 +176,21 @@
   .step-text {
     display: flex;
     flex-direction: row;
+  }
+
+  .step-text .step-number {
+    color: #b3b3b3;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .step-text .step-name {
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 </style>
