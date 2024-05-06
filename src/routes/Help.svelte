@@ -166,6 +166,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    margin-top: 30px;
   }
 
   .selector button {
@@ -206,7 +207,7 @@
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-    max-width: 1280px;
+    max-width: 375px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -216,7 +217,7 @@
   .close-button {
     position: absolute;
     top: 10px;
-    right: 25px;
+    right: -10px;
     cursor: pointer;
     background: none;
     border: none;
