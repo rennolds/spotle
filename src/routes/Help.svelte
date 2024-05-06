@@ -69,9 +69,7 @@
         <div class="step-content">
           <div class="step-text">
             <div class="step-number">02</div>
-            <h2 class="step-name">
-              Everything green matches the mystery artist.
-            </h2>
+            <h2 class="step-name">Green tiles match the mystery artist.</h2>
           </div>
         </div>
         <div class="help-svg">
@@ -239,6 +237,15 @@
     text-align: center;
     position: relative;
     overflow-x: hidden;
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .content {
+      width: 400px;
+      margin-top: 25px;
+      padding-bottom: 50px;
+    }
   }
 
   .close-button {
