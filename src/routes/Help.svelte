@@ -44,6 +44,13 @@
     </div>
 
     {#if showHowToPlay}
+      <div class="how-to-play-header">Guess the artist in 10 tries.</div>
+      <!-- <div class="how-to-play-description">
+        The mystery artist is one of the top 1000 most popular artists. When you
+        make a guess, the attributes of your guess that match the mystery artist
+        will turn green.
+      </div> -->
+
       <div class="step">
         <div class="step-content">
           <div class="step-text">
@@ -63,7 +70,7 @@
           <div class="step-text">
             <div class="step-number">02</div>
             <h2 class="step-name">
-              Make more guesses based on what turns green!
+              Everything green matches the mystery artist.
             </h2>
           </div>
         </div>
@@ -204,7 +211,7 @@
   }
 
   .selector button.active {
-    background-color: #6ad074;
+    background-color: #00b011;
     border-radius: 5px;
   }
 
@@ -214,8 +221,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
     align-items: start;
     z-index: 9999;
     overflow-y: scroll;
@@ -245,24 +250,41 @@
     border: none;
   }
 
+  .how-to-play-header {
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+  .how-to-play-description {
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    width: 90%;
+  }
+
+  .step {
+    margin-bottom: 10px;
+  }
+
   .step h2 {
     color: #b3b3b3;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-  }
-
-  .step {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 20px; /* Adjust as needed */
+    width: 95%;
   }
 
   .step-text {
     display: flex;
-    flex-direction: row;
+    flex-direction: flex-start;
+    align-items: flex-start; /* Ensure text starts from absolute left */
   }
 
   .step-number {
@@ -272,7 +294,7 @@
     font-weight: 700;
     line-height: normal;
     flex-shrink: 0;
-    margin-right: 10px; /* Adjust as needed */
+    margin-left: 10px;
   }
 
   .step-content {
@@ -283,7 +305,9 @@
 
   .step-name {
     margin-top: 0;
-    margin-bottom: 5px; /* Adjust as needed */
+    margin-bottom: 0; /* Adjust as needed */
+    margin-left: 10px;
+    text-align: left;
   }
 
   .help-svg {
