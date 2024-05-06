@@ -194,7 +194,7 @@
     align-items: start;
     z-index: 9999;
     overflow-y: scroll;
-    overflow-x: none;
+    overflow-x: hidden;
     background: rgba(18, 18, 18, 0.8);
     backdrop-filter: blur(5px);
   }
@@ -212,7 +212,7 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
-    overflow-x: none;
+    overflow-x: hidden;
   }
 
   .close-button {
