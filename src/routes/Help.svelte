@@ -92,7 +92,11 @@
               first mixtape or EP.
             </p>
           </div>
-          <div class="attribute-svg"></div>
+          <div class="attribute-blocks">
+            <div class="block incorrect">Incorrect</div>
+            <div class="block close">Within 5 years</div>
+            <div class="block correct">Correct</div>
+          </div>
         </div>
       </div>
 
@@ -105,7 +109,10 @@
               it will be the most well-known lineup.
             </p>
           </div>
-          <div class="attribute-svg"></div>
+          <div class="attribute-blocks">
+            <div class="block incorrect">Incorrect</div>
+            <div class="block correct">Correct</div>
+          </div>
         </div>
       </div>
 
@@ -118,7 +125,11 @@
               is #1.
             </p>
           </div>
-          <div class="attribute-svg"></div>
+          <div class="attribute-blocks">
+            <div class="block incorrect">Incorrect</div>
+            <div class="block close">Within 50 spots</div>
+            <div class="block correct">Correct</div>
+          </div>
         </div>
       </div>
 
@@ -131,7 +142,10 @@
               say Mixed.
             </p>
           </div>
-          <div class="attribute-svg"></div>
+          <div class="attribute-blocks">
+            <div class="block incorrect">Incorrect</div>
+            <div class="block correct">Correct</div>
+          </div>
         </div>
       </div>
 
@@ -144,7 +158,10 @@
               Alternative, R&B, Latin, Classical, Jazz, Metal, and Electronic.
             </p>
           </div>
-          <div class="attribute-svg"></div>
+          <div class="attribute-blocks">
+            <div class="block incorrect">Incorrect</div>
+            <div class="block correct">Correct</div>
+          </div>
         </div>
       </div>
 
@@ -154,7 +171,11 @@
             <h2 class="attribute-header">Nationality</h2>
             <p class="attribute-text">The artists nationality.</p>
           </div>
-          <div class="attribute-svg"></div>
+          <div class="attribute-blocks">
+            <div class="block incorrect">Incorrect</div>
+            <div class="block close">Same continent</div>
+            <div class="block correct">Correct</div>
+          </div>
         </div>
       </div>
     {/if}
@@ -267,23 +288,28 @@
 
   .attribute-header {
     color: #fff;
-    font-size: 16px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-left: 5px;
   }
 
   .attribute-text {
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    margin: 0; /* Remove default margin */
+    width: 95%;
+    margin-left: 5px;
   }
 
   .attribute {
     display: flex;
     align-items: center; /* Center vertically */
+    margin-left: 10px;
   }
 
   .attribute-header-wrapper {
@@ -291,14 +317,39 @@
     text-align: left; /* Align text to the left */
   }
 
-  .attribute-text {
-    margin: 0; /* Remove default margin */
+  .attribute-blocks {
+    display: flex;
+    flex-direction: flex-start;
+    margin-top: 10px;
   }
 
-  .attribute-svg {
-    margin: 0 auto; /* Center horizontally */
-    background-color: blue;
+  .block {
+    display: flex;
     width: 100px;
-    height: 100px;
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+  }
+
+  .incorrect {
+    background-color: #454545;
+  }
+
+  .close {
+    background-color: rgba(255, 245, 0, 0.7);
+  }
+
+  .correct {
+    background-color: #00b011;
   }
 </style>
