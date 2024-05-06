@@ -12,14 +12,32 @@ currentGameDate.subscribe((val) => {
     if (browser) return (localStorage.currentGameDate = val);
 });
 
-export const muted = writable(browser && localStorage.getItem("muted") || false)
+let mutedParsed = "";
+const mutedName = "muted";
+if (browser) {
+    const retrieved = localStorage.getItem(mutedName)
+    if (retrieved) {
+        mutedParsed = JSON.parse(retrieved);
+    }
+}
+
+export const muted = writable(browser && mutedParsed === null ? false : mutedParsed)
 muted.subscribe((val) => {
-    if (browser) return (localStorage.muted = val);
+    if (browser) return (localStorage.setItem(mutedName, JSON.stringify(val)));
 });
 
-export const gameOver = writable(browser && localStorage.getItem("gameOver") || false)
-muted.subscribe((val) => {
-    if (browser) return (localStorage.gameOver = val);
+let gameoverParsed = "";
+const gameoverName = "gameOver";
+if (browser) {
+    const retrieved = localStorage.getItem(gameoverParsed)
+    if (retrieved) {
+        gameoverParsed = JSON.parse(retrieved);
+    }
+}
+
+export const gameOver = writable(browser && gameoverParsed === null ? false : gameoverParsed)
+gameOver.subscribe((val) => {
+    if (browser) return (localStorage.setItem(gameoverName, JSON.stringify(val)));
 });
 
 let parsed = "";

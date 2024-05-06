@@ -16,6 +16,10 @@
     gameOver,
   } from "./store.js";
 
+  console.log($gameOver);
+  console.log($muted);
+  console.log("why empty?");
+
   function getGenderLabel(code) {
     switch (code) {
       case "m":
@@ -238,11 +242,8 @@
     splashScreen = false;
     playingRush = false;
     playingChallenge = false;
-    console.log($gameOver);
 
     if (normalGame) {
-      console.log(todaysDate);
-
       mysteryArtistEntry = mysteryArtistList.find(
         (entry) => entry.date === todaysDate
       );
@@ -377,6 +378,7 @@
       window.location.href = window.location.href.split("?")[0];
     }
     playingGame = false;
+    normalGame = false;
     playingRush = false;
     createGame = false;
     splashScreen = true;
@@ -641,12 +643,12 @@
 
       {#if playingGame}
         <div class="right">
-          {#if $muted}
+          {#if $muted == true}
             <div class="icon-btn" on:click={handleMute}>
               <Icon width={"1.75rem"} height={"1.75rem"} name={"muted"}></Icon>
             </div>
           {/if}
-          {#if !$muted}
+          {#if $muted == false}
             <div class="icon-btn" on:click={handleMute}>
               <Icon width={"1.75rem"} height={"1.75rem"} name={"unmuted"}
               ></Icon>
@@ -716,18 +718,34 @@
             ></Gameover>
           {/if}
           <div class="search-container">
-            <input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Type a guess here..."
-              autocomplete="off"
-              bind:value={searchTerm}
-              on:keydown={(e) => {
-                if (e.key === "Enter")
-                  handleSearch(filteredArtists[0], createGame);
-              }}
-            />
+            {#if normalGame}
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Type a guess here..."
+                autocomplete="off"
+                disabled={$gameOver}
+                bind:value={searchTerm}
+                on:keydown={(e) => {
+                  if (e.key === "Enter")
+                    handleSearch(filteredArtists[0], createGame);
+                }}
+              />
+            {:else}
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Type a guess here..."
+                autocomplete="off"
+                bind:value={searchTerm}
+                on:keydown={(e) => {
+                  if (e.key === "Enter")
+                    handleSearch(filteredArtists[0], createGame);
+                }}
+              />
+            {/if}
             <button
               class="guess-btn"
               on:click={() => handleSearch(filteredArtists[0], createGame)}
@@ -791,13 +809,15 @@
         </div>
       {/if}
     </div>
-    <div class="footer">
-      <p>made by flatwhite studios</p>
-      <p>
-        &nbsp;| <a href="./privacy" target="_blank">privacy</a> |
-        <a href="https://twitter.com/Spotle_io" target="_blank">follow us!</a>
-      </p>
-    </div>
+    {#if !showHelp}
+      <div class="footer">
+        <p>made by flatwhite studios</p>
+        <p>
+          &nbsp;| <a href="./privacy" target="_blank">privacy</a> |
+          <a href="https://twitter.com/Spotle_io" target="_blank">follow us!</a>
+        </p>
+      </div>
+    {/if}
   </div>
 </body>
 

@@ -1,8 +1,10 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import step01 from "$lib/assets/howtoplay01.svg?raw";
+  import step02 from "$lib/assets/howtoplay02.svg?raw";
+  import step03 from "$lib/assets/howtoplay03.svg?raw";
 
   const dispatch = createEventDispatcher();
-  let audio;
 
   function closeOverlay() {
     dispatch("close");
@@ -42,59 +44,119 @@
     </div>
 
     {#if showHowToPlay}
-    <div class="step">
-      <div class="step-text">
-        <h2 class="step-number">01 &nbsp;</h2>
-        <h2 class="step-name">Guess an artist</h2>
+      <div class="step">
+        <div class="step-content">
+          <div class="step-text">
+            <div class="step-number">01</div>
+            <h2 class="step-name">Make another guess trying to get closer!</h2>
+          </div>
+        </div>
+        <div class="help-svg">
+          {@html step01}
+        </div>
       </div>
-      <div class="help-svg"></div>
-    </div>
-    <div class="step">
-      <div class="step-text">
-        <h2 class="step-number">01 &nbsp;</h2>
-        <h2 class="step-name">Guess an artist</h2>
+
+      <div class="step">
+        <div class="step-content">
+          <div class="step-text">
+            <div class="step-number">02</div>
+            <h2 class="step-name">Guess an artist.</h2>
+          </div>
+        </div>
+        <div class="help-svg">
+          {@html step02}
+        </div>
       </div>
-      <div class="help-svg"></div>
-    </div>
-    <div class="step">
-      <div class="step-text">
-        <h2 class="step-number">01 &nbsp;</h2>
-        <h2 class="step-name">Guess an artist</h2>
+
+      <div class="step">
+        <div class="step-content">
+          <div class="step-text">
+            <div class="step-number">03</div>
+            <h2 class="step-name">
+              Keep going until you guess the mystery artist. A new Spotle will
+              appear every day!
+            </h2>
+          </div>
+        </div>
+        <div class="help-svg">
+          {@html step03}
+        </div>
       </div>
-      <div class="help-svg"></div>
-    </div>
     {:else}
-      <h2>DEBUT ALBUM YEAR</h2>
-      <p>
-        Debut album year will turn yellow when within 5 years of the mystery
-        artist's debut album year. A down arrow indicates the mystery artists
-        album came out earlier than your guess, and vice versa.
-      </p>
-      <h2>GROUP SIZE</h2>
-      <p>
-        Group Size indicates how many members are in the group (example, Justin
-        Bieber is solo, The Beatles are group size four).
-      </p>
-      <h2>LISTENER RANK</h2>
-      <p>
-        The artists ranking on Spotify by all-time streams. An up arrow
-        indicates the mystery artist is more popular than your guess is. Yellow
-        indicates your guess was within 50 of the mystery artist.
-      </p>
-      <h2>GENDER</h2>
-      <p>When the band has men and women, gender will say mixed.</p>
-      <h2>GENRE</h2>
-      <p>
-        We've limited the genres to keep the game simple: Rock, Pop, Hip Hop,
-        Country, Alternative, R&B, K-Pop, Latin, Classical, Jazz, Metal, and
-        Electronic. This happened cause our friends argued about Green Day being
-        punk or rock.
-      </p>
-      <h2>NATIONALITY</h2>
-      <p>
-        Nationality will turn yellow when the nationality of the artist you
-        guessed is on the same continent as the mystery artist's nationality.
-      </p>
+      <div class="attribute">
+        <div class="attribute-content">
+          <div class="attribute-header-wrapper">
+            <h2 class="attribute-header">Debut Album</h2>
+            <p class="attribute-text">
+              The year the artists debut album released. If they have no albums,
+              first mixtape or EP.
+            </p>
+          </div>
+          <div class="attribute-svg"></div>
+        </div>
+      </div>
+
+      <div class="attribute">
+        <div class="attribute-content">
+          <div class="attribute-header-wrapper">
+            <h2 class="attribute-header">Members</h2>
+            <p class="attribute-text">
+              The number of members in the group. If members have come and gone,
+              it will be the most well-known lineup.
+            </p>
+          </div>
+          <div class="attribute-svg"></div>
+        </div>
+      </div>
+
+      <div class="attribute">
+        <div class="attribute-content">
+          <div class="attribute-header-wrapper">
+            <h2 class="attribute-header">Popularity</h2>
+            <p class="attribute-text">
+              How popular the artist is compared to other artists. Taylor Swift
+              is #1.
+            </p>
+          </div>
+          <div class="attribute-svg"></div>
+        </div>
+      </div>
+
+      <div class="attribute">
+        <div class="attribute-content">
+          <div class="attribute-header-wrapper">
+            <h2 class="attribute-header">Gender</h2>
+            <p class="attribute-text">
+              The artist's gender. If it's a group with men and women, it will
+              say Mixed.
+            </p>
+          </div>
+          <div class="attribute-svg"></div>
+        </div>
+      </div>
+
+      <div class="attribute">
+        <div class="attribute-content">
+          <div class="attribute-header-wrapper">
+            <h2 class="attribute-header">Genre</h2>
+            <p class="attribute-text">
+              The artists genre. The options are: Rock, Pop, Hip Hop, Country,
+              Alternative, R&B, Latin, Classical, Jazz, Metal, and Electronic.
+            </p>
+          </div>
+          <div class="attribute-svg"></div>
+        </div>
+      </div>
+
+      <div class="attribute">
+        <div class="attribute-content">
+          <div class="attribute-header-wrapper">
+            <h2 class="attribute-header">Nationality</h2>
+            <p class="attribute-text">The artists nationality.</p>
+          </div>
+          <div class="attribute-svg"></div>
+        </div>
+      </div>
     {/if}
   </div>
 </div>
@@ -130,28 +192,36 @@
     justify-content: center;
     align-items: start;
     z-index: 9999;
+    overflow-y: scroll;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(5px);
   }
 
   .content {
     position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    background: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(5px);
-    padding: 20px;
     color: #fff;
+    margin: 0;
+    /* display: flex;
+    justify-content: center; */
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    overflow-x: none;
   }
 
   .close-button {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 25px;
     cursor: pointer;
     background: none;
     border: none;
   }
-
+  /* 
   h2 {
     color: #6ad074;
     display: flex;
@@ -160,9 +230,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-  }
+  } */
 
-  p {
+  /* p {
     margin-top: -5px;
     color: #fff;
     display: flex;
@@ -171,14 +241,17 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+  } */
+
+  /* .step {
+    height: 325px;
   }
 
-  .step-text {
-    display: flex;
-    flex-direction: row;
-  }
+  .long {
+    height: 450px;
+  } */
 
-  .step-text .step-number {
+  .step h2 {
     color: #b3b3b3;
     font-size: 18px;
     font-style: normal;
@@ -186,11 +259,86 @@
     line-height: normal;
   }
 
-  .step-text .step-name {
+  /* .step p {
     color: #fff;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+  } */
+
+  .step {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+
+  .step-text {
+    display: flex;
+    flex-direction: row;
+    left: 0;
+  }
+
+  .step-number {
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    flex-shrink: 0;
+    margin-right: 10px; /* Adjust as needed */
+  }
+
+  .step-content {
+    display: flex;
+    justify-content: flex-start; /* Adjusted from center to flex-start */
+    flex-grow: 1;
+  }
+
+  .step-name {
+    margin-top: 0;
+    margin-bottom: 5px; /* Adjust as needed */
+  }
+
+  .help-svg {
+    text-align: center;
+  }
+
+  .attribute-header {
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .attribute-text {
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  .attribute {
+    display: flex;
+    align-items: center; /* Center vertically */
+  }
+
+  .attribute-header-wrapper {
+    flex: 1; /* Take remaining space */
+    text-align: left; /* Align text to the left */
+  }
+
+  .attribute-text {
+    margin: 0; /* Remove default margin */
+  }
+
+  .attribute-svg {
+    margin: 0 auto; /* Center horizontally */
+    background-color: blue;
+    width: 100px;
+    height: 100px;
   }
 </style>

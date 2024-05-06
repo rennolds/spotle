@@ -393,11 +393,12 @@
       : ''} {artist.country == mysteryArtist.country ? 'correct' : ''}"
   >
     <img
+      class="flag-img"
       width="80px"
       src="https://flagcdn.com/w80/{artist.country}.png"
       alt="{artist.country} Flag"
     />
-    <h3>{getRegion(artist.country)}</h3>
+    <h3 class="nationality">{getRegion(artist.country)}</h3>
   </div>
 </div>
 
@@ -502,11 +503,12 @@
   }
 
   .correct {
-    /* background-color: #00b011; */
+    animation: flip-correct 2s ease-in-out forwards;
   }
 
-  .correct {
-    animation: flip-correct 2s ease-in-out forwards;
+  .nationality {
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   @keyframes flip-correct {
