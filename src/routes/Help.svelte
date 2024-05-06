@@ -207,7 +207,7 @@
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-    max-width: 375px;
+    max-width: 360px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -222,35 +222,6 @@
     background: none;
     border: none;
   }
-  /* 
-  h2 {
-    color: #6ad074;
-    display: flex;
-    flex-direction: start;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  } */
-
-  /* p {
-    margin-top: -5px;
-    color: #fff;
-    display: flex;
-    flex-direction: start;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  } */
-
-  /* .step {
-    height: 325px;
-  }
-
-  .long {
-    height: 450px;
-  } */
 
   .step h2 {
     color: #b3b3b3;
@@ -259,14 +230,6 @@
     font-weight: 700;
     line-height: normal;
   }
-
-  /* .step p {
-    color: #fff;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  } */
 
   .step {
     display: flex;
@@ -278,7 +241,6 @@
   .step-text {
     display: flex;
     flex-direction: row;
-    left: 0;
   }
 
   .step-number {
