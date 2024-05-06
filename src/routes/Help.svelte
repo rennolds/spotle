@@ -203,12 +203,8 @@
     position: relative;
     color: #fff;
     margin: 0;
-    /* display: flex;
-    justify-content: center; */
     place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-    max-width: 360px;
+    padding: 0;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -218,7 +214,7 @@
   .close-button {
     position: absolute;
     top: 10px;
-    right: -10px;
+    right: 10px;
     cursor: pointer;
     background: none;
     border: none;
