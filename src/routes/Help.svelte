@@ -48,7 +48,9 @@
         <div class="step-content">
           <div class="step-text">
             <div class="step-number">01</div>
-            <h2 class="step-name">Make another guess trying to get closer!</h2>
+            <h2 class="step-name">
+              Type an artist in the search bar to guess.
+            </h2>
           </div>
         </div>
         <div class="help-svg">
@@ -60,7 +62,9 @@
         <div class="step-content">
           <div class="step-text">
             <div class="step-number">02</div>
-            <h2 class="step-name">Guess an artist.</h2>
+            <h2 class="step-name">
+              Make more guesses based on what turns green!
+            </h2>
           </div>
         </div>
         <div class="help-svg">
@@ -217,7 +221,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     background: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(30px);
   }
 
   .content {
