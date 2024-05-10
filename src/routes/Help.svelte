@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { Confetti } from "svelte-confetti";
   import step01 from "$lib/assets/howtoplay01.svg?raw";
   import step02 from "$lib/assets/howtoplay02.svg?raw";
   import step03 from "$lib/assets/howtoplay03.svg?raw";
@@ -44,7 +45,15 @@
     </div>
 
     {#if showHowToPlay}
-      <div class="how-to-play-header">Guess the artist in 10 tries.</div>
+      <div class="how-to-play-top">
+        <div class="how-to-play-header">Guess the artist in 10 tries.</div>
+        <div class="how-to-play-list">
+          <p>Each guess reveals the attributes of artist.</p>
+          <p>
+            The color of the tiles will change to show how close your guess was.
+          </p>
+        </div>
+      </div>
       <!-- <div class="how-to-play-description">
         The mystery artist is one of the top 1000 most popular artists. When you
         make a guess, the attributes of your guess that match the mystery artist
@@ -54,10 +63,8 @@
       <div class="step">
         <div class="step-content">
           <div class="step-text">
-            <div class="step-number">01</div>
-            <h2 class="step-name">
-              Type an artist in the search bar to guess.
-            </h2>
+            <div class="step-number">Step 1</div>
+            <h2 class="step-name">Guess an artist using the search bar.</h2>
           </div>
         </div>
         <div class="help-svg">
@@ -68,8 +75,10 @@
       <div class="step">
         <div class="step-content">
           <div class="step-text">
-            <div class="step-number">02</div>
-            <h2 class="step-name">Green tiles match the mystery artist.</h2>
+            <div class="step-number">Step 2</div>
+            <h2 class="step-name">
+              Make another guess based off the new information.
+            </h2>
           </div>
         </div>
         <div class="help-svg">
@@ -80,11 +89,21 @@
       <div class="step">
         <div class="step-content">
           <div class="step-text">
-            <div class="step-number">03</div>
+            <div class="step-number">Step 3</div>
             <h2 class="step-name">
               Keep going until you guess the mystery artist. A new Spotle will
               appear every day!
             </h2>
+            <div class="confetti">
+              <Confetti
+                iterationCount="infinite"
+                fallDistance="0px"
+                x={[-1.25, 1.25]}
+                y={[-0.2, 1]}
+                amount="400"
+                duration="5000"
+              />
+            </div>
           </div>
         </div>
         <div class="help-svg">
@@ -195,7 +214,7 @@
   .selector {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     margin-top: 30px;
   }
 
@@ -223,8 +242,8 @@
     z-index: 9999;
     overflow-y: scroll;
     overflow-x: hidden;
-    background: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(30px);
+    background: black;
+    /* backdrop-filter: blur(30px); */
   }
 
   .content {
@@ -250,11 +269,16 @@
 
   .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
     cursor: pointer;
     background: none;
     border: none;
+  }
+
+  .how-to-play-top {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .how-to-play-header {
@@ -263,35 +287,28 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 
-  .how-to-play-description {
-    color: #fff;
+  .how-to-play-list {
+    color: #777;
+    text-align: center;
     font-size: 16px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     line-height: normal;
-    width: 90%;
+    margin-bottom: 40px;
   }
 
   .step {
     margin-bottom: 10px;
   }
 
-  .step h2 {
-    color: #b3b3b3;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    width: 95%;
-  }
-
   .step-text {
     display: flex;
-    flex-direction: flex-start;
-    align-items: flex-start; /* Ensure text starts from absolute left */
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .step-number {
@@ -301,20 +318,21 @@
     font-weight: 700;
     line-height: normal;
     flex-shrink: 0;
-    margin-left: 10px;
   }
 
   .step-content {
     display: flex;
-    justify-content: flex-start; /* Adjusted from center to flex-start */
-    flex-grow: 1;
+    justify-content: center;
   }
 
   .step-name {
-    margin-top: 0;
-    margin-bottom: 0; /* Adjust as needed */
-    margin-left: 10px;
-    text-align: left;
+    align-self: center;
+    color: #777;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 0px;
   }
 
   .help-svg {
@@ -386,5 +404,13 @@
 
   .correct {
     background-color: #00b011;
+  }
+
+  .confetti {
+    position: absolute;
+    top: 95%;
+    width: 100vw;
+    left: 50%;
+    z-index: 9999;
   }
 </style>
