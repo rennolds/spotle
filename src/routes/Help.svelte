@@ -301,7 +301,7 @@
   }
 
   .step {
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 
   .step-text {
