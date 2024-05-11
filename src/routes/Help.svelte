@@ -1,9 +1,9 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import { Confetti } from "svelte-confetti";
-  import step01 from "$lib/assets/howtoplay01.svg?raw";
-  import step02 from "$lib/assets/howtoplay02.svg?raw";
-  import step03 from "$lib/assets/howtoplay03.svg?raw";
+  import step01 from "$lib/assets/howtoplay1.svg?raw";
+  import step02 from "$lib/assets/howtoplay2.svg?raw";
+  import step03 from "$lib/assets/howtoplay3.svg?raw";
 
   const dispatch = createEventDispatcher();
 
