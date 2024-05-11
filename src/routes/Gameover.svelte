@@ -326,7 +326,7 @@
     align-items: center;
     border: none;
     border-radius: 40px;
-    background-color: #1db954;
+    background-color: #8370de;
     color: #fff;
     cursor: pointer;
     margin-bottom: 10px; /* Added margin between buttons */
@@ -345,10 +345,6 @@
   .button a {
     color: #fff;
     text-decoration: none; /* no underline */
-  }
-
-  .purple {
-    background-color: #ba81c2;
   }
 
   .centered {
