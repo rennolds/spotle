@@ -571,7 +571,7 @@
             >CREATE A SPOTLE</button
           >
           <p></p>
-          <button class="styled-btn coming-soon" on:click={playRush}>
+          <button class="styled-btn coming-soon">
             SPOTLE REWIND (coming soon)
           </button>
           <!-- <button class="styled-btn" on:click={playRush}>SPOTLE JAM</button> -->
@@ -668,9 +668,9 @@
             </ul>
           </div>
           {#if playingChallenge && tempGuesses.length == 0 && challengeNote != ""}
-          <p class="challenge-explain">
-            A hint from your friend: {challengeNote}
-          </p>
+            <p class="challenge-explain">
+              A hint from your friend: {challengeNote}
+            </p>
           {/if}
           {#if !createGame}
             <div class="guess-container">
@@ -858,12 +858,6 @@
     color: #c3c3c3;
   }
 
-  .game-info-container {
-    display: flex;
-    justify-content: space-between; /* This will space the items evenly along the main axis */
-    width: 100%;
-  }
-
   .solved-spotles {
     color: #fff;
     align-self: flex-start;
@@ -871,7 +865,9 @@
 
   .guesses-remaining {
     color: #ffff;
-    align-self: flex-end;
+    margin-bottom: 2px;
+    float: right;
+    margin-right: 12.5px;
   }
 
   .search-container {
