@@ -1,6 +1,5 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import { Confetti } from "svelte-confetti";
   import step01 from "$lib/assets/howtoplay1.svg?raw";
   import step02 from "$lib/assets/howtoplay2.svg?raw";
   import step03 from "$lib/assets/howtoplay3.svg?raw";
@@ -56,7 +55,7 @@
       </div>
       <!-- <div class="how-to-play-description">
         The mystery artist is one of the top 1000 most popular artists. When you
-        make a guess, the attributes of your guess that match the mystery artist
+        make a guess, the attributes of your guess that match the artist
         will turn green.
       </div> -->
 
@@ -91,10 +90,10 @@
           <div class="step-text">
             <div class="step-number">Step 3</div>
             <h2 class="step-name">
-              Keep going until you guess the mystery artist. A new Spotle will
-              appear every day!
+              Keep going until you guess the artist. A new Spotle will appear
+              every day!
             </h2>
-            <div class="confetti">
+            <!-- <div class="confetti">
               <Confetti
                 iterationCount="infinite"
                 fallDistance="0px"
@@ -103,13 +102,14 @@
                 amount="400"
                 duration="5000"
               />
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="help-svg">
           {@html step03}
         </div>
       </div>
+      <div class="ad-space"></div>
     {:else}
       <div class="attribute">
         <div class="attribute-content">
@@ -214,7 +214,7 @@
   .selector {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     margin-top: 30px;
   }
 
@@ -291,11 +291,11 @@
   }
 
   .how-to-play-list {
-    color: #777;
+    color: #fff;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     line-height: normal;
     margin-bottom: 40px;
   }
@@ -307,32 +307,31 @@
   .step-text {
     display: flex;
     flex-direction: column;
+    align-self: left;
+    align-items: left;
     padding-left: 10%;
     padding-right: 10%;
   }
 
   .step-number {
     color: #fff;
-    font-size: 18px;
+    text-align: left;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     flex-shrink: 0;
   }
 
-  .step-content {
-    display: flex;
-    justify-content: center;
-  }
-
   .step-name {
-    align-self: center;
-    color: #777;
+    color: #fff;
     font-size: 18px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     line-height: normal;
-    margin-top: 0px;
+    margin-top: 10px;
+    margin-left: 0px;
+    text-align: left;
   }
 
   .help-svg {
@@ -405,12 +404,16 @@
   .correct {
     background-color: #00b011;
   }
-
+  /* 
   .confetti {
     position: absolute;
     top: 95%;
     width: 100vw;
     left: 50%;
     z-index: 9999;
+  } */
+
+  .ad-space {
+    height: 80px;
   }
 </style>

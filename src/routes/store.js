@@ -17,7 +17,12 @@ const mutedName = "muted";
 if (browser) {
     const retrieved = localStorage.getItem(mutedName)
     if (retrieved) {
-        mutedParsed = JSON.parse(retrieved);
+        if (retrieved == "true") {
+            mutedParsed = true;
+        }
+        else {
+            mutedParsed = false;
+        }
     }
 }
 
@@ -29,9 +34,15 @@ muted.subscribe((val) => {
 let gameoverParsed = "";
 const gameoverName = "gameOver";
 if (browser) {
-    const retrieved = localStorage.getItem(gameoverParsed)
+    const retrieved = localStorage.getItem(gameoverParsed);
+    console.log(retrieved);
     if (retrieved) {
-        gameoverParsed = JSON.parse(retrieved);
+        if (retrived == "true") {
+            gameoverParsed = true;
+        }
+        else {
+            gameoverParsed = false;
+        }
     }
 }
 

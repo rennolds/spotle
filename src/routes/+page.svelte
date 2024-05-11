@@ -18,7 +18,6 @@
 
   console.log($gameOver);
   console.log($muted);
-  console.log("why empty?");
 
   function getGenderLabel(code) {
     switch (code) {
@@ -234,9 +233,6 @@
   $: filteredArtists = fuzzySearch(searchTerm);
 
   function playGame() {
-    if ($gameOver == true) {
-      showResults = true;
-    }
     normalGame = true;
     playingGame = true;
     splashScreen = false;
@@ -264,9 +260,13 @@
         guessCount = $guesses.length;
         if (guessCount >= 10) {
           result = "L";
+          showResults = true;
+          $gameOver = true;
         }
         if ($guesses.some((obj) => obj.name === mysteryArtist.name)) {
           result = "W";
+          showResults = true;
+          $gameOver = true;
         }
       } else {
         $guesses = [];
@@ -299,17 +299,21 @@
       $guesses = $guesses;
 
       if (selectedArtist == mysteryArtist) {
-        $gameOver = true;
-        showResults = true;
-        result = "W";
-        return;
+        setTimeout(() => {
+          $gameOver = true;
+          showResults = true;
+          result = "W";
+          return;
+        }, 1750);
       }
 
       if (guessCount + 1 == 10) {
-        $gameOver = true;
-        showResults = true;
-        result = "L";
-        return;
+        setTimeout(() => {
+          $gameOver = true;
+          showResults = true;
+          result = "L";
+          return;
+        }, 1750);
       }
 
       guessCount++;
@@ -333,17 +337,21 @@
 
       if (playingChallenge) {
         if (selectedArtist == mysteryArtist) {
-          tempGameOver = true;
-          showResults = true;
-          result = "W";
-          return;
+          setTimeout(() => {
+            tempGameOver = true;
+            showResults = true;
+            result = "W";
+            return;
+          }, 1750);
         }
 
         if (guessCount + 1 == 10) {
-          tempGameOver = true;
-          showResults = true;
-          result = "L";
-          return;
+          setTimeout(() => {
+            tempGameOver = true;
+            showResults = true;
+            result = "L";
+            return;
+          }, 1750);
         }
       }
 
@@ -663,17 +671,17 @@
     <div class="content">
       {#if splashScreen}
         <div class="splash-screen">
-          <button class="styled-btn" on:click={playGame}>PLAY</button>
+          <button class="main-btn" on:click={playGame}>PLAY</button>
           <p></p>
           <button class="styled-btn" on:click={toggleHelp}>HOW TO PLAY</button>
           <p></p>
           <button class="styled-btn" on:click={handleCreate}
             >CREATE A SPOTLE</button
           >
-          <button class="styled-btn" on:click={playRush}>SPOTLE RUSH</button>
 
           <p>coming soon</p>
-          <button class="styled-btn coming-soon">Spotle Streak</button>
+          <button class="styled-btn" on:click={playRush}>SPOTLE REWIND</button>
+          <!-- <button class="styled-btn" on:click={playRush}>SPOTLE JAM</button> -->
 
           <p>play our new game!</p>
           <button class="styled-btn purple"
@@ -696,7 +704,11 @@
             {/if}
             <div class="guesses-remaining">
               {#if normalGame || playingChallenge}
-                Guess {guessCount + 1} of 10
+                {#if guessCount == 10}
+                  Guess 10 of 10
+                {:else}
+                  Guess {guessCount + 1} of 10
+                {/if}
               {/if}
               {#if createGame}
                 Pick an artist for your friend to guess.
@@ -906,17 +918,32 @@
   }
 
   .styled-btn {
-    border-radius: 5px;
-    width: 176px;
-    height: 52px;
+    width: 180px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
     background-color: #1db954;
-    color: #ffff;
-    font-weight: bold;
     font-size: 15px;
     position: relative;
     border-radius: 100px;
-    margin-bottom: 0.2rem;
-    margin-top: 0.2rem;
+  }
+
+  .main-btn {
+    position: relative;
+    width: 225px;
+    border-radius: 100px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    background-color: #1db954;
+    line-height: normal;
   }
 
   .purple {

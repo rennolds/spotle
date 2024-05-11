@@ -2,6 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
   import { Confetti } from "svelte-confetti";
+  import { fade } from "svelte/transition";
 
   export let artist;
   export let result;
@@ -19,6 +20,69 @@
       audio.play();
     }
   });
+
+  const winningMessages = {
+    1: [
+      "Wow. Are they your favorite?",
+      "A once in a lifetime moment...",
+      "Go buy a lottery ticket.",
+      "Have you been waiting for this?",
+    ],
+    2: [
+      "Did you cheat...?",
+      "This may never happen again.",
+      "Speechless.",
+      "Pop the champagne!",
+    ],
+    3: [
+      "You're a savant!",
+      "Amazing performance.",
+      "Immaculate.",
+      "Savor this moment.",
+    ],
+    4: [
+      "4/10...incredible!",
+      "Anotha victory for da OG",
+      "You are seriously good at this.",
+      "You're an all star!",
+    ],
+    5: ["Five. Impressive.", "Wooo!!", "Amazing!", "Let's GOO!"],
+    6: [
+      "Tell your friends!",
+      "Another day, another Spotle.",
+      "A respectable performance.",
+      "Way to close it out.",
+    ],
+    7: ["Congrats!", "Nice job!", "Not bad.", "Way to get it done."],
+    8: [
+      "8 guesses...it'll pass.",
+      "Pretty good.",
+      "Congratulations!",
+      "It was looking dicey for a second.",
+    ],
+    9: [
+      "Nice, that was close!",
+      "Could've gone worse.",
+      "A win is a win.",
+      "Were you nervous?",
+    ],
+    10: [
+      "On the buzzer!",
+      "We never doubted you.",
+      "You got it when it mattered most.",
+      "Ice in the veins.",
+    ],
+  };
+
+  function getRandomMessage(guessCount) {
+    const messages = winningMessages[guessCount];
+    if (messages) {
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      return messages[randomIndex];
+    } else {
+      return "Congratulations!";
+    }
+  }
 
   function closeOverlay() {
     dispatch("close");
@@ -63,7 +127,7 @@
   }
 
   if (result == "W") {
-    header = "Another victory for da OG";
+    header = getRandomMessage(guessCount);
     if (playingChallenge) {
       shareHeader = "Spotle Challenge 🎧\n\n";
       header = "Tell your friend it was too easy...";
@@ -126,7 +190,7 @@
 <div class="confetti">
   <Confetti duration="3000" amount="250" y={[-1, 2]} x={[-1.25, 1.25]} />
 </div>
-<div class="overlay">
+<div transition:fade={{ duration: 500 }} class="overlay">
   <div class="content">
     <div class="header">{header}</div>
     <button on:click={closeOverlay} class="close-button">
@@ -210,6 +274,7 @@
     margin-bottom: 20px;
     text-align: center;
     color: #fff;
+    margin-top: 2px;
   }
 
   .close-button {
