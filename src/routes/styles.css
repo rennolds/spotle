@@ -24,6 +24,9 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
   
   html, body {
