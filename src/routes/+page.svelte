@@ -1,12 +1,12 @@
 <script>
   import { browser } from "$app/environment";
+  import { onMount } from "svelte";
   import Help from "./Help.svelte";
   import Guess from "./Guess.svelte";
   import Gameover from "./Gameover.svelte";
   import Countdown from "./Countdown.svelte";
   import Icon from "./Icon.svelte";
   import "./styles.css";
-  import logo from "$lib/assets/logo.svg?raw";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
   import {
@@ -17,8 +17,17 @@
     gameOver,
   } from "./store.js";
 
-  console.log($gameOver);
-  console.log($muted);
+  onMount(() => {
+    if (browser) {
+      window.ezstandalone = window.ezstandalone || {};
+      ezstandalone.cmd = ezstandalone.cmd || [];
+      ezstandalone.cmd.push(function () {
+        ezstandalone.define(108);
+        ezstandalone.enable();
+        ezstandalone.display();
+      });
+    }
+  });
 
   function getGenderLabel(code) {
     switch (code) {
@@ -142,7 +151,6 @@
       const selectedArtist = artists.find(
         (artist) => artist.name === decodedArtist
       );
-      console.log(selectedArtist);
       if (selectedArtist === undefined) {
         window.location.href = window.location.href.split("?")[0];
         playingChallenge = false;
@@ -178,6 +186,13 @@
   function fuzzySearch(input) {
     if (input == "") {
       return [];
+    }
+
+    if (input.toLowerCase() == "bach") {
+      return ["Johann Sebastian Bach"];
+    }
+    if (input.toLowerCase() == "mozart" || input.toLowerCase == "motzart") {
+      return ["Wolfgang Amadeus Mozart"];
     }
     input = input.toLowerCase();
     const results = [];
@@ -361,7 +376,6 @@
       if (playingRush) {
         if (selectedArtist == mysteryArtist) {
           rushIndex++;
-          console.log("new artist");
           const selectedArtist = artists.find(
             (artist) => artist.name === eligibleArtists[rushIndex]
           );
@@ -504,6 +518,7 @@
 
 <body>
   <div class="container">
+    <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
@@ -822,8 +837,8 @@
   }
 
   .styled-btn {
-    width: 180px;
-    height: 50px;
+    width: 170px;
+    height: 47px;
     color: #fff;
     text-align: center;
     font-size: 18px;
@@ -838,9 +853,9 @@
 
   .main-btn {
     position: relative;
-    width: 225px;
+    width: 190px;
     border-radius: 100px;
-    height: 50px;
+    height: 48px;
     color: #fff;
     text-align: center;
     font-size: 18px;
@@ -1013,5 +1028,11 @@
     width: 300px;
     padding-left: 10%;
     padding-right: 10%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .ezoic-108 {
+      height: 52.5px;
+    }
   }
 </style>

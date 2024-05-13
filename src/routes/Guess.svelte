@@ -436,13 +436,13 @@
   }
 
   h3 {
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
   }
@@ -503,7 +503,7 @@
   }
 
   .correct {
-    animation: flip-correct 2s ease-in-out forwards;
+    animation: flip-correct 1.75s ease-in-out forwards;
   }
 
   .nationality {
