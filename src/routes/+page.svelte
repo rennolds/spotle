@@ -526,10 +526,10 @@
     {/if}
     <div class="header">
       {#if playingGame}
-        <div class="left">
-          <button on:click={handleMenuClick}>
+        <div class="icon-btn left">
+          <div on:click={handleMenuClick}>
             <Icon width={"1.75rem"} height={"1.75rem"} name={"menu"}></Icon>
-          </button>
+          </div>
         </div>
       {/if}
 
