@@ -750,6 +750,10 @@
     overflow: none;
   }
 
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
   .splash-screen {
     margin-top: 30px;
   }
