@@ -814,6 +814,7 @@
 
   .left {
     margin-right: 50px;
+    margin-top: 2.5px;
     display: flex; /* Ensure the button is aligned properly */
     align-items: center; /* Center the button vertically */
   }
