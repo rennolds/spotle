@@ -58,13 +58,6 @@
     gender: getGenderLabel(artist.gender),
   }));
 
-  function getLocalMidnightDate() {
-    const date = new Date();
-    const localTimezoneOffset = date.getTimezoneOffset() / 60; // Convert minutes to hours
-    const localMidnight = new Date(date);
-    localMidnight.setHours(24 + localTimezoneOffset, 0, 0, 0); // Set to midnight local time
-    return localMidnight.toLocaleDateString("en-US");
-  }
 
   let timeUntilMidnightLocal = 0;
   let timer = null;
@@ -79,15 +72,6 @@
     }
 
     timeUntilMidnightLocal = localMidnight - now;
-  }
-
-  function formatTime(milliseconds) {
-    const totalSeconds = Math.floor(milliseconds / 1000);
-    const hours = Math.floor(totalSeconds / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
-
-    return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   }
 
   function startTimer() {

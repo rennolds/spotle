@@ -514,16 +514,16 @@
   @keyframes flip-correct {
     0% {
     }
-    50% {
-      transform: rotateX(0deg);
+    60% {
+      transform: rotateY(0deg);
       background-color: #454545;
     }
-    70% {
-      transform: rotateX(-90deg);
+    80% {
+      transform: rotateY(180deg);
       background-color: #454545; /* Change to the original background color */
     }
     100% {
-      transform: rotateX(0deg);
+      transform: rotateY(0deg);
       background-color: #00b011; /* Change to the green background color */
     }
   }
@@ -531,16 +531,16 @@
   @keyframes flip-close {
     0% {
     }
-    50% {
-      transform: rotateX(0deg);
+    60% {
+      transform: rotateY(0deg);
       background-color: #454545;
     }
-    70% {
-      transform: rotateX(-90deg);
+    80% {
+      transform: rotateY(180deg);
       background-color: #454545; /* Change to the original background color */
     }
     100% {
-      transform: rotateX(0deg);
+      transform: rotateY(0deg);
       background-color: rgba(
         255,
         245,
