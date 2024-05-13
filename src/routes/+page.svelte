@@ -747,6 +747,7 @@
   body {
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    overflow: none;
   }
 
   .splash-screen {
@@ -973,6 +974,7 @@
     flex-direction: column;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+    overflow: auto;
   }
 
   .guess-container::-webkit-scrollbar {
