@@ -242,8 +242,7 @@
     z-index: 9999;
     overflow-y: scroll;
     overflow-x: hidden;
-    background: black;
-    /* backdrop-filter: blur(30px); */
+    background: #101010;
   }
 
   .content {

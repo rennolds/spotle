@@ -485,7 +485,7 @@
   }
 
   .close {
-    animation: flip-close 1.75s ease-in-out forwards;
+    animation: flip-close 1s ease-in-out forwards;
   }
 
   .flex-container {
@@ -503,7 +503,7 @@
   }
 
   .correct {
-    animation: flip-correct 1.75s ease-in-out forwards;
+    animation: flip-correct 1s ease-in-out forwards;
   }
 
   .nationality {
@@ -515,15 +515,15 @@
     0% {
     }
     50% {
-      transform: rotateY(0deg);
+      transform: rotateX(0deg);
       background-color: #454545;
     }
     70% {
-      transform: rotateY(180deg);
+      transform: rotateX(-90deg);
       background-color: #454545; /* Change to the original background color */
     }
     100% {
-      transform: rotateY(360deg);
+      transform: rotateX(0deg);
       background-color: #00b011; /* Change to the green background color */
     }
   }
@@ -532,15 +532,15 @@
     0% {
     }
     50% {
-      transform: rotateY(0deg);
+      transform: rotateX(0deg);
       background-color: #454545;
     }
     70% {
-      transform: rotateY(180deg);
+      transform: rotateX(-90deg);
       background-color: #454545; /* Change to the original background color */
     }
     100% {
-      transform: rotateY(360deg);
+      transform: rotateX(0deg);
       background-color: rgba(
         255,
         245,
