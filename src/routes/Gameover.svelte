@@ -188,7 +188,7 @@
 
 <audio class="hidden" src={artist.song_uri} bind:this={audio}></audio>
 <div class="confetti">
-  <Confetti duration="3000" amount="250" y={[-1, 2]} x={[-1.25, 1.25]} />
+  <!-- <Confetti duration="3000" amount="250" y={[-1, 2]} x={[-1.25, 1.25]} /> -->
 </div>
 <div in:fade={{ y: 0, duration: 4000 }} class="overlay">
   <div class="content">
@@ -356,10 +356,10 @@
     display: none;
   }
 
-  .confetti {
+  /* .confetti {
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 9999;
-  }
+  } */
 </style>
