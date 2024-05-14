@@ -58,7 +58,6 @@
     gender: getGenderLabel(artist.gender),
   }));
 
-
   let timeUntilMidnightLocal = 0;
   let timer = null;
 
@@ -501,7 +500,18 @@
 </script>
 
 <body>
-  <div class="container">
+  {#if showResults && !createGame}
+    <Gameover
+      {spotleNumber}
+      {result}
+      artist={mysteryArtistEntry}
+      {guessCount}
+      {playingChallenge}
+      on:close={handleOverlayClose}
+      muted={$muted}
+    ></Gameover>
+  {/if}
+  <div class="container" style={showResults ? "filter: blur(3px)" : ""}>
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
@@ -577,7 +587,8 @@
 
           <p>Play our new game!</p>
           <button class="styled-btn purple"
-            ><a href="https://harmonies.io" target="_blank">harmonies.io</a
+            ><a href="https://harmonies.io" target="_blank"
+              >Harmonies: Music connections</a
             ></button
           >
         </div>
@@ -610,17 +621,7 @@
               {/if}
             </div>
           </div>
-          {#if showResults && !createGame}
-            <Gameover
-              {spotleNumber}
-              {result}
-              artist={mysteryArtistEntry}
-              {guessCount}
-              {playingChallenge}
-              on:close={handleOverlayClose}
-              muted={$muted}
-            ></Gameover>
-          {/if}
+
           <div class="search-container">
             {#if normalGame}
               <input

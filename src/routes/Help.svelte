@@ -167,7 +167,7 @@
             <h2 class="attribute-header">Gender</h2>
             <p class="attribute-text">
               The artist's gender. If it's a group with men and women, it will
-              say Mixed.
+              say Mixed. A few artists are listed as Nonbinary.
             </p>
           </div>
           <div class="attribute-blocks">
@@ -183,7 +183,7 @@
             <h2 class="attribute-header">Genre</h2>
             <p class="attribute-text">
               The artists genre. The options are: Rock, Pop, Hip Hop, Country,
-              Alternative, R&B, Latin, Classical, Jazz, Metal, and Electronic.
+              Alternative, R&B, Latin, Classical, Jazz, Metal, Electronic, Reggae, and African.
             </p>
           </div>
           <div class="attribute-blocks">

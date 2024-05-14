@@ -275,11 +275,12 @@
     text-align: center;
     color: #fff;
     margin-top: 2px;
+    width: 85%;
   }
 
   .close-button {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 10px;
     cursor: pointer;
     background: none;

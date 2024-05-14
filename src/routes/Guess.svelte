@@ -417,7 +417,7 @@
     padding: 20px;
     background-color: #454545; /* Grey background */
     border-radius: 10px;
-    height: 75px;
+    height: 68px;
     padding: 2.5px 2.5px 2.5px 2.5px;
     margin: 5px 5px 5px 5px;
     font-size: 90%;
@@ -435,6 +435,10 @@
     max-width: 90%;
   }
 
+  .header-row h2 {
+    font-size: 25px;
+  }
+
   h3 {
     font-size: 16px;
     font-style: normal;
@@ -442,7 +446,7 @@
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 21px;
     font-style: normal;
     font-weight: 700;
   }
