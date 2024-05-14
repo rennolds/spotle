@@ -500,8 +500,7 @@
 </script>
 
 <body>
-  <div class="container">
-    {#if showResults && !createGame}
+  {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
       {result}
@@ -511,7 +510,8 @@
       on:close={handleOverlayClose}
       muted={$muted}
     ></Gameover>
-    {/if}
+  {/if}
+  <div class="container" style={showResults ? "filter: blur(3px)" : ""}>
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
