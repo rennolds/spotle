@@ -500,7 +500,8 @@
 </script>
 
 <body>
-  {#if showResults && !createGame}
+  <div class="container">
+    {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
       {result}
@@ -510,8 +511,7 @@
       on:close={handleOverlayClose}
       muted={$muted}
     ></Gameover>
-  {/if}
-  <div class="container" style={showResults ? "filter: blur(3px)" : ""}>
+    {/if}
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
@@ -733,7 +733,6 @@
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
     overflow: none;
-    -webkit-transform: translateZ(0)
   }
 
   body::-webkit-scrollbar {
