@@ -280,8 +280,8 @@
 
   .close-button {
     position: absolute;
-    top: 12px;
-    right: 10px;
+    top: 1em;
+    right: 0.75em;
     cursor: pointer;
     background: none;
     border: none;

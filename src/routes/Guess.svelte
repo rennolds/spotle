@@ -436,7 +436,7 @@
   }
 
   .header-row h2 {
-    font-size: 25px;
+    font-size: 27px;
   }
 
   h3 {
@@ -489,7 +489,7 @@
   }
 
   .close {
-    animation: flip-close 1s ease-in-out forwards;
+    animation: flip-close 1.5s ease-in-out forwards;
   }
 
   .flex-container {
@@ -507,7 +507,7 @@
   }
 
   .correct {
-    animation: flip-correct 1s ease-in-out forwards;
+    animation: flip-correct 1.5s ease-in-out forwards;
   }
 
   .nationality {
