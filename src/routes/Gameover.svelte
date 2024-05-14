@@ -190,7 +190,7 @@
 <div class="confetti">
   <Confetti duration="3000" amount="250" y={[-1, 2]} x={[-1.25, 1.25]} />
 </div>
-<div in:fade={{ y: 0, duration: 1500 }} class="overlay">
+<div in:fade={{ y: 0, duration: 1250 }} class="overlay">
   <div class="content">
     <div class="header">{header}</div>
     <button on:click={closeOverlay} class="close-button">
@@ -279,7 +279,7 @@
 
   .close-button {
     position: absolute;
-    top: 1em;
+    top: 0.9em;
     right: 0.5em;
     cursor: pointer;
     background: none;

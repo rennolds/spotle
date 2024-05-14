@@ -733,6 +733,7 @@
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
     overflow: none;
+    -webkit-transform: translateZ(0)
   }
 
   body::-webkit-scrollbar {
