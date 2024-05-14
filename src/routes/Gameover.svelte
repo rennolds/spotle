@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
   import { Confetti } from "svelte-confetti";
-  import { fade, fly } from "svelte/transition";
+  import { fade } from "svelte/transition";
 
   export let artist;
   export let result;
@@ -190,7 +190,7 @@
 <div class="confetti">
   <Confetti duration="3000" amount="250" y={[-1, 2]} x={[-1.25, 1.25]} />
 </div>
-<div in:fly={{ y: 0, duration: 1500 }} class="overlay">
+<div in:fade={{ y: 0, duration: 1500 }} class="overlay">
   <div class="content">
     <div class="header">{header}</div>
     <button on:click={closeOverlay} class="close-button">
@@ -245,20 +245,19 @@
 <style>
   .overlay {
     position: fixed;
-    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
   }
 
   .content {
     position: relative;
     width: 320px;
-    height: 620px;
+    height: 590px;
     border-radius: 10px;
     background: rgba(48, 48, 48, 0.95);
     display: flex;
@@ -281,7 +280,7 @@
   .close-button {
     position: absolute;
     top: 1em;
-    right: 0.75em;
+    right: 0.5em;
     cursor: pointer;
     background: none;
     border: none;
