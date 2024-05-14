@@ -511,7 +511,7 @@
       muted={$muted}
     ></Gameover>
   {/if}
-  <div class="container" style={showResults ? "filter: blur(3px)" : ""}>
+  <div class="container">
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
@@ -598,7 +598,7 @@
         {#if playingRush}
           <Countdown></Countdown>
         {/if}
-        <div class="game-container">
+        <div class="game-container" style={showResults ? "filter: blur(3px)" : ""}>
           <div class="game-info-container">
             {#if playingRush}
               <div class="solved-spotles">
