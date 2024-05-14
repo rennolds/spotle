@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
-  import { Confetti } from "svelte-confetti";
+  // import { Confetti } from "svelte-confetti";
   import { fly } from "svelte/transition";
 
   export let artist;
@@ -187,9 +187,9 @@
 </script>
 
 <audio class="hidden" src={artist.song_uri} bind:this={audio}></audio>
-<div class="confetti">
+<!-- <div class="confetti">
   <Confetti duration="3000" amount="250" y={[-1, 2]} x={[-1.25, 1.25]} />
-</div>
+</div> -->
 <div in:fly={{ y: 0, duration: 1500 }} class="overlay">
   <div class="content">
     <div class="header">{header}</div>
@@ -356,10 +356,10 @@
     display: none;
   }
 
-  .confetti {
+  /* .confetti {
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 9999;
-  }
+  } */
 </style>
