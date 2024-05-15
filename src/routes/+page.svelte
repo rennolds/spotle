@@ -1,6 +1,8 @@
 <script>
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
+  import moment from "moment";
+  import "moment-timezone";
   import Help from "./Help.svelte";
   import Guess from "./Guess.svelte";
   import Gameover from "./Gameover.svelte";
@@ -58,35 +60,9 @@
     gender: getGenderLabel(artist.gender),
   }));
 
-  let timeUntilMidnightLocal = 0;
-  let timer = null;
 
-  function updateTimer() {
-    const now = new Date();
-    const localMidnight = new Date(now);
-    localMidnight.setHours(24, 0, 0, 0); // Set to midnight local time
-
-    if (now > localMidnight) {
-      localMidnight.setDate(localMidnight.getDate() + 1); // Increment to next day
-    }
-
-    timeUntilMidnightLocal = localMidnight - now;
-  }
-
-  function startTimer() {
-    timer = setInterval(updateTimer, 1000);
-  }
-
-  startTimer();
-
-  const todaysDateUnformatted = new Date();
-  // Extract day, month, and year from the date object
-  const day = String(todaysDateUnformatted.getDate()).padStart(2, "0"); // Add leading zero if necessary
-  const month = String(todaysDateUnformatted.getMonth() + 1);
-  const year = todaysDateUnformatted.getFullYear();
-
-  // Form the date string in "DD/MM/YYYY" format
-  const todaysDate = `${month}/${day}/${year}`;
+  moment.tz.setDefault('UTC');
+  const todaysDate = moment().utc().format("MM/DD/YYYY"); // Current date in UTC
 
   let playingGame = false;
   let normalGame = false;
@@ -598,7 +574,10 @@
         {#if playingRush}
           <Countdown></Countdown>
         {/if}
-        <div class="game-container" style={showResults ? "filter: blur(3px)" : ""}>
+        <div
+          class="game-container"
+          style={showResults ? "filter: blur(3px)" : ""}
+        >
           <div class="game-info-container">
             {#if playingRush}
               <div class="solved-spotles">

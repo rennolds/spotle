@@ -3,7 +3,8 @@
   import { onMount } from "svelte";
   // import { Confetti } from "svelte-confetti";
   import { fly } from "svelte/transition";
-
+  import moment from "moment";
+  import "moment-timezone";
   export let artist;
   export let result;
   export let guessCount;
@@ -89,19 +90,20 @@
   }
 
   let shareBtnText = "SHARE RESULT";
-  let timeUntilMidnight = 0;
+  moment.tz.setDefault("UTC");
+  let timeUntilFourAMUTC = 0;
   let timer = null;
 
   function updateTimer() {
-    const now = new Date();
-    const midnight = new Date(now);
-    midnight.setHours(4, 0, 0, 0); // 4 AM UTC = Midnight ET
+    const now = moment(); // Current time in user's timezone
 
-    if (now > midnight) {
-      midnight.setDate(midnight.getDate() + 1); // Increment to next day
+    const fourAMUTC = moment(now).utc().startOf("day").add(4, "hours"); // 4 AM UTC
+
+    if (now > fourAMUTC) {
+      fourAMUTC.add(1, "days"); // Increment to next day if already passed
     }
 
-    timeUntilMidnight = midnight - now;
+    timeUntilFourAMUTC = fourAMUTC.diff(now); // Difference in milliseconds
   }
 
   function formatTime(milliseconds) {
@@ -114,10 +116,12 @@
   }
 
   function startTimer() {
-    timer = setInterval(updateTimer, 50);
+    updateTimer(); // Run once to initialize
+    timer = setInterval(updateTimer, 1000);
   }
 
   startTimer();
+
   let emojis = "";
   let header;
   let shareHeader = "Spotle #" + spotleNumber + "🎧\n\n";
@@ -236,7 +240,7 @@
     <div class="centered">
       {#if !playingChallenge}
         <div>Next Spotle</div>
-        <div>{formatTime(timeUntilMidnight)}</div>
+        <div>{formatTime(timeUntilFourAMUTC)}</div>
       {/if}
     </div>
   </div>
@@ -279,7 +283,7 @@
 
   .close-button {
     position: absolute;
-    top: .9em;
+    top: 0.9em;
     right: 0.5em;
     cursor: pointer;
     background: none;
@@ -305,7 +309,7 @@
   }
 
   .sub-header {
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
   }
