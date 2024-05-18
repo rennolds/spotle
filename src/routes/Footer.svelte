@@ -3,7 +3,7 @@
 
 <div class="empty-space"></div>
 
-<div class="footer">
+<div class="footer safari_only">
   <p>made by flatwhite studios</p>
   <p>
     &nbsp;| <a href="./privacy" target="_blank">privacy</a> |
