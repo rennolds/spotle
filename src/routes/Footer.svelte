@@ -36,9 +36,9 @@
     text-decoration: underline;
   }
 
-  @media (min-width:480px)  {
+  /* @media (min-width:480px)  {
     .footer {
-        padding-bottom: 50px;
+        padding-bottom: 30px;
     }
-  }
+  } */
 </style>
