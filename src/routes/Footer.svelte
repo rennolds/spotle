@@ -28,7 +28,6 @@
     padding: 10px 0;
     display: flex;
     flex-direction: flex-start;
-    margin-bottom: 15px;
   }
 
   .footer a {
