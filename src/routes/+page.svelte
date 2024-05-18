@@ -881,7 +881,9 @@
   .container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Set the height of the container to full viewport height */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   .header {

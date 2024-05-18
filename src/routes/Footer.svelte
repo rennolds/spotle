@@ -1,6 +1,8 @@
 <script>
 </script>
 
+<div class="empty-space"></div>
+
 <div class="footer">
   <p>made by flatwhite studios</p>
   <p>
@@ -10,11 +12,13 @@
 </div>
 
 <style>
+  .empty-space {
+    flex-grow: 1;
+  }
   .footer {
     bottom: 0;
     width: 100%;
     color: #fff;
-    background-color: #101010;
     height: 20px;
     font-size: 12px;
     font-style: normal;
@@ -24,7 +28,6 @@
     padding: 10px 0;
     display: flex;
     flex-direction: flex-start;
-    position: fixed;
   }
 
   .footer a {
