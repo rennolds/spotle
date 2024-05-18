@@ -29,11 +29,16 @@
     display: flex;
     flex-direction: flex-start;
     margin-bottom: 15px;
-    padding-bottom: 100px;
   }
 
   .footer a {
     color: #8370de;
     text-decoration: underline;
+  }
+
+  @media (min-width:480px)  {
+    .footer {
+        padding-bottom: 50px;
+    }
   }
 </style>
