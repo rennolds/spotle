@@ -267,7 +267,7 @@
 
     const selectedArtist = artists.find((artist) => artist.name === artistName);
     const guessNames = $guesses.map((artist) => artist.name);
-    
+
     if (normalGame) {
       if (guessNames.includes(artistName)) {
         return;
@@ -633,7 +633,10 @@
                 {/if}
               {/if}
               {#if createGame}
-                Pick an artist for your friend to guess.
+                <div class="create-game-text">
+                  <p>1.</p>
+                  <h3>Pick an artist for your friend to guess.</h3>
+                </div>
               {/if}
               {#if playingRush}
                 Guess {guessCount + 1} of 30
@@ -716,11 +719,14 @@
                   <h2>{createGameSelection.name}</h2>
                 </div>
 
-                <p class="challenge-text">Leave a note for your friend.</p>
+                <div class="create-game-text">
+                  <p>2.</p>
+                  <h3>Leave a note for your friend.</h3>
+                </div>
 
                 <input
                   class="create-form"
-                  placeholder="Give a hint or message here..."
+                  placeholder="Write a hint or message here..."
                   bind:value={createNote}
                 />
                 <p></p>
@@ -967,6 +973,10 @@
     align-items: center;
   }
 
+  .guess-btn {
+    margin-right: 10px;
+  }
+
   input::value {
     margin-left: 2rem;
   }
@@ -1071,13 +1081,27 @@
     height: 100px;
   }
 
-  .challenge-explain {
+  .create-game-text {
     display: flex;
-    justify-content: center;
-    align-self: center;
-    width: 300px;
-    padding-left: 10%;
-    padding-right: 10%;
+    flex-direction: flex-start;
+  }
+
+  .create-game-text h3 {
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+  }
+
+  .create-game-text p {
+    color: #888;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 10px;
   }
 
   @media only screen and (max-width: 600px) {
