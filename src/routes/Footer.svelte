@@ -3,7 +3,7 @@
 
 <div class="empty-space"></div>
 
-<div class="footer safari_only">
+<div class="footer">
   <p>made by flatwhite studios</p>
   <p>
     &nbsp;| <a href="./privacy" target="_blank">privacy</a> |
@@ -29,17 +29,11 @@
     display: flex;
     flex-direction: flex-start;
     margin-bottom: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 100px;
   }
 
   .footer a {
     color: #8370de;
     text-decoration: underline;
   }
-
-    @media screen and (max-width: 767px) {
-        _::-webkit-full-page-media, _:future, :root .safari_only {
-            padding-bottom: 65px;
-        }
-    }
 </style>
