@@ -7,6 +7,7 @@
   import Guess from "./Guess.svelte";
   import Gameover from "./Gameover.svelte";
   import Countdown from "./Countdown.svelte";
+  import Footer from "./Footer.svelte";
   import Icon from "./Icon.svelte";
   import "./styles.css";
   import artistList from "$lib/artists.json";
@@ -60,8 +61,7 @@
     gender: getGenderLabel(artist.gender),
   }));
 
-
-  moment.tz.setDefault('UTC');
+  moment.tz.setDefault("UTC");
   const todaysDate = moment().utc().format("MM/DD/YYYY"); // Current date in UTC
 
   let playingGame = false;
@@ -266,9 +266,10 @@
     }
 
     const selectedArtist = artists.find((artist) => artist.name === artistName);
-
+    const guessNames = $guesses.map((artist) => artist.name);
+    
     if (normalGame) {
-      if ($guesses.includes(selectedArtist)) {
+      if (guessNames.includes(artistName)) {
         return;
       }
 
@@ -544,13 +545,52 @@
     <div class="content">
       {#if splashScreen}
         <div class="splash-screen">
-          <p>Guess the artist in 10 tries.</p>
+          <p>10 guesses</p>
+          <p>1000 artists</p>
+          <p>Can you guess the artist?</p>
           <button class="styled-btn main-btn" on:click={playGame}>PLAY</button>
           <p></p>
           <button class="styled-btn learn-btn" on:click={toggleHelp}>
             HOW TO PLAY
           </button>
           <p></p>
+
+          <div class="module-list">
+            <h2 class="module-list-header">Need more Spotle?</h2>
+            <div class="module" on:click={handleCreate}>
+              <div class="module-image"></div>
+              <div class="module-description">
+                <p>Create your own Spotle and send it to your friends!</p>
+              </div>
+            </div>
+
+            <div class="module">
+              <div class="module-image"></div>
+              <div class="module-description">
+                <p>Missed a few days? Rewind and play the last week.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="module-list">
+            <h2 class="module-list-header">Play our new game!</h2>
+            <div class="module">
+              <a
+                class="harmonies-link"
+                href="https://harmonies.io"
+                target="_blank"
+              >
+                <div class="module-image"></div>
+                <div class="module-description">
+                  <p>The music connections game!</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="ad-space"></div>
+
+          <!--           
           <p>Need more Spotle?</p>
           <button class="styled-btn" on:click={handleCreate}
             >CREATE A SPOTLE</button
@@ -559,14 +599,14 @@
           <button class="styled-btn coming-soon">
             SPOTLE REWIND (coming soon)
           </button>
-          <!-- <button class="styled-btn" on:click={playRush}>SPOTLE JAM</button> -->
+          <button class="styled-btn" on:click={playRush}>SPOTLE JAM</button>
 
           <p>Play our new game!</p>
           <button class="styled-btn purple"
             ><a href="https://harmonies.io" target="_blank"
               >Harmonies: Music connections</a
             ></button
-          >
+        > -->
         </div>
       {/if}
 
@@ -696,13 +736,7 @@
       {/if}
     </div>
     {#if !showHelp}
-      <div class="footer">
-        <p>made by flatwhite studios</p>
-        <p>
-          &nbsp;| <a href="./privacy" target="_blank">privacy</a> |
-          <a href="https://twitter.com/Spotle_io" target="_blank">follow us!</a>
-        </p>
-      </div>
+      <Footer playingGame={!splashScreen} />
     {/if}
   </div>
 </body>
@@ -723,21 +757,81 @@
   }
 
   .splash-screen p {
-    color: #fff;
+    color: #b5b5b5;
     text-align: center;
     font-size: 18px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
   }
 
   .splash-screen button:hover {
     transform: scale(1.075) perspective(1px);
   }
 
-  button a {
+  .module {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .module:hover {
+    cursor: pointer;
+  }
+
+  .module-list-header {
     color: #fff;
-    text-decoration: none; /* no underline */
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    flex-direction: flex-start;
+  }
+
+  .module-image {
+    border-radius: 5px 5px 0px 0px;
+    width: 329px;
+    height: 153px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background: radial-gradient(
+      97% 100% at 100% 50%,
+      #f9e3b0 13.03%,
+      #ffbaab 41.67%,
+      #b4baec 87.06%
+    );
+  }
+
+  .module-description {
+    width: 329px;
+    height: 60px;
+    border-radius: 0px 0px 5px 5px;
+    background: #2f2f2f;
+    margin-top: 0px;
+    padding-top: 0px;
+    display: flex;
+    justify-content: flex-start; /* Horizontal alignment to the left */
+    align-items: center;
+  }
+
+  .module-description p {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    text-align: left;
+    flex-direction: start;
+    align-items: center;
+    padding-right: 5%;
+    margin-left: 10px;
   }
 
   .container {
@@ -832,11 +926,14 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-top: 35px;
   }
 
   .learn-btn {
     border: 0.75px solid #fff;
     background: rgba(131, 112, 222, 0);
+    margin-bottom: 100px;
+    margin-top: 10px;
   }
 
   .coming-soon {
@@ -968,24 +1065,6 @@
 
   .create-form {
     border-radius: 5px;
-  }
-
-  .footer {
-    position: fixed;
-    margin-top: auto;
-    display: flex;
-    color: #fff;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    bottom: 0;
-    width: 100%;
-  }
-
-  .footer a {
-    color: #8370de;
-    text-decoration: underline;
   }
 
   .ad-space {
