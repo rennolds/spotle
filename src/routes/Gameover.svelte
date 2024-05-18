@@ -296,8 +296,8 @@
   }
 
   .image {
-    width: 212px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
   }
 
   .image-header {
