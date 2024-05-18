@@ -1,8 +1,7 @@
 <script>
-    export let playingGame;
 </script>
 
-<div class="footer {playingGame ? "fixed" : ""}">
+<div class="footer">
   <p>made by flatwhite studios</p>
   <p>
     &nbsp;| <a href="./privacy" target="_blank">privacy</a> |
@@ -15,6 +14,8 @@
     bottom: 0;
     width: 100%;
     color: #fff;
+    background-color: #101010;
+    height: 20px;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -23,9 +24,6 @@
     padding: 10px 0;
     display: flex;
     flex-direction: flex-start;
-  }
-
-  .fixed {
     position: fixed;
   }
 

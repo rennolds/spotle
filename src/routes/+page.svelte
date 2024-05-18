@@ -544,7 +544,7 @@
         <div class="splash-screen">
           <p>10 guesses</p>
           <p>1000 artists</p>
-          <p>Can you do it?</p>
+          <p>A new Spotle everyday</p>
           <button class="styled-btn main-btn" on:click={playGame}>PLAY</button>
           <p></p>
           <button class="styled-btn learn-btn" on:click={toggleHelp}>
@@ -776,7 +776,7 @@
       {/if}
     </div>
     {#if !showHelp}
-      <Footer playingGame={!splashScreen} />
+      <Footer />
     {/if}
   </div>
 </body>

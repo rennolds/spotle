@@ -228,7 +228,7 @@
   }
 
   .selector button.active {
-    background-color: #00b011;
+    background-color: #8370de;
     border-radius: 5px;
   }
 
