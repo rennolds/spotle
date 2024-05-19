@@ -485,7 +485,7 @@
       muted={$muted}
     ></Gameover>
   {/if}
-  <div class="container">
+  <div class="container apple-fix">
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
@@ -885,6 +885,26 @@
     display: flex;
     flex-direction: column;
   }
+
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+        .apple-fix {                           
+            height: 1024px;                         
+        }                       
+    }   
+                                                
+    /* iPad with landscape orientation. */                       
+    @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {                         
+        .apple-fix {                           
+            height: 768px;                         
+        }                       
+    }
+                                                  
+    /* iPhone 5 
+    You can also target devices with aspect ratio. */                       @media screen and (device-aspect-ratio: 40/71) {                              
+        .apple-fix {                           
+            height: 500px;                         
+        }                       
+    }
 
   .header {
     position: absolute; /* Change from relative to absolute */
