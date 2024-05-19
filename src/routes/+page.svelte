@@ -539,7 +539,7 @@
         </div>
       {/if}
     </div>
-    <div class="content" style="{playingGame ? "height: 100vh" : ""}">
+    <div class="content">
       {#if splashScreen}
         <div class="splash-screen">
           <p>10 guesses</p>
@@ -881,7 +881,7 @@
   .container {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
   }
@@ -945,7 +945,6 @@
   .content {
     padding-top: 75px; /* Adjust this value as needed to create space below the logo */
     margin-top: 75px;
-
   }
 
   .styled-btn {
