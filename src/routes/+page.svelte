@@ -501,10 +501,10 @@
         </div>
       {/if}
 
-      <div class="logo {playingGame ? 'smaller-svg' : ''}">
+      <div class={playingGame ? "logo" : ""}>
         <svg
-          width="225"
-          height="72"
+          width="200"
+          height="65"
           viewBox="0 0 225 72"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -881,49 +881,26 @@
   .container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
-        .apple-fix {                           
-            height: 1024px;                         
-        }                       
-    }   
-                                                
-    /* iPad with landscape orientation. */                       
-    @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {                         
-        .apple-fix {                           
-            height: 768px;                         
-        }                       
-    }
-                                                  
-    /* iPhone 5 
-    You can also target devices with aspect ratio. */                       @media screen and (device-aspect-ratio: 40/71) {                              
-        .apple-fix {                           
-            height: 500px;                         
-        }                       
-    }
-
   .header {
-    position: absolute; /* Change from relative to absolute */
     display: flex;
-    align-items: center;
-    top: 7%; /* Adjust this value as needed */
-    width: 100%; /* Ensure the header takes full width */
+    justify-content: center;
+    flex-direction: row;
+    width: 340px;
+    margin-top: 25px;
   }
 
   .logo {
-    position: absolute;
-    left: 50%; /* Positions the left edge of the element at the center of its containing block */
-    transform: translateX(
-      -50%
-    ); /* Translates the element back by half of its own width, effectively centering it */
+    margin-left: 25px;
   }
 
   .smaller-svg {
-    left: 43% !important;
+    height: 100%;
+    width: 100%;
   }
 
   .right {
@@ -942,7 +919,6 @@
   }
 
   .left {
-    margin-right: 50px;
     margin-top: 2.5px;
     display: flex; /* Ensure the button is aligned properly */
     align-items: center; /* Center the button vertically */
@@ -956,15 +932,13 @@
   button:hover {
     cursor: pointer;
   }
-
+  /* 
   .smaller-svg svg {
     width: 110%;
     height: 110%;
-  }
+  } */
 
   .content {
-    padding-top: 75px; /* Adjust this value as needed to create space below the logo */
-    margin-top: 75px;
   }
 
   .styled-btn {
