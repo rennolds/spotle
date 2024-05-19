@@ -15,6 +15,7 @@
   .empty-space {
     flex-grow: 1;
   }
+
   .footer {
     bottom: 0;
     width: 100%;
