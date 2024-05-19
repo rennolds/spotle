@@ -692,7 +692,7 @@
               Search for an artist to make your first guess.
             </p>
           {/if}
-          {#if normalGame && $guesses.length == 1}
+          {#if normalGame && $guesses.length == 1 && !$gameOver}
             <p class="in-game-text">
               Use the matching attributes to make more guesses. Good luck!
             </p>
@@ -714,7 +714,7 @@
                 {/each}
               {/if}
             </div>
-            {#if normalGame && $guesses.length == 1}
+            {#if normalGame && $guesses.length == 1 && !$gameOver}
               <svg
                 class="in-game-svg"
                 width="275"
@@ -881,17 +881,17 @@
   .container {
     position: relative;
     width: 100%;
-    height: 100svh;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
 
   .header {
-    position: relative; /* Establishes positioning context for absolutely positioned children */
+    position: absolute; /* Change from relative to absolute */
     display: flex;
     align-items: center;
-    top: 7%;
-    margin-bottom: 25px;
+    top: 7%; /* Adjust this value as needed */
+    width: 100%; /* Ensure the header takes full width */
   }
 
   .logo {
@@ -903,7 +903,7 @@
   }
 
   .smaller-svg {
-    left: 42% !important;
+    left: 43% !important;
   }
 
   .right {
@@ -944,6 +944,8 @@
 
   .content {
     padding-top: 75px; /* Adjust this value as needed to create space below the logo */
+    margin-top: 75px;
+    height: 100vh;
   }
 
   .styled-btn {

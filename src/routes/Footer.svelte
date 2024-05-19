@@ -29,7 +29,6 @@
     display: flex;
     flex-direction: flex-start;
     margin-bottom: 15px;
-    padding-bottom: 100px;
   }
 
   .footer a {
