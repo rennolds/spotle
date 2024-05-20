@@ -249,7 +249,7 @@
 <style>
   .overlay {
     position: fixed;
-    top: 5%;
+    top: 7.5%;
     left: 0;
     width: 100%;
     height: 80%;
