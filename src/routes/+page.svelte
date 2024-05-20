@@ -588,12 +588,7 @@
                 href="https://harmonies.io"
                 target="_blank"
               >
-                <div class="module-image-harmonies">
-                  <img
-                    class="module-img"
-                    src={harmoniesImage}
-                    alt="Play Harmonies"
-                  />
+                <div class="module-image-harmonies" style="background-image: url({harmoniesImage})">
                 </div>
                 <div class="module-description">
                   <p>The music connections game!</p>
@@ -870,7 +865,7 @@
     background-size: contain;
   }
 
-  .create-module {
+  /* .create-module {
     background: radial-gradient(
       97% 100% at 100% 50%,
       #f9e3b0 13.03%,
@@ -881,7 +876,7 @@
 
   .rewind-module {
     background: linear-gradient(60deg, #94EDFA 13.4%, #6B57F5 86.6%);
-  }
+  } */
 
   .module-header {
     position: absolute;
@@ -893,11 +888,11 @@
     font-style: normal;
     font-weight: 800;
     line-height: normal;
-}
+  }
 
-.module-btn {
-  margin-top: 20px;
-}
+  .module-btn {
+    margin-top: 20px;
+  }
 
   .module-icon {
     position: absolute;
@@ -912,6 +907,8 @@
     height: 275px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    background-position: center;
+    background-size: contain;
   }
 
   .module-description {
