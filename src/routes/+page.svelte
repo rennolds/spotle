@@ -591,7 +591,11 @@
                 <div class="module-image-harmonies" style="background-image: url({harmoniesImage})">
                 </div>
                 <div class="module-description">
-                  <p>The music connections game!</p>
+                  <div class="module-text-content">
+                    <h2>Harmonies</h2>
+                    <p>The music connections game!</p>
+                  </div>
+                  <button class="styled-btn harmonies-module-btn"> Play </button>
                 </div>
               </a>
             </div>
@@ -935,6 +939,41 @@
     align-items: center;
     padding-right: 5%;
     margin-left: 10px;
+    margin-top: 0px;
+  }
+
+  .module-description h2 {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    display: flex;
+    text-align: left;
+    flex-direction: start;
+    align-items: center;
+    padding-right: 5%;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .harmonies-module-btn {
+    width: 120px;
+    height: 35px !important;
+    align-self: center;
+    margin-right: 20px;
+  }
+  
+  .module-text-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .module-text-content p {
+    font-size: 12px;
   }
 
   .container {
@@ -955,11 +994,6 @@
 
   .logo {
     margin-left: 25px;
-  }
-
-  .smaller-svg {
-    height: 100%;
-    width: 100%;
   }
 
   .right {
@@ -983,21 +1017,8 @@
     align-items: center; /* Center the button vertically */
   }
 
-  .left button {
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
-  }
-
   button:hover {
     cursor: pointer;
-  }
-  /* 
-  .smaller-svg svg {
-    width: 110%;
-    height: 110%;
-  } */
-
-  .content {
   }
 
   .styled-btn {
@@ -1034,11 +1055,6 @@
     background: rgba(131, 112, 222, 0);
     margin-bottom: 100px;
     margin-top: 10px;
-  }
-
-  .coming-soon {
-    background-color: #6a6a6a;
-    color: #c3c3c3;
   }
 
   .solved-spotles {
