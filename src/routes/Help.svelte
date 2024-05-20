@@ -183,7 +183,7 @@
             <h2 class="attribute-header">Genre</h2>
             <p class="attribute-text">
               The artists genre. The options are: Rock, Pop, Hip Hop, Country,
-              Alternative, R&B, Latin, Classical, Jazz, Metal, Electronic, Reggae, and African.
+              Alternative, Folk, R&B, Latin, Classical, Jazz, Metal, Electronic, Reggae, and African.
             </p>
           </div>
           <div class="attribute-blocks">
