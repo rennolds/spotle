@@ -17,7 +17,7 @@
 
   onMount(() => {
     if (!muted) {
-      audio.volume = 0.5;
+      audio.volume = 0.65;
       audio.play();
     }
   });
@@ -194,7 +194,7 @@
 <!-- <div class="confetti">
   <Confetti duration="3000" amount="250" y={[-1, 2]} x={[-1.25, 1.25]} />
 </div> -->
-<div in:fly={{ y: 0, duration: 1500 }} class="overlay">
+<div in:fly={{ delay: 500, y: 0, duration: 1500 }} class="overlay">
   <div class="content">
     <div class="header">{header}</div>
     <button on:click={closeOverlay} class="close-button">

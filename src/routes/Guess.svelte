@@ -489,7 +489,7 @@
   }
 
   .close {
-    animation: flip-close 1.5s ease-in-out forwards;
+    animation: flip-close 1.65s ease-in-out forwards;
   }
 
   .flex-container {
@@ -507,7 +507,7 @@
   }
 
   .correct {
-    animation: flip-correct 1.5s ease-in-out forwards;
+    animation: flip-correct 1.65s ease-in-out forwards;
   }
 
   .nationality {
