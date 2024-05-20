@@ -262,7 +262,7 @@
   .content {
     position: relative;
     width: 320px;
-    height: 550px;
+    height: 575px;
     border-radius: 10px;
     background: rgba(48, 48, 48, 0.95);
     display: flex;
