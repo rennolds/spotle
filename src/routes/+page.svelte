@@ -61,8 +61,8 @@
     gender: getGenderLabel(artist.gender),
   }));
 
-  moment.tz.setDefault("UTC");
-  const todaysDate = moment().utc().format("MM/DD/YYYY"); // Current date in UTC
+  moment.tz.setDefault('America/New_York');
+  const todaysDate = moment().tz('America/New_York').format("MM/DD/YYYY");
 
   let playingGame = false;
   let normalGame = false;

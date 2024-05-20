@@ -4516,5 +4516,65 @@
     "artist": "Ty Dolla $ign",
     "song_uri": "https://p.scdn.co/mp3-preview/fc780d2d7634024c170723c769cca145d298e53f?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730a31b4026a452ae8c3f97a76"
-  } 
+  },
+  {
+    "date": "05/20/2024",
+    "artist": "Selena Gomez",
+    "song_uri": "https://p.scdn.co/mp3-preview/b96d1c40ff6badba96c7f764ef5a13282120a4c5?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732abcc266597eb46f897a8666"
+  },
+  {
+    "date": "05/21/2024",
+    "artist": "Nirvana",
+    "song_uri": "https://p.scdn.co/mp3-preview/9781673a70278effbced98841341a2321e846a62?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e175a19e530c898d167d39bf"
+  },
+  {
+    "date": "05/22/2024",
+    "artist": "Noah Kahan",
+    "song_uri": "https://p.scdn.co/mp3-preview/0495eca339f32d0acaa62ca9be55d2b815ccc4e3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736ee35072df1af802cca09918"
+  },
+  {
+    "date": "05/23/2024",
+    "artist": "Post Malone",
+    "song_uri": "https://p.scdn.co/mp3-preview/f9fb5b13fdd9f89e755eac3e16533838c59b59ae?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27355404f712deb84d0650a4b41"
+  },
+  {
+    "date": "05/24/2024",
+    "artist": "Phil Collins",
+    "song_uri": "https://p.scdn.co/mp3-preview/31c39a7bd82cc18f28c48ead9b95a0fa03147c3e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f6954c1f074f66907a8c5483"
+  },
+  {
+    "date": "05/25/2024",
+    "artist": "DaBaby",
+    "song_uri": "https://p.scdn.co/mp3-preview/6af6db91dba9103cca41d6d5225f6fe120fcfcd3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab676161000051740da5cd9354d458143258879a"
+  },
+  {
+    "date": "05/26/2024",
+    "artist": "Meghan Trainor",
+    "song_uri": "https://p.scdn.co/mp3-preview/f0eb89945aa820c0f30b5e97f8e2cab42d9f0a99?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731a4f1ada93881da4ca8060ff"
+  },
+  {
+    "date": "0/27/2024",
+    "artist": "Christina Aguilera",
+    "song_uri": "https://p.scdn.co/mp3-preview/06d1b4ae1b631b29bbfd8b9a66a37f18dd73713a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f89996e214be1763b2a9e948"
+  },
+  {
+    "date": "05/28/2024",
+    "artist": "Mozart",
+    "song_uri": "https://p.scdn.co/mp3-preview/9c24d946471cd03f05c727f9c83e43f4ad5997eb?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://www.sandiegosymphony.org/media/uploads/blog/cool-mozart.jpg"
+  },
+  {
+    "date": "05/29/2024",
+    "artist": "Red Hot Chili Peppers",
+    "song_uri": "https://p.scdn.co/mp3-preview/d5094f7d32c25e92d8d362246c0a3f3e7f02a813?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27394d08ab63e57b0cae74e8595"
+  }
 ]
