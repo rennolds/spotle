@@ -34,3 +34,9 @@
   html, body {
     overflow-x: hidden;
   }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      background-color: #101010;
+    }
+  }
