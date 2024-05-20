@@ -249,10 +249,10 @@
 <style>
   .overlay {
     position: fixed;
-    top: 3%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,7 +262,7 @@
   .content {
     position: relative;
     width: 320px;
-    height: 650px;
+    height: 600px;
     border-radius: 10px;
     background: rgba(48, 48, 48, 0.95);
     display: flex;
