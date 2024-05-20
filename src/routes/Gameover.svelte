@@ -284,8 +284,8 @@
 
   .close-button {
     position: absolute;
-    top: 0.9em;
-    right: 0.5em;
+    top: 12px;
+    right: 8px;
     cursor: pointer;
     background: none;
     border: none;
