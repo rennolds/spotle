@@ -12,6 +12,9 @@
   import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
+  import rewindImage from "$lib/assets/rewind.png";
+  import createImage from "$lib/assets/create.png";
+  import harmoniesImage from "$lib/assets/harmonies.png";
   import {
     visited,
     currentGameDate,
@@ -61,8 +64,8 @@
     gender: getGenderLabel(artist.gender),
   }));
 
-  moment.tz.setDefault('America/New_York');
-  const todaysDate = moment().tz('America/New_York').format("MM/DD/YYYY");
+  moment.tz.setDefault("America/New_York");
+  const todaysDate = moment().tz("America/New_York").format("MM/DD/YYYY");
 
   let playingGame = false;
   let normalGame = false;
@@ -555,14 +558,26 @@
           <div class="module-list">
             <h2 class="module-list-header">Need more Spotle?</h2>
             <div class="module" on:click={handleCreate}>
-              <div class="module-image"></div>
+              <div class="module-image">
+                <img
+                  class="module-img"
+                  src={createImage}
+                  alt="Create a Spotle"
+                />
+              </div>
               <div class="module-description">
                 <p>Create your own Spotle and send it to your friends!</p>
               </div>
             </div>
 
             <div class="module">
-              <div class="module-image"></div>
+              <div class="module-image">
+                <img
+                  class="module-img"
+                  src={rewindImage}
+                  alt="Play Spotle Rewind"
+                />
+              </div>
               <div class="module-description">
                 <p>Missed a few days? Rewind and play the last week.</p>
               </div>
@@ -577,7 +592,13 @@
                 href="https://harmonies.io"
                 target="_blank"
               >
-                <div class="module-image"></div>
+                <div class="module-image-harmonies">
+                  <img
+                    class="module-img"
+                    src={harmoniesImage}
+                    alt="Play Harmonies"
+                  />
+                </div>
                 <div class="module-description">
                   <p>The music connections game!</p>
                 </div>
@@ -692,11 +713,6 @@
               Search for an artist to make your first guess.
             </p>
           {/if}
-          {#if normalGame && $guesses.length == 1 && !$gameOver}
-            <p class="in-game-text">
-              Use the matching attributes to make more guesses. Good luck!
-            </p>
-          {/if}
           {#if playingChallenge && tempGuesses.length == 0 && challengeNote != ""}
             <p class="in-game-text">
               A hint from your friend: {challengeNote}
@@ -714,6 +730,11 @@
                 {/each}
               {/if}
             </div>
+            {#if normalGame && $guesses.length == 1 && !$gameOver}
+              <p class="in-game-text">
+                Use the matching attributes to make more guesses. Good luck!
+              </p>
+            {/if}
             {#if normalGame && $guesses.length == 1 && !$gameOver}
               <svg
                 class="in-game-svg"
@@ -844,12 +865,25 @@
     height: 153px;
     margin-bottom: 0px;
     padding-bottom: 0px;
-    background: radial-gradient(
+    /* background: radial-gradient(
       97% 100% at 100% 50%,
       #f9e3b0 13.03%,
       #ffbaab 41.67%,
       #b4baec 87.06%
-    );
+    ); */
+  }
+
+  .module-image-harmonies {
+    border-radius: 5px 5px 0px 0px;
+    width: 329px;
+    height: 275px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  .module-img {
+    width: 100%;
+    height: 100%;
   }
 
   .module-description {
