@@ -13,6 +13,8 @@
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
   import harmoniesImage from "$lib/assets/harmonies.png";
+  import rewindImage from "$lib/assets/rewind.png";
+  import createImage from "$lib/assets/create.png";
   import {
     visited,
     currentGameDate,
@@ -557,7 +559,7 @@
             <h2 class="module-list-header">Need more Spotle?</h2>
             <div class="module" on:click={handleCreate}>
               <div class="module-header">Create Game</div>
-              <div class="module-image create-module">
+              <div class="module-image" style="background-image: url({createImage})">
                 <div class="module-icon"><Icon width={"1.75rem"} height={"1.75rem"} name={"create"}></Icon></div>
                 <button class="styled-btn module-btn">Create</button>
               </div>
@@ -567,9 +569,9 @@
             </div>
 
             <div class="module">
-              <div class="module-image rewind-module">   
+              <div class="module-image" style="background-image: url({rewindImage})">   
                 <div class="module-header">Spotle Rewind</div>
-                <div class="module-icon"><Icon width={"1.75rem"} height={"2rem"} name={"rewind"}></Icon></div>
+                <div class="module-icon"><Icon width={"1.75rem"} height={"1.75rem"} name={"rewind"}></Icon></div>
                 <button class="styled-btn module-btn">coming soon</button>                           
               </div>
               <div class="module-description">
@@ -790,7 +792,7 @@
         </div>
       {/if}
     </div>
-    {#if !showHelp}
+    {#if !showHelp && !createGame}
       <Footer />
     {/if}
   </div>
@@ -857,14 +859,15 @@
   .module-image {
     border-radius: 5px 5px 0px 0px;
     width: 329px;
-    height: 160px;
+    height: 135px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     border-radius: 5px 5px 0px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-position: center;
+    background-size: contain;
   }
 
   .create-module {
@@ -892,6 +895,10 @@
     line-height: normal;
 }
 
+.module-btn {
+  margin-top: 20px;
+}
+
   .module-icon {
     position: absolute;
     top: 10px; /* Adjust as needed */
@@ -905,11 +912,6 @@
     height: 275px;
     margin-bottom: 0px;
     padding-bottom: 0px;
-  }
-
-  .module-img {
-    width: 100%;
-    height: 100%;
   }
 
   .module-description {
