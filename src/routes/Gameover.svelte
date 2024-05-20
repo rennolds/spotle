@@ -249,7 +249,7 @@
 <style>
   .overlay {
     position: fixed;
-    top: 0;
+    top: 5%;
     left: 0;
     width: 100%;
     height: 80%;
@@ -262,7 +262,7 @@
   .content {
     position: relative;
     width: 320px;
-    height: 600px;
+    height: 550px;
     border-radius: 10px;
     background: rgba(48, 48, 48, 0.95);
     display: flex;
@@ -275,7 +275,7 @@
   .header {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
     color: #fff;
     margin-top: 2px;
@@ -292,33 +292,33 @@
   }
 
   .image-container {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
   }
 
   .image {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
   }
 
   .image-header {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 7.5px;
     text-align: left;
     flex-direction: start;
   }
 
   .sub-header {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
   }
 
   .buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     flex-direction: column; /* Changed to stack buttons vertically */
     align-items: center; /* Center buttons horizontally */
   }
@@ -334,7 +334,7 @@
     background-color: #8370de;
     color: #fff;
     cursor: pointer;
-    margin-bottom: 10px; /* Added margin between buttons */
+    margin-bottom: 7.5px; /* Added margin between buttons */
 
     text-align: center;
     font-size: 15px;
