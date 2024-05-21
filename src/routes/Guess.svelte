@@ -302,6 +302,7 @@
 
   export let artist;
   export let mysteryArtist;
+
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
   function getRegion(region) {
@@ -460,8 +461,9 @@
   }
 
   .small img {
-    width: 68px;
+    width: 69px;
     height: 40px;
+    object-fit: contain;
   }
 
   /* .item {
@@ -528,7 +530,7 @@
     }
     100% {
       transform: rotateY(0deg);
-      background-color: #00b011; /* Change to the green background color */
+      background-color: #43a865; /* Change to the green background color */
     }
   }
 
@@ -545,12 +547,7 @@
     }
     100% {
       transform: rotateY(0deg);
-      background-color: rgba(
-        255,
-        245,
-        0,
-        0.7
-      ); /* Change to the green background color */
+      background-color: #b8b105; /* Change to the green background color */
     }
   }
 </style>
