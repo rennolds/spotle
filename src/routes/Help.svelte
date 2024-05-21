@@ -1,8 +1,5 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import step01 from "$lib/assets/howtoplay1.svg?raw";
-  import step02 from "$lib/assets/howtoplay2.svg?raw";
-  import step03 from "$lib/assets/howtoplay3.svg?raw";
 
   const dispatch = createEventDispatcher();
 
@@ -67,7 +64,7 @@
           </div>
         </div>
         <div class="help-svg">
-          {@html step01}
+          <img src="/resources/howtoplay1.svg" alt="How to play diagram 1">
         </div>
       </div>
 
@@ -81,7 +78,7 @@
           </div>
         </div>
         <div class="help-svg">
-          {@html step02}
+          <img src="/resources/howtoplay2.svg" alt="How to play diagram 2">
         </div>
       </div>
 
@@ -106,7 +103,7 @@
           </div>
         </div>
         <div class="help-svg">
-          {@html step03}
+          <img src="/resources/howtoplay3.svg" alt="How to play diagram 3">
         </div>
       </div>
       <div class="ad-space"></div>
