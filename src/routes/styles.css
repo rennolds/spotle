@@ -2,15 +2,18 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 600;
-  
     color: #aaa;
-    /* background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%); */
-    background-color: #101010;
   
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   
   body {
@@ -24,6 +27,7 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
+    
 
 
 
@@ -35,8 +39,8 @@
     overflow-x: hidden;
   }
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     :root {
       background-color: #101010;
     }
-  }
+  } */
