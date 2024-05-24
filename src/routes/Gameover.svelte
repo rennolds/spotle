@@ -1,7 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
-  // import { Confetti } from "svelte-confetti";
   import { fly } from "svelte/transition";
   import moment from "moment";
   import "moment-timezone";

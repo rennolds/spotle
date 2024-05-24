@@ -12,10 +12,9 @@
   import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
-  import harmoniesImage from "$lib/assets/harmonies.png";
-  import rewindImage from "$lib/assets/rewind.png";
-  import createImage from "$lib/assets/create.png";
-  import cdImage from "$lib/assets/cd.svg";
+  // import harmoniesImage from "$lib/assets/harmonies.png";
+  // import rewindImage from "$lib/assets/rewind.png";
+  // import createImage from "$lib/assets/create.png";
   import {
     visited,
     currentGameDate,
@@ -973,7 +972,7 @@
           >
             <img
               class="artist-image"
-              src={isHovered ? yesterdaysArtist.image_uri : cdImage}
+              src={isHovered ? yesterdaysArtist.image_uri : "resources/cd.png"}
               alt="Artist Image"
             />
             <p class="artist-name">
@@ -986,7 +985,7 @@
               <div class="module-header">Create Game</div>
               <div
                 class="module-image"
-                style="background-image: url({createImage})"
+                style="background-image: url(resources/create.png)"
               >
                 <div class="module-icon">
                   <Icon width={"1.75rem"} height={"1.75rem"} name={"create"}
@@ -1002,7 +1001,7 @@
             <div class="module">
               <div
                 class="module-image"
-                style="background-image: url({rewindImage})"
+                style="background-image: url(resources/rewind.png)"
               >
                 <div class="module-header">Spotle Rewind</div>
                 <div class="module-icon">
@@ -1027,7 +1026,7 @@
               >
                 <div
                   class="module-image-harmonies"
-                  style="background-image: url({harmoniesImage})"
+                  style="background-image: url(/resources/harmonies.png)"
                 ></div>
                 <div class="module-description">
                   <div class="module-text-content">
