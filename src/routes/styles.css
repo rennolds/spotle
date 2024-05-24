@@ -4,13 +4,19 @@
     font-weight: 600;
   
     color: #aaa;
-    /* background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%); */
-    background-color: #101010;
+    /*
+    background-color: #101010; */
   
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   
   body {

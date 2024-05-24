@@ -66,6 +66,20 @@
 
   moment.tz.setDefault("America/New_York");
   const todaysDate = moment().tz("America/New_York").format("MM/DD/YYYY");
+  const previousDay = moment()
+    .tz("America/New_York")
+    .subtract(1, "days")
+    .format("MM/DD/YYYY");
+
+  const yesterdaysArtistEntry = mysteryArtistList.find(
+    (entry) => entry.date === previousDay
+  );
+  const yesterdaysArtist = artists.find(
+    (artist) => artist.name === yesterdaysArtistEntry.artist
+  );
+
+  console.log(yesterdaysArtist.name);
+  console.log(yesterdaysArtist.image_uri);
 
   let playingGame = false;
   let normalGame = false;
@@ -87,6 +101,7 @@
   let mysteryArtist;
   let spotleNumber = "-1";
   let challengeNote = "";
+  let isHovered = false;
 
   if (browser) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -940,16 +955,30 @@
     <div class="content">
       {#if splashScreen}
         <div class="splash-screen">
-          <p>10 guesses</p>
-          <p>1000 artists</p>
+          <div class="tagline">
+          <p>10 guesses, 1000 artists</p>
           <p>Will you win today?</p>
+          </div>
           <button class="styled-btn main-btn" on:click={playGame}>PLAY</button>
           <p></p>
-          <button class="styled-btn learn-btn" on:click={toggleHelp}>
-            HOW TO PLAY
-          </button>
+          <!-- <button class="learn-btn" on:click={toggleHelp}> -->
+            <p class="learn-btn" on:click={toggleHelp}>How to Play</p>
+          <!-- </button> -->
           <p></p>
-
+          <div
+            class="yesterdays-artist {isHovered ? 'hovered' : ''}"
+            on:mouseover={() => (isHovered = true)}
+            on:mouseout={() => (isHovered = false)}
+          >
+            <img
+              class="artist-image"
+              src={isHovered ? yesterdaysArtist.image_uri : "resources/cd.png"}
+              alt="Artist Image"
+            />
+            <p class="artist-name">
+              {isHovered ? yesterdaysArtist.name : "yesterday's"}
+            </p>
+          </div>
           <div class="module-list">
             <h2 class="module-list-header">Need more Spotle?</h2>
             <div class="module" on:click={handleCreate}>
@@ -1225,6 +1254,36 @@
     transform: scale(1.075) perspective(1px);
   }
 
+  .tagline {
+    margin-bottom: 30px;
+    margin-top: -20px;
+  }
+
+  .yesterdays-artist {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 70px;
+  }
+
+  .yesterdays-artist {
+    cursor: pointer;
+  }
+
+  .yesterdays-artist p {
+    margin-left: 15px;
+
+  }
+
+  .artist-image {
+    border-radius: 500px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
   .module {
     display: flex;
     justify-content: center;
@@ -1450,10 +1509,12 @@
   }
 
   .learn-btn {
-    border: 0.75px solid #fff;
-    background: rgba(131, 112, 222, 0);
-    margin-top: 10px;
-    margin-bottom: 65px;
+    margin-top: 15px !important;
+    color: #8370de !important;
+  }
+
+  .learn-btn:hover {
+    cursor: pointer;
   }
 
   .solved-spotles {
