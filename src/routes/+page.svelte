@@ -965,7 +965,6 @@
           </button>
           <p></p>
           <div
-            transition:fade={{ duration: 1000 }}
             class="yesterdays-artist {isHovered ? 'hovered' : ''}"
             on:mouseover={() => (isHovered = true)}
             on:mouseout={() => (isHovered = false)}
@@ -1269,6 +1268,10 @@
 
   .yesterdays-artist p {
     margin-left: 15px;
+
+  }
+
+  .hovered {
     transition: opacity 0.5s ease;
   }
 
