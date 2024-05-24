@@ -955,8 +955,7 @@
     <div class="content">
       {#if splashScreen}
         <div class="splash-screen">
-          <p>10 guesses</p>
-          <p>1000 artists</p>
+          <p>10 guesses, 1000 artists</p>
           <p>Will you win today?</p>
           <button class="styled-btn main-btn" on:click={playGame}>PLAY</button>
           <p></p>
@@ -1271,22 +1270,6 @@
 
   }
 
-  .hovered {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 2s;
-}
-
-@keyframes fadeInOpacity {
-	0% {
-		opacity: 50%;
-	}
-	100% {
-		opacity: 1;
-	}
-}
   .artist-image {
     border-radius: 500px;
     width: 40px;
