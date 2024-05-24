@@ -15,9 +15,14 @@
 
   html {
 
+    height: 100%
   }
   
   body {
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     margin: 0;
     display: flex;
     justify-content: center;
@@ -28,11 +33,6 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
-
-    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
 
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
