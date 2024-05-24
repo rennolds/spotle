@@ -955,8 +955,10 @@
     <div class="content">
       {#if splashScreen}
         <div class="splash-screen">
+          <div class="tagline">
           <p>10 guesses, 1000 artists</p>
           <p>Will you win today?</p>
+          </div>
           <button class="styled-btn main-btn" on:click={playGame}>PLAY</button>
           <p></p>
           <!-- <button class="learn-btn" on:click={toggleHelp}> -->
@@ -1252,13 +1254,18 @@
     transform: scale(1.075) perspective(1px);
   }
 
+  .tagline {
+    margin-bottom: 30px;
+    margin-top: -20px;
+  }
+
   .yesterdays-artist {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 75px;
-    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-top: 70px;
   }
 
   .yesterdays-artist {
