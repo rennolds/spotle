@@ -13,8 +13,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  html {
-    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
+  html, body {
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 38.62%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -33,12 +33,6 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
-
-    height: 100%;
-    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 33.62%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
