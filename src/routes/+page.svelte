@@ -960,9 +960,9 @@
           <p>Will you win today?</p>
           <button class="styled-btn main-btn" on:click={playGame}>PLAY</button>
           <p></p>
-          <button class="styled-btn learn-btn" on:click={toggleHelp}>
-            HOW TO PLAY
-          </button>
+          <!-- <button class="learn-btn" on:click={toggleHelp}> -->
+            <p class="learn-btn" on:click={toggleHelp}>How to Play</p>
+          <!-- </button> -->
           <p></p>
           <div
             class="yesterdays-artist {isHovered ? 'hovered' : ''}"
@@ -1259,7 +1259,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 75px;
-    margin-top: 15px;
+    margin-top: 30px;
   }
 
   .yesterdays-artist {
@@ -1272,9 +1272,21 @@
   }
 
   .hovered {
-    transition: opacity 0.5s ease;
-  }
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
 
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 50%;
+	}
+	100% {
+		opacity: 1;
+	}
+}
   .artist-image {
     border-radius: 500px;
     width: 40px;
@@ -1507,9 +1519,12 @@
   }
 
   .learn-btn {
-    border: 0.75px solid #fff;
-    background: rgba(131, 112, 222, 0);
-    margin-top: 10px;
+    margin-top: 15px !important;
+    color: #8370de !important;
+  }
+
+  .learn-btn:hover {
+    cursor: pointer;
   }
 
   .solved-spotles {
