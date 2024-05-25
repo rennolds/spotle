@@ -12,9 +12,6 @@
   import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
-  // import harmoniesImage from "$lib/assets/harmonies.png";
-  // import rewindImage from "$lib/assets/rewind.png";
-  // import createImage from "$lib/assets/create.png";
   import {
     visited,
     currentGameDate,
