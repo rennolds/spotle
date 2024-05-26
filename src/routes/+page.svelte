@@ -9,7 +9,6 @@
   import Countdown from "./Countdown.svelte";
   import Footer from "./Footer.svelte";
   import Icon from "./Icon.svelte";
-  import "./styles.css";
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
   import {
@@ -1220,47 +1219,10 @@
 </body>
 
 <style>
-
-:root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 600;
-  
-    color: #aaa;
-  
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  html, body {
-    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 38.62%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100%;
-    margin: 0;
-  }
-  
   body {
-    display: flex;
-    justify-content: center;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
     overflow: none;
-  }
-  
-  html, body {
-    overflow-x: hidden;
   }
 
   body::-webkit-scrollbar {
