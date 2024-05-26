@@ -18,6 +18,7 @@
     muted,
     gameOver,
   } from "./store.js";
+  import "./styles.css"
 
   onMount(() => {
     if (browser) {
@@ -1219,16 +1220,6 @@
 </body>
 
 <style>
-  body {
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    overflow: none;
-  }
-
-  body::-webkit-scrollbar {
-    display: none;
-  }
-
   .splash-screen {
     margin-top: 15px;
   }
