@@ -75,9 +75,6 @@
     (artist) => artist.name === yesterdaysArtistEntry.artist
   );
 
-  console.log(yesterdaysArtist.name);
-  console.log(yesterdaysArtist.image_uri);
-
   let playingGame = false;
   let normalGame = false;
   let createGame = false;
@@ -1223,10 +1220,47 @@
 </body>
 
 <style>
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 600;
+  
+    color: #aaa;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html, body {
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 38.62%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+  }
+  
   body {
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     overflow: none;
+  }
+  
+  html, body {
+    overflow-x: hidden;
   }
 
   body::-webkit-scrollbar {
