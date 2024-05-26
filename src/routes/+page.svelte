@@ -278,9 +278,10 @@
     }
 
     const selectedArtist = artists.find((artist) => artist.name === artistName);
-    const guessNames = $guesses.map((artist) => artist.name);
 
     if (normalGame) {
+      const guessNames = $guesses.map((artist) => artist.name);
+    
       if (guessNames.includes(artistName)) {
         return;
       }
