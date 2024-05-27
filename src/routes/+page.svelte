@@ -1421,17 +1421,6 @@
     font-size: 12px;
   }
 
-  .container {
-    width: 340px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin-top: 5rem;
-    left: 50%; 
-    transform: translateX(-50%);
-  }
-
   .header {
     display: flex;
     justify-content: center;
