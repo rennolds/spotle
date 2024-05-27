@@ -1679,6 +1679,10 @@
     .container {
       margin-top: 52.5px;
     }
+
+    .ezoic-108 {
+      height: 52.5px;
+    }
   }
 
   @media only screen and (min-width: 800px) {
