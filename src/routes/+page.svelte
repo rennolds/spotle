@@ -499,8 +499,8 @@
     ></Gameover>
   {/if}
   <div class="bg">
+  <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
   <div class="container apple-fix">
-    <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
@@ -1423,7 +1423,6 @@
 
   .container {
     position: absolute;
-    margin-top: 80px;
     width: 340px;
     height: 100%;
     display: flex;
@@ -1678,6 +1677,12 @@
   @media only screen and (max-width: 600px) {
     .ezoic-108 {
       height: 52.5px;
+    }
+  }
+
+  @media only screen and (min-width: 800px) {
+    .container {
+      margin-top: 60px;
     }
   }
 </style>
