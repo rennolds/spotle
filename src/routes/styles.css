@@ -9,15 +9,14 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 38.62%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
   }
 
   html, body {
     overflow-x: hidden;
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 38.62%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
   
   body {
