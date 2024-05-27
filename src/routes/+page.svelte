@@ -1668,7 +1668,6 @@
   @media only screen and (max-width: 600px) {
     .ezoic-108 {
       height: 52.5px;
-      background-color: blue;
     }
   }
 </style>
