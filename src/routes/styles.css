@@ -12,45 +12,24 @@
 }
 
 html {
-  height: 100%;
-}
-
-.bg {
-  background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-  background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-  background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-  background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
+  background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
   background-repeat: no-repeat;
-  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100%;
-  width: 100vw;
-  position: fixed;
-  overflow-x: scroll;
+  z-index: 1;
 }
-
-.container {
-  width: 340px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 50%; 
-  transform: translateX(-50%);
-}
-
-/* @media only screen and (max-width: 600px) {
-  .container {
-
-  }
-} */
 
 body {
   display: flex;
   justify-content: center;
   place-items: center;
   min-width: 320px;
-  height: 100%;
+  min-height: 100%;
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
