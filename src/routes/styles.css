@@ -13,7 +13,7 @@
 
   html, body {
     overflow-x: hidden;
-    background-color: #010101;
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
