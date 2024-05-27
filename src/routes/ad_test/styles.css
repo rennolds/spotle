@@ -1,0 +1,56 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 600;
+
+  color: #aaa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+}
+
+.bg {
+  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow-x: scroll;
+}
+
+.container {
+  width: 340px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: none;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
