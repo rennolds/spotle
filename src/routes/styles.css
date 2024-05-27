@@ -11,12 +11,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  html, body {
-    background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
+  html {
+    background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+    background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+    background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+    background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
