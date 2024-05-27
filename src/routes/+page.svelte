@@ -498,8 +498,10 @@
       muted={$muted}
     ></Gameover>
   {/if}
-  <div class="container apple-fix">
+  <div class="bg">
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
+  <div class="container apple-fix">
+    
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
@@ -1217,6 +1219,7 @@
       <Footer />
     {/if}
   </div>
+</div>
 </body>
 
 <style>
@@ -1417,14 +1420,6 @@
 
   .module-text-content p {
     font-size: 12px;
-  }
-
-  .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
   }
 
   .header {
