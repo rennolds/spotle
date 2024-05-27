@@ -1423,7 +1423,7 @@
 
   .container {
     position: absolute;
-    margin-top: 50px;
+    margin-top: 100px;
     width: 340px;
     height: 100%;
     display: flex;
