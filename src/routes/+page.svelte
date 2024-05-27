@@ -498,6 +498,7 @@
       muted={$muted}
     ></Gameover>
   {/if}
+  <div class="bg">
   <div class="container apple-fix">
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
@@ -1217,6 +1218,7 @@
       <Footer />
     {/if}
   </div>
+</div>
 </body>
 
 <style>
@@ -1420,11 +1422,14 @@
   }
 
   .container {
-    position: relative;
-    width: 100%;
+    width: 340px;
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    margin-top: 5rem;
+    left: 50%; 
+    transform: translateX(-50%);
   }
 
   .header {
