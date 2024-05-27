@@ -1686,7 +1686,7 @@
 
   @media only screen and (min-width: 800px) {
     .container {
-      margin-top: 35px;
+      margin-top: 40px;
     }
   }
 </style>
