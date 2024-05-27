@@ -1,50 +1,44 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 600;
-  
-    color: #aaa;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 600;
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  color: #aaa;
 
-  html {
-    height: 100%;
-  }
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .bg {
-    background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    overflow-x: scroll;
-  }
+html {
+  background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  z-index: 1;
+}
 
-  body {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  body::-webkit-scrollbar {
-    display: none;
-  }
-  
+body {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
