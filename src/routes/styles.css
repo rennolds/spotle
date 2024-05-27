@@ -35,16 +35,15 @@ html {
   display: flex;
   flex-direction: column;
   position: absolute;
-  margin-top: 1rem;
   left: 50%; 
   transform: translateX(-50%);
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .container {
-    margin-top: 2.5rem;
+
   }
-}
+} */
 
 body {
   display: flex;
