@@ -1683,7 +1683,7 @@
 
   @media only screen and (min-width: 800px) {
     .container {
-      margin-top: 60px;
+      margin-top: 30px;
     }
   }
 </style>
