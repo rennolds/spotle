@@ -1423,7 +1423,6 @@
 
   .container {
     position: absolute;
-    top: 52.5px;
     width: 340px;
     height: 100%;
     display: flex;
@@ -1676,10 +1675,6 @@
   }
 
   @media only screen and (max-width: 600px) {
-    .container {
-      margin-top: 52.5px;
-    }
-
     .ezoic-108 {
       height: 52.5px;
     }
