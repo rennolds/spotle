@@ -4,6 +4,7 @@
   font-weight: 600;
 
   color: #aaa;
+  height: 100% !important;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -49,10 +50,6 @@ body {
 
 #main-body {
   height: 100%;
-}
-
-html {
-  height: 100% !important;
 }
 
 body::-webkit-scrollbar {
