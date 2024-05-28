@@ -1213,7 +1213,7 @@
         </div>
       {/if}
     </div>
-    {#if (playingGame && $guesses.length > 1) || splashScreen}
+    {#if (playingGame && $guesses.length > 1) && !createGame || splashScreen}
       <Footer />
     {/if}
   </div>
