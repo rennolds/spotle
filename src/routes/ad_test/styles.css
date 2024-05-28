@@ -33,6 +33,7 @@ html {
   flex-direction: column;
   position: absolute;
   left: 50%; 
+  margin-top: 1.25em;
   transform: translateX(-50%);
 }
 
@@ -48,6 +49,10 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow: none;
+  height: 100%;
+}
+
+#main-body {
   height: 100%;
 }
 
