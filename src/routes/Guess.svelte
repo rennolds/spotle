@@ -322,7 +322,11 @@
 
 <div class="header-row">
   <img src={artist.image_uri} alt={artist.name} />
+  {#if artist.name.length > 15}
+  <h2 class="header-name-small">{artist.name}</h2>
+  {:else}
   <h2>{artist.name}</h2>
+  {/if}
 </div>
 <div class="row">
   <div
@@ -438,6 +442,10 @@
 
   .header-row h2 {
     font-size: 27px;
+  }
+
+  .header-name-small {
+    font-size: 22px !important;
   }
 
   h3 {
