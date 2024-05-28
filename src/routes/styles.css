@@ -37,11 +37,12 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow: none;
-}
-
-#main-body {
   height: 100%;
 }
+
+/* #main-body {
+  height: 100%;
+} */
 
 body::-webkit-scrollbar {
   display: none;
