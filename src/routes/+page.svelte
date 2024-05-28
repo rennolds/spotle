@@ -486,7 +486,7 @@
   }
 </script>
 
-<body>
+<body id="main-body">
   {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
