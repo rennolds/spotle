@@ -45,13 +45,6 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow: none;
-}
-
-#main-body {
-  height: 100%;
-}
-
-html {
   height: 100%;
 }
 
