@@ -1448,6 +1448,7 @@
 
   .icon-btn {
     margin-left: 7.5px;
+    z-index: 9001;
   }
 
   .icon-btn:hover {

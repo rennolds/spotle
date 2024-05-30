@@ -255,7 +255,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 9000;
   }
 
   .content {

@@ -4576,5 +4576,47 @@
     "artist": "Red Hot Chili Peppers",
     "song_uri": "https://p.scdn.co/mp3-preview/d5094f7d32c25e92d8d362246c0a3f3e7f02a813?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27394d08ab63e57b0cae74e8595"
+  },
+  {
+    "date": "05/30/2024",
+    "artist": "Migos",
+    "song_uri": "https://p.scdn.co/mp3-preview/4a41e7ce886957ac445a00500f1780ff2f614377?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739c188c494d8bfaf895411890"
+  },
+  {
+    "date": "05/31/2024",
+    "artist": "Cher",
+    "song_uri": "https://p.scdn.co/mp3-preview/4d1118af5a493275e5c7522aaa26faa34b72d828?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27306ce0d1f846c525e847d60e7"
+  },
+  {
+    "date": "06/01/2024",
+    "artist": "Bon Jovi",
+    "song_uri": "https://p.scdn.co/mp3-preview/2a84c209d6bfe17da820bbc28d1e610a5d304a53?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731336b31b6a1799f0de5807ac"
+  },
+  {
+    "date": "06/02/2024",
+    "artist": "Alicia Keys",
+    "song_uri": "https://p.scdn.co/mp3-preview/2d1fd54c4a4147b43e1eb79c00380e36818a2546?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27356ff19308ebeb48e2ba6094b"
+  },
+  {
+    "date": "06/03/2024",
+    "artist": "Lil Baby",
+    "song_uri": "https://p.scdn.co/mp3-preview/613d9fe82d39123b5f37cfcbc9e3c22431fd3c8a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ce159a3ba2096e13fa9d4b4c"
+  },
+  {
+    "date": "06/04/2024",
+    "artist": "Gwen Stefani",
+    "song_uri": "https://p.scdn.co/mp3-preview/40701cf8d35740051acd68d1c76a7e623fa3832f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738dd53da15b55d402dfc3a20e"
+  },
+  {
+    "date": "06/04/2024",
+    "artist": "The Cranberries",
+    "song_uri": "https://p.scdn.co/mp3-preview/7b68bf72ebc1138e44a5e285d5698a715ea1d46e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f6325f361d7803ad0d908451"
   }
 ]
