@@ -412,7 +412,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%;
+    max-width: 340px;
     flex: 1;
   }
 
