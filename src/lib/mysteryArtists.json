@@ -4609,12 +4609,6 @@
   },
   {
     "date": "06/04/2024",
-    "artist": "Gwen Stefani",
-    "song_uri": "https://p.scdn.co/mp3-preview/40701cf8d35740051acd68d1c76a7e623fa3832f?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738dd53da15b55d402dfc3a20e"
-  },
-  {
-    "date": "06/04/2024",
     "artist": "The Cranberries",
     "song_uri": "https://p.scdn.co/mp3-preview/7b68bf72ebc1138e44a5e285d5698a715ea1d46e?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273f6325f361d7803ad0d908451"
@@ -4732,5 +4726,162 @@
     "artist": "Bob Marley & The Wailers",
     "song_uri": "https://p.scdn.co/mp3-preview/d2253556f10fdcba3c7237e582f300cea2116972?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731c40418d1c37d727e8e91b04"
+  },
+  {
+    "date": "06/24/2024",
+    "artist": "Kanye West",
+    "song_uri": "https://p.scdn.co/mp3-preview/23771e17f5cc8853beee8ffee1ddc99fdefbcfa1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27326f7f19c7f0381e56156c94a"
+  },
+  {
+    "date": "06/25/2024",
+    "artist": "Johnny Cash",
+    "song_uri": "https://p.scdn.co/mp3-preview/c39f499cb45648e28ca8d21bd27b66420d7a68ac?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736f4f62da3d811b6501a69ffa"
+  },
+  {
+    "date": "06/26/2024",
+    "artist": "Clairo",
+    "song_uri": "https://p.scdn.co/mp3-preview/c38ddc7ce6aae7a3ee1a90596b212f783b6e4092?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27333ccb60f9b2785ef691b2fbc"
+  },
+  {
+    "date": "06/27/2024",
+    "artist": "David Bowie",
+    "song_uri": "https://p.scdn.co/mp3-preview/69d1bd46acbb407b1158465e02aa91433e7021bd?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a47e80463147d1877608d56b"
+  },
+  {
+    "date": "06/28/2024",
+    "artist": "Chris Brown",
+    "song_uri": "https://p.scdn.co/mp3-preview/9bac31f7abf2c1a427edf7aceecbca6b8c66603c?cid=98f79e400795491cbc5f69b71346570",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b0d747e54b78eb460dcb9316"
+  },
+  {
+    "date": "06/29/2024",
+    "artist": "Sam Hunt",
+    "song_uri": "https://p.scdn.co/mp3-preview/2f3ed3e4bd2c4aef6de10eea949313408e7ee18f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b5529363386deb522a4f586c"
+  },
+  {
+    "date": "06/30/2024",
+    "artist": "Louis Armstrong",
+    "song_uri": "https://p.scdn.co/mp3-preview/09b846edd2af989c00a282fe8a6d3fa6cd479500?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273845a5660b804e5f3e821fbed"
+  },
+  {
+    "date": "07/01/2024",
+    "artist": "Flo Rida",
+    "song_uri": "https://p.scdn.co/mp3-preview/328d15426dd8b5e128341b72d0826ff0b32d1eb4?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f9bd7a6c772ac496015be3f8"
+  },
+  {
+    "date": "07/02/2024",
+    "artist": "Olivia Rodrigo",
+    "song_uri": "https://p.scdn.co/mp3-preview/3849f6e821a9f55bc736e53791b8d88938e3034e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a"
+  },
+  {
+    "date": "07/03/2024",
+    "artist": "*NSYNC",
+    "song_uri": "https://p.scdn.co/mp3-preview/161d6b8cfeb94609aee323195a6452cdb90181ca?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a6cb8fab778e1efc406a5909"
+  },
+  {
+    "date": "07/04/2024",
+    "artist": "Aerosmith",
+    "song_uri": "https://p.scdn.co/mp3-preview/b56a69c9cddc7358e940daa656a8dd5874e5f58f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bbf0146981704a073405b6c2"
+  },
+  {
+    "date": "07/05/2024",
+    "artist": "Carrie Underwood",
+    "song_uri": "https://p.scdn.co/mp3-preview/8dcbc4c73d9300b77c0df17c47cee1c54c07ab77?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273724bd326692d222c5906b0b0"
+  },
+  {
+    "date": "07/06/2024",
+    "artist": "3 Doors Down",
+    "song_uri": "https://p.scdn.co/mp3-preview/55c8389bc8dfbe118e97ecd05f027e9ad59cd99d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732868c4713a3912fd476b42f1"
+  },
+  {
+    "date": "07/07/2024",
+    "artist": "Trippie Redd",
+    "song_uri": "https://p.scdn.co/mp3-preview/ad4d23afd3b92325c442f036322a05f5f35385dc?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273203c89bd4391468eea4cc3f5"
+  },
+  {
+    "date": "07/08/2024",
+    "artist": "Ed Sheeran",
+    "song_uri": "https://p.scdn.co/mp3-preview/229419b7fe43f4aa963e8ed8eecabc4b87c4958e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96"
+  },
+  {
+    "date": "07/09/2024",
+    "artist": "Gwen Stefani",
+    "song_uri": "https://p.scdn.co/mp3-preview/40701cf8d35740051acd68d1c76a7e623fa3832f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738dd53da15b55d402dfc3a20e"
+  },
+  {
+    "date": "07/10/2024",
+    "artist": "Machine Gun Kelly",
+    "song_uri": "https://p.scdn.co/mp3-preview/e070198e8b0e3052d00dfba9987ca1aa5749d339?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d4d4929a3a86fe2f9fadbd42"
+  },
+  {
+    "date": "07/11/2024",
+    "artist": "Kygo",
+    "song_uri": "https://p.scdn.co/mp3-preview/03bbf447d8f0101cff90c78b3ab0c4757c3bf27b?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734d914470ab899815f103f5cc"
+  },
+  {
+    "date": "07/12/2024",
+    "artist": "Goo Goo Dolls",
+    "song_uri": "https://p.scdn.co/mp3-preview/30e2a899a94a089d5c341b782b00aa802fd87610?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273eda9478c39a21e1cdc6609ca"
+  },
+  {
+    "date": "07/13/2024",
+    "artist": "Sum 41",
+    "song_uri": "https://p.scdn.co/mp3-preview/1e873fa3bece43233494ace8846c210b2648f9d1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739a482180e6a306229bff49dc"
+  },
+  {
+    "date": "07/14/2024",
+    "artist": "Rex Orange County",
+    "song_uri": "https://p.scdn.co/mp3-preview/de98b7525eaa0120bf0cf147888e81f75017a76a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273733e6d7818eef87d20df86b5"
+  },
+  {
+    "date": "07/15/2024",
+    "artist": "Kate Bush",
+    "song_uri": "https://p.scdn.co/mp3-preview/861d26b52ece3e3ad72a7dc3463daece3478801a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ad08f4b38efbff0c0da0f252"
+  },
+  {
+    "date": "07/16/2024",
+    "artist": "Tate McRae",
+    "song_uri": "https://p.scdn.co/mp3-preview/ca7bdcb691fb64a5af8a3253b89356390664fcf1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27322fd802bc61db666c7c81aa8"
+  },
+  {
+    "date": "07/17/2024",
+    "artist": "Pink Floyd",
+    "song_uri": "https://p.scdn.co/mp3-preview/71f0b73c37bc4d421098daf687c79ca596dffba7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe"
+  },
+  {
+    "date": "07/18/2024",
+    "artist": "Céline Dion",
+    "song_uri": "https://p.scdn.co/mp3-preview/68c13229ec9b1b4a5ea580e801061fd7791857c4?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273def7146ca744f3b1bf838404"
+  },
+  {
+    "date": "07/19/2024",
+    "artist": "Playboi Carti",
+    "song_uri": "https://p.scdn.co/mp3-preview/fc780d2d7634024c170723c769cca145d298e53f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730a31b4026a452ae8c3f97a76"
   }
+  
 ]

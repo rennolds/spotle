@@ -4469,11 +4469,11 @@
     "country": "us",
     "genre": "Hip Hop",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2734f88aa4c73f3017a3e21d9d4",
-    "uri": "spotify:artist:1lP7f2evgtQcghRmqkPb3j",
+    "uri": "spotify:artist:6TIYQ3jFPwQSRmorSezPxX",
     "debut_album_year": 2012,
-    "track_name": "Nothing Ever Changes",
-    "song_uri": "https://p.scdn.co/mp3-preview/8811cd4886861307cfc84833b2ba07726c78b509?cid=98f79e400795491cbc5f69b713465708",
-    "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2734f88aa4c73f3017a3e21d9d4",
+    "track_name": "I Think I'm OKAY (with YUNGBLUD & Travis Barker)",
+    "song_uri": "https://p.scdn.co/mp3-preview/966e043488d7a83b9101d0854d6e6995cabdc4d5?cid=98f79e400795491cbc5f69b713465708",
+    "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273cfc4b1939aba562fc97159c5",
     "embedded_track": "https://open.spotify.com/embed/track/0DMVFAOUlWJLMId9iAMbDk",
     "debut_album_year_y": 2012,
     "group_size": 1,
@@ -14689,6 +14689,22 @@
   },
   {
     "index": 918,
+    "artist": "Louis Tomlinson",
+    "country": "gb",
+    "genre": "Pop",
+    "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe169df750e95452a1de99692",
+    "uri": "spotify:artist:57WHJIHrjOE3iAxpihhMnp",
+    "debut_album_year": 2020,
+    "track_name": "Written All Over Your Face",
+    "song_uri": "https://p.scdn.co/mp3-preview/19988c19ae559cde7ee221a28d7b630807a7c642?cid=98f79e400795491cbc5f69b713465708",
+    "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273dbd0fcdd8e8c9f64c5704b5b",
+    "embedded_track": "",
+    "debut_album_year_y": 2020,
+    "group_size": 1,
+    "gender": "m"
+  },
+  {
+    "index": 919,
     "artist": "Sum 41",
     "country": "ca",
     "genre": "Rock",
@@ -14704,7 +14720,7 @@
     "gender": "m"
   },
   {
-    "index": 919,
+    "index": 920,
     "artist": "Dj GBR",
     "country": "br",
     "genre": "Latin",
@@ -14720,7 +14736,7 @@
     "gender": "m"
   },
   {
-    "index": 920,
+    "index": 921,
     "artist": "Dadju",
     "country": "fr",
     "genre": "R&B",
@@ -14736,7 +14752,7 @@
     "gender": "m"
   },
   {
-    "index": 921,
+    "index": 922,
     "artist": "Jess Glynne",
     "country": "gb",
     "genre": "Pop",
@@ -14752,7 +14768,7 @@
     "gender": "f"
   },
   {
-    "index": 922,
+    "index": 923,
     "artist": "Bellakath",
     "country": "mx",
     "genre": "Latin",
@@ -14768,7 +14784,7 @@
     "gender": "f"
   },
   {
-    "index": 923,
+    "index": 924,
     "artist": "Hombres G",
     "country": "es",
     "genre": "Rock",
@@ -14784,7 +14800,7 @@
     "gender": "m"
   },
   {
-    "index": 924,
+    "index": 925,
     "artist": "Leon Bridges",
     "country": "us",
     "genre": "R&B",
