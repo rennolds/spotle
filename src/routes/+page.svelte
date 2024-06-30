@@ -1675,7 +1675,7 @@
   @media only screen and (max-width: 600px) {
     .ezoic-108 {
       height: 52.5px;
-      max-width: 400px;
+      max-width: 340px;
     }
   }
 </style>
