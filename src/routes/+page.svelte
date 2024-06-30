@@ -1421,6 +1421,7 @@
 
   .container {
     position: relative;
+    justify-content: center;
     width: 100%;
     height: 100%;
     display: flex;
@@ -1674,6 +1675,7 @@
   @media only screen and (max-width: 600px) {
     .ezoic-108 {
       height: 52.5px;
+      max-width: 400px;
     }
   }
 </style>
