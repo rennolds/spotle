@@ -4912,5 +4912,17 @@
     "artist": "Billy Joel",
     "song_uri": "https://p.scdn.co/mp3-preview/14c45e1d20b6b3a8769e1efc3c0f662b51ffacf3?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273814cbc4746358a25c84c62e7"
+  },
+  {
+    "date": "07/25/2024",
+    "artist": "Taylor Swift",
+    "song_uri": "https://p.scdn.co/mp3-preview/5d487e1f146e6ed789453e2b0df95bee80124ddf?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273318443aab3531a0558e79a4d"
+  },
+  {
+    "date": "07/26/2024",
+    "artist": "Central Cee",
+    "song_uri": "https://p.scdn.co/mp3-preview/41105628e270a026ac9aecacd44e3373fceb9f43?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733c7d945b6baf935e8a0ebdaa"
   }
 ]
