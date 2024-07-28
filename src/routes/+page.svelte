@@ -293,19 +293,23 @@
           result = "W";
           return;
         }, 1750);
-        gtag('event', 'gameover', {
-            'result': "win",
-            'guesses': guessCount + 1,
-            'artist': mysteryArtist
-        });
+        if (browser) {
+          gtag('event', 'gameover', {
+              'result': "win",
+              'guesses': guessCount + 1,
+              'artist': mysteryArtist
+          });
+        }
       }
 
       if (guessCount + 1 == 10) {
-        gtag('event', 'gameover', {
-            'result': "loss",
-            'guesses': guessCount + 1,
-            'artist': mysteryArtist
-        });
+        if (browser) {
+          gtag('event', 'gameover', {
+              'result': "loss",
+              'guesses': guessCount + 1,
+              'artist': mysteryArtist
+          });
+        }
         setTimeout(() => {
           $gameOver = true;
           showResults = true;
@@ -457,9 +461,11 @@
     }
     const shareURL = `${currentUrl}?artist=${encodedArtistName}&note=${encodedNote}`;
 
-    gtag('event', 'custom_game_share', {
-      'artist': encodedArtistName,
-    });
+    if (browser) {
+      gtag('event', 'custom_game_share', {
+        'artist': encodedArtistName,
+      });
+    }
 
     const shareText =
       "I made this Spotle for you! Guess the artist in 10 tries.\n\n" +
