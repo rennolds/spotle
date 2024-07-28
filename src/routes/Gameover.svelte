@@ -152,6 +152,11 @@
   console.log(shareText);
 
   function handleShare() {
+    gtag('event', 'shared_result', {
+      'artist': artist.artist,
+      'result': result,
+      'guesses': guessCount,
+    });
     navigator.clipboard.writeText(shareText);
 
     function isMobile() {
