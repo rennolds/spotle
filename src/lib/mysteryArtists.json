@@ -4939,9 +4939,86 @@
   },
   {
     "date": "07/29/2024",
+    "artist": "Elvis Presley",
+    "song_uri": "https://p.scdn.co/mp3-preview/5c7b79aefed9c3c55ba78d8f2a5734b42c2f7cec?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273aa509be2dd24fb6c753cf292"
+  },
+  {
+    "date": "07/30/2024",
+    "artist": "Sia",
+    "song_uri": "https://p.scdn.co/mp3-preview/d2b686ec5e818ab56c7131a72a9d51aeccdb74ca?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d1410c1372fab1e516328fa8"
+  },
+  {
+    "date": "07/31/2024",
+    "artist": "Joji",
+    "song_uri": "https://p.scdn.co/mp3-preview/12e4a7ef3f1051424e6e282dfba83fe8448e122f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273eaac2a7955f5b8967991cacb"
+  },
+  {
+    "date": "08/01/2024",
+    "artist": "Glass Animals",
+    "song_uri": "https://p.scdn.co/mp3-preview/1ac449e52145d1c44dc4346afdb2d8b70e93969b?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739e495fb707973f3390850eea"
+  },
+  {
+    "date": "08/02/2024",
+    "artist": "Whitney Houston",
+    "song_uri": "https://p.scdn.co/mp3-preview/7414ae6c811dee16c467c256429c7427fbcc98d0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cc57e9b00b87dd0f6e868347"
+  },
+  {
+    "date": "08/03/2024",
+    "artist": "Iggy Azalea",
+    "song_uri": "https://p.scdn.co/mp3-preview/f12fe0733e8f0049a1091a22c2dad43a09a740e7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b1c6cf12c9fb4f9014b711ba"
+  },
+  {
+    "date": "08/04/2024",
     "artist": "Nina Simone",
     "song_uri": "https://p.scdn.co/mp3-preview/fa972598d83d13713041851e5122833bc40f8835?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273425e9a15a4a1b9fe123a1aa7"
+  },
+  {
+    "date": "08/05/2024",
+    "artist": "Justin Bieber",
+    "song_uri": "https://p.scdn.co/mp3-preview/b750d9609aa454adb23284b1504d962a6ff9bb07?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f46b9d202509a8f7384b90de"
+  },
+  {
+    "date": "08/06/2024",
+    "artist": "Vance Joy",
+    "song_uri": "https://p.scdn.co/mp3-preview/fe5f6f3eeac1720c920f67eedfe899ccf900a819?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a9929deb093a6617d2493b03"
+  },
+  {
+    "date": "08/07/2024",
+    "artist": "Cardi B",
+    "song_uri": "https://p.scdn.co/mp3-preview/4b5a31cd2fe4445038798e33787ebf0fca645f86?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a0caffda54afd0a65995bbab"
+  },
+  {
+    "date": "08/08/2024",
+    "artist": "Depeche Mode",
+    "song_uri": "https://p.scdn.co/mp3-preview/52914be143f0dac1fad0f9bf11b079487bbac6f1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2735952c4782caf4283105f2120"
+  },
+  {
+    "date": "08/09/2024",
+    "artist": "Shania Twain",
+    "song_uri": "https://p.scdn.co/mp3-preview/2fe1d2c5df34b9ba727acc38db15e7415cd9a23a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f4fc5ce3068e340f35037770"
+  },
+  {
+    "date": "08/10/2024",
+    "artist": "Mitski",
+    "song_uri": "https://p.scdn.co/mp3-preview/aa4073085d84897475a94110ddda62b20cf96310?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c428f67b4a9b7e1114dfc117"
+  },
+  {
+    "date": "08/11/2024",
+    "artist": "Papa Roach",
+    "song_uri": "https://p.scdn.co/mp3-preview/fd0f4e93ee380e85cd5ec2b16c1cccfc48081495?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273985bf5ede2fe4a048ee85f28"
   }
-
 ]
