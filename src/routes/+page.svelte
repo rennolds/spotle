@@ -297,7 +297,7 @@
           gtag('event', 'gameover', {
               'result': "win",
               'guesses': guessCount + 1,
-              'artist': mysteryArtist
+              'artist': mysteryArtist.name
           });
         }
       }
@@ -307,7 +307,7 @@
           gtag('event', 'gameover', {
               'result': "loss",
               'guesses': guessCount + 1,
-              'artist': mysteryArtist
+              'artist': mysteryArtist.name
           });
         }
         setTimeout(() => {
@@ -463,7 +463,7 @@
 
     if (browser) {
       gtag('event', 'custom_game_share', {
-        'artist': encodedArtistName,
+        'artist': artist.name,
       });
     }
 
