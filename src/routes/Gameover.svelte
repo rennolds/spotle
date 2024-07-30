@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { browser } from "$app/environment";
   import { onMount } from "svelte";
   import { fly } from "svelte/transition";
   import moment from "moment";
@@ -152,13 +153,19 @@
   console.log(shareText);
 
   function handleShare() {
-    // if (browser) {
-    //   gtag('event', 'shared_result', {
-    //     'artist': artist.artist,
-    //     'result': result,
-    //     'guesses': guessCount,
-    //   });
-    // }
+    try {
+      if (browser) {
+        console.log('published to google events');
+        gtag('event', 'shared_result', {
+          'artist': artist.artist,
+          'result': result,
+          'guesses': guessCount,
+        });
+      }
+    } catch(error) {
+      console.error('Error publishing to google events');
+      console.error(error);
+    }
     navigator.clipboard.writeText(shareText);
 
     function isMobile() {
