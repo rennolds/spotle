@@ -5020,5 +5020,29 @@
     "artist": "Papa Roach",
     "song_uri": "https://p.scdn.co/mp3-preview/fd0f4e93ee380e85cd5ec2b16c1cccfc48081495?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273985bf5ede2fe4a048ee85f28"
+  },
+  {
+    "date": "08/12/2024",
+    "artist": "5 Seconds of Summer",
+    "song_uri": "https://p.scdn.co/mp3-preview/b26976b3ae4e74fa17e86cfb0631d8442e35963a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27393432e914046a003229378da"
+  },
+  {
+    "date": "08/13/2024",
+    "artist": "The Jackson 5",
+    "song_uri": "https://p.scdn.co/mp3-preview/e362cefdfda19b6f74d938c44ca962894e45e338?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27308a0fe33e91b991d2c9c9cde"
+  },
+  {
+    "date": "08/14/2024",
+    "artist": "Dua Lipa",
+    "song_uri": "https://p.scdn.co/mp3-preview/acaea048f50a3b30ca24b348c84a6047373baabb?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737dd3ba455ee3390cb55b0192"
+  },
+  {
+    "date": "08/15/2024",
+    "artist": "Wiz Khalifa",
+    "song_uri": "https://p.scdn.co/mp3-preview/c7ead2fb0d0be4004af5b912846138692b1fc0f9?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f8fa110661ccdfb74cbcb447"
   }
 ]
