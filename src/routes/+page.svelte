@@ -90,6 +90,7 @@
   let createShareBtnText = "SHARE";
   let playingChallenge = false;
   let playingRush = false;
+  let playingRewind = false;
   let tempGuesses = [];
   let mysteryArtistEntry;
   let mysteryArtist;
@@ -106,6 +107,7 @@
       playingGame = true;
       playingRush = false;
       playingChallenge = true;
+      playingRewind = false;
 
       // Decode the Base64 string to Uint8Array
       const artistUint8Array = Uint8Array.from(atob(encodedArtist), (c) =>
@@ -220,6 +222,7 @@
 
   function playGame() {
     normalGame = true;
+    playingRewind = false;
     playingGame = true;
     splashScreen = false;
     playingRush = false;
@@ -326,7 +329,7 @@
       createGameSelection = selectedArtist;
     }
 
-    if (playingChallenge || playingRush) {
+    if (playingChallenge || playingRush || playingRewind) {
       if (tempGameOver) {
         return;
       }
@@ -337,7 +340,7 @@
       tempGuesses = tempGuesses;
       guessCount++;
 
-      if (playingChallenge) {
+      if (playingChallenge || playingRewind) {
         if (selectedArtist == mysteryArtist) {
           setTimeout(() => {
             tempGameOver = true;
@@ -406,6 +409,101 @@
     playingGame = true;
     splashScreen = false;
   }
+
+  let rewindIndex = 0;
+  const lastSixDaysArtists = [];
+  const lastSixDaysDates = [];
+    for (let i = 1; i <= 6; i++) {
+      const previousDay = moment()
+        .tz("America/New_York")
+        .subtract(i, "days")
+        .format("MM/DD/YYYY");
+
+      const dayArtistEntry = mysteryArtistList.find(
+        (entry) => entry.date === previousDay
+      );
+      
+      if (dayArtistEntry) {
+        const dayArtist = artists.find(
+          (artist) => artist.name === dayArtistEntry.artist
+        );
+        if (dayArtist) {
+          lastSixDaysArtists.push(dayArtist);
+          lastSixDaysDates.push(previousDay);
+        }
+      }
+    }
+  lastSixDaysArtists.reverse();
+  lastSixDaysDates.reverse();
+
+  function nextRewind() {
+    if (rewindIndex == 5) {
+      return
+    }
+    rewindIndex++;
+
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    tempGameOver = false;
+    guessCount = 0;
+  }
+
+  function previousRewind() {
+    if (rewindIndex == 0) {
+      return
+    }
+    rewindIndex--;
+
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    tempGameOver = false;
+    guessCount = 0;
+
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    guessCount = 0;
+  }
+
+  function playRewind() {
+    playingGame = true;
+    splashScreen = false;
+    playingRewind = true;
+    playingChallenge = false;
+    normalGame = false;
+    playingRush = false;
+
+    if (browser) {
+        gtag('event', 'rewind', {
+        });
+    }
+
+    let dateIndex = moment().tz("America/New_York").subtract(6, "days").format("MM/DD/YYYY");
+
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    guessCount = 0;
+  }
+
 
   let rushIndex = 0;
   function playRush() {
@@ -1013,7 +1111,7 @@
               </div>
             </div>
 
-            <div class="module">
+            <div class="module" on:click={playRewind}>
               <div
                 class="module-image"
                 style="background-image: url(resources/rewind.png)"
@@ -1023,7 +1121,7 @@
                   <Icon width={"1.75rem"} height={"1.75rem"} name={"rewind"}
                   ></Icon>
                 </div>
-                <button class="styled-btn module-btn">coming soon</button>
+                <button class="styled-btn module-btn">Play</button>
               </div>
               <div class="module-description">
                 <p>Missed a few days? Rewind and play the last week.</p>
@@ -1080,7 +1178,7 @@
               </div>
             {/if}
             <div class="guesses-remaining">
-              {#if normalGame || playingChallenge}
+              {#if normalGame || playingChallenge || playingRewind}
                 {#if guessCount == 10}
                   Guess 10 of 10
                 {:else}
@@ -1098,6 +1196,26 @@
               {/if}
             </div>
           </div>
+
+          {#if playingRewind}
+          <div class="rewind-btn-container">
+            <button
+                class="previous-btn"
+                on:click={previousRewind}
+                >
+                <Icon width={".85rem"} height={".85rem"} name={"previous"}></Icon>
+            </button>
+            <div class="rewind-date">
+              {lastSixDaysDates[rewindIndex]}
+            </div>
+            <button
+                class="next-btn"
+                on:click={nextRewind}
+                >
+                <Icon width={".85rem"} height={".85rem"} name={"next"}></Icon>
+            </button>
+          </div>
+          {/if}
 
           <div class="search-container">
             {#if normalGame}
@@ -1551,7 +1669,36 @@
   }
 
   .guess-btn {
-    margin-right: 10px;
+    margin-right: 50px;
+  }
+
+  .rewind-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    width: 200px;
+  }
+
+  .previous-btn, .next-btn {
+    color: #fff;
+    background: none; /* Assuming you don't want any button background */
+    border: none; /* Assuming you want borderless buttons */
+    position: relative !important;
+  }
+
+  .previous-btn {
+    flex-direction: start;
+  }
+
+  .next-btn {
+    flex-direction: end;
+  }
+
+  .rewind-date {
+    color: #fff;
+    text-align: center;
   }
 
   input::value {

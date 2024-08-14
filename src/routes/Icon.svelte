@@ -53,6 +53,16 @@
       box: 32,
       name: "cd",
       svg: '<circle cx="16" cy="16" r="16" fill="url(#paint0_angular_477_157)"/><defs><radialGradient id="paint0_angular_477_157" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(15.52 16) rotate(90) scale(16 15.52)"><stop offset="0.0729167" stop-color="#FBFBFD"/<stop offset="0.244792" stop-color="#C8D4DA"/><stop offset="0.434957" stop-color="white"/><stop offset="0.532623" stop-color="#AEC0CE"/><stop offset="0.658692" stop-color="#E3E9EE"/><stop offset="0.708863" stop-color="#FAFBFC"/><stop offset="0.861413" stop-color="#D6DFE6"/><stop offset="0.921875" stop-color="#B8C9D3"/></radialGradient></defs>'
+    },
+    {
+      box: 16,
+      name: "previous",
+      svg: '<path d="M12.2665 0.352543L1.0725 6.81554C-0.3575 7.63954 -0.3575 8.99054 1.0725 9.81554L12.2665 16.2785C13.6965 17.1045 14.8645 16.4285 14.8645 14.7785V1.85254C14.8645 0.202543 13.6945 -0.473457 12.2665 0.352543Z" fill="white"/>'
+    },
+    {
+      box: 16,
+      name: "next",
+      svg: '<path d="M2.599 16.2785L13.793 9.81554C15.223 8.99154 15.223 7.64054 13.793 6.81554L2.598 0.352543C1.168 -0.473457 0 0.202543 0 1.85254V14.7785C0 16.4285 1.17 17.1045 2.598 16.2785H2.599Z" fill="white"/>'
     }
   ];
   let displayIcon = icons.find((e) => e.name === name);
