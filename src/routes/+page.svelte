@@ -407,6 +407,8 @@
   function handleCreate() {
     createGame = true;
     playingGame = true;
+    playingRewind = false;
+    playingChallenge = false;
     splashScreen = false;
   }
 
