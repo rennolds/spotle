@@ -11,6 +11,7 @@
   export let spotleNumber;
   export let muted;
   export let playingChallenge = false;
+  export let playingRewind = false;
 
   const dispatch = createEventDispatcher();
   let audio;
@@ -90,20 +91,20 @@
   }
 
   let shareBtnText = "SHARE RESULT";
-  moment.tz.setDefault("UTC");
-  let timeUntilFourAMUTC = 0;
+  moment.tz.setDefault("America/New_York");
+  let timeUntilMidnightEST = 0;
   let timer = null;
 
   function updateTimer() {
-    const now = moment(); // Current time in user's timezone
+    const now = moment().tz("America/New_York"); // Current time in EST
 
-    const fourAMUTC = moment(now).utc().startOf("day").add(4, "hours"); // 4 AM UTC
+    const midnightEST = moment(now).tz("America/New_York").startOf("day"); // Midnight EST
 
-    if (now > fourAMUTC) {
-      fourAMUTC.add(1, "days"); // Increment to next day if already passed
+    if (now > midnightEST) {
+      midnightEST.add(1, "days"); // Increment to next day if already passed
     }
 
-    timeUntilFourAMUTC = fourAMUTC.diff(now); // Difference in milliseconds
+    timeUntilMidnightEST = midnightEST.diff(now); // Difference in milliseconds
   }
 
   function formatTime(milliseconds) {
@@ -238,22 +239,26 @@
     </div>
     <div class="sub-header">{artist.artist}</div>
     <div class="buttons">
+      {#if !playingRewind}
       <button on:click={handleShare} class="button">{shareBtnText}</button>
+      {/if}
       {#if !playingChallenge}
         <button class="button purple"
           ><a href="https://harmonies.io" target="_blank">PLAY HARMONIES</a
           ></button
         >
-      {:else}
+      {/if}
+
+      {#if playingRewind || playingChallenge}
         <button class="button"
           ><a href="https://spotle.io">PLAY TODAYS</a></button
         >
       {/if}
     </div>
     <div class="centered">
-      {#if !playingChallenge}
+      {#if !playingChallenge && !playingRewind}
         <div>Next Spotle</div>
-        <div>{formatTime(timeUntilFourAMUTC)}</div>
+        <div>{formatTime(timeUntilMidnightEST)}</div>
       {/if}
     </div>
   </div>

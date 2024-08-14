@@ -612,6 +612,7 @@
       artist={mysteryArtistEntry}
       {guessCount}
       {playingChallenge}
+      {playingRewind}
       on:close={handleOverlayClose}
       muted={$muted}
     ></Gameover>
