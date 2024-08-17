@@ -5050,5 +5050,29 @@
     "artist": "Billie Eilish",
     "song_uri": "https://p.scdn.co/mp3-preview/96cd58badeeabc3c3037b4649571c8fb6b8ebd60?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce"
+  },
+  {
+    "date": "08/17/2024",
+    "artist": "Jack Harlow",
+    "song_uri": "https://p.scdn.co/mp3-preview/2f807d3954f04f0ec7b226159b4a23227428cba0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738e55edb69ca44a25b52b17bb"
+  },
+  {
+    "date": "08/18/2024",
+    "artist": "Nelly",
+    "song_uri": "https://p.scdn.co/mp3-preview/c852ffca43288763a893be9866477df06b4306c3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a8b9f97b9ea065b9a857e93f"
+  },
+  {
+    "date": "08/19/2024",
+    "artist": "Ellie Goulding",
+    "song_uri": "https://p.scdn.co/mp3-preview/fc4b960b2c26720100ac18f8911900c5c6d1667e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273aaf796449ef2b13ba82353bb"
+  },
+  {
+    "date": "08/20/2024",
+    "artist": "Frank Sinatra",
+    "song_uri": "https://p.scdn.co/mp3-preview/403b905aa602357cbfc5b7f276c384c9cc18d990?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273df1066335619efa75889bcfc"
   }
 ]
