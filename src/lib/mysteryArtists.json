@@ -5092,5 +5092,11 @@
     "artist": "Evanescence",
     "song_uri": "https://p.scdn.co/mp3-preview/de59728745eeac289a66dcdea0f78127bb102ef9?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27325f49ab23f0ec6332efef432"
+  },
+  {
+    "date": "08/24/2024",
+    "artist": "Paul McCartney",
+    "song_uri": "https://p.scdn.co/mp3-preview/a22a946c00359dca926b9e67e9cba825166497f6?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733cef016d13d82873d45af84a"
   }
 ]
