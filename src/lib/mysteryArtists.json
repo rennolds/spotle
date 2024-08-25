@@ -5104,5 +5104,47 @@
     "artist": "Grouplove",
     "song_uri": "https://p.scdn.co/mp3-preview/0a3f9dcbd192a5b5bc70e5e768807d1c73e41366?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273d84a9bbcba91cb6a4a212b1b"
+  },
+  {
+    "date": "08/26/2024",
+    "artist": "Lana Del Rey",
+    "song_uri": "https://p.scdn.co/mp3-preview/d79797d73d71e58283ac93bb12a9d6d00b6f82e8?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f894be72a77b1488292672c7"
+  },
+    {
+    "date": "08/27/2024",
+    "artist": "Simple Plan",
+    "song_uri": "https://p.scdn.co/mp3-preview/d9076b90bdfef3a91626332089fce81596aa1fb2?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737e973b97ebe64cabf8e3dfa0"
+  },
+  {
+    "date": "08/28/2024",
+    "artist": "Marshmello",
+    "song_uri": "https://p.scdn.co/mp3-preview/a4f38e5a14237b882fafa2f0dee903bee1f3fc8f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ae40468931087f78919b86ce"
+  },
+  {
+    "date": "08/29/2024",
+    "artist": "Camila Cabello",
+    "song_uri": "https://p.scdn.co/mp3-preview/466c89a17b60495a63f8e02ec260723c5c1d5e37?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273370ed6a9ced20874385fb147"
+  },
+  {
+    "date": "08/30/2024",
+    "artist": "Creedence Clearwater Revival",
+    "song_uri": "https://p.scdn.co/mp3-preview/9b5348b8d7c6bb14b63998903a46348657f70c2e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27351f311c2fb06ad2789e3ff91"
+  },
+  {
+    "date": "08/31/2024",
+    "artist": "BLACKPINK (블랙핑크)",
+    "song_uri": "https://p.scdn.co/mp3-preview/7404d0694738782399af5a518a9982f10c3ad40d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273002ef53878df1b4e91c15406"
+  },
+  {
+    "date": "09/01/2024",
+    "artist": "Rammstein",
+    "song_uri": "https://p.scdn.co/mp3-preview/55d8a624132b3b43f5bd2264cda98f26c2c6c4f8?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27325d8b7c6feee0c8d6593d606"
   }
 ]
