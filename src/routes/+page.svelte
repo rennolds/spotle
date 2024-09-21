@@ -1676,7 +1676,7 @@
   }
 
   .guess-btn {
-    margin-right: 50px;
+    margin-right: 15px;
   }
 
   .rewind-btn-container {
