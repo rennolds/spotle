@@ -5266,5 +5266,53 @@
     "artist": "Foo Fighters",
     "song_uri": "https://p.scdn.co/mp3-preview/29b3d410b28a70b73f55fae2197d664703682fd6?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730389027010b78a5e7dce426b"
+  },
+  {
+    "date": "09/22/2024",
+    "artist": "James Arthur",
+    "song_uri": "https://p.scdn.co/mp3-preview/9480af44f6c7c9c8edd70d87aa74cbff5532f8ba?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27320beb61f61fcbeb33b10a9ab"
+  },
+  {
+    "date": "09/23/2024",
+    "artist": "Halsey",
+    "song_uri": "https://p.scdn.co/mp3-preview/401f2dd43e382b45a6ef44a9f0b2d0edfffd9d9c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737636e1c9e67eaafc9f49aefd"
+  },
+  {
+    "date": "09/24/2024",
+    "artist": "Mac Miller",
+    "song_uri": "https://p.scdn.co/mp3-preview/bf03ddff4fe0da5164998c42f2d4a7b0f7bc1497?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27350570144b4a9a459406f9a3d"
+  },
+  {
+    "date": "09/25/2024",
+    "artist": "The Rolling Stones",
+    "song_uri": "https://p.scdn.co/mp3-preview/b852818d3478501eb11f31679bb7a5fb53ffae39?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bad7062c3fd2f2d037989694"
+  },
+  {
+    "date": "09/26/2024",
+    "artist": "Foster the People",
+    "song_uri": "https://p.scdn.co/mp3-preview/1bc2c0a7e77201e3ed8131f58a7d5799333486c4?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273121d5f92cf90576907dfb1e5"
+  },
+  {
+    "date": "09/27/2024",
+    "artist": "Dave",
+    "song_uri": "https://p.scdn.co/mp3-preview/2e97b9631a29437339458578ad607eb22d23663a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e3a09a9ae3f1fa102c110e60"
+  },
+  {
+    "date": "09/28/2024",
+    "artist": "System of a Down",
+    "song_uri": "https://p.scdn.co/mp3-preview/d536012652d7c99c472fe3811312ce3026f2196b?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27330d45198d0c9e8841f9a9578"
+  },
+  {
+    "date": "09/29/2024",
+    "artist": "P!nk",
+    "song_uri": "https://p.scdn.co/mp3-preview/4805ab360cac4be440dcc833961fa01f2039b1b8?cid=98f79e400795491cbc5f69b71346570",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736f3451faa271fbe470685f34"
   }
 ]

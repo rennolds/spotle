@@ -251,6 +251,8 @@
           result = "L";
           showResults = true;
           $gameOver = true;
+          // $guesses.push(mysteryArtist);
+          // $guesses = $guesses;
         }
         if ($guesses.some((obj) => obj.name === mysteryArtist.name)) {
           result = "W";
@@ -316,6 +318,8 @@
         setTimeout(() => {
           $gameOver = true;
           showResults = true;
+          $guesses.push(mysteryArtist);
+          $guesses = $guesses;
           result = "L";
           return;
         }, 1750);
