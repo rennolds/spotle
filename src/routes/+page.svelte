@@ -252,7 +252,7 @@
           showResults = true;
           $gameOver = true;
         }
-        if ($guesses.some((obj) => obj.name === mysteryArtist.name)) {
+        if ($guesses.some((obj) => obj.name === mysteryArtist.name && guessCount <= 9)) {
           result = "W";
           showResults = true;
           $gameOver = true;
