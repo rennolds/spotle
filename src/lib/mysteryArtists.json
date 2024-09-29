@@ -5316,9 +5316,51 @@
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2736aef62bd0a60aac7df9a9e37"
   },
   {
+    "date": "09/30/2024",
+    "artist": "blink-182",
+    "song_uri": "https://p.scdn.co/mp3-preview/4a2a6857e0c0dacdff68accb033f18cd8c910c18?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730a4ae12eb3a9fb7e3815001c"
+  },
+  {
     "date": "10/01/2024",
+    "artist": "Carly Rae Jepsen",
+    "song_uri": "https://p.scdn.co/mp3-preview/0e832a7f2198e5943d5554aa435b743591e062c8?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a111f7769013f1731e9c697c"
+  },
+  {
+    "date": "10/02/2024",
+    "artist": "The Notorious B.I.G.",
+    "song_uri": "https://p.scdn.co/mp3-preview/8da9fc5442bff368a762b8e9e30a6e4906a45d21?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fde79b88e2a659c394c5ae30"
+  },
+  {
+    "date": "10/03/2024",
+    "artist": "Phoebe Bridgers",
+    "song_uri": "https://p.scdn.co/mp3-preview/03bd2422cb4149c93e7b1c070aade6216778634f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27368b90c3b34c3ac22856ddab8"
+  },
+  {
+    "date": "10/04/2024",
+    "artist": "Toto",
+    "song_uri": "https://p.scdn.co/mp3-preview/86d951a680c33cca769822e0ef854c1b20301b32?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734a052b99c042dc15f933145b"
+  },
+  {
+    "date": "10/05/2024",
     "artist": "P!nk",
     "song_uri": "https://p.scdn.co/mp3-preview/4805ab360cac4be440dcc833961fa01f2039b1b8?cid=98f79e400795491cbc5f69b71346570",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2736f3451faa271fbe470685f34"
+  },
+  {
+    "date": "10/06/2024",
+    "artist": "Jason Mraz",
+    "song_uri": "https://p.scdn.co/mp3-preview/975f7acc6041b1b74b5a4bdacf8843df6c51505c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730f2e51f7121539e221c51161"
+  },
+  {
+    "date": "10/07/2024",
+    "artist": "Kendrick Lamar",
+    "song_uri": "https://p.scdn.co/mp3-preview/821def30e24f965adb480145744e4ed2a0f37903?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731ea0c62b2339cbf493a999ad"
   }
 ]
