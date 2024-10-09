@@ -5371,8 +5371,39 @@
   },
   {
     "date": "10/09/2024",
+    "artist": "Katy Perry",
+    "song_uri": "https://p.scdn.co/mp3-preview/1df30fc9a11b825b0a8ca4f304dee3210e2edd87?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cd3978ebe35d93a07249b97f"
+  },
+  {
+    "date": "10/10/2024",
+    "artist": "No Doubt",
+    "song_uri": "https://p.scdn.co/mp3-preview/38302768afd54f6e82cda309e925781f21387c56?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736ebd5e789646a833b8f7d4ba"
+  },
+  {
+    "date": "10/11/2024",
     "artist": "AC/DC",
     "song_uri": "https://p.scdn.co/mp3-preview/3589df13595d1ab1a2667db423b76c7e1e86ed73?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27351c02a77d09dfcd53c8676d0"
+  },
+  {
+    "date": "10/12/2024",
+    "artist": "Pitbull",
+    "song_uri": "https://p.scdn.co/mp3-preview/9c744f3343092c3b52930c6010e0b4b9b8d93765?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f2486b438645e97b523e4f90"
+  },
+  {
+    "date": "10/13/2024",
+    "artist": "Tina Turner",
+    "song_uri": "https://p.scdn.co/mp3-preview/cbdbabdba25dfb18423aebeefe4e6d3843a18da5?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f82ae34da3139fbd2a88332b"
+  },
+  {
+    "date": "10/14/2024",
+    "artist": "Prince",
+    "song_uri": "https://p.scdn.co/mp3-preview/390cf478a1f3fbdcf7b5346a6004d273ed47ed3f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27323cc0f0a925845a3de4aca38"
   }
+
 ]
