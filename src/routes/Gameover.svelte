@@ -238,7 +238,7 @@
       />
     </div>
     {#if !playingChallenge}
-    <div class="sub-header">{artist.artist} 🕊️ </div>
+    <div class="sub-header">{artist.artist}</div>
     {:else}
     <div class="sub-header">{artist.artist}</div>
     {/if}
