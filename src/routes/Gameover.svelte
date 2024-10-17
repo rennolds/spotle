@@ -237,7 +237,11 @@
         alt="{artist.artist} Album Cover"
       />
     </div>
+    {#if !playingChallenge}
+    <div class="sub-header">{artist.artist} 🕊️ </div>
+    {:else}
     <div class="sub-header">{artist.artist}</div>
+    {/if}
     <div class="buttons">
       {#if !playingRewind}
       <button on:click={handleShare} class="button">{shareBtnText}</button>
