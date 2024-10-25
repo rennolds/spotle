@@ -44,7 +44,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p>Last updated April 16th, 2024</p>
+        <p>Last updated October 25th, 2024</p>
 
         <p>This privacy notice for Flatwhite Studios, LLC ("we," "us," or "our"), describes how and why we might collect, store, use, and/or share ("process") your information when you use our services ("Services"), such as when you:</p>
         <ul>
@@ -99,7 +99,7 @@
             <li><a href="#do-united-states-residents-have-specific-privacy-rights">DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</a></li>
             <li><a href="#do-we-make-updates-to-this-notice">DO WE MAKE UPDATES TO THIS NOTICE?</a></li>
             <li><a href="#how-can-you-contact-us-about-this-notice">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a></li>
-            <li><a href="#ezoic-services">EZOIC SERVICES</a></li>
+            <li><a href="#playwire">PLAYWIRE</a></li>
         </ul>
 
         <h2 id="what-information-do-we-collect">1. WHAT INFORMATION DO WE COLLECT?</h2>
@@ -509,9 +509,10 @@
         Dearborn, MI 48124<br>
         United States</p>
 
-        <h2 id="ezoic-services">14. EZOIC SERVICES</h2>
-        <p>
+        <h2 id="playwire">14. PLAYWIRE</h2>
+        <p>All or partial advertising on this Website or App is managed by Playwire LLC. If Playwire publisher advertising services are used, Playwire LLC may collect and use certain aggregated and anonymized data for advertising purposes. To learn more about the types of data collected, how data is used and your choices as a user, please visit <a href="https://www.playwire.com/privacy-policy">https://www.playwire.com/privacy-policy</a>.</p>
+        <!-- <p>
             This website uses the services of Ezoic Inc. (“Ezoic”). Ezoic’s privacy policy is <a href="https://www.ezoic.com/privacy-policy/">here</a>. Ezoic may employ a variety of technologies on this website, including to display advertisements and enable advertising to visitors of this website. 
-        </p>
+        </p> -->
     </div>
 </body>
