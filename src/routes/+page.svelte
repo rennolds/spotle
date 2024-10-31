@@ -25,7 +25,7 @@
       window.ezstandalone = window.ezstandalone || {};
       ezstandalone.cmd = ezstandalone.cmd || [];
       ezstandalone.cmd.push(function () {
-        ezstandalone.define(108);
+        ezstandalone.define(108,107,106);
         ezstandalone.enable();
         ezstandalone.display();
       });
@@ -624,6 +624,8 @@
     ></Gameover>
   {/if}
   <div class="container apple-fix">
+    <div id="ezoic-pub-ad-placeholder-106"></div>
+    <div id="ezoic-pub-ad-placeholder-105"></div> 
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
