@@ -25,7 +25,7 @@
       window.ezstandalone = window.ezstandalone || {};
       ezstandalone.cmd = ezstandalone.cmd || [];
       ezstandalone.cmd.push(function () {
-        ezstandalone.define(108,107,106);
+        ezstandalone.define(108);
         ezstandalone.enable();
         ezstandalone.display();
       });
