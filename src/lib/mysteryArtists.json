@@ -4040,7 +4040,7 @@
   {
     "date": "03/01/2024",
     "artist": "Lady GaGa",
-    "song_uri": "https://p.scdn.co/mp3-previ  ew/e9aeb6d6d57c00cf4c1bf1f2ad4fd915147222b7?cid=98f79e400795491cbc5f69b713465708",
+    "song_uri": "https://p.scdn.co/mp3-preview/e9aeb6d6d57c00cf4c1bf1f2ad4fd915147222b7?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273631810af03785dbad83f5c81"
   },
   {
@@ -5518,5 +5518,53 @@
     "artist": "Dan + Shay",
     "song_uri": "https://p.scdn.co/mp3-preview/35dde02aaaf1711d8091fbbcee913d322c1f1056?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27305e4408393e1c81a8ab1bf26"
+  },
+  {
+    "date": "11/03/2024",
+    "artist": "Lady GaGa",
+    "song_uri": "https://p.scdn.co/mp3-preview/e9aeb6d6d57c00cf4c1bf1f2ad4fd915147222b7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273631810af03785dbad83f5c81"
+  },
+  {
+    "date": "11/04/2024",
+    "artist": "Mike Posner",
+    "song_uri": "https://p.scdn.co/mp3-preview/649f480a624454b97a73e354568fcfb9214fdd46?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d6165c0d6eba7e5bf3fca16d"
+  },
+  {
+    "date": "11/05/2024",
+    "artist": "Nickelback",
+    "song_uri": "https://p.scdn.co/mp3-preview/ceea45143a8791972555a38ed590667cc2fc1977?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273699a422d25adc550dc5aa11c"
+  },
+  {
+    "date": "11/06/2024",
+    "artist": "DJ Snake",
+    "song_uri": "https://p.scdn.co/mp3-preview/5cdeec9f8b351372aa5e9f36f39d03d7bb58cef8?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d6d24aee7b49a2db98a76856"
+  },
+  {
+    "date": "11/07/2024",
+    "artist": "Sublime",
+    "song_uri": "https://p.scdn.co/mp3-preview/b8a7d6a95978c6563e891c7f0e7cfdddfef38ca7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738fc4b0dcfb9509553f195c85"
+  },
+  {
+    "date": "11/08/2024",
+    "artist": "Kehlani",
+    "song_uri": "https://p.scdn.co/mp3-preview/902844ebc014bb7e883a54bc2e761e08537b1898?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cccb973e9ff7440fbaf8485e"
+  },
+  {
+    "date": "11/09/2024",
+    "artist": "Rascal Flatts",
+    "song_uri": "https://p.scdn.co/mp3-preview/11ecbf90e28ce9fc81449435354ab5d75d468683?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273aa6b03f85a0f2cb16e88ec0c"
+  },
+  {
+    "date": "11/10/2024",
+    "artist": "Lil Uzi Vert",
+    "song_uri": "https://p.scdn.co/mp3-preview/115d957b81400862451425d9591dfa938da476da?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273aab4824c720639a6a2d7d932"
   }
 ]
