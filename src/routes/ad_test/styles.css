@@ -24,28 +24,23 @@ html {
 }
 
 body {
-  margin: 0;
   display: flex;
   justify-content: center;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100%;
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
   position: relative;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: none;
+}
+
+#main-body {
   height: 100%;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
 }
-
-main {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
 
 body::-webkit-scrollbar {
   display: none;
