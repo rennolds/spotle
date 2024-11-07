@@ -9,6 +9,7 @@
   import Countdown from "./Countdown.svelte";
   import Footer from "./Footer.svelte";
   import Icon from "./Icon.svelte";
+  import Ramp from './Ramp.svelte';
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
   import {
@@ -20,17 +21,20 @@
   } from "./store.js";
   import "./styles.css"
 
-  onMount(() => {
-    if (browser) {
-      window.ezstandalone = window.ezstandalone || {};
-      ezstandalone.cmd = ezstandalone.cmd || [];
-      ezstandalone.cmd.push(function () {
-        ezstandalone.define(108, 106, 107);
-        ezstandalone.enable();
-        ezstandalone.display();
-      });
-    }
-  });
+  const PUB_ID = 1025391;
+  const WEBSITE_ID = 75339;
+
+  // onMount(() => {
+  //   if (browser) {
+  //     window.ezstandalone = window.ezstandalone || {};
+  //     ezstandalone.cmd = ezstandalone.cmd || [];
+  //     ezstandalone.cmd.push(function () {
+  //       ezstandalone.define(108, 106, 107);
+  //       ezstandalone.enable();
+  //       ezstandalone.display();
+  //     });
+  //   }
+  // });
 
   function getGenderLabel(code) {
     switch (code) {
@@ -487,6 +491,7 @@
 </script>
 
 <body id="main-body">
+  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
