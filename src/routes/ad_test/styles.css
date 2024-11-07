@@ -59,6 +59,7 @@ main {
 
 body {
   margin: 0 auto;
+  margin-top: 0;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none; 
   height: 100vh;
