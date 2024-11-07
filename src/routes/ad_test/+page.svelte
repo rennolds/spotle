@@ -489,9 +489,8 @@
     }
   }
 </script>
-
-<body id="main-body">
-  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
+<Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
+<main>
   {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
@@ -504,10 +503,10 @@
     ></Gameover>
   {/if}
   <div class="bg"> 
-  <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
+  <!-- <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div> -->
   <div class="container apple-fix">
-  <div id="ezoic-pub-ad-placeholder-106"></div>
-  <div id="ezoic-pub-ad-placeholder-105"></div> 
+  <!-- <div id="ezoic-pub-ad-placeholder-106"></div>
+  <div id="ezoic-pub-ad-placeholder-105"></div>  -->
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
@@ -1226,9 +1225,10 @@
     {/if}
   </div>
 </div>
-</body>
+</main>
 
 <style>
+
   .splash-screen {
     margin-top: 15px;
   }

@@ -28,7 +28,8 @@
     align-items: center;
     padding: 10px 0;
     display: flex;
-    position: sticky;
+    margin-bottom: 20px;
+    padding-bottom: 200px;
     flex-direction: flex-start;
     margin-bottom: 15px;
   }

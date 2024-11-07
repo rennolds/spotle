@@ -33,7 +33,7 @@
   transform: translateX(-50%);
 }
 
-body {
+/* main {
   display: flex;
   justify-content: center;
   place-items: center;
@@ -45,10 +45,26 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow: none;
+} */
+
+main {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  height: 100%;
 }
 
-#main-body {
-  height: 100%;
+body {
+  margin: 0;
 }
 
 html {
