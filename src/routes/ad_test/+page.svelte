@@ -614,7 +614,7 @@
   }
 </script>
 
-<main>
+<main id="main-body">
   <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover

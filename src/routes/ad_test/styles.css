@@ -38,8 +38,9 @@ body {
   overflow: none;
 }
 
-#main-body {
-  height: 100%;
+main {
+  position: absolute;
+  top: 0;
 }
 
 body::-webkit-scrollbar {
