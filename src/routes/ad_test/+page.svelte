@@ -24,17 +24,17 @@
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
 
-  // onMount(() => {
-  //   if (browser) {
-  //     window.ezstandalone = window.ezstandalone || {};
-  //     ezstandalone.cmd = ezstandalone.cmd || [];
-  //     ezstandalone.cmd.push(function () {
-  //       ezstandalone.define(108, 106, 107);
-  //       ezstandalone.enable();
-  //       ezstandalone.display();
-  //     });
-  //   }
-  // });
+  onMount(() => {
+    if (browser) {
+      window.ezstandalone = window.ezstandalone || {};
+      ezstandalone.cmd = ezstandalone.cmd || [];
+      ezstandalone.cmd.push(function () {
+        ezstandalone.define(108);
+        ezstandalone.enable();
+        ezstandalone.display();
+      });
+    }
+  });
 
   function getGenderLabel(code) {
     switch (code) {
@@ -94,6 +94,7 @@
   let createShareBtnText = "SHARE";
   let playingChallenge = false;
   let playingRush = false;
+  let playingRewind = false;
   let tempGuesses = [];
   let mysteryArtistEntry;
   let mysteryArtist;
@@ -110,6 +111,7 @@
       playingGame = true;
       playingRush = false;
       playingChallenge = true;
+      playingRewind = false;
 
       // Decode the Base64 string to Uint8Array
       const artistUint8Array = Uint8Array.from(atob(encodedArtist), (c) =>
@@ -224,6 +226,7 @@
 
   function playGame() {
     normalGame = true;
+    playingRewind = false;
     playingGame = true;
     splashScreen = false;
     playingRush = false;
@@ -253,7 +256,7 @@
           showResults = true;
           $gameOver = true;
         }
-        if ($guesses.some((obj) => obj.name === mysteryArtist.name)) {
+        if ($guesses.some((obj) => obj.name === mysteryArtist.name && guessCount <= 9)) {
           result = "W";
           showResults = true;
           $gameOver = true;
@@ -297,12 +300,28 @@
           result = "W";
           return;
         }, 1750);
+        if (browser) {
+          gtag('event', 'gameover', {
+              'result': "win",
+              'guesses': guessCount + 1,
+              'artist': mysteryArtist.name
+          });
+        }
       }
 
       if (guessCount + 1 == 10) {
+        if (browser) {
+          gtag('event', 'gameover', {
+              'result': "loss",
+              'guesses': guessCount + 1,
+              'artist': mysteryArtist.name
+          });
+        }
         setTimeout(() => {
           $gameOver = true;
           showResults = true;
+          $guesses.push(mysteryArtist);
+          $guesses = $guesses;
           result = "L";
           return;
         }, 1750);
@@ -316,7 +335,7 @@
       createGameSelection = selectedArtist;
     }
 
-    if (playingChallenge || playingRush) {
+    if (playingChallenge || playingRush || playingRewind) {
       if (tempGameOver) {
         return;
       }
@@ -327,7 +346,7 @@
       tempGuesses = tempGuesses;
       guessCount++;
 
-      if (playingChallenge) {
+      if (playingChallenge || playingRewind) {
         if (selectedArtist == mysteryArtist) {
           setTimeout(() => {
             tempGameOver = true;
@@ -341,6 +360,8 @@
           setTimeout(() => {
             tempGameOver = true;
             showResults = true;
+            tempGuesses.push(mysteryArtist)
+            tempGuesses = tempGuesses;
             result = "L";
             return;
           }, 1750);
@@ -394,8 +415,105 @@
   function handleCreate() {
     createGame = true;
     playingGame = true;
+    playingRewind = false;
+    playingChallenge = false;
     splashScreen = false;
   }
+
+  let rewindIndex = 0;
+  const lastSixDaysArtists = [];
+  const lastSixDaysDates = [];
+    for (let i = 1; i <= 6; i++) {
+      const previousDay = moment()
+        .tz("America/New_York")
+        .subtract(i, "days")
+        .format("MM/DD/YYYY");
+
+      const dayArtistEntry = mysteryArtistList.find(
+        (entry) => entry.date === previousDay
+      );
+      
+      if (dayArtistEntry) {
+        const dayArtist = artists.find(
+          (artist) => artist.name === dayArtistEntry.artist
+        );
+        if (dayArtist) {
+          lastSixDaysArtists.push(dayArtist);
+          lastSixDaysDates.push(previousDay);
+        }
+      }
+    }
+  lastSixDaysArtists.reverse();
+  lastSixDaysDates.reverse();
+
+  function nextRewind() {
+    if (rewindIndex == 5) {
+      return
+    }
+    rewindIndex++;
+
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    tempGameOver = false;
+    guessCount = 0;
+  }
+
+  function previousRewind() {
+    if (rewindIndex == 0) {
+      return
+    }
+    rewindIndex--;
+
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    tempGameOver = false;
+    guessCount = 0;
+
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    guessCount = 0;
+  }
+
+  function playRewind() {
+    playingGame = true;
+    splashScreen = false;
+    playingRewind = true;
+    playingChallenge = false;
+    normalGame = false;
+    playingRush = false;
+
+    if (browser) {
+        gtag('event', 'rewind', {
+        });
+    }
+
+    let dateIndex = moment().tz("America/New_York").subtract(6, "days").format("MM/DD/YYYY");
+
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    tempGuesses = [];
+    guessCount = 0;
+  }
+
 
   let rushIndex = 0;
   function playRush() {
@@ -451,6 +569,12 @@
     }
     const shareURL = `${currentUrl}?artist=${encodedArtistName}&note=${encodedNote}`;
 
+    if (browser) {
+      gtag('event', 'custom_game_share', {
+        'artist': artist.name,
+      });
+    }
+
     const shareText =
       "I made this Spotle for you! Guess the artist in 10 tries.\n\n" +
       shareURL;
@@ -489,8 +613,9 @@
     }
   }
 </script>
-<Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
+
 <main>
+  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
@@ -498,15 +623,15 @@
       artist={mysteryArtistEntry}
       {guessCount}
       {playingChallenge}
+      {playingRewind}
       on:close={handleOverlayClose}
       muted={$muted}
     ></Gameover>
   {/if}
-  <div class="bg"> 
-  <!-- <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div> -->
   <div class="container apple-fix">
-  <!-- <div id="ezoic-pub-ad-placeholder-106"></div>
-  <div id="ezoic-pub-ad-placeholder-105"></div>  -->
+    <div id="ezoic-pub-ad-placeholder-106"></div>
+    <div id="ezoic-pub-ad-placeholder-105"></div> 
+    <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
@@ -1000,7 +1125,7 @@
               </div>
             </div>
 
-            <div class="module">
+            <div class="module" on:click={playRewind}>
               <div
                 class="module-image"
                 style="background-image: url(resources/rewind.png)"
@@ -1010,7 +1135,7 @@
                   <Icon width={"1.75rem"} height={"1.75rem"} name={"rewind"}
                   ></Icon>
                 </div>
-                <button class="styled-btn module-btn">coming soon</button>
+                <button class="styled-btn module-btn">Play</button>
               </div>
               <div class="module-description">
                 <p>Missed a few days? Rewind and play the last week.</p>
@@ -1067,7 +1192,7 @@
               </div>
             {/if}
             <div class="guesses-remaining">
-              {#if normalGame || playingChallenge}
+              {#if normalGame || playingChallenge || playingRewind}
                 {#if guessCount == 10}
                   Guess 10 of 10
                 {:else}
@@ -1085,6 +1210,26 @@
               {/if}
             </div>
           </div>
+
+          {#if playingRewind}
+          <div class="rewind-btn-container">
+            <button
+                class="previous-btn"
+                on:click={previousRewind}
+                >
+                <Icon width={".85rem"} height={".85rem"} name={"previous"}></Icon>
+            </button>
+            <div class="rewind-date">
+              {lastSixDaysDates[rewindIndex]}
+            </div>
+            <button
+                class="next-btn"
+                on:click={nextRewind}
+                >
+                <Icon width={".85rem"} height={".85rem"} name={"next"}></Icon>
+            </button>
+          </div>
+          {/if}
 
           <div class="search-container">
             {#if normalGame}
@@ -1220,15 +1365,13 @@
         </div>
       {/if}
     </div>
-    {#if (playingGame && $guesses.length > 1) || splashScreen}
+    {#if (playingGame && $guesses.length > 1) && !createGame || splashScreen}
       <Footer />
     {/if}
   </div>
-</div>
 </main>
 
 <style>
-
   .splash-screen {
     margin-top: 15px;
   }
@@ -1428,6 +1571,15 @@
     font-size: 12px;
   }
 
+  .container {
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .header {
     display: flex;
     justify-content: center;
@@ -1449,6 +1601,7 @@
 
   .icon-btn {
     margin-left: 7.5px;
+    z-index: 9001;
   }
 
   .icon-btn:hover {
@@ -1530,7 +1683,36 @@
   }
 
   .guess-btn {
-    margin-right: 10px;
+    margin-right: 15px;
+  }
+
+  .rewind-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    width: 200px;
+  }
+
+  .previous-btn, .next-btn {
+    color: #fff;
+    background: none; /* Assuming you don't want any button background */
+    border: none; /* Assuming you want borderless buttons */
+    position: relative !important;
+  }
+
+  .previous-btn {
+    flex-direction: start;
+  }
+
+  .next-btn {
+    flex-direction: end;
+  }
+
+  .rewind-date {
+    color: #fff;
+    text-align: center;
   }
 
   input::value {
@@ -1674,6 +1856,7 @@
   @media only screen and (max-width: 600px) {
     .ezoic-108 {
       height: 52.5px;
+      max-width: 340px;
     }
   }
 </style>
