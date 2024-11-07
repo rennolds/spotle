@@ -24,17 +24,17 @@
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
 
-  onMount(() => {
-    if (browser) {
-      window.ezstandalone = window.ezstandalone || {};
-      ezstandalone.cmd = ezstandalone.cmd || [];
-      ezstandalone.cmd.push(function () {
-        ezstandalone.define(108);
-        ezstandalone.enable();
-        ezstandalone.display();
-      });
-    }
-  });
+  // onMount(() => {
+  //   if (browser) {
+  //     window.ezstandalone = window.ezstandalone || {};
+  //     ezstandalone.cmd = ezstandalone.cmd || [];
+  //     ezstandalone.cmd.push(function () {
+  //       ezstandalone.define(108);
+  //       ezstandalone.enable();
+  //       ezstandalone.display();
+  //     });
+  //   }
+  // });
 
   function getGenderLabel(code) {
     switch (code) {
@@ -629,9 +629,9 @@
     ></Gameover>
   {/if}
   <div class="container apple-fix">
-    <div id="ezoic-pub-ad-placeholder-106"></div>
+    <!-- <div id="ezoic-pub-ad-placeholder-106"></div>
     <div id="ezoic-pub-ad-placeholder-105"></div> 
-    <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
+    <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div> -->
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
@@ -1853,10 +1853,10 @@
     margin-right: 10px;
   }
 
-  @media only screen and (max-width: 600px) {
+  /* @media only screen and (max-width: 600px) {
     .ezoic-108 {
       height: 52.5px;
       max-width: 340px;
     }
-  }
+  } */
 </style>
