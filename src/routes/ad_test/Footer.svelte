@@ -28,6 +28,7 @@
     align-items: center;
     padding: 10px 0;
     display: flex;
+    position: sticky;
     flex-direction: flex-start;
     margin-bottom: 15px;
   }
