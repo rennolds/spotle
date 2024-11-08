@@ -12,15 +12,8 @@
 }
 
 html {
-  background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  z-index: 1;
+  
+
 }
 
 body {
@@ -36,12 +29,22 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow: none;
+
+  background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 1;
 }
 
 main {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
