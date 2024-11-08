@@ -57,7 +57,7 @@
     top: 0;
     width: 350px;
     height: 50px;
-    position: relative;
+    position: sticky;
     padding: -5px;
     margin: -5px;
 }
