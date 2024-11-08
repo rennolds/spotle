@@ -628,7 +628,6 @@
     ></Gameover>
   {/if}
   <div class="container apple-fix">
-    <div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>
     <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
     <!-- <div id="ezoic-pub-ad-placeholder-106"></div>
     <div id="ezoic-pub-ad-placeholder-105"></div> 
