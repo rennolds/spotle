@@ -36,10 +36,13 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow: none;
+  font-size: 90%;
 }
 
-#main-body {
+main {
   height: 100%;
+  align-self: center;
+  position: absolute;
 }
 
 body::-webkit-scrollbar {
