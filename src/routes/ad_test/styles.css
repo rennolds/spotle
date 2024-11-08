@@ -41,6 +41,7 @@ body {
 main {
   position: absolute;
   top: 0;
+  height: 100%;
 }
 
 body::-webkit-scrollbar {
