@@ -40,6 +40,8 @@ body {
 
 main {
   height: 100%;
+  align-self: center;
+  position: absolute;
 }
 
 body::-webkit-scrollbar {
