@@ -1374,6 +1374,8 @@
 #standard_iab_head1 {
     top: 0;
     width: 100%;
+    margin-bottom: -15px;
+    margin-top: -5px;
     position: absolute;
   }
 
