@@ -51,7 +51,7 @@
     width: 350px;
     height: 50px;
     position: relative;
-    padding: 0;
-    margin: 0;
+    padding: -5px;
+    margin: -5px;
 }
 </style>
