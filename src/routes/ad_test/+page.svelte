@@ -1374,7 +1374,7 @@
 <style>
 
   #standard_iab_head1 {
-    position: sticky;
+    position: absolute;
     top: 0;
     max-width: 350px;
   }
