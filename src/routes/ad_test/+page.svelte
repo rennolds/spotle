@@ -615,6 +615,7 @@
 </script>
 
 <main>
+  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
@@ -628,10 +629,6 @@
     ></Gameover>
   {/if}
   <div class="container apple-fix">
-    <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
-    <!-- <div id="ezoic-pub-ad-placeholder-106"></div>
-    <div id="ezoic-pub-ad-placeholder-105"></div> 
-    <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div> -->
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
