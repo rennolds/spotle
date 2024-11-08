@@ -612,9 +612,18 @@
       navigator.clipboard.writeText(shareText);
     }
   }
+  // if (browser) {
+  //   onMount(( => {
+
+  //   }))
+  // }
+  // window.ramp.que.push(function () {
+  //     window.ramp.addTag("pwMobiLbAtf");
+  // })
 </script>
 
 <main id="main-body">
+  <div data-pw-mobi="leaderboard_atf" id="pwMobiLbAtf"></div>
   <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
