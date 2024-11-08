@@ -24,7 +24,7 @@
             rampComponentLoaded = true;
             window.ramp.que.push(() => {
                 window.ramp.spaNewPage();
-                window.ramp.addTag("pwMobiLbAtf");
+                window.ramp.addTag("standard_iab_head1");
             });
           };
         });
@@ -43,4 +43,4 @@
     }
 </script>
 
-<div data-pw-mobi="leaderboard_atf" id="pwMobiLbAtf"></div>
+<div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>

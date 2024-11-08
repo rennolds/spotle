@@ -615,7 +615,7 @@
 </script>
 
 <main id="main-body">
-  <div data-pw-mobi="leaderboard_atf" id="pwMobiLbAtf"></div>
+  <div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>
   <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
