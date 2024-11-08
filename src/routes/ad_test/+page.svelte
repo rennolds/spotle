@@ -1371,14 +1371,6 @@
 
 <style>
 
-#standard_iab_head1 {
-    top: 0;
-    width: 350px;
-    height: 50px;
-    margin-bottom: -5px;
-    position: relative;
-  }
-
 
   .splash-screen {
     margin-top: 15px;

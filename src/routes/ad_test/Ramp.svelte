@@ -44,3 +44,14 @@
 </script>
 
 <div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>
+
+<style>
+#standard_iab_head1 {
+    top: 0;
+    width: 350px;
+    height: 50px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+</style>
