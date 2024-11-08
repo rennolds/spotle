@@ -24,8 +24,6 @@
             rampComponentLoaded = true;
             window.ramp.que.push(() => {
                 window.ramp.spaNewPage();
-            });
-            window.ramp.que.push(function () {
                 window.ramp.addTag("pwMobiLbAtf");
             });
           };

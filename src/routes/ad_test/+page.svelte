@@ -612,14 +612,6 @@
       navigator.clipboard.writeText(shareText);
     }
   }
-  // if (browser) {
-  //   onMount(( => {
-
-  //   }))
-  // }
-  // window.ramp.que.push(function () {
-  //     window.ramp.addTag("pwMobiLbAtf");
-  // })
 </script>
 
 <main id="main-body">
@@ -1381,6 +1373,11 @@
 </main>
 
 <style>
+
+  #pwMobiLbAtf {
+    position: sticky;
+    top: 0;
+  }
   .splash-screen {
     margin-top: 15px;
   }
