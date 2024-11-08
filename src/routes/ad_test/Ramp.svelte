@@ -50,6 +50,7 @@
 .ad-container {
   position: sticky;
   top: 0;
+  height: 55px;
 }
 
 #standard_iab_head1 {
