@@ -615,7 +615,6 @@
 </script>
 
 <main id="main-body">
-  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
@@ -629,6 +628,7 @@
     ></Gameover>
   {/if}
   <div class="container apple-fix">
+    <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
     <!-- <div id="ezoic-pub-ad-placeholder-106"></div>
     <div id="ezoic-pub-ad-placeholder-105"></div> 
     <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div> -->
@@ -1374,9 +1374,8 @@
 <style>
 
   #standard_iab_head1 {
-    position: absolute;
+    position: sticky;
     top: 0;
-    max-width: 340px;
   }
   .splash-screen {
     margin-top: 15px;
@@ -1580,7 +1579,7 @@
   .container {
     position: relative;
     justify-content: center;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
