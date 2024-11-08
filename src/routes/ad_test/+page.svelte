@@ -614,6 +614,7 @@
 </script>
 
 <main>
+  <div id="standard_iab_head1"></div>
   <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
@@ -1373,10 +1374,10 @@
 
 #standard_iab_head1 {
     top: 0;
-    width: 100%;
-    margin-bottom: -15px;
-    margin-top: -5px;
-    position: absolute;
+    width: 350px;
+    height: 50px;
+    margin-bottom: -5px;
+    position: relative;
   }
 
 
