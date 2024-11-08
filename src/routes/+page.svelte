@@ -9,6 +9,7 @@
   import Countdown from "./Countdown.svelte";
   import Footer from "./Footer.svelte";
   import Icon from "./Icon.svelte";
+  import Ramp from './Ramp.svelte';
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
   import {
@@ -20,17 +21,20 @@
   } from "./store.js";
   import "./styles.css"
 
-  onMount(() => {
-    if (browser) {
-      window.ezstandalone = window.ezstandalone || {};
-      ezstandalone.cmd = ezstandalone.cmd || [];
-      ezstandalone.cmd.push(function () {
-        ezstandalone.define(108);
-        ezstandalone.enable();
-        ezstandalone.display();
-      });
-    }
-  });
+  const PUB_ID = 1025391;
+  const WEBSITE_ID = 75339;
+
+  // onMount(() => {
+  //   if (browser) {
+  //     window.ezstandalone = window.ezstandalone || {};
+  //     ezstandalone.cmd = ezstandalone.cmd || [];
+  //     ezstandalone.cmd.push(function () {
+  //       ezstandalone.define(108);
+  //       ezstandalone.enable();
+  //       ezstandalone.display();
+  //     });
+  //   }
+  // });
 
   function getGenderLabel(code) {
     switch (code) {
@@ -610,7 +614,8 @@
   }
 </script>
 
-<body id="main-body">
+<main>
+  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
@@ -623,10 +628,11 @@
       muted={$muted}
     ></Gameover>
   {/if}
-  <div class="container apple-fix">
-    <div id="ezoic-pub-ad-placeholder-106"></div>
+  <div class="outer-container">
+  <div class="container">
+    <!-- <div id="ezoic-pub-ad-placeholder-106"></div>
     <div id="ezoic-pub-ad-placeholder-105"></div> 
-    <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div>
+    <div class="ezoic-108" id="ezoic-pub-ad-placeholder-108"></div> -->
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
@@ -1364,7 +1370,8 @@
       <Footer />
     {/if}
   </div>
-</body>
+  </div> 
+</main>
 
 <style>
   .splash-screen {
@@ -1848,10 +1855,10 @@
     margin-right: 10px;
   }
 
-  @media only screen and (max-width: 600px) {
+  /* @media only screen and (max-width: 600px) {
     .ezoic-108 {
       height: 52.5px;
       max-width: 340px;
     }
-  }
+  } */
 </style>
