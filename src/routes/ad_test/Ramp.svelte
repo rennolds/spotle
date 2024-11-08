@@ -42,9 +42,9 @@
         }
     }
 </script>
-<div class="ad-container">
+<!-- <div class="ad-container">
   <div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>
-</div>
+</div> -->
 <style>
 
 .ad-container {
