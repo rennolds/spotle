@@ -29,8 +29,8 @@
     padding: 10px 0;
     display: flex;
     flex-direction: flex-start;
-    margin-bottom: 10px;
-    padding-bottom: 80px;
+    margin-bottom: 12px;
+    padding-bottom: 85px;
   }
 
   .footer a {
