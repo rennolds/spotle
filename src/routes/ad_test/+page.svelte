@@ -614,7 +614,7 @@
   }
 </script>
 
-<body id="main-body">
+<main>
   {#if showResults && !createGame}
     <Gameover
       {spotleNumber}
@@ -1369,7 +1369,7 @@
       <Footer />
     {/if}
   </div>
-</body>
+</main>
 
 <style>
 
