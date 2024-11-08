@@ -42,10 +42,16 @@
         }
     }
 </script>
-
-<div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>
-
+<div class="ad-container">
+  <div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>
+</div>
 <style>
+
+.ad-container {
+  position: sticky;
+  top: 0;
+}
+
 #standard_iab_head1 {
     top: 0;
     width: 350px;
