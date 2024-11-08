@@ -614,7 +614,6 @@
 </script>
 
 <main>
-  <div id="standard_iab_head1"></div>
   <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
