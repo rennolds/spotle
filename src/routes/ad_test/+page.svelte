@@ -607,7 +607,6 @@
           });
       }
     } else {
-      // congratulations.innerHTML = "Text copied to clipboard.\t";
       createShareBtnText = "COPIED RESULT";
       navigator.clipboard.writeText(shareText);
     }
@@ -628,7 +627,8 @@
       muted={$muted}
     ></Gameover>
   {/if}
-  <div class="container apple-fix">
+  <div class="outer-container">
+  <div class="container">
     {#if showHelp}
       <div class="help">
         <Help on:close={toggleHelp}></Help>
@@ -1366,6 +1366,7 @@
       <Footer />
     {/if}
   </div>
+</div>
 </main>
 
 <style>
