@@ -1376,7 +1376,7 @@
   #standard_iab_head1 {
     position: absolute;
     top: 0;
-    max-width: 350px;
+    max-width: 340px;
   }
   .splash-screen {
     margin-top: 15px;
