@@ -1373,10 +1373,13 @@
 
 <style>
 
-  #standard_iab_head1 {
+#standard_iab_head1 {
     position: sticky;
     top: 0;
+    width: 100%;
   }
+
+  
   .splash-screen {
     margin-top: 15px;
   }
