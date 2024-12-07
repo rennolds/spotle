@@ -509,7 +509,7 @@
         "embedded_track": "https://open.spotify.com/embed/track/1jKlRcH7X78ps1yKBTWyUV",
         "debut_album_year_y": 2015,
         "group_size": 1,
-        "gender": "m"
+        "gender": "nb"
     },
     {
         "index": 32,
@@ -3377,7 +3377,7 @@
     },
     {
         "index": 211,
-        "artist": "Michael Bubl\u00e9",
+        "artist": "Michael Buble",
         "country": "ca",
         "genre": "Pop",
         "image_uri": "https://i.scdn.co/image/ab6761610000e5ebef8cf61fea4923d2bde68200",
@@ -19422,6 +19422,22 @@
         "debut_album_year_y": "",
         "group_size": 2,
         "gender": "x"
+    },
+    {
+        "index": 1215,
+        "artist": "Santa Claus",
+        "country": "tr",
+        "genre": "Magic",
+        "image_uri": "https://media.swncdn.com/via/images/2023/11/16/33652/33652-gettyimages-1427748072_source_file.jpg",
+        "uri": "",
+        "debut_album_year": 270,
+        "track_name": "",
+        "song_uri": "",
+        "song_image_uri": "",
+        "embedded_track": "",
+        "debut_album_year_y": "",
+        "group_size": 1,
+        "gender": "m"
     }
 
 
