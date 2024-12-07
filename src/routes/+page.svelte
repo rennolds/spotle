@@ -69,14 +69,8 @@
   const todaysDate = moment().tz("America/New_York").format("MM/DD/YYYY");
 
   const todaysMoment = moment.tz(todaysDate, "MM/DD/YYYY", "America/New_York");
-  const christmasStart = moment.tz("12/06/2024", "MM/DD/YYYY", "America/New_York");
+  const christmasStart = moment.tz("12/11/2024", "MM/DD/YYYY", "America/New_York");
   const christmasEnd = moment.tz("12/26/2024", "MM/DD/YYYY", "America/New_York");
-
-  if (todaysMoment.isAfter(christmasStart) && todaysMoment.isBefore(christmasEnd)) {
-    console.log("Today's date is within the range.");
-  } else {
-      console.log("Today's date is outside the range.");
-  }
 
   const previousDay = moment()
     .tz("America/New_York")
