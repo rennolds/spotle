@@ -5728,5 +5728,119 @@
     "artist": "Ricky Martin",
     "song_uri": "https://p.scdn.co/mp3-preview/efdd213308e7efa3d4e2f883cda1b2a059ab32a3?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273e7e9b85cc1f021ec12130d80"
+  },
+  {
+    "date": "12/08/2024",
+    "artist": "Tears For Fears",
+    "song_uri": "https://p.scdn.co/mp3-preview/49a5e33d422484fde5484d3e665821e9a3a8b540?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27322463d6939fec9e17b2a6235"
+  },
+  {
+    "date": "12/09/2024",
+    "artist": "Britney Spears",
+    "song_uri": "https://p.scdn.co/mp3-preview/a7aa0855ed4fbae0cc6ad218c82695e8af097ae4",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27316ed688a08ecd351560f4566"
+  },
+  {
+    "date": "12/10/2024",
+    "artist": "John Denver",
+    "song_uri": "https://p.scdn.co/mp3-preview/8546e92b9d87d68b2e00c13100f481c056e4d317",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734c9dede40f86ce4b25eb8fb9"
+  },
+  {
+    "date": "12/11/2024",
+    "artist": "Mary J. Blige",
+    "song_uri": "https://p.scdn.co/mp3-preview/b80ade535b32133290c944b8d84524ec393a4b0d",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273783c6c4294e14bd228624911"
+  },
+  {
+    "date": "12/12/2024",
+    "artist": "Sia",
+    "song_uri": "https://p.scdn.co/mp3-preview/a936030efc27a4fc52d8c42b20d03ca4cab30836",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d1410c1372fab1e516328fa8"
+  },
+  {
+    "date": "12/13/2024",
+    "artist": "Ariana Grande",
+    "song_uri": "https://p.scdn.co/mp3-preview/7fdba01dab82f27e922b640e4801e99ee71f3163",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a1db745e63940bc06985dea5"
+  },
+  {
+    "date": "12/14/2024",
+    "artist": "Pentatonix",
+    "song_uri": "https://p.scdn.co/mp3-preview/d623df66d91d98941c52a6610b0e27526e854f5b",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ddbbb08d6f7a6ed263fa6afc"
+  },
+  {
+    "date": "12/15/2024",
+    "artist": "Bing Crosby",
+    "song_uri": "https://p.scdn.co/mp3-preview/90b7f0b240eb1758c89154d030bd4575443d9bf1",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2738004cd6b343732b0e1e666f5"
+  },
+  {
+    "date": "12/16/2024",
+    "artist": "Paul McCartney",
+    "song_uri": "https://p.scdn.co/mp3-preview/ed79851df94134e6effe1271e30eb186423d1c36",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733cef016d13d82873d45af84a"
+  },
+  {
+    "date": "12/17/2024",
+    "artist": "The Jackson 5",
+    "song_uri": "https://p.scdn.co/mp3-preview/e09b03d1c2a37fba5efb2c46e9266c2ba71b0d56",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27308a0fe33e91b991d2c9c9cde"
+  },
+  {
+    "date": "12/18/2024",
+    "artist": "Sabrina Carpenter",
+    "song_uri": "https://p.scdn.co/mp3-preview/088c31a49daff8509b1bb293b6c1153f9bfe51b5",
+    "image_uri": "https://images.genius.com/aaabe3eefd1b191c6add94163e42b9f7.1000x1000x1.jpg"
+  },
+  {
+    "date": "12/19/2024",
+    "artist": "Michael Buble",
+    "song_uri": "https://p.scdn.co/mp3-preview/a6c7c7d01334a4801d782d6834ff7a2559ab138e",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732ead7786631d8dd3b59be4f0"
+  },
+  {
+    "date": "12/20/2024",
+    "artist": "Nat King Cole",
+    "song_uri": "https://p.scdn.co/mp3-preview/aea9094e76314995f63cdc8f00f9397cd64becb2",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27330dc6027fd140c7ba68e900c"
+  },
+  {
+    "date": "12/21/2024",
+    "artist": "Tyler, The Creator",
+    "song_uri": "https://p.scdn.co/mp3-preview/ea9ddfdc05e2fa96014a0f5242a23cd620969ccc",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273940b54f90834834dfbc53da1"
+  },
+  {
+    "date": "12/22/2024",
+    "artist": "Kelly Clarkson",
+    "song_uri": "https://p.scdn.co/mp3-preview/9d6040eda6551e1746409ca2c8cf04d95475019a",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739fd0d700bdf33c9ebc42f429"
+  },
+  {
+    "date": "12/23/2024",
+    "artist": "Justin Bieber",
+    "song_uri": "https://p.scdn.co/mp3-preview/aa0f0839c3f7720db5d76c8909ad0eb694f4d57f",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273af0aff7f601df9ed6d2d531d"
+  },
+  {
+    "date": "12/24/2024",
+    "artist": "Wham!",
+    "song_uri": "https://p.scdn.co/mp3-preview/5c6b42e86dba5ec9e8346a345b3a8822b2396d3f",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f2d2adaa21ad616df6241e7d"
+  },
+  {
+    "date": "12/25/2024",
+    "artist": "Mariah Carey",
+    "song_uri": "https://p.scdn.co/mp3-preview/6b1557cd25d543940a3decd85a7bf2bc136c51f8",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734246e3158421f5abb75abc4f"
+  },
+  {
+    "date": "12/26/2024",
+    "artist": "",
+    "song_uri": "",
+    "image_uri": ""
   }
 ]
