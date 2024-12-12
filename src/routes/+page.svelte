@@ -28,6 +28,7 @@
   import christmasSmall11 from "$lib/assets/ChristmasSmall11.svg?raw"
   import christmasSmall10 from "$lib/assets/ChristmasSmall10.svg?raw"
   import christmasSmall9 from "$lib/assets/ChristmasSmall9.svg?raw"
+  
 
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
