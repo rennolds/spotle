@@ -1,6 +1,5 @@
 <script>
   import { browser } from "$app/environment";
-  import { onMount } from "svelte";
   import moment from "moment";
   import "moment-timezone";
   import Help from "./Help.svelte";
@@ -20,15 +19,15 @@
     gameOver,
   } from "./store.js";
   import "./styles.css"
-  import christmasLarge12 from "$lib/assets/ChristmasLarge12.svg?raw"
-  import christmasLarge11 from "$lib/assets/ChristmasLarge11.svg?raw"
-  import christmasLarge10 from "$lib/assets/ChristmasLarge10.svg?raw"
-  import christmasLarge9 from "$lib/assets/ChristmasLarge9.svg?raw"
-  import christmasSmall12 from "$lib/assets/ChristmasSmall12.svg?raw"
-  import christmasSmall11 from "$lib/assets/ChristmasSmall11.svg?raw"
-  import christmasSmall10 from "$lib/assets/ChristmasSmall10.svg?raw"
-  import christmasSmall9 from "$lib/assets/ChristmasSmall9.svg?raw"
-  
+  import christmasLarge12 from "$lib/ChristmasLarge12.svg?raw"
+  import christmasLarge11 from "$lib/ChristmasLarge11.svg?raw"
+  import christmasLarge10 from "$lib/ChristmasLarge10.svg?raw"
+  import christmasLarge9 from "$lib/ChristmasLarge9.svg?raw"
+  import christmasSmall12 from "$lib/ChristmasSmall12.svg?raw"
+  import christmasSmall11 from "$lib/ChristmasSmall11.svg?raw"
+  import christmasSmall10 from "$lib/ChristmasSmall10.svg?raw"
+  import christmasSmall9 from "$lib/ChristmasSmall9.svg?raw"
+
 
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
