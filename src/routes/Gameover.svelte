@@ -25,22 +25,25 @@
 
   const winningMessages = {
     1: [
-      "Wow. Are they your favorite?",
-      "A once in a lifetime moment...",
-      "Go buy a lottery ticket.",
-      "Have you been waiting for this?",
+      // "Wow. Are they your favorite?",
+      // "A once in a lifetime moment...",
+      // "Go buy a lottery ticket.",
+      // "Have you been waiting for this?",
+      "Cheating puts you on the naughty list...",
     ],
     2: [
-      "Did you cheat...?",
-      "This may never happen again.",
-      "Speechless.",
-      "Pop the champagne!",
+      // "Did you cheat...?",
+      // "This may never happen again.",
+      // "Speechless.",
+      // "Pop the champagne!",
+      "A Christmas miracle!"
     ],
     3: [
-      "You're a savant!",
-      "Amazing performance.",
-      "Immaculate.",
-      "Savor this moment.",
+      // "You're a savant!",
+      // "Amazing performance.",
+      // "Immaculate.",
+      // "Savor this moment.",
+      "A gift wrapped W",
     ],
     4: [
       "4/10...incredible!",
@@ -48,14 +51,24 @@
       "You are seriously good at this.",
       "You're an all star!",
     ],
-    5: ["Five. Impressive.", "Wooo!!", "Amazing!", "Let's GOO!"],
+    5: [
+      "Five. Impressive.",
+      "Wooo!!",
+      "Amazing!",
+      "Let's GOO!"
+    ],
     6: [
       "Tell your friends!",
       "Another day, another Spotle.",
       "A respectable performance.",
       "Way to close it out.",
     ],
-    7: ["Congrats!", "Nice job!", "Not bad.", "Way to get it done."],
+    7: [
+      "Congrats!", 
+      "Nice job!",
+      "Not bad.",
+      "Way to get it done."
+    ],
     8: [
       "8 guesses...it'll pass.",
       "Pretty good.",
@@ -63,16 +76,18 @@
       "It was looking dicey for a second.",
     ],
     9: [
-      "Nice, that was close!",
-      "Could've gone worse.",
-      "A win is a win.",
-      "Were you nervous?",
+      // "Nice, that was close!",
+      // "Could've gone worse.",
+      // "A win is a win.",
+      // "Were you nervous?",
+      "You might be the Grinch..",
     ],
     10: [
-      "On the buzzer!",
-      "We never doubted you.",
-      "You got it when it mattered most.",
-      "Ice in the veins.",
+      // "On the buzzer!",
+      // "We never doubted you.",
+      // "You got it when it mattered most.",
+      // "Ice in the veins.",
+      "You get coal for Christmas.",
     ],
   };
 
@@ -141,7 +156,7 @@
     for (let i = 1; i < guessCount; i++) {
       emojis = emojis.concat("", "⬜");
     }
-    emojis = emojis.concat("", "🟩\n");
+    emojis = emojis.concat("", "🎁\n");
   }
 
   if (result == "L") {
