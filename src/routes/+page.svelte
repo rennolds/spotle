@@ -19,14 +19,12 @@
     gameOver,
   } from "./store.js";
   import "./styles.css"
-  import christmasLarge12 from "$lib/ChristmasLarge12.svg?raw"
-  import christmasLarge11 from "$lib/ChristmasLarge11.svg?raw"
-  import christmasLarge10 from "$lib/ChristmasLarge10.svg?raw"
   import christmasLarge9 from "$lib/ChristmasLarge9.svg?raw"
-  import christmasSmall12 from "$lib/ChristmasSmall12.svg?raw"
-  import christmasSmall11 from "$lib/ChristmasSmall11.svg?raw"
-  import christmasSmall10 from "$lib/ChristmasSmall10.svg?raw"
   import christmasSmall9 from "$lib/ChristmasSmall9.svg?raw"
+  import christmasLarge8 from "$lib/ChristmasLarge8.svg?raw"
+  import christmasSmall8 from "$lib/ChristmasSmall8.svg?raw"
+  import christmasLarge7 from "$lib/ChristmasLarge7.svg?raw"
+  import christmasSmall7 from "$lib/ChristmasSmall7.svg?raw"
 
 
   const PUB_ID = 1025391;
@@ -641,14 +639,14 @@
     {/if}
     {#if splashScreen}
       <div style="margin-top: 25px">
-        {#if todaysDate == "12/12/2024"}
-          {@html christmasLarge12}
-        {:else if todaysDate == "12/13/2024"}
-          {@html christmasLarge11}
-        {:else if todaysDate == "12/14/2024"}
-          {@html christmasLarge10}
-        {:else if todaysDate == "12/15/2024"} 
+        {#if todaysDate == "12/15/2024"}
           {@html christmasLarge9}
+        {:else if todaysDate == "12/16/2024"} 
+          {@html christmasLarge9}
+        {:else if todaysDate == "12/17/2024"} 
+          {@html christmasLarge8}
+        {:else if todaysDate == "12/18/2024"} 
+          {@html christmasLarge7}
         {:else}
         <div style="margin-top: 25px">
           <svg
@@ -868,21 +866,21 @@
         </div>
         {#if todaysMoment.isAfter(christmasStart) && todaysMoment.isBefore(christmasEnd)}
 
-          {#if todaysDate == "12/12/2024"}
-          <div class="logo">
-            {@html christmasSmall12}
-          </div>
-          {:else if todaysDate == "12/13/2024"}
-          <div class="logo">
-            {@html christmasSmall11}
-          </div>
-          {:else if todaysDate == "12/14/2024"}
-          <div class="logo">
-            {@html christmasSmall10}
-          </div>
-          {:else if todaysDate == "12/15/2024"} 
+          {#if todaysDate == "12/15/2024"}
           <div class="logo">
             {@html christmasSmall9}
+          </div>
+          {:else if todaysDate == "12/16/2024"}
+          <div class="logo">
+            {@html christmasSmall9}
+          </div>
+          {:else if todaysDate == "12/17/2024"}
+          <div class="logo">
+            {@html christmasSmall8}
+          </div>
+          {:else if todaysDate == "12/18/2024"} 
+          <div class="logo">
+            {@html christmasSmall7}
           </div>
         {/if}
 
