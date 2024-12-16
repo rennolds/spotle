@@ -1448,7 +1448,6 @@
                   <p>2.</p>
                   <h3>Leave a note for your friend.</h3>
                 </div>
-
                 <input
                   class="create-form"
                   placeholder="Write a hint or message here..."
@@ -1460,6 +1459,9 @@
                   on:click={handleCreateShare(createGameSelection)}
                   >{createShareBtnText}</button
                 >
+
+                <div class="ad-space">
+                </div>
               {/if}
             </div>
           {/if}
