@@ -19,10 +19,8 @@
     gameOver,
   } from "./store.js";
   import "./styles.css"
-  import christmasLarge9 from "$lib/ChristmasLarge9.svg?raw"
-  import christmasSmall9 from "$lib/ChristmasSmall9.svg?raw"
-  import christmasLarge8 from "$lib/ChristmasLarge8.svg?raw"
-  import christmasSmall8 from "$lib/ChristmasSmall8.svg?raw"
+  import christmasLarge6 from "$lib/ChristmasLarge6.svg?raw"
+  import christmasSmall6 from "$lib/ChristmasSmall6.svg?raw"
   import christmasLarge7 from "$lib/ChristmasLarge7.svg?raw"
   import christmasSmall7 from "$lib/ChristmasSmall7.svg?raw"
 
@@ -639,14 +637,10 @@
     {/if}
     {#if splashScreen}
       <div style="margin-top: 25px">
-        {#if todaysDate == "12/15/2024"}
-          {@html christmasLarge9}
-        {:else if todaysDate == "12/16/2024"} 
-          {@html christmasLarge9}
-        {:else if todaysDate == "12/17/2024"} 
-          {@html christmasLarge8}
-        {:else if todaysDate == "12/18/2024"} 
+        {#if todaysDate == "12/18/2024"}
           {@html christmasLarge7}
+        {:else if todaysDate == "12/16/2024"} 
+          {@html christmasLarge6}
         {:else}
         <div style="margin-top: 25px">
           <svg
@@ -866,21 +860,13 @@
         </div>
         {#if todaysMoment.isAfter(christmasStart) && todaysMoment.isBefore(christmasEnd)}
 
-          {#if todaysDate == "12/15/2024"}
-          <div class="logo">
-            {@html christmasSmall9}
-          </div>
-          {:else if todaysDate == "12/16/2024"}
-          <div class="logo">
-            {@html christmasSmall9}
-          </div>
-          {:else if todaysDate == "12/17/2024"}
-          <div class="logo">
-            {@html christmasSmall8}
-          </div>
-          {:else if todaysDate == "12/18/2024"} 
+          {#if todaysDate == "12/18/2024"}
           <div class="logo">
             {@html christmasSmall7}
+          </div>
+          {:else if todaysDate == "12/19/2024"}
+          <div class="logo">
+            {@html christmasSmall6}
           </div>
         {/if}
 
