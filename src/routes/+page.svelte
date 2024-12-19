@@ -639,7 +639,7 @@
       <div style="margin-top: 25px">
         {#if todaysDate == "12/18/2024"}
           {@html christmasLarge7}
-        {:else if todaysDate == "12/16/2024"} 
+        {:else if todaysDate == "12/19/2024"} 
           {@html christmasLarge6}
         {:else}
         <div style="margin-top: 25px">
