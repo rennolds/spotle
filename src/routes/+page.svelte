@@ -19,8 +19,8 @@
     gameOver,
   } from "./store.js";
   import "./styles.css"
-  import christmasLarge6 from "$lib/ChristmasLarge6.svg?raw"
-  import christmasSmall6 from "$lib/ChristmasSmall6.svg?raw"
+  import christmasLarge4 from "$lib/ChristmasLarge4.svg?raw"
+  import christmasSmall4 from "$lib/ChristmasSmall4.svg?raw"
   import christmasLarge5 from "$lib/ChristmasLarge5.svg?raw"
   import christmasSmall5 from "$lib/ChristmasSmall5.svg?raw"
 
@@ -637,10 +637,10 @@
     {/if}
     {#if splashScreen}
       <div style="margin-top: 25px">
-        {#if todaysDate == "12/19/2024"}
-          {@html christmasLarge6}
-        {:else if todaysDate == "12/20/2024"} 
+        {#if todaysDate == "12/20/2024"}
           {@html christmasLarge5}
+        {:else if todaysDate == "12/21/2024"} 
+          {@html christmasLarge4}
         {:else}
         <div style="margin-top: 25px">
           <svg
@@ -860,13 +860,13 @@
         </div>
         {#if todaysMoment.isAfter(christmasStart) && todaysMoment.isBefore(christmasEnd)}
 
-          {#if todaysDate == "12/19/2024"}
-          <div class="logo">
-            {@html christmasSmall6}
-          </div>
-          {:else if todaysDate == "12/20/2024"}
+          {#if todaysDate == "12/20/2024"}
           <div class="logo">
             {@html christmasSmall5}
+          </div>
+          {:else if todaysDate == "12/21/2024"}
+          <div class="logo">
+            {@html christmasSmall4}
           </div>
         {/if}
 
