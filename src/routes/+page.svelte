@@ -17,16 +17,55 @@
     guesses,
     muted,
     gameOver,
+    played,
+    currentStreak,
+    maxStreak,
+    solveList,
+    bestGuessImages,
   } from "./store.js";
   import "./styles.css"
-  import christmasLarge4 from "$lib/ChristmasLarge4.svg?raw"
-  import christmasSmall4 from "$lib/ChristmasSmall4.svg?raw"
-  import christmasLarge5 from "$lib/ChristmasLarge5.svg?raw"
-  import christmasSmall5 from "$lib/ChristmasSmall5.svg?raw"
-
+  import christmasLarge4 from "$lib/ChristmasLarge4.svg?raw";
+  import christmasSmall4 from "$lib/ChristmasSmall4.svg?raw";
+  import christmasLarge3 from "$lib/ChristmasLarge3.svg?raw";
+  import christmasSmall3 from "$lib/ChristmasSmall3.svg?raw";
 
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
+
+  function handleStats(guessCount, win) {
+    $played = $played + 1;
+    if (!win) {
+      // loss
+      $solveList.push(0);
+      $solveList = $solveList;
+      $currentStreak = 0;
+    }
+    else {
+      // win
+      $currentStreak = $currentStreak + 1;
+      $solveList.push(guessCount + 1);
+      $solveList = $solveList;
+      if ($currentStreak > $maxStreak) {
+        $maxStreak = $currentStreak;
+      }
+
+    if ($solveList.length <= 3) {
+      $bestGuessImages.push(mysteryArtist.image_uri)
+      $bestGuessImages = $bestGuessImages;
+    }
+    else {
+      const topPerformances = [...$solveList]
+        .filter(result => result > 0) // Exclude losses (0)
+        .sort((a, b) => b - a) // Sort descending
+        .slice(0, 3); // Take top 3
+    }
+      if (guessCount + 1 <= topPerformances[2]) {
+        $bestGuessImages.push(mysteryArtist.image_uri)
+        $bestGuessImages.shift();
+        $bestGuessImages = $bestGuessImages;
+      }
+    }
+  }
 
   function getGenderLabel(code) {
     switch (code) {
@@ -303,6 +342,8 @@
               'guesses': guessCount + 1,
               'artist': mysteryArtist.name
           });
+
+          handleStats(guessCount, true)
         }
       }
 
@@ -313,6 +354,9 @@
               'guesses': guessCount + 1,
               'artist': mysteryArtist.name
           });
+
+          handleStats(guessCount, false)
+          
         }
         setTimeout(() => {
           $gameOver = true;
@@ -637,10 +681,10 @@
     {/if}
     {#if splashScreen}
       <div style="margin-top: 25px">
-        {#if todaysDate == "12/20/2024"}
-          {@html christmasLarge5}
-        {:else if todaysDate == "12/21/2024"} 
+        {#if todaysDate == "12/21/2024"}
           {@html christmasLarge4}
+        {:else if todaysDate == "12/22/2024"} 
+          {@html christmasLarge3}
         {:else}
         <div style="margin-top: 25px">
           <svg
@@ -860,13 +904,13 @@
         </div>
         {#if todaysMoment.isAfter(christmasStart) && todaysMoment.isBefore(christmasEnd)}
 
-          {#if todaysDate == "12/20/2024"}
-          <div class="logo">
-            {@html christmasSmall5}
-          </div>
-          {:else if todaysDate == "12/21/2024"}
+          {#if todaysDate == "12/21/2024"}
           <div class="logo">
             {@html christmasSmall4}
+          </div>
+          {:else if todaysDate == "12/22/2024"}
+          <div class="logo">
+            {@html christmasSmall3}
           </div>
         {/if}
 
