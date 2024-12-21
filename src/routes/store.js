@@ -2,6 +2,74 @@ import { writable } from "svelte/store";
 import { browser } from "$app/environment";
 
 
+/// NEW
+
+// PLAYED
+
+let playedParsed = 0;
+const playedName = "played";
+if (browser) {
+    const retrieved = localStorage.getItem(playedName);
+    if (retrieved) {
+        playedParsed = parseInt(retrieved, 10);
+    }
+}
+export const played = writable(browser && playedParsed === null ? 0 : playedParsed);
+played.subscribe((val) => {
+    if (browser) return (localStorage.setItem(playedName, val));
+});
+
+/* 
+  currentStreak 
+*/
+let currentStreakParsed = 0;
+const currentStreakName = "currentStreak";
+if (browser) {
+    const retrieved = localStorage.getItem(currentStreakName);
+    if (retrieved) {
+        currentStreakParsed = parseInt(retrieved, 10);
+    }
+}
+export const currentStreak = writable(browser && currentStreakParsed === null ? 0 : currentStreakParsed);
+currentStreak.subscribe((val) => {
+    if (browser) return (localStorage.setItem(currentStreakName, val));
+});
+
+/* 
+  maxStreak 
+*/
+let maxStreakParsed = 0;
+const maxStreakName = "maxStreak";
+if (browser) {
+    const retrieved = localStorage.getItem(maxStreakName);
+    if (retrieved) {
+        maxStreakParsed = parseInt(retrieved, 10);
+    }
+}
+export const maxStreak = writable(browser && maxStreakParsed === null ? 0 : maxStreakParsed);
+maxStreak.subscribe((val) => {
+    if (browser) return (localStorage.setItem(maxStreakName, val));
+});
+
+/*
+  solveList
+*/
+let solveListParsed = [];
+const solveListName = "solveList";
+if (browser) {
+    const retrieved = localStorage.getItem(solveListName);
+    if (retrieved) {
+        solveListParsed = JSON.parse(retrieved);
+    }
+}
+export const solveList = writable(browser && solveListParsed === null ? [] : solveListParsed);
+solveList.subscribe((val) => {
+    if (browser) return (localStorage.setItem(solveListName, JSON.stringify(val)));
+});
+
+// EXISTING
+
+
 export const visited = writable(browser && localStorage.getItem("visited") || false)
 visited.subscribe((val) => {
     if (browser) return (localStorage.visited = val);
@@ -66,3 +134,18 @@ guesses.subscribe((value) => {
 });
 
 
+/* bestGuessImages - an array of strings */
+let bestGuessImagesParsed = [];
+const bestGuessImagesName = "bestGuessImages";
+if (browser) {
+    const retrieved = localStorage.getItem(bestGuessImagesName);
+    if (retrieved) {
+        bestGuessImagesParsed = JSON.parse(retrieved);
+    }
+}
+export const bestGuessImages = writable(
+    browser && bestGuessImagesParsed === null ? [] : bestGuessImagesParsed
+);
+bestGuessImages.subscribe((val) => {
+    if (browser) return localStorage.setItem(bestGuessImagesName, JSON.stringify(val));
+});
