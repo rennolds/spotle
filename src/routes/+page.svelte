@@ -905,7 +905,7 @@
         </div>
         {#if todaysMoment.isAfter(christmasStart) && todaysMoment.isBefore(christmasEnd)}
 
-          {#if todaysDate == "12/21/2024"}
+          {#if todaysDate == "12/23/2024"}
           <div class="logo">
             {@html christmasSmall2}
           </div>
@@ -913,7 +913,7 @@
           <div class="logo">
             {@html christmasSmall1}
           </div>
-          {:else if todaysDate == "12/23/2024"}
+          {:else if todaysDate == "12/25/2024"}
           <div class="logo">
             {@html christmasLogoSmall}
           </div>
