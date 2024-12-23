@@ -28,6 +28,7 @@
   import christmasSmall2 from "$lib/ChristmasSmall2.svg?raw";
   import christmasLarge1 from "$lib/ChristmasLarge1.svg?raw";
   import christmasSmall1 from "$lib/ChristmasSmall1.svg?raw";
+  import christmasLogoSmall from "$lib/ChristmasLogoSmall.svg?raw";
 
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
@@ -904,13 +905,17 @@
         </div>
         {#if todaysMoment.isAfter(christmasStart) && todaysMoment.isBefore(christmasEnd)}
 
-          {#if todaysDate == "12/23/2024"}
+          {#if todaysDate == "12/21/2024"}
           <div class="logo">
             {@html christmasSmall2}
           </div>
           {:else if todaysDate == "12/24/2024"}
           <div class="logo">
             {@html christmasSmall1}
+          </div>
+          {:else if todaysDate == "12/23/2024"}
+          <div class="logo">
+            {@html christmasLogoSmall}
           </div>
         {/if}
 
