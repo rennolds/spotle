@@ -26,8 +26,8 @@
   import "./styles.css"
   import christmasLarge2 from "$lib/ChristmasLarge2.svg?raw";
   import christmasSmall2 from "$lib/ChristmasSmall2.svg?raw";
-  import christmasLarge3 from "$lib/ChristmasLarge3.svg?raw";
-  import christmasSmall3 from "$lib/ChristmasSmall3.svg?raw";
+  import christmasLarge1 from "$lib/ChristmasLarge1.svg?raw";
+  import christmasSmall1 from "$lib/ChristmasSmall1.svg?raw";
 
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
@@ -681,10 +681,10 @@
     {/if}
     {#if splashScreen}
       <div style="margin-top: 25px">
-        {#if todaysDate == "12/22/2024"}
-          {@html christmasLarge3}
-        {:else if todaysDate == "12/23/2024"} 
+        {#if todaysDate == "12/23/2024"}
           {@html christmasLarge2}
+        {:else if todaysDate == "12/24/2024"} 
+          {@html christmasLarge1}
         {:else}
         <div style="margin-top: 25px">
           <svg
@@ -904,13 +904,13 @@
         </div>
         {#if todaysMoment.isAfter(christmasStart) && todaysMoment.isBefore(christmasEnd)}
 
-          {#if todaysDate == "12/22/2024"}
-          <div class="logo">
-            {@html christmasSmall3}
-          </div>
-          {:else if todaysDate == "12/23/2024"}
+          {#if todaysDate == "12/23/2024"}
           <div class="logo">
             {@html christmasSmall2}
+          </div>
+          {:else if todaysDate == "12/24/2024"}
+          <div class="logo">
+            {@html christmasSmall1}
           </div>
         {/if}
 
