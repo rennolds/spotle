@@ -25,25 +25,22 @@
 
   const winningMessages = {
     1: [
-      // "Wow. Are they your favorite?",
-      // "A once in a lifetime moment...",
-      // "Go buy a lottery ticket.",
-      // "Have you been waiting for this?",
-      "Cheating puts you on the naughty list...",
+      "Wow. Are they your favorite?",
+      "A once in a lifetime moment...",
+      "Go buy a lottery ticket.",
+      "Have you been waiting for this?",
     ],
     2: [
-      // "Did you cheat...?",
-      // "This may never happen again.",
-      // "Speechless.",
-      // "Pop the champagne!",
-      "A Christmas miracle!"
+      "Did you cheat...?",
+      "This may never happen again.",
+      "Speechless.",
+      "Pop the champagne!",
     ],
     3: [
-      // "You're a savant!",
-      // "Amazing performance.",
-      // "Immaculate.",
-      // "Savor this moment.",
-      "A gift wrapped W",
+      "You're a savant!",
+      "Amazing performance.",
+      "Immaculate.",
+      "Savor this moment.",
     ],
     4: [
       "4/10...incredible!",
@@ -76,18 +73,16 @@
       "It was looking dicey for a second.",
     ],
     9: [
-      // "Nice, that was close!",
-      // "Could've gone worse.",
-      // "A win is a win.",
-      // "Were you nervous?",
-      "You might be the Grinch..",
+      "Nice, that was close!",
+      "Could've gone worse.",
+      "A win is a win.",
+      "Were you nervous?",
     ],
     10: [
-      // "On the buzzer!",
-      // "We never doubted you.",
-      // "You got it when it mattered most.",
-      // "Ice in the veins.",
-      "You get coal for Christmas.",
+      "On the buzzer!",
+      "We never doubted you.",
+      "You got it when it mattered most.",
+      "Ice in the veins.",
     ],
   };
 
