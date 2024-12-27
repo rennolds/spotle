@@ -151,7 +151,7 @@
     for (let i = 1; i < guessCount; i++) {
       emojis = emojis.concat("", "⬜");
     }
-    emojis = emojis.concat("", "🎁\n");
+    emojis = emojis.concat("", "🟩\n");
   }
 
   if (result == "L") {
