@@ -148,7 +148,7 @@
       header = "Tell your friend it was too easy...";
     }
 
-    for (let i = 1; i < guessCount; i++) {
+    for (let i = 0; i < guessCount; i++) {
       emojis = emojis.concat("", "⬜");
     }
     emojis = emojis.concat("", "🟩\n");
