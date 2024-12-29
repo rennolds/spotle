@@ -28,6 +28,17 @@
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
 
+  async function sendError(message) {
+    const response = await fetch('/api/report-error', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({"message": message})
+      });
+  }
+
+
   function handleStats(guessCount, win) {
     $played = $played + 1;
     if (!win) {
@@ -266,9 +277,17 @@
       mysteryArtistEntry = mysteryArtistList.find(
         (entry) => entry.date === todaysDate
       );
+      if (mysteryArtistEntry === undefined || mysteryArtistEntry === null) {
+        console.log('Critical error.');
+        sendError("The artist for todays date is not defined or there is a syntax error with the artist.");
+      }
       mysteryArtist = artists.find(
         (artist) => artist.name === mysteryArtistEntry.artist
       );
+      if (mysteryArtist === undefined || mysteryArtistEntry === null) {
+        console.log('Critical error.');
+        sendError("The artist for todays date IS set, but no matching artist in artists.json was found.");
+      }
       mysteryArtistList.forEach((entry, index) => {
         // Compare the date property of each object with today's date
         if (entry.date === todaysDate) {
