@@ -300,6 +300,7 @@
 
       if ($currentGameDate == todaysDate) {
         guessCount = $guesses.length;
+        guessCount--;
         if (guessCount >= 10) {
           result = "L";
           showResults = true;
