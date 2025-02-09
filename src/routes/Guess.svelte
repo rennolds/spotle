@@ -449,7 +449,7 @@
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 15.25px;
     font-style: normal;
     font-weight: 500;
   }
