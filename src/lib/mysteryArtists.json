@@ -6175,15 +6175,15 @@
   },
   {
     "date": "02/20/2025",
+    "artist": "Olivia Rodrigo",
+    "song_uri": "https://p.scdn.co/mp3-preview/3849f6e821a9f55bc736e53791b8d88938e3034e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a"
+  },
+  {
+    "date": "02/21/2025",
     "artist": "Young Thug",
     "song_uri": "https://p.scdn.co/mp3-preview/21a37a02779c9edc02d1b690d70779024f540793?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273c4fee55d7b51479627c31f89"
-  },
-  {
-    "date": "02/23/2025",
-    "artist": "Daft Punk",
-    "song_uri": "https://p.scdn.co/mp3-preview/a13551566573594eb4d12c396775b3fb0fca6e66?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731d5cf960a92bb8b03fc2be7f"
   },
   {
     "date": "02/22/2025",
@@ -6199,30 +6199,37 @@
   },
   {
     "date": "02/24/2025",
+    "artist": "Daft Punk",
+    "song_uri": "https://p.scdn.co/mp3-preview/a13551566573594eb4d12c396775b3fb0fca6e66?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2731d5cf960a92bb8b03fc2be7f"
+  },
+
+  {
+    "date": "02/25/2025",
     "artist": "Quavo",
     "song_uri": "https://p.scdn.co/mp3-preview/eafaa9f7219501977ca2808d90e3c280a29642d0?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273a1fc738279f01eb8086fc44d"
   },
   {
-    "date": "02/25/2025",
+    "date": "02/26/2025",
     "artist": "Kacey Musgraves",
     "song_uri": "https://p.scdn.co/mp3-preview/22b240f7ef2eff38bd12fb0c94dfea5e1d70e20a?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab6761610000e5ebc548c7ff983f25641dc71ffe"
   },
   {
-    "date": "02/26/2025",
+    "date": "02/27/2025",
     "artist": "Jason Derulo",
     "song_uri": "https://p.scdn.co/mp3-preview/18ae0b204fb17e1d3e8b76e119e7d3ae07f86beb",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273eb3092620e6816700d502bb8"
   },
   {
-    "date": "02/27/2025",
+    "date": "02/28/2025",
     "artist": "The Smashing Pumpkins",
     "song_uri": "https://p.scdn.co/mp3-preview/5c2f38c90920f9d3db3784bc0205cf24ec7a1abe?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273431ac6e6f393acf475730ec6"
   },
   {
-    "date": "02/28/2025",
+    "date": "03/01/2025",
     "artist": "Galantis",
     "song_uri": "https://p.scdn.co/mp3-preview/07fb66554af09f90798cadd77255c35df6dda8f4?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2732b517912fd69652ff10d8e11"
