@@ -11,19 +11,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 html {
-  background: -webkit-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background: -webkit-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background: -ms-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background: -o-linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
+  /* Keep the gradient on html */
   background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  z-index: 1;
+  height: 100%; /* Use height instead of min-height */
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  /* Keep your existing body styles mostly intact */
   display: flex;
   justify-content: center;
   place-items: center;
@@ -35,8 +35,24 @@ body {
   position: relative;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  overflow: none;
+  overflow-x: hidden; /* Only hide horizontal scrollbar */
+  overflow-y: auto; /* Allow vertical scrolling */
   font-size: 90%;
+}
+
+/* Add a separate rule for mobile devices */
+@media screen and (max-width: 768px) {
+  html, body {
+    /* Ensure proper full-height behavior on mobile */
+    height: auto;
+    min-height: 100%;
+  }
+  
+  /* Force the background to be fixed on mobile */
+  html {
+    background-attachment: fixed !important;
+    -webkit-background-attachment: fixed !important;
+  }
 }
 
 main {
