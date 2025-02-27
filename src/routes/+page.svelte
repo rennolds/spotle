@@ -670,6 +670,7 @@
 </script>
 
 <main>
+  <div class="backdrop"></div>
   <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   {#if showResults && !createGame}
     <Gameover
