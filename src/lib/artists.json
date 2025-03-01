@@ -381,7 +381,7 @@
         "genre": "Hip Hop",
         "gender": "m",
         "group_size": 1,
-        "debut_album_year": 2016,
+        "debut_album_year": 2015,
         "track_name": "redrum",
         "uri": "spotify:artist:1URnnhqYAYcrqrcwql10ft",
         "image_uri": "https://i.scdn.co/image/ab6761610000e5eba5e754a9c1fc7ad7ee01798b",
@@ -3346,7 +3346,7 @@
     },
     {
         "index": 223,
-        "artist": "Jungkook (정국)",
+        "artist": "Jungkook",
         "country": "kr",
         "genre": "Pop",
         "gender": "M",
@@ -8190,21 +8190,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/1bgKMxPQU7JIZEhNsM1vFs"
     },
     {
-        "index": 546,
-        "artist": "Hans Zimmer",
-        "country": "de",
-        "genre": "Classical",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 1982,
-        "track_name": "Cornfield Chase",
-        "uri": "spotify:artist:0YC192cP3KPCRWx8zr8MfZ",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb371632043a8c12bb7eeeaf9d",
-        "song_uri": "https://p.scdn.co/mp3-preview/1477150a7e55da977b60801f29c7ab79c8d49b18?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273ac29a65e7ffcfa6f9cb0d342",
-        "embedded_track": "https://open.spotify.com/embed/track/6pWgRkpqVfxnj3WuIcJ7WP"
-    },
-    {
         "index": 547,
         "artist": "Five Finger Death Punch",
         "country": "us",
@@ -9451,18 +9436,18 @@
     },
     {
         "index": 630,
-        "artist": "Marco Antonio Solis",
-        "country": "mx",
+        "artist": "Gracie Abrams",
+        "country": "us",
         "genre": "Pop",
-        "gender": "m",
+        "gender": "f",
         "group_size": 1,
-        "debut_album_year": 1995,
-        "track_name": "Acepto Mi Derrota",
-        "uri": "spotify:artist:3tJnB0s6c3oXPq1SCCavnd",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9d818606c2582549402ca755",
-        "song_uri": "https://p.scdn.co/mp3-preview/57597c5a8e2694f9e5a59c1db7e244f508e0ae44?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273b0cfb94bd5583e3775d2df6a",
-        "embedded_track": "https://open.spotify.com/embed/track/6DLLMiIJ4ZTEavY5Qg7QVD"
+        "debut_album_year": 2023,
+        "track_name": "That's So True",
+        "uri": "spotify:artist:4tuJ0bMpJh08umKkEXKUI5",
+        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb416bd8a66bfcbc545c2009ac",
+        "song_uri": "https://p.scdn.co/mp3-preview/aed073ed2859447c5b275cd7bace28302330b629",
+        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2731dac3694b3289cd903cb3acf",
+        "embedded_track": "https://open.spotify.com/embed/track/4nyF5lmSziBAt7ESAUjpbx"
     },
     {
         "index": 631,
@@ -12595,8 +12580,8 @@
         "track_name": "FIX LATER",
         "uri": "FIX LATER",
         "image_uri": "https://i.scdn.co/image/ab6761610000e5ebc47897b69089f59e31817f26",
-        "song_uri": "FIX LATER",
-        "song_image_uri": "FIX LATER",
+        "song_uri": "https://p.scdn.co/mp3-preview/1afcbd164ede375be899615268a947d6f96edaaa",
+        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2734694c5b97d3a88efb5fc71b5",
         "embedded_track": "FIX LATER"
     },
     {
@@ -13387,11 +13372,11 @@
         "gender": "f",
         "group_size": 1,
         "debut_album_year": 2020,
-        "track_name": "FIX LATER",
+        "track_name": "Denial is a River",
         "uri": "FIX LATER",
         "image_uri": "https://i.scdn.co/image/ab6761610000e5ebca2fee52c41d3f58ceb6474b",
-        "song_uri": "FIX LATER",
-        "song_image_uri": "FIX LATER",
+        "song_uri": "https://p.scdn.co/mp3-preview/c7df13b937a5c387ebf1e7f33106c10f3cc2b5a0",
+        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273b245099fe26319344ddf6054",
         "embedded_track": "FIX LATER"
     },
     {
@@ -13620,21 +13605,6 @@
         "embedded_track": "FIX LATER"
     },
     {
-        "index": 908,
-        "artist": "Kanye West",
-        "country": "Us",
-        "genre": "Hip Hop",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2004,
-        "track_name": "Bound 2",
-        "uri": "spotify:artist:5K4W6rqBFWDnAN6FQUkS6x",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a",
-        "song_uri": "https://p.scdn.co/mp3-preview/29e764b42b388d06a2d4abdc2bdae9e1834cf296?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2731dacfbc31cc873d132958af9",
-        "embedded_track": "https://open.spotify.com/embed/track/4EWCNWgDS8707fNSZ1oaA5"
-    },
-    {
         "index": 909,
         "artist": "Michael Buble",
         "country": "ca",
@@ -13648,21 +13618,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/34bf44392036c99f1cdf2c5a5223441f3b0d4e27?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2739f355d1d6a4922ce35b17705",
         "embedded_track": "https://open.spotify.com/embed/track/22bZVqJfATps2ETj7017Ms"
-    },
-    {
-        "index": 910,
-        "artist": "Jung Kook",
-        "country": "kr",
-        "genre": "Pop",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2023,
-        "track_name": "Standing Next To You",
-        "uri": "spotify:artist:6HaGTQPmzraVmaVxvz6EUc",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb40a7268dd742e5f63759b960",
-        "song_uri": "“”",
-        "song_image_uri": "https://i.scdn.co/image/ab6761610000e5eb40a7268dd742e5f63759b960",
-        "embedded_track": "“”"
     },
     {
         "index": 911,
@@ -14716,18 +14671,18 @@
     },
     {
         "index": 981,
-        "artist": "Diljit Dosanjh",
-        "country": "in",
-        "genre": "Pop",
+        "artist": "Vampire Weekend",
+        "country": "us",
+        "genre": "Alternative",
         "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2004,
-        "track_name": "Hass Hass",
-        "uri": "spotify:artist:2FKWNmZWDBZR4dE5KX4plR",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebfc043bea91ac91c222d235c9",
-        "song_uri": "https://p.scdn.co/mp3-preview/1ca69a664144f97136d7aa55ed30b8e2158da2f8?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27374a99276badeec2675a9eaec",
-        "embedded_track": "https://open.spotify.com/embed/track/72vuBPMhwFNlSYpTSf6fVD"
+        "group_size": 3,
+        "debut_album_year": 2008,
+        "track_name": "A-Punk",
+        "uri": "spotify:artist:5BvJzeQpmsdsFp4HGUYUEx",
+        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb44829ac83c4538a8cf7e9f40",
+        "song_uri": "https://p.scdn.co/mp3-preview/abbf4b45e22144722c6dcd6a99ac6faecfc61140?cid=98f79e400795491cbc5f69b713465708",
+        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273eabfe5d94aad05cb6485444b",
+        "embedded_track": "https://open.spotify.com/embed/track/3AydAydLzyyZutA0375XIz"
     },
     {
         "index": 982,
@@ -15613,21 +15568,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/340bdf7b29f2725f0353cb77cc8f6996cdc9fbe8?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273b736151ed1c04f2d41d5f69e",
         "embedded_track": "https://open.spotify.com/embed/track/4tKGFmENO69tZR9ahgZu48"
-    },
-    {
-        "index": 1041,
-        "artist": "Gracie Abrams",
-        "country": "us",
-        "genre": "Pop",
-        "gender": "f",
-        "group_size": 1,
-        "debut_album_year": 2023,
-        "track_name": "I miss you, I’m sorry",
-        "uri": "spotify:artist:4tuJ0bMpJh08umKkEXKUI5",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb416bd8a66bfcbc545c2009ac",
-        "song_uri": "https://p.scdn.co/mp3-preview/b52184776abfe4a55fc48444b06d3127cd5b872c?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27355c38bc34d1fe852f2657c2e",
-        "embedded_track": "https://open.spotify.com/embed/track/4nyF5lmSziBAt7ESAUjpbx"
     },
     {
         "index": 1042,
@@ -17467,11 +17407,11 @@
         "gender": "m",
         "group_size": 1,
         "debut_album_year": 1957,
-        "track_name": "The Mates of Soul (Remastered)",
+        "track_name": "Duel of the Fates",
         "uri": "spotify:artist:73r6cgVUoNL47qnJAF0Ihw",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb89624794179c28271cf981d0",
-        "song_uri": "https://p.scdn.co/mp3-preview/b39e4ab04caad3abc7f79dc2d020bf7e485bbe61?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2730aaf5d33748c80b0347d6a5e",
+        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb86b13e4d2e65ebf694384ef4",
+        "song_uri": "https://p.scdn.co/mp3-preview/b3292ce2b613db3bc07369e52cd1688891ba486d",
+        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2736885cfd3b91e4cda4313f58c",
         "embedded_track": "https://open.spotify.com/embed/track/2gyD68GxciTVHPkJHlGDrc"
     },
     {
@@ -19858,21 +19798,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/b0853b733e01eba03ccb6f1f0b4f4729ee23cf4a?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273894ae4df775c6b47438991af",
         "embedded_track": "https://open.spotify.com/embed/track/2SelIoNf0P0QrHMQnSEX8q"
-    },
-    {
-        "index": 1324,
-        "artist": "Vampire Weekend",
-        "country": "us",
-        "genre": "Alternative",
-        "gender": "m",
-        "group_size": 4,
-        "debut_album_year": 2008,
-        "track_name": "A-Punk",
-        "uri": "spotify:artist:5BvJzeQpmsdsFp4HGUYUEx",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb44829ac83c4538a8cf7e9f40",
-        "song_uri": "https://p.scdn.co/mp3-preview/abbf4b45e22144722c6dcd6a99ac6faecfc61140?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273eabfe5d94aad05cb6485444b",
-        "embedded_track": "https://open.spotify.com/embed/track/3AydAydLzyyZutA0375XIz"
     },
     {
         "index": 1325,
