@@ -168,8 +168,6 @@
   lastSixDaysArtists.reverse();
   lastSixDaysDates.reverse();
 
-  // Setup for Rush mode
-  let rushIndex = 0;
   const eligibleArtists = [
     "Taylor Swift",
     "Kanye West",
@@ -575,9 +573,8 @@
 
       if (playingJam) {
         if (selectedArtist == mysteryArtist) {
-          rushIndex++;
           const selectedArtist = artists.find(
-            (artist) => artist.name === eligibleArtists[rushIndex]
+            (artist) => artist.name === eligibleArtists[jamIndex]
           );
           mysteryArtist = selectedArtist;
           mysteryArtistEntry = {
@@ -751,7 +748,6 @@
             isGameOver={normalGame ? $gameOver : tempGameOver}
             rewindDates={lastSixDaysDates}
             rewindIndex={rewindIndex}
-            rushIndex={rushIndex}
             blurResults={showResults}
             challengeNote={challengeNote}
             on:guess={(e) => handleSearch(e.detail.artistName)}
