@@ -14,6 +14,8 @@
   import SplashScreen from '../components/SplashScreen.svelte';
   import GameBoard from '../components/GameBoard.svelte';
   import CreateGame from '../components/CreateGame.svelte';
+  import Navbar from '../components/Navbar.svelte';
+  import AdBanner from '../components/AdBanner.svelte';
   
   // Import game state and utilities
   import { 
@@ -195,6 +197,11 @@
       case "nb": return "Nonbinary";
       default: return "Unknown";
     }
+  }
+
+  function handleStatsClick() {
+    // Stats functionality will be implemented later
+    console.log("Stats button clicked");
   }
 
   function handleStats(guessCount, win) {
@@ -528,6 +535,14 @@
 <main>
   <!-- The backdrop div should be the first child in main -->
   <div class="backdrop"></div>
+  <AdBanner {PUB_ID} {WEBSITE_ID} />
+  <Navbar 
+    showBackButton={playingGame}
+    showLogo={true}
+    on:menu={handleMenuClick}
+    on:help={toggleHelp}
+    on:stats={handleStatsClick}
+  />
   
   <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   
@@ -555,13 +570,13 @@
   <div class="outer-container">
     <div class="container">
       <!-- Header -->
-      <GameHeader 
+      <!-- <GameHeader 
         showBackButton={playingGame}
         showHelp={playingGame}
         showLogo={true}
         on:menu={handleMenuClick}
         on:help={toggleHelp}
-      />
+      /> -->
       
       <!-- Main content -->
       {#if splashScreen}
@@ -722,4 +737,5 @@
     align-items: center !important;
     justify-content: flex-start !important;
   }
+
 </style>
