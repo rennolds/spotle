@@ -86,37 +86,39 @@
   
     <!-- Artist search section (if no artist is selected) -->
     {#if !selectedArtist}
-      <SearchBar 
-        placeholder="Search for an artist..." 
-        on:search={handleSearch} 
-      />
+      <div class="search-bar-container">
+        <SearchBar 
+          placeholder="Search for an artist..." 
+          on:search={handleSearch} 
+        />
+      </div>
     {:else}
       <!-- Selected artist display -->
-      <div class="header-row">
-        <img
-          src={selectedArtist.image_uri}
-          alt={selectedArtist.name}
-        />
-        <h2>{selectedArtist.name}</h2>
+      <div class="selected-artist-container">
+        <div class="header-row">
+          <img
+            src={selectedArtist.image_uri}
+            alt={selectedArtist.name}
+          />
+          <h2>{selectedArtist.name}</h2>
+        </div>
+    
+        <div class="create-game-text">
+          <p>2.</p>
+          <h3>Leave a note for your friend.</h3>
+        </div>
+        
+        <textarea
+          class="create-form"
+          placeholder="Write a hint or message here..."
+          bind:value={createNote}
+        ></textarea>
+        
+        <button
+          class="styled-btn"
+          on:click={handleCreateShare}
+        >{createShareBtnText}</button>
       </div>
-  
-      <div class="create-game-text">
-        <p>2.</p>
-        <h3>Leave a note for your friend.</h3>
-      </div>
-      
-      <input
-        class="create-form"
-        placeholder="Write a hint or message here..."
-        bind:value={createNote}
-      />
-      
-      <p></p>
-      
-      <button
-        class="styled-btn"
-        on:click={handleCreateShare}
-      >{createShareBtnText}</button>
     {/if}
   
     <div class="ad-space"></div>
@@ -124,7 +126,26 @@
   
   <style>
     .create-game-container {
-      margin-top: 20px;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .search-bar-container {
+      width: 100%;
+      margin: 10px 0;
+      position: relative;
+      z-index: 50;
+    }
+    
+    .selected-artist-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     
     .header-row {
@@ -132,8 +153,8 @@
       flex-direction: row;
       align-items: center;
       color: #fff;
-      margin-bottom: 5px;
-      margin-top: 50px;
+      margin: 30px 0 5px 0;
+      width: 100%;
     }
   
     .header-row img {
@@ -146,9 +167,10 @@
   
     .create-game-text {
       display: flex;
-      flex-direction: flex-start;
-      margin-top: 30px;
-      margin-bottom: 15px;
+      flex-direction: row;
+      align-items: center;
+      margin: 20px 0 15px 0;
+      width: 100%;
     }
   
     .create-game-text h3 {
@@ -157,7 +179,6 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      display: flex;
     }
   
     .create-game-text p {
@@ -175,6 +196,8 @@
       height: 100px;
       padding: 10px;
       font-size: 16px;
+      margin-bottom: 15px;
+      resize: none;
     }
     
     .styled-btn {
@@ -182,15 +205,13 @@
       height: 47px;
       color: #fff;
       text-align: center;
-      font-size: 18px;
+      font-size: 15px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
       background-color: #8370de;
-      font-size: 15px;
-      position: relative;
       border-radius: 100px;
-      margin-top: 15px;
+      margin-top: 5px;
       cursor: pointer;
       border: none;
     }
@@ -201,5 +222,6 @@
     
     .ad-space {
       height: 100px;
+      margin-top: 20px;
     }
   </style>

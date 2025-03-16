@@ -1,6 +1,8 @@
+/* Updated styles.css */
+
 /* Base styles for root */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 600;
   color: #aaa;
@@ -11,110 +13,67 @@
 }
 
 * {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  box-sizing: border-box;
 }
 
 body, html {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-}
-
-/* Component specific font fixes */
-.container, 
-.game-container, 
-.splash-screen, 
-.help, 
-.overlay,
-.game-info-container,
-.create-game-container,
-.footer,
-.header,
-.module,
-.module-list,
-.guess-container,
-.rewind-btn-container,
-.search-container,
-.attribute,
-.step,
-.module-description,
-.header-row,
-.row,
-.item {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-}
-
-/* Text element font fixes */
-h1, h2, h3, h4, h5, h6, p, span, button, input, a, div {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-}
-
-/* Button font fix */
-button, .button, .styled-btn {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-}
-
-/* Fix for module headers */
-.module-header, .module-list-header {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-  width: 100%;
-  text-align: left;
-}
-
-/* Fix for module description */
-.module-description p {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-  color: #fff;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  overflow-x: hidden;
 }
 
 /* HTML styles */
 html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: #121212; /* Fallback color in case gradient fails */
+  scroll-behavior: smooth;
 }
 
 /* Body styles */
 body {
   display: flex;
-  justify-content: center;
-  place-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   min-width: 320px;
-  min-height: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
   position: relative;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  overflow: auto;
+  overflow-y: auto;
   font-size: 90%;
-  background-color: transparent; /* Ensure body doesn't override the backdrop */
   color: #fff;
 }
 
-/* Backdrop with gradient */
+/* Backdrop with gradient - fixed positioning and coverage */
 .backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
-  background-size: cover;
-  z-index: -1;
-  pointer-events: none; /* Allow clicking through the backdrop */
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat !important;
+  background-size: cover !important;
+  z-index: -1 !important;
 }
 
 main {
-  height: 100%;
   width: 100%;
-  align-self: center;
-  position: relative; /* Changed from absolute to avoid positioning issues */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 body::-webkit-scrollbar {
@@ -132,13 +91,24 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* Global centering fixes */
+.outer-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: 340px;
   margin: 0 auto;
+  padding-top: 0;
 }
 
 /* Header centering */
@@ -149,6 +119,14 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 340px;
   margin: 25px auto 0;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
 /* Game board centering */
@@ -168,6 +146,7 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   width: 100%;
   max-width: 340px;
+  margin: 0 auto;
 }
 
 /* Fix header row alignment */
@@ -175,73 +154,13 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   color: #fff;
   margin-bottom: 5px;
   margin-top: 30px;
   width: 100%;
 }
 
-/* Game mode tile centering */
-.module {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 340px;
-  margin: 0 auto 50px;
-}
-
-.module-image {
-  position: relative;
-  width: 100%;
-  max-width: 329px;
-  height: 135px;
-  border-radius: 5px 5px 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-position: center;
-  background-size: contain;
-}
-
-.module-header {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #fff;
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.module-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-/* Search container alignment */
-.search-container {
-  position: relative;
-  width: 100%;
-  max-width: 340px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Row alignment for guesses */
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 340px;
-  margin: 0 auto;
-}
-
-/* Splash screen centering */
+/* Splash screen centering and positioning */
 .splash-screen {
   display: flex;
   flex-direction: column;
@@ -249,107 +168,127 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 340px;
   margin: 15px auto 0;
+  padding-top: 0;
 }
 
-/* Create game container */
-.create-game-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 340px;
-  margin: 20px auto 0;
+.tagline {
+  margin-bottom: 30px;
+  margin-top: -20px;
 }
 
-/* Game info centering */
-.game-info-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 340px;
-  margin-bottom: 10px;
-}
-
-.guesses-remaining {
-  align-self: flex-end;
-  margin-right: 12.5px;
-}
-
-/* Rewind button container */
-.rewind-btn-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 200px;
-  margin: 0 auto;
-  padding-bottom: 10px;
-}
-
-/* Fix footer positioning */
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 340px;
-  margin: 0 auto 15px;
-  padding-bottom: 95px;
-}
-
-/* Help overlay centering */
-.help .content {
-  max-width: 400px;
-  margin: 25px auto;
-  padding-bottom: 50px;
-}
-
-/* Guess styling */
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2.5px;
-  margin: 5px;
+.main-btn {
+  position: relative;
+  width: 190px;
+  border-radius: 100px;
+  height: 48px;
+  color: #fff;
   text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 25px;
+  cursor: pointer;
+  border: none;
 }
 
-/* Game over overlay */
-.overlay .content {
-  margin: 0 auto;
-}
-
-/* Fix for in-game text */
-.in-game-text {
-  width: 320px;
-  margin: 25px auto;
+.styled-btn {
+  width: 170px;
+  height: 47px;
+  color: #fff;
   text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: #8370de;
+  font-size: 15px;
+  position: relative;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
 }
 
-/* Logo centering */
-.logo {
+.styled-btn:hover, .main-btn:hover {
+  transform: scale(1.075) perspective(1px);
+}
+
+/* Module styling */
+.module {
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto 50px;
+  position: relative;
+  cursor: pointer;
 }
 
-/* User input fixes */
-input, button {
-  margin: 0 auto;
-}
-
-/* Module list alignment */
 .module-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   max-width: 340px;
+  margin: 0 auto;
 }
 
 .module-list-header {
+  color: #fff;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
   align-self: flex-start;
   margin-left: 5px;
+  text-align: left;
+}
+
+/* Ensure z-index settings for elements that need to be clickable */
+.icon-btn {
+  z-index: 100;
+  cursor: pointer;
+}
+
+/* Add spacing after the logo */
+.logo {
+  margin-bottom: 20px;
+}
+
+/* Footer alignment */
+.footer {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  padding-bottom: 95px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure proper positioning for help and overlay */
+.help, .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9000;
+}
+
+/* Fix for search bar */
+.search-container {
+  position: relative;
+  width: 340px;
+  margin: 0 auto;
+}
+
+/* Fix for results dropdown */
+.results {
+  position: absolute;
+  max-width: 320px;
+  width: 100%;
+  top: 100%;
+  border-radius: 4px;
+  z-index: 1000; /* Ensure dropdown is above other elements */
 }
