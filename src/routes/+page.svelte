@@ -8,8 +8,8 @@
   import Help from "./Help.svelte";
   import Gameover from "./Gameover.svelte";
   import Countdown from "./Countdown.svelte";
-  import Footer from "./Footer.svelte";
   import Ramp from './Ramp.svelte';
+  import Stats from "./Stats.svelte";
   import SplashScreen from '../components/SplashScreen.svelte';
   import GameBoard from '../components/GameBoard.svelte';
   import CreateGame from '../components/CreateGame.svelte';
@@ -65,6 +65,7 @@
   let spotleNumber = "-1";
   let challengeNote = "";
   let showSlideMenu = false; // New state for slide menu
+  let showStats = false;
 
   // Process artists data
   const artists = artistList.map((artist) => ({
@@ -201,8 +202,12 @@
   }
 
   function handleStatsClick() {
-    // Stats functionality will be implemented later
-    console.log("Stats button clicked");
+    // Update this function to show the stats overlay
+    showStats = true;
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'view_stats', {});
+    }
   }
 
   function handleStats(guessCount, win) {
@@ -569,6 +574,10 @@
       on:navigate={handleSlideMenuNavigation}
     />
   {/if}
+
+  {#if showStats}
+    <Stats on:close={() => showStats = false} />
+  {/if}
   
   <!-- Game over overlay -->
   {#if showResults && !createGame}
@@ -630,10 +639,6 @@
             on:rewindPrevious={previousRewind}
           />
         {/if}
-      {/if}
-      
-      {#if (playingGame && $guesses.length > 1) && !createGame || splashScreen}
-        <Footer />
       {/if}
     </div>
   </div>

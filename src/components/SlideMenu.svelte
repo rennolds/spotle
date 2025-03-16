@@ -78,10 +78,10 @@
             <div class="game-title">Harmonies: Music Connections</div>
           </div>
           
-          <div class="game-card" on:click={handleCrosstune}>
+          <!-- <div class="game-card" on:click={handleCrosstune}>
             <div class="game-image crosstune-image"></div>
             <div class="game-title">Crosstune: A music crossword</div>
-          </div>
+          </div> -->
         </div>
       </div>
       
