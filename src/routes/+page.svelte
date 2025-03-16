@@ -654,4 +654,72 @@
     background-size: cover !important;
     z-index: -1 !important;
   }
+
+    /* Override container positioning */
+    :global(.outer-container) {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  :global(.container) {
+    position: relative !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Fix game components alignment */
+  :global(.game-container),
+  :global(.create-game-container) {
+    position: relative !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Make splash screen stay at top */
+  :global(.splash-screen) {
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Fix header positioning */
+  :global(.header) {
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 25px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  /* Ensure main element is properly positioned */
+  main {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
 </style>

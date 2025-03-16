@@ -35,7 +35,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-start; /* CHANGED: flex-start instead of flex-center */
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -71,6 +71,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* CHANGED: flex-start instead of default */
   position: relative;
   padding-top: 0;
   margin-top: 0;
@@ -97,6 +98,7 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* CHANGED: flex-start instead of center */
   min-height: 100vh;
 }
 
@@ -105,6 +107,7 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* ADDED: ensure content starts at top */
   width: 100%;
   max-width: 340px;
   margin: 0 auto;
@@ -118,7 +121,7 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   width: 100%;
   max-width: 340px;
-  margin: 25px auto 0;
+  margin: 25px auto 20px; /* CHANGED: Added bottom margin */
   position: relative;
 }
 
@@ -134,9 +137,32 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* ADDED: ensure content starts at top */
   width: 100%;
   max-width: 340px;
-  margin: 20px auto 0;
+  margin: 0 auto; /* CHANGED: removed top margin */
+}
+
+/* Create game container */
+.create-game-container {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Ensure content starts at top */
+  position: relative; /* Added position context */
+  top: 0; /* Fixed position at top */
+}
+
+/* Fix for selected artist container in CreateGame */
+.selected-artist-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0; /* Ensure no extra top margin */
 }
 
 /* Guess list centering */
@@ -169,6 +195,7 @@ p, h1, h2, h3, h4, h5, h6 {
   max-width: 340px;
   margin: 15px auto 0;
   padding-top: 0;
+  align-self: flex-start; /* ADDED: ensure it starts at top */
 }
 
 .tagline {
@@ -279,8 +306,10 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Fix for search bar */
 .search-container {
   position: relative;
-  width: 340px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 340px;
+  margin: 10px auto;
+  z-index: 50;
 }
 
 /* Fix for results dropdown */
