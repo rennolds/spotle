@@ -58,7 +58,6 @@
   let result = "";
   let createGameSelection = null;
   let playingChallenge = false;
-  let playingRush = false;
   let playingRewind = false;
   let tempGuesses = [];
   let mysteryArtistEntry;
@@ -105,7 +104,7 @@
     if (encodedArtist) {
       splashScreen = false;
       playingGame = true;
-      playingRush = false;
+      playingJam = false;
       playingChallenge = true;
       playingRewind = false;
 
@@ -258,7 +257,7 @@
     playingRewind = false;
     playingGame = true;
     splashScreen = false;
-    playingRush = false;
+    playingJam = false;
     playingChallenge = false;
 
     if (normalGame) {
@@ -324,7 +323,7 @@
     playingRewind = true;
     playingChallenge = false;
     normalGame = false;
-    playingRush = false;
+    playingJam = false;
 
     if (browser && typeof gtag === 'function') {
       gtag('event', 'rewind', {});
@@ -391,7 +390,6 @@
     normalGame = false;
     playingChallenge = false;
     playingRewind = false;
-    playingRush = false; // Make sure Rush is off
     playingJam = true;   // Enable JAM mode
     
     if (browser && typeof gtag === 'function') {
@@ -476,7 +474,58 @@
       createGameSelection = selectedArtist;
     }
 
-    if (playingChallenge || playingRush || playingRewind) {
+    if (playingJam) {
+      if (tempGameOver) {
+        return;
+      }
+      
+      if (tempGuesses.includes(selectedArtist)) {
+        return;
+      }
+      
+      tempGuesses.push(selectedArtist);
+      tempGuesses = tempGuesses;
+      guessCount++;
+
+      if (selectedArtist == mysteryArtist) {
+        setTimeout(() => {
+          // Add the solved artist to the list
+          solvedJamArtists.push(mysteryArtist);
+          solvedJamArtists = solvedJamArtists;
+          
+          // Increment the JAM index 
+          jamIndex++;
+          
+          // Move to the next artist
+          setJamArtist();
+          
+          // Reset guesses and guess count for next artist
+          tempGuesses = [];
+          guessCount = 0;
+          
+          if (browser && typeof gtag === 'function') {
+            gtag('event', 'jam_artist_solved', {
+              'artist': mysteryArtist.name,
+              'guess_count': guessCount
+            });
+          }
+        }, 1750);
+      }
+
+      if (guessCount >= 10) {
+        setTimeout(() => {
+          // Skip this artist and move to the next one
+          jamIndex++;
+          setJamArtist();
+          tempGuesses = [];
+          guessCount = 0;
+        }, 1750);
+      }
+      
+      return;
+    }
+
+    if (playingChallenge || playingJam || playingRewind) {
       if (tempGameOver) {
         return;
       }
@@ -511,7 +560,7 @@
         }
       }
 
-      if (playingRush) {
+      if (playingJam) {
         if (selectedArtist == mysteryArtist) {
           rushIndex++;
           const selectedArtist = artists.find(
@@ -578,7 +627,6 @@
     if (destination === 'home') {
       playingGame = false;
       normalGame = false;
-      playingRush = false;
       playingJam = false;
       createGame = false;
       splashScreen = true;
