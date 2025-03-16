@@ -1,0 +1,47 @@
+<script>
+    import Guess from '../routes/Guess.svelte'; // Assuming we keep the Guess component where it is for now
+    
+    export let guesses = [];
+    export let mysteryArtist;
+    export let isGameOver = false;
+    export let normalGame = false;
+  </script>
+  
+  <div class="guess-container">
+    {#if normalGame}
+      {#each [...guesses].reverse() as guess (guess.name)}
+        <Guess artist={guess} {mysteryArtist}></Guess>
+      {/each}
+    {:else}
+      {#each [...guesses].reverse() as guess (guess.name)}
+        <Guess artist={guess} {mysteryArtist}></Guess>
+      {/each}
+    {/if}
+  </div>
+  
+  {#if normalGame && guesses.length == 1 && !isGameOver}
+    <p class="in-game-text">
+      Use the matching attributes to make more guesses. Good luck!
+    </p>
+  {/if}
+  
+  <style>
+    .guess-container {
+      display: flex;
+      flex-direction: column;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      overflow: auto;
+    }
+  
+    .guess-container::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .in-game-text {
+      width: 320px;
+      margin: 0 auto; /* Center horizontally */
+      text-align: center; /* Center text */
+      margin-top: 25px;
+    }
+  </style>
