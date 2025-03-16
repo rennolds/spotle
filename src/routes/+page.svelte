@@ -1,4 +1,5 @@
 <script>
+  // Import statements remain the same
   import { browser } from "$app/environment";
   import moment from "moment";
   import "moment-timezone";
@@ -525,7 +526,9 @@
 </script>
 
 <main>
+  <!-- The backdrop div should be the first child in main -->
   <div class="backdrop"></div>
+  
   <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   
   <!-- Game over overlay -->
@@ -632,5 +635,23 @@
     width: 100%;
     height: 100%;
     z-index: 9998;
+  }
+  
+  /* Ensure the background is applied to the entire application */
+  :global(body) {
+    background-color: #121212 !important;
+  }
+  
+  :global(.backdrop) {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat !important;
+    background-size: cover !important;
+    z-index: -1 !important;
   }
 </style>

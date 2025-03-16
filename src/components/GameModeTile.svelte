@@ -31,22 +31,24 @@
   <style>
     .module {
       display: flex;
-      justify-content: center;
       flex-direction: column;
-      width: 100%;
       align-items: center;
-      margin-bottom: 50px;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto 50px;
       position: relative;
       cursor: pointer;
+      font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     }
   
     .module-image {
-      border-radius: 5px 5px 0px 0px;
-      width: 329px;
+      position: relative;
+      width: 100%;
+      max-width: 329px;
       height: 135px;
-      margin-bottom: 0px;
-      padding-bottom: 0px;
-      border-radius: 5px 5px 0px 0px;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-radius: 5px 5px 0 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -58,12 +60,14 @@
       position: absolute;
       top: 10px;
       left: 10px;
-      margin-left: 10px;
       color: #fff;
       font-size: 24px;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
+      font-family: inherit;
+      width: auto;
+      text-align: left;
     }
   
     .module-btn {
@@ -74,16 +78,16 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      margin-right: 10px;
     }
   
     .module-description {
-      width: 329px;
+      width: 100%;
+      max-width: 329px;
       height: 60px;
-      border-radius: 0px 0px 5px 5px;
+      border-radius: 0 0 5px 5px;
       background: #2f2f2f;
-      margin-top: 0px;
-      padding-top: 0px;
+      margin-top: 0;
+      padding-top: 0;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -95,13 +99,11 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      display: flex;
       text-align: left;
-      flex-direction: start;
-      align-items: center;
       padding-right: 5%;
       margin-left: 10px;
-      margin-top: 0px;
+      margin-top: 0;
+      font-family: inherit;
     }
   
     .styled-btn {
@@ -117,5 +119,12 @@
       font-size: 15px;
       position: relative;
       border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    
+    .styled-btn:hover {
+      transform: scale(1.05);
     }
   </style>

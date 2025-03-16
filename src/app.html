@@ -14,8 +14,12 @@
 		<meta property="og:url" content="https://spotle.io">
 		<meta name="color-scheme" content="only">
 		<meta name="darkreader-lock">
-		<!-- <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-        <script async src="//www.ezojs.com/ezoic/sa.min.js"></script> -->
+		
+		<!-- Explicitly load the Inter font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		
 		<title>Spotle: Music Wordle Game </title>
 		%sveltekit.head%
 
@@ -28,6 +32,25 @@
 
 		gtag('config', 'G-HNK31HM2H9');
 		</script>
+		
+		<!-- Ensure default styling has dark background and proper font -->
+		<style>
+		    html, body {
+		        height: 100%;
+		        margin: 0;
+		        padding: 0;
+		        background-color: #121212;
+		        font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+		    }
+		    
+		    body {
+		        color: #fff;
+		    }
+		    
+		    * {
+		        font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+		    }
+		</style>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>

@@ -29,6 +29,8 @@
           <Icon width={"1.75rem"} height={"1.75rem"} name={"menu"}></Icon>
         </div>
       </div>
+    {:else}
+      <div class="left-placeholder"></div>
     {/if}
     
     {#if showLogo}
@@ -62,41 +64,45 @@
           <Icon width={"1.75rem"} height={"1.75rem"} name={"help"}></Icon>
         </div>
       </div>
+    {:else}
+      <div class="right-placeholder"></div>
     {/if}
   </div>
   
   <style>
     .header {
       display: flex;
-      justify-content: center;
-      flex-direction: row;
-      width: 340px;
-      margin-top: 25px;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 340px;
+      margin: 25px auto 0;
+      position: relative;
     }
   
     .logo {
-      margin-left: 15px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   
     .right {
-      margin-left: auto;
       display: flex;
       align-items: center;
-      flex-direction: row-reverse;
     }
   
     .icon-btn {
       margin-left: 7.5px;
       z-index: 9001;
-    }
-  
-    .icon-btn:hover {
       cursor: pointer;
     }
   
     .left {
-      margin-top: 2.5px;
       display: flex;
       align-items: center;
+    }
+    
+    .left-placeholder, .right-placeholder {
+      width: 30px; /* Ensure space for balanced layout */
     }
   </style>

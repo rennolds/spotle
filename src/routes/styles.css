@@ -1,35 +1,83 @@
+/* Base styles for root */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 600;
-
   color: #aaa;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+}
 
-/* Keep your existing styles, but remove or modify the html background */
+body, html {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+}
+
+/* Component specific font fixes */
+.container, 
+.game-container, 
+.splash-screen, 
+.help, 
+.overlay,
+.game-info-container,
+.create-game-container,
+.footer,
+.header,
+.module,
+.module-list,
+.guess-container,
+.rewind-btn-container,
+.search-container,
+.attribute,
+.step,
+.module-description,
+.header-row,
+.row,
+.item {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+}
+
+/* Text element font fixes */
+h1, h2, h3, h4, h5, h6, p, span, button, input, a, div {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+}
+
+/* Button font fix */
+button, .button, .styled-btn {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+}
+
+/* Fix for module headers */
+.module-header, .module-list-header {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  width: 100%;
+  text-align: left;
+}
+
+/* Fix for module description */
+.module-description p {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* HTML styles */
 html {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 600;
-  color: #aaa;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #121212; /* Fallback color */
+  background: #121212; /* Fallback color in case gradient fails */
 }
 
+/* Body styles */
 body {
-  /* Keep your existing body styles */
   display: flex;
   justify-content: center;
   place-items: center;
@@ -41,28 +89,267 @@ body {
   position: relative;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  overflow: none;
+  overflow: auto;
   font-size: 90%;
+  background-color: transparent; /* Ensure body doesn't override the backdrop */
+  color: #fff;
 }
 
-/* Add this new backdrop style */
+/* Backdrop with gradient */
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat;
   background-size: cover;
   z-index: -1;
+  pointer-events: none; /* Allow clicking through the backdrop */
 }
 
 main {
   height: 100%;
+  width: 100%;
   align-self: center;
-  position: absolute;
+  position: relative; /* Changed from absolute to avoid positioning issues */
 }
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+/* Make sure color styles are enforced */
+p, h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+
+/* Fix for specific components if needed */
+.splash-screen p, .help p, .in-game-text {
+  color: #b5b5b5 !important;
+}
+
+/* Global centering fixes */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* Header centering */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 25px auto 0;
+}
+
+/* Game board centering */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 20px auto 0;
+}
+
+/* Guess list centering */
+.guess-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+}
+
+/* Fix header row alignment */
+.header-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 5px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* Game mode tile centering */
+.module {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto 50px;
+}
+
+.module-image {
+  position: relative;
+  width: 100%;
+  max-width: 329px;
+  height: 135px;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: contain;
+}
+
+.module-header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.module-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Search container alignment */
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Row alignment for guesses */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* Splash screen centering */
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 15px auto 0;
+}
+
+/* Create game container */
+.create-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 20px auto 0;
+}
+
+/* Game info centering */
+.game-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 10px;
+}
+
+.guesses-remaining {
+  align-self: flex-end;
+  margin-right: 12.5px;
+}
+
+/* Rewind button container */
+.rewind-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+/* Fix footer positioning */
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto 15px;
+  padding-bottom: 95px;
+}
+
+/* Help overlay centering */
+.help .content {
+  max-width: 400px;
+  margin: 25px auto;
+  padding-bottom: 50px;
+}
+
+/* Guess styling */
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5px;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Game over overlay */
+.overlay .content {
+  margin: 0 auto;
+}
+
+/* Fix for in-game text */
+.in-game-text {
+  width: 320px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+/* Logo centering */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* User input fixes */
+input, button {
+  margin: 0 auto;
+}
+
+/* Module list alignment */
+.module-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+}
+
+.module-list-header {
+  align-self: flex-start;
+  margin-left: 5px;
 }
