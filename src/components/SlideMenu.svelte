@@ -46,9 +46,9 @@
       // For now it will just close the menu
       handleClose();
     }
-  </script>
-  
-  <div class="slide-menu-overlay" on:click={handleClose}>
+</script>
+
+<div class="slide-menu-overlay" on:click={handleClose}>
     <div class="slide-menu" on:click|stopPropagation transition:fly={{ x: -300, duration: 300 }}>
       <div class="menu-close" on:click={handleClose}>
         <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,30 +56,32 @@
         </svg>
       </div>
       
-      <div class="menu-navigation">
-        <div class="menu-item" on:click={handleHome}>Home</div>
-        <div class="menu-item" on:click={handleFollowUs}>Follow Us</div>
-        <div class="menu-item" on:click={handlePrivacy}>Privacy</div>
-      </div>
-      
-      <div class="menu-section">
-        <h3 class="section-header">Need more Spotle?</h3>
-        <div class="menu-item sub-item" on:click={handleRewind}>Spotle Rewind</div>
-        <div class="menu-item sub-item">Spotle JAM</div>
-        <div class="menu-item sub-item" on:click={handleCreateGame}>Create a Spotle</div>
-      </div>
-      
-      <div class="menu-section">
-        <h3 class="section-header">Our Games</h3>
-        
-        <div class="game-card" on:click={handleHarmonies}>
-          <div class="game-image harmonies-image"></div>
-          <div class="game-title">Harmonies: Music Connections</div>
+      <div class="menu-content">
+        <div class="menu-navigation">
+          <div class="menu-item" on:click={handleHome}>Home</div>
+          <div class="menu-item" on:click={handleFollowUs}>Follow Us</div>
+          <div class="menu-item" on:click={handlePrivacy}>Privacy</div>
         </div>
         
-        <div class="game-card" on:click={handleCrosstune}>
-          <div class="game-image crosstune-image"></div>
-          <div class="game-title">Crosstune: A music crossword</div>
+        <div class="menu-section">
+          <h3 class="section-header">Need more Spotle?</h3>
+          <div class="menu-item sub-item" on:click={handleRewind}>Spotle Rewind</div>
+          <div class="menu-item sub-item">Spotle JAM</div>
+          <div class="menu-item sub-item" on:click={handleCreateGame}>Create a Spotle</div>
+        </div>
+        
+        <div class="menu-section">
+          <h3 class="section-header">Our Games</h3>
+          
+          <div class="game-card" on:click={handleHarmonies}>
+            <div class="game-image harmonies-image"></div>
+            <div class="game-title">Harmonies: Music Connections</div>
+          </div>
+          
+          <div class="game-card" on:click={handleCrosstune}>
+            <div class="game-image crosstune-image"></div>
+            <div class="game-title">Crosstune: A music crossword</div>
+          </div>
         </div>
       </div>
       
@@ -88,9 +90,9 @@
         <div class="footer-email">inquiries: company@flatwhite-studios.com</div>
       </div>
     </div>
-  </div>
-  
-  <style>
+</div>
+
+<style>
     .slide-menu-overlay {
       position: fixed;
       top: 0;
@@ -100,11 +102,11 @@
       background: rgba(0, 0, 0, 0.7);
       z-index: 9999;
       display: flex;
+      justify-content: center;
     }
     
     .slide-menu {
       width: 100%;
-      max-width: 300px;
       height: 100%;
       background: #1E1E1E;
       overflow-y: auto;
@@ -114,11 +116,20 @@
       flex-direction: column;
     }
     
+    .menu-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    
     .menu-close {
       position: absolute;
       top: 15px;
       right: 15px;
       cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 10000;
     }
     
     .menu-navigation {
@@ -219,13 +230,17 @@
       font-size: 12px;
     }
     
+    /* Mobile styles (default) */
+    .slide-menu {
+      max-width: 100%;
+    }
+    
     /* Desktop styles */
     @media (min-width: 768px) {
       .slide-menu {
-        max-width: 340px;
+        max-width: 500px;
         margin: 0 auto;
-        left: 50%;
-        transform: translateX(-50%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       }
     }
-  </style>
+</style>

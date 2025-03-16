@@ -3,7 +3,7 @@
   import Icon from '../routes/Icon.svelte';
   import { muted } from '../routes/store.js';
   
-  export let showBackButton = false;
+  // Always show menu button by removing the showBackButton prop
   export let showLogo = true;
   
   const dispatch = createEventDispatcher();
@@ -28,16 +28,13 @@
 <div class="navbar-container">
 <div class="navbar">
   <div class="navbar-left">
-    {#if showBackButton}
-      <div class="icon-btn" on:click={handleMenuClick}>
-        <Icon width={"1.75rem"} height={"1.75rem"} name={"menu"}></Icon>
-      </div>
-    {:else}
-      <div class="placeholder"></div>
-    {/if}
+    <!-- Always show the menu button -->
+    <div class="icon-btn" on:click={handleMenuClick}>
+      <Icon width={"1.75rem"} height={"1.75rem"} name={"menu"}></Icon>
+    </div>
   </div>
   
-  {#if showLogo}
+  {#if false}
     <div class="navbar-logo">
       <svg
         width="120"
@@ -149,13 +146,16 @@
   cursor: pointer;
 }
 
-.placeholder {
-  width: 1.75rem;
-  height: 1.75rem;
-}
-
 .navbar-right {
   display: flex;
   justify-content: flex-end;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .navbar {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 }
 </style>

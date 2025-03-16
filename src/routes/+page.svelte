@@ -10,7 +10,6 @@
   import Countdown from "./Countdown.svelte";
   import Footer from "./Footer.svelte";
   import Ramp from './Ramp.svelte';
-  import GameHeader from '../components/GameHeader.svelte';
   import SplashScreen from '../components/SplashScreen.svelte';
   import GameBoard from '../components/GameBoard.svelte';
   import CreateGame from '../components/CreateGame.svelte';
@@ -751,5 +750,16 @@
     background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat !important;
     background-size: cover !important;
     z-index: -1 !important;
+  }
+
+  :global(.slide-menu) {
+    max-width: 100% !important;
+  }
+  
+  @media (min-width: 768px) {
+    :global(.slide-menu) {
+      max-width: 500px !important;
+      margin: 0 auto !important;
+    }
   }
 </style>
