@@ -15,7 +15,8 @@
   import CreateGame from '../components/CreateGame.svelte';
   import Navbar from '../components/Navbar.svelte';
   import AdBanner from '../components/AdBanner.svelte';
-  import SlideMenu from '../components/SlideMenu.svelte'; // Import the new SlideMenu component
+  import SlideMenu from '../components/SlideMenu.svelte';
+  import JamMode from '../components/JamMode.svelte';
   
   // Import game state and utilities
   import { 
@@ -66,6 +67,11 @@
   let challengeNote = "";
   let showSlideMenu = false; // New state for slide menu
   let showStats = false;
+
+  let playingJam = false;
+  let jamIndex = 0;
+  let solvedJamArtists = [];
+  let jamTimeRemaining = 300; // 5 minutes
 
   // Process artists data
   const artists = artistList.map((artist) => ({
@@ -334,14 +340,8 @@
     guessCount = 0;
   }
 
-  function playRush() {
-    splashScreen = false;
-    playingGame = true;
-    normalGame = false;
-    playingChallenge = false;
-    playingRush = true;
-
-    // Shuffle eligible artists
+  function shuffleEligibleArtists() {
+    // Use the same eligible artists list but shuffle it
     for (let i = eligibleArtists.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [eligibleArtists[i], eligibleArtists[j]] = [
@@ -349,9 +349,12 @@
         eligibleArtists[i],
       ];
     }
-    
+  }
+
+  // Function to set the current JAM artist (add this near playJam)
+  function setJamArtist() {
     const selectedArtist = artists.find(
-      (artist) => artist.name === eligibleArtists[rushIndex]
+      (artist) => artist.name === eligibleArtists[jamIndex % eligibleArtists.length]
     );
 
     mysteryArtist = selectedArtist;
@@ -361,7 +364,52 @@
       artist: mysteryArtist.name,
     };
     tempGuesses = [];
+  }
+
+  function handleJamTimeUp() {
+    // Show results when time is up
+    tempGameOver = true;
+    showResults = true;
+    result = "JAM";
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'jam_mode_complete', {
+        'artists_solved': jamIndex,
+      });
+    }
+  }
+
+  function restartJam() {
+    showResults = false;
+    tempGameOver = false;
+    playJam();
+  }
+
+  function playJam() {
+    splashScreen = false;
+    playingGame = true;
+    normalGame = false;
+    playingChallenge = false;
+    playingRewind = false;
+    playingRush = false; // Make sure Rush is off
+    playingJam = true;   // Enable JAM mode
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'jam_mode_start', {});
+    }
+
+    // Reset JAM mode state
+    jamIndex = 0;
+    solvedJamArtists = [];
+    jamTimeRemaining = 300; // 5 minutes
+    tempGuesses = [];
     guessCount = 0;
+    
+    // Shuffle eligible artists for JAM mode
+    shuffleEligibleArtists();
+    
+    // Set the first artist
+    setJamArtist();
   }
 
   // Event handlers
@@ -531,12 +579,15 @@
       playingGame = false;
       normalGame = false;
       playingRush = false;
+      playingJam = false;
       createGame = false;
       splashScreen = true;
     } else if (destination === 'rewind') {
       playRewind();
     } else if (destination === 'create') {
       handleCreate();
+    } else if (destination === 'jam') {
+      playJam();
     }
   }
 
@@ -603,22 +654,30 @@
   <div class="outer-container">
     <div class="container">
       <!-- Main content -->
-      {#if splashScreen}
+        {#if splashScreen}
         <SplashScreen 
           yesterdaysArtist={yesterdaysArtist}
           on:play={(e) => {
             if (e.detail.mode === 'normal') playGame();
             else if (e.detail.mode === 'create') handleCreate();
             else if (e.detail.mode === 'rewind') playRewind();
+            else if (e.detail.mode === 'jam') playJam();
           }}
           on:showHelp={toggleHelp}
         />
       {:else if playingGame}
-        {#if playingRush}
-          <Countdown></Countdown>
-        {/if}
-        
-        {#if createGame}
+        {#if playingJam}
+          <JamMode
+            currentArtist={mysteryArtist}
+            gameGuesses={tempGuesses}
+            {jamIndex}
+            timeRemaining={jamTimeRemaining}
+            solvedArtists={solvedJamArtists}
+            on:guess={(e) => handleSearch(e.detail.artistName)}
+            on:timeUp={handleJamTimeUp}
+            on:restart={restartJam}
+          />
+        {:else if createGame}
           <CreateGame 
             selectedArtist={createGameSelection}
             on:selectArtist={handleCreateArtistSelect}

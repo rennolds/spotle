@@ -18,6 +18,10 @@
     function handleRewind() {
       dispatch('navigate', { destination: 'rewind' });
     }
+
+    function handleJamMode() {
+        dispatch('navigate', { destination: 'jam' });
+    }
     
     function handleCreateGame() {
       dispatch('navigate', { destination: 'create' });
@@ -64,10 +68,10 @@
         </div>
         
         <div class="menu-section">
-          <h3 class="section-header">Need more Spotle?</h3>
-          <div class="menu-item sub-item" on:click={handleRewind}>Spotle Rewind</div>
-          <div class="menu-item sub-item">Spotle JAM</div>
-          <div class="menu-item sub-item" on:click={handleCreateGame}>Create a Spotle</div>
+            <h3 class="section-header">Need more Spotle?</h3>
+            <div class="menu-item sub-item" on:click={handleRewind}>Spotle Rewind</div>
+            <div class="menu-item sub-item" on:click={handleJamMode}>Spotle JAM</div>
+            <div class="menu-item sub-item" on:click={handleCreateGame}>Create a Spotle</div>
         </div>
         
         <div class="menu-section">
