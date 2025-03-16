@@ -364,11 +364,8 @@
   }
 
   function handleJamTimeUp() {
-    // Show results when time is up
-    tempGameOver = true;
-    showResults = true;
-    result = "JAM";
-    
+    // No need to show results or set tempGameOver here
+    // The JamMode component will handle displaying game over state internally
     if (browser && typeof gtag === 'function') {
       gtag('event', 'jam_mode_complete', {
         'artists_solved': jamIndex,
@@ -376,9 +373,9 @@
     }
   }
 
+  // Replace the restartJam function with this one:
   function restartJam() {
-    showResults = false;
-    tempGameOver = false;
+    // Reset the game state without toggling showResults
     playJam();
   }
 
@@ -510,16 +507,18 @@
         }, 1750);
       }
 
-      if (guessCount >= 9) {  // Changed from 10 to 9 because we're about to make the 10th guess
+      // If we've reached the max number of guesses (10)
+      if (guessCount >= 9) {  // 9 because we just made a guess and are checking if it was the 10th
         setTimeout(() => {
           // Add the correct artist to the tempGuesses so user can see what they missed
-          tempGuesses.push(mysteryArtist);
-          tempGuesses = tempGuesses;
+          if (!tempGuesses.includes(mysteryArtist)) {
+            tempGuesses.push(mysteryArtist);
+            tempGuesses = tempGuesses;
+          }
           
           // Wait a moment so user can see the correct answer
           setTimeout(() => {
-            // Skip this artist and move to the next one
-            jamIndex++;
+            // Important: Do NOT increment jamIndex here since this is a failed attempt
             setJamArtist();
             tempGuesses = [];
             guessCount = 0;
@@ -536,7 +535,7 @@
       return;
     }
 
-    if (playingChallenge || playingJam || playingRewind) {
+    if (playingChallenge || playingRewind) {
       if (tempGameOver) {
         return;
       }
