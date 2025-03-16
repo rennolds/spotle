@@ -204,10 +204,12 @@
     max-width: 320px;
     width: 100%;
     top: 100%;
+    left: 0;
+    right: 0;
     border-radius: 4px;
     z-index: 1000;
     padding: 10px;
-    margin-top: 2px;
+    margin: 2px auto 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     max-height: 300px;
     overflow-y: auto;
@@ -216,12 +218,12 @@
   li {
     list-style: none;
     font-size: 120%;
-    margin-top: 2.5px;
+    margin-top: 2px;
     display: flex;
     flex-direction: row;
     justify-content: left;
     color: black;
-    padding: 8px 12px;
+    padding: 4px 8px;
     border-radius: 4px;
   }
 
