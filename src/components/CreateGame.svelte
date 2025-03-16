@@ -84,16 +84,16 @@
   <div class="create-game-container">
     <GameInfo mode="create" />
   
-    <!-- Artist search section (if no artist is selected) -->
-    {#if !selectedArtist}
-      <div class="search-bar-container">
-        <SearchBar 
-          placeholder="Search for an artist..." 
-          on:search={handleSearch} 
-        />
-      </div>
-    {:else}
-      <!-- Selected artist display -->
+    <!-- Always show the search bar - Important change here -->
+    <div class="search-bar-container">
+      <SearchBar 
+        placeholder="Search for an artist..." 
+        on:search={handleSearch} 
+      />
+    </div>
+    
+    <!-- Selected artist display (only shown when an artist is selected) -->
+    {#if selectedArtist}
       <div class="selected-artist-container">
         <div class="header-row">
           <img
@@ -136,7 +136,7 @@
     
     .search-bar-container {
       width: 100%;
-      margin: 10px 0;
+      margin: 5px 0; /* reduced margin */
       position: relative;
       z-index: 50;
     }
@@ -146,6 +146,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 10px; /* reduced margin */
     }
     
     .header-row {
@@ -153,7 +154,7 @@
       flex-direction: row;
       align-items: center;
       color: #fff;
-      margin: 30px 0 5px 0;
+      margin: 15px 0 5px 0; /* reduced margins */
       width: 100%;
     }
   
@@ -169,7 +170,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin: 20px 0 15px 0;
+      margin: 10px 0; /* reduced margins */
       width: 100%;
     }
   
@@ -221,7 +222,7 @@
     }
     
     .ad-space {
-      height: 100px;
-      margin-top: 20px;
+      height: 60px; /* reduced height */
+      margin-top: 15px; /* reduced margin */
     }
   </style>

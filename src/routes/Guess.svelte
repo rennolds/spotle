@@ -99,7 +99,11 @@
     >
       <h3>Debut</h3>
       <div class="flex-container">
-        <h2>{artist.debut_album_year}</h2>
+        {#if artist.debut_album_year == mysteryArtist.debut_album_year}
+          <h2 class="arrowless">{artist.debut_album_year}</h2>
+        {:else}
+          <h2>{artist.debut_album_year}</h2>
+        {/if}
         {#if artist.debut_album_year > mysteryArtist.debut_album_year}
           <div class="arrow-icon">
             <Icon width={"1.25rem"} height={"1.25rem"} name={"key_down"}></Icon>
@@ -126,7 +130,11 @@
     >
       <h3>Popularity</h3>
       <div class="flex-container">
-        <h2>#{artist.listener_rank + 1}</h2>
+        {#if artist.listener_rank == mysteryArtist.listener_rank}
+          <h2 class="arrowless">#{artist.listener_rank + 1}</h2>
+        {:else}
+          <h2>#{artist.listener_rank + 1}</h2>
+        {/if}
         {#if artist.listener_rank > mysteryArtist.listener_rank}
           <div class="arrow-icon">
             <Icon width={"1.25rem"} height={"1.25rem"} name={"key_up"}></Icon>
@@ -260,9 +268,7 @@
     color: #fff;
   }
 
-  .header-name-small {
-    font-size: 18px !important;
-  }
+
 
   .flag-img {
     width: 60px;
@@ -292,6 +298,10 @@
     justify-content: center;
     min-width: 20px;
     margin-left: -5px;
+  }
+
+  .arrowless {
+    margin-right: 7.5px !important;
   }
 
   /* Animation styles */

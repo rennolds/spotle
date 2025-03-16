@@ -36,7 +36,7 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      margin-bottom: 10px;
+      margin-bottom: -2px;
     }
   
     .solved-spotles {
@@ -46,15 +46,18 @@
     }
   
     .guesses-remaining {
-      color: #ffff;
+      color: #fff;
+      align-self: flex-end;
       margin-bottom: 2px;
-      float: right;
       margin-right: 12.5px;
+      font-size: 15px;
     }
     
     .create-game-text {
       display: flex;
-      flex-direction: flex-start;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
     }
   
     .create-game-text h3 {
@@ -63,7 +66,6 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      display: flex;
     }
   
     .create-game-text p {

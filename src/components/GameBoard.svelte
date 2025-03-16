@@ -117,7 +117,7 @@
   
   .search-bar-container {
     width: 100%;
-    margin: 10px 0 5px 0;
+    margin: 5px 0;
     position: relative;
     z-index: 50;
   }
