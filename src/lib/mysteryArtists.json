@@ -6326,9 +6326,9 @@
   },
   {
     "date": "03/17/2025",
-    "artist": "Frank Ocean",
-    "song_uri": "https://p.scdn.co/mp3-preview/e874387e6119a7af84a941c39ff0241156b54515?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737aede4855f6d0d738012e2e5"
+    "artist": "The Cranberries",
+    "song_uri": "https://p.scdn.co/mp3-preview/7b68bf72ebc1138e44a5e285d5698a715ea1d46e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f6325f361d7803ad0d908451"
   },
   {
     "date": "03/18/2025",
@@ -6413,5 +6413,11 @@
     "artist": "Doja Cat",
     "song_uri": "https://p.scdn.co/mp3-preview/7825a58b6e1a9c4e550191223a18a3b268643d0a?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27382b243023b937fd579a35533"
+  },
+  {
+    "date": "04/01/2025",
+    "artist": "Frank Ocean",
+    "song_uri": "https://p.scdn.co/mp3-preview/e874387e6119a7af84a941c39ff0241156b54515?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737aede4855f6d0d738012e2e5"
   }
 ]
