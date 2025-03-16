@@ -123,7 +123,7 @@
     <GuessList
       guesses={gameGuesses}
       mysteryArtist={currentArtist}
-      isGameOver={false}  <!-- Never set to true to avoid revealing answer -->
+      isGameOver={false}
       normalGame={false}
     />
     

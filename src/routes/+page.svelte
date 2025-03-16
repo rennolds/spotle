@@ -508,7 +508,7 @@
       }
 
       // If we've reached the max number of guesses (10)
-      if (guessCount >= 9) {  // 9 because we just made a guess and are checking if it was the 10th
+      if (guessCount >= 10) {  // 9 because we just made a guess and are checking if it was the 10th
         setTimeout(() => {
           // Add the correct artist to the tempGuesses so user can see what they missed
           if (!tempGuesses.includes(mysteryArtist)) {
@@ -567,24 +567,6 @@
             result = "L";
             return;
           }, 1750);
-        }
-      }
-
-      if (playingJam) {
-        if (selectedArtist == mysteryArtist) {
-          const selectedArtist = artists.find(
-            (artist) => artist.name === eligibleArtists[jamIndex]
-          );
-          mysteryArtist = selectedArtist;
-          mysteryArtistEntry = {
-            image_uri: mysteryArtist.image_uri,
-            song_uri: mysteryArtist.song_uri,
-            artist: mysteryArtist.name,
-          };
-          tempGuesses = [];
-        }
-        if (guessCount + 1 == 30) {
-          console.log("rush game over");
         }
       }
     }
