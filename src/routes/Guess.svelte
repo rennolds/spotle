@@ -101,10 +101,14 @@
       <div class="flex-container">
         <h2>{artist.debut_album_year}</h2>
         {#if artist.debut_album_year > mysteryArtist.debut_album_year}
-          <Icon width={"1.25rem"} height={"1.25rem"} name={"key_down"}></Icon>
+          <div class="arrow-icon">
+            <Icon width={"1.25rem"} height={"1.25rem"} name={"key_down"}></Icon>
+          </div>
         {/if}
         {#if artist.debut_album_year < mysteryArtist.debut_album_year}
-          <Icon width={"1.25rem"} height={"1.25rem"} name={"key_up"}></Icon>
+          <div class="arrow-icon">
+            <Icon width={"1.25rem"} height={"1.25rem"} name={"key_up"}></Icon>
+          </div>
         {/if}
       </div>
     </div>
@@ -124,10 +128,14 @@
       <div class="flex-container">
         <h2>#{artist.listener_rank + 1}</h2>
         {#if artist.listener_rank > mysteryArtist.listener_rank}
-          <Icon width={"1.25rem"} height={"1.25rem"} name={"key_up"}></Icon>
+          <div class="arrow-icon">
+            <Icon width={"1.25rem"} height={"1.25rem"} name={"key_up"}></Icon>
+          </div>
         {/if}
         {#if artist.listener_rank < mysteryArtist.listener_rank}
-          <Icon width={"1.25rem"} height={"1.25rem"} name={"key_down"}></Icon>
+          <div class="arrow-icon">
+            <Icon width={"1.25rem"} height={"1.25rem"} name={"key_down"}></Icon>
+          </div>
         {/if}
       </div>
     </div>
@@ -183,7 +191,7 @@
     align-items: center;
     background-color: #454545;
     border-radius: 10px;
-    padding: 8px 4px;
+    padding: 8px 6px;
     box-sizing: border-box;
     height: 73px;
     margin: 1px 5px;
@@ -199,24 +207,26 @@
   }
 
   .large {
-    flex: 1.5;
+    flex: 1.4;
+    min-width: 110px;
   }
 
   .small {
-    flex: 1;
+    flex: 1.1;
+    min-width: 80px;
   }
 
   .item h3, .item h2 {
     color: white;
     margin: 0;
-    max-width: 95%;
+    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   h3 {
-    font-size: 15.25px;
+    font-size: 15.2px;
     font-weight: 500;
     font-style: normal;
     margin-bottom: 4px;
@@ -237,8 +247,8 @@
   }
 
   .header-row img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 16px;
@@ -246,6 +256,7 @@
 
   .header-row h2 {
     font-size: 24px;
+    font-weight: 700;
     color: #fff;
   }
 
@@ -271,7 +282,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5px;
+    gap: 4px;
+    width: 100%;
+    margin-left: 7.5px;
+  }
+  .arrow-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    margin-left: -5px;
   }
 
   /* Animation styles */
