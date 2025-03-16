@@ -70,7 +70,7 @@
   let playingJam = false;
   let jamIndex = 0;
   let solvedJamArtists = [];
-  let jamTimeRemaining = 300; // 5 minutes
+  let jamTimeRemaining = 180; // 5 minutes
 
   // Process artists data
   const artists = artistList.map((artist) => ({
@@ -399,7 +399,7 @@
     // Reset JAM mode state
     jamIndex = 0;
     solvedJamArtists = [];
-    jamTimeRemaining = 300; // 5 minutes
+    jamTimeRemaining = 180; // 5 minutes
     tempGuesses = [];
     guessCount = 0;
     

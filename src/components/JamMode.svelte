@@ -8,7 +8,7 @@
     export let currentArtist = null; // The current mystery artist
     export let gameGuesses = []; // Current game guesses
     export let jamIndex = 0; // Current index in jam mode (number of solved)
-    export let timeRemaining = 300; // Default to 5 minutes (300 seconds)
+    export let timeRemaining = 180; // Default to 3 minutes (180 seconds)
     export let solvedArtists = []; // Array of already solved artists
     
     const dispatch = createEventDispatcher();
@@ -61,7 +61,7 @@
       
       <div class="jam-stat guesses">
         <span class="jam-label">Guesses</span>
-        <span class="jam-value">{gameGuesses.length + 1} of 30</span>
+        <span class="jam-value">{gameGuesses.length + 1} of 10</span>
       </div>
     </div>
     
