@@ -92,13 +92,33 @@
       normalGame={false}
     />
     
-    {#if timeRemaining <= 0}
-      <div class="time-up-message" in:fly={{ y: 20, duration: 300 }}>
-        <h2>Time's Up!</h2>
-        <p>You solved {jamIndex} artists in the time limit.</p>
-        <button class="styled-btn" on:click={() => dispatch('restart')}>
-          Play Again
-        </button>
+    {#if timeRemaining <= 0 || gameGuesses.length == 10}
+      <div class="game-over-overlay" in:fly={{ y: 20, duration: 300 }}>
+        <div class="game-over-content">
+          <h2>Game Over!</h2>
+          
+          {#if solvedArtists.length > 0}
+            <div class="solved-artists-grid">
+              {#each solvedArtists as artist}
+                <div class="solved-artist-card">
+                  <img src={artist.image_uri} alt={artist.name} />
+                  <span class="artist-name">{artist.name}</span>
+                </div>
+              {/each}
+            </div>
+          {:else}
+            <p class="no-solved">No artists solved this round.</p>
+          {/if}
+          
+          <div class="solved-count">
+            <span class="count-number">{jamIndex}</span>
+            <span class="count-label">Artists Solved</span>
+          </div>
+          
+          <button class="styled-btn play-again-btn" on:click={() => dispatch('restart')}>
+            TRY AGAIN
+          </button>
+        </div>
       </div>
     {/if}
   </div>

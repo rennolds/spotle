@@ -512,13 +512,26 @@
         }, 1750);
       }
 
-      if (guessCount >= 10) {
+      if (guessCount >= 9) {  // Changed from 10 to 9 because we're about to make the 10th guess
         setTimeout(() => {
-          // Skip this artist and move to the next one
-          jamIndex++;
-          setJamArtist();
-          tempGuesses = [];
-          guessCount = 0;
+          // Add the correct artist to the tempGuesses so user can see what they missed
+          tempGuesses.push(mysteryArtist);
+          tempGuesses = tempGuesses;
+          
+          // Wait a moment so user can see the correct answer
+          setTimeout(() => {
+            // Skip this artist and move to the next one
+            jamIndex++;
+            setJamArtist();
+            tempGuesses = [];
+            guessCount = 0;
+            
+            if (browser && typeof gtag === 'function') {
+              gtag('event', 'jam_artist_failed', {
+                'artist': mysteryArtist.name
+              });
+            }
+          }, 2000);
         }, 1750);
       }
       
