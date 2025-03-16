@@ -734,24 +734,6 @@
     align-items: center !important;
     justify-content: flex-start !important;
   }
-
-  :global(body) {
-    background-color: #121212 !important;
-  }
-  
-  :global(.backdrop) {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: linear-gradient(137.28deg, #677272 -5.33%, #121212 35.62%) no-repeat !important;
-    background-size: cover !important;
-    z-index: -1 !important;
-  }
-
   :global(.slide-menu) {
     max-width: 100% !important;
   }
