@@ -72,7 +72,14 @@
     
     // Function to handle sharing results
     function handleShareResult() {
-      const shareText = `I solved ${jamIndex} artist${jamIndex !== 1 ? 's' : ''} in this Spotle Jam. Can you do better?\n\nspotle.io`;
+      let shareText = `I solved ${jamIndex} artist${jamIndex !== 1 ? 's' : ''} in this Spotle Jam.`;
+      
+      // Add the artist the user got stumped by if they didn't solve the current one
+      if (currentArtist) {
+        shareText += ` I got stumped by ${currentArtist.name}.`;
+      }
+      
+      shareText += ` Can you do better?\n\nspotle.io`;
       
       function isMobile() {
         const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
@@ -209,15 +216,13 @@
     <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam.</p>
     
     <!-- Add this section to show the artist that stumped the user -->
-    {#if gameGuesses.length >= 10}
-      <div class="stumped-artist">
+    <div class="stumped-artist">
         <p>You got stumped by:</p>
         <div class="artist-reveal">
-          <img src={currentArtist.image_uri} alt={currentArtist.name} />
-          <span>{currentArtist.name}</span>
+            <img src={currentArtist.image_uri} alt={currentArtist.name} />
+            <span>{currentArtist.name}</span>
         </div>
-      </div>
-    {/if}
+    </div>
     
     <!-- Share button -->
     <button class="styled-btn share-btn" on:click={handleShareResult}>

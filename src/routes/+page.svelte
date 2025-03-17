@@ -514,8 +514,11 @@ function restartJam() {
 
       if (selectedArtist == mysteryArtist) {
         setTimeout(() => {
+          // Store the current solved artist
+          const lastSolvedArtist = mysteryArtist;
+          
           // Add the solved artist to the list
-          solvedJamArtists.push(mysteryArtist);
+          solvedJamArtists.push(lastSolvedArtist);
           solvedJamArtists = solvedJamArtists;
           
           // Increment the JAM index 
@@ -528,12 +531,14 @@ function restartJam() {
           tempGuesses = [];
           guessCount = 0;
           
-          if (browser && typeof gtag === 'function') {
-            gtag('event', 'jam_artist_solved', {
-              'artist': mysteryArtist.name,
-              'guess_count': guessCount
-            });
+          // After setting the new artist, automatically add the previous solved artist as first guess
+          // but don't count it against the user's guesses
+          if (lastSolvedArtist) {
+            // Add the previous artist as a guess but don't increment the guess count
+            tempGuesses.push(lastSolvedArtist);
+            tempGuesses = tempGuesses;
           }
+
         }, 1750);
       }
 
