@@ -433,7 +433,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
   }
   
   .jam-stat {
@@ -532,11 +532,10 @@
   /* Updated Intro overlay styling */
   .jam-intro-overlay {
     position: absolute;
-    top: 130px;
+    top: 70px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(18, 18, 18, 0.95);
     border-radius: 10px;
     z-index: 200;
     display: flex;
@@ -552,7 +551,6 @@
   .intro-content {
     text-align: left;
     max-width: 280px;
-    padding-top: 10px;
   }
   
   .intro-title {
