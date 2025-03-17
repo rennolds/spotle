@@ -299,6 +299,16 @@
         {/if}
       </div>
     </div>
+
+    <div class="skip-button-container">
+    <button 
+        class="skip-button" 
+        on:click={handleSkipArtist}
+        disabled={showIntro || jamOver}
+    >
+        SKIP
+    </button>
+    </div>
     
     <div class="jam-stat guesses">
       <span class="jam-label">Guesses</span>
@@ -311,9 +321,14 @@
   {#if showIntro}
     <div class="jam-intro-overlay" in:fly={{ y: 20, duration: 300 }}>
       <div class="intro-content">
-        <p>Solve as many Spotles as you can in 3 minutes.</p>
-        <p>Every time you solve a Spotle, it will act as a free guess for the next artist.</p>
-        <p>You'll gain 15 seconds for each correct artist, and can skip artists for a 15 second penalty.</p>
+        <h2 class="intro-title">Spotle Jam</h2>
+        <ul class="jam-rules-list">
+          <li>Solve as many Spotles as you can in 3 minutes</li>
+          <li>Skip an artist if you get stuck, but you'll lose 15 seconds</li>
+          <li>Solve a Spotle, get 15 seconds back and a free guess!</li>
+          <li>Don't run out of guesses or time, or it's over!</li>
+          <li>Only the most popular artists will show up in the Jam, unless you play with Deep Cuts...</li>
+        </ul>
         
         <!-- Deep Cuts toggle -->
         <div class="deep-cuts-toggle">
@@ -326,7 +341,7 @@
               {useDeepCuts ? 'ON' : 'OFF'}
             </button>
           </div>
-          <p class="toggle-description">Jam with a wider range of artists.</p>
+          <p class="toggle-description">Jam with a wider range of artists. Basically, hard mode.</p>
         </div>
         
         <button class="styled-btn start-btn" on:click={startJam}>
@@ -336,7 +351,9 @@
     </div>
   {/if}
   
-  <!-- Search bar for guessing with Skip button -->
+  <!-- Skip button - now above search bar -->
+  
+  <!-- Search bar for guessing -->
   <div class="search-controls">
     <div class="search-bar-container">
       <SearchBar 
@@ -344,17 +361,6 @@
         on:search={handleArtistSearch} 
       />
     </div>
-    
-    <!-- Skip button -->
-    {#if !showIntro && !jamOver}
-      <button 
-        class="skip-button" 
-        on:click={handleSkipArtist}
-        disabled={showIntro}
-      >
-        SKIP
-      </button>
-    {/if}
   </div>
   
   <!-- Solved artists gallery -->
@@ -426,7 +432,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 10px;
   }
   
@@ -491,18 +497,24 @@
     z-index: 50;
   }
   
+  .skip-button-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   .skip-button {
     background-color: #e74c3c;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 8px 12px;
+    padding: 4px 8px;
     font-weight: bold;
     cursor: pointer;
-    height: 40px;
-    margin-top: 8px;
-    align-self: flex-end;
-    font-size: 14px;
+    font-size: 12px;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 4px;
   }
   
   .skip-button:hover {
@@ -514,46 +526,58 @@
     background-color: #7f8c8d;
     cursor: not-allowed;
     transform: none;
+    opacity: 0.6;
   }
 
-  /* Intro overlay styling */
+  /* Updated Intro overlay styling */
   .jam-intro-overlay {
     position: absolute;
-    top: 250px;
+    top: 130px;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(18, 18, 18, 0.95);
     border-radius: 10px;
-    z-index: 200; /* Higher than search bar's z-index */
+    z-index: 200;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
     width: 100%;
     max-width: 340px;
+    margin: 0 auto;
   }
   
   .intro-content {
-    text-align: center;
+    text-align: left;
     max-width: 280px;
+    padding-top: 10px;
   }
   
-  .intro-content h2 {
+  .intro-title {
     color: #8370de;
-    font-size: 24px;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .jam-rules-list {
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 20px;
     margin-bottom: 20px;
   }
   
-  .intro-content p {
-    color: #fff;
-    margin-bottom: 15px;
-    font-size: 16px;
-    line-height: 1.5;
+  .jam-rules-list li {
+    color: #b5b5b5;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.4;
   }
   
-  /* Deep Cuts toggle styling */
   .deep-cuts-toggle {
     margin: 20px 0;
     width: 100%;
@@ -605,6 +629,12 @@
   
   .start-btn {
     margin-top: 20px;
+    padding: 0 30px;
+    font-size: 16px;
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .solved-artists {
