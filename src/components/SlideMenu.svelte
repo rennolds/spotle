@@ -249,7 +249,6 @@
     }
     
     .menu-section {
-      margin-top: 20px;
       width: 100%;
     }
     
@@ -334,6 +333,16 @@
         max-width: 500px;
         margin: 0 auto;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .slide-menu {
+        padding-bottom: 50px;
+      }
+
+      .menu-footer {
+        margin-bottom: 25px;
       }
     }
 </style>
