@@ -2,15 +2,9 @@
   export let mode = 'normal'; // 'normal', 'challenge', 'rewind', 'create', 'rush'
   export let guessCount = 0;
   export let maxGuesses = 10;
-  export let rushIndex = 0;
 </script>
 
 <div class="game-info-container">
-  {#if mode === 'rush'}
-    <div class="solved-spotles">
-      Solved Spotles: {rushIndex}
-    </div>
-  {/if}
   <div class="guesses-remaining">
     {#if mode === 'normal' || mode === 'challenge' || mode === 'rewind'}
       {#if guessCount === maxGuesses}

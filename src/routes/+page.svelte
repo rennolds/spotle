@@ -146,6 +146,29 @@
   let rewindIndex = 0;
   const lastSixDaysArtists = [];
   const lastSixDaysDates = [];
+
+  // Get data for the past 7 days instead of 6
+  for (let i = 1; i <= 6; i++) {
+    const previousDay = moment().tz("America/New_York").subtract(i, "days").format("MM/DD/YYYY");
+
+    const dayArtistEntry = mysteryArtistList.find(
+      (entry) => entry.date === previousDay
+    );
+    
+    if (dayArtistEntry) {
+      const dayArtist = artists.find(
+        (artist) => artist.name === dayArtistEntry.artist
+      );
+      if (dayArtist) {
+        lastSixDaysArtists.push(dayArtist);
+        lastSixDaysDates.push(previousDay);
+      }
+    }
+  }
+
+  // Make sure the dates are sorted from newest to oldest
+  lastSixDaysArtists.reverse();
+  lastSixDaysDates.reverse();
   
   for (let i = 1; i <= 6; i++) {
     const previousDay = moment().tz("America/New_York").subtract(i, "days").format("MM/DD/YYYY");
@@ -210,6 +233,33 @@
     
     if (browser && typeof gtag === 'function') {
       gtag('event', 'view_stats', {});
+    }
+  }
+
+  function handleRewindSelect(event) {
+    // Get the selected index
+    const selectedIndex = event.detail.index;
+    
+    // Set the rewindIndex to the selected date's index
+    rewindIndex = selectedIndex;
+    
+    // Get the corresponding artist and update the display
+    mysteryArtist = lastSixDaysArtists[rewindIndex];
+    mysteryArtistEntry = {
+      image_uri: mysteryArtist.image_uri,
+      song_uri: mysteryArtist.song_uri,
+      artist: mysteryArtist.name,
+    };
+    
+    // Reset game state
+    tempGuesses = [];
+    tempGameOver = false;
+    guessCount = 0;
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'rewind_select_date', {
+        'date': lastSixDaysDates[rewindIndex]
+      });
     }
   }
 
@@ -771,6 +821,7 @@
             blurResults={showResults}
             challengeNote={challengeNote}
             on:guess={(e) => handleSearch(e.detail.artistName)}
+            on:rewindSelect={handleRewindSelect}
             on:rewindNext={nextRewind}
             on:rewindPrevious={previousRewind}
           />
