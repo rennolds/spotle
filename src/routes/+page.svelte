@@ -400,6 +400,29 @@
     }
   }
 
+  function handleSkipArtist() {
+    if (playingJam) {
+      // Move to the next artist in the jam
+      jamIndex = jamIndex;  // Keep the jam index the same since we didn't solve it
+      
+      // Add analytics tracking
+      if (browser && typeof gtag === 'function') {
+        gtag('event', 'jam_skip_artist', {
+          'artist': mysteryArtist?.name || 'unknown',
+          'jam_index': jamIndex
+        });
+      }
+      
+      // Reset game state
+      tempGuesses = [];
+      guessCount = 0;
+      
+      // Move to next artist without incrementing the solved count
+      shuffleEligibleArtists();
+      setJamArtist();
+    }
+  }
+
   function handleJamTimeUp() {
     // No need to show results or set tempGameOver here
     // The JamMode component will handle displaying game over state internally
@@ -840,6 +863,7 @@
             on:timeUp={handleJamTimeUp}
             on:restart={restartJam}
             on:startWithMode={handleJamModeStart}
+            on:skipArtist={handleSkipArtist}
           />
         {:else if createGame}
           <CreateGame 

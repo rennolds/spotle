@@ -25,6 +25,12 @@
     
     // New property to show intro screen
     let showIntro = true;
+
+    // New properties for time adjustments
+    let showTimeBonus = false;
+    let showTimePenalty = false;
+    let timeBonusTimer;
+    let timePenaltyTimer;
     
     // Function to start the game
     function startJam() {
@@ -69,6 +75,24 @@
       
       const artistName = event.detail;
       dispatch('guess', { artistName });
+    }
+
+    // Handle skipping the current artist
+    function handleSkipArtist() {
+      if (jamOver) return; // Don't skip if jam is over
+      
+      // Apply time penalty (-15 seconds)
+      timeRemaining = Math.max(1, timeRemaining - 15); // Don't go below 1 second
+      
+      // Show the time penalty notification
+      showTimePenalty = true;
+      clearTimeout(timePenaltyTimer);
+      timePenaltyTimer = setTimeout(() => {
+        showTimePenalty = false;
+      }, 2000);
+      
+      // Tell the parent to skip to the next artist
+      dispatch('skipArtist');
     }
     
     // Function to handle artist guess limit reached - separate from solve
@@ -204,12 +228,42 @@
         hasFreeGuess = false;
       }
     }
+
+    // Use this function to explicitly apply the time bonus
+    function applyTimeBonus() {
+      if (!jamOver && !showIntro) {
+        // Add 15 seconds to remaining time
+        timeRemaining += 15;
+        
+        // Show the time bonus notification
+        showTimeBonus = true;
+        clearTimeout(timeBonusTimer);
+        timeBonusTimer = setTimeout(() => {
+          showTimeBonus = false;
+        }, 2000);
+        
+        console.log("Time bonus applied: +15 seconds");
+      }
+    }
+    
+    // Watch jamIndex for changes to detect when an artist is solved correctly
+    let previousJamIndex = 0;
+    $: {
+      // If jamIndex has increased, a new artist was solved
+      if (jamIndex > previousJamIndex && !jamOver && !showIntro) {
+        applyTimeBonus();
+        previousJamIndex = jamIndex;
+      }
+    }
     
     onMount(() => {
       // Don't automatically start the timer - wait for user to click START
       if (!showIntro) {
         initTimer();
       }
+      
+      // Initialize previousJamIndex with current value
+      previousJamIndex = jamIndex;
     });
     
     // Force timer reset when component props change
@@ -220,6 +274,8 @@
     onDestroy(() => {
       // Clear timer when component is destroyed
       if (timer) clearInterval(timer);
+      if (timeBonusTimer) clearTimeout(timeBonusTimer);
+      if (timePenaltyTimer) clearTimeout(timePenaltyTimer);
     });
 </script>
 
@@ -233,7 +289,15 @@
     
     <div class="jam-stat time">
       <span class="jam-label">Time Remaining</span>
-      <span class="jam-value">{formattedTime}</span>
+      <div class="time-display">
+        <span class="jam-value">{formattedTime}</span>
+        {#if showTimeBonus}
+          <span class="time-bonus" transition:fly={{ y: -20, duration: 300 }}>+15</span>
+        {/if}
+        {#if showTimePenalty}
+          <span class="time-penalty" transition:fly={{ y: -20, duration: 300 }}>-15</span>
+        {/if}
+      </div>
     </div>
     
     <div class="jam-stat guesses">
@@ -249,6 +313,7 @@
       <div class="intro-content">
         <p>Solve as many Spotles as you can in 3 minutes.</p>
         <p>Every time you solve a Spotle, it will act as a free guess for the next artist.</p>
+        <p>You'll gain 15 seconds for each correct artist, and can skip artists for a 15 second penalty.</p>
         
         <!-- Deep Cuts toggle -->
         <div class="deep-cuts-toggle">
@@ -271,12 +336,25 @@
     </div>
   {/if}
   
-  <!-- Search bar for guessing -->
-  <div class="search-bar-container">
-    <SearchBar 
-      disabled={jamOver || effectiveGuessCount >= 10 || showIntro}
-      on:search={handleArtistSearch} 
-    />
+  <!-- Search bar for guessing with Skip button -->
+  <div class="search-controls">
+    <div class="search-bar-container">
+      <SearchBar 
+        disabled={jamOver || effectiveGuessCount >= 10 || showIntro}
+        on:search={handleArtistSearch} 
+      />
+    </div>
+    
+    <!-- Skip button -->
+    {#if !showIntro && !jamOver}
+      <button 
+        class="skip-button" 
+        on:click={handleSkipArtist}
+        disabled={showIntro}
+      >
+        SKIP
+      </button>
+    {/if}
   </div>
   
   <!-- Solved artists gallery -->
@@ -373,6 +451,71 @@
     color: #8370de; /* Purple for time */
   }
 
+  /* Time display with bonus/penalty */
+  .time-display {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .time-bonus {
+    position: absolute;
+    top: 1.75px;
+    right: -27.5px;
+    color: #43a865; /* Green */
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .time-penalty {
+    position: absolute;
+    top: 1.75px;
+    right: -27.5px;
+    color: #e74c3c; /* Red */
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* Search controls with Skip button */
+  .search-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .search-bar-container {
+    width: 100%;
+    position: relative;
+    z-index: 50;
+  }
+  
+  .skip-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 8px;
+    align-self: flex-end;
+    font-size: 14px;
+  }
+  
+  .skip-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+  }
+  
+  .skip-button:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+    transform: none;
+  }
+
   /* Intro overlay styling */
   .jam-intro-overlay {
     position: absolute;
@@ -460,18 +603,8 @@
     margin: 0 !important;
   }
   
-
-  
   .start-btn {
     margin-top: 20px;
-  }
-  
-  .search-bar-container {
-    width: 100%;
-    max-width: 340px;
-    margin: 5px auto;
-    position: relative;
-    z-index: 50;
   }
   
   .solved-artists {
