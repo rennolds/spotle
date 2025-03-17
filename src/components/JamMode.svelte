@@ -311,6 +311,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding-bottom: 100px; /* Add space at the bottom for better scrolling */
   }
   
   .jam-header {
@@ -351,12 +352,14 @@
     bottom: 0;
     background: rgba(18, 18, 18, 0.95);
     border-radius: 10px;
-    z-index: 100;
+    z-index: 200; /* Higher than search bar's z-index */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    width: 100%;
+    max-width: 340px;
   }
   
   .intro-content {
@@ -383,7 +386,8 @@
   
   .search-bar-container {
     width: 100%;
-    margin: 5px 0;
+    max-width: 340px;
+    margin: 5px auto;
     position: relative;
     z-index: 50;
   }

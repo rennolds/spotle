@@ -181,7 +181,7 @@
 <style>
   .guess-wrapper {
     width: 98%;
-    max-width: 340px;
+    max-width: 350px;
     margin: 0 auto 16px;
   }
 
@@ -216,13 +216,27 @@
 
   .large {
     flex: 1.4;
-    min-width: 110px;
+    min-width: 115px;
   }
 
   .small {
     flex: 1.1;
-    min-width: 80px;
+    min-width: 83px;
   }
+
+
+  .item h2 {
+    font-size: 21px;
+    font-weight: 700;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    }
+
+    .item.large h2 {
+    font-size: 18px;
+    }
 
   .item h3, .item h2 {
     color: white;
