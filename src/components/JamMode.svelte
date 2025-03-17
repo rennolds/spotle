@@ -1,4 +1,4 @@
-<!-- JamMode.svelte - Updated version with the fix -->
+<!-- This is a modification to JamMode.svelte -->
 <script>
     import { createEventDispatcher, onMount, onDestroy } from 'svelte';
     import { fly } from 'svelte/transition';
@@ -22,6 +22,19 @@
     
     // New property to track free guess
     let hasFreeGuess = false;
+    
+    // New property to show intro screen
+    let showIntro = true;
+    
+    // Function to start the game
+    function startJam() {
+        showIntro = false;
+        initTimer(); // Start the timer when the user clicks start
+        
+        if (browser && typeof gtag === 'function') {
+            gtag('event', 'jam_mode_start_confirmed', {});
+        }
+    }
     
     // Computed property for effective guess count (excluding free guess)
     $: effectiveGuessCount = hasFreeGuess ? gameGuesses.length - 1 : gameGuesses.length;
@@ -139,8 +152,8 @@
         clearInterval(timer);
       }
       
-      // Only start if game is not over
-      if (!jamOver) {
+      // Only start if game is not over and intro is not showing
+      if (!jamOver && !showIntro) {
         timer = setInterval(() => {
           if (timeRemaining > 0) {
             timeRemaining--;
@@ -178,11 +191,14 @@
     }
     
     onMount(() => {
-      initTimer();
+      // Don't automatically start the timer - wait for user to click START
+      if (!showIntro) {
+        initTimer();
+      }
     });
     
     // Force timer reset when component props change
-    $: if (currentArtist && !jamOver) {
+    $: if (currentArtist && !jamOver && !showIntro) {
       initTimer();
     }
     
@@ -212,10 +228,23 @@
     </div>
   </div>
   
+  <!-- Intro overlay - Only shown before game starts -->
+  {#if showIntro}
+    <div class="jam-intro-overlay" in:fly={{ y: 20, duration: 300 }}>
+      <div class="intro-content">
+        <p>Solve as many Spotles as you can in 3 minutes.</p>
+        <p>Every time you solve a Spotle, it will act as a free guess for the next artist.</p>
+        <button class="styled-btn start-btn" on:click={startJam}>
+          START
+        </button>
+      </div>
+    </div>
+  {/if}
+  
   <!-- Search bar for guessing -->
   <div class="search-bar-container">
     <SearchBar 
-      disabled={jamOver || effectiveGuessCount >= 10}
+      disabled={jamOver || effectiveGuessCount >= 10 || showIntro}
       on:search={handleArtistSearch} 
     />
   </div>
@@ -231,13 +260,6 @@
     </div>
   {/if}
 
-  <!-- Display free guess indicator if applicable
-  {#if hasFreeGuess && gameGuesses.length > 0 && !jamOver && gameGuesses.length < 1}
-    <div class="free-guess-indicator" in:fly={{ y: 20, duration: 300 }}>
-      <span>Free guess from your last solve!</span>
-    </div>
-  {/if}
-   -->
   <!-- Game over message - shown when time is up or reached max guesses -->
   {#if jamOver}
   <div class="jam-over-message" in:fly={{ y: 20, duration: 300 }}>
@@ -288,6 +310,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
   
   .jam-header {
@@ -317,6 +340,45 @@
   
   .time .jam-value {
     color: #8370de; /* Purple for time */
+  }
+
+  /* Intro overlay styling */
+  .jam-intro-overlay {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 18, 18, 0.95);
+    border-radius: 10px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .intro-content {
+    text-align: center;
+    max-width: 280px;
+  }
+  
+  .intro-content h2 {
+    color: #8370de;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .intro-content p {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .start-btn {
+    margin-top: 20px;
   }
   
   .search-bar-container {
