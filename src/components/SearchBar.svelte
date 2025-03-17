@@ -140,8 +140,21 @@
   <button
     class="guess-btn"
     on:click={() => filteredArtists.length > 0 && handleSearch(filteredArtists[0])}
-    ><i class="fa fa-search fa-lg"></i></button
   >
+    <!-- Magnifying glass SVG icon -->
+    <svg 
+      width="16" 
+      height="16" 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path 
+        d="M15.7 14.3L11.9 10.5C12.9 9.3 13.5 7.7 13.5 6C13.5 2.7 10.8 0 7.5 0C4.2 0 1.5 2.7 1.5 6C1.5 9.3 4.2 12 7.5 12C9.2 12 10.8 11.4 12 10.4L15.8 14.2C15.9 14.3 16 14.4 16 14.5C16 14.6 15.9 14.7 15.8 14.8L15.3 15.3C15.2 15.4 15.1 15.5 15 15.5C14.9 15.5 14.8 15.4 14.7 15.3L14.3 14.9L14.3 14.9C14.1 14.7 14.1 14.5 14.3 14.3C14.5 14.1 14.7 14.1 14.9 14.3L14.3 14.9L14.9 14.3L15.1 14.5L15.1 14.5L15.1 14.5L15.5 14.9L15.5 14.9L15.7 14.3ZM7.5 10.5C5 10.5 3 8.5 3 6C3 3.5 5 1.5 7.5 1.5C10 1.5 12 3.5 12 6C12 8.5 10 10.5 7.5 10.5Z" 
+        fill="#6d7b98"
+      />
+    </svg>
+  </button>
   {#if resultsVisible}
     <ul class="results">
       {#each filteredArtists as artist}
@@ -175,6 +188,10 @@
     background: none;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 
   input {
@@ -191,10 +208,6 @@
 
   input:focus {
     outline: none;
-  }
-
-  button i {
-    color: #6d7b98;
   }
   
   .results {
