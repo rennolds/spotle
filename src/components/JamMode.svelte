@@ -1,4 +1,3 @@
-<!-- This is a modification to JamMode.svelte -->
 <script>
     import { createEventDispatcher, onMount, onDestroy } from 'svelte';
     import { fly } from 'svelte/transition';
@@ -12,6 +11,7 @@
     export let timeRemaining = 180; // Default to 3 minutes (180 seconds)
     export let solvedArtists = []; // Array of already solved artists
     export let isGameOver = false; // Control from parent component
+    export let useDeepCuts = false; // Whether to use the deep cuts list
     
     const dispatch = createEventDispatcher();
     let timer;
@@ -31,10 +31,17 @@
         showIntro = false;
         initTimer(); // Start the timer when the user clicks start
         
+        // Send mode to parent
+        dispatch('startWithMode', { useDeepCuts });
+        
         if (browser && typeof gtag === 'function') {
-            gtag('event', 'jam_mode_start_confirmed', {});
+            gtag('event', 'jam_mode_start_confirmed', {
+                'mode': useDeepCuts ? 'deep_cuts' : 'standard'
+            });
         }
     }
+    
+    // Toggle deep cuts mode is now handled directly by the bind:checked
     
     // Computed property for effective guess count (excluding free guess)
     $: effectiveGuessCount = hasFreeGuess ? gameGuesses.length - 1 : gameGuesses.length;
@@ -75,7 +82,8 @@
             gtag('event', 'jam_mode_complete', {
               'artists_solved': jamIndex,
               'reason': 'guess_limit',
-              'failed_artist': currentArtist?.name || 'unknown'
+              'failed_artist': currentArtist?.name || 'unknown',
+              'mode': useDeepCuts ? 'deep_cuts' : 'standard'
             });
         }
         
@@ -92,11 +100,16 @@
     
     // Function to handle sharing results
     function handleShareResult() {
-      let shareText = `I solved ${jamIndex} artist${jamIndex !== 1 ? 's' : ''} in this Spotle Jam.`;
+      let shareText = `I solved ${jamIndex} artist${jamIndex !== 1 ? 's' : ''} in this Spotle Jam`;
+      
+      // Add mode info to share text
+      if (useDeepCuts) {
+        shareText += " (Deep Cuts mode)";
+      }
       
       // Add the artist the user got stumped by if they didn't solve the current one
       if (currentArtist) {
-        shareText += ` I got stumped by ${currentArtist.name}.`;
+        shareText += `. I got stumped by ${currentArtist.name}.`;
       }
       
       shareText += ` Can you do better?\n\nspotle.io`;
@@ -109,7 +122,8 @@
       if (browser) {
         if (typeof gtag === 'function') {
           gtag('event', 'jam_share_result', {
-            'artists_solved': jamIndex
+            'artists_solved': jamIndex,
+            'mode': useDeepCuts ? 'deep_cuts' : 'standard'
           });
         }
         
@@ -142,7 +156,7 @@
     // Function to restart jam mode
     function handleRestartJam() {
       shareButtonText = "SHARE RESULT"; // Reset button text
-      dispatch('restart'); // Let parent handle the full restart
+      dispatch('restart', { useDeepCuts }); // Pass the current mode when restarting
     }
     
     // Initialize or reset the timer
@@ -168,7 +182,8 @@
             if (browser && typeof gtag === 'function') {
               gtag('event', 'jam_mode_complete', {
                 'artists_solved': jamIndex,
-                'reason': 'time_up'
+                'reason': 'time_up',
+                'mode': useDeepCuts ? 'deep_cuts' : 'standard'
               });
             }
           }
@@ -234,6 +249,21 @@
       <div class="intro-content">
         <p>Solve as many Spotles as you can in 3 minutes.</p>
         <p>Every time you solve a Spotle, it will act as a free guess for the next artist.</p>
+        
+        <!-- Deep Cuts toggle -->
+        <div class="deep-cuts-toggle">
+          <div class="toggle-header">
+            <span class="toggle-label">DEEP CUTS</span>
+            <button
+              class="toggle-button {useDeepCuts ? 'active' : ''}"
+              on:click={() => useDeepCuts = !useDeepCuts}
+            >
+              {useDeepCuts ? 'ON' : 'OFF'}
+            </button>
+          </div>
+          <p class="toggle-description">Jam with a wider range of artists.</p>
+        </div>
+        
         <button class="styled-btn start-btn" on:click={startJam}>
           START
         </button>
@@ -264,7 +294,7 @@
   {#if jamOver}
   <div class="jam-over-message" in:fly={{ y: 20, duration: 300 }}>
     <h2>Game over!</h2>
-    <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam.</p>
+    <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam{useDeepCuts ? " (Deep Cuts)" : ""}.</p>
     
     <!-- Add this section to show the artist that stumped the user -->
     <div class="stumped-artist">
@@ -379,6 +409,58 @@
     font-size: 16px;
     line-height: 1.5;
   }
+  
+  /* Deep Cuts toggle styling */
+  .deep-cuts-toggle {
+    margin: 20px 0;
+    width: 100%;
+    background-color: rgba(131, 112, 222, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid rgba(131, 112, 222, 0.4);
+  }
+  
+  .toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .toggle-label {
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .toggle-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .toggle-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .toggle-button.active {
+    background-color: #8370de;
+  }
+  
+  .toggle-description {
+    font-size: 14px !important;
+    color: #b5b5b5 !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+  
+
   
   .start-btn {
     margin-top: 20px;

@@ -36,6 +36,8 @@
   // Data imports
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
+  import eligibleArtistsData from "$lib/eligibleArtists.json";
+  import deepCutsData from "$lib/deepcuts.json";
   
   // Constants
   const PUB_ID = 1025391;
@@ -171,17 +173,9 @@
   lastSixDaysArtists.reverse();
   lastSixDaysDates.reverse();
 
-  const eligibleArtists = [
-    "Taylor Swift",
-    "Kanye West",
-    "Coldplay",
-    "Frank Ocean",
-    "Daft Punk",
-    "The Beatles",
-    "blink-182",
-    "BTS",
-    "Ariana Grande",
-  ];
+  const eligibleArtists = eligibleArtistsData.artists;
+  const deepCutsArtists = deepCutsData.artists;
+  let currentArtistsList = eligibleArtists;
 
   // Error reporting function
   async function sendError(message) {
@@ -364,12 +358,12 @@
   }
 
   function shuffleEligibleArtists() {
-    // Use the same eligible artists list but shuffle it
-    for (let i = eligibleArtists.length - 1; i > 0; i--) {
+    // Use the currentArtistsList but shuffle it
+    for (let i = currentArtistsList.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [eligibleArtists[i], eligibleArtists[j]] = [
-        eligibleArtists[j],
-        eligibleArtists[i],
+      [currentArtistsList[i], currentArtistsList[j]] = [
+        currentArtistsList[j],
+        currentArtistsList[i],
       ];
     }
   }
@@ -377,7 +371,7 @@
   // Function to set the current JAM artist (add this near playJam)
   function setJamArtist() {
     const selectedArtist = artists.find(
-      (artist) => artist.name === eligibleArtists[jamIndex % eligibleArtists.length]
+      (artist) => artist.name === currentArtistsList[jamIndex % currentArtistsList.length]
     );
 
     mysteryArtist = selectedArtist;
@@ -387,6 +381,23 @@
       artist: mysteryArtist.name,
     };
     tempGuesses = [];
+  }
+
+  function handleJamModeStart(event) {
+    const useDeepCuts = event.detail.useDeepCuts;
+    
+    // Set the appropriate artist list based on the toggle
+    currentArtistsList = useDeepCuts ? deepCutsArtists : eligibleArtists;
+    
+    // Shuffle the list and set the first artist
+    shuffleEligibleArtists();
+    setJamArtist();
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'jam_mode_selected', {
+        'mode': useDeepCuts ? 'deep_cuts' : 'standard'
+      });
+    }
   }
 
   function handleJamTimeUp() {
@@ -399,8 +410,14 @@
     }
   }
 
-  function restartJam() {
-    // Reset the game state completely
+  function restartJam(event) {
+    // Get the mode from the event
+    const useDeepCuts = event?.detail?.useDeepCuts;
+    
+    // Set the appropriate artist list
+    currentArtistsList = useDeepCuts ? deepCutsArtists : eligibleArtists;
+    
+    // Reset game state
     jamIndex = 0;
     solvedJamArtists = [];
     tempGuesses = [];
@@ -412,16 +429,18 @@
     shuffleEligibleArtists();
     setJamArtist();
     
-    // Trigger reactivity on key variables
+    // Force an update cycle
     playingJam = false;
     // Force an update cycle
     setTimeout(() => {
       playingJam = true;
       
       if (browser && typeof gtag === 'function') {
-        gtag('event', 'jam_mode_restart', {});
+        gtag('event', 'jam_mode_restart', {
+          'mode': useDeepCuts ? 'deep_cuts' : 'standard'
+        });
       }
-    }, 50); // Slightly longer timeout for more reliable component reset
+    }, 50);
   }
 
   function playJam() {
@@ -444,6 +463,7 @@
     jamTimeRemaining = 180; // 3 minutes
     tempGuesses = [];
     guessCount = 0;
+    currentArtistsList = eligibleArtists;
     
     // Shuffle eligible artists for JAM mode
     shuffleEligibleArtists();
@@ -819,6 +839,7 @@
             on:guess={(e) => handleSearch(e.detail.artistName)}
             on:timeUp={handleJamTimeUp}
             on:restart={restartJam}
+            on:startWithMode={handleJamModeStart}
           />
         {:else if createGame}
           <CreateGame 
