@@ -1,3 +1,4 @@
+<!-- JamMode.svelte - Updated version with the fix -->
 <script>
     import { createEventDispatcher, onMount, onDestroy } from 'svelte';
     import { fly } from 'svelte/transition';
@@ -18,6 +19,12 @@
     let seconds = timeRemaining % 60;
     let jamOver = false; // Local state to track if jam is over
     let shareButtonText = "SHARE RESULT"; // State for share button text
+    
+    // New property to track free guess
+    let hasFreeGuess = false;
+    
+    // Computed property for effective guess count (excluding free guess)
+    $: effectiveGuessCount = hasFreeGuess ? gameGuesses.length - 1 : gameGuesses.length;
     
     // Sync local jamOver state with parent isGameOver prop
     $: {
@@ -65,8 +72,8 @@
         }
     }
 
-    // Make sure to call this function when gameGuesses.length reaches 10
-    $: if (gameGuesses.length >= 10 && !jamOver) {
+    // Make sure to call this function when EFFECTIVE guess count reaches 10
+    $: if (effectiveGuessCount >= 10 && !jamOver) {
         handleGuessLimitReached();
     }
     
@@ -156,6 +163,20 @@
       }
     }
     
+    // Listen for changes to gameGuesses to detect if free guess was added
+    $: {
+      // If first guess is from a previously solved artist, mark it as a free guess
+      if (gameGuesses.length === 1 && solvedArtists.length > 0) {
+        const latestSolvedArtist = solvedArtists[solvedArtists.length - 1];
+        if (latestSolvedArtist && gameGuesses[0].name === latestSolvedArtist.name) {
+          hasFreeGuess = true;
+        }
+      } else if (gameGuesses.length === 0) {
+        // Reset free guess status when guesses are cleared
+        hasFreeGuess = false;
+      }
+    }
+    
     onMount(() => {
       initTimer();
     });
@@ -186,14 +207,15 @@
     
     <div class="jam-stat guesses">
       <span class="jam-label">Guesses</span>
-      <span class="jam-value">{gameGuesses.length + 1} of 10</span>
+      <!-- Updated to show effective guess count -->
+      <span class="jam-value">{effectiveGuessCount + 1} of 10</span>
     </div>
   </div>
   
   <!-- Search bar for guessing -->
   <div class="search-bar-container">
     <SearchBar 
-      disabled={jamOver || gameGuesses.length >= 10}
+      disabled={jamOver || effectiveGuessCount >= 10}
       on:search={handleArtistSearch} 
     />
   </div>
@@ -208,7 +230,14 @@
       {/each}
     </div>
   {/if}
-  
+
+  <!-- Display free guess indicator if applicable
+  {#if hasFreeGuess && gameGuesses.length > 0 && !jamOver && gameGuesses.length < 1}
+    <div class="free-guess-indicator" in:fly={{ y: 20, duration: 300 }}>
+      <span>Free guess from your last solve!</span>
+    </div>
+  {/if}
+   -->
   <!-- Game over message - shown when time is up or reached max guesses -->
   {#if jamOver}
   <div class="jam-over-message" in:fly={{ y: 20, duration: 300 }}>
@@ -242,7 +271,7 @@
   />
   
   <!-- Show guess limit reached message if at 10 guesses but not game over yet -->
-  {#if gameGuesses.length >= 10 && !jamOver}
+  {#if effectiveGuessCount >= 10 && !jamOver}
     <div class="guess-limit-message" in:fly={{ y: 20, duration: 300 }}>
       <p>You've used all 10 guesses!</p>
       <p>Game over!</p>
@@ -319,6 +348,23 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  
+  /* New style for free guess indicator */
+  .free-guess-indicator {
+    background-color: rgba(131, 112, 222, 0.2);
+    border: 1px solid #8370de;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .free-guess-indicator span {
+    color: #8370de;
+    font-weight: 600;
+    font-size: 14px;
   }
   
   .jam-over-message {

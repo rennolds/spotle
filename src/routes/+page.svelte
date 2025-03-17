@@ -500,63 +500,68 @@ function restartJam() {
     }
 
     if (playingJam) {
-      if (tempGameOver) {
-        return;
-      }
-      
-      if (tempGuesses.includes(selectedArtist)) {
-        return;
-      }
-      
-      tempGuesses.push(selectedArtist);
-      tempGuesses = tempGuesses;
+    if (tempGameOver) {
+      return;
+    }
+    
+    // Check if this is a duplicate guess (unchanged)
+    if (tempGuesses.includes(selectedArtist)) {
+      return;
+    }
+    
+    // Add the guess to the list
+    tempGuesses.push(selectedArtist);
+    tempGuesses = tempGuesses;
+    
+    // Only increment guess count if it's not a free guess from the previously solved artist
+    // The JamMode component will handle adjusting the display logic
+    if (solvedJamArtists.length === 0 || selectedArtist.name !== solvedJamArtists[solvedJamArtists.length - 1].name) {
       guessCount++;
+    }
 
-      if (selectedArtist == mysteryArtist) {
+    if (selectedArtist == mysteryArtist) {
+      setTimeout(() => {
+        // Store the current solved artist
+        const lastSolvedArtist = mysteryArtist;
+        
+        // Add the solved artist to the list
+        solvedJamArtists.push(lastSolvedArtist);
+        solvedJamArtists = solvedJamArtists;
+        
+        // Increment the JAM index 
+        jamIndex++;
+        
+        // Move to the next artist
+        setJamArtist();
+        
+        // Reset guesses and guess count for next artist
+        tempGuesses = [];
+        guessCount = 0;
+
         setTimeout(() => {
-          // Store the current solved artist
-          const lastSolvedArtist = mysteryArtist;
-          
-          // Add the solved artist to the list
-          solvedJamArtists.push(lastSolvedArtist);
-          solvedJamArtists = solvedJamArtists;
-          
-          // Increment the JAM index 
-          jamIndex++;
-          
-          // Move to the next artist
-          setJamArtist();
-          
-          // Reset guesses and guess count for next artist
-          tempGuesses = [];
-          guessCount = 0;
-          
-          // After setting the new artist, automatically add the previous solved artist as first guess
-          // but don't count it against the user's guesses
-          if (lastSolvedArtist) {
-            // Add the previous artist as a guess but don't increment the guess count
-            tempGuesses.push(lastSolvedArtist);
-            tempGuesses = tempGuesses;
-          }
+          tempGuesses = [lastSolvedArtist]; // Add the previous artist as the first guess
+          tempGuesses = tempGuesses; // Trigger reactivity
+        }, 100);
+        
+        // The free guess will be handled by the JamMode component on initial render of the new artist
+        
+      }, 1750);
+    }
 
-        }, 1750);
-      }
-
-      // If we've reached the max number of guesses (10)
-      if (guessCount >= 10) {
-        setTimeout(() => {
-          // End the game instead of cycling to next artist
-          tempGameOver = true;
-          
-          if (browser && typeof gtag === 'function') {
-            gtag('event', 'jam_mode_complete', {
-              'artists_solved': jamIndex,
-              'reason': 'max_guesses',
-              'failed_artist': mysteryArtist.name
-            });
-          }
-        }, 1750);
-      }
+    // Check for max guesses (unchanged)
+    if (guessCount >= 10) {
+      setTimeout(() => {
+        tempGameOver = true;
+        
+        if (browser && typeof gtag === 'function') {
+          gtag('event', 'jam_mode_complete', {
+            'artists_solved': jamIndex,
+            'reason': 'max_guesses',
+            'failed_artist': mysteryArtist.name
+          });
+        }
+      }, 1750);
+    }
       
       return;
     }
