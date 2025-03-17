@@ -750,8 +750,9 @@
   <div class="backdrop"></div>
   <AdBanner {PUB_ID} {WEBSITE_ID} />
   <Navbar 
-    showBackButton={playingGame}
     showLogo={true}
+    playingJam={playingJam}
+    playingRewind={playingRewind}
     on:menu={handleMenuClick}
     on:help={toggleHelp}
     on:stats={handleStatsClick}
