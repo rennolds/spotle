@@ -308,20 +308,16 @@
   }
 
   function handleCreate() {
+    resetAllModes();
     createGame = true;
     playingGame = true;
-    playingRewind = false;
-    playingChallenge = false;
-    splashScreen = false;
   }
 
   function playRewind() {
+    resetAllModes();
     playingGame = true;
-    splashScreen = false;
     playingRewind = true;
-    playingChallenge = false;
-    normalGame = false;
-    playingJam = false;
+
 
     if (browser && typeof gtag === 'function') {
       gtag('event', 'rewind', {});
@@ -373,43 +369,35 @@
     }
   }
 
-// Now update the restartJam function for a complete reset:
-function restartJam() {
-  // Reset the game state completely
-  jamIndex = 0;
-  solvedJamArtists = [];
-  tempGuesses = [];
-  guessCount = 0;
-  jamTimeRemaining = 180; // Reset timer to 3 minutes
-  tempGameOver = false; // Critical - reset game over state
-  
-  // Shuffle eligible artists for JAM mode
-  shuffleEligibleArtists();
-  
-  // Set the first artist
-  setJamArtist();
-  
-  // Force a UI refresh by temporarily hiding the component
-  const wasPlayingJam = playingJam;
-  playingJam = false;
-  
-  // Use a small timeout to ensure the component is removed and re-added
-  setTimeout(() => {
-    playingJam = wasPlayingJam;
+  function restartJam() {
+    // Reset the game state completely
+    jamIndex = 0;
+    solvedJamArtists = [];
+    tempGuesses = [];
+    guessCount = 0;
+    jamTimeRemaining = 180;
+    tempGameOver = false;
     
-    // Track the restart in analytics if available
-    if (browser && typeof gtag === 'function') {
-      gtag('event', 'jam_mode_restart', {});
-    }
-  }, 10);
-}
+    // Shuffle eligible artists and set first artist
+    shuffleEligibleArtists();
+    setJamArtist();
+    
+    // Trigger reactivity on key variables
+    playingJam = false;
+    // Force an update cycle
+    setTimeout(() => {
+      playingJam = true;
+      
+      if (browser && typeof gtag === 'function') {
+        gtag('event', 'jam_mode_restart', {});
+      }
+    }, 50); // Slightly longer timeout for more reliable component reset
+  }
 
   function playJam() {
-    splashScreen = false;
+    resetAllModes();
     playingGame = true;
-    normalGame = false;
-    playingChallenge = false;
-    playingRewind = false;
+    playingJam = true;
     
     // Set tempGameOver to false before enabling playingJam
     tempGameOver = false;
@@ -642,6 +630,25 @@ function restartJam() {
     showSlideMenu = false;
   }
 
+  function resetAllModes() {
+      // Reset all mode flags
+      normalGame = false;
+      createGame = false;
+      playingRewind = false;
+      playingJam = false;
+      playingChallenge = false;
+      playingGame = false;
+      splashScreen = false;
+      
+      // Reset game state
+      tempGameOver = false;
+      showResults = false;
+      
+      // Reset any other relevant state
+      guessCount = 0;
+      tempGuesses = [];
+  }
+
   function handleSlideMenuNavigation(event) {
     const destination = event.detail.destination;
     showSlideMenu = false;
@@ -659,7 +666,7 @@ function restartJam() {
     } else if (destination === 'jam') {
       playJam();
     }
-  }
+}
 
   function handleOverlayClose() {
     showResults = false;
