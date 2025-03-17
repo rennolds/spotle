@@ -10,15 +10,31 @@
     export let jamIndex = 0; // Current index in jam mode (number of solved)
     export let timeRemaining = 180; // Default to 3 minutes (180 seconds)
     export let solvedArtists = []; // Array of already solved artists
+    export let isGameOver = false; // Control from parent component
     
     const dispatch = createEventDispatcher();
     let timer;
     let minutes = Math.floor(timeRemaining / 60);
     let seconds = timeRemaining % 60;
-    let jamOver = false; // New state to track if jam is over
+    let jamOver = false; // Local state to track if jam is over
+    let shareButtonText = "SHARE RESULT"; // State for share button text
+    
+    // Sync local jamOver state with parent isGameOver prop
+    $: {
+      jamOver = isGameOver;
+      if (isGameOver && timer) {
+        clearInterval(timer);
+      }
+    }
     
     // Format time as MM:SS
     $: formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    
+    // Update minutes and seconds when timeRemaining changes
+    $: {
+      minutes = Math.floor(timeRemaining / 60);
+      seconds = timeRemaining % 60;
+    }
     
     // Handle artist search/selection
     function handleArtistSearch(event) {
@@ -30,13 +46,16 @@
     
     // Function to handle artist guess limit reached - separate from solve
     function handleGuessLimitReached() {
+        if (jamOver) return; // Prevent multiple calls
+        
         jamOver = true;
+        dispatch('timeUp'); // Notify parent component
         
         if (browser && typeof gtag === 'function') {
             gtag('event', 'jam_mode_complete', {
-            'artists_solved': jamIndex,
-            'reason': 'guess_limit',
-            'failed_artist': currentArtist.name
+              'artists_solved': jamIndex,
+              'reason': 'guess_limit',
+              'failed_artist': currentArtist?.name || 'unknown'
             });
         }
         
@@ -44,39 +63,100 @@
         if (timer) {
             clearInterval(timer);
         }
-        }
+    }
 
-        // Make sure to call this function when gameGuesses.length reaches 10
-        // This can be added as a reactive statement
-        $: if (gameGuesses.length >= 10 && !jamOver) {
+    // Make sure to call this function when gameGuesses.length reaches 10
+    $: if (gameGuesses.length >= 10 && !jamOver) {
         handleGuessLimitReached();
+    }
+    
+    // Function to handle sharing results
+    function handleShareResult() {
+      const shareText = `I solved ${jamIndex} artist${jamIndex !== 1 ? 's' : ''} in this Spotle Jam. Can you do better?\n\nspotle.io`;
+      
+      function isMobile() {
+        const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+        return regex.test(navigator.userAgent);
+      }
+      
+      if (browser) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'jam_share_result', {
+            'artists_solved': jamIndex
+          });
         }
+        
+        if (isMobile()) {
+          if (navigator.share) {
+            navigator.share({
+              text: shareText,
+            })
+            .then(() => {
+              console.log("Thanks for sharing!");
+            })
+            .catch(console.error);
+          } else {
+            shareButtonText = "COPIED RESULT";
+            navigator.clipboard.writeText(shareText)
+            .then(() => {
+              console.log("copied");
+            })
+            .catch((error) => {
+              alert(`Copy failed! ${error}`);
+            });
+          }
+        } else {
+          shareButtonText = "COPIED RESULT";
+          navigator.clipboard.writeText(shareText);
+        }
+      }
+    }
     
     // Function to restart jam mode
     function handleRestartJam() {
-      dispatch('restart');
+      shareButtonText = "SHARE RESULT"; // Reset button text
+      dispatch('restart'); // Let parent handle the full restart
+    }
+    
+    // Initialize or reset the timer
+    function initTimer() {
+      // Clear any existing timer first
+      if (timer) {
+        clearInterval(timer);
+      }
+      
+      // Only start if game is not over
+      if (!jamOver) {
+        timer = setInterval(() => {
+          if (timeRemaining > 0) {
+            timeRemaining--;
+            minutes = Math.floor(timeRemaining / 60);
+            seconds = timeRemaining % 60;
+          } else {
+            // Time's up!
+            clearInterval(timer);
+            jamOver = true;
+            dispatch('timeUp'); // Notify parent
+            
+            if (browser && typeof gtag === 'function') {
+              gtag('event', 'jam_mode_complete', {
+                'artists_solved': jamIndex,
+                'reason': 'time_up'
+              });
+            }
+          }
+        }, 1000);
+      }
     }
     
     onMount(() => {
-      // Start the timer
-      timer = setInterval(() => {
-        if (timeRemaining > 0) {
-          timeRemaining--;
-          minutes = Math.floor(timeRemaining / 60);
-          seconds = timeRemaining % 60;
-        } else {
-          // Time's up!
-          clearInterval(timer);
-          jamOver = true;
-          
-          if (browser && typeof gtag === 'function') {
-            gtag('event', 'jam_mode_complete', {
-              'artists_solved': jamIndex,
-            });
-          }
-        }
-      }, 1000);
+      initTimer();
     });
+    
+    // Force timer reset when component props change
+    $: if (currentArtist && !jamOver) {
+      initTimer();
+    }
     
     onDestroy(() => {
       // Clear timer when component is destroyed
@@ -139,6 +219,10 @@
       </div>
     {/if}
     
+    <!-- Share button -->
+    <button class="styled-btn share-btn" on:click={handleShareResult}>
+      {shareButtonText}
+    </button>
     <button class="styled-btn run-it-back-btn" on:click={handleRestartJam}>
       RUN IT BACK
     </button>
@@ -153,7 +237,7 @@
   />
   
   <!-- Show guess limit reached message if at 10 guesses but not game over yet -->
-  {#if gameGuesses.length >= 10}
+  {#if gameGuesses.length >= 10 && !jamOver}
     <div class="guess-limit-message" in:fly={{ y: 20, duration: 300 }}>
       <p>You've used all 10 guesses!</p>
       <p>Game over!</p>
@@ -269,8 +353,13 @@
     transform: scale(1.05);
   }
   
+  /* NEW: Added styles for share and run-it-back buttons */
+  .share-btn {
+    margin: 10px auto 5px;
+  }
+  
   .run-it-back-btn {
-    margin: 10px auto;
+    margin: 5px auto 10px;
   }
   
   .guess-limit-message {
@@ -288,35 +377,35 @@
   }
 
   .stumped-artist {
-  margin: 15px 0;
-  text-align: center;
-}
+    margin: 15px 0;
+    text-align: center;
+  }
 
-.stumped-artist p {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #b5b5b5;
-}
+  .stumped-artist p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #b5b5b5;
+  }
 
-.artist-reveal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px 0 20px;
-}
+  .artist-reveal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 20px;
+  }
 
-.artist-reveal img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border: 2px solid #8370de;
-}
+  .artist-reveal img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #8370de;
+  }
 
-.artist-reveal span {
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-}
+  .artist-reveal span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
 </style>

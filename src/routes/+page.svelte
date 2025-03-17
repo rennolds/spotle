@@ -373,11 +373,36 @@
     }
   }
 
-  // Replace the restartJam function with this one:
-  function restartJam() {
-    // Reset the game state without toggling showResults
-    playJam();
-  }
+// Now update the restartJam function for a complete reset:
+function restartJam() {
+  // Reset the game state completely
+  jamIndex = 0;
+  solvedJamArtists = [];
+  tempGuesses = [];
+  guessCount = 0;
+  jamTimeRemaining = 180; // Reset timer to 3 minutes
+  tempGameOver = false; // Critical - reset game over state
+  
+  // Shuffle eligible artists for JAM mode
+  shuffleEligibleArtists();
+  
+  // Set the first artist
+  setJamArtist();
+  
+  // Force a UI refresh by temporarily hiding the component
+  const wasPlayingJam = playingJam;
+  playingJam = false;
+  
+  // Use a small timeout to ensure the component is removed and re-added
+  setTimeout(() => {
+    playingJam = wasPlayingJam;
+    
+    // Track the restart in analytics if available
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'jam_mode_restart', {});
+    }
+  }, 10);
+}
 
   function playJam() {
     splashScreen = false;
@@ -385,6 +410,10 @@
     normalGame = false;
     playingChallenge = false;
     playingRewind = false;
+    
+    // Set tempGameOver to false before enabling playingJam
+    tempGameOver = false;
+    
     playingJam = true;   // Enable JAM mode
     
     if (browser && typeof gtag === 'function') {
@@ -394,7 +423,7 @@
     // Reset JAM mode state
     jamIndex = 0;
     solvedJamArtists = [];
-    jamTimeRemaining = 180; // 5 minutes
+    jamTimeRemaining = 180; // 3 minutes
     tempGuesses = [];
     guessCount = 0;
     
@@ -404,6 +433,7 @@
     // Set the first artist
     setJamArtist();
   }
+
 
   // Event handlers
   function handleSearch(artistName) {
@@ -703,6 +733,7 @@
             {jamIndex}
             timeRemaining={jamTimeRemaining}
             solvedArtists={solvedJamArtists}
+            isGameOver={tempGameOver}
             on:guess={(e) => handleSearch(e.detail.artistName)}
             on:timeUp={handleJamTimeUp}
             on:restart={restartJam}
