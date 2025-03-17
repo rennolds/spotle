@@ -32,14 +32,7 @@
 </script>
 
 <div class="game-container" style={blurResults ? "filter: blur(3px)" : ""}>
-<!-- Game info (e.g., guess count) -->
-<GameInfo 
-  {mode} 
-  guessCount={gameGuesses.length} 
-  maxGuesses={10}
-/>
-
-<!-- Rewind date selector (only in rewind mode) -->
+<!-- Rewind date selector (only in rewind mode) - moved this above Game Info -->
 {#if mode === 'rewind'}
   <RewindDateSelector 
     dates={rewindDates}
@@ -48,6 +41,13 @@
     on:selectDate={handleDateSelect}
   />
 {/if}
+
+<!-- Game info (e.g., guess count) -->
+<GameInfo 
+  {mode} 
+  guessCount={gameGuesses.length} 
+  maxGuesses={10}
+/>
 
 <!-- Search bar for guessing -->
 <div class="search-bar-container">

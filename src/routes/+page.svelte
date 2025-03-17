@@ -615,6 +615,14 @@
             tempGameOver = true;
             showResults = true;
             result = "W";
+
+            if (playingRewind && lastSixDaysDates && lastSixDaysDates[rewindIndex]) {
+              const completedDate = lastSixDaysDates[rewindIndex];
+              if (!$completedDates.includes(completedDate)) {
+                $completedDates = [...$completedDates, completedDate];
+              }
+            }
+          
             return;
           }, 1750);
         }
@@ -689,6 +697,20 @@
       // Reset any other relevant state
       guessCount = 0;
       tempGuesses = [];
+  }
+
+  function updateRewindDateUI() {
+    // Create a temporary variable to hold the current value
+    const currentDates = [...$completedDates];
+    
+    // Reset the store with the same value to trigger reactivity
+    // This will force components that depend on completedDates to re-render
+    $completedDates = [];
+    
+    // Use setTimeout to ensure the UI has time to process the change
+    setTimeout(() => {
+      $completedDates = currentDates;
+    }, 10);
   }
 
   function handleSlideMenuNavigation(event) {

@@ -42,7 +42,7 @@
   .guesses-remaining {
     color: #fff;
     align-self: flex-end;
-    margin-bottom: 2px;
+    margin-bottom: -5px;
     margin-right: 12.5px;
     font-size: 15px;
   }

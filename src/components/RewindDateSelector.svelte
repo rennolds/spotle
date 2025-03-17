@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, afterUpdate } from 'svelte';
   import { fly } from 'svelte/transition';
   import moment from 'moment';
   import "moment-timezone";
@@ -9,12 +9,18 @@
   export let currentIndex = 0; // Active date index
   export let lastSixDaysArtists = []; // Array containing the artists objects for each date
   
+  // Force animation refresh on date change
+  let animationKey = 0;
+  
+  $: {
+    // Increment animation key when currentIndex changes
+    // This will cause the animation to replay
+    if (currentIndex !== undefined) {
+      animationKey++;
+    }
+  }
+  
   $: sortedDates = [...dates];
-
-  console.log('sorted dates: ')
-  console.log(sortedDates);
-  console.log('completed dates');
-  console.log($completedDates);
   
   const dispatch = createEventDispatcher();
   
@@ -39,7 +45,6 @@
   // Function to get artist image for a completed date
   function getArtistImage(index) {
     if (lastSixDaysArtists && lastSixDaysArtists[index]) {
-      console.log('here');
       return lastSixDaysArtists[index].image_uri;
     }
     return null;
@@ -48,7 +53,7 @@
   
 <div class="rewind-selector">
   <div class="date-circles">
-    {#each sortedDates as date, index}
+    {#each sortedDates as date, index (index + '-' + animationKey)}
       <div 
         class="date-circle-container" 
         on:click={() => selectDate(index)}
