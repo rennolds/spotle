@@ -508,27 +508,18 @@
       }
 
       // If we've reached the max number of guesses (10)
-      if (guessCount >= 10) {  // 9 because we just made a guess and are checking if it was the 10th
+      if (guessCount >= 10) {
         setTimeout(() => {
-          // Add the correct artist to the tempGuesses so user can see what they missed
-          if (!tempGuesses.includes(mysteryArtist)) {
-            tempGuesses.push(mysteryArtist);
-            tempGuesses = tempGuesses;
-          }
+          // End the game instead of cycling to next artist
+          tempGameOver = true;
           
-          // Wait a moment so user can see the correct answer
-          setTimeout(() => {
-            // Important: Do NOT increment jamIndex here since this is a failed attempt
-            setJamArtist();
-            tempGuesses = [];
-            guessCount = 0;
-            
-            if (browser && typeof gtag === 'function') {
-              gtag('event', 'jam_artist_failed', {
-                'artist': mysteryArtist.name
-              });
-            }
-          }, 2000);
+          if (browser && typeof gtag === 'function') {
+            gtag('event', 'jam_mode_complete', {
+              'artists_solved': jamIndex,
+              'reason': 'max_guesses',
+              'failed_artist': mysteryArtist.name
+            });
+          }
         }, 1750);
       }
       

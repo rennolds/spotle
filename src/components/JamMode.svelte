@@ -30,14 +30,27 @@
     
     // Function to handle artist guess limit reached - separate from solve
     function handleGuessLimitReached() {
-      jamOver = true;
-      if (browser && typeof gtag === 'function') {
-        gtag('event', 'jam_mode_complete', {
-          'artists_solved': jamIndex,
-          'reason': 'guess_limit'
-        });
-      }
-    }
+        jamOver = true;
+        
+        if (browser && typeof gtag === 'function') {
+            gtag('event', 'jam_mode_complete', {
+            'artists_solved': jamIndex,
+            'reason': 'guess_limit',
+            'failed_artist': currentArtist.name
+            });
+        }
+        
+        // Stop the timer when game is over
+        if (timer) {
+            clearInterval(timer);
+        }
+        }
+
+        // Make sure to call this function when gameGuesses.length reaches 10
+        // This can be added as a reactive statement
+        $: if (gameGuesses.length >= 10 && !jamOver) {
+        handleGuessLimitReached();
+        }
     
     // Function to restart jam mode
     function handleRestartJam() {
@@ -111,30 +124,42 @@
   
   <!-- Game over message - shown when time is up or reached max guesses -->
   {#if jamOver}
-    <div class="jam-over-message" in:fly={{ y: 20, duration: 300 }}>
-      <h2>Game over!</h2>
-      <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam.</p>
-      <button class="styled-btn run-it-back-btn" on:click={handleRestartJam}>
-        RUN IT BACK
-      </button>
-    </div>
-  {:else}
-    <!-- Display guesses - don't reveal answer in Jam mode -->
-    <GuessList
-      guesses={gameGuesses}
-      mysteryArtist={currentArtist}
-      isGameOver={false}
-      normalGame={false}
-    />
+  <div class="jam-over-message" in:fly={{ y: 20, duration: 300 }}>
+    <h2>Game over!</h2>
+    <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam.</p>
     
-    <!-- Show guess limit reached message if at 10 guesses but not game over yet -->
+    <!-- Add this section to show the artist that stumped the user -->
     {#if gameGuesses.length >= 10}
-      <div class="guess-limit-message" in:fly={{ y: 20, duration: 300 }}>
-        <p>You've used all 10 guesses!</p>
-        <p>Moving to next artist...</p>
+      <div class="stumped-artist">
+        <p>You got stumped by:</p>
+        <div class="artist-reveal">
+          <img src={currentArtist.image_uri} alt={currentArtist.name} />
+          <span>{currentArtist.name}</span>
+        </div>
       </div>
     {/if}
+    
+    <button class="styled-btn run-it-back-btn" on:click={handleRestartJam}>
+      RUN IT BACK
+    </button>
+  </div>
+{:else}
+  <!-- Display guesses - don't reveal answer in Jam mode -->
+  <GuessList
+    guesses={gameGuesses}
+    mysteryArtist={currentArtist}
+    isGameOver={false}
+    normalGame={false}
+  />
+  
+  <!-- Show guess limit reached message if at 10 guesses but not game over yet -->
+  {#if gameGuesses.length >= 10}
+    <div class="guess-limit-message" in:fly={{ y: 20, duration: 300 }}>
+      <p>You've used all 10 guesses!</p>
+      <p>Game over!</p>
+    </div>
   {/if}
+{/if}
 </div>
 
 <style>
@@ -261,4 +286,37 @@
     margin: 5px 0;
     color: #fff;
   }
+
+  .stumped-artist {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.stumped-artist p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #b5b5b5;
+}
+
+.artist-reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0 20px;
+}
+
+.artist-reveal img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #8370de;
+}
+
+.artist-reveal span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
 </style>
