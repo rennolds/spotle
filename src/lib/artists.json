@@ -7740,21 +7740,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/0zO8ctW0UiuOefR87OeJOZ"
     },
     {
-        "index": 522,
-        "artist": "Luke Bryan",
-        "country": "us",
-        "genre": "Country",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2007,
-        "track_name": "Play It Again",
-        "uri": "spotify:artist:0BvkDsjIUla7X0k6CSWh1I",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9754cf0a7b838caafa4b8b55",
-        "song_uri": "https://p.scdn.co/mp3-preview/3a7906ce652a860a507ee6a71b1c07a118c72999?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27316fce2616744168b30462991",
-        "embedded_track": "https://open.spotify.com/embed/track/03fT3OHB9KyMtGMt2zwqCT"
-    },
-    {
         "index": 523,
         "artist": "ZZ Top",
         "country": "us",

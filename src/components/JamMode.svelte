@@ -351,69 +351,81 @@
     </div>
   {/if}
   
-  <!-- Skip button - now above search bar -->
-  
-  <!-- Search bar for guessing -->
-  <div class="search-controls">
-    <div class="search-bar-container">
-      <SearchBar 
-        disabled={jamOver || effectiveGuessCount >= 10 || showIntro}
-        on:search={handleArtistSearch} 
-      />
+  {#if !jamOver && !showIntro}
+    <!-- Search bar for guessing -->
+    <div class="search-controls">
+      <div class="search-bar-container">
+        <SearchBar 
+          disabled={jamOver || effectiveGuessCount >= 10 || showIntro}
+          on:search={handleArtistSearch} 
+        />
+      </div>
     </div>
-  </div>
-  
-  <!-- Solved artists gallery -->
-  {#if solvedArtists.length > 0}
-    <div class="solved-artists">
-      {#each solvedArtists as artist, i (i)}
-        <div class="solved-artist-thumbnail" in:fly={{ y: 20, duration: 300 }}>
-          <img src={artist.image_uri} alt={artist.name} />
-        </div>
-      {/each}
-    </div>
+
+    <!-- Keep solved artists display during gameplay -->
+    {#if solvedArtists.length > 0}
+      <div class="solved-artists">
+        {#each solvedArtists as artist, i (i)}
+          <div class="solved-artist-thumbnail" in:fly={{ y: 20, duration: 300 }}>
+            <img src={artist.image_uri} alt={artist.name} />
+          </div>
+        {/each}
+      </div>
+    {/if}
+
+    <!-- Display guesses - don't reveal answer in Jam mode -->
+    <GuessList
+      guesses={gameGuesses}
+      mysteryArtist={currentArtist}
+      isGameOver={false}
+      normalGame={false}
+    />
+    
+    <!-- Show guess limit reached message if at 10 guesses but not game over yet -->
+    {#if effectiveGuessCount >= 10 && !jamOver}
+      <div class="guess-limit-message" in:fly={{ y: 20, duration: 300 }}>
+        <p>You've used all 10 guesses!</p>
+        <p>Game over!</p>
+      </div>
+    {/if}
   {/if}
 
   <!-- Game over message - shown when time is up or reached max guesses -->
   {#if jamOver}
-  <div class="jam-over-message" in:fly={{ y: 20, duration: 300 }}>
-    <h2>Game over!</h2>
-    <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam{useDeepCuts ? " (Deep Cuts)" : ""}.</p>
-    
-    <!-- Add this section to show the artist that stumped the user -->
-    <div class="stumped-artist">
-        <p>You got stumped by:</p>
-        <div class="artist-reveal">
-            <img src={currentArtist.image_uri} alt={currentArtist.name} />
-            <span>{currentArtist.name}</span>
+    <div class="jam-over-message" in:fly={{ y: 20, duration: 300 }}>
+      <h2>Game over!</h2>
+      <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam{useDeepCuts ? " (Deep Cuts)" : ""}.</p>
+      
+      <!-- Display solved artists in game over screen -->
+      {#if solvedArtists.length > 0}
+        <div class="solved-artists-gallery">
+          {#each solvedArtists as artist, i (i)}
+            <div class="solved-artist-item" in:fly={{ y: 20, duration: 300, delay: i * 100 }}>
+              <img src={artist.image_uri} alt={artist.name} />
+              <span class="artist-name">{artist.name}</span>
+            </div>
+          {/each}
         </div>
-    </div>
-    
-    <!-- Share button -->
-    <button class="styled-btn share-btn" on:click={handleShareResult}>
-      {shareButtonText}
-    </button>
-    <button class="styled-btn run-it-back-btn" on:click={handleRestartJam}>
-      RUN IT BACK
-    </button>
-  </div>
-{:else}
-  <!-- Display guesses - don't reveal answer in Jam mode -->
-  <GuessList
-    guesses={gameGuesses}
-    mysteryArtist={currentArtist}
-    isGameOver={false}
-    normalGame={false}
-  />
-  
-  <!-- Show guess limit reached message if at 10 guesses but not game over yet -->
-  {#if effectiveGuessCount >= 10 && !jamOver}
-    <div class="guess-limit-message" in:fly={{ y: 20, duration: 300 }}>
-      <p>You've used all 10 guesses!</p>
-      <p>Game over!</p>
+      {/if}
+      
+      <!-- Add this section to show the artist that stumped the user -->
+      <div class="stumped-artist">
+          <p>You got stumped by:</p>
+          <div class="artist-reveal">
+              <img src={currentArtist.image_uri} alt={currentArtist.name} />
+              <span>{currentArtist.name}</span>
+          </div>
+      </div>
+      
+      <!-- Share button -->
+      <button class="styled-btn share-btn" on:click={handleShareResult}>
+        {shareButtonText}
+      </button>
+      <button class="styled-btn run-it-back-btn" on:click={handleRestartJam}>
+        RUN IT BACK
+      </button>
     </div>
   {/if}
-{/if}
 </div>
 
 <style>
@@ -529,6 +541,31 @@
     opacity: 0.6;
   }
 
+  /* Keep the original solved artists display for gameplay */
+  .solved-artists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 10px 0;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+  
+  .solved-artist-thumbnail {
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .solved-artist-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   /* Updated Intro overlay styling */
   .jam-intro-overlay {
     position: absolute;
@@ -635,29 +672,100 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* New styles for game over screen */
+  .jam-over-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    width: 100%;
+  }
   
-  .solved-artists {
+  .jam-over-message h2 {
+    color: #8370de;
+    margin-bottom: 10px;
+  }
+  
+  .jam-over-message p {
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  /* NEW: Styled gallery for showing solved artists in game over screen */
+  .solved-artists-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
-    margin: 10px 0;
-    max-height: 100px;
-    overflow-y: auto;
+    margin: 15px 0 20px;
   }
   
-  .solved-artist-thumbnail {
-    width: 40px;
-    height: 40px;
-    margin: 2px;
+  .solved-artist-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    margin-bottom: 10px;
+  }
+  
+  .solved-artist-item img {
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    overflow: hidden;
+    object-fit: cover;
+    border: 2px solid #8370de;
+    transition: transform 0.2s;
   }
   
-  .solved-artist-thumbnail img {
-    width: 100%;
-    height: 100%;
+  .solved-artist-item img:hover {
+    transform: scale(1.1);
+  }
+  
+  .solved-artist-item .artist-name {
+    font-size: 10px;
+    color: #b5b5b5;
+    margin-top: 5px;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .stumped-artist {
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .stumped-artist p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #b5b5b5;
+  }
+  
+  .artist-reveal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 20px;
+  }
+  
+  .artist-reveal img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #8370de;
+  }
+  
+  .artist-reveal span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
   }
   
   /* New style for free guess indicator */
@@ -677,22 +785,17 @@
     font-size: 14px;
   }
   
-  .jam-over-message {
+  .guess-limit-message {
     text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 15px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     width: 100%;
   }
   
-  .jam-over-message h2 {
-    color: #8370de;
-    margin-bottom: 10px;
-  }
-  
-  .jam-over-message p {
-    margin-bottom: 20px;
+  .guess-limit-message p {
+    margin: 5px 0;
     color: #fff;
   }
   
@@ -705,7 +808,7 @@
     font-weight: 700;
     background-color: #8370de;
     border-radius: 100px;
-    margin-top: 15px;
+    margin-top: 10px;
     cursor: pointer;
     border: none;
   }
@@ -721,52 +824,5 @@
   
   .run-it-back-btn {
     margin: 5px auto 10px;
-  }
-  
-  .guess-limit-message {
-    text-align: center;
-    margin-top: 15px;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    width: 100%;
-  }
-  
-  .guess-limit-message p {
-    margin: 5px 0;
-    color: #fff;
-  }
-
-  .stumped-artist {
-    margin: 15px 0;
-    text-align: center;
-  }
-
-  .stumped-artist p {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #b5b5b5;
-  }
-
-  .artist-reveal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0 20px;
-  }
-
-  .artist-reveal img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 2px solid #8370de;
-  }
-
-  .artist-reveal span {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
   }
 </style>
