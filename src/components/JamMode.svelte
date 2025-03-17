@@ -317,6 +317,17 @@
     </div>
   </div>
   
+  <!-- Search controls - ALWAYS VISIBLE, but disabled when needed -->
+  <div class="search-controls" class:faded={showIntro || jamOver}>
+    <div class="search-bar-container">
+      <SearchBar 
+        disabled={jamOver || effectiveGuessCount >= 10 || showIntro}
+        on:search={handleArtistSearch} 
+        placeholder={showIntro || jamOver ? "Guess disabled" : "Type a guess here..."}
+      />
+    </div>
+  </div>
+  
   <!-- Intro overlay - Only shown before game starts -->
   {#if showIntro}
     <div class="jam-intro-overlay" in:fly={{ y: 20, duration: 300 }}>
@@ -351,17 +362,7 @@
     </div>
   {/if}
   
-  {#if !jamOver && !showIntro}
-    <!-- Search bar for guessing -->
-    <div class="search-controls">
-      <div class="search-bar-container">
-        <SearchBar 
-          disabled={jamOver || effectiveGuessCount >= 10 || showIntro}
-          on:search={handleArtistSearch} 
-        />
-      </div>
-    </div>
-
+  {#if !showIntro && !jamOver}
     <!-- Keep solved artists display during gameplay -->
     {#if solvedArtists.length > 0}
       <div class="solved-artists">
@@ -374,12 +375,14 @@
     {/if}
 
     <!-- Display guesses - don't reveal answer in Jam mode -->
-    <GuessList
-      guesses={gameGuesses}
-      mysteryArtist={currentArtist}
-      isGameOver={false}
-      normalGame={false}
-    />
+    {#if !jamOver}
+      <GuessList
+        guesses={gameGuesses}
+        mysteryArtist={currentArtist}
+        isGameOver={false}
+        normalGame={false}
+      />
+    {/if}
     
     <!-- Show guess limit reached message if at 10 guesses but not game over yet -->
     {#if effectiveGuessCount >= 10 && !jamOver}
@@ -429,6 +432,12 @@
 </div>
 
 <style>
+  /* Add this new style for faded search bar */
+  .faded {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
   .jam-container {
     width: 100%;
     max-width: 340px;
@@ -501,12 +510,14 @@
     flex-direction: column;
     align-items: center;
     margin: 5px 0;
+    transition: opacity 0.3s ease;
+    z-index: 25; /* Lower z-index than intro overlay */
   }
   
   .search-bar-container {
     width: 100%;
     position: relative;
-    z-index: 50;
+    z-index: 25;
   }
   
   .skip-button-container {
@@ -574,7 +585,7 @@
     right: 0;
     bottom: 0;
     border-radius: 10px;
-    z-index: 200;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -681,6 +692,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     width: 100%;
+    z-index: 100;
   }
   
   .jam-over-message h2 {
@@ -693,7 +705,7 @@
     color: #fff;
   }
   
-  /* NEW: Styled gallery for showing solved artists in game over screen */
+  /* Styled gallery for showing solved artists in game over screen */
   .solved-artists-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -768,7 +780,7 @@
     color: #fff;
   }
   
-  /* New style for free guess indicator */
+  /* Style for free guess indicator */
   .free-guess-indicator {
     background-color: rgba(131, 112, 222, 0.2);
     border: 1px solid #8370de;
@@ -817,7 +829,7 @@
     transform: scale(1.05);
   }
   
-  /* NEW: Added styles for share and run-it-back buttons */
+  /* Styles for share and run-it-back buttons */
   .share-btn {
     margin: 10px auto 5px;
   }
