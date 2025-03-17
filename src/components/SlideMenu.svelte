@@ -69,12 +69,29 @@
         
         <div class="menu-section">
             <h3 class="section-header">Need more Spotle?</h3>
-            <div class="menu-item sub-item" on:click={handleRewind}>Spotle Rewind</div>
-            <div class="menu-item sub-item" on:click={handleJamMode}>
-                Spotle Jam
-                <img src="/resources/new-badge.svg" alt="NEW" class="new-badge">
+            <div class="menu-item sub-item" on:click={handleRewind}>
+                <div class="menu-item-content">
+                    <div class="menu-item-title">Rewind</div>
+                    <div class="menu-item-subtitle">Play the last week of Spotle</div>
+                </div>
             </div>
-            <div class="menu-item sub-item" on:click={handleCreateGame}>Create a Spotle</div>
+            <div class="menu-item sub-item" on:click={handleJamMode}>
+                <div class="menu-item-content">
+                    <div class="menu-item-title">Jam
+                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="22" height="16" rx="5" fill="white"/>
+                            <path d="M2 16C1.45 16 0.979333 15.8043 0.588 15.413C0.196667 15.0217 0.000666667 14.5507 0 14V2C0 1.45 0.196 0.979333 0.588 0.588C0.98 0.196666 1.45067 0.000666667 2 0H20C20.55 0 21.021 0.196 21.413 0.588C21.805 0.98 22.0007 1.45067 22 2V14C22 14.55 21.8043 15.021 21.413 15.413C21.0217 15.805 20.5507 16.0007 20 16H2ZM2.5 11H3.75V7.5L6.3 11H7.5V5H6.25V8.5L3.75 5H2.5V11ZM8.5 11H12.5V9.75H10V8.65H12.5V7.4H10V6.25H12.5V5H8.5V11ZM14.5 11H18.5C18.7833 11 19.021 10.904 19.213 10.712C19.405 10.52 19.5007 10.2827 19.5 10V5H18.25V9.5H17.15V6H15.9V9.5H14.75V5H13.5V10C13.5 10.2833 13.596 10.521 13.788 10.713C13.98 10.905 14.2173 11.0007 14.5 11Z" fill="#FF6A00"/>
+                        </svg>
+                    </div>
+                    <div class="menu-item-subtitle">Solve Spotles as fast as you can</div>
+                </div>
+            </div>
+            <div class="menu-item sub-item" on:click={handleCreateGame}>
+                <div class="menu-item-content">
+                    <div class="menu-item-title">Create</div>
+                    <div class="menu-item-subtitle">Make a Spotle for your friends!</div>
+                </div>
+            </div>
         </div>
         
         <div class="menu-section">
@@ -149,10 +166,11 @@
     .menu-item {
       color: white;
       font-size: 18px;
-      padding: 12px 0;
+      padding: 5px 0;
       cursor: pointer;
       text-align: left;
       width: 100%;
+      position: relative;
     }
     
     .menu-item:hover {
@@ -161,15 +179,65 @@
     
     .sub-item {
       font-size: 16px;
-      padding: 8px 0;
+      padding: 5px 0;
       padding-left: 10px;
+    }
+    
+    .menu-item-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    
+    .sub-item:hover .menu-item-content {
+      transform: translateX(3px);
+    }
+    
+    .menu-item-title {
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    
+    .sub-item:hover .menu-item-title {
+      color: #8370de;
+    }
+    
+    .menu-item-subtitle {
+      color: #b5b5b5;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+    
+    .new-badge {
+      width: 40px;
+      height: 20px;
+      margin-left: 10px;
+      vertical-align: middle;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
     
     .section-header {
       color: white;
       font-size: 20px;
       font-weight: 700;
-      margin: 20px 0 10px 0;
+      margin: 24px 0 16px 0;
       text-align: left;
     }
     
@@ -178,10 +246,20 @@
       width: 100%;
     }
     
+    /* Adjust padding and spacing for better appearance */
+    .menu-section .sub-item {
+      margin-bottom: 8px;
+    }
+    
     .game-card {
       margin-bottom: 20px;
       cursor: pointer;
       width: 100%;
+      transition: transform 0.2s ease;
+    }
+    
+    .game-card:hover {
+      transform: scale(1.02);
     }
     
     .game-image {
@@ -218,6 +296,7 @@
       font-size: 16px;
       font-weight: 600;
       text-align: left;
+      margin-top: 6px;
     }
     
     .menu-footer {
@@ -249,29 +328,5 @@
         margin: 0 auto;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       }
-    }
-
-    .menu-item {
-        position: relative; /* Make sure position is relative for absolute positioning of badge */
-    }
-
-    .new-badge {
-        width: 40px;
-        height: 20px;
-        margin-left: 10px;
-        vertical-align: middle;
-        animation: pulse 2s infinite;
-        }
-
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.1);
-        }
-        100% {
-            transform: scale(1);
-        }
     }
 </style>
