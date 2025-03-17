@@ -7,10 +7,7 @@
     export let dates = []; // Array of dates in MM/DD/YYYY format
     export let currentIndex = 0; // Active date index
     
-    // Pre-sort dates to ensure they're in chronological order (most recent first)
-    $: sortedDates = [...dates].sort((a, b) => {
-      return moment(b, "MM/DD/YYYY").valueOf() - moment(a, "MM/DD/YYYY").valueOf();
-    });
+    $: sortedDates = [...dates];
     
     const dispatch = createEventDispatcher();
     

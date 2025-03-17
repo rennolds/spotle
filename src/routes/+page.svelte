@@ -169,27 +169,6 @@
   // Make sure the dates are sorted from newest to oldest
   lastSixDaysArtists.reverse();
   lastSixDaysDates.reverse();
-  
-  for (let i = 1; i <= 6; i++) {
-    const previousDay = moment().tz("America/New_York").subtract(i, "days").format("MM/DD/YYYY");
-
-    const dayArtistEntry = mysteryArtistList.find(
-      (entry) => entry.date === previousDay
-    );
-    
-    if (dayArtistEntry) {
-      const dayArtist = artists.find(
-        (artist) => artist.name === dayArtistEntry.artist
-      );
-      if (dayArtist) {
-        lastSixDaysArtists.push(dayArtist);
-        lastSixDaysDates.push(previousDay);
-      }
-    }
-  }
-  
-  lastSixDaysArtists.reverse();
-  lastSixDaysDates.reverse();
 
   const eligibleArtists = [
     "Taylor Swift",
