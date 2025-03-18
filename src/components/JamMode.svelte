@@ -431,13 +431,8 @@
   {/if}
 </div>
 
-<div class="empty-space"></div>
-
 <style>
 
-  .empty-space {
-    height: 200px;
-  }
   /* Add this new style for faded search bar */
   .faded {
     opacity: 0.6;
@@ -601,7 +596,7 @@
     width: 100%;
     max-width: 340px;
     margin: 0 auto;
-    padding-bottom: 100px; /* Add space at the bottom for better scrolling */
+    padding-bottom: 200px; /* Add space at the bottom for better scrolling */
   }
   
   .intro-content {
