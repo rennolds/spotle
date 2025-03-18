@@ -30,7 +30,6 @@
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
       overflow: auto;
-      padding-bottom: 100px;
     }
   
     .guess-container::-webkit-scrollbar {
@@ -39,7 +38,7 @@
     
     .in-game-text {
       width: 320px;
-      margin: 25px auto;
+      margin: auto;
       text-align: center;
       color: #fff;
     }
