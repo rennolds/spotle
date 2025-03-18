@@ -4,6 +4,19 @@ import { browser } from "$app/environment";
 
 /// NEW
 
+let completedDatesParsed = [];
+const completedDatesName = "completedDates";
+if (browser) {
+    const retrieved = localStorage.getItem(completedDatesName);
+    if (retrieved) {
+        completedDatesParsed = JSON.parse(retrieved);
+    }
+}
+export const completedDates = writable(browser && completedDatesParsed === null ? [] : completedDatesParsed);
+completedDates.subscribe((val) => {
+    if (browser) return (localStorage.setItem(completedDatesName, JSON.stringify(val)));
+});
+
 // PLAYED
 
 let playedParsed = 0;

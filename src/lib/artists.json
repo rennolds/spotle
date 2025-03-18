@@ -4475,7 +4475,7 @@
         "country": "us",
         "genre": "Metal",
         "gender": "m",
-        "group_size": 5,
+        "group_size": 9,
         "debut_album_year": 1999,
         "track_name": "Duality",
         "uri": "spotify:artist:05fG473iIaoy82BF1aGhL8",
@@ -5880,21 +5880,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/4wGSg2Qqpt2sGCWuAZj6EN"
     },
     {
-        "index": 392,
-        "artist": "La Arrolladora Banda El Limón",
-        "country": "mx",
-        "genre": "Latin",
-        "gender": "m",
-        "group_size": 18,
-        "debut_album_year": 1997,
-        "track_name": "El Final De Nuestra Historia",
-        "uri": "spotify:artist:5bSfBBCxY8QAk4Pifveisz",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb069726c29cb2ecddce6e86da",
-        "song_uri": "https://p.scdn.co/mp3-preview/5c948240e010a724533c0c712635b777d6e6d395?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2732619bdb15ad1bc5d1016457a",
-        "embedded_track": "https://open.spotify.com/embed/track/7kofJygFUxxmag4EAYcCG3"
-    },
-    {
         "index": 393,
         "artist": "Glass Animals",
         "country": "gb",
@@ -6828,7 +6813,7 @@
         "index": 455,
         "artist": "Lizzo",
         "country": "us",
-        "genre": "Pop",
+        "genre": "Hip Hop",
         "gender": "f",
         "group_size": 1,
         "debut_album_year": 2013,
@@ -7215,21 +7200,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/4vVjPTApwXZwB2H3mBq3ml"
     },
     {
-        "index": 481,
-        "artist": "2 Chainz",
-        "country": "us",
-        "genre": "Hip Hop",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2010,
-        "track_name": "We Own It (Fast & Furious)",
-        "uri": "spotify:artist:17lzZA2AlOHwCwFALHttmp",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebf556662d187b9191c421be1c",
-        "song_uri": "https://p.scdn.co/mp3-preview/fd9d729131e0f9273319ee2d924ecbe9afa192d4?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273b4366694590f7164fad21fc7",
-        "embedded_track": "https://open.spotify.com/embed/track/2OQJKTtrH482waGFmOfJni"
-    },
-    {
         "index": 482,
         "artist": "Gucci Mane",
         "country": "us",
@@ -7288,21 +7258,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/e60d9d46d42425e4bab86bedca7597c308958f9b?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273cfdf40cf325b609a52457805",
         "embedded_track": "https://open.spotify.com/embed/track/5tz69p7tJuGPeMGwNTxYuV"
-    },
-    {
-        "index": 487,
-        "artist": "The Beach Boys",
-        "country": "us",
-        "genre": "Rock",
-        "gender": "m",
-        "group_size": 5,
-        "debut_album_year": 1962,
-        "track_name": "Wouldn't It Be Nice",
-        "uri": "spotify:artist:3oDbviiivRWhXwIE8hxkVV",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebfaeabbf20cf22ba59c117785",
-        "song_uri": "https://p.scdn.co/mp3-preview/4ea74155d6f9a3c0f93f8fc06aac20c3d962c894?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27350eb0c521d2d3b2f599bff04",
-        "embedded_track": "https://open.spotify.com/embed/track/4IHc6SzGPnzSPuHVEPzpJc"
     },
     {
         "index": 488,
@@ -7560,21 +7515,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/5tYCl2bT9bDjMuTyn6OVb0"
     },
     {
-        "index": 505,
-        "artist": "Johnny Cash",
-        "country": "us",
-        "genre": "Country",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 1957,
-        "track_name": "Hurt",
-        "uri": "spotify:artist:6kACVPfCOnqzgfEF5ryl0x",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb152cf48cf9541c7061570857",
-        "song_uri": "https://p.scdn.co/mp3-preview/778e8f805c27e2bbcab877fd8e54fdaaed70e8c6?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2736f4f62da3d811b6501a69ffa",
-        "embedded_track": "https://open.spotify.com/embed/track/28cnXtME493VX9NOw9cIUh"
-    },
-    {
         "index": 506,
         "artist": "Dalex",
         "country": "us",
@@ -7650,21 +7590,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/2InS5VWKJQbsFBKOsf1cJB"
     },
     {
-        "index": 511,
-        "artist": "The Lumineers",
-        "country": "us",
-        "genre": "Folk",
-        "gender": "x",
-        "group_size": 5,
-        "debut_album_year": 2012,
-        "track_name": "Ophelia",
-        "uri": "spotify:artist:16oZKvXb6WkQlVAjwo2Wbg",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebc79f78fd72a3e5faf699a8be",
-        "song_uri": "https://p.scdn.co/mp3-preview/8c2d1447b1f425955e56f93bbb427436b28c6bb0?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2732ebf129f0db6d0e88372600e",
-        "embedded_track": "https://open.spotify.com/embed/track/3d8y0t70g7hw2FOWl9Z4Fm"
-    },
-    {
         "index": 512,
         "artist": "Bring Me the Horizon",
         "country": "gb",
@@ -7708,21 +7633,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/174d0af09bcb84373380914586b2e86266bc1dce?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27361fa40b8b707af628ca2bd36",
         "embedded_track": "https://open.spotify.com/embed/track/25tsnA5lDP4UctAQOoa8Ks"
-    },
-    {
-        "index": 515,
-        "artist": "The Doors",
-        "country": "us",
-        "genre": "Rock",
-        "gender": "m",
-        "group_size": 4,
-        "debut_album_year": 1967,
-        "track_name": "People Are Strange",
-        "uri": "spotify:artist:22WZ7M8sxp5THdruNY3gXt",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb440959e022afc20e819050bd",
-        "song_uri": "https://p.scdn.co/mp3-preview/76f1624dd8ad1c3741cacbc8864746d734f92109?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27386339e6cd71cc2a167451ee5",
-        "embedded_track": "https://open.spotify.com/embed/track/1Jmqubf9kGkWeYQXQKImL5"
     },
     {
         "index": 516,
@@ -7815,21 +7725,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/0zO8ctW0UiuOefR87OeJOZ"
     },
     {
-        "index": 522,
-        "artist": "Luke Bryan",
-        "country": "us",
-        "genre": "Country",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2007,
-        "track_name": "Play It Again",
-        "uri": "spotify:artist:0BvkDsjIUla7X0k6CSWh1I",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9754cf0a7b838caafa4b8b55",
-        "song_uri": "https://p.scdn.co/mp3-preview/3a7906ce652a860a507ee6a71b1c07a118c72999?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27316fce2616744168b30462991",
-        "embedded_track": "https://open.spotify.com/embed/track/03fT3OHB9KyMtGMt2zwqCT"
-    },
-    {
         "index": 523,
         "artist": "ZZ Top",
         "country": "us",
@@ -7888,36 +7783,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/07fb66554af09f90798cadd77255c35df6dda8f4?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2732b517912fd69652ff10d8e11",
         "embedded_track": "https://open.spotify.com/embed/track/46lFttIf5hnUZMGvjK0Wxo"
-    },
-    {
-        "index": 527,
-        "artist": "Depeche Mode",
-        "country": "gb",
-        "genre": "Electronic",
-        "gender": "m",
-        "group_size": 4,
-        "debut_album_year": 1981,
-        "track_name": "Enjoy the Silence",
-        "uri": "spotify:artist:762310PdDnwsDxAQxzQkfX",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebaff13c9484fdad590ccfb73c",
-        "song_uri": "https://p.scdn.co/mp3-preview/52914be143f0dac1fad0f9bf11b079487bbac6f1?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2735952c4782caf4283105f2120",
-        "embedded_track": "https://open.spotify.com/embed/track/4wGSg2Qqpt2sGCWuAZj6EN"
-    },
-    {
-        "index": 528,
-        "artist": "La Arrolladora Banda El Limón",
-        "country": "mx",
-        "genre": "Latin",
-        "gender": "m",
-        "group_size": 18,
-        "debut_album_year": 1997,
-        "track_name": "El Final De Nuestra Historia",
-        "uri": "spotify:artist:5bSfBBCxY8QAk4Pifveisz",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb069726c29cb2ecddce6e86da",
-        "song_uri": "https://p.scdn.co/mp3-preview/5c948240e010a724533c0c712635b777d6e6d395?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2732619bdb15ad1bc5d1016457a",
-        "embedded_track": "https://open.spotify.com/embed/track/7kofJygFUxxmag4EAYcCG3"
     },
     {
         "index": 529,
@@ -8025,36 +7890,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/1F205Nl2feOSYSztLNOJAL"
     },
     {
-        "index": 536,
-        "artist": "Shania Twain",
-        "country": "ca",
-        "genre": "Country",
-        "gender": "f",
-        "group_size": 1,
-        "debut_album_year": 1993,
-        "track_name": "Man! I Feel Like A Woman!",
-        "uri": "spotify:artist:5e4Dhzv426EvQe3aDb64jL",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb01022f4092cb96e0a91811a5",
-        "song_uri": "https://p.scdn.co/mp3-preview/2fe1d2c5df34b9ba727acc38db15e7415cd9a23a?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273f4fc5ce3068e340f35037770",
-        "embedded_track": "https://open.spotify.com/embed/track/2mqaYmF0XmV8egZB6jQOtN"
-    },
-    {
-        "index": 537,
-        "artist": "Noriel",
-        "country": "pr",
-        "genre": "Latin",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2022,
-        "track_name": "4K",
-        "uri": "spotify:artist:3RtNN1VnooWEn3KQk03DUL",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eba84e9a986e7eb2b88901edde",
-        "song_uri": "https://p.scdn.co/mp3-preview/8e488c31e761f9994f54aaea8aa87e7a65430ef6?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27334f87322d0e0b663ac8cb6d7",
-        "embedded_track": "https://open.spotify.com/embed/track/1BIXs6CdkPRLytuqoXs6XN"
-    },
-    {
         "index": 538,
         "artist": "Maiara & Maraisa",
         "country": "br",
@@ -8145,21 +7980,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/59dLtGBS26x7kc0rHbaPrq"
     },
     {
-        "index": 544,
-        "artist": "Papa Roach",
-        "country": "us",
-        "genre": "Metal",
-        "gender": "m",
-        "group_size": 4,
-        "debut_album_year": 2000,
-        "track_name": "Last Resort",
-        "uri": "spotify:artist:4RddZ3iHvSpGV4dvATac9X",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb16d84e1083c232e86f299f01",
-        "song_uri": "https://p.scdn.co/mp3-preview/fd0f4e93ee380e85cd5ec2b16c1cccfc48081495?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273985bf5ede2fe4a048ee85f28",
-        "embedded_track": "https://open.spotify.com/embed/track/5W8YXBz9MTIDyrpYaCg2Ky"
-    },
-    {
         "index": 545,
         "artist": "Alesso",
         "country": "se",
@@ -8188,21 +8008,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/370dd06dcf6886a1822ff8be3b500482daa2c903?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27368780bf3f5a4af94f2c953c6",
         "embedded_track": "https://open.spotify.com/embed/track/7uIF6RDrW2PwvvYEMkanr8"
-    },
-    {
-        "index": 548,
-        "artist": "Lil Pump",
-        "country": "us",
-        "genre": "Hip Hop",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2017,
-        "track_name": "I Love It (& Lil Pump)",
-        "uri": "spotify:artist:3wyVrVrFCkukjdVIdirGVY",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb6bc83a52ca96ea7e6ac30c7f",
-        "song_uri": "https://p.scdn.co/mp3-preview/f6093d404fa398de2fbee97c49d68973fbbdc728?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273b6d544387b04e1d1a5f7926c",
-        "embedded_track": "https://open.spotify.com/embed/track/4S8d14HvHb70ImctNgVzQQ"
     },
     {
         "index": 549,
@@ -8263,21 +8068,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/7df118cd4b1ad1074412a1ed50522732c04256b3?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273546d66125577fdca616ec73c",
         "embedded_track": "https://open.spotify.com/embed/track/7JKptWv4YXmievid0HajID"
-    },
-    {
-        "index": 553,
-        "artist": "Mumford & Sons",
-        "country": "gb",
-        "genre": "Folk",
-        "gender": "m",
-        "group_size": 4,
-        "debut_album_year": 2009,
-        "track_name": "Little Lion Man",
-        "uri": "spotify:artist:3gd8FJtBJtkRxdfbTu19U2",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb9dadab92d8236e846b16fe3a",
-        "song_uri": "https://p.scdn.co/mp3-preview/ef7adcfb18e202dca00e19240b6c31ae782d3542?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2735fcd9dbdaa1670fb49c66313",
-        "embedded_track": "https://open.spotify.com/embed/track/4B4vB3oB8csotplfoQcAd6"
     },
     {
         "index": 554,
@@ -8538,7 +8328,7 @@
         "index": 571,
         "artist": "Motley Crue",
         "country": "us",
-        "genre": "Metal",
+        "genre": "Rock",
         "gender": "m",
         "group_size": 4,
         "debut_album_year": 1981,
@@ -13620,21 +13410,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/02VBYrHfVwfEWXk5DXyf0T"
     },
     {
-        "index": 912,
-        "artist": "Celine Dion",
-        "country": "ca",
-        "genre": "Pop",
-        "gender": "f",
-        "group_size": 1,
-        "debut_album_year": 1987,
-        "track_name": "My Heart Will Go On - Love Theme from \"Titanic",
-        "uri": "spotify:artist:4S9EykWXhStSc15wEx8QFK",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb357f2a87bf92208767a48e7e",
-        "song_uri": "https://p.scdn.co/mp3-preview/68c13229ec9b1b4a5ea580e801061fd7791857c4?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273def7146ca744f3b1bf838404",
-        "embedded_track": "https://open.spotify.com/embed/track/33LC84JgLvK2KuW43MfaNq"
-    },
-    {
         "index": 913,
         "artist": "Stevie Wonder",
         "country": "us",
@@ -14938,21 +14713,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/8722e2a965ff0d44fd9c89bcbbae4d06e1d7b1e4?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273c56dcd1015c1ffb8c56d2988",
         "embedded_track": "https://open.spotify.com/embed/track/7oJrVhiTPZGBXWPwhxjy9S"
-    },
-    {
-        "index": 1000,
-        "artist": "Motley Crue",
-        "country": "us",
-        "genre": "Metal",
-        "gender": "m",
-        "group_size": 4,
-        "debut_album_year": 1981,
-        "track_name": "Kickstart My Heart",
-        "uri": "spotify:artist:0cc6vw3VN8YlIcvr1v7tBL",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb4a4a8001924448a7e9a7e725",
-        "song_uri": "https://p.scdn.co/mp3-preview/9128f2cfa22e3ab7650e76311e406db6835d4c54?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27357338231dc4a85d5aed03186",
-        "embedded_track": "https://open.spotify.com/embed/track/6imjJij6aCM0IbbODUzJQn"
     },
     {
         "index": 1001,
@@ -17788,21 +17548,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/11dc6807597031b53400ea099b42f4ca4529ae1d?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2738860c8336fa14e6b031c5b84",
         "embedded_track": "https://open.spotify.com/embed/track/5SMCxRA6hB2jEhroaYfw6N"
-    },
-    {
-        "index": 1191,
-        "artist": "Banda El Recodo",
-        "country": "mx",
-        "genre": "Latin",
-        "gender": "m",
-        "group_size": 17,
-        "debut_album_year": 1993,
-        "track_name": "La Mejor De Todas",
-        "uri": "spotify:artist:6AcOTCYBMvjKYy4zms0kaC",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb2de8a704feecf3bc5c4bce98",
-        "song_uri": "https://p.scdn.co/mp3-preview/da6dfaa50474bd14f2177af3670e9365c1293328?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2736ddd8e3c3e7a6e11b793b565",
-        "embedded_track": "https://open.spotify.com/embed/track/1F6BAyY4iIzHiZCnUIZDbn"
     },
     {
         "index": 1192,

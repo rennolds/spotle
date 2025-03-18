@@ -5,15 +5,17 @@
         padding: 0;
         line-height: 1.6;
         background: #fff !important;
+        color: black !important;
 
     }
     .container {
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
+        color: black !important;
     }
-    h1, h2, h3 {
-        color: #333;
+    h1, h2, h3, p {
+        color: #333 !important;
     }
     h1 {
         margin-top: 0;
@@ -516,3 +518,4 @@
         </p> -->
     </div>
 </body>
+
