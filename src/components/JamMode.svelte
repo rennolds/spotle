@@ -447,8 +447,7 @@
   width: 100%;
   max-width: 340px;
   margin: 0 auto;
-  position: absolute;
-  height: 800px;
+  position: relative;
   margin-top: 15px;
   display: flex;
   flex-direction: column;
@@ -817,22 +816,6 @@
   color: #fff;
 }
 
-/* Style for free guess indicator */
-.free-guess-indicator {
-  background-color: rgba(131, 112, 222, 0.2);
-  border: 1px solid #8370de;
-  border-radius: 8px;
-  padding: 8px 12px;
-  margin: 8px 0;
-  text-align: center;
-  width: 100%;
-}
-
-.free-guess-indicator span {
-  color: #8370de;
-  font-weight: 600;
-  font-size: 14px;
-}
 
 .guess-limit-message {
   text-align: center;
