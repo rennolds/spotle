@@ -125,11 +125,7 @@
     // Function to handle sharing results
     function handleShareResult() {
       let shareText = `I solved ${jamIndex} artist${jamIndex !== 1 ? 's' : ''} in this Spotle Jam`;
-      
-      // Add mode info to share text
-      if (useDeepCuts) {
-        shareText += " (Deep Cuts mode)";
-      }
+
       
       // Add the artist the user got stumped by if they didn't solve the current one
       if (currentArtist) {
@@ -332,12 +328,11 @@
   {#if showIntro}
     <div class="jam-intro-overlay" in:fly={{ y: 20, duration: 300 }}>
       <div class="intro-content">
-        <h2 class="intro-title">Spotle Jam</h2>
         <ul class="jam-rules-list">
           <li>Solve as many Spotles as you can in 3 minutes</li>
           <li>Every solve, get 15 seconds and a free guess!</li>
           <li>Skipping an artist or running out of guesses will cost you 15 seconds</li>
-          <li>Run out of time, it's over!</li>
+          <li>Run out of time or guesses, it's over!</li>
         </ul>
         
         <!-- Deep Cuts toggle -->

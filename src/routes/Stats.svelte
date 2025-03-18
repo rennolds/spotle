@@ -293,10 +293,10 @@
     font-size: 14px;
     color: #b5b5b5;
     margin-top: 5px;
-    background-color: rgba(131, 112, 222, 0.7);
+    background-color: #CBFF70;
     padding: 3px 8px;
     border-radius: 12px;
-    color: white;
+    color: black;
   }
   
   .guess-distribution {

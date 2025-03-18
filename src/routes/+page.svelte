@@ -624,15 +624,21 @@
     // Check for max guesses (unchanged)
     if (guessCount >= 10) {
       setTimeout(() => {
-        tempGameOver = true;
+        // Apply time penalty (-15 seconds) similar to skip
+        jamTimeRemaining = Math.max(1, jamTimeRemaining - 15);
         
-        if (browser && typeof gtag === 'function') {
-          gtag('event', 'jam_mode_complete', {
-            'artists_solved': jamIndex,
-            'reason': 'max_guesses',
-            'failed_artist': mysteryArtist.name
-          });
-        }
+        // Tell JamMode to show the time penalty animation
+        dispatch('timepenalty');
+        
+        // Move to the next artist without incrementing the solved count
+        jamIndex = jamIndex;  // Keep the jam index the same since we didn't solve it
+        // Reset game state
+        tempGuesses = [];
+        guessCount = 0;
+        
+        // Move to next artist by refreshing the list and setting a new artist
+        shuffleEligibleArtists();
+        setJamArtist();
       }, 1750);
     }
       
