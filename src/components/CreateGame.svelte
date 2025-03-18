@@ -215,13 +215,13 @@
   .styled-btn {
     width: 170px;
     height: 47px;
-    color: #fff;
+    color: black;
     text-align: center;
     font-size: 15px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    background-color: #8370de;
+    background-color: #CBFF70;
     border-radius: 100px;
     margin-top: 5px;
     cursor: pointer;
