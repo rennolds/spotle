@@ -7410,6 +7410,21 @@
         "embedded_track": "https://open.spotify.com/embed/track/3cDyocF0Ibdfs1SFQk5cLZ"
     },
     {
+        "index": 498,
+        "artist": "Stevie Wonder",
+        "country": "us",
+        "genre": "R&B",
+        "gender": "m",
+        "group_size": 1,
+        "debut_album_year": 1962,
+        "track_name": "Signed, Sealed, Delivered (I'm Yours)",
+        "uri": "spotify:artist:7guDJrEfX3qb6FEbdPA5qi",
+        "image_uri": "https://i.scdn.co/image/c59faacbed7aa770266bad048660810eca204108",
+        "song_uri": "https://p.scdn.co/mp3-preview/587a1df7bfa9aa30be4633b36ff46736feb88f97?cid=98f79e400795491cbc5f69b713465708",
+        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273c5e9e847ca9c0982b4c91d4b",
+        "embedded_track": "https://open.spotify.com/embed/track/2eF8pWbiivYsYRpbntYsnc"
+    },
+    {
         "index": 499,
         "artist": "Armin Van Buuren",
         "country": "nl",
@@ -7678,21 +7693,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/e12db8a60f94042a8ed9bf24b68533580a2dad6a?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27387e008fedad973d137e67f20",
         "embedded_track": "https://open.spotify.com/embed/track/51hwmwhhizBDG0RVgFH4oX"
-    },
-    {
-        "index": 520,
-        "artist": "Steve Aoki",
-        "country": "us",
-        "genre": "Electronic",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2012,
-        "track_name": "Pursuit Of Happiness - Extended Steve Aoki Remix",
-        "uri": "spotify:artist:77AiFEVeAVj2ORpC85QVJs",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb5fb007a707c0ec3a7c1726af",
-        "song_uri": "https://p.scdn.co/mp3-preview/3ca56d02a35a03667b7c575b377cb0d80eec87f0?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273fe7908b7666690bf4e83ce14",
-        "embedded_track": "https://open.spotify.com/embed/track/5PX4uS1LqlWEPL69phPVQQ"
     },
     {
         "index": 521,
@@ -13393,21 +13393,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/2f06384101ad1a5aa6b02f6fc24b59789c2ab54d?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273fcf75ead8a32ac0020d2ce86",
         "embedded_track": "https://open.spotify.com/embed/track/02VBYrHfVwfEWXk5DXyf0T"
-    },
-    {
-        "index": 913,
-        "artist": "Stevie Wonder",
-        "country": "us",
-        "genre": "R&B",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 1962,
-        "track_name": "Signed, Sealed, Delivered (I'm Yours)",
-        "uri": "spotify:artist:7guDJrEfX3qb6FEbdPA5qi",
-        "image_uri": "https://i.scdn.co/image/c59faacbed7aa770266bad048660810eca204108",
-        "song_uri": "https://p.scdn.co/mp3-preview/587a1df7bfa9aa30be4633b36ff46736feb88f97?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273c5e9e847ca9c0982b4c91d4b",
-        "embedded_track": "https://open.spotify.com/embed/track/2eF8pWbiivYsYRpbntYsnc"
     },
     {
         "index": 914,
