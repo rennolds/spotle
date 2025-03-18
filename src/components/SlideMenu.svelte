@@ -279,7 +279,7 @@
     }
     
     .harmonies-image {
-      background-image: url('/resources/harmonies.png');
+      background-image: url('/resources/harmonies2.png');
     }
     
     .crosstune-image {
