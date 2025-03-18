@@ -793,7 +793,6 @@
   <div class="backdrop"></div>
   <AdBanner {PUB_ID} {WEBSITE_ID} />
   <Navbar 
-    showLogo={true}
     playingJam={playingJam}
     playingRewind={playingRewind}
     on:menu={handleMenuClick}

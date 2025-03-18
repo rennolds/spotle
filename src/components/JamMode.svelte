@@ -442,11 +442,12 @@
     width: 100%;
     max-width: 340px;
     margin: 0 auto;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding-bottom: 100px; /* Add space at the bottom for better scrolling */
+    padding-bottom: 180px; /* Add space at the bottom for better scrolling */
   }
   
   .jam-header {

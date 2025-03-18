@@ -4,7 +4,6 @@
   import { muted } from '../routes/store.js';
   
   // Always show menu button by removing the showBackButton prop
-  export let showLogo = true;
   // New props to check if user is in JAM or REWIND mode
   export let playingJam = false;
   export let playingRewind = false;
@@ -54,20 +53,6 @@
       </div>
     {/if}
   </div>
-  
-  {#if false}
-    <div class="navbar-logo">
-      <svg
-        width="120"
-        height="44"
-        viewBox="0 0 922 322"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <!-- SVG content omitted for brevity -->
-      </svg>
-    </div>
-  {/if}
   
   <div class="navbar-right">
     <div class="icon-btn" on:click={handleStatsClick}>
@@ -123,15 +108,6 @@
 /* Added styles for navbar-left to properly align the mode indicators */
 .navbar-left {
   gap: 12px; /* Add spacing between menu button and mode indicator */
-}
-
-.navbar-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .icon-btn {

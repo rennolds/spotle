@@ -278,6 +278,10 @@
     margin-bottom: 7.5px;
   }
 
+  .splash-screen svg {
+    margin-top: 40px;
+  }
+
   .splash-screen button:hover {
     transform: scale(1.075) perspective(1px);
   }
