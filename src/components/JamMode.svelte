@@ -331,7 +331,7 @@
         <ul class="jam-rules-list">
           <li>Solve as many Spotles as you can in 3 minutes</li>
           <li>Every solve, get 15 seconds and a free guess!</li>
-          <li>Skipping an artist or running out of guesses will cost you 15 seconds</li>
+          <li>Stuck? Skip an artist, but you'll lose 15 seconds</li>
           <li>Run out of time or guesses, it's over!</li>
         </ul>
         
