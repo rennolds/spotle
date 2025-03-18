@@ -111,7 +111,7 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 340px;
   margin: 0 auto;
-  padding-top: 0;
+  padding-top: 110px;
 }
 
 /* Header centering */
@@ -359,11 +359,6 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Adjust main layout for the fixed navbar */
 .outer-container {
   padding-top: 0;
-  margin-top: 0;
-}
-
-.container {
-  padding-top: 150px;
   margin-top: 0;
 }
 
