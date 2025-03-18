@@ -270,7 +270,8 @@
     
     .game-image {
       width: 100%;
-      height: 120px;
+      height: 100px;
+      width: 250px;
       border-radius: 8px;
       margin-bottom: 8px;
       background-size: cover;
