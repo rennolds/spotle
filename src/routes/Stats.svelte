@@ -183,6 +183,9 @@
         </div>
       </div>
     </div>
+    
+    <!-- Add bottom padding/margin to ensure content isn't cut off -->
+    <div class="stats-footer-space"></div>
   </div>
 </div>
 
@@ -196,15 +199,16 @@
     background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Changed from center to allow scrolling */
     z-index: 9000;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px 0; /* Add padding to ensure content isn't flush against edges */
   }
   
   .stats-content {
     position: relative;
     width: 90%;
     max-width: 400px;
-    max-height: 80vh;
     border-radius: 10px;
     background: rgba(48, 48, 48, 0.95);
     display: flex;
@@ -212,7 +216,8 @@
     align-items: center;
     padding: 20px;
     color: #fff;
-    overflow-y: auto;
+    margin: 20px auto; /* Add margin to ensure it's not flush against top/bottom */
+    max-height: none; /* Remove max-height constraint */
   }
   
   .close-button {
@@ -236,7 +241,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   
   .stat-item {
@@ -260,7 +265,7 @@
   
   .top-performances {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   
   .top-performances h3 {
@@ -350,5 +355,23 @@
     color: white;
     font-weight: bold;
     font-size: 14px;
+  }
+  
+  /* Add space at the bottom to ensure content isn't cut off */
+  .stats-footer-space {
+    height: 40px; /* Adjust as needed */
+    width: 100%;
+  }
+  
+  /* Media query for smaller screens to ensure proper padding */
+  @media screen and (max-height: 700px) {
+    .overlay {
+      padding: 10px 0;
+    }
+    
+    .stats-content {
+      padding: 15px;
+      margin: 10px auto;
+    }
   }
 </style>
