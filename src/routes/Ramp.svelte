@@ -43,6 +43,27 @@
     }
 </script>
 
+<div class="ad-container">
+  <div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>
+</div>
 
 <style>
+  .ad-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    z-index: 101;
+  }
+
+  #standard_iab_head1 {
+    width: 350px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0;
+  }
 </style>

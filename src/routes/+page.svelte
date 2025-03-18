@@ -14,7 +14,6 @@
   import GameBoard from '../components/GameBoard.svelte';
   import CreateGame from '../components/CreateGame.svelte';
   import Navbar from '../components/Navbar.svelte';
-  import AdBanner from '../components/AdBanner.svelte';
   import SlideMenu from '../components/SlideMenu.svelte';
   import JamMode from '../components/JamMode.svelte';
   
@@ -798,7 +797,7 @@
 <main>
   <!-- The backdrop div should be the first child in main -->
   <div class="backdrop"></div>
-  <AdBanner {PUB_ID} {WEBSITE_ID} />
+  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
   <Navbar 
     playingJam={playingJam}
     playingRewind={playingRewind}
@@ -807,7 +806,7 @@
     on:stats={handleStatsClick}
   />
   
-  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
+
   
   <!-- Slide Menu overlay -->
   {#if showSlideMenu}
