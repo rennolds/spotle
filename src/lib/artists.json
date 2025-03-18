@@ -7635,21 +7635,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/25tsnA5lDP4UctAQOoa8Ks"
     },
     {
-        "index": 515,
-        "artist": "The Doors",
-        "country": "us",
-        "genre": "Rock",
-        "gender": "m",
-        "group_size": 4,
-        "debut_album_year": 1967,
-        "track_name": "People Are Strange",
-        "uri": "spotify:artist:22WZ7M8sxp5THdruNY3gXt",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb440959e022afc20e819050bd",
-        "song_uri": "https://p.scdn.co/mp3-preview/76f1624dd8ad1c3741cacbc8864746d734f92109?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27386339e6cd71cc2a167451ee5",
-        "embedded_track": "https://open.spotify.com/embed/track/1Jmqubf9kGkWeYQXQKImL5"
-    },
-    {
         "index": 516,
         "artist": "Matheus & Kauan",
         "country": "br",
