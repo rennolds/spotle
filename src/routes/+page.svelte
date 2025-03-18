@@ -765,6 +765,7 @@
       normalGame = false;
       playingJam = false;
       createGame = false;
+      playingRewind = false;
       splashScreen = true;
     } else if (destination === 'rewind') {
       playRewind();
