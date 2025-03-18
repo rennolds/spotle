@@ -558,7 +558,7 @@
     width: 100%;
     margin: 10px 0;
     max-height: 100px;
-    overflow-y: auto;
+    overflow-y: none;
   }
   
   .solved-artist-thumbnail {
