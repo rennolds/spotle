@@ -25,12 +25,6 @@
   function handleStatsClick() {
     dispatch('stats');
   }
-
-  function handleNewFeatureClick() {
-    // You can add specific behavior here if needed
-    // For now we'll just open the menu and highlight the JAM mode
-    dispatch('menu');
-  }
 </script>
 
 <div class="navbar-container">
@@ -64,19 +58,13 @@
   </div>
   
   <div class="navbar-right">
-    <!-- New Button for NEW feature badge - add it first in the navbar-right -->
-    <div class="icon-btn new-feature-btn" on:click={handleNewFeatureClick}>
-      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="icon-btn" on:click={handleStatsClick}>
+      <svg width="37" height="32" viewBox="0 0 37 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="22" height="16" rx="5" fill="white"/>
         <path d="M2 16C1.45 16 0.979333 15.8043 0.588 15.413C0.196667 15.0217 0.000666667 14.5507 0 14V2C0 1.45 0.196 0.979333 0.588 0.588C0.98 0.196666 1.45067 0.000666667 2 0H20C20.55 0 21.021 0.196 21.413 0.588C21.805 0.98 22.0007 1.45067 22 2V14C22 14.55 21.8043 15.021 21.413 15.413C21.0217 15.805 20.5507 16.0007 20 16H2ZM2.5 11H3.75V7.5L6.3 11H7.5V5H6.25V8.5L3.75 5H2.5V11ZM8.5 11H12.5V9.75H10V8.65H12.5V7.4H10V6.25H12.5V5H8.5V11ZM14.5 11H18.5C18.7833 11 19.021 10.904 19.213 10.712C19.405 10.52 19.5007 10.2827 19.5 10V5H18.25V9.5H17.15V6H15.9V9.5H14.75V5H13.5V10C13.5 10.2833 13.596 10.521 13.788 10.713C13.98 10.905 14.2173 11.0007 14.5 11Z" fill="#FF6A00"/>
-      </svg>
-    </div>
-
-    <div class="icon-btn" on:click={handleStatsClick}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 12H6V21H2V12Z" fill="white"/>
-        <path d="M10 8H14V21H10V8Z" fill="white"/>
-        <path d="M18 3H22V21H18V3Z" fill="white"/>
+        <path d="M15 20H19V30H15V20Z" fill="white"/>
+        <path d="M23 16H27V30H23V16Z" fill="white"/>
+        <path d="M31 11H35V30H31V11Z" fill="white"/>
       </svg>
     </div>
     {#if $muted}
@@ -133,10 +121,10 @@
 }
 
 /* Style for the NEW feature button - add a pulse animation to draw attention */
-.new-feature-btn {
+/* .new-feature-btn {
   position: relative;
   animation: pulse 2s infinite;
-}
+} */
 
 @keyframes pulse {
   0% {
