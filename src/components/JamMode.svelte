@@ -335,10 +335,9 @@
         <h2 class="intro-title">Spotle Jam</h2>
         <ul class="jam-rules-list">
           <li>Solve as many Spotles as you can in 3 minutes</li>
-          <li>Skip an artist if you get stuck, but you'll lose 15 seconds</li>
-          <li>Solve a Spotle, get 15 seconds back and a free guess!</li>
-          <li>Don't run out of guesses or time, or it's over!</li>
-          <li>Only the most popular artists will show up in the Jam, unless you play with Deep Cuts...</li>
+          <li>Every solve, get 15 seconds and a free guess!</li>
+          <li>Skipping an artist or running out of guesses will cost you 15 seconds</li>
+          <li>Run out of time, it's over!</li>
         </ul>
         
         <!-- Deep Cuts toggle -->
