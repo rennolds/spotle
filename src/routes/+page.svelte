@@ -399,26 +399,34 @@
     }
   }
 
+  let skippedArtists = []; // New array to track artists that were skipped
+  
   function handleSkipArtist() {
     if (playingJam) {
-      // Move to the next artist in the jam
-      jamIndex = jamIndex;  // Keep the jam index the same since we didn't solve it
-      
-      // Add analytics tracking
-      if (browser && typeof gtag === 'function') {
-        gtag('event', 'jam_skip_artist', {
-          'artist': mysteryArtist?.name || 'unknown',
-          'jam_index': jamIndex
-        });
+      // Store the current artist being skipped before moving to the next one
+      if (mysteryArtist) {
+        skippedArtists.push(mysteryArtist);
       }
+      
+      // Move to the next artist without incrementing the solved count
+      jamIndex = jamIndex;  // Keep the jam index the same since we didn't solve it
       
       // Reset game state
       tempGuesses = [];
       guessCount = 0;
       
-      // Move to next artist without incrementing the solved count
+      // Shuffle eligible artists and set a new artist
       shuffleEligibleArtists();
       setJamArtist();
+      
+      // Analytics tracking
+      if (browser && typeof gtag === 'function') {
+        gtag('event', 'jam_skip_artist', {
+          'artist': mysteryArtist?.name || 'unknown',
+          'jam_index': jamIndex,
+          'skipped_count': skippedArtists.length
+        });
+      }
     }
   }
 
@@ -444,6 +452,7 @@
     solvedJamArtists = [];
     tempGuesses = [];
     guessCount = 0;
+    skippedArtists = [];
     jamTimeRemaining = 180;
     tempGameOver = false;
     
@@ -863,6 +872,7 @@
             {jamIndex}
             timeRemaining={jamTimeRemaining}
             solvedArtists={solvedJamArtists}
+            skippedArtists={skippedArtists}
             isGameOver={tempGameOver}
             on:guess={(e) => handleSearch(e.detail.artistName)}
             on:timeUp={handleJamTimeUp}

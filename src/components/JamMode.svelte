@@ -12,6 +12,7 @@
   export let solvedArtists = []; // Array of already solved artists
   export let isGameOver = false; // Control from parent component
   export let useDeepCuts = false; // Whether to use the deep cuts list
+  export let skippedArtists = [];
   
   const dispatch = createEventDispatcher();
   let timer;
@@ -20,6 +21,7 @@
   let jamOver = false; // Local state to track if jam is over
   let shareButtonText = "SHARE RESULT"; // State for share button text
   
+
   // New property to track free guess
   let hasFreeGuess = false;
   
@@ -391,7 +393,7 @@
 {#if jamOver}
   <div class="jam-over-message" in:fly={{ y: 20, duration: 300 }}>
     <h2>Game over!</h2>
-    <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam{useDeepCuts ? " (Deep Cuts)" : ""}.</p>
+    <p>You solved {jamIndex} Spotle{jamIndex !== 1 ? "'s" : ""} in this jam.</p>
     
     <!-- Display solved artists in game over screen -->
     {#if solvedArtists.length > 0}
@@ -413,8 +415,32 @@
           {/each}
         </div>
       {/if}
-
     {/if}
+
+
+    {#if skippedArtists.length > 0}
+    <p>You skipped {skippedArtists.length} in this jam.</p>
+      {#if skippedArtists.length > 3}
+      <div class="solved-artists-gallery">
+        {#each skippedArtists as artist, i (i)}
+          <div class="solved-artist-item" in:fly={{ y: 20, duration: 300, delay: i * 50 }}>
+            <img src={artist.image_uri} alt={artist.name} title={artist.name} />
+          </div>
+        {/each}
+      </div>
+      {:else}
+        <div class="solved-artists-gallery">
+          {#each skippedArtists as artist, i (i)}
+            <div class="solved-artist-item" in:fly={{ y: 20, duration: 300, delay: i * 50 }}>
+              <img src={artist.image_uri} alt={artist.name} title={artist.name} />
+                <span class="artist-name">{artist.name}</span>
+            </div>
+          {/each}
+        </div>
+      {/if}
+    {/if}
+
+
     
     <!-- Add this section to show the artist that stumped the user -->
     <div class="stumped-artist">
