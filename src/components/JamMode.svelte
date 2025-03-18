@@ -443,6 +443,8 @@
     width: 100%;
     max-width: 340px;
     margin: 0 auto;
+    position: absolute;
+    height: 800px;
     margin-top: 15px;
     display: flex;
     flex-direction: column;

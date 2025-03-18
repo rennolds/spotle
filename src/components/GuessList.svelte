@@ -18,13 +18,7 @@
       {/each}
     {/if}
   </div>
-  
-  {#if normalGame && guesses.length == 1 && !isGameOver}
-    <p class="in-game-text">
-      Use the matching attributes to make more guesses. Good luck!
-    </p>
-  {/if}
-  
+
   <style>
     .guess-container {
       display: flex;
