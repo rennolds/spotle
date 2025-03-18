@@ -431,7 +431,13 @@
   {/if}
 </div>
 
+<div class="empty-space"></div>
+
 <style>
+
+  .empty-space {
+    height: 200px;
+  }
   /* Add this new style for faded search bar */
   .faded {
     opacity: 0.6;
