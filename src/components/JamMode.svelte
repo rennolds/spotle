@@ -583,22 +583,16 @@
 
   /* Updated Intro overlay styling */
   .jam-intro-overlay {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    z-index: 100;
+    position: relative;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 20px;
     width: 100%;
     max-width: 340px;
     margin: 0 auto;
-    padding-bottom: 400px; /* Add space at the bottom for better scrolling */
+    padding-bottom: 200px; /* Add space at the bottom for better scrolling */
   }
   
   .intro-content {
