@@ -29,7 +29,8 @@
     currentStreak, 
     maxStreak, 
     solveList, 
-    bestGuessImages 
+    bestGuessImages,
+    completedDates,
   } from "./store.js";
   
   // Data imports
@@ -459,54 +460,66 @@
     if (!selectedArtist) return;
 
     if (normalGame) {
-      const guessNames = $guesses.map((artist) => artist.name);
+        const guessNames = $guesses.map((artist) => artist.name);
     
-      if (guessNames.includes(artistName)) {
-        return;
-      }
-
-      $guesses.push(selectedArtist);
-      $guesses = $guesses;
-
-      if (selectedArtist == mysteryArtist) {
-        setTimeout(() => {
-          $gameOver = true;
-          showResults = true;
-          result = "W";
+        if (guessNames.includes(artistName)) {
           return;
-        }, 1750);
-        
-        if (browser && typeof gtag === 'function') {
-          gtag('event', 'gameover', {
-            'result': "win",
-            'guesses': guessCount + 1,
-            'artist': mysteryArtist.name
-          });
-
-          handleStats(guessCount, true);
         }
-      }
 
-      if (guessCount + 1 == 10) {
-        if (browser && typeof gtag === 'function') {
-          gtag('event', 'gameover', {
-            'result': "loss",
-            'guesses': guessCount + 1,
-            'artist': mysteryArtist.name
-          });
+        $guesses.push(selectedArtist);
+        $guesses = $guesses;
 
-          handleStats(guessCount, false);
+        if (selectedArtist == mysteryArtist) {
+          setTimeout(() => {
+            $gameOver = true;
+            showResults = true;
+            result = "W";
+            
+            // Mark today's date as completed
+            if (!$completedDates.includes(todaysDate)) {
+              $completedDates = [...$completedDates, todaysDate];
+            }
+            
+            return;
+          }, 1750);
+          
+          if (browser && typeof gtag === 'function') {
+            gtag('event', 'gameover', {
+              'result': "win",
+              'guesses': guessCount + 1,
+              'artist': mysteryArtist.name
+            });
+
+            handleStats(guessCount, true);
+          }
         }
-        
-        setTimeout(() => {
-          $gameOver = true;
-          showResults = true;
-          $guesses.push(mysteryArtist);
-          $guesses = $guesses;
-          result = "L";
-          return;
-        }, 1750);
-      }
+
+        if (guessCount + 1 == 10) {
+          if (browser && typeof gtag === 'function') {
+            gtag('event', 'gameover', {
+              'result': "loss",
+              'guesses': guessCount + 1,
+              'artist': mysteryArtist.name
+            });
+
+            handleStats(guessCount, false);
+          }
+          
+          setTimeout(() => {
+            $gameOver = true;
+            showResults = true;
+            $guesses.push(mysteryArtist);
+            $guesses = $guesses;
+            result = "L";
+            
+            // Mark today's date as completed
+            if (!$completedDates.includes(todaysDate)) {
+              $completedDates = [...$completedDates, todaysDate];
+            }
+            
+            return;
+          }, 1750);
+        }
 
       guessCount++;
       return;

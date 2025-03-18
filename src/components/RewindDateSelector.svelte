@@ -1,29 +1,35 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
-    import { fly } from 'svelte/transition';
-    import moment from 'moment';
-    import "moment-timezone";
-    
-    export let dates = []; // Array of dates in MM/DD/YYYY format
-    export let currentIndex = 0; // Active date index
-    
-    $: sortedDates = [...dates];
-    
-    const dispatch = createEventDispatcher();
-    
-    // Function to handle date selection
-    function selectDate(index) {
-      if (index !== currentIndex) {
-        dispatch('selectDate', { index });
-      }
+  import { createEventDispatcher } from 'svelte';
+  import { fly } from 'svelte/transition';
+  import moment from 'moment';
+  import "moment-timezone";
+  import { completedDates } from '../routes/store.js';
+  
+  export let dates = []; // Array of dates in MM/DD/YYYY format
+  export let currentIndex = 0; // Active date index
+  
+  $: sortedDates = [...dates];
+  
+  const dispatch = createEventDispatcher();
+  
+  // Function to handle date selection
+  function selectDate(index) {
+    if (index !== currentIndex) {
+      dispatch('selectDate', { index });
     }
-    
-    // Function to format the date for display (MM/DD)
-    function formatDate(dateString) {
-      const date = moment(dateString, "MM/DD/YYYY");
-      return date.format("M/D");
-    }
-  </script>
+  }
+  
+  // Function to format the date for display (MM/DD)
+  function formatDate(dateString) {
+    const date = moment(dateString, "MM/DD/YYYY");
+    return date.format("M/D");
+  }
+  
+  // Function to check if a date has been completed
+  function isDateCompleted(dateString) {
+    return $completedDates.includes(dateString);
+  }
+</script>
   
   <div class="rewind-selector">
     <div class="date-circles">
