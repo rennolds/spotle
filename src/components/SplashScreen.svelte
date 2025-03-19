@@ -249,8 +249,7 @@
   
   <div
     class="yesterdays-artist-container"
-    on:mouseover={() => (isHovered = true)}
-    on:mouseout={() => (isHovered = false)}
+    on:click={() => (isHovered = !isHovered)}
   >
     <div class="artist-image-container">
       <img
@@ -296,7 +295,7 @@
     position: relative;
     height: 40px;
     margin-left: 10px;
-    margin-top: 15px;
+    margin-top: 30px;
     cursor: pointer;
     width: 100%;
     max-width: 340px;
