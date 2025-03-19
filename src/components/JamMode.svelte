@@ -104,15 +104,6 @@
       jamOver = true;
       dispatch('timeUp'); // Notify parent component
       
-      if (browser && typeof gtag === 'function') {
-          gtag('event', 'jam_mode_complete', {
-            'artists_solved': jamIndex,
-            'reason': 'guess_limit',
-            'failed_artist': currentArtist?.name || 'unknown',
-            'mode': useDeepCuts ? 'deep_cuts' : 'standard'
-          });
-      }
-      
       // Stop the timer when game is over
       if (timer) {
           clearInterval(timer);

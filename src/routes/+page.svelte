@@ -430,16 +430,6 @@
     }
   }
 
-  function handleJamTimeUp() {
-    // No need to show results or set tempGameOver here
-    // The JamMode component will handle displaying game over state internally
-    if (browser && typeof gtag === 'function') {
-      gtag('event', 'jam_mode_complete', {
-        'artists_solved': jamIndex,
-      });
-    }
-  }
-
   function restartJam(event) {
     // Get the mode from the event
     const useDeepCuts = event?.detail?.useDeepCuts;
@@ -875,7 +865,6 @@
             skippedArtists={skippedArtists}
             isGameOver={tempGameOver}
             on:guess={(e) => handleSearch(e.detail.artistName)}
-            on:timeUp={handleJamTimeUp}
             on:restart={restartJam}
             on:startWithMode={handleJamModeStart}
             on:skipArtist={handleSkipArtist}
