@@ -803,20 +803,41 @@
             on:selectArtist={handleCreateArtistSelect}
           />
         {:else}
+          {#if playingRewind}
           <GameBoard
-            mode={normalGame ? 'normal' : playingChallenge ? 'challenge' : playingRewind ? 'rewind' : 'rush'}
+            mode="rewind"
             currentArtist={mysteryArtist}
-            gameGuesses={normalGame ? $guesses : tempGuesses}
-            isGameOver={normalGame ? $gameOver : tempGameOver}
+            gameGuesses={tempGuesses}
+            isGameOver={tempGameOver}
             rewindDates={lastSixDaysDates}
             rewindIndex={rewindIndex}
+            lastSixDaysArtists={lastSixDaysArtists}
             blurResults={showResults}
-            challengeNote={challengeNote}
             on:guess={(e) => handleSearch(e.detail.artistName)}
             on:rewindSelect={handleRewindSelect}
             on:rewindNext={nextRewind}
             on:rewindPrevious={previousRewind}
           />
+        {:else if normalGame}
+          <GameBoard
+            mode="normal"
+            currentArtist={mysteryArtist}
+            gameGuesses={$guesses}
+            isGameOver={$gameOver}
+            blurResults={showResults}
+            on:guess={(e) => handleSearch(e.detail.artistName)}
+          />
+        {:else if playingChallenge}
+          <GameBoard
+            mode="challenge"
+            currentArtist={mysteryArtist}
+            gameGuesses={tempGuesses}
+            isGameOver={tempGameOver}
+            blurResults={showResults}
+            challengeNote={challengeNote}
+            on:guess={(e) => handleSearch(e.detail.artistName)}
+          />
+        {/if}
         {/if}
       {/if}
     </div>

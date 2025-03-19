@@ -7,8 +7,14 @@
   
   export let dates = []; // Array of dates in MM/DD/YYYY format
   export let currentIndex = 0; // Active date index
+  export let lastSixDaysArtists = []; // Array containing the artists objects for each date
   
   $: sortedDates = [...dates];
+
+  console.log('sorted dates: ')
+  console.log(sortedDates);
+  console.log('completed dates');
+  console.log($completedDates);
   
   const dispatch = createEventDispatcher();
   
@@ -29,87 +35,113 @@
   function isDateCompleted(dateString) {
     return $completedDates.includes(dateString);
   }
+  
+  // Function to get artist image for a completed date
+  function getArtistImage(index) {
+    if (lastSixDaysArtists && lastSixDaysArtists[index]) {
+      console.log('here');
+      return lastSixDaysArtists[index].image_uri;
+    }
+    return null;
+  }
 </script>
   
-  <div class="rewind-selector">
-    <div class="date-circles">
-      {#each sortedDates as date, index}
-        <div 
-          class="date-circle-container" 
-          on:click={() => selectDate(index)}
-          in:fly={{ y: 20, duration: 300, delay: index * 50 }}
-        >
-          <div class="date-circle {currentIndex === index ? 'active' : ''}">
+<div class="rewind-selector">
+  <div class="date-circles">
+    {#each sortedDates as date, index}
+      <div 
+        class="date-circle-container" 
+        on:click={() => selectDate(index)}
+        in:fly={{ y: 20, duration: 300, delay: index * 50 }}
+      >
+        <div class="date-circle {currentIndex === index ? 'active' : ''}">
+          {#if isDateCompleted(date) && getArtistImage(index)}
+            <!-- Show artist image for completed dates -->
+            <img 
+              src={getArtistImage(index)} 
+              alt="Completed" 
+              class="artist-image"
+            />
+          {:else}
+            <!-- Show question mark for incomplete dates -->
             <span class="question-mark">?</span>
-          </div>
-          <div class="date-label">
-            {formatDate(date)}
-          </div>
+          {/if}
         </div>
-      {/each}
-    </div>
+        <div class="date-label">
+          {formatDate(date)}
+        </div>
+      </div>
+    {/each}
   </div>
+</div>
   
-  <style>
-    .rewind-selector {
-      width: 100%;
-      margin: 15px 0 10px 0;
-    }
+<style>
+  .rewind-selector {
+    width: 100%;
+    margin: 15px 0 10px 0;
+  }
     
-    .date-circles {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      overflow-x: auto;
-      padding: 5px 0;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+  .date-circles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
+    padding: 5px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
     
-    .date-circles::-webkit-scrollbar {
-      display: none;
-    }
+  .date-circles::-webkit-scrollbar {
+    display: none;
+  }
     
-    .date-circle-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      margin: 0 5px;
-    }
+  .date-circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 5px;
+  }
     
-    .date-circle {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #454545;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 5px;
-      transition: all 0.2s ease;
-    }
+  .date-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #454545;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    transition: all 0.2s ease;
+    overflow: hidden; /* Added to ensure artist images are within circle */
+  }
     
-    .date-circle:hover {
-      transform: scale(1.05);
-      background-color: #555555;
-    }
+  .date-circle:hover {
+    transform: scale(1.05);
+    background-color: #555555;
+  }
     
-    .date-circle.active {
-      background-color: #8370de;
-      box-shadow: 0 0 10px rgba(131, 112, 222, 0.5);
-    }
+  .date-circle.active {
+    background-color: #8370de;
+    box-shadow: 0 0 10px rgba(131, 112, 222, 0.5);
+  }
     
-    .question-mark {
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-    }
+  .question-mark {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
     
-    .date-label {
-      font-size: 12px;
-      color: #b5b5b5;
-      margin-top: 2px;
-    }
+  .date-label {
+    font-size: 12px;
+    color: #b5b5b5;
+    margin-top: 2px;
+  }
+  
+  .artist-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 </style>

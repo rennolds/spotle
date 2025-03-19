@@ -15,6 +15,7 @@
   export let rewindIndex = 0; // Current index in rewind mode
   export let blurResults = false; // Whether to blur the results
   export let challengeNote = ''; // Note for challenge mode
+  export let lastSixDaysArtists = []; // Artists for rewind mode - added to pass to RewindDateSelector
   
   const dispatch = createEventDispatcher();
   
@@ -43,6 +44,7 @@
   <RewindDateSelector 
     dates={rewindDates}
     currentIndex={rewindIndex}
+    lastSixDaysArtists={lastSixDaysArtists}
     on:selectDate={handleDateSelect}
   />
 {/if}
