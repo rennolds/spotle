@@ -65,13 +65,15 @@
   let mysteryArtist;
   let spotleNumber = "-1";
   let challengeNote = "";
-  let showSlideMenu = false; // New state for slide menu
+  let showSlideMenu = false;
   let showStats = false;
 
   let playingJam = false;
   let jamIndex = 0;
   let solvedJamArtists = [];
-  let jamTimeRemaining = 180; // 5 minutes
+  let jamTimeRemaining = 180; // 3 minutes
+  let skippedArtists = [];
+  let seenJamArtists = [];
 
   // Process artists data
   const artists = artistList.map((artist) => ({
@@ -356,29 +358,54 @@
   }
 
   function shuffleEligibleArtists() {
-    // Use the currentArtistsList but shuffle it
-    for (let i = currentArtistsList.length - 1; i > 0; i--) {
+    // Filter out artists that are already seen
+    let availableArtists = currentArtistsList.filter(artistName => {
+      // Don't include artists we've already seen this session
+      return !seenJamArtists.includes(artistName);
+    });
+    
+    // If we've seen all artists, reset the seen list but keep the current solved ones
+    if (availableArtists.length === 0) {
+      seenJamArtists = [...solvedJamArtists.map(artist => artist.name)];
+      availableArtists = currentArtistsList.filter(artistName => !seenJamArtists.includes(artistName));
+    }
+    
+    // Use the filtered list for shuffling
+    for (let i = availableArtists.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [currentArtistsList[i], currentArtistsList[j]] = [
-        currentArtistsList[j],
-        currentArtistsList[i],
+      [availableArtists[i], availableArtists[j]] = [
+        availableArtists[j],
+        availableArtists[i],
       ];
     }
+    
+    // Replace the current available artists with our shuffled and filtered list
+    availableArtists = [...availableArtists];
+    return availableArtists;
   }
 
-  // Function to set the current JAM artist (add this near playJam)
   function setJamArtist() {
-    const selectedArtist = artists.find(
-      (artist) => artist.name === currentArtistsList[jamIndex % currentArtistsList.length]
-    );
+    // Get a shuffled, filtered list of eligible artists
+    const availableArtists = shuffleEligibleArtists();
+    
+    // Get the next artist (if available)
+    if (availableArtists.length > 0) {
+      const selectedArtistName = availableArtists[0];
+      const selectedArtist = artists.find(artist => artist.name === selectedArtistName);
 
-    mysteryArtist = selectedArtist;
-    mysteryArtistEntry = {
-      image_uri: mysteryArtist.image_uri,
-      song_uri: mysteryArtist.song_uri,
-      artist: mysteryArtist.name,
-    };
-    tempGuesses = [];
+      // Add this artist to the seen list
+      if (!seenJamArtists.includes(selectedArtistName)) {
+        seenJamArtists.push(selectedArtistName);
+      }
+
+      mysteryArtist = selectedArtist;
+      mysteryArtistEntry = {
+        image_uri: mysteryArtist.image_uri,
+        song_uri: mysteryArtist.song_uri,
+        artist: mysteryArtist.name,
+      };
+      tempGuesses = [];
+    }
   }
 
   function handleJamModeStart(event) {
@@ -386,6 +413,7 @@
     
     // Set the appropriate artist list based on the toggle
     currentArtistsList = useDeepCuts ? deepCutsArtists : eligibleArtists;
+    seenJamArtists = [];
     
     // Shuffle the list and set the first artist
     shuffleEligibleArtists();
@@ -397,14 +425,16 @@
       });
     }
   }
-
-  let skippedArtists = []; // New array to track artists that were skipped
   
   function handleSkipArtist() {
     if (playingJam) {
       // Store the current artist being skipped before moving to the next one
       if (mysteryArtist) {
         skippedArtists.push(mysteryArtist);
+
+        if (!seenJamArtists.includes(mysteryArtist.name)) {
+          seenJamArtists.push(mysteryArtist.name);
+        }
       }
       
       // Move to the next artist without incrementing the solved count
@@ -444,6 +474,7 @@
     skippedArtists = [];
     jamTimeRemaining = 180;
     tempGameOver = false;
+    seenJamArtists = []; 
     
     // Shuffle eligible artists and set first artist
     shuffleEligibleArtists();
@@ -598,6 +629,10 @@
         // Add the solved artist to the list
         solvedJamArtists.push(lastSolvedArtist);
         solvedJamArtists = solvedJamArtists;
+
+        if (!seenJamArtists.includes(mysteryArtist.name)) {
+          seenJamArtists.push(mysteryArtist.name);
+        }
         
         // Increment the JAM index 
         jamIndex++;
