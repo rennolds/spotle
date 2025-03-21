@@ -7,7 +7,6 @@
   // Import components
   import Help from "./Help.svelte";
   import Gameover from "./Gameover.svelte";
-  import Countdown from "./Countdown.svelte";
   import Ramp from './Ramp.svelte';
   import Stats from "./Stats.svelte";
   import SplashScreen from '../components/SplashScreen.svelte';
@@ -527,11 +526,12 @@
           if (browser && typeof gtag === 'function') {
             gtag('event', 'gameover', {
               'result': "win",
-              'guesses': guessCount + 1,
+              'guesses': guessCount,
               'artist': mysteryArtist.name
             });
 
             handleStats(guessCount, true);
+            guessCount = guessCount - 1;
           }
         }
 
@@ -539,7 +539,7 @@
           if (browser && typeof gtag === 'function') {
             gtag('event', 'gameover', {
               'result': "loss",
-              'guesses': guessCount + 1,
+              'guesses': guessCount,
               'artist': mysteryArtist.name
             });
 
