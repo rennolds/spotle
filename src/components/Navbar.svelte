@@ -150,4 +150,11 @@
     margin: 0 auto;
   }
 }
+
+@media (min-width: 768px) {
+  .navbar-container {
+    top: 0;
+    padding-top: 2.5px;
+  }
+}
 </style>

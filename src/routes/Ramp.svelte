@@ -66,4 +66,11 @@
     margin: 0 auto;
     padding: 0;
   }
+
+  /* Hide ads on desktop */
+  @media (min-width: 768px) {
+    .ad-container {
+      display: none;
+    }
+  }
 </style>
