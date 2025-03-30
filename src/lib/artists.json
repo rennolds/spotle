@@ -7215,21 +7215,6 @@
         "embedded_track": "https://open.spotify.com/embed/track/2G1tXoGBaEMJ7FKGnkf6ud"
     },
     {
-        "index": 483,
-        "artist": "Rick Ross",
-        "country": "us",
-        "genre": "Hip Hop",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2006,
-        "track_name": "Everyday Hustle",
-        "uri": "spotify:artist:1sBkRIssrMs1AbVkOJbc7a",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb8196a8109c28a8b8aca28fae",
-        "song_uri": "https://p.scdn.co/mp3-preview/a9efc05f4f7b8b1e95c8a717511e024e794bc7bf?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273a46b07c291e6dfdee13b3ee8",
-        "embedded_track": "https://open.spotify.com/embed/track/3Vg7nPYlOrCkcV1abKbRQ1"
-    },
-    {
         "index": 484,
         "artist": "Justin Quiles",
         "country": "pr",
@@ -7723,21 +7708,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/b7e2e1d3d033dae18b9d803944e7da012394f157?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2730fe2ec86a0ec561ef2e2aae1",
         "embedded_track": "https://open.spotify.com/embed/track/70YvYr2hGlS01bKRIho1HM"
-    },
-    {
-        "index": 524,
-        "artist": "Van Halen",
-        "country": "us",
-        "genre": "Rock",
-        "gender": "m",
-        "group_size": 4,
-        "debut_album_year": 1978,
-        "track_name": "Jump - 2015 Remaster",
-        "uri": "spotify:artist:2cnMpRsOVqtPMfq7YiFE6K",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebd8475001d2700686e1008dfb",
-        "song_uri": "https://p.scdn.co/mp3-preview/86b253d59e8485604c5cdcba34b67caa9307c17f?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273b414c63fb435b622238c15ed",
-        "embedded_track": "https://open.spotify.com/embed/track/7N3PAbqfTjSEU1edb2tY8j"
     },
     {
         "index": 525,

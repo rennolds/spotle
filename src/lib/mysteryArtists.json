@@ -6416,8 +6416,80 @@
   },
   {
     "date": "04/01/2025",
+    "artist": "Rick Astley",
+    "song_uri": "https://p.scdn.co/mp3-preview/6bdc5c4548fd55eb3d167c8879ff63daba38cf85?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://media.tenor.com/CPKRTsSr14kAAAAM/rick-astley.gif"
+  },
+  {
+    "date": "04/02/2025",
     "artist": "Frank Ocean",
     "song_uri": "https://p.scdn.co/mp3-preview/e874387e6119a7af84a941c39ff0241156b54515?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2737aede4855f6d0d738012e2e5"
+  },
+  {
+    "date": "04/03/2025",
+    "artist": "Logic",
+    "song_uri": "https://p.scdn.co/mp3-preview/3bf8f4d3ea210e859802b6b98d18ea940a53d986?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273cfdf40cf325b609a52457805"
+  },
+  {
+    "date": "04/04/2025",
+    "artist": "Arctic Monkeys",
+    "song_uri": "https://p.scdn.co/mp3-preview/af9a0fbdf639d748de8a6fc5e27ecc692e80430c?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90"
+  },
+  {
+    "date": "04/05/2025",
+    "artist": "Bruce Springsteen",
+    "song_uri": "https://p.scdn.co/mp3-preview/f98a1f3b07ca22d6ccda4a2e360981d1b0bfcbbc?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a7865e686c36a4adda6c9978"
+  },
+  {
+    "date": "04/06/2025",
+    "artist": "Lewis Capaldi",
+    "song_uri": "https://p.scdn.co/mp3-preview/d0a8c5301bb8468037f613b2f5d3f9ab232f8923?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fc2101e6889d6ce9025f85f2"
+  },
+  {
+    "date": "04/07/2025",
+    "artist": "DaBaby",
+    "song_uri": "https://p.scdn.co/mp3-preview/6af6db91dba9103cca41d6d5225f6fe120fcfcd3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab676161000051740da5cd9354d458143258879a"
+  },
+  {
+    "date": "04/08/2025",
+    "artist": "Otis Redding",
+    "song_uri": "https://p.scdn.co/mp3-preview/6bfb0ae427246563ca582827144c77c0bb697789?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27313a5da9563c438059afa7ad4"
+  },
+  {
+    "date": "04/09/2025",
+    "artist": "Selena Gomez",
+    "song_uri": "https://p.scdn.co/mp3-preview/e71e19e5ce4af4afc45402d1a0dd347544a48229",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732277eb6b47089ae5f64b50e5"
+  },
+  {
+    "date": "04/10/2025",
+    "artist": "Noah Kahan",
+    "song_uri": "https://p.scdn.co/mp3-preview/0495eca339f32d0acaa62ca9be55d2b815ccc4e3?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736ee35072df1af802cca09918"
+  },
+  {
+    "date": "04/11/2025",
+    "artist": "George Strait",
+    "song_uri": "https://p.scdn.co/mp3-preview/e5004925ef1049832511c8274db1dda8bc49418a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273ad861e10437aa5311df8b187"
+  },
+  {
+    "date": "04/12/2025",
+    "artist": "2Pac",
+    "song_uri": "https://p.scdn.co/mp3-preview/d20079e7952f64534d9ceacd530b156b8cdfd8ea?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d81a092eb373ded457d94eec"
+  },
+  {
+    "date": "04/13/2025",
+    "artist": "Van Halen",
+    "song_uri": "https://p.scdn.co/mp3-preview/86b253d59e8485604c5cdcba34b67caa9307c17f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b414c63fb435b622238c15ed"
   }
 ]
