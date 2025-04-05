@@ -6599,5 +6599,23 @@
     "artist": "Owl City",
     "song_uri": "https://p.scdn.co/mp3-preview/2239ff2e838d8d22c2f54609813f5ab76a8a7eeb?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273785d4e702802da500fc78b32"
+  },
+  {
+    "date": "05/02/2025",
+    "artist": "Lil Wayne",
+    "song_uri": "https://p.scdn.co/mp3-preview/31be0864703f941da0f6b2ab809ac68153451428?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27302a999c3a283b5392e57737d"
+  },
+  {
+    "date": "05/03/2025",
+    "artist": "Steve Lacy",
+    "song_uri": "https://p.scdn.co/mp3-preview/90b3855fd50a4c4878a2d5117ebe73f658a97285?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733d2dfa42f771cd458b194979"
+  },
+  {
+    "date": "05/04/2025",
+    "artist": "John Williams",
+    "song_uri": "https://p.scdn.co/mp3-preview/b3292ce2b613db3bc07369e52cd1688891ba486d",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736885cfd3b91e4cda4313f58c"
   }
 ]
