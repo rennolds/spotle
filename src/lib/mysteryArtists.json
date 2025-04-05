@@ -6458,9 +6458,9 @@
   },
   {
     "date": "04/08/2025",
-    "artist": "Otis Redding",
-    "song_uri": "https://p.scdn.co/mp3-preview/6bfb0ae427246563ca582827144c77c0bb697789?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b27313a5da9563c438059afa7ad4"
+    "artist": "2Pac",
+    "song_uri": "https://p.scdn.co/mp3-preview/d20079e7952f64534d9ceacd530b156b8cdfd8ea?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d81a092eb373ded457d94eec"
   },
   {
     "date": "04/09/2025",
@@ -6482,14 +6482,122 @@
   },
   {
     "date": "04/12/2025",
-    "artist": "2Pac",
-    "song_uri": "https://p.scdn.co/mp3-preview/d20079e7952f64534d9ceacd530b156b8cdfd8ea?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d81a092eb373ded457d94eec"
+    "artist": "Otis Redding",
+    "song_uri": "https://p.scdn.co/mp3-preview/6bfb0ae427246563ca582827144c77c0bb697789?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27313a5da9563c438059afa7ad4"
   },
   {
     "date": "04/13/2025",
     "artist": "Van Halen",
     "song_uri": "https://p.scdn.co/mp3-preview/86b253d59e8485604c5cdcba34b67caa9307c17f?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273b414c63fb435b622238c15ed"
+  },
+  {
+    "date": "04/14/2025",
+    "artist": "The Weeknd",
+    "song_uri": "https://p.scdn.co/mp3-preview/e71e19e5ce4af4afc45402d1a0dd347544a48229",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732277eb6b47089ae5f64b50e5"
+  },
+  {
+    "date": "04/15/2025",
+    "artist": "Lizzo",
+    "song_uri": "https://p.scdn.co/mp3-preview/2180ea3fbc97e37cb27686f9dd492c434c7f0f3e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fe3b1b9cb7183a94e1aafd43"
+  },
+  {
+    "date": "04/16/2025",
+    "artist": "Guns N' Roses",
+    "song_uri": "https://p.scdn.co/mp3-preview/a941cdd2c0c74206aaa6d7e459e4fdf1d738deaa?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27321ebf49b3292c3f0f575f0f5"
+  },
+  {
+    "date": "04/17/2025",
+    "artist": "Christina Aguilera",
+    "song_uri": "https://p.scdn.co/mp3-preview/06d1b4ae1b631b29bbfd8b9a66a37f18dd73713a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f89996e214be1763b2a9e948"
+  },
+  {
+    "date": "04/18/2025",
+    "artist": "J Balvin",
+    "song_uri": "https://p.scdn.co/mp3-preview/844e315c5f4c8f76f322de603ed3820db6a46d6a?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734891d9b25d8919448388f3bb"
+  },
+  {
+    "date": "04/19/2025",
+    "artist": "Bon Iver",
+    "song_uri": "https://p.scdn.co/mp3-preview/5d2b2e083488546aa75061deaccde85a5837b109?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bf7c317a63c4f128b8823406"
+  },
+  {
+    "date": "04/20/2025",
+    "artist": "Zac Brown Band",
+    "song_uri": "https://p.scdn.co/mp3-preview/caf7a9591bdf62862e68c0d2fda7b94e2a10bb94?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27322e4168b05eee8ad21209425"
+  },
+  {
+    "date": "04/21/2025",
+    "artist": "Backstreet Boys",
+    "song_uri": "https://p.scdn.co/mp3-preview/3f95394615e3a46ed9299a91c01667548e372f16?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732160c02bc56f192df0f4986b"
+  },
+  {
+    "date": "04/22/2025",
+    "artist": "Nirvana",
+    "song_uri": "https://p.scdn.co/mp3-preview/9781673a70278effbced98841341a2321e846a62?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273e175a19e530c898d167d39bf"
+  },
+  {
+    "date": "04/23/2025",
+    "artist": "Usher",
+    "song_uri": "https://p.scdn.co/mp3-preview/775632d9867341c779b7238f1718f9abd1773061?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273365b3fb800c19f7ff72602da"
+  },
+  {
+    "date": "04/24/2025",
+    "artist": "ice spice",
+    "song_uri": "https://p.scdn.co/mp3-preview/1cf80fe25ce9df3d102a15b19a8e6232bb1be794?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27316028dc1a1bc9ff0fc661ea6"
+  },
+  {
+    "date": "04/25/2025",
+    "artist": "Limp Bizkit",
+    "song_uri": "https://p.scdn.co/mp3-preview/2b55dfa0ca2c353829aa39237ae33d1a979f196f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733783782de74f61e36795bf9c"
+  },
+  {
+    "date": "04/26/2025",
+    "artist": "Tiësto",
+    "song_uri": "https://p.scdn.co/mp3-preview/46d37a96f9c1d66ddc670fde12aee038fedb3d89?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c5426d9daa879064ccf12fb1"
+  },
+  {
+    "date": "04/27/2025",
+    "artist": "BTS",
+    "song_uri": "https://p.scdn.co/mp3-preview/740c53f438d3cb63de5d099e7253cfff9a9feabb?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27317db30ce3f081d6818a8ad49"
+  },
+  {
+    "date": "04/28/2025",
+    "artist": "Red Hot Chili Peppers",
+    "song_uri": "https://p.scdn.co/mp3-preview/d5094f7d32c25e92d8d362246c0a3f3e7f02a813?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27394d08ab63e57b0cae74e8595"
+  },
+  {
+    "date": "04/29/2025",
+    "artist": "M83",
+    "song_uri": "https://p.scdn.co/mp3-preview/5aa3429867af2283925c942e7051342a464460b0?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fff2cb485c36a6d8f639bdba"
+  },
+  {
+    "date": "04/30/2025",
+    "artist": "Eminem",
+    "song_uri": "https://p.scdn.co/mp3-preview/1d63d428f0ac2ffe2f4434265031124747363500?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736ca5c90113b30c3c43ffb8f4"
+  },
+  {
+    "date": "05/01/2025",
+    "artist": "Owl City",
+    "song_uri": "https://p.scdn.co/mp3-preview/2239ff2e838d8d22c2f54609813f5ab76a8a7eeb?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273785d4e702802da500fc78b32"
   }
 ]
