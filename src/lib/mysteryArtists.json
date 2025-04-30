@@ -6617,5 +6617,17 @@
     "artist": "John Williams",
     "song_uri": "https://p.scdn.co/mp3-preview/b3292ce2b613db3bc07369e52cd1688891ba486d",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2736885cfd3b91e4cda4313f58c"
+  },
+  {
+    "date": "05/05/2025",
+    "artist": "Maroon 5",
+    "song_uri": "https://p.scdn.co/mp3-preview/a2d747c97ba5cd6af6ddb2e4c8cdf9e8ec5e5628?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27392f2d790c6a97b195f66d51e"
+  },
+  {
+    "date": "05/06/2025",
+    "artist": "Drake",
+    "song_uri": "https://p.scdn.co/mp3-preview/997cd19a9e46b086516c57114a4ba6da5b078d91?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273f907de96b9a4fbc04accc0d5"
   }
 ]

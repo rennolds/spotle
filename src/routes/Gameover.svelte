@@ -250,11 +250,17 @@
     <div class="sub-header">{artist.artist}</div>
     <div class="buttons">
       {#if !playingRewind}
-      <button on:click={handleShare} class="button">{shareBtnText}</button>
+      <button on:click={handleShare} style="background-color: #1DB954;" class="button">{shareBtnText}</button>
       {/if}
       {#if !playingChallenge}
-        <button class="button purple"
+        <button class="button" style="background-color: #BA81C2;"
           ><a href="https://harmonies.io" target="_blank">PLAY HARMONIES</a
+          ></button
+        >
+      {/if}
+      {#if !playingChallenge}
+        <button class="button" style="background-color: #FF6B00;"
+          ><a href="https://crosstune.io" target="_blank">PLAY CROSSTUNE</a
           ></button
         >
       {/if}
