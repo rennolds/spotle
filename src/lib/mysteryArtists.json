@@ -6630,10 +6630,16 @@
     "song_uri": "https://p.scdn.co/mp3-preview/997cd19a9e46b086516c57114a4ba6da5b078d91?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273f907de96b9a4fbc04accc0d5"
   },
-    {
+  {
     "date": "05/07/2025",
     "artist": "Paramore",
     "song_uri": "https://p.scdn.co/mp3-preview/c95e281bf76899c1d7a0cf22afeb832e32fc061f?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273bee754528c08d5ff6799a1eb"
+  },
+  {
+    "date": "05/08/2025",
+    "artist": "Migos",
+    "song_uri": "https://p.scdn.co/mp3-preview/4a41e7ce886957ac445a00500f1780ff2f614377?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739c188c494d8bfaf895411890"
   }
 ]
