@@ -11268,7 +11268,7 @@
         "index": 770,
         "artist": "The Fray",
         "country": "us",
-        "genre": "Pop",
+        "genre": "Rock",
         "gender": "m",
         "group_size": 4,
         "debut_album_year": 2005,
@@ -17113,21 +17113,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/f7ec2ab21cdf131aca040ff9593fc6364fa3877c?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27348064ef6df8fad8a52219c32",
         "embedded_track": "https://open.spotify.com/embed/track/7sJNeWTXkZCEC7OnFMpGWL"
-    },
-    {
-        "index": 1166,
-        "artist": "Mozart",
-        "country": "at",
-        "genre": "Classical",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 1764,
-        "track_name": "Requiem, K. 626: Lacrimosa",
-        "uri": "spotify:artist:4NJhFmfw43RLBLjQvxDuRS",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb7fa9108c6dadb8c3ec21da88",
-        "song_uri": "https://p.scdn.co/mp3-preview/9c24d946471cd03f05c727f9c83e43f4ad5997eb?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273c8c19812fce13a624773b3c0",
-        "embedded_track": "https://open.spotify.com/embed/track/5p3xMIHQ6YoAIaSgZeOkNa"
     },
     {
         "index": 1167,
