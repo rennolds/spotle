@@ -6775,10 +6775,15 @@
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731336b31b6a1799f0de5807ac"
   },
   {
-    "date": "5/31/2025",
+    "date": "05/31/2025",
+    "artist": "Fred again..",
+    "song_uri": "https://p.scdn.co/mp3-preview/154e06b77aed19154a2b3e7dcfc9af91c74f4433?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273caa718aa1278c4016a17bc05"
+  },
+  {
+    "date": "06/01/2025",
     "artist": "Girl in Red",
     "song_uri": "https://p.scdn.co/mp3-preview/0415195377d9574c4f552372019421311a34ce55?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273d6839051c4760457e1a60b2a"
   }
-
 ]
