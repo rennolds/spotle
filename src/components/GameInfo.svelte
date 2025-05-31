@@ -7,7 +7,7 @@
 <div class="game-info-container">
   <div class="guesses-remaining">
     {#if mode === "normal" || mode === "challenge" || mode === "rewind"}
-      {#if mode === "normal"}
+      <!-- {#if mode === "normal"}
         <span class="new-game-link"
           >check out our <a
             href="https://crosstune.io"
@@ -15,7 +15,7 @@
             rel="noopener noreferrer">new game!</a
           ></span
         >
-      {/if}
+      {/if} -->
       <span class="guess-count">
         {#if guessCount === maxGuesses}
           Guess {maxGuesses} of {maxGuesses}
@@ -58,7 +58,7 @@
     font-size: 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   .guess-count {
