@@ -557,7 +557,7 @@
           if (browser && typeof gtag === 'function') {
             gtag('event', 'gameover', {
               'result': "win",
-              'guesses': guessCount,
+              'guesses': Number(guessCount),
               'artist': mysteryArtist.name
             });
 
@@ -570,7 +570,7 @@
           if (browser && typeof gtag === 'function') {
             gtag('event', 'gameover', {
               'result': "loss",
-              'guesses': guessCount,
+              'guesses': Number(guessCount),
               'artist': mysteryArtist.name
             });
 

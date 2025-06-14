@@ -170,7 +170,7 @@
         gtag('event', 'shared_result', {
           'artist': artist.artist,
           'result': result,
-          'guesses': guessCount,
+          'guesses': Number(guessCount),
         });
       }
     } catch(error) {
