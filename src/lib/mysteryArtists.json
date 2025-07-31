@@ -7145,5 +7145,17 @@
     "artist": "Clairo",
     "song_uri": "https://p.scdn.co/mp3-preview/c38ddc7ce6aae7a3ee1a90596b212f783b6e4092?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27333ccb60f9b2785ef691b2fbc"
+  },
+  {
+    "date": "08/01/2025",
+    "artist": "Soulja Boy",
+    "song_uri": "https://p.scdn.co/mp3-preview/2c5aabb05cdff6eb6af5e3ec02b04f8dfa7553e4?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2736aef62bd0a60aac7df9a9e37"
+  },
+  {
+    "date": "08/02/2025",
+    "artist": "Toto",
+    "song_uri": "https://p.scdn.co/mp3-preview/86d951a680c33cca769822e0ef854c1b20301b32?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734a052b99c042dc15f933145b"
   }
 ]
