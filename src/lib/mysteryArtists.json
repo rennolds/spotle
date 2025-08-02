@@ -7238,9 +7238,9 @@
   },
   {
     "date": "08/16/2025",
-    "artist": "The Doors",
-    "song_uri": "https://p.scdn.co/mp3-preview/76f1624dd8ad1c3741cacbc8864746d734f92109?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b27386339e6cd71cc2a167451ee5"
+    "artist": "Hozier",
+    "song_uri": "https://p.scdn.co/mp3-preview/c14cbf35ba85ce584a20b4d87738e2fd1bbbc956",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734ca68d59a4a29c856a4a39c2"
   },
   {
     "date": "08/17/2025",
@@ -7337,5 +7337,11 @@
     "artist": "Lady Gaga",
     "song_uri": "https://p.scdn.co/mp3-preview/e9aeb6d6d57c00cf4c1bf1f2ad4fd915147222b7?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273631810af03785dbad83f5c81"
+  },
+  {
+    "date": "09/02/2025",
+    "artist": "The Doors",
+    "song_uri": "https://p.scdn.co/mp3-preview/76f1624dd8ad1c3741cacbc8864746d734f92109?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27386339e6cd71cc2a167451ee5"
   }
 ]
