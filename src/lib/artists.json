@@ -1576,18 +1576,18 @@
     },
     {
         "index": 105,
-        "artist": "Junior H",
-        "country": "mx",
-        "genre": "Latin",
+        "artist": "Benson Boone",
+        "country": "us",
+        "genre": "Pop",
         "gender": "m",
         "group_size": 1,
-        "debut_album_year": 2019,
-        "track_name": "LADY GAGA",
-        "uri": "spotify:artist:7Gi6gjaWy3DxyilpF1a8Is",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebb5ccab5d3dc10a08d89cbd76",
-        "song_uri": "https://p.scdn.co/mp3-preview/ec439edcef8f1b71e88cfeb7d200db274901123b?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2732fb583ed96f8f35cbf2897ba",
-        "embedded_track": "https://open.spotify.com/embed/track/7mXuWTczZNxG5EDcjFEuJR"
+        "debut_album_year": 2021,
+        "track_name": "Beautiful Things",
+        "uri": "spotify:artist:22wbnEMDvgVIAGdFeek6ET",
+        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebb2ce21a89c09c00d80d8ca25",
+        "song_uri": "https://p.scdn.co/mp3-preview/e213f23e6fe5938299eebbe364d06c1682a6619f?cid=98f79e400795491cbc5f69b713465708",
+        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273f2a919d3fa0f2b2593c92d19",
+        "embedded_track": "https://open.spotify.com/embed/track/6tNQ70jh4OwmPGpYy6R2o9"
     },
     {
         "index": 106,
@@ -6480,7 +6480,7 @@
         "embedded_track": "https://open.spotify.com/embed/track/6j5LtifAnuTjTYvml61yFZ"
     },
     {
-        "index": 443,
+        "index": 433,
         "artist": "Chappell Roan",
         "country": "us",
         "genre": "Pop",
@@ -14218,21 +14218,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/1f5da933d7ad8458956721a548e4cb3f565a377e?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273fcd2820c9b859adc64a64b88",
         "embedded_track": "https://open.spotify.com/embed/track/5LhI8m7n8xlQmNe3b7Rwis"
-    },
-    {
-        "index": 971,
-        "artist": "Benson Boone",
-        "country": "us",
-        "genre": "Pop",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 2021,
-        "track_name": "Beautiful Things",
-        "uri": "spotify:artist:22wbnEMDvgVIAGdFeek6ET",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebb2ce21a89c09c00d80d8ca25",
-        "song_uri": "https://p.scdn.co/mp3-preview/e213f23e6fe5938299eebbe364d06c1682a6619f?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273f2a919d3fa0f2b2593c92d19",
-        "embedded_track": "https://open.spotify.com/embed/track/6tNQ70jh4OwmPGpYy6R2o9"
     },
     {
         "index": 972,
