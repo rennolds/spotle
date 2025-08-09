@@ -245,14 +245,14 @@
   <button class="styled-btn main-btn" on:click={handlePlay}>PLAY</button>
   <p></p>
   <p></p>
-  <p class="advertisement">
+  <!-- <p class="advertisement">
     love spotle? play our new game! <a
       href="https://crosstune.io"
       target="_blank"
       rel="noopener noreferrer"
       style="color: #CBFF70;">crosstune.io</a
     >
-  </p>
+  </p> -->
   <p></p>
 
   <div
