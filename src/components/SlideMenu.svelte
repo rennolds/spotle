@@ -27,6 +27,10 @@
     dispatch("navigate", { destination: "create" });
   }
 
+  function handleBrackets() {
+    dispatch("navigate", { destination: "brackets" });
+  }
+
   function handleFollowUs() {
     if (browser) {
       window.open("https://twitter.com/Spotle_io", "_blank");
@@ -109,6 +113,14 @@
             <div class="menu-item-title">Create</div>
             <div class="menu-item-subtitle">
               Make a Spotle for your friends!
+            </div>
+          </div>
+        </div>
+        <div class="menu-item sub-item" on:click={handleBrackets}>
+          <div class="menu-item-content">
+            <div class="menu-item-title">Brackets</div>
+            <div class="menu-item-subtitle">
+              Tournament-style music challenges
             </div>
           </div>
         </div>
