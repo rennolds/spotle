@@ -15,6 +15,7 @@
   import Navbar from './components/Navbar.svelte';
   import SlideMenu from './components/SlideMenu.svelte';
   import JamMode from './components/JamMode.svelte';
+  import RewardAdButton from './components/RewardAdButton.svelte';
   
   // Import game state and utilities
   import { 
@@ -67,6 +68,7 @@
   let challengeNote = "";
   let showSlideMenu = false;
   let showStats = false;
+  let showRewindAd = false;
 
   let playingJam = false;
   let jamIndex = 0;
@@ -806,6 +808,11 @@
       createGame = false;
       playingRewind = false;
       splashScreen = true;
+    } else if (destination === 'rewind-ad') {
+      // Show ad interface before allowing access to rewind
+      showRewindAd = true;
+      splashScreen = false;
+      playingGame = false;
     } else if (destination === 'rewind') {
       playRewind();
     } else if (destination === 'create') {
@@ -825,6 +832,32 @@
 
   function handleCreateArtistSelect(event) {
     createGameSelection = artists.find(artist => artist.name === event.detail);
+  }
+
+  function handleRewardAdCompleted() {
+    // Ad was watched successfully, now allow access to Rewind
+    showRewindAd = false;
+    playRewind();
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'rewarded_ad_completed', {
+        'feature': 'rewind'
+      });
+    }
+  }
+
+  function handleRewardAdError(error) {
+    // Ad failed, go back to splash screen
+    console.error('Rewarded ad failed:', error);
+    showRewindAd = false;
+    splashScreen = true;
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'rewarded_ad_error', {
+        'feature': 'rewind',
+        'error': error.message
+      });
+    }
   }
 </script>
 
@@ -888,6 +921,14 @@
             else if (e.detail.mode === 'jam') playJam();
           }}
           on:showHelp={toggleHelp}
+        />
+      {:else if showRewindAd}
+        <RewardAdButton
+          buttonText="Watch Ad to Access Rewind"
+          disabledText="Loading Ad..."
+          loadingText="Playing Ad..."
+          onReward={handleRewardAdCompleted}
+          onError={handleRewardAdError}
         />
       {:else if playingGame}
         {#if playingJam}
