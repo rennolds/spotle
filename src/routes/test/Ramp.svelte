@@ -10,11 +10,19 @@
   let lastPathname;
 
   // Rewarded helpers come from a shared module
-  import { initRewardedAdEvents, setRampLoaded } from "$lib/rewardedAd.js";
+  import {
+    initRewardedAdEvents,
+    setRampLoaded,
+    tryPrefetchRewarded,
+  } from "$lib/rewardedAd.js";
 
   onMount(() => {
     if (!browser || !PUB_ID || !WEBSITE_ID) {
-      console.log("Missing Publisher Id and Website Id");
+      console.log("[RAMP] Missing Publisher Id and Website Id", {
+        browser,
+        PUB_ID,
+        WEBSITE_ID,
+      });
       return;
     }
 
@@ -29,14 +37,27 @@
     const configScript = document.createElement("script");
     configScript.src = `https://cdn.intergient.com/${PUB_ID}/${WEBSITE_ID}/ramp.js`;
     document.body.appendChild(configScript);
+    console.log("[RAMP] Injecting config script", { src: configScript.src });
 
     configScript.onload = () => {
       rampComponentLoaded = true;
       setRampLoaded(true);
       window.ramp.que.push(() => {
-        window.ramp.spaNewPage();
-        window.ramp.addTag("standard_iab_head1");
+        console.log(
+          "[RAMP] config loaded -> que: spaNewPage, addTag, prefetch"
+        );
+        try {
+          window.ramp.spaNewPage();
+          window.ramp.addTag("standard_iab_head1");
+        } catch (err) {
+          console.log("[RAMP] Error during initial que ops", err);
+        }
+        tryPrefetchRewarded();
       });
+    };
+
+    configScript.onerror = (err) => {
+      console.log("[RAMP] Failed to load config script", err);
     };
   });
 
@@ -49,7 +70,13 @@
   ) {
     lastPathname = $page.url.pathname;
     window.ramp.que.push(() => {
-      window.ramp.spaNewPage($page.url.pathname);
+      console.log("[RAMP] SPA route change ->", $page.url.pathname);
+      try {
+        window.ramp.spaNewPage($page.url.pathname);
+      } catch (err) {
+        console.log("[RAMP] Error calling spaNewPage on route change", err);
+      }
+      tryPrefetchRewarded();
     });
   }
 </script>

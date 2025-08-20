@@ -840,6 +840,12 @@
       // Show reward ad modal before starting rewind
       showRewardAdModal = true;
       adError = "";
+      try {
+        console.log(
+          "[RAMP-UI] Rewind selected -> opening ad modal. ready=",
+          isRewardedAdReady()
+        );
+      } catch (_) {}
     } else if (destination === "create") {
       handleCreate();
     } else if (destination === "jam") {
@@ -849,6 +855,9 @@
 
   // Handle watching the reward ad
   async function handleWatchAd() {
+    try {
+      console.log("[RAMP-UI] Watch Ad clicked. ready=", isRewardedAdReady());
+    } catch (_) {}
     if (!isRewardedAdReady()) {
       adError = "No ad available right now. Please try again later.";
       return;
@@ -863,10 +872,13 @@
       showRewardAdModal = false;
       adLoading = false;
       playRewind();
+      try {
+        console.log("[RAMP-UI] watchRewardedAd success -> starting rewind");
+      } catch (_) {}
     } catch (error) {
       adLoading = false;
       adError = "Failed to load ad. You can try again or skip for now.";
-      console.error("Reward ad error:", error);
+      console.error("[RAMP-UI] Reward ad error:", error);
     }
   }
 
@@ -876,6 +888,9 @@
     adError = "";
     // For now, still allow access to rewind even if ad is skipped
     playRewind();
+    try {
+      console.log("[RAMP-UI] Skip Ad -> starting rewind without ad");
+    } catch (_) {}
   }
 
   // Handle closing the ad modal
@@ -883,6 +898,9 @@
     showRewardAdModal = false;
     adError = "";
     adLoading = false;
+    try {
+      console.log("[RAMP-UI] Close Ad Modal");
+    } catch (_) {}
   }
 
   function handleOverlayClose() {
