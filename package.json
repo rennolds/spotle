@@ -20,5 +20,8 @@
 		"axios": "^1.7.9",
 		"moment": "^2.30.1",
 		"moment-timezone": "^0.5.45"
+	},
+	"optionalDependencies": {
+		"@rollup/rollup-linux-x64-gnu": "4.9.5"
 	}
 }
