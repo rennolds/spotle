@@ -8,6 +8,7 @@
   import Help from "./Help.svelte";
   import Gameover from "./Gameover.svelte";
   import Ramp from "./Ramp.svelte";
+  import { watchRewardedAd, isRewardedAdReady } from "$lib/rewardedAd.js";
   import Stats from "./Stats.svelte";
   import SplashScreen from "./components/SplashScreen.svelte";
   import GameBoard from "./components/GameBoard.svelte";
@@ -70,6 +71,9 @@
   let challengeNote = "";
   let showSlideMenu = false;
   let showStats = false;
+  let showRewardAdModal = false;
+  let adLoading = false;
+  let adError = "";
 
   let playingJam = false;
   let jamIndex = 0;
@@ -833,12 +837,52 @@
       playingRewind = false;
       splashScreen = true;
     } else if (destination === "rewind") {
-      playRewind();
+      // Show reward ad modal before starting rewind
+      showRewardAdModal = true;
+      adError = "";
     } else if (destination === "create") {
       handleCreate();
     } else if (destination === "jam") {
       playJam();
     }
+  }
+
+  // Handle watching the reward ad
+  async function handleWatchAd() {
+    if (!isRewardedAdReady()) {
+      adError = "No ad available right now. Please try again later.";
+      return;
+    }
+
+    adLoading = true;
+    adError = "";
+
+    try {
+      await watchRewardedAd();
+      // Ad watched successfully - start rewind mode
+      showRewardAdModal = false;
+      adLoading = false;
+      playRewind();
+    } catch (error) {
+      adLoading = false;
+      adError = "Failed to load ad. You can try again or skip for now.";
+      console.error("Reward ad error:", error);
+    }
+  }
+
+  // Handle skipping the ad (fallback)
+  function handleSkipAd() {
+    showRewardAdModal = false;
+    adError = "";
+    // For now, still allow access to rewind even if ad is skipped
+    playRewind();
+  }
+
+  // Handle closing the ad modal
+  function handleCloseAdModal() {
+    showRewardAdModal = false;
+    adError = "";
+    adLoading = false;
   }
 
   function handleOverlayClose() {
@@ -878,6 +922,70 @@
 
   {#if showStats}
     <Stats on:close={() => (showStats = false)} />
+  {/if}
+
+  <!-- Reward Ad Modal -->
+  {#if showRewardAdModal}
+    <div
+      class="reward-ad-overlay"
+      on:click={handleCloseAdModal}
+      on:keydown={(e) => e.key === "Escape" && handleCloseAdModal()}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      tabindex="-1"
+    >
+      <div class="reward-ad-modal" on:click|stopPropagation role="document">
+        <button
+          class="modal-close"
+          on:click={handleCloseAdModal}
+          aria-label="Close modal"
+        >
+          <svg
+            width="20"
+            height="18"
+            viewBox="0 0 20 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.2099 1.7625L17.3417 0L9.93491 6.9875L2.52816 0L0.659912 1.7625L8.06666 8.75L0.659912 15.7375L2.52816 17.5L9.93491 10.5125L17.3417 17.5L19.2099 15.7375L11.8032 8.75L19.2099 1.7625Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+
+        <div class="modal-content">
+          <h2 id="modal-title">Unlock Rewind Mode</h2>
+          <p>Watch a short ad to access the last week of Spotle games!</p>
+
+          {#if adError}
+            <div class="error-message">{adError}</div>
+          {/if}
+
+          <div class="modal-buttons">
+            <button
+              class="watch-ad-btn"
+              on:click={handleWatchAd}
+              disabled={adLoading || !isRewardedAdReady()}
+            >
+              {#if adLoading}
+                <div class="loading-spinner"></div>
+                Loading Ad...
+              {:else if !isRewardedAdReady()}
+                No Ad Available
+              {:else}
+                🎥 Watch Ad
+              {/if}
+            </button>
+
+            <button class="skip-btn" on:click={handleSkipAd}>
+              Skip for Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   {/if}
 
   <!-- Game over overlay -->
@@ -1078,6 +1186,157 @@
     :global(.slide-menu) {
       max-width: 500px !important;
       margin: 0 auto !important;
+    }
+  }
+
+  /* Reward Ad Modal Styles */
+  .reward-ad-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .reward-ad-modal {
+    background: #1e1e1e;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    background: none;
+    border: none;
+  }
+
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .modal-content h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .modal-content p {
+    color: #b5b5b5;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .error-message {
+    background: #ff4444;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .watch-ad-btn {
+    background: #8370de;
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .watch-ad-btn:hover:not(:disabled) {
+    background: #9580ee;
+    transform: translateY(-2px);
+  }
+
+  .watch-ad-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .skip-btn {
+    background: transparent;
+    color: #b5b5b5;
+    border: 1px solid #444;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .skip-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #666;
+    color: white;
+  }
+
+  .loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 480px) {
+    .reward-ad-modal {
+      padding: 24px 20px;
+      margin: 20px;
+    }
+
+    .modal-content h2 {
+      font-size: 20px;
+    }
+
+    .modal-content p {
+      font-size: 14px;
     }
   }
 </style>
