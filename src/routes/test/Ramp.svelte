@@ -11,9 +11,9 @@
 
   // Rewarded helpers come from a shared module
   import {
-    initRewardedAdEvents,
+    initRewardedVideo,
+    enableRewardedEventLogging,
     setRampLoaded,
-    tryPrefetchRewarded,
   } from "$lib/rewardedAd.js";
 
   onMount(() => {
@@ -27,7 +27,8 @@
     }
 
     // Setup reward video event listeners (once)
-    initRewardedAdEvents();
+    initRewardedVideo();
+    enableRewardedEventLogging();
 
     window.ramp = window.ramp || {};
     window.ramp.que = window.ramp.que || [];
@@ -43,16 +44,13 @@
       rampComponentLoaded = true;
       setRampLoaded(true);
       window.ramp.que.push(() => {
-        console.log(
-          "[RAMP] config loaded -> que: spaNewPage, addTag, prefetch"
-        );
+        console.log("[RAMP] config loaded -> que: spaNewPage, addTag");
         try {
           window.ramp.spaNewPage();
           window.ramp.addTag("standard_iab_head1");
         } catch (err) {
           console.log("[RAMP] Error during initial que ops", err);
         }
-        tryPrefetchRewarded();
       });
     };
 
@@ -76,7 +74,6 @@
       } catch (err) {
         console.log("[RAMP] Error calling spaNewPage on route change", err);
       }
-      tryPrefetchRewarded();
     });
   }
 </script>

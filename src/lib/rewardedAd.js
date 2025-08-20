@@ -1,15 +1,13 @@
-// Simple shared helper for Playwire Rewarded Video (manual UI)
-// Keeps minimal module state and exposes imperative helpers.
+// Rewarded Video helper following Playwire docs (manual UI, skipConfirmation)
 
 let rampLoaded = false;
 let rewardedReady = false;
-let eventsInitialized = false;
+let listenersAttached = false;
 const LOG_PREFIX = "[RAMP-Rewarded]";
 
 export function setRampLoaded(value) {
   rampLoaded = Boolean(value);
   try {
-    // eslint-disable-next-line no-console
     console.log(`${LOG_PREFIX} setRampLoaded:`, rampLoaded);
   } catch (_) {}
 }
@@ -18,136 +16,64 @@ export function isRewardedAdReady() {
   return rewardedReady;
 }
 
-export function initRewardedAdEvents() {
-  if (eventsInitialized || typeof window === "undefined") return;
-  eventsInitialized = true;
+// Attach only the documented ready event; other events are optional logging
+export function initRewardedVideo() {
+  if (listenersAttached || typeof window === "undefined") return;
+  listenersAttached = true;
 
-  const targets = [window, typeof document !== "undefined" ? document : null].filter(Boolean);
+  const target = window;
 
-  try {
-    // eslint-disable-next-line no-console
-    console.log(`${LOG_PREFIX} initRewardedAdEvents: attaching listeners`);
-  } catch (_) {}
+  target.addEventListener("rewardedAdVideoRewardReady", () => {
+    rewardedReady = true;
+    try {
+      console.log("🎥 Ad is ready to play! (rewardedAdVideoRewardReady)");
+    } catch (_) {}
+  });
+}
 
-  // Some integrations dispatch to document instead of window; listen on both.
-  const readyEvents = [
-    "rewardedAdVideoRewardReady",
-    "rewardedAdReady",
-    "rewardedAdAvailable",
-  ];
-  const infoEvents = [
+// Optional: verbose logging for the full lifecycle
+export function enableRewardedEventLogging() {
+  if (typeof window === "undefined") return;
+  const target = window;
+  const log = (evt) => () => {
+    try {
+      console.log(`${LOG_PREFIX} Event: ${evt}`);
+    } catch (_) {}
+  };
+  [
+    "userAcceptsRewardedAd",
     "rewardedAdCompleted",
     "rewardedAdRewardGranted",
     "rewardedCloseButtonTriggered",
-    "rewardedAdImpressionViewed",
-    "rewardedAdStarted",
-    "rewardedAdUnavailable",
-    "rewardedAdError",
-  ];
-
-  for (const t of targets) {
-    readyEvents.forEach((evt) =>
-      t.addEventListener(evt, () => {
-        rewardedReady = true;
-        try {
-          // eslint-disable-next-line no-console
-          console.log(`${LOG_PREFIX} Ready event: ${evt} -> rewardedReady=true`);
-        } catch (_) {}
-      })
-    );
-    infoEvents.forEach((evt) =>
-      t.addEventListener(evt, () => {
-        try {
-          // eslint-disable-next-line no-console
-          console.log(`${LOG_PREFIX} Info event: ${evt}`);
-        } catch (_) {}
-      })
-    );
-  }
+    "userClosedWithRewardCanResolve",
+    "rejectAdCloseCta",
+    "rewardedAdConfirmClose",
+  ].forEach((evt) => target.addEventListener(evt, log(evt)));
 }
 
-// Best-effort prefetch helper: calls whichever prefetch method exists in this account's integration.
-export function tryPrefetchRewarded() {
-  if (typeof window === "undefined" || !window.ramp) return;
-  const methods = [
-    { name: "ramp.prefetchRewardedVideo", fn: () => window.ramp.prefetchRewardedVideo },
-    { name: "ramp.prefetchRewardedAd", fn: () => window.ramp.prefetchRewardedAd },
-    { name: "ramp.rewarded.prefetch", fn: () => window.ramp.rewarded && window.ramp.rewarded.prefetch },
-    { name: "ramp.rewardedVideo.prefetch", fn: () => window.ramp.rewardedVideo && window.ramp.rewardedVideo.prefetch },
-  ];
+// Show the rewarded video with manual UI per docs
+export async function showRewardedAd() {
+  if (typeof window === "undefined") throw new Error("Not in browser");
+  if (!rampLoaded || !window.ramp) throw new Error("Ramp not loaded");
+  if (!rewardedReady) throw new Error("No rewarded ad available");
+
+  // Prefer the documented method name with a safe fallback
+  const callManualUi =
+    (window.ramp.manuallyCreateRewardUi && (() => window.ramp.manuallyCreateRewardUi({ skipConfirmation: true }))) ||
+    (window.ramp.manuallyCreatedRewardUi && (() => window.ramp.manuallyCreatedRewardUi({ skipConfirmation: true })));
+
+  if (!callManualUi) throw new Error("Reward UI method not available on ramp");
+
   try {
-    // eslint-disable-next-line no-console
-    console.log(`${LOG_PREFIX} tryPrefetchRewarded: attempting prefetch`);
+    console.log(`${LOG_PREFIX} showRewardedAd: launching manual UI`);
   } catch (_) {}
 
-  let attempted = false;
-  for (const m of methods) {
-    let callable;
-    try {
-      callable = m.fn();
-    } catch (_) {
-      callable = undefined;
-    }
-    if (typeof callable === "function") {
-      attempted = true;
-      try {
-        // eslint-disable-next-line no-console
-        console.log(`${LOG_PREFIX} Prefetch via: ${m.name}`);
-      } catch (_) {}
-      try {
-        callable();
-        return;
-      } catch (err) {
-        try {
-          // eslint-disable-next-line no-console
-          console.log(`${LOG_PREFIX} Prefetch error from ${m.name}:`, err);
-        } catch (_) {}
-      }
-    }
-  }
-  if (!attempted) {
-    try {
-      // eslint-disable-next-line no-console
-      console.log(`${LOG_PREFIX} No known prefetch method found on window.ramp`);
-    } catch (_) {}
-  }
-}
+  await callManualUi();
 
-export async function watchRewardedAd() {
-  if (typeof window === "undefined") {
-    try {
-      // eslint-disable-next-line no-console
-      console.log(`${LOG_PREFIX} watchRewardedAd: not in browser`);
-    } catch (_) {}
-    throw new Error("Not in browser");
-  }
-  if (!rampLoaded || !window.ramp) {
-    try {
-      // eslint-disable-next-line no-console
-      console.log(`${LOG_PREFIX} watchRewardedAd: ramp not loaded`, { rampLoaded, hasRamp: Boolean(window.ramp) });
-    } catch (_) {}
-    throw new Error("Ramp not loaded");
-  }
-  if (!rewardedReady) {
-    try {
-      // eslint-disable-next-line no-console
-      console.log(`${LOG_PREFIX} watchRewardedAd: rewarded not ready`);
-    } catch (_) {}
-    throw new Error("No rewarded ad available");
-  }
-
-  // Manual UI flow
-  try {
-    // eslint-disable-next-line no-console
-    console.log(`${LOG_PREFIX} watchRewardedAd: launching UI (manuallyCreatedRewardUi)`);
-  } catch (_) {}
-  await window.ramp.manuallyCreatedRewardUi({ skipConfirmation: true });
-
-  // After a completed view the system will prefetch the next; keep a conservative reset
+  // Reset and expect a new ready event to fire when next ad is prefetched
   rewardedReady = false;
   try {
-    // eslint-disable-next-line no-console
-    console.log(`${LOG_PREFIX} watchRewardedAd: completed, resetting rewardedReady=false`);
+    console.log(`${LOG_PREFIX} showRewardedAd: completed, awaiting next ready event`);
   } catch (_) {}
   return true;
 }

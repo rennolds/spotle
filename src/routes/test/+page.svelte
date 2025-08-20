@@ -8,7 +8,7 @@
   import Help from "./Help.svelte";
   import Gameover from "./Gameover.svelte";
   import Ramp from "./Ramp.svelte";
-  import { watchRewardedAd, isRewardedAdReady } from "$lib/rewardedAd.js";
+  import { showRewardedAd, isRewardedAdReady } from "$lib/rewardedAd.js";
   import Stats from "./Stats.svelte";
   import SplashScreen from "./components/SplashScreen.svelte";
   import GameBoard from "./components/GameBoard.svelte";
@@ -867,7 +867,7 @@
     adError = "";
 
     try {
-      await watchRewardedAd();
+      await showRewardedAd();
       // Ad watched successfully - start rewind mode
       showRewardAdModal = false;
       adLoading = false;
