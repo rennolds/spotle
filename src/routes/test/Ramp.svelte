@@ -2,29 +2,12 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
   import { browser } from "$app/environment";
-  import { rewardedAdManager } from "$lib/rewardedAd.js";
 
   export let PUB_ID;
   export let WEBSITE_ID;
-
-  let rampComponentLoaded = false;
-  let lastPathname;
-
-  // Reactive statement for SPA navigation
-  $: if (
-    browser &&
-    rampComponentLoaded &&
-    window.ramp &&
-    window.ramp.spaNewPage &&
-    $page.url.pathname !== lastPathname
-  ) {
-    lastPathname = $page.url.pathname;
-    window.ramp.que.push(() => {
-      window.ramp.spaNewPage($page.url.pathname);
-    });
-  }
-
   if (browser) {
+    let rampComponentLoaded = false;
+    let lastPathname;
     onMount(() => {
       if (!PUB_ID || !WEBSITE_ID) {
         console.log("Missing Publisher Id and Website Id");
@@ -42,11 +25,21 @@
         window.ramp.que.push(() => {
           window.ramp.spaNewPage();
           window.ramp.addTag("standard_iab_head1");
-          // Initialize rewarded ad manager after Ramp is loaded
-          rewardedAdManager.initialize();
         });
       };
     });
+
+    $: if (
+      rampComponentLoaded &&
+      window.ramp &&
+      window.ramp.spaNewPage &&
+      $page.url.pathname !== lastPathname
+    ) {
+      lastPathname = $page.url.pathname;
+      window.ramp.que.push(() => {
+        window.ramp.spaNewPage($page.url.pathname);
+      });
+    }
   }
 </script>
 

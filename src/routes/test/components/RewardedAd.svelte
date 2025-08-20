@@ -1,8 +1,42 @@
+<!--
+  RewardedAd.svelte - Playwire/Ramp H5 Rewarded Video Ad Component
+  
+  Simple implementation of Playwire rewarded video ads with manual UI control.
+  Uses skipConfirmation: true for the cleanest integration.
+  
+  Usage:
+    <RewardedAd 
+      PUB_ID={1025391} 
+      WEBSITE_ID={75339}
+      onReward={() => console.log("User earned reward!")}
+      onError={(error) => console.error("Ad error:", error)}
+    />
+  
+  Props:
+    - PUB_ID: Your Playwire Publisher ID
+    - WEBSITE_ID: Your Playwire Website ID  
+    - buttonText: Text shown when ad is ready (default: "Watch Ad to Continue")
+    - disabledText: Text shown when ad is loading (default: "Loading Ad...")
+    - loadingText: Text shown while ad is playing (default: "Playing Ad...")
+    - onReward: Function called when user earns reward
+    - onError: Function called when ad fails
+  
+  Events listened for:
+    - rewardedAdVideoRewardReady: Ad is ready to play
+    - rewardedAdRewardGranted: User earned reward
+    - rewardedCloseButtonTriggered: User closed ad early
+    - userClosedWithRewardCanResolve: User closed after earning reward
+    - userAcceptsRewardedAd: User started watching
+    - rewardedAdCompleted: Ad finished playing
+  
+  Testing:
+    Add #google_sample_tag=1 to your URL to force ad fill during testing.
+-->
+
 <script>
   import { onMount, onDestroy } from "svelte";
   import { browser } from "$app/environment";
 
-  // Component props
   export let PUB_ID;
   export let WEBSITE_ID;
   export let buttonText = "Watch Ad to Continue";
@@ -11,7 +45,6 @@
   export let onReward = () => {}; // Callback when user gets reward
   export let onError = () => {}; // Callback when ad fails
 
-  // Component state
   let adReady = false;
   let isLoading = false;
   let error = null;
