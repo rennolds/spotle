@@ -9,12 +9,12 @@
   import Gameover from "./Gameover.svelte";
   import Ramp from './Ramp.svelte';
   import Stats from "./Stats.svelte";
-  import SplashScreen from '../components/SplashScreen.svelte';
-  import GameBoard from '../components/GameBoard.svelte';
-  import CreateGame from '../components/CreateGame.svelte';
-  import Navbar from '../components/Navbar.svelte';
-  import SlideMenu from '../components/SlideMenu.svelte';
-  import JamMode from '../components/JamMode.svelte';
+  import SplashScreen from './components/SplashScreen.svelte';
+  import GameBoard from './components/GameBoard.svelte';
+  import CreateGame from './components/CreateGame.svelte';
+  import Navbar from './components/Navbar.svelte';
+  import SlideMenu from './components/SlideMenu.svelte';
+  import JamMode from './components/JamMode.svelte';
   
   // Import game state and utilities
   import { 
@@ -29,7 +29,7 @@
     solveList, 
     bestGuessImages,
     completedDates,
-  } from "./store.js";
+  } from "../store.js";
   
   // Data imports
   import artistList from "$lib/artists.json";
