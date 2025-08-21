@@ -1,38 +1,3 @@
-<!--
-  RewardedAd.svelte - Playwire/Ramp H5 Rewarded Video Ad Component
-  
-  Simple implementation of Playwire rewarded video ads with manual UI control.
-  Uses skipConfirmation: true for the cleanest integration.
-  
-  Usage:
-    <RewardedAd 
-      PUB_ID={1025391} 
-      WEBSITE_ID={75339}
-      onReward={() => console.log("User earned reward!")}
-      onError={(error) => console.error("Ad error:", error)}
-    />
-  
-  Props:
-    - PUB_ID: Your Playwire Publisher ID
-    - WEBSITE_ID: Your Playwire Website ID  
-    - buttonText: Text shown when ad is ready (default: "Watch Ad to Continue")
-    - disabledText: Text shown when ad is loading (default: "Loading Ad...")
-    - loadingText: Text shown while ad is playing (default: "Playing Ad...")
-    - onReward: Function called when user earns reward
-    - onError: Function called when ad fails
-  
-  Events listened for:
-    - rewardedAdVideoRewardReady: Ad is ready to play
-    - rewardedAdRewardGranted: User earned reward
-    - rewardedCloseButtonTriggered: User closed ad early
-    - userClosedWithRewardCanResolve: User closed after earning reward
-    - userAcceptsRewardedAd: User started watching
-    - rewardedAdCompleted: Ad finished playing
-  
-  Testing:
-    Add #google_sample_tag=1 to your URL to force ad fill during testing.
--->
-
 <script>
   import { onMount, onDestroy } from "svelte";
   import { browser } from "$app/environment";
@@ -78,20 +43,38 @@
 
   // Watch ad function
   const watchAd = async () => {
-    if (!adReady || isLoading || !rampLoaded) return;
+    console.log("🎬 watchAd called", { adReady, isLoading, rampLoaded });
 
+    if (!adReady || isLoading || !rampLoaded) {
+      console.log("❌ Cannot watch ad:", { adReady, isLoading, rampLoaded });
+      return;
+    }
+
+    console.log("🚀 Starting rewarded ad...");
     isLoading = true;
     error = null;
 
     try {
+      console.log("🔍 Checking ramp availability:", {
+        rampExists: !!window.ramp,
+        manuallyCreatedRewardUiExists: !!window.ramp?.manuallyCreatedRewardUi,
+        rampMethods: window.ramp ? Object.keys(window.ramp) : [],
+      });
+
       if (window.ramp && window.ramp.manuallyCreatedRewardUi) {
-        await window.ramp.manuallyCreatedRewardUi({ skipConfirmation: true });
+        console.log("📞 Calling manuallyCreatedRewardUi...");
+        const result = await window.ramp.manuallyCreatedRewardUi({
+          skipConfirmation: true,
+        });
+        console.log("✅ manuallyCreatedRewardUi result:", result);
         // Success is handled by the rewardedAdRewardGranted event
       } else {
-        throw new Error("Ramp rewarded ad not available");
+        throw new Error(
+          "Ramp rewarded ad not available - manuallyCreatedRewardUi method not found"
+        );
       }
     } catch (err) {
-      console.error("Failed to show rewarded ad:", err);
+      console.error("❌ Failed to show rewarded ad:", err);
       error = err.message;
       isLoading = false;
       adReady = false;
@@ -101,9 +84,16 @@
 
   onMount(() => {
     if (!browser || !PUB_ID || !WEBSITE_ID) {
-      console.log("Missing Publisher Id and Website Id");
+      console.log("❌ Missing Publisher Id and Website Id");
       return;
     }
+
+    console.log(
+      "🎯 RewardedAd mounting with PUB_ID:",
+      PUB_ID,
+      "WEBSITE_ID:",
+      WEBSITE_ID
+    );
 
     // Initialize Ramp if not already done
     window.ramp = window.ramp || {};
@@ -113,16 +103,47 @@
     if (
       !document.querySelector(`script[src*="${PUB_ID}/${WEBSITE_ID}/ramp.js"]`)
     ) {
+      console.log("🔄 Loading Ramp script...");
       const configScript = document.createElement("script");
       configScript.src = `https://cdn.intergient.com/${PUB_ID}/${WEBSITE_ID}/ramp.js`;
       document.body.appendChild(configScript);
 
       configScript.onload = () => {
         rampLoaded = true;
-        console.log("🎯 Ramp loaded for rewarded ads");
+        console.log("✅ Ramp script loaded for rewarded ads");
+
+        // Debug what's available on window.ramp
+        setTimeout(() => {
+          console.log(
+            "🔍 Available ramp methods:",
+            Object.keys(window.ramp || {})
+          );
+          console.log(
+            "🔍 manuallyCreatedRewardUi available:",
+            typeof window.ramp?.manuallyCreatedRewardUi
+          );
+        }, 1000);
+      };
+
+      configScript.onerror = () => {
+        console.error("❌ Failed to load Ramp script");
+        error = "Failed to load ad script";
       };
     } else {
+      console.log("✅ Ramp script already loaded");
       rampLoaded = true;
+
+      // Debug what's available on window.ramp
+      setTimeout(() => {
+        console.log(
+          "🔍 Available ramp methods:",
+          Object.keys(window.ramp || {})
+        );
+        console.log(
+          "🔍 manuallyCreatedRewardUi available:",
+          typeof window.ramp?.manuallyCreatedRewardUi
+        );
+      }, 100);
     }
 
     // Set up event listeners for rewarded video lifecycle
@@ -132,6 +153,23 @@
     window.addEventListener("userClosedWithRewardCanResolve", handleAdClosed);
     window.addEventListener("userAcceptsRewardedAd", handleUserAccepts);
     window.addEventListener("rewardedAdCompleted", handleAdCompleted);
+
+    console.log("🎧 Event listeners set up for rewarded ad");
+
+    // Add a timeout to check if ad becomes ready
+    setTimeout(() => {
+      if (!adReady) {
+        console.warn(
+          "⚠️ Rewarded ad not ready after 5 seconds. This might be normal if there's no ad fill."
+        );
+        console.log("🔍 Current ramp state:", {
+          rampExists: !!window.ramp,
+          rampLoaded,
+          adReady,
+          availableMethods: window.ramp ? Object.keys(window.ramp) : [],
+        });
+      }
+    }, 5000);
   });
 
   onDestroy(() => {
@@ -187,6 +225,40 @@
       {error}
     </div>
   {/if}
+
+  <!-- Debug info -->
+  <div class="debug-info">
+    <p><strong>Debug Info:</strong></p>
+    <p>Ramp Loaded: {rampLoaded ? "✅" : "❌"}</p>
+    <p>Ad Ready: {adReady ? "✅" : "❌"}</p>
+    <p>Loading: {isLoading ? "✅" : "❌"}</p>
+
+    <!-- Force ready button for testing -->
+    {#if !adReady && rampLoaded}
+      <button
+        class="debug-button"
+        on:click={() => {
+          adReady = true;
+          console.log("🧪 Forced ad ready for testing");
+        }}
+      >
+        🧪 Force Ready (Test)
+      </button>
+    {/if}
+
+    <!-- Add sample tag button for testing -->
+    <button
+      class="debug-button"
+      on:click={() => {
+        const currentUrl = new URL(window.location);
+        currentUrl.hash = "google_sample_tag=1";
+        window.location.href = currentUrl.toString();
+      }}
+      style="background: #007bff; margin-top: 4px;"
+    >
+      🧪 Add Sample Tag & Reload
+    </button>
+  </div>
 </div>
 
 <style>
@@ -284,5 +356,30 @@
     border-radius: 8px;
     border: 1px solid rgba(255, 107, 107, 0.2);
     max-width: 280px;
+  }
+
+  .debug-info {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 12px;
+    color: #ccc;
+    max-width: 280px;
+    text-align: left;
+  }
+
+  .debug-info p {
+    margin: 4px 0;
+  }
+
+  .debug-button {
+    background: #ff9500;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 8px;
   }
 </style>

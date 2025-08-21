@@ -856,21 +856,6 @@
       (artist) => artist.name === event.detail
     );
   }
-
-  function handleRewardedAdTest() {
-    showRewardedAdTest = !showRewardedAdTest;
-  }
-
-  function handleRewardGranted() {
-    console.log("🎉 Reward granted! User can now access premium features.");
-    alert("Reward granted! You've unlocked premium features.");
-    showRewardedAdTest = false;
-  }
-
-  function handleRewardError(error) {
-    console.error("Rewarded ad error:", error);
-    alert("Sorry, there was an error with the ad. Please try again later.");
-  }
 </script>
 
 <main>
