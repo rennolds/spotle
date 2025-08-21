@@ -6,19 +6,6 @@
   export let PUB_ID;
   export let WEBSITE_ID;
 
-  function playAd() {
-    if (window.ramp && window.ramp.manuallyCreateRewardUi) {
-        const result = window.ramp.manuallyCreateRewardUi({
-          skipConfirmation: true,
-        })
-            .then(() => {
-              console.log("✅ Reward granted");
-            })
-            .catch((error) => {
-              console.error("❌ Rewarded video error:", error);
-            });
-    }
-  }
   if (browser) {
     let rampComponentLoaded = false;
     let lastPathname;
@@ -41,6 +28,25 @@
           window.ramp.addTag("standard_iab_head1");
         });
       };
+
+      // Add event listener to the play ad button
+      const playAdButton = document.querySelector(".play-ad-button");
+      if (playAdButton) {
+        playAdButton.addEventListener("click", () => {
+          if (window.ramp && window.ramp.manuallyCreateRewardUi) {
+            window.ramp
+              .manuallyCreateRewardUi({
+                skipConfirmation: true,
+              })
+              .then(() => {
+                console.log("✅ Reward granted");
+              })
+              .catch((error) => {
+                console.error("❌ Rewarded video error:", error);
+              });
+          }
+        });
+      }
     });
 
     $: if (
@@ -62,7 +68,7 @@
 </div>
 
 <div class="play-ad-container">
-  <button class="play-ad-button" on:click={playAd}>PLAY AD</button>
+  <button class="play-ad-button">PLAY AD</button>
 </div>
 
 <style>
