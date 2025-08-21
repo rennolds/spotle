@@ -3,41 +3,40 @@
   import { browser } from "$app/environment";
   import moment from "moment";
   import "moment-timezone";
-
+  
   // Import components
   import Help from "./Help.svelte";
   import Gameover from "./Gameover.svelte";
-  import Ramp from "./Ramp.svelte";
+  import Ramp from './Ramp.svelte';
   import Stats from "./Stats.svelte";
-  import SplashScreen from "./components/SplashScreen.svelte";
-  import GameBoard from "./components/GameBoard.svelte";
-  import CreateGame from "./components/CreateGame.svelte";
-  import Navbar from "./components/Navbar.svelte";
-  import SlideMenu from "./components/SlideMenu.svelte";
-  import JamMode from "./components/JamMode.svelte";
-  import RewardedAd from "./components/RewardedAd.svelte";
-
+  import SplashScreen from './components/SplashScreen.svelte';
+  import GameBoard from './components/GameBoard.svelte';
+  import CreateGame from './components/CreateGame.svelte';
+  import Navbar from './components/Navbar.svelte';
+  import SlideMenu from './components/SlideMenu.svelte';
+  import JamMode from './components/JamMode.svelte';
+  
   // Import game state and utilities
-  import {
-    visited,
-    currentGameDate,
-    guesses,
-    muted,
-    gameOver,
-    played,
-    currentStreak,
-    maxStreak,
-    solveList,
+  import { 
+    visited, 
+    currentGameDate, 
+    guesses, 
+    muted, 
+    gameOver, 
+    played, 
+    currentStreak, 
+    maxStreak, 
+    solveList, 
     bestGuessImages,
     completedDates,
   } from "../store.js";
-
+  
   // Data imports
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
   import eligibleArtistsData from "$lib/eligibleArtists.json";
   import deepCutsData from "$lib/deepcuts.json";
-
+  
   // Constants
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
@@ -46,10 +45,7 @@
   moment.tz.setDefault("America/New_York");
   const todaysDate = moment().tz("America/New_York").format("MM/DD/YYYY");
   const todaysMoment = moment.tz(todaysDate, "MM/DD/YYYY", "America/New_York");
-  const previousDay = moment()
-    .tz("America/New_York")
-    .subtract(1, "days")
-    .format("MM/DD/YYYY");
+  const previousDay = moment().tz("America/New_York").subtract(1, "days").format("MM/DD/YYYY");
 
   // Game state
   let playingGame = false;
@@ -71,7 +67,6 @@
   let challengeNote = "";
   let showSlideMenu = false;
   let showStats = false;
-  let showRewardedAdTest = false;
 
   let playingJam = false;
   let jamIndex = 0;
@@ -108,7 +103,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const encodedArtist = urlParams.get("artist");
     const encodedNote = urlParams.get("note");
-
+    
     if (encodedArtist) {
       splashScreen = false;
       playingGame = true;
@@ -131,7 +126,7 @@
       const selectedArtist = artists.find(
         (artist) => artist.name === decodedArtist
       );
-
+      
       if (selectedArtist === undefined) {
         window.location.href = window.location.href.split("?")[0];
         playingChallenge = false;
@@ -157,15 +152,12 @@
 
   // Get data for the past 7 days instead of 6
   for (let i = 1; i <= 6; i++) {
-    const previousDay = moment()
-      .tz("America/New_York")
-      .subtract(i, "days")
-      .format("MM/DD/YYYY");
+    const previousDay = moment().tz("America/New_York").subtract(i, "days").format("MM/DD/YYYY");
 
     const dayArtistEntry = mysteryArtistList.find(
       (entry) => entry.date === previousDay
     );
-
+    
     if (dayArtistEntry) {
       const dayArtist = artists.find(
         (artist) => artist.name === dayArtistEntry.artist
@@ -188,12 +180,12 @@
   // Error reporting function
   async function sendError(message) {
     if (browser) {
-      const response = await fetch("/api/report-error", {
-        method: "POST",
+      const response = await fetch('/api/report-error', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: message }),
+        body: JSON.stringify({"message": message})
       });
     }
   }
@@ -201,35 +193,30 @@
   // Helper functions
   function getGenderLabel(code) {
     switch (code) {
-      case "m":
-        return "Male";
-      case "f":
-        return "Female";
-      case "x":
-        return "Mixed";
-      case "nb":
-        return "Nonbinary";
-      default:
-        return "Unknown";
+      case "m": return "Male";
+      case "f": return "Female";
+      case "x": return "Mixed";
+      case "nb": return "Nonbinary";
+      default: return "Unknown";
     }
   }
 
   function handleStatsClick() {
     // Update this function to show the stats overlay
     showStats = true;
-
-    if (browser && typeof gtag === "function") {
-      gtag("event", "view_stats", {});
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'view_stats', {});
     }
   }
 
   function handleRewindSelect(event) {
     // Get the selected index
     const selectedIndex = event.detail.index;
-
+    
     // Set the rewindIndex to the selected date's index
     rewindIndex = selectedIndex;
-
+    
     // Get the corresponding artist and update the display
     mysteryArtist = lastSixDaysArtists[rewindIndex];
     mysteryArtistEntry = {
@@ -237,15 +224,15 @@
       song_uri: mysteryArtist.song_uri,
       artist: mysteryArtist.name,
     };
-
+    
     // Reset game state
     tempGuesses = [];
     tempGameOver = false;
     guessCount = 0;
-
-    if (browser && typeof gtag === "function") {
-      gtag("event", "rewind_select_date", {
-        date: lastSixDaysDates[rewindIndex],
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'rewind_select_date', {
+        'date': lastSixDaysDates[rewindIndex]
       });
     }
   }
@@ -257,7 +244,8 @@
       $solveList.push(0);
       $solveList = $solveList;
       $currentStreak = 0;
-    } else {
+    }
+    else {
       // win
       $currentStreak = $currentStreak + 1;
       $solveList.push(guessCount + 1);
@@ -267,16 +255,17 @@
       }
 
       if ($solveList.length <= 3) {
-        $bestGuessImages.push(mysteryArtist.image_uri);
+        $bestGuessImages.push(mysteryArtist.image_uri)
         $bestGuessImages = $bestGuessImages;
-      } else {
+      }
+      else {
         const topPerformances = [...$solveList]
-          .filter((result) => result > 0) // Exclude losses (0)
+          .filter(result => result > 0) // Exclude losses (0)
           .sort((a, b) => b - a) // Sort descending
           .slice(0, 3); // Take top 3
-
+      
         if (guessCount + 1 <= topPerformances[2]) {
-          $bestGuessImages.push(mysteryArtist.image_uri);
+          $bestGuessImages.push(mysteryArtist.image_uri)
           $bestGuessImages.shift();
           $bestGuessImages = $bestGuessImages;
         }
@@ -297,25 +286,21 @@
       mysteryArtistEntry = mysteryArtistList.find(
         (entry) => entry.date === todaysDate
       );
-
+      
       if (mysteryArtistEntry === undefined || mysteryArtistEntry === null) {
-        console.log("Critical error.");
-        sendError(
-          "The artist for todays date is not defined or there is a syntax error with the artist."
-        );
+        console.log('Critical error.');
+        sendError("The artist for todays date is not defined or there is a syntax error with the artist.");
       }
-
+      
       mysteryArtist = artists.find(
         (artist) => artist.name === mysteryArtistEntry.artist
       );
-
+      
       if (mysteryArtist === undefined || mysteryArtistEntry === null) {
-        console.log("Critical error.");
-        sendError(
-          "The artist for todays date IS set, but no matching artist in artists.json was found."
-        );
+        console.log('Critical error.');
+        sendError("The artist for todays date IS set, but no matching artist in artists.json was found.");
       }
-
+      
       mysteryArtistList.forEach((entry, index) => {
         if (entry.date === todaysDate) {
           spotleNumber = index;
@@ -331,11 +316,7 @@
           showResults = true;
           $gameOver = true;
         }
-        if (
-          $guesses.some(
-            (obj) => obj.name === mysteryArtist.name && guessCount <= 9
-          )
-        ) {
+        if ($guesses.some((obj) => obj.name === mysteryArtist.name && guessCount <= 9)) {
           result = "W";
           showResults = true;
           $gameOver = true;
@@ -361,8 +342,9 @@
     playingGame = true;
     playingRewind = true;
 
-    if (browser && typeof gtag === "function") {
-      gtag("event", "rewind", {});
+
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'rewind', {});
     }
 
     mysteryArtist = lastSixDaysArtists[rewindIndex];
@@ -377,19 +359,17 @@
 
   function shuffleEligibleArtists() {
     // Filter out artists that are already seen
-    let availableArtists = currentArtistsList.filter((artistName) => {
+    let availableArtists = currentArtistsList.filter(artistName => {
       // Don't include artists we've already seen this session
       return !seenJamArtists.includes(artistName);
     });
-
+    
     // If we've seen all artists, reset the seen list but keep the current solved ones
     if (availableArtists.length === 0) {
-      seenJamArtists = [...solvedJamArtists.map((artist) => artist.name)];
-      availableArtists = currentArtistsList.filter(
-        (artistName) => !seenJamArtists.includes(artistName)
-      );
+      seenJamArtists = [...solvedJamArtists.map(artist => artist.name)];
+      availableArtists = currentArtistsList.filter(artistName => !seenJamArtists.includes(artistName));
     }
-
+    
     // Use the filtered list for shuffling
     for (let i = availableArtists.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -398,7 +378,7 @@
         availableArtists[i],
       ];
     }
-
+    
     // Replace the current available artists with our shuffled and filtered list
     availableArtists = [...availableArtists];
     return availableArtists;
@@ -407,13 +387,11 @@
   function setJamArtist() {
     // Get a shuffled, filtered list of eligible artists
     const availableArtists = shuffleEligibleArtists();
-
+    
     // Get the next artist (if available)
     if (availableArtists.length > 0) {
       const selectedArtistName = availableArtists[0];
-      const selectedArtist = artists.find(
-        (artist) => artist.name === selectedArtistName
-      );
+      const selectedArtist = artists.find(artist => artist.name === selectedArtistName);
 
       // Add this artist to the seen list
       if (!seenJamArtists.includes(selectedArtistName)) {
@@ -432,22 +410,22 @@
 
   function handleJamModeStart(event) {
     const useDeepCuts = event.detail.useDeepCuts;
-
+    
     // Set the appropriate artist list based on the toggle
     currentArtistsList = useDeepCuts ? deepCutsArtists : eligibleArtists;
     seenJamArtists = [];
-
+    
     // Shuffle the list and set the first artist
     shuffleEligibleArtists();
     setJamArtist();
-
-    if (browser && typeof gtag === "function") {
-      gtag("event", "jam_mode_selected", {
-        mode: useDeepCuts ? "deep_cuts" : "standard",
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'jam_mode_selected', {
+        'mode': useDeepCuts ? 'deep_cuts' : 'standard'
       });
     }
   }
-
+  
   function handleSkipArtist() {
     if (playingJam) {
       // Store the current artist being skipped before moving to the next one
@@ -458,24 +436,24 @@
           seenJamArtists.push(mysteryArtist.name);
         }
       }
-
+      
       // Move to the next artist without incrementing the solved count
-      jamIndex = jamIndex; // Keep the jam index the same since we didn't solve it
-
+      jamIndex = jamIndex;  // Keep the jam index the same since we didn't solve it
+      
       // Reset game state
       tempGuesses = [];
       guessCount = 0;
-
+      
       // Shuffle eligible artists and set a new artist
       shuffleEligibleArtists();
       setJamArtist();
-
+      
       // Analytics tracking
-      if (browser && typeof gtag === "function") {
-        gtag("event", "jam_skip_artist", {
-          artist: mysteryArtist?.name || "unknown",
-          jam_index: jamIndex,
-          skipped_count: skippedArtists.length,
+      if (browser && typeof gtag === 'function') {
+        gtag('event', 'jam_skip_artist', {
+          'artist': mysteryArtist?.name || 'unknown',
+          'jam_index': jamIndex,
+          'skipped_count': skippedArtists.length
         });
       }
     }
@@ -484,10 +462,10 @@
   function restartJam(event) {
     // Get the mode from the event
     const useDeepCuts = event?.detail?.useDeepCuts;
-
+    
     // Set the appropriate artist list
     currentArtistsList = useDeepCuts ? deepCutsArtists : eligibleArtists;
-
+    
     // Reset game state
     jamIndex = 0;
     solvedJamArtists = [];
@@ -496,21 +474,21 @@
     skippedArtists = [];
     jamTimeRemaining = 180;
     tempGameOver = false;
-    seenJamArtists = [];
-
+    seenJamArtists = []; 
+    
     // Shuffle eligible artists and set first artist
     shuffleEligibleArtists();
     setJamArtist();
-
+    
     // Force an update cycle
     playingJam = false;
     // Force an update cycle
     setTimeout(() => {
       playingJam = true;
-
-      if (browser && typeof gtag === "function") {
-        gtag("event", "jam_mode_restart", {
-          mode: useDeepCuts ? "deep_cuts" : "standard",
+      
+      if (browser && typeof gtag === 'function') {
+        gtag('event', 'jam_mode_restart', {
+          'mode': useDeepCuts ? 'deep_cuts' : 'standard'
         });
       }
     }, 50);
@@ -520,14 +498,14 @@
     resetAllModes();
     playingGame = true;
     playingJam = true;
-
+    
     // Set tempGameOver to false before enabling playingJam
     tempGameOver = false;
-
-    playingJam = true; // Enable JAM mode
-
-    if (browser && typeof gtag === "function") {
-      gtag("event", "jam_mode_start", {});
+    
+    playingJam = true;   // Enable JAM mode
+    
+    if (browser && typeof gtag === 'function') {
+      gtag('event', 'jam_mode_start', {});
     }
 
     // Reset JAM mode state
@@ -537,82 +515,83 @@
     tempGuesses = [];
     guessCount = 0;
     currentArtistsList = eligibleArtists;
-
+    
     // Shuffle eligible artists for JAM mode
     shuffleEligibleArtists();
-
+    
     // Set the first artist
     setJamArtist();
   }
 
+
   // Event handlers
   function handleSearch(artistName) {
     const selectedArtist = artists.find((artist) => artist.name === artistName);
-
+    
     if (!selectedArtist) return;
 
     if (normalGame) {
-      const guessNames = $guesses.map((artist) => artist.name);
-
-      if (guessNames.includes(artistName)) {
-        return;
-      }
-
-      $guesses.push(selectedArtist);
-      $guesses = $guesses;
-
-      if (selectedArtist == mysteryArtist) {
-        setTimeout(() => {
-          $gameOver = true;
-          showResults = true;
-          result = "W";
-
-          // Mark today's date as completed
-          if (!$completedDates.includes(todaysDate)) {
-            $completedDates = [...$completedDates, todaysDate];
-          }
-
+        const guessNames = $guesses.map((artist) => artist.name);
+    
+        if (guessNames.includes(artistName)) {
           return;
-        }, 1750);
-
-        if (browser && typeof gtag === "function") {
-          gtag("event", "gameover", {
-            result: "win",
-            guesses: Number(guessCount),
-            artist: mysteryArtist.name,
-          });
-
-          handleStats(guessCount, true);
-          guessCount = guessCount - 1;
-        }
-      }
-
-      if (guessCount + 1 == 10) {
-        if (browser && typeof gtag === "function") {
-          gtag("event", "gameover", {
-            result: "loss",
-            guesses: Number(guessCount),
-            artist: mysteryArtist.name,
-          });
-
-          handleStats(guessCount, false);
         }
 
-        setTimeout(() => {
-          $gameOver = true;
-          showResults = true;
-          $guesses.push(mysteryArtist);
-          $guesses = $guesses;
-          result = "L";
+        $guesses.push(selectedArtist);
+        $guesses = $guesses;
 
-          // Mark today's date as completed
-          if (!$completedDates.includes(todaysDate)) {
-            $completedDates = [...$completedDates, todaysDate];
+        if (selectedArtist == mysteryArtist) {
+          setTimeout(() => {
+            $gameOver = true;
+            showResults = true;
+            result = "W";
+            
+            // Mark today's date as completed
+            if (!$completedDates.includes(todaysDate)) {
+              $completedDates = [...$completedDates, todaysDate];
+            }
+            
+            return;
+          }, 1750);
+          
+          if (browser && typeof gtag === 'function') {
+            gtag('event', 'gameover', {
+              'result': "win",
+              'guesses': Number(guessCount),
+              'artist': mysteryArtist.name
+            });
+
+            handleStats(guessCount, true);
+            guessCount = guessCount - 1;
           }
+        }
 
-          return;
-        }, 1750);
-      }
+        if (guessCount + 1 == 10) {
+          if (browser && typeof gtag === 'function') {
+            gtag('event', 'gameover', {
+              'result': "loss",
+              'guesses': Number(guessCount),
+              'artist': mysteryArtist.name
+            });
+
+            handleStats(guessCount, false);
+          }
+          
+          setTimeout(() => {
+            $gameOver = true;
+            showResults = true;
+            $guesses.push(mysteryArtist);
+            $guesses = $guesses;
+            result = "L";
+            
+            // Mark today's date as completed
+            if (!$completedDates.includes(todaysDate)) {
+              $completedDates = [...$completedDates, todaysDate];
+            }
+            
+            return;
+          }, 1750);
+        }
 
       guessCount++;
       return;
@@ -623,82 +602,79 @@
     }
 
     if (playingJam) {
-      if (tempGameOver) {
-        return;
-      }
+    if (tempGameOver) {
+      return;
+    }
+    
+    // Check if this is a duplicate guess (unchanged)
+    if (tempGuesses.includes(selectedArtist)) {
+      return;
+    }
+    
+    // Add the guess to the list
+    tempGuesses.push(selectedArtist);
+    tempGuesses = tempGuesses;
+    
+    // Only increment guess count if it's not a free guess from the previously solved artist
+    // The JamMode component will handle adjusting the display logic
+    if (solvedJamArtists.length === 0 || selectedArtist.name !== solvedJamArtists[solvedJamArtists.length - 1].name) {
+      guessCount++;
+    }
 
-      // Check if this is a duplicate guess (unchanged)
-      if (tempGuesses.includes(selectedArtist)) {
-        return;
-      }
+    if (selectedArtist == mysteryArtist) {
+      setTimeout(() => {
+        // Store the current solved artist
+        const lastSolvedArtist = mysteryArtist;
+        
+        // Add the solved artist to the list
+        solvedJamArtists.push(lastSolvedArtist);
+        solvedJamArtists = solvedJamArtists;
 
-      // Add the guess to the list
-      tempGuesses.push(selectedArtist);
-      tempGuesses = tempGuesses;
+        if (!seenJamArtists.includes(mysteryArtist.name)) {
+          seenJamArtists.push(mysteryArtist.name);
+        }
+        
+        // Increment the JAM index 
+        jamIndex++;
+        
+        // Move to the next artist
+        setJamArtist();
+        
+        // Reset guesses and guess count for next artist
+        tempGuesses = [];
+        guessCount = 0;
 
-      // Only increment guess count if it's not a free guess from the previously solved artist
-      // The JamMode component will handle adjusting the display logic
-      if (
-        solvedJamArtists.length === 0 ||
-        selectedArtist.name !==
-          solvedJamArtists[solvedJamArtists.length - 1].name
-      ) {
-        guessCount++;
-      }
-
-      if (selectedArtist == mysteryArtist) {
         setTimeout(() => {
-          // Store the current solved artist
-          const lastSolvedArtist = mysteryArtist;
+          tempGuesses = [lastSolvedArtist]; // Add the previous artist as the first guess
+          tempGuesses = tempGuesses; // Trigger reactivity
+        }, 100);
+        
+        // The free guess will be handled by the JamMode component on initial render of the new artist
+        
+      }, 1750);
+    }
 
-          // Add the solved artist to the list
-          solvedJamArtists.push(lastSolvedArtist);
-          solvedJamArtists = solvedJamArtists;
-
-          if (!seenJamArtists.includes(mysteryArtist.name)) {
-            seenJamArtists.push(mysteryArtist.name);
-          }
-
-          // Increment the JAM index
-          jamIndex++;
-
-          // Move to the next artist
-          setJamArtist();
-
-          // Reset guesses and guess count for next artist
-          tempGuesses = [];
-          guessCount = 0;
-
-          setTimeout(() => {
-            tempGuesses = [lastSolvedArtist]; // Add the previous artist as the first guess
-            tempGuesses = tempGuesses; // Trigger reactivity
-          }, 100);
-
-          // The free guess will be handled by the JamMode component on initial render of the new artist
-        }, 1750);
-      }
-
-      // Check for max guesses (unchanged)
-      if (guessCount >= 10) {
-        setTimeout(() => {
-          // Apply time penalty (-15 seconds) similar to skip
-          jamTimeRemaining = Math.max(1, jamTimeRemaining - 15);
-
-          // Tell JamMode to show the time penalty animation
-          dispatch("timepenalty");
-
-          // Move to the next artist without incrementing the solved count
-          jamIndex = jamIndex; // Keep the jam index the same since we didn't solve it
-          // Reset game state
-          tempGuesses = [];
-          guessCount = 0;
-
-          // Move to next artist by refreshing the list and setting a new artist
-          shuffleEligibleArtists();
-          setJamArtist();
-        }, 1750);
-      }
-
+    // Check for max guesses (unchanged)
+    if (guessCount >= 10) {
+      setTimeout(() => {
+        // Apply time penalty (-15 seconds) similar to skip
+        jamTimeRemaining = Math.max(1, jamTimeRemaining - 15);
+        
+        // Tell JamMode to show the time penalty animation
+        dispatch('timepenalty');
+        
+        // Move to the next artist without incrementing the solved count
+        jamIndex = jamIndex;  // Keep the jam index the same since we didn't solve it
+        // Reset game state
+        tempGuesses = [];
+        guessCount = 0;
+        
+        // Move to next artist by refreshing the list and setting a new artist
+        shuffleEligibleArtists();
+        setJamArtist();
+      }, 1750);
+    }
+      
       return;
     }
 
@@ -706,11 +682,11 @@
       if (tempGameOver) {
         return;
       }
-
+      
       if (tempGuesses.includes(selectedArtist)) {
         return;
       }
-
+      
       tempGuesses.push(selectedArtist);
       tempGuesses = tempGuesses;
       guessCount++;
@@ -722,17 +698,13 @@
             showResults = true;
             result = "W";
 
-            if (
-              playingRewind &&
-              lastSixDaysDates &&
-              lastSixDaysDates[rewindIndex]
-            ) {
+            if (playingRewind && lastSixDaysDates && lastSixDaysDates[rewindIndex]) {
               const completedDate = lastSixDaysDates[rewindIndex];
               if (!$completedDates.includes(completedDate)) {
                 $completedDates = [...$completedDates, completedDate];
               }
             }
-
+          
             return;
           }, 1750);
         }
@@ -741,7 +713,7 @@
           setTimeout(() => {
             tempGameOver = true;
             showResults = true;
-            tempGuesses.push(mysteryArtist);
+            tempGuesses.push(mysteryArtist)
             tempGuesses = tempGuesses;
             result = "L";
             return;
@@ -753,7 +725,7 @@
 
   function nextRewind() {
     if (rewindIndex == 5) return;
-
+    
     rewindIndex++;
     mysteryArtist = lastSixDaysArtists[rewindIndex];
     mysteryArtistEntry = {
@@ -768,7 +740,7 @@
 
   function previousRewind() {
     if (rewindIndex == 0) return;
-
+    
     rewindIndex--;
     mysteryArtist = lastSixDaysArtists[rewindIndex];
     mysteryArtistEntry = {
@@ -791,32 +763,32 @@
   }
 
   function resetAllModes() {
-    // Reset all mode flags
-    normalGame = false;
-    createGame = false;
-    playingRewind = false;
-    playingJam = false;
-    playingChallenge = false;
-    playingGame = false;
-    splashScreen = false;
-
-    // Reset game state
-    tempGameOver = false;
-    showResults = false;
-
-    // Reset any other relevant state
-    guessCount = 0;
-    tempGuesses = [];
+      // Reset all mode flags
+      normalGame = false;
+      createGame = false;
+      playingRewind = false;
+      playingJam = false;
+      playingChallenge = false;
+      playingGame = false;
+      splashScreen = false;
+      
+      // Reset game state
+      tempGameOver = false;
+      showResults = false;
+      
+      // Reset any other relevant state
+      guessCount = 0;
+      tempGuesses = [];
   }
 
   function updateRewindDateUI() {
     // Create a temporary variable to hold the current value
     const currentDates = [...$completedDates];
-
+    
     // Reset the store with the same value to trigger reactivity
     // This will force components that depend on completedDates to re-render
     $completedDates = [];
-
+    
     // Use setTimeout to ensure the UI has time to process the change
     setTimeout(() => {
       $completedDates = currentDates;
@@ -826,22 +798,22 @@
   function handleSlideMenuNavigation(event) {
     const destination = event.detail.destination;
     showSlideMenu = false;
-
-    if (destination === "home") {
+    
+    if (destination === 'home') {
       playingGame = false;
       normalGame = false;
       playingJam = false;
       createGame = false;
       playingRewind = false;
       splashScreen = true;
-    } else if (destination === "rewind") {
+    } else if (destination === 'rewind') {
       playRewind();
-    } else if (destination === "create") {
+    } else if (destination === 'create') {
       handleCreate();
-    } else if (destination === "jam") {
+    } else if (destination === 'jam') {
       playJam();
     }
-  }
+}
 
   function handleOverlayClose() {
     showResults = false;
@@ -852,48 +824,36 @@
   }
 
   function handleCreateArtistSelect(event) {
-    createGameSelection = artists.find(
-      (artist) => artist.name === event.detail
-    );
+    createGameSelection = artists.find(artist => artist.name === event.detail);
   }
 </script>
 
 <main>
   <!-- The backdrop div should be the first child in main -->
   <div class="backdrop"></div>
-  <Ramp {PUB_ID} {WEBSITE_ID} />
-  <Navbar
-    {playingJam}
-    {playingRewind}
+  <Ramp PUB_ID={PUB_ID} WEBSITE_ID={WEBSITE_ID} />
+  <Navbar 
+    playingJam={playingJam}
+    playingRewind={playingRewind}
     on:menu={handleMenuClick}
     on:help={toggleHelp}
     on:stats={handleStatsClick}
   />
+  
 
-  <!-- Test button for Rewarded Ad -->
-  {#if splashScreen}
-    <div style="position: fixed; top: 80px; right: 20px; z-index: 1000;">
-      <button
-        style="background: #8370de; color: white; border: none; padding: 10px 15px; border-radius: 8px; font-size: 14px; cursor: pointer;"
-        on:click={handleRewardedAdTest}
-      >
-        Test Rewarded Ad
-      </button>
-    </div>
-  {/if}
-
+  
   <!-- Slide Menu overlay -->
   {#if showSlideMenu}
-    <SlideMenu
+    <SlideMenu 
       on:close={handleCloseSlideMenu}
       on:navigate={handleSlideMenuNavigation}
     />
   {/if}
 
   {#if showStats}
-    <Stats on:close={() => (showStats = false)} />
+    <Stats on:close={() => showStats = false} />
   {/if}
-
+  
   <!-- Game over overlay -->
   {#if showResults && !createGame}
     <Gameover
@@ -907,45 +867,25 @@
       muted={$muted}
     ></Gameover>
   {/if}
-
+  
   <!-- Help overlay -->
   {#if showHelp}
     <div class="help">
       <Help on:close={toggleHelp}></Help>
     </div>
   {/if}
-
-  <!-- Rewarded Ad Test overlay -->
-  {#if showRewardedAdTest}
-    <div class="rewarded-ad-overlay">
-      <div class="rewarded-ad-modal">
-        <button
-          class="close-button"
-          on:click={() => (showRewardedAdTest = false)}
-          style="position: absolute; top: 10px; right: 15px; background: none; border: none; color: white; font-size: 24px; cursor: pointer;"
-          >×</button
-        >
-        <RewardedAd
-          {PUB_ID}
-          {WEBSITE_ID}
-          onReward={handleRewardGranted}
-          onError={handleRewardError}
-        />
-      </div>
-    </div>
-  {/if}
-
+  
   <div class="outer-container">
     <div class="container">
       <!-- Main content -->
-      {#if splashScreen}
-        <SplashScreen
-          {yesterdaysArtist}
+        {#if splashScreen}
+        <SplashScreen 
+          yesterdaysArtist={yesterdaysArtist}
           on:play={(e) => {
-            if (e.detail.mode === "normal") playGame();
-            else if (e.detail.mode === "create") handleCreate();
-            else if (e.detail.mode === "rewind") playRewind();
-            else if (e.detail.mode === "jam") playJam();
+            if (e.detail.mode === 'normal') playGame();
+            else if (e.detail.mode === 'create') handleCreate();
+            else if (e.detail.mode === 'rewind') playRewind();
+            else if (e.detail.mode === 'jam') playJam();
           }}
           on:showHelp={toggleHelp}
         />
@@ -957,7 +897,7 @@
             {jamIndex}
             timeRemaining={jamTimeRemaining}
             solvedArtists={solvedJamArtists}
-            {skippedArtists}
+            skippedArtists={skippedArtists}
             isGameOver={tempGameOver}
             on:guess={(e) => handleSearch(e.detail.artistName)}
             on:restart={restartJam}
@@ -965,19 +905,20 @@
             on:skipArtist={handleSkipArtist}
           />
         {:else if createGame}
-          <CreateGame
+          <CreateGame 
             selectedArtist={createGameSelection}
             on:selectArtist={handleCreateArtistSelect}
           />
-        {:else if playingRewind}
+        {:else}
+          {#if playingRewind}
           <GameBoard
             mode="rewind"
             currentArtist={mysteryArtist}
             gameGuesses={tempGuesses}
             isGameOver={tempGameOver}
             rewindDates={lastSixDaysDates}
-            {rewindIndex}
-            {lastSixDaysArtists}
+            rewindIndex={rewindIndex}
+            lastSixDaysArtists={lastSixDaysArtists}
             blurResults={showResults}
             on:guess={(e) => handleSearch(e.detail.artistName)}
             on:rewindSelect={handleRewindSelect}
@@ -1000,9 +941,10 @@
             gameGuesses={tempGuesses}
             isGameOver={tempGameOver}
             blurResults={showResults}
-            {challengeNote}
+            challengeNote={challengeNote}
             on:guess={(e) => handleSearch(e.detail.artistName)}
           />
+        {/if}
         {/if}
       {/if}
     </div>
@@ -1018,7 +960,7 @@
     display: flex;
     flex-direction: column;
   }
-
+  
   .container {
     position: relative;
     justify-content: center;
@@ -1027,7 +969,7 @@
     display: flex;
     flex-direction: column;
   }
-
+  
   .help {
     position: absolute;
     top: 0;
@@ -1036,33 +978,9 @@
     height: 100%;
     z-index: 9998;
   }
-
-  .rewarded-ad-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-
-  .rewarded-ad-modal {
-    position: relative;
-    background: #1a1a1a;
-    border-radius: 16px;
-    padding: 20px;
-    max-width: 400px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-
+  
   /* Override container positioning */
-  :global(.outer-container) {
+    :global(.outer-container) {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
@@ -1108,7 +1026,7 @@
     top: 0 !important;
     margin-top: 0 !important;
   }
-
+  
   /* Fix header positioning */
   :global(.header) {
     position: relative !important;
@@ -1116,7 +1034,7 @@
     margin-top: 25px !important;
     margin-bottom: 20px !important;
   }
-
+  
   /* Ensure main element is properly positioned */
   main {
     position: relative !important;
@@ -1131,7 +1049,7 @@
   :global(.slide-menu) {
     max-width: 100% !important;
   }
-
+  
   @media (min-width: 768px) {
     :global(.slide-menu) {
       max-width: 500px !important;
