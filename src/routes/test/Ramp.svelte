@@ -8,28 +8,15 @@
 
   function playAd() {
     if (window.ramp && window.ramp.manuallyCreateRewardUi) {
-      try {
         const result = window.ramp.manuallyCreateRewardUi({
           skipConfirmation: true,
-        });
-        if (result && typeof result.then === "function") {
-          result
+        })
             .then(() => {
               console.log("✅ Reward granted");
             })
             .catch((error) => {
               console.error("❌ Rewarded video error:", error);
             });
-        } else {
-          console.log("✅ Reward UI created (no promise returned)");
-        }
-      } catch (error) {
-        console.error("❌ Error calling manuallyCreateRewardUi:", error);
-      }
-    } else {
-      console.error(
-        "Ramp is not loaded or manuallyCreateRewardUi is not available"
-      );
     }
   }
   if (browser) {
