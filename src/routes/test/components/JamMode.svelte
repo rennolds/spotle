@@ -4,6 +4,7 @@
   import SearchBar from "./SearchBar.svelte";
   import GuessList from "./GuessList.svelte";
   import { browser } from "$app/environment";
+  import { isRewardAdReady, showRewardAd } from "$lib/rewardAds.js";
 
   export let currentArtist = null; // The current mystery artist
   export let gameGuesses = []; // Current game guesses
@@ -34,7 +35,20 @@
   let timePenaltyTimer;
 
   // Function to start the game
-  function startJam() {
+  async function startJam() {
+    // Try to show reward ad first
+    if (isRewardAdReady()) {
+      try {
+        await showRewardAd();
+        console.log("User watched reward ad before starting Jam!");
+      } catch (error) {
+        console.log(
+          "Reward ad failed or was skipped, continuing anyway:",
+          error
+        );
+      }
+    }
+
     showIntro = false;
     initTimer(); // Start the timer when the user clicks start
 

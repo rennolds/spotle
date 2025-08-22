@@ -1,22 +1,36 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
-  import SearchBar from './SearchBar.svelte';
-  import GameInfo from './GameInfo.svelte';
+  import { createEventDispatcher } from "svelte";
+  import SearchBar from "./SearchBar.svelte";
+  import GameInfo from "./GameInfo.svelte";
   import { browser } from "$app/environment";
-  
+  import { isRewardAdReady, showRewardAd } from "$lib/rewardAds.js";
+
   export let selectedArtist = null;
-  
+
   let createNote = "";
   let createShareBtnText = "SHARE";
   const dispatch = createEventDispatcher();
-  
+
   function handleSearch(event) {
-    dispatch('selectArtist', event.detail);
+    dispatch("selectArtist", event.detail);
   }
-  
-  function handleCreateShare() {
+
+  async function handleCreateShare() {
     if (!selectedArtist) return;
-    
+
+    // Try to show reward ad first
+    if (isRewardAdReady()) {
+      try {
+        await showRewardAd();
+        console.log("User watched reward ad before sharing Create Game!");
+      } catch (error) {
+        console.log(
+          "Reward ad failed or was skipped, continuing anyway:",
+          error
+        );
+      }
+    }
+
     const artistUint8Array = new TextEncoder().encode(selectedArtist.name);
     const noteUint8Array = new TextEncoder().encode(createNote);
 
@@ -35,9 +49,9 @@
 
     if (browser) {
       // Analytics event if available
-      if (typeof gtag === 'function') {
-        gtag('event', 'custom_game_share', {
-          'artist': selectedArtist.name,
+      if (typeof gtag === "function") {
+        gtag("event", "custom_game_share", {
+          artist: selectedArtist.name,
         });
       }
     }
@@ -52,7 +66,7 @@
         /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
       return regex.test(navigator.userAgent);
     }
-    
+
     if (isMobile() && browser) {
       if (navigator.share) {
         navigator
@@ -86,38 +100,31 @@
 
   <!-- Always show the search bar - Important change here -->
   <div class="search-bar-container">
-    <SearchBar 
-      placeholder="Search for an artist..." 
-      on:search={handleSearch} 
-    />
+    <SearchBar placeholder="Search for an artist..." on:search={handleSearch} />
   </div>
-  
+
   <!-- Selected artist display (only shown when an artist is selected) -->
   {#if selectedArtist}
     <div class="selected-artist-container">
       <div class="header-row">
-        <img
-          src={selectedArtist.image_uri}
-          alt={selectedArtist.name}
-        />
+        <img src={selectedArtist.image_uri} alt={selectedArtist.name} />
         <h2>{selectedArtist.name}</h2>
       </div>
-  
+
       <div class="create-game-text">
         <p>2.</p>
         <h3>Leave a note for your friend.</h3>
       </div>
-      
+
       <textarea
         class="create-form"
         placeholder="Write a hint or message here..."
         bind:value={createNote}
       ></textarea>
-      
-      <button
-        class="styled-btn"
-        on:click={handleCreateShare}
-      >{createShareBtnText}</button>
+
+      <button class="styled-btn" on:click={handleCreateShare}
+        >{createShareBtnText}</button
+      >
     </div>
   {/if}
 
@@ -133,14 +140,14 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .search-bar-container {
     width: 100%;
     margin: 5px 0; /* reduced margin */
     position: relative;
     z-index: 50;
   }
-  
+
   .selected-artist-container {
     width: 100%;
     display: flex;
@@ -148,7 +155,7 @@
     align-items: flex-start; /* Changed from center to flex-start */
     margin-top: 10px; /* reduced margin */
   }
-  
+
   .header-row {
     display: flex;
     flex-direction: row;
@@ -201,7 +208,7 @@
     margin-right: 10px;
     text-align: left; /* Added text alignment */
   }
-  
+
   .create-form {
     width: 320px;
     border-radius: 5px;
@@ -211,7 +218,7 @@
     margin-bottom: 15px;
     resize: none;
   }
-  
+
   .styled-btn {
     width: 170px;
     height: 47px;
@@ -221,18 +228,18 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    background-color: #CBFF70;
+    background-color: #cbff70;
     border-radius: 100px;
     margin-top: 5px;
     cursor: pointer;
     border: none;
     align-self: center; /* Added to center the button */
   }
-  
+
   .styled-btn:hover {
     transform: scale(1.05);
   }
-  
+
   .ad-space {
     height: 60px; /* reduced height */
     margin-top: 15px; /* reduced margin */

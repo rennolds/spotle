@@ -16,7 +16,7 @@
   }
 
   function handleRewind() {
-    dispatch("navigate", { destination: "rewind-ad" });
+    dispatch("navigate", { destination: "rewind" });
   }
 
   function handleJamMode() {
