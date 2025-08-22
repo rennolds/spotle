@@ -2,10 +2,10 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
   import { browser } from "$app/environment";
+  import { initializeRewardAdListeners } from "$lib/rewardAds.js";
 
   export let PUB_ID;
   export let WEBSITE_ID;
-
   if (browser) {
     let rampComponentLoaded = false;
     let lastPathname;
@@ -26,27 +26,10 @@
         window.ramp.que.push(() => {
           window.ramp.spaNewPage();
           window.ramp.addTag("standard_iab_head1");
+          // Initialize reward ad listeners after ramp is loaded
+          initializeRewardAdListeners();
         });
       };
-
-      // Add event listener to the play ad button
-      const playAdButton = document.querySelector(".play-ad-button");
-      if (playAdButton) {
-        playAdButton.addEventListener("click", () => {
-          if (window.ramp && window.ramp.manuallyCreateRewardUi) {
-            window.ramp
-              .manuallyCreateRewardUi({
-                skipConfirmation: true,
-              })
-              .then(() => {
-                console.log("✅ Reward granted");
-              })
-              .catch((error) => {
-                console.error("❌ Rewarded video error:", error);
-              });
-          }
-        });
-      }
     });
 
     $: if (
@@ -67,10 +50,6 @@
   <div data-pw-mobi="standard_iab_head1" id="standard_iab_head1"></div>
 </div>
 
-<div class="play-ad-container">
-  <button class="play-ad-button">PLAY AD</button>
-</div>
-
 <style>
   .ad-container {
     position: sticky;
@@ -89,37 +68,6 @@
     height: 50px;
     margin: 0 auto;
     padding: 0;
-  }
-
-  .play-ad-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-  }
-
-  .play-ad-button {
-    background-color: #ff4444;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .play-ad-button:hover {
-    background-color: #ff6666;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  }
-
-  .play-ad-button:active {
-    transform: scale(0.95);
   }
 
   /* Hide ads on desktop */

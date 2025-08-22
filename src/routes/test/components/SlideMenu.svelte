@@ -2,8 +2,12 @@
   import { createEventDispatcher } from "svelte";
   import { fly } from "svelte/transition";
   import { browser } from "$app/environment";
+  import { showRewardAd, isRewardAdAvailable } from "$lib/rewardAds.js";
 
   const dispatch = createEventDispatcher();
+
+  let isLoadingAd = false;
+  let adMessage = "";
 
   // Close the slide menu
   function handleClose() {
@@ -15,8 +19,42 @@
     dispatch("navigate", { destination: "home" });
   }
 
-  function handleRewind() {
-    dispatch("navigate", { destination: "rewind-ad" });
+  async function handleRewind() {
+    // Check if reward ad is available
+    if (!isRewardAdAvailable()) {
+      // No ad available, proceed directly to rewind
+      console.log("No reward ad available, proceeding to rewind");
+      dispatch("navigate", { destination: "rewind-ad" });
+      return;
+    }
+
+    isLoadingAd = true;
+    adMessage = "🎬 Watch this ad to unlock Rewind...";
+
+    try {
+      // Show the reward ad
+      await showRewardAd();
+
+      // Ad completed successfully, proceed to rewind
+      adMessage = "✅ Thanks for watching! Accessing Rewind...";
+
+      // Small delay to show success message
+      setTimeout(() => {
+        dispatch("navigate", { destination: "rewind-ad" });
+        isLoadingAd = false;
+        adMessage = "";
+      }, 1000);
+    } catch (error) {
+      // Ad failed or user closed early
+      console.error("Reward ad failed:", error);
+      adMessage = "❌ Ad required to access Rewind. Please try again.";
+
+      // Clear message after 3 seconds
+      setTimeout(() => {
+        isLoadingAd = false;
+        adMessage = "";
+      }, 3000);
+    }
   }
 
   function handleJamMode() {
@@ -82,10 +120,25 @@
 
       <div class="menu-section">
         <h3 class="section-header">Need more Spotle?</h3>
-        <div class="menu-item sub-item" on:click={handleRewind}>
+        <div
+          class="menu-item sub-item"
+          on:click={handleRewind}
+          class:loading={isLoadingAd}
+        >
           <div class="menu-item-content">
-            <div class="menu-item-title">Rewind</div>
-            <div class="menu-item-subtitle">Play the last week of Spotle</div>
+            <div class="menu-item-title">
+              {#if isLoadingAd}
+                <span class="loading-spinner">⏳</span>
+              {/if}
+              Rewind
+            </div>
+            <div class="menu-item-subtitle">
+              {#if adMessage}
+                {adMessage}
+              {:else}
+                Play the last week of Spotle
+              {/if}
+            </div>
           </div>
         </div>
         <div class="menu-item sub-item" on:click={handleJamMode}>
@@ -349,6 +402,33 @@
   .new-badge-container {
     animation: pulse 2s infinite;
     flex-shrink: 0;
+  }
+
+  .loading-spinner {
+    margin-right: 8px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .menu-item.loading {
+    opacity: 0.7;
+    cursor: wait;
+  }
+
+  .menu-item.loading:hover {
+    transform: none;
+  }
+
+  .menu-item.loading .menu-item-content {
+    transform: none;
   }
 
   .menu-footer {
