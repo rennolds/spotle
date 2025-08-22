@@ -21,7 +21,7 @@
     // Try to show reward ad first
     if (isRewardAdReady()) {
       try {
-        await showRewardAd("Your share link will be ready after the ad!");
+        await showRewardAd("Your share link will be ready in");
         console.log("User watched reward ad before sharing Create Game!");
       } catch (error) {
         console.log(

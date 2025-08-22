@@ -359,7 +359,7 @@
     // Try to show reward ad first
     if (isRewardAdReady()) {
       try {
-        await showRewardAd("Continue to Rewind after the ad");
+        await showRewardAd("Continue to Rewind in");
         console.log("User watched reward ad before entering Rewind mode!");
       } catch (error) {
         console.log(

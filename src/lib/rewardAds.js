@@ -13,6 +13,202 @@ let customTextActive = false;
 let buttonActive = false; // Flag to track when button is active
 let currentCustomText = 'Continue to Spotle after the ad'; // Default text
 let rewardGrantedText = 'Continue'; // Text when reward is granted
+let countdownInterval = null; // For our custom countdown timer
+let countdownProtectionInterval = null; // For protecting our countdown from interference
+let remainingSeconds = 0; // Time remaining in seconds
+let timerCaptured = false; // Flag to track if we've captured the original timer
+
+/**
+ * Parse timer text in format "M:SS until reward" and return total seconds
+ * @param {string} timerText - The timer text to parse
+ * @returns {number} Total seconds remaining, or 0 if parsing fails
+ */
+function parseTimerText(timerText) {
+  try {
+    // Look for pattern like "1:30 until reward" or "0:45 until reward"
+    const match = timerText.match(/(\d+):(\d{2})\s*until\s*reward/i);
+    if (match) {
+      const minutes = parseInt(match[1], 10);
+      const seconds = parseInt(match[2], 10);
+      const totalSeconds = (minutes * 60) + seconds;
+      console.log(`⏱️ Parsed timer: ${minutes}:${match[2]} = ${totalSeconds} seconds`);
+      return totalSeconds;
+    }
+  } catch (error) {
+    console.warn('Error parsing timer text:', error);
+  }
+  return 0;
+}
+
+/**
+ * Capture the original timer value before we override it
+ * This allows us to get the actual countdown time from the ad
+ * @returns {boolean} True if timer was successfully captured
+ */
+function captureOriginalTimer() {
+  if (!timerElement || timerCaptured) return false;
+  
+  try {
+    const originalText = timerElement.innerHTML || timerElement.textContent || timerElement.innerText || '';
+    console.log('⏱️ Original timer text:', originalText);
+    
+    if (originalText.includes('until reward')) {
+      remainingSeconds = parseTimerText(originalText);
+      if (remainingSeconds > 0) {
+        timerCaptured = true;
+        console.log(`⏱️ Successfully captured timer: ${remainingSeconds} seconds remaining`);
+        return true;
+      }
+    }
+    
+    // Also try to parse other timer formats that might appear
+    const timeMatch = originalText.match(/(\d+):(\d{2})/);
+    if (timeMatch && !originalText.includes(currentCustomText)) {
+      const minutes = parseInt(timeMatch[1], 10);
+      const seconds = parseInt(timeMatch[2], 10);
+      remainingSeconds = (minutes * 60) + seconds;
+      if (remainingSeconds > 0) {
+        timerCaptured = true;
+        console.log(`⏱️ Successfully captured timer from format: ${timeMatch[0]} = ${remainingSeconds} seconds`);
+        return true;
+      }
+    }
+  } catch (error) {
+    console.warn('Error capturing original timer:', error);
+  }
+  
+  return false;
+}
+
+/**
+ * Try to capture timer with multiple attempts
+ * @returns {Promise<boolean>} True if timer was captured
+ */
+async function captureTimerWithRetries() {
+  const maxAttempts = 10;
+  const delayMs = 200;
+  
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    console.log(`⏱️ Timer capture attempt ${attempt}/${maxAttempts}`);
+    
+    if (captureOriginalTimer()) {
+      return true;
+    }
+    
+    if (attempt < maxAttempts) {
+      await new Promise(resolve => setTimeout(resolve, delayMs));
+    }
+  }
+  
+  console.warn('⏱️ Failed to capture timer after', maxAttempts, 'attempts');
+  return false;
+}
+
+/**
+ * Start our custom countdown timer
+ * Updates the display every second with remaining time
+ */
+function startCustomCountdown() {
+  if (remainingSeconds <= 0) {
+    console.warn('⏱️ No valid countdown time available');
+    return;
+  }
+  
+  console.log(`⏱️ Starting custom countdown with ${remainingSeconds} seconds`);
+  
+  // Update display immediately
+  updateCountdownDisplay();
+  
+  // Start interval to update every second
+  countdownInterval = setInterval(() => {
+    remainingSeconds--;
+    
+    if (remainingSeconds <= 0) {
+      console.log('⏱️ Countdown completed!');
+      stopCustomCountdown();
+      // Timer completed, show button
+      setContinueButton(rewardGrantedText);
+    } else {
+      updateCountdownDisplay();
+    }
+  }, 1000);
+  
+  // Start aggressive protection against original timer interference
+  startCountdownProtection();
+}
+
+/**
+ * Start countdown protection to prevent original timer from interfering
+ */
+function startCountdownProtection() {
+  if (countdownProtectionInterval) {
+    clearInterval(countdownProtectionInterval);
+  }
+  
+  console.log('⏱️ Starting countdown protection');
+  
+  // Check every 50ms to maintain our countdown display
+  countdownProtectionInterval = setInterval(() => {
+    if (!timerElement || !countdownInterval || !timerCaptured || buttonActive) {
+      stopCountdownProtection();
+      return;
+    }
+    
+    try {
+      const currentText = timerElement.innerHTML || timerElement.textContent || timerElement.innerText || '';
+      const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
+      
+      // If the text has been changed to something that's not our format, restore it
+      if (!isOurCountdownFormat && !currentText.includes('spotle-continue-btn')) {
+        console.log('⏱️ Protection: Restoring our countdown display');
+        updateCountdownDisplay();
+      }
+    } catch (error) {
+      // Ignore errors
+    }
+  }, 50);
+}
+
+/**
+ * Stop countdown protection
+ */
+function stopCountdownProtection() {
+  if (countdownProtectionInterval) {
+    clearInterval(countdownProtectionInterval);
+    countdownProtectionInterval = null;
+    console.log('⏱️ Stopped countdown protection');
+  }
+}
+
+/**
+ * Update the countdown display with current remaining time
+ * Shows custom text followed by the countdown timer
+ */
+function updateCountdownDisplay() {
+  if (!timerElement || remainingSeconds <= 0) return;
+  
+  const minutes = Math.floor(remainingSeconds / 60);
+  const seconds = remainingSeconds % 60;
+  const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  const displayText = `${currentCustomText} ${formattedTime}`;
+  
+  console.log(`⏱️ Updating display: ${displayText}`);
+  setCustomText(displayText);
+}
+
+/**
+ * Stop the custom countdown timer
+ */
+function stopCustomCountdown() {
+  if (countdownInterval) {
+    clearInterval(countdownInterval);
+    countdownInterval = null;
+    console.log('⏱️ Stopped custom countdown');
+  }
+  
+  // Also stop protection
+  stopCountdownProtection();
+}
 
 /**
  * Start polling to maintain custom text
@@ -41,10 +237,23 @@ function startTextPolling() {
       currentText = '';
     }
     
+    // If we have an active countdown, don't let anything override it
+    if (countdownInterval && timerCaptured) {
+      // Only update if it's not our custom format
+      const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
+      if (!isOurCountdownFormat && !currentText.includes('spotle-continue-btn')) {
+        // Force our countdown display back
+        updateCountdownDisplay();
+      }
+      return;
+    }
+    
     // If the text has been changed by the timer script, restore our custom text
-    // But don't override if we have a button (indicated by the presence of spotle-continue-btn)
+    // But don't override if we have a button or if it's our custom countdown format
+    const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
     if (currentText !== currentCustomText && 
         !currentText.includes('spotle-continue-btn') &&
+        !isOurCountdownFormat &&
         (currentText.includes(':') || currentText.includes ('Reward Granted') || currentText.includes('until reward') || currentText.trim() === '')) {
       setCustomText(currentCustomText);
     }
@@ -55,7 +264,7 @@ function startTextPolling() {
  * Block the timer script from updating the text element
  * This prevents the original timer from overwriting our custom text
  */
-function blockTimerScript() {
+async function blockTimerScript() {
   timerElement = document.getElementById('pw-remaining-timer-top');
   backgroundElement = document.getElementById('pw-rewarded-countdown-label');
   animationElement = document.getElementById('countdown-border-animation');
@@ -78,13 +287,24 @@ function blockTimerScript() {
     removeWhiteCheckmark();
   }
 
-  // Start with polling approach (most reliable)
-  startTextPolling();
+  // Try to capture the original timer value with retries
+  const timerCaptured = await captureTimerWithRetries();
+  
+  // If we captured the timer, start our custom countdown
+  if (timerCaptured) {
+    startCustomCountdown();
+  } else {
+    // Fallback: use a default countdown time (most ads are around 30 seconds)
+    console.warn('⏱️ Could not capture original timer, using default 30 second countdown');
+    remainingSeconds = 30;
+    timerCaptured = true;
+    startCustomCountdown();
+  }
 
-  // Also add MutationObserver as backup for immediate response
+  // Also add MutationObserver as backup for capturing timer if we missed it initially
   try {
     timerObserver = new MutationObserver((mutations) => {
-      if (!customTextActive || buttonActive) return;
+      if (buttonActive) return;
       
       mutations.forEach((mutation) => {
         if (mutation.type === 'childList' || mutation.type === 'characterData') {
@@ -101,9 +321,33 @@ function blockTimerScript() {
             return;
           }
           
-          if (currentText.includes(':') && currentText.includes('until reward')) {
-            // This looks like timer text, replace it with our custom text
-            setTimeout(() => setCustomText(currentCustomText), 0);
+          // If we have an active countdown, aggressively protect it
+          if (countdownInterval && timerCaptured) {
+            const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
+            if (!isOurCountdownFormat) {
+              console.log('⏱️ Observer: Original timer trying to override, restoring countdown');
+              updateCountdownDisplay();
+            }
+            return;
+          }
+          
+          const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
+          if (isOurCountdownFormat) {
+            return;
+          }
+          
+          // If we haven't captured the timer yet and see timer text, try to capture it
+          if (!timerCaptured && (currentText.includes(':') && (currentText.includes('until reward') || currentText.match(/\d+:\d{2}/)))) {
+            console.log('⏱️ Found timer text via observer, attempting to capture...');
+            if (captureOriginalTimer()) {
+              // Stop any existing polling and start countdown
+              if (pollingInterval) {
+                clearInterval(pollingInterval);
+                pollingInterval = null;
+              }
+              customTextActive = false;
+              startCustomCountdown();
+            }
           }
         }
       });
@@ -353,15 +597,23 @@ function closeRewardAd() {
 }
 
 /**
- * Wait for the timer element to appear in the DOM
- * @returns {Promise} Promise that resolves when element is found
+ * Wait for the timer element to appear in the DOM and be populated with timer text
+ * @returns {Promise} Promise that resolves when element is found and has timer content
  */
 function waitForTimerElement() {
   return new Promise((resolve) => {
     const checkForElement = () => {
       const element = document.getElementById('pw-remaining-timer-top');
       if (element) {
-        resolve(element);
+        const text = element.innerHTML || element.textContent || element.innerText || '';
+        // Wait for the element to have timer content or be non-empty
+        if (text.trim() !== '') {
+          console.log('⏱️ Timer element found with content:', text);
+          resolve(element);
+        } else {
+          console.log('⏱️ Timer element found but empty, waiting...');
+          setTimeout(checkForElement, 100);
+        }
       } else {
         setTimeout(checkForElement, 100);
       }
@@ -387,11 +639,15 @@ export function initRewardAds() {
   window.addEventListener("userAcceptsRewardedAd", async () => {
     console.log("🎬 User started watching reward ad");
     
-    // Reset button state for new ad
+    // Reset all state for new ad
     buttonActive = false;
     customTextActive = false;
+    remainingSeconds = 0;
+    timerCaptured = false;
     
     // Clean up any existing intervals or observers from previous ads
+    stopCustomCountdown();
+    
     if (pollingInterval) {
       clearInterval(pollingInterval);
       pollingInterval = null;
@@ -402,13 +658,13 @@ export function initRewardAds() {
       timerObserver = null;
     }
     
-    console.log("🎬 Reset button state for new ad");
+    console.log("🎬 Reset all state for new ad");
     
     // Wait for the timer element to appear and then customize it
     try {
       await waitForTimerElement();
-      blockTimerScript();
-      setCustomText(currentCustomText);
+      await blockTimerScript();
+      // Note: blockTimerScript will now handle capturing the timer and starting countdown
     } catch (error) {
       console.warn("Could not customize ad text:", error);
     }
@@ -425,9 +681,12 @@ export function initRewardAds() {
     console.log("🎁 rewardGrantedText:", rewardGrantedText);
     console.log("🎁 timerElement exists:", !!timerElement);
     
-    // Immediately stop all text polling and observers
+    // Immediately stop all timers and observers
     customTextActive = false;
     buttonActive = true; // Set this early to prevent any more text overrides
+    
+    // Stop custom countdown
+    stopCustomCountdown();
     
     if (pollingInterval) {
       clearInterval(pollingInterval);
@@ -517,12 +776,15 @@ export function showRewardAd(waitingText = 'Continue to Spotle after the ad', bu
 
 /**
  * Clean up timer customization
- * Removes observers and stops polling
+ * Removes observers and stops polling and countdown
  */
 function cleanupTimerCustomization() {
   // Stop polling
   customTextActive = false;
   buttonActive = false;
+  
+  // Stop custom countdown and protection
+  stopCustomCountdown();
   
   if (pollingInterval) {
     clearInterval(pollingInterval);
@@ -534,6 +796,10 @@ function cleanupTimerCustomization() {
     timerObserver.disconnect();
     timerObserver = null;
   }
+  
+  // Reset timer state
+  remainingSeconds = 0;
+  timerCaptured = false;
   
   // Clear element references
   timerElement = null;
@@ -555,6 +821,9 @@ export function resetRewardAdState() {
   // Reset button state
   buttonActive = false;
   customTextActive = false;
+  // Reset countdown state
+  remainingSeconds = 0;
+  timerCaptured = false;
 }
 
 /**
@@ -603,6 +872,9 @@ export function debugAdElements() {
   console.log('  buttonActive:', buttonActive);
   console.log('  currentCustomText:', currentCustomText);
   console.log('  rewardGrantedText:', rewardGrantedText);
+  console.log('  remainingSeconds:', remainingSeconds);
+  console.log('  timerCaptured:', timerCaptured);
+  console.log('  countdownInterval active:', !!countdownInterval);
   
   // Try to find elements manually
   const manualTimerElement = document.getElementById('pw-remaining-timer-top');
@@ -615,5 +887,56 @@ export function debugAdElements() {
   
   if (manualTimerElement) {
     console.log('  Timer element content:', manualTimerElement.innerHTML);
+    console.log('  Timer element textContent:', manualTimerElement.textContent);
+    console.log('  Timer element innerText:', manualTimerElement.innerText);
+  }
+}
+
+/**
+ * Force start countdown with current settings (for testing)
+ */
+export function forceStartCountdown() {
+  if (remainingSeconds <= 0) {
+    console.log('🧪 No remaining seconds set, using default 30');
+    remainingSeconds = 30;
+  }
+  timerCaptured = true;
+  console.log('🧪 Force starting countdown with', remainingSeconds, 'seconds');
+  startCustomCountdown();
+}
+
+/**
+ * Test function to manually parse timer text (useful for testing)
+ * @param {string} timerText - The timer text to parse
+ */
+export function testParseTimer(timerText) {
+  console.log('🧪 Testing timer parsing with:', timerText);
+  const seconds = parseTimerText(timerText);
+  console.log('🧪 Parsed seconds:', seconds);
+  return seconds;
+}
+
+/**
+ * Test function to manually start countdown with specific time (useful for testing)
+ * @param {number} seconds - Number of seconds for countdown
+ * @param {string} customText - Optional custom text to use (defaults to current)
+ */
+export function testCountdown(seconds, customText = null) {
+  console.log('🧪 Starting test countdown with', seconds, 'seconds');
+  if (customText) {
+    currentCustomText = customText;
+    console.log('🧪 Using custom text:', customText);
+  }
+  remainingSeconds = seconds;
+  timerCaptured = true;
+  if (timerElement) {
+    startCustomCountdown();
+  } else {
+    console.warn('🧪 No timer element found, cannot start test countdown');
+    // Show example of what it would look like
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    const formattedTime = `${minutes}:${secs.toString().padStart(2, '0')}`;
+    console.log('🧪 Would display:', `${currentCustomText} ${formattedTime}`);
   }
 }

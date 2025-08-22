@@ -39,7 +39,7 @@
     // Try to show reward ad first
     if (isRewardAdReady()) {
       try {
-        await showRewardAd("Continue to Jam after the ad");
+        await showRewardAd("Continue to Jam in");
         console.log("User watched reward ad before starting Jam!");
       } catch (error) {
         console.log(
