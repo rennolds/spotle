@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
   import { browser } from "$app/environment";
-  import { initializeRewardAdListeners } from "$lib/rewardAds.js";
 
   export let PUB_ID;
   export let WEBSITE_ID;
@@ -26,8 +25,6 @@
         window.ramp.que.push(() => {
           window.ramp.spaNewPage();
           window.ramp.addTag("standard_iab_head1");
-          // Initialize reward ad listeners after ramp is loaded
-          initializeRewardAdListeners();
         });
       };
     });
