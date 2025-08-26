@@ -189,8 +189,6 @@ function startContinueProtection() {
     clearInterval(continueProtectionInterval);
   }
   
-  console.log('🔘 Starting aggressive continue text protection');
-  
   let lastAppliedStyling = false;
   let consecutiveCorrections = 0;
   
@@ -257,8 +255,7 @@ function stopContinueProtection() {
  */
 function startContinueMutationObserver() {
   if (!timerElement) return;
-  
-  console.log('🔘 Starting continue MutationObserver');
+
   
   const continueObserver = new MutationObserver((mutations) => {
     if (!buttonActive || !timerElement) return;
@@ -615,7 +612,6 @@ function setContinueText(continueText = 'Continue') {
   }
   
   if (timerElement) {
-    console.log('🔘 Setting continue text and click handler...');
     
     // Set the continue text
     timerElement.innerHTML = continueText;
@@ -634,10 +630,6 @@ function setContinueText(continueText = 'Continue') {
     
     // Also add a dedicated MutationObserver for continue protection
     startContinueMutationObserver();
-    
-    console.log('🔘 Continue text and click handler set up successfully');
-  } else {
-    console.warn('🔘 timerElement not found, cannot set continue text');
   }
 }
 
@@ -711,23 +703,9 @@ function applyContinueTextStyling() {
  * Close the reward ad by triggering the close mechanism
  */
 function closeRewardAd() {
-  try {
-    // Try to find and click the close button
-    const closeButton = document.querySelector('[data-pw-close]') || 
-                       document.querySelector('.pw-close-btn') ||
-                       document.querySelector('#pw-close-btn') ||
-                       document.querySelector('[aria-label*="close" i]') ||
-                       document.querySelector('[title*="close" i]');
-    
-    if (closeButton) {
-      console.log('🎯 Found close button, clicking it');
-      closeButton.click();
-    } else {
-      console.log('🎯 No close button found, trying alternative methods');
       // Try to dispatch a close event
-      if (window.ramp && window.ramp.close) {
-        window.ramp.close();
-      } else {
+
+        console.log('🎯 No close button found, trying alternative methods');
         // Fallback: try to hide the ad overlay
         const adOverlay = document.querySelector('[id*="ramp"]') || 
                          document.querySelector('[class*="ramp"]') ||
@@ -736,12 +714,7 @@ function closeRewardAd() {
         if (adOverlay) {
           adOverlay.style.display = 'none';
         }
-      }
-    }
-  } catch (error) {
-    console.warn('Could not close reward ad:', error);
   }
-}
 
 /**
  * Wait for the timer element to appear in the DOM and be populated with timer text
@@ -844,25 +817,21 @@ export function initRewardAds() {
     // Disconnect observer to prevent it from interfering
     if (timerObserver) {
       timerObserver.disconnect();
-      console.log("🎁 Disconnected mutation observer");
     }
     
     // Add a small delay to let any Playwire processes complete first
     setTimeout(() => {
-      console.log("🎁 Calling setContinueText after delay...");
       setContinueText(rewardGrantedText);
     }, 100);
   });
 
   // Listen for early close
   window.addEventListener("rewardedCloseButtonTriggered", () => {
-    console.log("❌ User closed ad early");
     cleanupTimerCustomization();
   });
 
   // Listen for close after qualifying for reward
   window.addEventListener("userClosedWithRewardCanResolve", () => {
-    console.log("✅ User closed ad but earned reward");
     cleanupTimerCustomization();
   });
 
@@ -907,13 +876,10 @@ export function showRewardAd(waitingText = 'Continue to Spotle after the ad', bu
     // Reset button state for new ad (in case of multiple ads)
     buttonActive = false;
     customTextActive = false;
-    
-    console.log("🎬 Starting new reward ad, reset button state");
 
     // Use skipConfirmation: true for clean integration
     window.ramp.manuallyCreateRewardUi({ skipConfirmation: true })
       .then(() => {
-        console.log("✅ Reward granted");
         resolve();
       })
       .catch((error) => {
@@ -959,135 +925,3 @@ function cleanupTimerCustomization() {
   checkmarkElement = null;
 }
 
-/**
- * Reset reward ad ready state
- * Call this if you need to refresh the reward ad availability
- */
-export function resetRewardAdState() {
-  rewardAdReady = false;
-  cleanupTimerCustomization();
-  // Reset text to defaults
-  currentCustomText = 'Continue to Spotle after the ad';
-  rewardGrantedText = 'Continue';
-  // Reset button state
-  buttonActive = false;
-  customTextActive = false;
-  // Reset countdown state
-  remainingSeconds = 0;
-  timerCaptured = false;
-}
-
-/**
- * Force update the ad text (useful for testing or manual control)
- * @param {string} text - The text to display
- */
-export function updateAdText(text) {
-  setCustomText(text);
-}
-
-/**
- * Apply app styling to the ad timer element (useful for manual control)
- * Applies Inter font, lime green color, and dark background to match the app
- */
-export function applyAdStyling() {
-  applyCustomStyling();
-}
-
-/**
- * Manually close the reward ad (useful for external control)
- * Attempts to close the ad using various methods
- */
-export function closeAd() {
-  closeRewardAd();
-}
-
-/**
- * Manually create the continue text (useful for testing)
- * @param {string} continueText - The text to display
- */
-export function createContinueText(continueText = 'Test Continue') {
-  console.log('🧪 Manual continue text creation called');
-  setContinueText(continueText);
-}
-
-/**
- * Debug function to check the current state of ad elements
- */
-export function debugAdElements() {
-  console.log('🔍 Debug Ad Elements:');
-  console.log('  timerElement:', timerElement);
-  console.log('  backgroundElement:', backgroundElement);
-  console.log('  animationElement:', animationElement);
-  console.log('  checkmarkElement:', checkmarkElement);
-  console.log('  customTextActive:', customTextActive);
-  console.log('  buttonActive:', buttonActive);
-  console.log('  currentCustomText:', currentCustomText);
-  console.log('  rewardGrantedText:', rewardGrantedText);
-  console.log('  remainingSeconds:', remainingSeconds);
-  console.log('  timerCaptured:', timerCaptured);
-  console.log('  countdownInterval active:', !!countdownInterval);
-  console.log('  countdownProtectionInterval active:', !!countdownProtectionInterval);
-  console.log('  continueProtectionInterval active:', !!continueProtectionInterval);
-  
-  // Try to find elements manually
-  const manualTimerElement = document.getElementById('pw-remaining-timer-top');
-  const manualBackgroundElement = document.getElementById('pw-rewarded-countdown-label');
-  
-  console.log('  Manual timer element found:', !!manualTimerElement);
-  console.log('  Manual background element found:', !!manualBackgroundElement);
-  
-  if (manualTimerElement) {
-    console.log('  Timer element content:', manualTimerElement.innerHTML);
-    console.log('  Timer element textContent:', manualTimerElement.textContent);
-    console.log('  Timer element innerText:', manualTimerElement.innerText);
-  }
-}
-
-/**
- * Force start countdown with current settings (for testing)
- */
-export function forceStartCountdown() {
-  if (remainingSeconds <= 0) {
-    console.log('🧪 No remaining seconds set, using default 30');
-    remainingSeconds = 30;
-  }
-  timerCaptured = true;
-  console.log('🧪 Force starting countdown with', remainingSeconds, 'seconds');
-  startCustomCountdown();
-}
-
-/**
- * Test function to manually parse timer text (useful for testing)
- * @param {string} timerText - The timer text to parse
- */
-export function testParseTimer(timerText) {
-  console.log('🧪 Testing timer parsing with:', timerText);
-  const seconds = parseTimerText(timerText);
-  console.log('🧪 Parsed seconds:', seconds);
-  return seconds;
-}
-
-/**
- * Test function to manually start countdown with specific time (useful for testing)
- * @param {number} seconds - Number of seconds for countdown
- * @param {string} customText - Optional custom text to use (defaults to current)
- */
-export function testCountdown(seconds, customText = null) {
-  console.log('🧪 Starting test countdown with', seconds, 'seconds');
-  if (customText) {
-    currentCustomText = customText;
-    console.log('🧪 Using custom text:', customText);
-  }
-  remainingSeconds = seconds;
-  timerCaptured = true;
-  if (timerElement) {
-    startCustomCountdown();
-  } else {
-    console.warn('🧪 No timer element found, cannot start test countdown');
-    // Show example of what it would look like
-    const minutes = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    const formattedTime = `${minutes}:${secs.toString().padStart(2, '0')}`;
-    console.log('🧪 Would display:', `${currentCustomText} ${formattedTime}`);
-  }
-}
