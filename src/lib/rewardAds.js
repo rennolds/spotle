@@ -32,7 +32,6 @@ function parseTimerText(timerText) {
       const minutes = parseInt(match[1], 10);
       const seconds = parseInt(match[2], 10);
       const totalSeconds = (minutes * 60) + seconds;
-      console.log(`⏱️ Parsed timer: ${minutes}:${match[2]} = ${totalSeconds} seconds`);
       return totalSeconds;
     }
   } catch (error) {
@@ -51,13 +50,11 @@ function captureOriginalTimer() {
   
   try {
     const originalText = timerElement.innerHTML || timerElement.textContent || timerElement.innerText || '';
-    console.log('⏱️ Original timer text:', originalText);
     
     if (originalText.includes('until reward')) {
       remainingSeconds = parseTimerText(originalText);
       if (remainingSeconds > 0) {
         timerCaptured = true;
-        console.log(`⏱️ Successfully captured timer: ${remainingSeconds} seconds remaining`);
         return true;
       }
     }
@@ -70,7 +67,6 @@ function captureOriginalTimer() {
       remainingSeconds = (minutes * 60) + seconds;
       if (remainingSeconds > 0) {
         timerCaptured = true;
-        console.log(`⏱️ Successfully captured timer from format: ${timeMatch[0]} = ${remainingSeconds} seconds`);
         return true;
       }
     }
@@ -90,7 +86,6 @@ async function captureTimerWithRetries() {
   const delayMs = 200;
   
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    console.log(`⏱️ Timer capture attempt ${attempt}/${maxAttempts}`);
     
     if (captureOriginalTimer()) {
       return true;
@@ -115,7 +110,6 @@ function startCustomCountdown() {
     return;
   }
   
-  console.log(`⏱️ Starting custom countdown with ${remainingSeconds} seconds`);
   
   // Update display immediately
   updateCountdownDisplay();
@@ -125,7 +119,6 @@ function startCustomCountdown() {
     remainingSeconds--;
     
     if (remainingSeconds <= 0) {
-      console.log('⏱️ Countdown completed!');
       stopCustomCountdown();
       // Timer completed, show continue text
       setContinueText(rewardGrantedText);
@@ -146,8 +139,6 @@ function startCountdownProtection() {
     clearInterval(countdownProtectionInterval);
   }
   
-  console.log('⏱️ Starting countdown protection');
-  
   // Check every 50ms to maintain our countdown display
   countdownProtectionInterval = setInterval(() => {
     if (!timerElement || !countdownInterval || !timerCaptured || buttonActive) {
@@ -161,7 +152,6 @@ function startCountdownProtection() {
       
       // If the text has been changed to something that's not our format, restore it
       if (!isOurCountdownFormat && currentText !== rewardGrantedText) {
-        console.log('⏱️ Protection: Restoring our countdown display');
         updateCountdownDisplay();
       }
     } catch (error) {
@@ -177,7 +167,6 @@ function stopCountdownProtection() {
   if (countdownProtectionInterval) {
     clearInterval(countdownProtectionInterval);
     countdownProtectionInterval = null;
-    console.log('⏱️ Stopped countdown protection');
   }
 }
 
@@ -205,8 +194,6 @@ function startContinueProtection() {
       // If the text has been changed away from our continue text, restore it immediately
       if (currentText !== rewardGrantedText) {
         consecutiveCorrections++;
-        console.log(`🔘 Protection: Detected text change from "${rewardGrantedText}" to "${currentText}" (correction #${consecutiveCorrections})`);
-        console.log(`🔘 Protection: Element properties - innerHTML: "${timerElement.innerHTML}", textContent: "${timerElement.textContent}", innerText: "${timerElement.innerText}"`);
         
         // Force our text back using multiple methods
         timerElement.innerHTML = rewardGrantedText;
@@ -218,8 +205,6 @@ function startContinueProtection() {
           timerElement.childNodes[0].nodeValue = rewardGrantedText;
         }
         
-        console.log(`🔘 Protection: After restoration - innerHTML: "${timerElement.innerHTML}", textContent: "${timerElement.textContent}"`);
-        
         // Only reapply styling occasionally to prevent jerking
         if (consecutiveCorrections % 10 === 1 && !lastAppliedStyling) {
           applyContinueTextStyling();
@@ -229,7 +214,6 @@ function startContinueProtection() {
       } else {
         // Reset counter when text is correct
         if (consecutiveCorrections > 0) {
-          console.log(`🔘 Protection: Text stabilized after ${consecutiveCorrections} corrections`);
           consecutiveCorrections = 0;
         }
       }
@@ -246,7 +230,6 @@ function stopContinueProtection() {
   if (continueProtectionInterval) {
     clearInterval(continueProtectionInterval);
     continueProtectionInterval = null;
-    console.log('🔘 Stopped continue text protection');
   }
 }
 
@@ -265,7 +248,6 @@ function startContinueMutationObserver() {
         const currentText = timerElement.innerHTML || timerElement.textContent || timerElement.innerText || '';
         
         if (currentText !== rewardGrantedText) {
-          console.log(`🔘 MutationObserver: Detected change to "${currentText}", restoring "${rewardGrantedText}"`);
           
           // Immediately restore our text
           timerElement.innerHTML = rewardGrantedText;
@@ -395,7 +377,6 @@ async function blockTimerScript() {
           if (countdownInterval && timerCaptured) {
             const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
             if (!isOurCountdownFormat) {
-              console.log('⏱️ Observer: Original timer trying to override, restoring countdown');
               updateCountdownDisplay();
             }
             return;
@@ -408,7 +389,6 @@ async function blockTimerScript() {
           
           // If we haven't captured the timer yet and see timer text, try to capture it
           if (!timerCaptured && (currentText.includes(':') && (currentText.includes('until reward') || currentText.match(/\d+:\d{2}/)))) {
-            console.log('⏱️ Found timer text via observer, attempting to capture...');
             if (captureOriginalTimer()) {
               // Stop any existing polling and start countdown
               if (pollingInterval) {
@@ -566,7 +546,6 @@ function setContinueText(continueText = 'Continue') {
  * Handle continue text click
  */
 function handleContinueClick() {
-  console.log('User clicked continue text, closing ad');
   closeRewardAd();
 }
 
@@ -577,7 +556,6 @@ function applyContinueTextStyling() {
   if (timerElement) {
     // Check if styling is already applied to avoid redundant applications
     if (timerElement.style.backgroundColor === 'rgb(203, 255, 112)') {
-      console.log('🔘 Styling already applied, skipping');
       return;
     }
     
@@ -588,7 +566,7 @@ function applyContinueTextStyling() {
       color: "#121212",
       backgroundColor: "#CBFF70",
       textAlign: "center",
-      lineHeight: "1.2",
+      lineHeight: "24px",
       padding: "8px 24px",
       borderRadius: "100px",
       cursor: "pointer",
@@ -657,10 +635,8 @@ function waitForTimerElement() {
         const text = element.innerHTML || element.textContent || element.innerText || '';
         // Wait for the element to have timer content or be non-empty
         if (text.trim() !== '') {
-          console.log('⏱️ Timer element found with content:', text);
           resolve(element);
         } else {
-          console.log('⏱️ Timer element found but empty, waiting...');
           setTimeout(checkForElement, 100);
         }
       } else {
@@ -707,8 +683,6 @@ export function initRewardAds() {
       timerObserver = null;
     }
     
-    console.log("🎬 Reset all state for new ad");
-    
     // Wait for the timer element to appear and then customize it
     try {
       await waitForTimerElement();
@@ -726,7 +700,6 @@ export function initRewardAds() {
 
   // Listen for reward granted
   window.addEventListener("rewardedAdRewardGranted", () => {
-    console.log("🎁 Reward granted to user");
     
     // Immediately stop all timers and observers
     customTextActive = false;
