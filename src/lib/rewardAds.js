@@ -612,11 +612,8 @@ function applyContinueTextStyling() {
 /**
  * Close the reward ad by triggering the close mechanism
  */
-function closeRewardAd() {
-    const adOverlay = document.querySelector('[id*="ramp"]') || 
-                      document.querySelector('[class*="ramp"]') ||
-                      document.querySelector('[id*="reward"]') ||
-                      document.querySelector('[class*="reward"]');
+  function closeRewardAd() {
+    const adOverlay = document.getElementById('rewarded_ad_video_overlay');
     if (adOverlay) {
       adOverlay.style.display = 'none';
     }
