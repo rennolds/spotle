@@ -15,6 +15,7 @@ let currentCustomText = 'Continue to Spotle after the ad'; // Default text
 let rewardGrantedText = 'Continue'; // Text when reward is granted
 let countdownInterval = null; // For our custom countdown timer
 let countdownProtectionInterval = null; // For protecting our countdown from interference
+let continueProtectionInterval = null; // For protecting our continue text from interference
 let remainingSeconds = 0; // Time remaining in seconds
 let timerCaptured = false; // Flag to track if we've captured the original timer
 
@@ -126,8 +127,8 @@ function startCustomCountdown() {
     if (remainingSeconds <= 0) {
       console.log('⏱️ Countdown completed!');
       stopCustomCountdown();
-      // Timer completed, show button
-      setContinueButton(rewardGrantedText);
+      // Timer completed, show continue text
+      setContinueText(rewardGrantedText);
     } else {
       updateCountdownDisplay();
     }
@@ -159,7 +160,7 @@ function startCountdownProtection() {
       const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
       
       // If the text has been changed to something that's not our format, restore it
-      if (!isOurCountdownFormat && !currentText.includes('spotle-continue-btn')) {
+      if (!isOurCountdownFormat && currentText !== rewardGrantedText) {
         console.log('⏱️ Protection: Restoring our countdown display');
         updateCountdownDisplay();
       }
@@ -177,6 +178,132 @@ function stopCountdownProtection() {
     clearInterval(countdownProtectionInterval);
     countdownProtectionInterval = null;
     console.log('⏱️ Stopped countdown protection');
+  }
+}
+
+/**
+ * Start continue text protection to prevent Playwire from overriding with "Reward Granted"
+ */
+function startContinueProtection() {
+  if (continueProtectionInterval) {
+    clearInterval(continueProtectionInterval);
+  }
+  
+  console.log('🔘 Starting aggressive continue text protection');
+  
+  let lastAppliedStyling = false;
+  let consecutiveCorrections = 0;
+  
+  // Very aggressive 16ms intervals (60fps) to catch any changes immediately
+  continueProtectionInterval = setInterval(() => {
+    if (!timerElement || !buttonActive) {
+      stopContinueProtection();
+      return;
+    }
+    
+    try {
+      const currentText = timerElement.innerHTML || timerElement.textContent || timerElement.innerText || '';
+      
+      // If the text has been changed away from our continue text, restore it immediately
+      if (currentText !== rewardGrantedText) {
+        consecutiveCorrections++;
+        console.log(`🔘 Protection: Detected text change from "${rewardGrantedText}" to "${currentText}" (correction #${consecutiveCorrections})`);
+        console.log(`🔘 Protection: Element properties - innerHTML: "${timerElement.innerHTML}", textContent: "${timerElement.textContent}", innerText: "${timerElement.innerText}"`);
+        
+        // Force our text back using multiple methods
+        timerElement.innerHTML = rewardGrantedText;
+        timerElement.textContent = rewardGrantedText;
+        timerElement.innerText = rewardGrantedText;
+        
+        // Also try direct node manipulation as a fallback
+        if (timerElement.childNodes.length > 0) {
+          timerElement.childNodes[0].nodeValue = rewardGrantedText;
+        }
+        
+        console.log(`🔘 Protection: After restoration - innerHTML: "${timerElement.innerHTML}", textContent: "${timerElement.textContent}"`);
+        
+        // Reapply styling every few corrections to ensure it's maintained
+        if (consecutiveCorrections % 3 === 1 || !lastAppliedStyling) {
+          applyContinueTextStyling();
+          lastAppliedStyling = true;
+          setTimeout(() => { lastAppliedStyling = false; }, 100);
+        }
+      } else {
+        // Reset counter when text is correct
+        if (consecutiveCorrections > 0) {
+          console.log(`🔘 Protection: Text stabilized after ${consecutiveCorrections} corrections`);
+          consecutiveCorrections = 0;
+        }
+      }
+    } catch (error) {
+      // Ignore errors
+    }
+  }, 16); // Very aggressive 16ms (60fps) for immediate response
+}
+
+/**
+ * Stop continue text protection
+ */
+function stopContinueProtection() {
+  if (continueProtectionInterval) {
+    clearInterval(continueProtectionInterval);
+    continueProtectionInterval = null;
+    console.log('🔘 Stopped continue text protection');
+  }
+}
+
+/**
+ * Start a dedicated MutationObserver for continue text protection
+ */
+function startContinueMutationObserver() {
+  if (!timerElement) return;
+  
+  console.log('🔘 Starting continue MutationObserver');
+  
+  const continueObserver = new MutationObserver((mutations) => {
+    if (!buttonActive || !timerElement) return;
+    
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList' || mutation.type === 'characterData') {
+        const currentText = timerElement.innerHTML || timerElement.textContent || timerElement.innerText || '';
+        
+        if (currentText !== rewardGrantedText) {
+          console.log(`🔘 MutationObserver: Detected change to "${currentText}", restoring "${rewardGrantedText}"`);
+          
+          // Immediately restore our text
+          timerElement.innerHTML = rewardGrantedText;
+          timerElement.textContent = rewardGrantedText;
+          timerElement.innerText = rewardGrantedText;
+          
+          // Reapply styling
+          applyContinueTextStyling();
+        }
+      }
+    });
+  });
+  
+  // Observe all possible changes
+  continueObserver.observe(timerElement, {
+    childList: true,
+    subtree: true,
+    characterData: true,
+    attributes: true,
+    attributeOldValue: true,
+    characterDataOldValue: true
+  });
+  
+  // Store reference for cleanup
+  timerElement._continueObserver = continueObserver;
+}
+
+/**
+ * Stop the continue MutationObserver
+ */
+function stopContinueMutationObserver() {
+  if (timerElement && timerElement._continueObserver) {
+    timerElement._continueObserver.disconnect();
+    delete timerElement._continueObserver;
+    console.log('🔘 Stopped continue MutationObserver');
   }
 }
 
@@ -206,7 +333,7 @@ function stopCustomCountdown() {
     console.log('⏱️ Stopped custom countdown');
   }
   
-  // Also stop protection
+  // Also stop countdown protection
   stopCountdownProtection();
 }
 
@@ -241,7 +368,7 @@ function startTextPolling() {
     if (countdownInterval && timerCaptured) {
       // Only update if it's not our custom format
       const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
-      if (!isOurCountdownFormat && !currentText.includes('spotle-continue-btn')) {
+      if (!isOurCountdownFormat && currentText !== rewardGrantedText) {
         // Force our countdown display back
         updateCountdownDisplay();
       }
@@ -249,10 +376,10 @@ function startTextPolling() {
     }
     
     // If the text has been changed by the timer script, restore our custom text
-    // But don't override if we have a button or if it's our custom countdown format
+    // But don't override if we have continue text or if it's our custom countdown format
     const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
     if (currentText !== currentCustomText && 
-        !currentText.includes('spotle-continue-btn') &&
+        currentText !== rewardGrantedText &&
         !isOurCountdownFormat &&
         (currentText.includes(':') || currentText.includes ('Reward Granted') || currentText.includes('until reward') || currentText.trim() === '')) {
       setCustomText(currentCustomText);
@@ -316,8 +443,8 @@ async function blockTimerScript() {
             currentText = '';
           }
           
-          // Don't override if we have a button
-          if (currentText.includes('spotle-continue-btn')) {
+          // Don't override if we have continue text
+          if (currentText === rewardGrantedText) {
             return;
           }
           
@@ -451,112 +578,132 @@ function setCustomText(text) {
 }
 
 /**
- * Create and set a continue button in the timer element
- * @param {string} buttonText - The text to display on the button
+ * Set continue text and add click handler to timer element
+ * @param {string} continueText - The text to display (default: "Continue")
  */
-function setContinueButton(buttonText = 'Continue') {
-  console.log('🔘 setContinueButton called with text:', buttonText);
+function setContinueText(continueText = 'Continue') {
+  console.log('🔘 setContinueText called with text:', continueText);
   console.log('🔘 timerElement exists:', !!timerElement);
   
-  // Set button active flag to stop all polling and observers
+  // Set button active flag to stop all other protection systems
   buttonActive = true;
   customTextActive = false;
   
-  // Stop polling immediately
+  // STOP ALL OTHER INTERVALS/OBSERVERS to prevent conflicts
   if (pollingInterval) {
     clearInterval(pollingInterval);
     pollingInterval = null;
-    console.log('🔘 Stopped polling for button creation');
+    console.log('🔘 Stopped polling interval');
+  }
+  
+  if (countdownInterval) {
+    clearInterval(countdownInterval);
+    countdownInterval = null;
+    console.log('🔘 Stopped countdown interval');
+  }
+  
+  if (countdownProtectionInterval) {
+    clearInterval(countdownProtectionInterval);
+    countdownProtectionInterval = null;
+    console.log('🔘 Stopped countdown protection interval');
+  }
+  
+  if (timerObserver) {
+    timerObserver.disconnect();
+    timerObserver = null;
+    console.log('🔘 Disconnected mutation observer');
   }
   
   if (timerElement) {
-    console.log('🔘 Creating button HTML...');
+    console.log('🔘 Setting continue text and click handler...');
     
-    // Create a styled button element
-    const buttonHTML = `
-      <button 
-        id="spotle-continue-btn" 
-        style="
-          background-color: #CBFF70 !important;
-          color: #121212 !important;
-          border: none !important;
-          border-radius: 100px !important;
-          padding: 8px 16px !important;
-          font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-          font-weight: 600 !important;
-          font-size: 14px !important;
-          cursor: pointer !important;
-          transition: transform 0.2s ease !important;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
-          display: inline-block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          z-index: 9999 !important;
-          position: relative !important;
-        "
-        onmouseover="this.style.transform='scale(1.05)'"
-        onmouseout="this.style.transform='scale(1)'"
-      >
-        ${buttonText}
-      </button>
-    `;
+    // Set the continue text
+    timerElement.innerHTML = continueText;
     
-    console.log('🔘 Setting button HTML to timer element...');
-    // Set the button HTML
-    timerElement.innerHTML = buttonHTML;
+    // Apply clickable styling to make it look interactive (only once)
+    applyContinueTextStyling();
     
-    console.log('🔘 Timer element innerHTML after setting:', timerElement.innerHTML);
+    // Remove any existing click listeners to prevent duplicates
+    timerElement.removeEventListener('click', handleContinueClick);
     
-    // Start aggressive polling to maintain the button
-    const buttonProtectionInterval = setInterval(() => {
-      const currentButton = document.getElementById('spotle-continue-btn');
-      if (!currentButton && timerElement && buttonActive) {
-        console.log('🔘 Button was removed, recreating...');
-        timerElement.innerHTML = buttonHTML;
-        
-        // Re-add event listener
-        setTimeout(() => {
-          const newButton = document.getElementById('spotle-continue-btn');
-          if (newButton) {
-            newButton.addEventListener('click', () => {
-              console.log('🎯 User clicked continue button, closing ad');
-              closeRewardAd();
-            });
-          }
-        }, 50);
-      } else if (!buttonActive) {
-        clearInterval(buttonProtectionInterval);
-      }
-    }, 50);
+    // Add click event listener to close the ad
+    timerElement.addEventListener('click', handleContinueClick);
     
-    // Add click event listener to close the ad immediately
-    const button = document.getElementById('spotle-continue-btn');
-    console.log('🔘 Button found immediately:', !!button);
+    // Start aggressive protection to prevent Playwire from overriding our text
+    startContinueProtection();
     
-    if (button) {
-      console.log('🔘 Adding click event listener to button');
-      button.addEventListener('click', () => {
-        console.log('🎯 User clicked continue button, closing ad');
-        closeRewardAd();
-      });
-    } else {
-      console.warn('🔘 Button element not found after creation!');
-      // Fallback: try again after a short delay
-      setTimeout(() => {
-        const delayedButton = document.getElementById('spotle-continue-btn');
-        if (delayedButton) {
-          delayedButton.addEventListener('click', () => {
-            console.log('🎯 User clicked continue button, closing ad');
-            closeRewardAd();
-          });
-        }
-      }, 50);
+    // Also add a dedicated MutationObserver for continue protection
+    startContinueMutationObserver();
+    
+    console.log('🔘 Continue text and click handler set up successfully');
+  } else {
+    console.warn('🔘 timerElement not found, cannot set continue text');
+  }
+}
+
+/**
+ * Handle continue text click
+ */
+function handleContinueClick() {
+  console.log('🎯 User clicked continue text, closing ad');
+  closeRewardAd();
+}
+
+/**
+ * Apply clickable styling to the continue text
+ */
+function applyContinueTextStyling() {
+  if (timerElement) {
+    // Check if styling is already applied to avoid redundant applications
+    if (timerElement.style.backgroundColor === 'rgb(203, 255, 112)') {
+      console.log('🔘 Styling already applied, skipping');
+      return;
     }
     
-    // Apply text styling to the container (but not the button itself)
-    applyTextStyling();
-  } else {
-    console.warn('🔘 timerElement not found, cannot create button');
+    console.log('🔘 Applying continue text styling');
+    
+    const styles = {
+      fontFamily: "'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif",
+      fontWeight: "600",
+      fontSize: "16px",
+      color: "#121212",
+      backgroundColor: "#CBFF70",
+      textAlign: "center",
+      lineHeight: "1.2",
+      padding: "10px 20px",
+      borderRadius: "100px",
+      cursor: "pointer",
+      transition: "transform 0.2s ease",
+      boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+      display: "inline-block",
+      border: "none",
+      fontStyle: "normal",
+      textRendering: "optimizeLegibility",
+      webkitFontSmoothing: "antialiased",
+      mozOsxFontSmoothing: "grayscale",
+      verticalAlign: "middle",
+      whiteSpace: "nowrap",
+      boxSizing: "border-box",
+      margin: "0",
+      position: "relative",
+      zIndex: "1000"
+    };
+    
+    // Apply all styles at once
+    Object.assign(timerElement.style, styles);
+    
+    // Add hover effects only if not already added
+    if (!timerElement.hasAttribute('data-hover-listeners')) {
+      timerElement.addEventListener('mouseenter', () => {
+        timerElement.style.transform = 'scale(1.05)';
+      });
+      
+      timerElement.addEventListener('mouseleave', () => {
+        timerElement.style.transform = 'scale(1)';
+      });
+      
+      timerElement.setAttribute('data-hover-listeners', 'true');
+    }
   }
 }
 
@@ -700,9 +847,11 @@ export function initRewardAds() {
       console.log("🎁 Disconnected mutation observer");
     }
     
-    // Show the continue button instead of text
-    console.log("🎁 Calling setContinueButton...");
-    setContinueButton(rewardGrantedText);
+    // Add a small delay to let any Playwire processes complete first
+    setTimeout(() => {
+      console.log("🎁 Calling setContinueText after delay...");
+      setContinueText(rewardGrantedText);
+    }, 100);
   });
 
   // Listen for early close
@@ -783,8 +932,10 @@ function cleanupTimerCustomization() {
   customTextActive = false;
   buttonActive = false;
   
-  // Stop custom countdown and protection
+  // Stop custom countdown and all protection
   stopCustomCountdown();
+  stopContinueProtection();
+  stopContinueMutationObserver();
   
   if (pollingInterval) {
     clearInterval(pollingInterval);
@@ -851,12 +1002,12 @@ export function closeAd() {
 }
 
 /**
- * Manually create the continue button (useful for testing)
- * @param {string} buttonText - The text to display on the button
+ * Manually create the continue text (useful for testing)
+ * @param {string} continueText - The text to display
  */
-export function createContinueButton(buttonText = 'Test Button') {
-  console.log('🧪 Manual button creation called');
-  setContinueButton(buttonText);
+export function createContinueText(continueText = 'Test Continue') {
+  console.log('🧪 Manual continue text creation called');
+  setContinueText(continueText);
 }
 
 /**
@@ -875,15 +1026,15 @@ export function debugAdElements() {
   console.log('  remainingSeconds:', remainingSeconds);
   console.log('  timerCaptured:', timerCaptured);
   console.log('  countdownInterval active:', !!countdownInterval);
+  console.log('  countdownProtectionInterval active:', !!countdownProtectionInterval);
+  console.log('  continueProtectionInterval active:', !!continueProtectionInterval);
   
   // Try to find elements manually
   const manualTimerElement = document.getElementById('pw-remaining-timer-top');
   const manualBackgroundElement = document.getElementById('pw-rewarded-countdown-label');
-  const existingButton = document.getElementById('spotle-continue-btn');
   
   console.log('  Manual timer element found:', !!manualTimerElement);
   console.log('  Manual background element found:', !!manualBackgroundElement);
-  console.log('  Existing button found:', !!existingButton);
   
   if (manualTimerElement) {
     console.log('  Timer element content:', manualTimerElement.innerHTML);
