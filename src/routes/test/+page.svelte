@@ -350,9 +350,13 @@
   }
 
   function handleCreate() {
+    // PRELOAD CONTENT FIRST for instant loading after ad
     resetAllModes();
     createGame = true;
     playingGame = true;
+
+    // The CreateGame component will handle its own reward ad
+    // but we preload the mode state for instant UI transition
   }
 
   async function playRewind() {
@@ -362,26 +366,10 @@
       return;
     }
 
-    // Try to show reward ad first
-    if (isRewardAdReady()) {
-      try {
-        await showRewardAd("Continue to Rewind in");
-        console.log("User watched reward ad before entering Rewind mode!");
-      } catch (error) {
-        console.log(
-          "Reward ad failed or was skipped, continuing anyway:",
-          error
-        );
-      }
-    }
-
+    // PRELOAD CONTENT FIRST for instant loading after ad
     resetAllModes();
     playingGame = true;
     playingRewind = true;
-
-    if (browser && typeof gtag === "function") {
-      gtag("event", "rewind", {});
-    }
 
     mysteryArtist = lastSixDaysArtists[rewindIndex];
     mysteryArtistEntry = {
@@ -391,6 +379,25 @@
     };
     tempGuesses = [];
     guessCount = 0;
+
+    if (browser && typeof gtag === "function") {
+      gtag("event", "rewind", {});
+    }
+
+    // NOW show reward ad (content is already loaded and ready)
+    if (isRewardAdReady()) {
+      try {
+        await showRewardAd("Continue to Rewind in");
+        console.log("User watched reward ad for Rewind mode!");
+      } catch (error) {
+        console.log(
+          "Reward ad failed or was skipped, continuing anyway:",
+          error
+        );
+      }
+    }
+
+    // Content is already loaded, so user sees instant transition!
   }
 
   function shuffleEligibleArtists() {
@@ -535,7 +542,7 @@
   }
 
   function playJam() {
-
+    // PRELOAD CONTENT FIRST for instant loading
     resetAllModes();
     playingGame = true;
     playingJam = true;
@@ -562,6 +569,9 @@
 
     // Set the first artist
     setJamArtist();
+
+    // Note: JAM mode shows intro screen first, then user clicks START
+    // which triggers the reward ad in the JamMode component
   }
 
   // Event handlers
