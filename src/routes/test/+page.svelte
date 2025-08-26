@@ -356,6 +356,12 @@
   }
 
   async function playRewind() {
+    // Check if user is already in rewind mode - if so, don't show ad again
+    if (playingRewind) {
+      console.log("Already in rewind mode, skipping reward ad");
+      return;
+    }
+
     // Try to show reward ad first
     if (isRewardAdReady()) {
       try {
@@ -529,6 +535,7 @@
   }
 
   function playJam() {
+
     resetAllModes();
     playingGame = true;
     playingJam = true;

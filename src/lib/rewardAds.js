@@ -522,23 +522,30 @@ function setContinueText(continueText = 'Continue') {
   }
   
   if (timerElement) {
+    // Start protection IMMEDIATELY, even before setting text
+    startContinueProtection();
+    startContinueMutationObserver();
+    
     // Apply styling FIRST to prevent layout shifts
     applyContinueTextStyling();
     
     // Then set the continue text
     timerElement.innerHTML = continueText;
     
+    // Force the text again immediately after setting it
+    setTimeout(() => {
+      if (timerElement) {
+        timerElement.innerHTML = continueText;
+        timerElement.textContent = continueText;
+        timerElement.innerText = continueText;
+      }
+    }, 10);
+    
     // Remove any existing click listeners to prevent duplicates
     timerElement.removeEventListener('click', handleContinueClick);
     
     // Add click event listener to close the ad
     timerElement.addEventListener('click', handleContinueClick);
-    
-    // Start aggressive protection to prevent Playwire from overriding our text
-    startContinueProtection();
-    
-    // Also add a dedicated MutationObserver for continue protection
-    startContinueMutationObserver();
   }
 }
 
@@ -714,10 +721,26 @@ export function initRewardAds() {
       timerObserver.disconnect();
     }
     
-    // Add a small delay to let any Playwire processes complete first
+    // For very short ads, we need immediate protection
+    // Start protection first, then set the text
+    const setupContinueText = () => {
+      if (timerElement) {
+        setContinueText(rewardGrantedText);
+      } else {
+        // If timer element isn't ready yet, wait a bit more
+        setTimeout(setupContinueText, 50);
+      }
+    };
+    
+    // Try immediately for short ads, but also retry if needed
+    setupContinueText();
+    
+    // Also set up with a longer delay as backup
     setTimeout(() => {
-      setContinueText(rewardGrantedText);
-    }, 100);
+      if (timerElement && !timerElement.innerHTML.includes(rewardGrantedText)) {
+        setContinueText(rewardGrantedText);
+      }
+    }, 200);
   });
 
   // Listen for early close

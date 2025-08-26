@@ -8,21 +8,24 @@
   export let selectedArtist = null;
 
   let createNote = "";
-  let createShareBtnText = "SHARE";
+  let createShareBtnText = "CREATE GAME";
+  let showResults = false;
+  let shareURL = "";
+  let copyButtonText = "COPY";
   const dispatch = createEventDispatcher();
 
   function handleSearch(event) {
     dispatch("selectArtist", event.detail);
   }
 
-  async function handleCreateShare() {
+  async function handleCreateGame() {
     if (!selectedArtist) return;
 
     // Try to show reward ad first
     if (isRewardAdReady()) {
       try {
         await showRewardAd("Your share link will be ready in");
-        console.log("User watched reward ad before sharing Create Game!");
+        console.log("User watched reward ad before creating game!");
       } catch (error) {
         console.log(
           "Reward ad failed or was skipped, continuing anyway:",
@@ -31,6 +34,7 @@
       }
     }
 
+    // Generate the share URL
     const artistUint8Array = new TextEncoder().encode(selectedArtist.name);
     const noteUint8Array = new TextEncoder().encode(createNote);
 
@@ -45,90 +49,150 @@
     if (browser) {
       currentUrl = window.location.href;
     }
-    const shareURL = `${currentUrl}?artist=${encodedArtistName}&note=${encodedNote}`;
+    shareURL = `${currentUrl}?artist=${encodedArtistName}&note=${encodedNote}`;
 
     if (browser) {
       // Analytics event if available
       if (typeof gtag === "function") {
-        gtag("event", "custom_game_share", {
+        gtag("event", "custom_game_created", {
           artist: selectedArtist.name,
         });
       }
     }
 
+    // Show the results page
+    showResults = true;
+  }
+
+  function handlePlayNow() {
+    if (browser && shareURL) {
+      window.open(shareURL, "_blank");
+
+      if (typeof gtag === "function") {
+        gtag("event", "custom_game_play_now", {
+          artist: selectedArtist?.name,
+        });
+      }
+    }
+  }
+
+  function handleCopy() {
+    if (browser) {
+      navigator.clipboard
+        .writeText(shareURL)
+        .then(() => {
+          copyButtonText = "COPIED!";
+          setTimeout(() => {
+            copyButtonText = "COPY";
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error("Copy failed:", error);
+        });
+    }
+  }
+
+  function handleShare() {
     const shareText =
       "I made this Spotle for you! Guess the artist in 10 tries.\n\n" +
       shareURL;
 
-    // Share or copy based on device capabilities
-    function isMobile() {
-      const regex =
-        /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-      return regex.test(navigator.userAgent);
+    if (browser && navigator.share) {
+      navigator
+        .share({
+          text: shareText,
+        })
+        .then(() => {
+          console.log("Thanks for sharing!");
+        })
+        .catch(console.error);
+    } else {
+      // Fallback to copy
+      handleCopy();
     }
+  }
 
-    if (isMobile() && browser) {
-      if (navigator.share) {
-        navigator
-          .share({
-            text: shareText,
-          })
-          .then(() => {
-            console.log("Thanks for sharing!");
-          })
-          .catch(console.error);
-      } else {
-        createShareBtnText = "COPIED RESULT";
-        navigator.clipboard
-          .writeText(shareText)
-          .then(() => {
-            console.log("copied");
-          })
-          .catch((error) => {
-            alert(`Copy failed! ${error}`);
-          });
-      }
-    } else if (browser) {
-      createShareBtnText = "COPIED RESULT";
-      navigator.clipboard.writeText(shareText);
-    }
+  function isMobile() {
+    if (!browser) return false;
+    const regex =
+      /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return regex.test(navigator.userAgent);
+  }
+
+  function handleBackToCreate() {
+    showResults = false;
+    createShareBtnText = "CREATE GAME";
+    copyButtonText = "COPY";
   }
 </script>
 
 <div class="create-game-container">
-  <GameInfo mode="create" />
+  {#if !showResults}
+    <GameInfo mode="create" />
 
-  <!-- Always show the search bar - Important change here -->
-  <div class="search-bar-container">
-    <SearchBar placeholder="Search for an artist..." on:search={handleSearch} />
-  </div>
+    <!-- Create Game Page -->
+    <!-- Always show the search bar - Important change here -->
+    <div class="search-bar-container">
+      <SearchBar
+        placeholder="Search for an artist..."
+        on:search={handleSearch}
+      />
+    </div>
 
-  <!-- Selected artist display (only shown when an artist is selected) -->
-  {#if selectedArtist}
-    <div class="selected-artist-container">
-      <div class="header-row">
-        <img src={selectedArtist.image_uri} alt={selectedArtist.name} />
-        <h2>{selectedArtist.name}</h2>
+    <!-- Selected artist display (only shown when an artist is selected) -->
+    {#if selectedArtist}
+      <div class="selected-artist-container">
+        <div class="header-row">
+          <img src={selectedArtist.image_uri} alt={selectedArtist.name} />
+          <h2>{selectedArtist.name}</h2>
+        </div>
+
+        <div class="create-game-text">
+          <p>2.</p>
+          <h3>Leave a note for your friend.</h3>
+        </div>
+
+        <textarea
+          class="create-form"
+          placeholder="Write a hint or message here..."
+          bind:value={createNote}
+        ></textarea>
+
+        <button class="styled-btn" on:click={handleCreateGame}
+          >{createShareBtnText}</button
+        >
+      </div>
+    {/if}
+
+    <div class="ad-space"></div>
+  {:else}
+    <!-- Results Page -->
+    <div class="results-container">
+      <h2 class="results-title">Your link is ready!</h2>
+
+      <div class="url-container">
+        <input type="text" class="url-input" value={shareURL} readonly />
       </div>
 
-      <div class="create-game-text">
-        <p>2.</p>
-        <h3>Leave a note for your friend.</h3>
+      <div class="action-buttons">
+        <button class="play-now-btn" on:click={handlePlayNow}>
+          PLAY NOW
+        </button>
+
+        {#if isMobile()}
+          <button class="share-btn" on:click={handleShare}> SHARE </button>
+        {:else}
+          <button class="copy-btn" on:click={handleCopy}>
+            {copyButtonText}
+          </button>
+        {/if}
       </div>
 
-      <textarea
-        class="create-form"
-        placeholder="Write a hint or message here..."
-        bind:value={createNote}
-      ></textarea>
-
-      <button class="styled-btn" on:click={handleCreateShare}
-        >{createShareBtnText}</button
-      >
+      <button class="back-btn" on:click={handleBackToCreate}>
+        ← Create Another
+      </button>
     </div>
   {/if}
-
-  <div class="ad-space"></div>
 </div>
 
 <style>
@@ -243,5 +307,104 @@
   .ad-space {
     height: 60px; /* reduced height */
     margin-top: 15px; /* reduced margin */
+  }
+
+  /* Results Page Styles */
+  .results-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .results-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .url-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .url-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 14px;
+    font-family: monospace;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .url-input:focus {
+    outline: none;
+    border-color: #cbff70;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .play-now-btn {
+    background-color: #cbff70;
+    color: #121212;
+    border: none;
+    border-radius: 100px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .play-now-btn:hover {
+    transform: scale(1.05);
+  }
+
+  .copy-btn,
+  .share-btn {
+    background-color: transparent;
+    color: #cbff70;
+    border: 2px solid #cbff70;
+    border-radius: 100px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 110px; /* Fixed width to prevent stretching when text changes to COPIED! */
+    text-align: center;
+  }
+
+  .copy-btn:hover,
+  .share-btn:hover {
+    transform: scale(1.05);
+    background-color: rgba(203, 255, 112, 0.1);
+  }
+
+  .back-btn {
+    background-color: transparent;
+    color: #888;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    margin-top: 20px;
+  }
+
+  .back-btn:hover {
+    color: #cbff70;
   }
 </style>
