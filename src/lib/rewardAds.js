@@ -613,14 +613,13 @@ function applyContinueTextStyling() {
  * Close the reward ad by triggering the close mechanism
  */
 function closeRewardAd() {
-        // Fallback: try to hide the ad overlay
-        const adOverlay = document.querySelector('[id*="ramp"]') || 
-                         document.querySelector('[class*="ramp"]') ||
-                         document.querySelector('[id*="reward"]') ||
-                         document.querySelector('[class*="reward"]');
-        if (adOverlay) {
-          adOverlay.style.display = 'none';
-        }
+    const adOverlay = document.querySelector('[id*="ramp"]') || 
+                      document.querySelector('[class*="ramp"]') ||
+                      document.querySelector('[id*="reward"]') ||
+                      document.querySelector('[class*="reward"]');
+    if (adOverlay) {
+      adOverlay.style.display = 'none';
+    }
   }
 
 /**
