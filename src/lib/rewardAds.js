@@ -11,7 +11,7 @@ let timerObserver = null;
 let pollingInterval = null;
 let customTextActive = false;
 let buttonActive = false; // Flag to track when button is active
-let currentCustomText = 'Continue to Spotle after the ad'; // Default text
+let currentCustomText = 'Continue to Spotle in'; // Default text
 let rewardGrantedText = 'Continue'; // Text when reward is granted
 let countdownInterval = null; // For our custom countdown timer
 let countdownProtectionInterval = null; // For protecting our countdown from interference
@@ -220,11 +220,11 @@ function startContinueProtection() {
         
         console.log(`🔘 Protection: After restoration - innerHTML: "${timerElement.innerHTML}", textContent: "${timerElement.textContent}"`);
         
-        // Reapply styling every few corrections to ensure it's maintained
-        if (consecutiveCorrections % 3 === 1 || !lastAppliedStyling) {
+        // Only reapply styling occasionally to prevent jerking
+        if (consecutiveCorrections % 10 === 1 && !lastAppliedStyling) {
           applyContinueTextStyling();
           lastAppliedStyling = true;
-          setTimeout(() => { lastAppliedStyling = false; }, 100);
+          setTimeout(() => { lastAppliedStyling = false; }, 500);
         }
       } else {
         // Reset counter when text is correct
@@ -272,8 +272,7 @@ function startContinueMutationObserver() {
           timerElement.textContent = rewardGrantedText;
           timerElement.innerText = rewardGrantedText;
           
-          // Reapply styling
-          applyContinueTextStyling();
+          // Don't reapply styling to prevent jerking - it should be persistent
         }
       }
     });
@@ -300,7 +299,6 @@ function stopContinueMutationObserver() {
   if (timerElement && timerElement._continueObserver) {
     timerElement._continueObserver.disconnect();
     delete timerElement._continueObserver;
-    console.log('🔘 Stopped continue MutationObserver');
   }
 }
 
@@ -316,7 +314,6 @@ function updateCountdownDisplay() {
   const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
   const displayText = `${currentCustomText} ${formattedTime}`;
   
-  console.log(`⏱️ Updating display: ${displayText}`);
   setCustomText(displayText);
 }
 
@@ -327,61 +324,10 @@ function stopCustomCountdown() {
   if (countdownInterval) {
     clearInterval(countdownInterval);
     countdownInterval = null;
-    console.log('⏱️ Stopped custom countdown');
   }
   
   // Also stop countdown protection
   stopCountdownProtection();
-}
-
-/**
- * Start polling to maintain custom text
- * This is a more reliable approach than property overrides
- */
-function startTextPolling() {
-  customTextActive = true;
-  
-  // Set initial text
-  setCustomText(currentCustomText);
-  
-  // Poll every 100ms to maintain custom text
-  pollingInterval = setInterval(() => {
-    if (!customTextActive || !timerElement || buttonActive) {
-      clearInterval(pollingInterval);
-      pollingInterval = null;
-      return;
-    }
-    
-    // Use direct DOM access instead of properties that might be overridden
-    let currentText = '';
-    try {
-      currentText = timerElement.innerHTML || timerElement.textContent || timerElement.innerText || '';
-    } catch (error) {
-      // If we can't read the text, just set our custom text
-      currentText = '';
-    }
-    
-    // If we have an active countdown, don't let anything override it
-    if (countdownInterval && timerCaptured) {
-      // Only update if it's not our custom format
-      const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
-      if (!isOurCountdownFormat && currentText !== rewardGrantedText) {
-        // Force our countdown display back
-        updateCountdownDisplay();
-      }
-      return;
-    }
-    
-    // If the text has been changed by the timer script, restore our custom text
-    // But don't override if we have continue text or if it's our custom countdown format
-    const isOurCountdownFormat = currentText.startsWith(currentCustomText) && currentText.includes(':');
-    if (currentText !== currentCustomText && 
-        currentText !== rewardGrantedText &&
-        !isOurCountdownFormat &&
-        (currentText.includes(':') || currentText.includes ('Reward Granted') || currentText.includes('until reward') || currentText.trim() === '')) {
-      setCustomText(currentCustomText);
-    }
-  }, 75);
 }
 
 /**
@@ -550,16 +496,6 @@ function removeWhiteCheckmark() {
   }
 }
 
-/**
- * Apply all custom styling to all elements
- * Combines text styling, background styling, removes animation and checkmark
- */
-function applyCustomStyling() {
-  applyTextStyling();
-  applyBackgroundStyling();
-  removeCountdownAnimation();
-  removeWhiteCheckmark();
-}
 
 /**
  * Set custom text on the timer element and apply consistent styling
@@ -579,8 +515,6 @@ function setCustomText(text) {
  * @param {string} continueText - The text to display (default: "Continue")
  */
 function setContinueText(continueText = 'Continue') {
-  console.log('🔘 setContinueText called with text:', continueText);
-  console.log('🔘 timerElement exists:', !!timerElement);
   
   // Set button active flag to stop all other protection systems
   buttonActive = true;
@@ -590,34 +524,29 @@ function setContinueText(continueText = 'Continue') {
   if (pollingInterval) {
     clearInterval(pollingInterval);
     pollingInterval = null;
-    console.log('🔘 Stopped polling interval');
   }
   
   if (countdownInterval) {
     clearInterval(countdownInterval);
     countdownInterval = null;
-    console.log('🔘 Stopped countdown interval');
   }
   
   if (countdownProtectionInterval) {
     clearInterval(countdownProtectionInterval);
     countdownProtectionInterval = null;
-    console.log('🔘 Stopped countdown protection interval');
   }
   
   if (timerObserver) {
     timerObserver.disconnect();
     timerObserver = null;
-    console.log('🔘 Disconnected mutation observer');
   }
   
   if (timerElement) {
-    
-    // Set the continue text
-    timerElement.innerHTML = continueText;
-    
-    // Apply clickable styling to make it look interactive (only once)
+    // Apply styling FIRST to prevent layout shifts
     applyContinueTextStyling();
+    
+    // Then set the continue text
+    timerElement.innerHTML = continueText;
     
     // Remove any existing click listeners to prevent duplicates
     timerElement.removeEventListener('click', handleContinueClick);
@@ -637,7 +566,7 @@ function setContinueText(continueText = 'Continue') {
  * Handle continue text click
  */
 function handleContinueClick() {
-  console.log('🎯 User clicked continue text, closing ad');
+  console.log('User clicked continue text, closing ad');
   closeRewardAd();
 }
 
@@ -652,8 +581,6 @@ function applyContinueTextStyling() {
       return;
     }
     
-    console.log('🔘 Applying continue text styling');
-    
     const styles = {
       fontFamily: "'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif",
       fontWeight: "600",
@@ -662,7 +589,7 @@ function applyContinueTextStyling() {
       backgroundColor: "#CBFF70",
       textAlign: "center",
       lineHeight: "1.2",
-      padding: "10px 20px",
+      padding: "8px 24px",
       borderRadius: "100px",
       cursor: "pointer",
       transition: "transform 0.2s ease",
@@ -676,9 +603,14 @@ function applyContinueTextStyling() {
       verticalAlign: "middle",
       whiteSpace: "nowrap",
       boxSizing: "border-box",
-      margin: "0",
+      margin: "0 auto",
       position: "relative",
-      zIndex: "1000"
+      zIndex: "1000",
+      minWidth: "120px",
+      minHeight: "40px",
+      // Prevent layout shifts by enabling GPU acceleration
+      transform: "translateZ(0)",
+      willChange: "transform"
     };
     
     // Apply all styles at once
@@ -703,9 +635,6 @@ function applyContinueTextStyling() {
  * Close the reward ad by triggering the close mechanism
  */
 function closeRewardAd() {
-      // Try to dispatch a close event
-
-        console.log('🎯 No close button found, trying alternative methods');
         // Fallback: try to hide the ad overlay
         const adOverlay = document.querySelector('[id*="ramp"]') || 
                          document.querySelector('[class*="ramp"]') ||
@@ -798,8 +727,6 @@ export function initRewardAds() {
   // Listen for reward granted
   window.addEventListener("rewardedAdRewardGranted", () => {
     console.log("🎁 Reward granted to user");
-    console.log("🎁 rewardGrantedText:", rewardGrantedText);
-    console.log("🎁 timerElement exists:", !!timerElement);
     
     // Immediately stop all timers and observers
     customTextActive = false;
@@ -811,7 +738,6 @@ export function initRewardAds() {
     if (pollingInterval) {
       clearInterval(pollingInterval);
       pollingInterval = null;
-      console.log("🎁 Stopped polling interval");
     }
     
     // Disconnect observer to prevent it from interfering
