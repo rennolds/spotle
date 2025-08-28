@@ -6,7 +6,6 @@ export const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_K
   auth: {
     persistSession: true,
     autoRefreshToken: true,
-    // we’ll handle the URL on the callback page manually
     detectSessionInUrl: false
   }
 });

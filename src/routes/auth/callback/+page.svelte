@@ -2,62 +2,46 @@
     import { onMount } from 'svelte';
     import { supabase } from '$lib/supabaseClient';
   
-    let message = 'Signing you in…';
-    let errorMsg = '';
-  
-    // Only allow safe relative redirects like "/"
     function safeNext(raw) {
       if (!raw) return '/';
-      try {
-        if (/^https?:\/\//i.test(raw)) return '/'; // block absolute URLs
-        if (!raw.startsWith('/')) return '/';
-        return raw;
-      } catch {
-        return '/';
-      }
+      if (/^https?:\/\//i.test(raw)) return '/';
+      return raw.startsWith('/') ? raw : '/';
     }
   
     onMount(async () => {
       const url = new URL(window.location.href);
       const params = url.searchParams;
+      const next = safeNext(params.get('next'));
   
-      // If the provider appended an error, show it
-      const providerError = params.get('error');
-      const providerDesc  = params.get('error_description');
-      if (providerError) {
-        errorMsg = providerDesc ? `${providerError}: ${providerDesc}` : providerError;
-        message  = 'Sign-in failed.';
-        return;
+      // 1) Implicit flow (magic link): tokens arrive in the hash
+      if (location.hash.includes('access_token=')) {
+        const h = new URLSearchParams(location.hash.slice(1));
+        const access_token  = h.get('access_token');
+        const refresh_token = h.get('refresh_token');
+        if (access_token && refresh_token) {
+          const { error } = await supabase.auth.setSession({ access_token, refresh_token });
+          if (!error) return location.replace(next);
+        }
       }
   
-      const next = safeNext(params.get('next')); // optional ?next=/path
-  
-      try {
-        // Exchange the PKCE code in the URL for a session on THIS domain
-        const { error } = await supabase.auth.exchangeCodeForSession(window.location.href);
-        if (error) throw error;
-  
-        window.location.replace(next);
-      } catch (err) {
-        // If the code was already used, fall back to existing session (if any)
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session) return window.location.replace(next);
-  
-        errorMsg = (err && err.message) || 'Unknown error';
-        message  = 'Sign-in failed.';
+      // 2) PKCE flow (used by some OAuth flows): only try if a code is present
+      if (params.has('code')) {
+        const { error } = await supabase.auth.exchangeCodeForSession(location.href);
+        if (!error) return location.replace(next);
       }
+  
+      // 3) Already signed in?
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) return location.replace(next);
+  
+      console.error('Auth callback failed: no tokens found');
     });
   </script>
   
   <main class="min-h-[60vh] grid place-items-center p-8">
     <div class="max-w-md text-center">
-      <h1 class="text-xl font-semibold mb-2">Spotle</h1>
-      {#if errorMsg}
-        <p class="text-red-600 mb-2">{errorMsg}</p>
-        <a class="underline" href="/login">Return to login</a>
-      {:else}
-        <p>{message}</p>
-      {/if}
+      <h1 class="text-xl font-semibold mb-2">Signing you in…</h1>
+      <p>If this hangs, request a new link and open it in the same browser.</p>
     </div>
   </main>
   
