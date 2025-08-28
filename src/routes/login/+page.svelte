@@ -79,6 +79,7 @@
   
         // Build the redirect back to the originating site’s callback
         const redirectTo = `${returnTo}/auth/callback?next=${encodeURIComponent(nextPath)}`;
+        console.log('emailRedirectTo ->', redirectTo);
   
         // Send Supabase magic link. The username goes into user_metadata
         // and your DB trigger will read it to create the profile row.
