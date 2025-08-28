@@ -338,9 +338,6 @@ async function blockTimerScript() {
   if (checkmarkElement) {
     removeWhiteCheckmark();
   }
-
-  // Try to capture the original timer value with retries
-  const timerCaptured = await captureTimerWithRetries();
   
   // If we captured the timer, start our custom countdown
   if (timerCaptured) {
