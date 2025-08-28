@@ -16,13 +16,16 @@
       'https://spotle.io',
       'https://harmonies.io',
       'https://crosstune.io',
-      'http://localhost:5173',
-      'http://localhost:5174',
+      'http://localhost:5173', // Spotle dev
+      'http://localhost:5174', // Harmonies dev (adjust if needed)
+      'http://localhost:5175'  // Crosstune dev (adjust if needed)
     ];
   
-    let returnTo = 'https://spotle.io';
-    let nextPath = '/';
-
+    // Defaults; will be overridden by query params if allowed
+    let returnTo = 'https://spotle.io'; // where the email link should return
+    let nextPath = '/';                 // where to land after callback
+  
+    // lowercase letters, digits, underscore; 3–24 chars
     const unameRe = /^[a-z0-9_]{3,24}$/;
   
     onMount(() => {
@@ -32,7 +35,7 @@
   
       if (ALLOWED.includes(r)) {
         returnTo = r;
-        showForm = true;
+        showForm = true; // ✅ only render the form for approved origins
       } else {
         showForm = false;
         errorMsg = 'Unsupported origin.';
@@ -151,15 +154,7 @@
             By continuing, you agree to our Terms and Privacy Policy.
           </p>
         </form>
-      {:else}
-        <div>
-          <p>This login endpoint must be launched from a Spotle app.</p>
-          <p class="text-sm opacity-70 mt-2">
-            Hint: include <code>?r=https://harmonies.io</code> (or your app’s origin) when linking here.
-          </p>
-        </div>
       {/if}
-    {/else}
+    {/if}
   </main>
-  
   
