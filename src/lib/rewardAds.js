@@ -339,8 +339,10 @@ async function blockTimerScript() {
     removeWhiteCheckmark();
   }
   
-  // If we captured the timer, start our custom countdown
-  if (timerCaptured) {
+  // Try to capture the original timer value first
+  const captured = await captureTimerWithRetries();
+  
+  if (captured) {
     startCustomCountdown();
   } else {
     // Fallback: use a default countdown time (most ads are around 30 seconds)
@@ -617,9 +619,10 @@ function applyContinueTextStyling() {
  * Close the reward ad by triggering the close mechanism
  */
   function closeRewardAd() {
-    const adOverlay = document.getElementById('rewarded_ad_video_overlay');
-    if (adOverlay) {
-      adOverlay.style.display = 'none';
+    // Click the native close button to trigger proper UI changes and events
+    const nativeCloseButton = document.getElementById('pw-close-video-button');
+    if (nativeCloseButton) {
+      nativeCloseButton.click();
     }
   }
 
@@ -662,7 +665,6 @@ export function initRewardAds() {
 
   // Listen for user accepting to watch ad
   window.addEventListener("userAcceptsRewardedAd", async () => {
-    console.log("🎬 User started watching reward ad");
     
     // Reset all state for new ad
     buttonActive = false;
