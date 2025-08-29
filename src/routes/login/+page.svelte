@@ -142,32 +142,14 @@
     }
   }
 
-  async function handleGoogleLogin() {
-    if (!showForm) return;
-
-    errorMsg = "";
-    oauthLoading = true;
-
-    try {
-      const redirectTo = `${returnTo}/auth/callback?next=${encodeURIComponent(nextPath)}`;
-
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
+  async function handleGoogleLogin(redirectTo) {
+    await supabase.auth.signInWithOAuth({
+        provider: 'google',
         options: {
-          redirectTo: redirectTo,
+            redirectTo: redirectTo,
         },
-      });
-
-      if (error) throw error;
-
-      // The user will be redirected to Google's consent screen
-      // and then back to our callback URL
-    } catch (err) {
-      console.error("Google OAuth error:", err);
-      errorMsg = err?.message || "Failed to sign in with Google.";
-      oauthLoading = false;
+        })
     }
-  }
 </script>
 
 <main>
