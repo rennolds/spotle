@@ -14,6 +14,7 @@
   let errorMsg = "";
   let showForm = false;
   let showSlideMenu = false;
+  let oauthLoading = false;
 
   // Navbar event handlers
   function handleMenuClick() {
@@ -140,6 +141,33 @@
       loading = false;
     }
   }
+
+  async function handleGoogleLogin() {
+    if (!showForm) return;
+
+    errorMsg = "";
+    oauthLoading = true;
+
+    try {
+      const redirectTo = `${returnTo}/auth/callback?next=${encodeURIComponent(nextPath)}`;
+
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: redirectTo,
+        },
+      });
+
+      if (error) throw error;
+
+      // The user will be redirected to Google's consent screen
+      // and then back to our callback URL
+    } catch (err) {
+      console.error("Google OAuth error:", err);
+      errorMsg = err?.message || "Failed to sign in with Google.";
+      oauthLoading = false;
+    }
+  }
 </script>
 
 <main>
@@ -263,7 +291,11 @@
             </div>
 
             <div class="oauth-buttons">
-              <button class="oauth-btn google-btn" disabled>
+              <button
+                class="oauth-btn google-btn"
+                on:click={handleGoogleLogin}
+                disabled={oauthLoading}
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -282,7 +314,7 @@
                     fill="#EA4335"
                   />
                 </svg>
-                Continue with Google
+                {oauthLoading ? "Connecting..." : "Continue with Google"}
               </button>
 
               <button class="oauth-btn apple-btn" disabled>
