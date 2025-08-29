@@ -18,6 +18,7 @@ let countdownProtectionInterval = null; // For protecting our countdown from int
 let continueProtectionInterval = null; // For protecting our continue text from interference
 let remainingSeconds = 0; // Time remaining in seconds
 let timerCaptured = false; // Flag to track if we've captured the original timer
+let isPageVisible = true; // Track page visibility state
 
 /**
  * Parse timer text in format "M:SS until reward" and return total seconds
@@ -116,15 +117,19 @@ function startCustomCountdown() {
   
   // Start interval to update every second
   countdownInterval = setInterval(() => {
-    remainingSeconds--;
-    
-    if (remainingSeconds <= 0) {
-      stopCustomCountdown();
-      // Timer completed, show continue text
-      setContinueText(rewardGrantedText);
-    } else {
-      updateCountdownDisplay();
+    // Only decrease timer if page is visible
+    if (isPageVisible) {
+      remainingSeconds--;
+      
+      if (remainingSeconds <= 0) {
+        stopCustomCountdown();
+        // Timer completed, show continue text
+        setContinueText(rewardGrantedText);
+      } else {
+        updateCountdownDisplay();
+      }
     }
+    // If page is not visible, just skip this tick but keep the interval running
   }, 1000);
   
   // Start aggressive protection against original timer interference
@@ -656,6 +661,11 @@ function waitForTimerElement() {
  */
 export function initRewardAds() {
   if (!browser || eventListenersSetup) return;
+
+  // Set up page visibility tracking to pause timer when user tabs away
+  document.addEventListener('visibilitychange', () => {
+    isPageVisible = !document.hidden;
+  });
 
   // Listen for when reward ad is ready
   window.addEventListener("rewardedAdVideoRewardReady", () => {
