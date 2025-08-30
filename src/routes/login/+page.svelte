@@ -55,20 +55,28 @@
     "http://localhost:5175",
   ];
   const unameRe = /^[a-z0-9_]{3,24}$/;
-  let returnTo = "https://spotle.io";
+  let returnTo = "";
   let nextPath = "/";
+  let redirectTo = "";
 
   onMount(() => {
     const url = new URL(window.location.href);
-    const r = url.searchParams.get("r") || window.location.origin;
+    const r = url.searchParams.get("r");
     const n = url.searchParams.get("next");
-    if (ALLOWED.includes(r)) {
-      returnTo = r;
+    const candidateReturnTo = r || window.location.origin;
+
+    if (ALLOWED.includes(candidateReturnTo)) {
+      returnTo = candidateReturnTo;
+      redirectTo = `${returnTo}/auth/callback`;
       showForm = true;
     } else {
       errorMsg = "Unsupported origin.";
     }
     if (n && n.startsWith("/")) nextPath = n;
+
+    console.log("redirectTo", redirectTo);
+    console.log("returnTo", returnTo);
+    console.log("nextPath", nextPath);
   });
 
   async function onSubmit(e) {
@@ -77,7 +85,6 @@
 
     errorMsg = "";
     sent = false;
-    const redirectTo = `${returnTo}/auth/callback?next=${encodeURIComponent(nextPath)}`;
 
     if (!email || !email.includes("@")) {
       errorMsg = "Enter a valid email.";
@@ -109,7 +116,7 @@
         const { error } = await supabase.auth.signInWithOtp({
           email,
           options: {
-            emailRedirectTo: returnTo,
+            emailRedirectTo: redirectTo,
             data: { username: uname }, // trigger uses this to create the profile row
           },
         });
@@ -119,7 +126,7 @@
         const { error } = await supabase.auth.signInWithOtp({
           email,
           options: {
-            emailRedirectTo: returnTo,
+            emailRedirectTo: redirectTo,
             shouldCreateUser: false, // <- key difference
           },
         });
@@ -144,12 +151,12 @@
 
   async function handleGoogleLogin(redirectTo) {
     await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-            redirectTo: redirectTo,
-        },
-        })
-    }
+      provider: "google",
+      options: {
+        redirectTo: redirectTo,
+      },
+    });
+  }
 </script>
 
 <main>
