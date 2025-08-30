@@ -152,8 +152,11 @@
 
   async function handleGoogleLogin() {
     if (!browser) return;
+
+    const base = returnTo && ALLOWED.includes(returnTo) ? returnTo : window.location.origin;
+
     const nextParam = encodeURIComponent(nextPath || "/");
-    window.location.href = `/auth/oauth?provider=google&next=${nextParam}`;
+    window.location.href = `${base}/auth/oauth?provider=google&next=${nextParam}`;
   }
 </script>
 
