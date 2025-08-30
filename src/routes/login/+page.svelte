@@ -6,7 +6,7 @@
   import Ramp from "../Ramp.svelte";
   import { browser } from "$app/environment";
 
-  let mode = "create"; // 'login' | 'create' - default to create account
+  let mode = "create";
   let email = "";
   let username = "";
   let loading = false;
@@ -78,6 +78,7 @@
     errorMsg = "";
     sent = false;
     const redirectTo = `${returnTo}/auth/callback?next=${encodeURIComponent(nextPath)}`;
+    const oAuthRedirectTo = `${returnTo}/auth/callback`;
 
     if (!email || !email.includes("@")) {
       errorMsg = "Enter a valid email.";
@@ -142,11 +143,11 @@
     }
   }
 
-  async function handleGoogleLogin(redirectTo) {
+  async function handleGoogleLogin() {
     await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-            redirectTo: redirectTo,
+            redirectTo: "https://spotle.io/auth/callback",
         },
         })
     }
