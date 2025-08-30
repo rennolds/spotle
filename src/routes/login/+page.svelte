@@ -60,23 +60,32 @@
   let nextPath = "/";
   let redirectTo = "";
 
+  function originOf(input) {
+  try { return new URL(input).origin; } catch { return ""; }
+}
+
+// REPLACE your current onMount(...) with this one
   onMount(() => {
     const url = new URL(window.location.href);
-    const r = url.searchParams.get("r");
+    const rRaw = url.searchParams.get("r");
     const n = url.searchParams.get("next");
-    const candidateReturnTo = r || window.location.origin;
 
-    if (ALLOWED.includes(candidateReturnTo)) {
-      returnTo = candidateReturnTo;
-      redirectTo = `${returnTo}/auth/callback`;
+    // normalize ALLOWED to origins (no paths)
+    const allowed = ALLOWED.map(originOf);
+    const candidate = rRaw ? originOf(rRaw) : window.location.origin;
+
+    if (candidate && allowed.includes(candidate)) {
+      returnTo = candidate;                       // e.g., "http://localhost:5173"
+      redirectTo = `${returnTo}/auth/callback`;   // same-origin callback
       showForm = true;
     } else {
       errorMsg = "Unsupported origin.";
     }
+
     if (n && n.startsWith("/")) nextPath = n;
 
-    console.log("redirectTo", redirectTo);
-    console.log("returnTo", returnTo);
+    console.log("login page origin", window.location.origin);
+    console.log("returnTo (computed)", returnTo);
     console.log("nextPath", nextPath);
   });
 
