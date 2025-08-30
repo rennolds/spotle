@@ -13,6 +13,12 @@ export const GET = async (event) => {
       throw redirect(303, `/${next.slice(1)}`);
     }
   }
+
+    const { error } = await supabase.auth.verifyOtp({
+        token_hash: 'hash',
+        type: 'email',
+      });
+    console.error(error);
   // return the user to an error page with instructions
   throw redirect(303, '/auth/auth-code-error');
 };

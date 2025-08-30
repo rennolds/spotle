@@ -17,6 +17,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@supabase/ssr": "^0.7.0",
 		"@supabase/supabase-js": "^2.56.0",
 		"axios": "^1.7.9",
 		"moment": "^2.30.1",
