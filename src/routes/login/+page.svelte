@@ -142,7 +142,7 @@
     }
   }
 
-  async function handleGoogleLogin() {
+  async function handleGoogleLogin(redirectTo) {
     await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
