@@ -78,7 +78,6 @@
     errorMsg = "";
     sent = false;
     const redirectTo = `${returnTo}/auth/callback?next=${encodeURIComponent(nextPath)}`;
-    const oAuthRedirectTo = `${returnTo}/auth/callback`;
 
     if (!email || !email.includes("@")) {
       errorMsg = "Enter a valid email.";
@@ -110,7 +109,7 @@
         const { error } = await supabase.auth.signInWithOtp({
           email,
           options: {
-            emailRedirectTo: redirectTo,
+            emailRedirectTo: returnTo,
             data: { username: uname }, // trigger uses this to create the profile row
           },
         });
@@ -120,7 +119,7 @@
         const { error } = await supabase.auth.signInWithOtp({
           email,
           options: {
-            emailRedirectTo: redirectTo,
+            emailRedirectTo: returnTo,
             shouldCreateUser: false, // <- key difference
           },
         });
@@ -147,7 +146,7 @@
     await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-            redirectTo: "https://spotle.io/auth/callback",
+            redirectTo: redirectTo,
         },
         })
     }
