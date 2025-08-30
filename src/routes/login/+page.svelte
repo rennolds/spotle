@@ -162,9 +162,14 @@
   async function handleGoogleLogin() {
     if (!browser) return;
 
-    const base = returnTo && ALLOWED.includes(returnTo) ? returnTo : window.location.origin;
+    const base =
+      returnTo && ALLOWED.includes(returnTo)
+        ? returnTo
+        : window.location.origin;
 
     const nextParam = encodeURIComponent(nextPath || "/");
+
+    console.log("OAuth START base =", base);
     window.location.href = `${base}/auth/oauth?provider=google&next=${nextParam}`;
   }
 </script>
