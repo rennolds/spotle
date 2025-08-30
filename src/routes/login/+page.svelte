@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { supabase } from "$lib/supabaseClient";
+  import { redirect } from "@sveltejs/kit";
   import Navbar from "$lib/../components/Navbar.svelte";
   import SlideMenu from "$lib/../components/SlideMenu.svelte";
   import Ramp from "../Ramp.svelte";
@@ -149,13 +150,10 @@
     }
   }
 
-  async function handleGoogleLogin(redirectTo) {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: redirectTo,
-      },
-    });
+  async function handleGoogleLogin() {
+    if (!browser) return;
+    const nextParam = encodeURIComponent(nextPath || "/");
+    window.location.href = `/auth/oauth?provider=google&next=${nextParam}`;
   }
 </script>
 
