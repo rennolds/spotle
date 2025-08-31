@@ -3078,7 +3078,7 @@
         "index": 205,
         "artist": "Blackbear",
         "country": "us",
-        "genre": "Hip Hop",
+        "genre": "Pop",
         "gender": "m",
         "group_size": 1,
         "debut_album_year": 2015,
@@ -7603,21 +7603,6 @@
         "song_uri": "https://p.scdn.co/mp3-preview/7c046a20154486f109c5573e7fb015c86fb37b02?cid=98f79e400795491cbc5f69b713465708",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2731c61cec78c70409b783d1480",
         "embedded_track": "https://open.spotify.com/embed/track/023OVLNzXhX0j7CxswUt6D"
-    },
-    {
-        "index": 514,
-        "artist": "Diddy",
-        "country": "us",
-        "genre": "Hip Hop",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 1997,
-        "track_name": "I'll Be Missing You",
-        "uri": "spotify:artist:59wfkuBoNyhDMQGCljbUbA",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb5065f82653e9ad00fdcafa42",
-        "song_uri": "https://p.scdn.co/mp3-preview/174d0af09bcb84373380914586b2e86266bc1dce?cid=98f79e400795491cbc5f69b713465708",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27361fa40b8b707af628ca2bd36",
-        "embedded_track": "https://open.spotify.com/embed/track/25tsnA5lDP4UctAQOoa8Ks"
     },
     {
         "index": 516,
