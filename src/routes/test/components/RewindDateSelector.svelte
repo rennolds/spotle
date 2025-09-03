@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher, afterUpdate } from "svelte";
   import { fly } from "svelte/transition";
+  import { onMount } from "svelte";
   import moment from "moment";
   import "moment-timezone";
   import { completedDates } from "../../store.js";
@@ -49,6 +50,11 @@
     }
     return null;
   }
+
+  onMount(() => {
+    console.log("RewindDateSelector mounted");
+    window.ramp.spaNewPage('show-rewarded-video');
+  });
 </script>
 
 <div class="rewind-selector">
