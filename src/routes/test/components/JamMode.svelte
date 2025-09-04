@@ -5,6 +5,7 @@
   import GuessList from "./GuessList.svelte";
   import { browser } from "$app/environment";
   import { isRewardAdReady, showRewardAd } from "$lib/rewardAds.js";
+  import { initRewardAds } from "$lib/rewardAds.js";
 
   export let currentArtist = null; // The current mystery artist
   export let gameGuesses = []; // Current game guesses
@@ -267,7 +268,7 @@
 
   onMount(() => {
     console.log("JamMode mounted");
-    window.ramp.spaNewPage('show-rewarded-video');
+    initRewardAds();
     // Don't automatically start the timer - wait for user to click START
     if (!showIntro) {
       initTimer();

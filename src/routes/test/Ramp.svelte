@@ -27,7 +27,7 @@
           window.ramp.spaNewPage();
           window.ramp.addTag("standard_iab_head1");
           // Initialize reward ads after ramp is loaded
-          initRewardAds();
+          // initRewardAds();
         });
       };
     });

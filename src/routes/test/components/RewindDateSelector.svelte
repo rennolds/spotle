@@ -53,7 +53,6 @@
 
   onMount(() => {
     console.log("RewindDateSelector mounted");
-    window.ramp.spaNewPage('show-rewarded-video');
   });
 </script>
 

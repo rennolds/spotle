@@ -34,6 +34,9 @@ const supabase = async ({ event, resolve }) => {
 		return { session, user };
 	};
 
+	// Ensure any auth cookie writes happen before the response is generated
+	await event.locals.supabase.auth.getSession();
+
 	return resolve(event, {
 		filterSerializedResponseHeaders(name) {
 			/**
