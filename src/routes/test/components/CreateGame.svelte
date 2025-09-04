@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { onMount } from "svelte";
   import SearchBar from "./SearchBar.svelte";
   import GameInfo from "./GameInfo.svelte";
   import { browser } from "$app/environment";
@@ -13,6 +14,11 @@
   let shareURL = "";
   let copyButtonText = "COPY";
   const dispatch = createEventDispatcher();
+
+  onMount(() => {
+    console.log("CreateGame mounted");
+    window.ramp.spaNewPage('show-rewarded-video');
+  });
 
   function handleSearch(event) {
     dispatch("selectArtist", event.detail);

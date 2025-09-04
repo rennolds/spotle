@@ -5,6 +5,7 @@
   import moment from "moment";
   import "moment-timezone";
   import { completedDates } from "../../store.js";
+  import { isRewardAdReady, showRewardAd } from "$lib/rewardAds.js";
 
   export let dates = []; // Array of dates in MM/DD/YYYY format
   export let currentIndex = 0; // Active date index
@@ -12,6 +13,7 @@
 
   // Force animation refresh on date change
   let animationKey = 0;
+  let dateSelectionCount = 1;
 
   $: {
     // Increment animation key when currentIndex changes
@@ -26,9 +28,21 @@
   const dispatch = createEventDispatcher();
 
   // Function to handle date selection
-  function selectDate(index) {
+  async function selectDate(index) {
     if (index !== currentIndex) {
       dispatch("selectDate", { index });
+      dateSelectionCount++;
+      if (dateSelectionCount % 2 === 0 && isRewardAdReady()) {
+        try {
+          await showRewardAd("Continue to Rewind in");
+          console.log("User watched reward ad for Rewind mode!");
+        } catch (error) {
+          console.log(
+            "Reward ad failed or was skipped, continuing anyway:",
+            error
+          );
+        }
+      }
     }
   }
 
@@ -53,6 +67,7 @@
 
   onMount(() => {
     console.log("RewindDateSelector mounted");
+    window.ramp.spaNewPage("show-rewarded-video");
   });
 </script>
 

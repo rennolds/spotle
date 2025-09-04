@@ -3,7 +3,6 @@
   import { browser } from "$app/environment";
   import moment from "moment";
   import "moment-timezone";
-  import { isRewardAdReady, showRewardAd } from "$lib/rewardAds.js";
 
   // Import components
   import Help from "./Help.svelte";
@@ -383,21 +382,6 @@
     if (browser && typeof gtag === "function") {
       gtag("event", "rewind", {});
     }
-
-    // NOW show reward ad (content is already loaded and ready)
-    if (isRewardAdReady()) {
-      try {
-        await showRewardAd("Continue to Rewind in");
-        console.log("User watched reward ad for Rewind mode!");
-      } catch (error) {
-        console.log(
-          "Reward ad failed or was skipped, continuing anyway:",
-          error
-        );
-      }
-    }
-
-    // Content is already loaded, so user sees instant transition!
   }
 
   function shuffleEligibleArtists() {
