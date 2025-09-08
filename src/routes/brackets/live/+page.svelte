@@ -1,6 +1,7 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import moment from "moment-timezone";
+  import SoundCloudPlayer from "../../../components/SoundCloudPlayer.svelte";
 
   /** @type {import('./$types').PageData} */
   export let data;
@@ -13,6 +14,20 @@
   let isSubmitting = false;
   let timeRemaining = "";
   let intervalId;
+
+  let audioPlayers = {};
+  let activeAudioItemId = null;
+
+  function handleTogglePlay(item) {
+    if (activeAudioItemId === item.id) {
+      audioPlayers[item.id]?.pause();
+    } else {
+      if (activeAudioItemId) {
+        audioPlayers[activeAudioItemId]?.pause();
+      }
+      audioPlayers[item.id]?.play();
+    }
+  }
 
   $: matchupsInCurrentRound =
     currentRound > 0 && fullBracket[currentRound]
@@ -211,6 +226,11 @@
                   class:show-results={roundNum < currentRound ||
                     votedMatchups.has(matchup.id)}
                   on:click={() => handleSelect(matchup.id, matchup.item1.id)}
+                  on:keydown={(e) =>
+                    e.key === "Enter" &&
+                    handleSelect(matchup.id, matchup.item1.id)}
+                  role="button"
+                  tabindex="0"
                 >
                   <div
                     class="percentage-fill"
@@ -228,16 +248,44 @@
                     {/if}
                   </div>
                   {#if matchup.item1.audio_url}
-                    <button class="play-button" on:click|stopPropagation>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M8 5V19L19 12L8 5Z" fill="white" />
-                      </svg>
+                    <SoundCloudPlayer
+                      bind:this={audioPlayers[matchup.item1.id]}
+                      trackId={matchup.item1.audio_url}
+                      on:play={() => (activeAudioItemId = matchup.item1.id)}
+                      on:pause={() => {
+                        if (activeAudioItemId === matchup.item1.id)
+                          activeAudioItemId = null;
+                      }}
+                    />
+                    <button
+                      class="play-button"
+                      on:click|stopPropagation={() =>
+                        handleTogglePlay(matchup.item1)}
+                    >
+                      {#if activeAudioItemId === matchup.item1.id}
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
+                            fill="white"
+                          />
+                        </svg>
+                      {:else}
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M8 5V19L19 12L8 5Z" fill="white" />
+                        </svg>
+                      {/if}
                     </button>
                   {/if}
                 </div>
@@ -254,6 +302,11 @@
                   class:show-results={roundNum < currentRound ||
                     votedMatchups.has(matchup.id)}
                   on:click={() => handleSelect(matchup.id, matchup.item2.id)}
+                  on:keydown={(e) =>
+                    e.key === "Enter" &&
+                    handleSelect(matchup.id, matchup.item2.id)}
+                  role="button"
+                  tabindex="0"
                 >
                   <div
                     class="percentage-fill"
@@ -271,16 +324,44 @@
                     {/if}
                   </div>
                   {#if matchup.item2.audio_url}
-                    <button class="play-button" on:click|stopPropagation>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M8 5V19L19 12L8 5Z" fill="white" />
-                      </svg>
+                    <SoundCloudPlayer
+                      bind:this={audioPlayers[matchup.item2.id]}
+                      trackId={matchup.item2.audio_url}
+                      on:play={() => (activeAudioItemId = matchup.item2.id)}
+                      on:pause={() => {
+                        if (activeAudioItemId === matchup.item2.id)
+                          activeAudioItemId = null;
+                      }}
+                    />
+                    <button
+                      class="play-button"
+                      on:click|stopPropagation={() =>
+                        handleTogglePlay(matchup.item2)}
+                    >
+                      {#if activeAudioItemId === matchup.item2.id}
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
+                            fill="white"
+                          />
+                        </svg>
+                      {:else}
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M8 5V19L19 12L8 5Z" fill="white" />
+                        </svg>
+                      {/if}
                     </button>
                   {/if}
                 </div>
@@ -367,9 +448,6 @@
     transition: all 0.2s ease;
     overflow: hidden; /* For the background fill */
   }
-  .matchup-card.current {
-    /* No special border for current, but can add other styles */
-  }
   .item {
     display: flex;
     align-items: center;
@@ -435,10 +513,6 @@
   }
   .play-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
-  }
-  .percentage {
-    font-size: 0.9rem;
-    font-weight: 500;
   }
   .item.selected {
     border: 2px solid #cbff70;
