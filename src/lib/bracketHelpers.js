@@ -51,8 +51,8 @@ export async function getCurrentBracket(supabase) {
  * @returns {number} The current round number (1-5), or 0 if not a tournament day.
  */
 function getCurrentRound() {
-    // FOR TESTING: Simulate Monday (Round 1)
-    return 1;
+    // FOR TESTING: Simulate Tuesday (Round 2)
+    return 2;
 
     const today = moment.tz('America/New_York');
     const dayOfWeek = today.day(); // Sunday=0, Monday=1, ..., Friday=5

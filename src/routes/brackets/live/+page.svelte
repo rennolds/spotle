@@ -18,6 +18,14 @@
   let audioPlayers = {};
   let activeAudioItemId = null;
 
+  const roundNames = {
+    1: "Round 1",
+    2: "Sweet Sixteen",
+    3: "Elite Eight",
+    4: "Final Four",
+    5: "Friday Finals",
+  };
+
   function handleTogglePlay(item) {
     if (activeAudioItemId === item.id) {
       audioPlayers[item.id]?.pause();
@@ -186,8 +194,7 @@
       <button
         class:active={displayedRound == roundNum}
         on:click={() => setDisplayedRound(roundNum)}
-        disabled={roundNum > (currentRound > 0 ? currentRound : 1) &&
-          !(currentRound === 0 && pageError)}
+        disabled={roundNum > currentRound && currentRound > 0}
       >
         {roundNum == 5 ? "Final" : `R${roundNum}`}
       </button>
@@ -201,9 +208,10 @@
           class="round-container"
           id="round-{roundNum}"
           data-displayed-mobile={displayedRound == roundNum}
+          class:active-round={currentRound == roundNum}
         >
           <div class="round-header">
-            <h2>{roundNum == 5 ? "Winner" : `Round ${roundNum}`}</h2>
+            <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
             <span class="round-date">{getRoundDate(roundNum)}</span>
           </div>
           <div class="matchups-column">
@@ -622,6 +630,10 @@
   .item.winner .percentage-fill,
   .item.leading.show-results .percentage-fill {
     background-color: #2e7d32; /* Winner/leading color */
+  }
+
+  .round-container.active-round .round-header h2 {
+    color: #cbff70;
   }
 
   /* Mobile Styles */
