@@ -208,3 +208,62 @@ export async function getBracketMatchups(supabase, bracketId) {
         pageError
     };
 }
+
+/**
+ * Fetches a bracket's structure for the gallery/picks mode.
+ * This version does not fetch votes or calculate official winners.
+ * @param {SupabaseClient} supabase The Supabase client instance.
+ * @param {string} bracketId The UUID of the bracket.
+ * @returns {Promise<object|null>} An object containing bracket details and the structured matchups.
+ */
+export async function getBracketForGallery(supabase, bracketId) {
+    const [bracketRes, itemsRes, allMatchupsRes] = await Promise.all([
+        supabase.from('brackets').select('*').eq('id', bracketId).single(),
+        supabase.from('bracket_items').select('*').eq('bracket_id', bracketId),
+        supabase.from('matchups').select('id, round, index_in_round').eq('bracket_id', bracketId).order('round').order('index_in_round'),
+    ]);
+
+    if (bracketRes.error) throw new Error(bracketRes.error.message);
+    if (itemsRes.error) throw new Error(itemsRes.error.message);
+    if (allMatchupsRes.error) throw new Error(allMatchupsRes.error.message);
+
+    const bracket = bracketRes.data;
+    const items = itemsRes.data;
+    const allMatchups = allMatchupsRes.data;
+    const tbdItem = { id: 'TBD', label: 'TBD', seed: '', image_url: '/resources/cd.png' };
+
+    const matchupsByRound = allMatchups.reduce((acc, m) => {
+        if (!acc[m.round]) acc[m.round] = [];
+        acc[m.round].push(m);
+        return acc;
+    }, {});
+
+    const fullBracket = {};
+    for (let roundNum = 1; roundNum <= 5; roundNum++) {
+        if (!matchupsByRound[roundNum]) continue;
+
+        fullBracket[roundNum] = matchupsByRound[roundNum].map(matchup => {
+            let item1, item2;
+            if (roundNum === 1) {
+                const pairing = getR1Pairing(matchup.index_in_round);
+                item1 = items.find(i => i.seed === pairing[0]) || tbdItem;
+                item2 = items.find(i => i.seed === pairing[1]) || tbdItem;
+            } else {
+                item1 = tbdItem;
+                item2 = tbdItem;
+            }
+
+            return {
+                ...matchup,
+                item1,
+                item2,
+            };
+        });
+    }
+
+    return {
+        bracket,
+        items,
+        fullBracket,
+    };
+}

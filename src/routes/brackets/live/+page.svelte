@@ -420,6 +420,7 @@
   .bracket-container {
     display: flex;
     gap: 2rem;
+    margin-bottom: 2rem; /* Add space for the submit bar */
   }
   .round-container {
     display: flex;

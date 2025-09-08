@@ -3,8 +3,12 @@
   import SlideMenu from "../../components/SlideMenu.svelte";
   import Help from "../Help.svelte";
   import Stats from "../Stats.svelte";
+  import Ramp from "../Ramp.svelte";
   import { browser } from "$app/environment";
   import { goto } from "$app/navigation";
+
+  const PUB_ID = 1025391;
+  const WEBSITE_ID = 75339;
 
   let showSlideMenu = false;
   let showHelp = false;
@@ -53,6 +57,7 @@
 </script>
 
 <div class="brackets-layout">
+  <Ramp {PUB_ID} {WEBSITE_ID} />
   <Navbar
     showMute={false}
     showStats={false}
@@ -84,6 +89,10 @@
 </div>
 
 <style>
+  main {
+    padding-bottom: 100px; /* Space for banner ad */
+  }
+
   .help-overlay {
     position: absolute;
     top: 0;
