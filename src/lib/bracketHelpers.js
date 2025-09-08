@@ -52,7 +52,7 @@ export async function getCurrentBracket(supabase) {
  */
 function getCurrentRound() {
     // FOR TESTING: Simulate Tuesday (Round 2)
-    return 2;
+    // return 2;
 
     const today = moment.tz('America/New_York');
     const dayOfWeek = today.day(); // Sunday=0, Monday=1, ..., Friday=5
