@@ -465,6 +465,7 @@
     gap: 0.5rem;
     position: relative; /* For z-indexing content above the fill */
     z-index: 2;
+    border: 2px solid transparent; /* Add transparent border */
   }
   .item:first-child {
     margin-bottom: 0.5rem;
@@ -524,7 +525,7 @@
     background-color: rgba(255, 255, 255, 0.1);
   }
   .item.selected {
-    border: 2px solid #cbff70;
+    border-color: #cbff70; /* Change color on selection */
   }
   .submit-bar {
     position: sticky;
