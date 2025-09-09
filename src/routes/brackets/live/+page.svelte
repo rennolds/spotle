@@ -178,7 +178,10 @@
       {:else if currentRound > 0}
         <div class="status-container">
           {#if !hasVotedInCurrentRound}
-            <p>Select your picks for Round {currentRound}. Voting ends in:</p>
+            <p>
+              Vote for your favorite songs. Whichever song gets the most votes
+              moves on to the next round in:
+            </p>
           {:else}
             <p>Your votes are in! Next round starts in:</p>
           {/if}
@@ -460,7 +463,7 @@
   .item {
     display: flex;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.25rem;
     border-radius: 4px;
     gap: 0.5rem;
     position: relative; /* For z-indexing content above the fill */
@@ -479,7 +482,7 @@
     font-size: 0.8rem;
     color: #888;
     width: 1.5em;
-    text-align: right;
+    text-align: center;
   }
   .item img {
     width: 40px;

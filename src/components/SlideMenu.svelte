@@ -123,19 +123,19 @@
       </div>
 
       <div class="menu-section">
-        <h3 class="section-header">Brackets</h3>
+        <h3 class="section-header">Spotle Brackets</h3>
         <div class="menu-item sub-item" on:click={handleLiveBracket}>
           <div class="menu-item-content">
             <div class="menu-item-title">Live Bracket</div>
-            <div class="menu-item-subtitle">Vote on the current tournament</div>
+            <div class="menu-item-subtitle">Vote for your favorite songs, every week</div>
           </div>
         </div>
-        <div class="menu-item sub-item" on:click={handleBracketGallery}>
+        <!-- <div class="menu-item sub-item" on:click={handleBracketGallery}>
           <div class="menu-item-content">
             <div class="menu-item-title">Bracket Gallery</div>
             <div class="menu-item-subtitle">View past tournament results</div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="menu-section">
