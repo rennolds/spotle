@@ -179,7 +179,8 @@
         <div class="status-container">
           {#if !hasVotedInCurrentRound}
             <p>
-              Vote for your favorite songs, everyday. Winners move on every 24 hours.
+              Vote for your favorite songs, everyday. Winners move on every 24
+              hours.
             </p>
           {:else}
             <p>Your votes are in!</p>
