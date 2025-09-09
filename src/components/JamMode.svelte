@@ -267,7 +267,9 @@
 
   onMount(() => {
     console.log("JamMode mounted");
-    window.ramp.spaNewPage("show-rewarded-video");
+    if (window.ramp && typeof window.ramp.spaNewPage === "function") {
+      window.ramp.spaNewPage("show-rewarded-video");
+    }
     // Don't automatically start the timer - wait for user to click START
     if (!showIntro) {
       initTimer();

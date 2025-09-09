@@ -1,8 +1,8 @@
 <script>
-  import { onMount } from 'svelte';
-  import { createEventDispatcher } from 'svelte';
-  import SearchBar from './SearchBar.svelte';
-  import GameInfo from './GameInfo.svelte';
+  import { onMount } from "svelte";
+  import { createEventDispatcher } from "svelte";
+  import SearchBar from "./SearchBar.svelte";
+  import GameInfo from "./GameInfo.svelte";
   import { browser } from "$app/environment";
   import { isRewardAdReady, showRewardAd } from "$lib/rewardAds.js";
 
@@ -17,7 +17,9 @@
 
   onMount(() => {
     console.log("CreateGame mounted");
-    window.ramp.spaNewPage('show-rewarded-video');
+    if (window.ramp && typeof window.ramp.spaNewPage === "function") {
+      window.ramp.spaNewPage("show-rewarded-video");
+    }
   });
 
   function handleSearch(event) {
