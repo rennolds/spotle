@@ -464,13 +464,13 @@
     background-color: #1e1e1e;
     border: 1px solid #333;
     border-radius: 8px;
-    padding: 0.75rem 0.75rem 0.75rem 0;
+    padding: 0.75rem;
     width: 250px; /* Default width for desktop */
     transition: all 0.2s ease;
     overflow: hidden; /* For the background fill */
   }
   .item {
-    padding: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.5rem;
     border-radius: 4px;
     position: relative; /* For z-indexing content above the fill */
     border: 2px solid transparent; /* Add transparent border */
@@ -497,6 +497,7 @@
     text-align: right;
     flex-shrink: 0;
     margin-right: 0.5rem;
+    margin-left: -0.5rem; /* Pull seed to the left edge */
   }
   .item img {
     width: 40px;
