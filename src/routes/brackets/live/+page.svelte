@@ -179,12 +179,12 @@
         <div class="status-container">
           {#if !hasVotedInCurrentRound}
             <p>
-              Vote for your favorite songs. Whichever song gets the most votes
-              moves on to the next round in:
+              Vote for your favorite songs, everyday. Winners move on every 24 hours.
             </p>
           {:else}
-            <p>Your votes are in! Next round starts in:</p>
+            <p>Your votes are in!</p>
           {/if}
+          <p>Next round starts in:</p>
           <p class="countdown">{timeRemaining}</p>
         </div>
       {/if}
@@ -247,58 +247,62 @@
                     class="percentage-fill"
                     style="width: {matchup.item1Percentage}%"
                   />
-                  <span class="seed">{matchup.item1.seed}</span>
-                  <img
-                    src={matchup.item1.image_url}
-                    alt={matchup.item1.label}
-                  />
-                  <div class="item-details">
-                    <span class="label">{matchup.item1.label}</span>
-                    {#if matchup.item1.sublabel}
-                      <span class="sublabel">{matchup.item1.sublabel}</span>
+                  <div class="item-content">
+                    <span class="seed">{matchup.item1.seed}</span>
+                    <img
+                      src={matchup.item1.image_url}
+                      alt={matchup.item1.label}
+                    />
+                    <div class="item-details">
+                      <span class="label">{matchup.item1.label}</span>
+                      {#if matchup.item1.sublabel}
+                        <span class="sublabel">{matchup.item1.sublabel}</span>
+                      {/if}
+                    </div>
+                    {#if matchup.item1.audio_url}
+                      <SoundCloudPlayer
+                        bind:this={audioPlayers[matchup.item1.id]}
+                        trackId={matchup.item1.audio_url}
+                        on:play={() => (activeAudioItemId = matchup.item1.id)}
+                        on:pause={() => {
+                          if (activeAudioItemId === matchup.item1.id)
+                            activeAudioItemId = null;
+                        }}
+                      />
+                      <button
+                        class="play-button"
+                        on:click|stopPropagation={() =>
+                          handleTogglePlay(matchup.item1)}
+                      >
+                        {#if activeAudioItemId === matchup.item1.id}
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
+                              fill="white"
+                            />
+                          </svg>
+                        {:else}
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M8 5V19L19 12L8 5Z" fill="white" />
+                          </svg>
+                        {/if}
+                      </button>
+                    {:else}
+                      <div class="play-button-placeholder" />
                     {/if}
                   </div>
-                  {#if matchup.item1.audio_url}
-                    <SoundCloudPlayer
-                      bind:this={audioPlayers[matchup.item1.id]}
-                      trackId={matchup.item1.audio_url}
-                      on:play={() => (activeAudioItemId = matchup.item1.id)}
-                      on:pause={() => {
-                        if (activeAudioItemId === matchup.item1.id)
-                          activeAudioItemId = null;
-                      }}
-                    />
-                    <button
-                      class="play-button"
-                      on:click|stopPropagation={() =>
-                        handleTogglePlay(matchup.item1)}
-                    >
-                      {#if activeAudioItemId === matchup.item1.id}
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
-                            fill="white"
-                          />
-                        </svg>
-                      {:else}
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M8 5V19L19 12L8 5Z" fill="white" />
-                        </svg>
-                      {/if}
-                    </button>
-                  {/if}
                 </div>
                 <div
                   class="item"
@@ -323,58 +327,62 @@
                     class="percentage-fill"
                     style="width: {matchup.item2Percentage}%"
                   />
-                  <span class="seed">{matchup.item2.seed}</span>
-                  <img
-                    src={matchup.item2.image_url}
-                    alt={matchup.item2.label}
-                  />
-                  <div class="item-details">
-                    <span class="label">{matchup.item2.label}</span>
-                    {#if matchup.item2.sublabel}
-                      <span class="sublabel">{matchup.item2.sublabel}</span>
+                  <div class="item-content">
+                    <span class="seed">{matchup.item2.seed}</span>
+                    <img
+                      src={matchup.item2.image_url}
+                      alt={matchup.item2.label}
+                    />
+                    <div class="item-details">
+                      <span class="label">{matchup.item2.label}</span>
+                      {#if matchup.item2.sublabel}
+                        <span class="sublabel">{matchup.item2.sublabel}</span>
+                      {/if}
+                    </div>
+                    {#if matchup.item2.audio_url}
+                      <SoundCloudPlayer
+                        bind:this={audioPlayers[matchup.item2.id]}
+                        trackId={matchup.item2.audio_url}
+                        on:play={() => (activeAudioItemId = matchup.item2.id)}
+                        on:pause={() => {
+                          if (activeAudioItemId === matchup.item2.id)
+                            activeAudioItemId = null;
+                        }}
+                      />
+                      <button
+                        class="play-button"
+                        on:click|stopPropagation={() =>
+                          handleTogglePlay(matchup.item2)}
+                      >
+                        {#if activeAudioItemId === matchup.item2.id}
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
+                              fill="white"
+                            />
+                          </svg>
+                        {:else}
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M8 5V19L19 12L8 5Z" fill="white" />
+                          </svg>
+                        {/if}
+                      </button>
+                    {:else}
+                      <div class="play-button-placeholder" />
                     {/if}
                   </div>
-                  {#if matchup.item2.audio_url}
-                    <SoundCloudPlayer
-                      bind:this={audioPlayers[matchup.item2.id]}
-                      trackId={matchup.item2.audio_url}
-                      on:play={() => (activeAudioItemId = matchup.item2.id)}
-                      on:pause={() => {
-                        if (activeAudioItemId === matchup.item2.id)
-                          activeAudioItemId = null;
-                      }}
-                    />
-                    <button
-                      class="play-button"
-                      on:click|stopPropagation={() =>
-                        handleTogglePlay(matchup.item2)}
-                    >
-                      {#if activeAudioItemId === matchup.item2.id}
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
-                            fill="white"
-                          />
-                        </svg>
-                      {:else}
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M8 5V19L19 12L8 5Z" fill="white" />
-                        </svg>
-                      {/if}
-                    </button>
-                  {/if}
                 </div>
               </div>
             {/each}
@@ -455,20 +463,23 @@
     background-color: #1e1e1e;
     border: 1px solid #333;
     border-radius: 8px;
-    padding: 0.75rem;
+    padding: 0.75rem 0.75rem 0.75rem 0;
     width: 250px; /* Default width for desktop */
     transition: all 0.2s ease;
     overflow: hidden; /* For the background fill */
   }
   .item {
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    border-radius: 4px;
+    position: relative; /* For z-indexing content above the fill */
+    border: 2px solid transparent; /* Add transparent border */
+  }
+  .item-content {
     display: flex;
     align-items: center;
-    padding: 0.5rem 0.5rem 0.5rem 0.25rem;
-    border-radius: 4px;
-    gap: 0.5rem;
-    position: relative; /* For z-indexing content above the fill */
+    width: 100%;
+    position: relative;
     z-index: 2;
-    border: 2px solid transparent; /* Add transparent border */
   }
   .item:first-child {
     margin-bottom: 0.5rem;
@@ -481,14 +492,18 @@
   .seed {
     font-size: 0.8rem;
     color: #888;
-    width: 1.5em;
-    text-align: center;
+    width: 2rem;
+    text-align: right;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
   }
   .item img {
     width: 40px;
     height: 40px;
     border-radius: 4px;
     object-fit: cover;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
   }
   .item-details {
     display: flex;
@@ -509,7 +524,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .play-button {
+  .play-button,
+  .play-button-placeholder {
     background: transparent;
     border: none;
     padding: 0;
@@ -523,6 +539,10 @@
     height: 40px;
     border-radius: 50%;
     transition: background-color 0.2s;
+  }
+
+  .play-button-placeholder {
+    cursor: default;
   }
   .play-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
