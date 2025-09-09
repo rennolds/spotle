@@ -171,23 +171,35 @@
 
 <div class="live-bracket-page">
   {#if bracket}
-    <div class="bracket-header">
-      <h1>{bracket.title}</h1>
-      {#if pageError}
-        <p class="page-error">{pageError}</p>
-      {:else if currentRound > 0}
-        <div class="status-container">
-          {#if !hasVotedInCurrentRound}
-            <p>
-              Vote for your favorite songs, everyday. Winners move on every 24
-              hours.
-            </p>
-          {:else}
-            <p>Your votes are in!</p>
-          {/if}
-          <p>Next round starts in:</p>
-          <p class="countdown">{timeRemaining}</p>
-        </div>
+    <div class="bracket-header-compact">
+      <div class="header-main">
+        <h1>{bracket.title}</h1>
+        {#if pageError}
+          <div class="status-pill error">{pageError}</div>
+        {:else if currentRound > 0 && hasVotedInCurrentRound}
+          <div class="status-pill voted desktop-only">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"
+                fill="currentColor"
+              />
+            </svg>
+            Votes submitted
+          </div>
+        {/if}
+      </div>
+      {#if currentRound > 0 && !pageError}
+        {#if !hasVotedInCurrentRound}
+          <div class="info-text">
+            Vote for your favorites • Winners advance every 24 hours
+          </div>
+        {/if}
+        {#if timeRemaining}
+          <div class="timer-compact">
+            <span class="timer-label">Next round in</span>
+            <span class="timer-value">{timeRemaining}</span>
+          </div>
+        {/if}
       {/if}
     </div>
   {/if}
@@ -405,6 +417,20 @@
           >Submit</button
         >
       </div>
+    {:else if currentRound > 0 && hasVotedInCurrentRound}
+      <!-- Mobile votes submitted bar -->
+      <div class="votes-submitted-bar mobile-only">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"
+            fill="currentColor"
+          />
+        </svg>
+        <span
+          >Your votes are in for {roundNames[currentRound] ||
+            `Round ${currentRound}`}!</span
+        >
+      </div>
     {/if}
   {:else if !pageError}
     <h1>No Live Bracket</h1>
@@ -419,15 +445,106 @@
     max-width: 100%;
     overflow-x: auto;
   }
-  .bracket-header {
-    text-align: center;
-    margin-bottom: 2rem;
+  .bracket-header-compact {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
   }
-  .page-error {
-    background-color: #333;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    display: inline-block;
+
+  .header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .bracket-header-compact h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .status-pill.error {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  .status-pill.voted {
+    background-color: #28a745;
+    color: #fff;
+  }
+
+  .timer-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #333;
+  }
+
+  .timer-label {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+
+  .timer-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #cbff70;
+    font-family: "Courier New", monospace;
+  }
+
+  .info-text {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid #333;
+    margin-top: 0.75rem;
+  }
+
+  .votes-submitted-bar {
+    position: sticky;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: #28a745;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: calc(100% - 2rem);
+    max-width: 500px;
+    margin: 1.5rem auto 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+  }
+
+  .desktop-only {
+    display: flex;
+  }
+
+  .mobile-only {
+    display: none;
   }
   .bracket-container {
     display: flex;
@@ -587,17 +704,6 @@
     cursor: not-allowed;
   }
 
-  .status-container {
-    margin-top: 1rem;
-    padding: 0.75rem;
-  }
-  .countdown {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #cbff70;
-    margin-top: 0.25rem;
-  }
-
   .round-selector {
     display: none;
     justify-content: center;
@@ -665,6 +771,48 @@
 
   /* Mobile Styles */
   @media (max-width: 899px) {
+    .desktop-only {
+      display: none !important;
+    }
+
+    .mobile-only {
+      display: flex;
+    }
+
+    .bracket-header-compact {
+      padding: 0.875rem 1rem;
+      margin: 0 0 1.25rem 0;
+      max-width: none;
+    }
+
+    .header-main {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .bracket-header-compact h1 {
+      font-size: 1.25rem;
+    }
+
+    .timer-compact {
+      padding-top: 0.5rem;
+    }
+
+    .timer-label {
+      font-size: 0.85rem;
+    }
+
+    .timer-value {
+      font-size: 1rem;
+    }
+
+    .info-text {
+      font-size: 0.8rem;
+      padding: 0.375rem 0;
+    }
+
     .bracket-container {
       flex-direction: column;
       gap: 0;
