@@ -1384,9 +1384,6 @@
     .round-container[data-displayed-mobile="true"] {
       display: flex;
     }
-    .round-container.results-mode {
-      display: flex;
-    }
     .round-container h2 {
       display: none;
     }
