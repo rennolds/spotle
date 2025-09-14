@@ -2,6 +2,7 @@
   import { onMount, onDestroy } from "svelte";
   import moment from "moment-timezone";
   import SoundCloudPlayer from "../../../components/SoundCloudPlayer.svelte";
+  import { bracketView } from "../../store.js";
 
   /** @type {import('./$types').PageData} */
   export let data;
@@ -313,12 +314,12 @@
 
   <!-- Results message for Saturday/Sunday -->
   {#if currentRound === 6}
-    <div class="results-message desktop-only">
+    <div class="results-message">
       The tournament is over. Check back Monday for a new bracket!
     </div>
 
     <!-- Top 4 Results Container -->
-    <div class="results-container desktop-only">
+    <div class="results-container">
       <!-- Results Content -->
       <div class="results-content">
         <!-- Champion (left half) -->
@@ -448,7 +449,7 @@
   </div>
 
   {#if Object.keys(fullBracket).length > 0}
-    <div class="bracket-container">
+    <div class="bracket-container" class:compact={$bracketView === "compact"}>
       {#each Object.entries(fullBracket) as [roundNum, matchups]}
         <div
           class="round-container"
@@ -473,6 +474,8 @@
                 <div
                   class="item"
                   class:winner={matchup.winnerId === matchup.item1.id}
+                  class:loser={matchup.winnerId &&
+                    matchup.winnerId !== matchup.item1.id}
                   class:selected={selections.get(matchup.id) ===
                     matchup.item1.id ||
                     userVoteMap.get(matchup.id) === matchup.item1.id}
@@ -557,6 +560,8 @@
                 <div
                   class="item"
                   class:winner={matchup.winnerId === matchup.item2.id}
+                  class:loser={matchup.winnerId &&
+                    matchup.winnerId !== matchup.item2.id}
                   class:selected={selections.get(matchup.id) ===
                     matchup.item2.id ||
                     userVoteMap.get(matchup.id) === matchup.item2.id}
@@ -1035,11 +1040,27 @@
   }
   .item:first-child {
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #2a2a2a;
+    position: relative;
+  }
+  .item:first-child::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-0.25rem - 1px);
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 1px;
+    background-color: #2a2a2a;
+  }
+
+  .item.selected:first-child::after {
+    display: none;
   }
   .item.winner {
     font-weight: bold;
     background-color: #2a2a2a;
+  }
+  .item.loser {
+    opacity: 0.6;
   }
   .seed {
     font-size: 0.8rem;
@@ -1385,5 +1406,10 @@
     .round-date {
       display: block; /* Show on desktop */
     }
+  }
+
+  .bracket-container.compact .matchups-column {
+    justify-content: flex-start;
+    gap: 1rem;
   }
 </style>
