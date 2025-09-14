@@ -6,9 +6,11 @@
   /** @type {import('./$types').PageData} */
   export let data;
 
-  let { bracket, fullBracket, currentRound, pageError, userVoteMap } = data;
+  let { bracket, fullBracket, currentRound, pageError, userVoteMap, champion } =
+    data;
 
-  let displayedRound = currentRound > 0 ? currentRound : 1;
+  let displayedRound =
+    currentRound > 0 ? (currentRound === 6 ? 5 : currentRound) : 1;
   let votedMatchups = new Set(userVoteMap.keys());
   let selections = new Map(); // Map<matchupId, itemId>
   let isSubmitting = false;
@@ -24,6 +26,7 @@
     3: "Elite Eight",
     4: "Final Four",
     5: "Friday Finals",
+    6: "Results",
   };
 
   function handleTogglePlay(item) {
@@ -49,6 +52,83 @@
   $: hasVotedInCurrentRound = currentRoundMatchupIds.some((id) =>
     votedMatchups.has(id)
   );
+
+  // Calculate total votes across all matchups
+  $: totalVotes = Object.values(fullBracket).reduce((total, roundMatchups) => {
+    return (
+      total +
+      roundMatchups.reduce((roundTotal, matchup) => {
+        return roundTotal + (matchup.totalVotes || 0);
+      }, 0)
+    );
+  }, 0);
+
+  // Calculate top 4 finishers for results mode
+  $: topFinishers = (() => {
+    if (currentRound !== 6 || !fullBracket[5] || !fullBracket[5][0]) {
+      return { champion: null, second: null, third: null, fourth: null };
+    }
+
+    const finalMatchup = fullBracket[5][0];
+    const champion =
+      finalMatchup.winnerId === finalMatchup.item1.id
+        ? finalMatchup.item1
+        : finalMatchup.item2;
+    const runnerUp =
+      finalMatchup.winnerId === finalMatchup.item1.id
+        ? finalMatchup.item2
+        : finalMatchup.item1;
+
+    // For 3rd and 4th place, we need to look at the semifinal losers
+    let third = null;
+    let fourth = null;
+
+    if (fullBracket[4] && fullBracket[4].length >= 2) {
+      const semifinal1 = fullBracket[4][0];
+      const semifinal2 = fullBracket[4][1];
+
+      // Find the losers of the semifinals
+      const semifinal1Loser =
+        semifinal1.winnerId === semifinal1.item1.id
+          ? semifinal1.item2
+          : semifinal1.item1;
+      const semifinal2Loser =
+        semifinal2.winnerId === semifinal2.item1.id
+          ? semifinal2.item2
+          : semifinal2.item1;
+
+      // Determine 3rd and 4th based on seed (lower seed = better placement)
+      if (semifinal1Loser.seed < semifinal2Loser.seed) {
+        third = semifinal1Loser;
+        fourth = semifinal2Loser;
+      } else {
+        third = semifinal2Loser;
+        fourth = semifinal1Loser;
+      }
+    }
+
+    return { champion, second: runnerUp, third, fourth };
+  })();
+
+  // Calculate champion's total votes across entire bracket
+  $: championTotalVotes = (() => {
+    if (!topFinishers.champion) return 0;
+
+    return Object.values(fullBracket).reduce((total, roundMatchups) => {
+      return (
+        total +
+        roundMatchups.reduce((roundTotal, matchup) => {
+          // Count votes for champion in this matchup
+          if (matchup.item1.id === topFinishers.champion.id) {
+            return roundTotal + (matchup.item1Votes || 0);
+          } else if (matchup.item2.id === topFinishers.champion.id) {
+            return roundTotal + (matchup.item2Votes || 0);
+          }
+          return roundTotal;
+        }, 0)
+      );
+    }, 0);
+  })();
 
   // Helper to calculate date for a given round
   function getRoundDate(roundNum) {
@@ -171,8 +251,8 @@
 
 <div class="live-bracket-page">
   {#if bracket}
-    <div class="bracket-header-compact">
-      <div class="header-main">
+    <div class="bracket-header">
+      <div class="header-column title-column">
         <h1>{bracket.title}</h1>
         {#if pageError}
           <div class="status-pill error">{pageError}</div>
@@ -188,19 +268,167 @@
           </div>
         {/if}
       </div>
-      {#if currentRound > 0 && !pageError}
-        {#if !hasVotedInCurrentRound}
-          <div class="info-text">
-            Vote for your favorites • Winners advance every 24 hours
+
+      <div class="desktop-stats">
+        <div class="header-column votes-column">
+          <div class="column-label">Votes</div>
+          <div class="column-value">{totalVotes.toLocaleString()}</div>
+        </div>
+
+        <div class="header-column timer-column">
+          <div class="column-label">Next Round</div>
+          <div class="column-value">
+            {#if currentRound === 6}
+              0:00
+            {:else if timeRemaining}
+              {timeRemaining}
+            {:else}
+              0:00
+            {/if}
           </div>
-        {/if}
-        {#if timeRemaining}
-          <div class="timer-compact">
-            <span class="timer-label">Next round in</span>
-            <span class="timer-value">{timeRemaining}</span>
+        </div>
+      </div>
+
+      <div class="mobile-stats">
+        <div class="header-column votes-column">
+          <div class="column-label">Votes</div>
+          <div class="column-value">{totalVotes.toLocaleString()}</div>
+        </div>
+
+        <div class="header-column timer-column">
+          <div class="column-label">Next Round</div>
+          <div class="column-value">
+            {#if currentRound === 6}
+              0:00
+            {:else if timeRemaining}
+              {timeRemaining}
+            {:else}
+              0:00
+            {/if}
           </div>
-        {/if}
-      {/if}
+        </div>
+      </div>
+    </div>
+  {/if}
+
+  <!-- Results message for Saturday/Sunday -->
+  {#if currentRound === 6}
+    <div class="results-message desktop-only">
+      The tournament is over. Check back Monday for a new bracket!
+    </div>
+
+    <!-- Top 4 Results Container -->
+    <div class="results-container desktop-only">
+      <!-- Results Content -->
+      <div class="results-content">
+        <!-- Champion (left half) -->
+        <div class="champion-section">
+          <h3 class="section-header">This week's champion</h3>
+          {#if topFinishers.champion}
+            <div class="finisher-card champion-card">
+              <img
+                src={topFinishers.champion.image_url}
+                alt={topFinishers.champion.label}
+              />
+              <div class="finisher-details">
+                <div class="finisher-label">
+                  {topFinishers.champion.label}
+                  <span class="finisher-seed"
+                    >#{topFinishers.champion.seed}</span
+                  >
+                </div>
+                {#if topFinishers.champion.sublabel}
+                  <div class="finisher-sublabel">
+                    {topFinishers.champion.sublabel}
+                  </div>
+                {/if}
+                <div class="champion-picks">Picks: {championTotalVotes}</div>
+              </div>
+            </div>
+          {/if}
+        </div>
+
+        <!-- Podium (right half) -->
+        <div class="podium-section">
+          <h3 class="section-header runner-ups-header">Runner Ups</h3>
+          <div class="podium-grid">
+            <!-- 2nd Place (top) -->
+            <div class="podium-top">
+              {#if topFinishers.second}
+                <div class="finisher-card podium-card">
+                  <div class="finisher-rank">2nd</div>
+                  <img
+                    src={topFinishers.second.image_url}
+                    alt={topFinishers.second.label}
+                  />
+                  <div class="finisher-details">
+                    <div class="finisher-label">
+                      {topFinishers.second.label}
+                      <span class="finisher-seed"
+                        >#{topFinishers.second.seed}</span
+                      >
+                    </div>
+                    {#if topFinishers.second.sublabel}
+                      <div class="finisher-sublabel">
+                        {topFinishers.second.sublabel}
+                      </div>
+                    {/if}
+                  </div>
+                </div>
+              {/if}
+            </div>
+
+            <!-- 3rd and 4th Place (bottom row) -->
+            <div class="podium-bottom">
+              {#if topFinishers.third}
+                <div class="finisher-card podium-card">
+                  <div class="finisher-rank">3rd</div>
+                  <img
+                    src={topFinishers.third.image_url}
+                    alt={topFinishers.third.label}
+                  />
+                  <div class="finisher-details">
+                    <div class="finisher-label">
+                      {topFinishers.third.label}
+                      <span class="finisher-seed"
+                        >#{topFinishers.third.seed}</span
+                      >
+                    </div>
+                    {#if topFinishers.third.sublabel}
+                      <div class="finisher-sublabel">
+                        {topFinishers.third.sublabel}
+                      </div>
+                    {/if}
+                  </div>
+                </div>
+              {/if}
+
+              {#if topFinishers.fourth}
+                <div class="finisher-card podium-card">
+                  <div class="finisher-rank">4th</div>
+                  <img
+                    src={topFinishers.fourth.image_url}
+                    alt={topFinishers.fourth.label}
+                  />
+                  <div class="finisher-details">
+                    <div class="finisher-label">
+                      {topFinishers.fourth.label}
+                      <span class="finisher-seed"
+                        >#{topFinishers.fourth.seed}</span
+                      >
+                    </div>
+                    {#if topFinishers.fourth.sublabel}
+                      <div class="finisher-sublabel">
+                        {topFinishers.fourth.sublabel}
+                      </div>
+                    {/if}
+                  </div>
+                </div>
+              {/if}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   {/if}
 
@@ -210,7 +438,9 @@
       <button
         class:active={displayedRound == roundNum}
         on:click={() => setDisplayedRound(roundNum)}
-        disabled={roundNum > currentRound && currentRound > 0}
+        disabled={roundNum > currentRound &&
+          currentRound > 0 &&
+          currentRound !== 6}
       >
         {roundNum == 5 ? "Final" : `R${roundNum}`}
       </button>
@@ -225,6 +455,7 @@
           id="round-{roundNum}"
           data-displayed-mobile={displayedRound == roundNum}
           class:active-round={currentRound == roundNum}
+          class:results-mode={currentRound === 6}
         >
           <div class="round-header">
             <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
@@ -234,8 +465,10 @@
             {#each matchups as matchup}
               <div
                 class="matchup-card"
-                class:current={currentRound == roundNum}
-                class:voted={votedMatchups.has(matchup.id)}
+                class:current={currentRound == roundNum && currentRound !== 6}
+                class:voted={votedMatchups.has(matchup.id) ||
+                  currentRound === 6}
+                class:results-mode={currentRound === 6}
               >
                 <div
                   class="item"
@@ -248,9 +481,13 @@
                   class:trailing={currentRound == roundNum &&
                     matchup.item1Votes < matchup.item2Votes}
                   class:show-results={roundNum < currentRound ||
-                    votedMatchups.has(matchup.id)}
-                  on:click={() => handleSelect(matchup.id, matchup.item1.id)}
+                    votedMatchups.has(matchup.id) ||
+                    currentRound === 6}
+                  on:click={() =>
+                    currentRound !== 6 &&
+                    handleSelect(matchup.id, matchup.item1.id)}
                   on:keydown={(e) =>
+                    currentRound !== 6 &&
                     e.key === "Enter" &&
                     handleSelect(matchup.id, matchup.item1.id)}
                   role="button"
@@ -328,9 +565,13 @@
                   class:trailing={currentRound == roundNum &&
                     matchup.item2Votes < matchup.item1Votes}
                   class:show-results={roundNum < currentRound ||
-                    votedMatchups.has(matchup.id)}
-                  on:click={() => handleSelect(matchup.id, matchup.item2.id)}
+                    votedMatchups.has(matchup.id) ||
+                    currentRound === 6}
+                  on:click={() =>
+                    currentRound !== 6 &&
+                    handleSelect(matchup.id, matchup.item2.id)}
                   on:keydown={(e) =>
+                    currentRound !== 6 &&
                     e.key === "Enter" &&
                     handleSelect(matchup.id, matchup.item2.id)}
                   role="button"
@@ -404,7 +645,7 @@
       {/each}
     </div>
 
-    {#if currentRound > 0 && !hasVotedInCurrentRound && !isSubmitting}
+    {#if currentRound > 0 && currentRound !== 6 && !hasVotedInCurrentRound && !isSubmitting}
       <div class="submit-bar">
         <span>
           {#if selections.size > 0}
@@ -445,29 +686,245 @@
     max-width: 100%;
     overflow-x: auto;
   }
-  .bracket-header-compact {
-    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    margin: 0 auto 1.5rem auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  .bracket-header {
+    background: #000;
+    border: 1px solid #666;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    margin: 0 auto 1rem auto;
     max-width: 600px;
-  }
-
-  .header-main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 1rem;
-    margin-bottom: 0.75rem;
+    align-items: center;
   }
 
-  .bracket-header-compact h1 {
-    font-size: 1.5rem;
+  .desktop-stats {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .mobile-stats {
+    display: none;
+  }
+
+  .header-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .title-column {
+    align-items: flex-start;
+  }
+
+  .votes-column,
+  .timer-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bracket-header h1 {
+    font-size: 1.4rem;
     margin: 0;
     color: #fff;
     font-weight: 600;
+  }
+
+  .column-label {
+    font-size: 0.75rem;
+    color: #aaa;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .column-value {
+    font-size: 1.2rem;
+    color: #cbff70;
+    font-weight: 700;
+    font-family: "Courier New", monospace;
+  }
+
+  .timer-column .column-value {
+    color: #ff4444;
+  }
+
+  .results-message {
+    background-color: #dc3545;
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    margin: 0 auto 1rem auto;
+    border-radius: 8px;
+    font-weight: 600;
+    max-width: 600px;
+  }
+
+  .results-container {
+    max-width: 1000px;
+    margin: 0 auto 1rem auto;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .results-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .champion-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .champion-section .finisher-card {
+    margin-top: 0.5rem;
+  }
+
+  .podium-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .podium-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    flex: 1;
+    margin-top: 0.5rem;
+  }
+
+  .podium-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .podium-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .podium-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .finisher-card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    gap: 0.75rem;
+  }
+
+  .champion-card {
+    height: 100%;
+    padding: 1rem 0.75rem;
+    justify-content: space-between;
+  }
+
+  .podium-card {
+    height: 100%;
+  }
+
+  .finisher-rank {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background-color: #cbff70;
+    color: #000;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .finisher-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .champion-card img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #cbff70;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .finisher-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .finisher-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .champion-card .finisher-label {
+    font-size: 1.2rem;
+  }
+
+  .finisher-label .finisher-seed {
+    font-size: inherit;
+    color: #888;
+    font-weight: 500;
+    margin-left: 0.5rem;
+  }
+
+  .finisher-sublabel {
+    font-size: 0.8rem;
+    color: #aaa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .finisher-seed {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 500;
+  }
+
+  .champion-picks {
+    font-size: 0.9rem;
+    color: #cbff70;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .section-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    text-align: left;
+  }
+
+  .runner-ups-header {
+    font-weight: 400;
   }
 
   .status-pill {
@@ -489,35 +946,6 @@
   .status-pill.voted {
     background-color: #28a745;
     color: #fff;
-  }
-
-  .timer-compact {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid #333;
-  }
-
-  .timer-label {
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-
-  .timer-value {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #cbff70;
-    font-family: "Courier New", monospace;
-  }
-
-  .info-text {
-    font-size: 0.85rem;
-    color: #aaa;
-    text-align: center;
-    padding: 0.5rem 0;
-    border-top: 1px solid #333;
-    margin-top: 0.75rem;
   }
 
   .votes-submitted-bar {
@@ -546,6 +974,12 @@
   .mobile-only {
     display: none;
   }
+
+  .votes-column,
+  .timer-column {
+    display: flex;
+  }
+
   .bracket-container {
     display: flex;
     gap: 2rem;
@@ -769,6 +1203,20 @@
     color: #cbff70;
   }
 
+  .round-container.results-mode .round-header h2 {
+    color: #fff;
+  }
+
+  .matchup-card.results-mode .item {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .matchup-card.results-mode .item.winner {
+    background-color: #2e7d32;
+    border-color: #4caf50;
+  }
+
   /* Mobile Styles */
   @media (max-width: 899px) {
     .desktop-only {
@@ -779,38 +1227,127 @@
       display: flex;
     }
 
-    .bracket-header-compact {
-      padding: 0.875rem 1rem;
-      margin: 0 0 1.25rem 0;
+    .bracket-header {
+      padding: 0.5rem 0.75rem;
+      margin: 0 0 1rem 0;
       max-width: none;
-    }
-
-    .header-main {
+      display: flex;
       flex-direction: column;
-      align-items: flex-start;
       gap: 0.75rem;
-      margin-bottom: 0.5rem;
+      text-align: left;
     }
 
-    .bracket-header-compact h1 {
-      font-size: 1.25rem;
+    .title-column {
+      align-items: flex-start;
     }
 
-    .timer-compact {
-      padding-top: 0.5rem;
+    .desktop-stats {
+      display: none;
     }
 
-    .timer-label {
-      font-size: 0.85rem;
+    .mobile-stats {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
     }
 
-    .timer-value {
+    .bracket-header h1 {
+      font-size: 1.1rem;
+    }
+
+    .column-value {
       font-size: 1rem;
     }
 
-    .info-text {
-      font-size: 0.8rem;
-      padding: 0.375rem 0;
+    .column-label {
+      font-size: 0.7rem;
+    }
+
+    .results-message {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .results-container {
+      margin: 0 0 1rem 0;
+    }
+
+    .mobile-only {
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .podium-section .section-header {
+      margin-bottom: 0;
+    }
+
+    .results-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .podium-section {
+      gap: 1rem;
+    }
+
+    .podium-grid {
+      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      margin-top: -1rem;
+    }
+
+    .podium-top {
+      flex: 1;
+    }
+
+    .podium-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 1;
+    }
+
+    .podium-bottom .finisher-card {
+      flex: 1;
+    }
+
+    .finisher-card {
+      padding: 0.75rem;
+    }
+
+    .champion-card {
+      padding: 0.75rem;
+      justify-content: space-between;
+    }
+
+    .finisher-card img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .champion-card img {
+      width: 150px;
+      height: 150px;
+      border: 1px solid #cbff70;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .finisher-label {
+      font-size: 0.9rem;
+    }
+
+    .champion-card .finisher-label {
+      font-size: 1.1rem;
+    }
+
+    .section-header {
+      font-size: 1rem;
+      margin: 0;
+      height: 2rem;
     }
 
     .bracket-container {
@@ -824,6 +1361,9 @@
       display: none;
     }
     .round-container[data-displayed-mobile="true"] {
+      display: flex;
+    }
+    .round-container.results-mode {
       display: flex;
     }
     .round-container h2 {

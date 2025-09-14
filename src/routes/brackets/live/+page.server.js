@@ -1,10 +1,12 @@
-import { getCurrentBracket, getBracketMatchups } from '$lib/bracketHelpers';
+import { getCurrentBracket, getBracketMatchups, getUpcomingBracket } from '$lib/bracketHelpers';
 import { error as svelteKitError } from '@sveltejs/kit';
+import moment from 'moment-timezone';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ locals, cookies }) {
   const supabase = locals.supabase;
   try {
+    // For now, both Saturday and Sunday show the previous week's results
     const bracket = await getCurrentBracket(supabase);
     
     if (!bracket) {
@@ -43,6 +45,7 @@ export async function load({ locals, cookies }) {
       currentRound: matchupData.currentRound,
       pageError: matchupData.pageError,
       userVoteMap,
+      champion: matchupData.champion,
     };
   } catch (err) {
     console.error("Error in live bracket load function:", err);

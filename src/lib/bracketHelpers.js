@@ -7,18 +7,20 @@ import moment from 'moment-timezone';
  * @returns {string} The date of the anchor Sunday in 'YYYY-MM-DD' format.
  */
 function getAnchorSunday() {
-  const today = moment.tz('America/New_York');
-  // .day() in moment: Sunday is 0, Monday is 1, etc.
-  // If today is Sunday (0), we need to go back to *this* Sunday.
-  // If today is Saturday (6), we need the upcoming Sunday.
-  // The logic should be to find the preceding Sunday for Mon-Sat.
-  // if today is Sunday, we want today.
-  const dayOfWeek = today.day();
+  const now = moment.tz('America/New_York');
+  const dayOfWeek = now.day(); // Sunday = 0, Monday = 1, ..., Saturday = 6
   
-  // If it's Sunday, the anchor is today. Otherwise, find the last Sunday.
-  const anchor = today.subtract(dayOfWeek, 'days');
-  
-  return anchor.format('YYYY-MM-DD');
+  // For Saturday and Sunday, we want to show the results from the previous week's tournament
+  // For Monday-Friday, we want the current week's tournament
+  if (dayOfWeek === 0 || dayOfWeek === 6) {
+    // Saturday and Sunday: get last week's anchor Sunday (previous week's results)
+    const anchor = now.subtract(dayOfWeek + 7, 'days');
+    return anchor.format('YYYY-MM-DD');
+  } else {
+    // Monday-Friday: get current week's anchor Sunday
+    const anchor = now.subtract(dayOfWeek, 'days');
+    return anchor.format('YYYY-MM-DD');
+  }
 }
 
 /**
@@ -46,18 +48,55 @@ export async function getCurrentBracket(supabase) {
 }
 
 /**
+ * Gets the upcoming bracket anchor Sunday (for Sunday results page).
+ * @returns {string} The date of the upcoming anchor Sunday in 'YYYY-MM-DD' format.
+ */
+function getUpcomingAnchorSunday() {
+  const now = moment.tz('America/New_York');
+  const dayOfWeek = now.day(); // Sunday = 0, Monday = 1, ..., Saturday = 6
+  
+  // Get next week's anchor Sunday
+  const upcomingAnchor = now.add(7 - dayOfWeek, 'days');
+  return upcomingAnchor.format('YYYY-MM-DD');
+}
+
+/**
+ * Fetches the upcoming bracket from the database (for Sunday results page).
+ * @param {SupabaseClient} supabase The Supabase client instance.
+ * @returns {Promise<object|null>} The upcoming bracket object or null if not found.
+ */
+export async function getUpcomingBracket(supabase) {
+  const upcomingAnchorSunday = getUpcomingAnchorSunday();
+
+  const { data, error } = await supabase
+    .from('brackets')
+    .select('*')
+    .eq('anchor_sunday', upcomingAnchorSunday)
+    .single();
+
+  if (error && error.code !== 'PGRST116') {
+    console.error('Error fetching upcoming bracket:', error);
+    throw error;
+  }
+
+  return data;
+}
+
+/**
  * Gets the current round number based on the day of the week.
  * Monday is Round 1, Tuesday is Round 2, etc.
  * @returns {number} The current round number (1-5), or 0 if not a tournament day.
  */
 function getCurrentRound() {
-    // FOR TESTING: Simulate Tuesday (Round 2)
-    // return 2;
-
-    const today = moment.tz('America/New_York');
-    const dayOfWeek = today.day(); // Sunday=0, Monday=1, ..., Friday=5
+    const now = moment.tz('America/New_York');
+    const dayOfWeek = now.day(); // Sunday = 0, Monday = 1, ..., Saturday = 6
+    
     if (dayOfWeek >= 1 && dayOfWeek <= 5) {
         return dayOfWeek;
+    }
+    // Saturday/Sunday = results mode (round 6)
+    if (dayOfWeek === 6 || dayOfWeek === 0) {
+        return 6;
     }
     return 0; // Not a tournament day
 }
@@ -130,7 +169,9 @@ export async function getBracketMatchups(supabase, bracketId) {
     };
 
     // Pre-calculate all winners for rounds that have finished
-    for (let roundNum = 1; roundNum < currentRound; roundNum++) {
+    // In results mode (round 6), calculate all winners
+    const maxRound = currentRound === 6 ? 5 : currentRound - 1;
+    for (let roundNum = 1; roundNum <= maxRound; roundNum++) {
         if (!matchupsByRound[roundNum]) continue;
         for (const matchup of matchupsByRound[roundNum]) {
             let item1, item2;
@@ -177,7 +218,7 @@ export async function getBracketMatchups(supabase, bracketId) {
             const totalVotes = item1Votes + item2Votes;
 
             let winnerId = null;
-            if (roundNum < currentRound) {
+            if (roundNum < currentRound || currentRound === 6) {
                 winnerId = getWinner(matchup, item1, item2);
             }
 
@@ -199,13 +240,26 @@ export async function getBracketMatchups(supabase, bracketId) {
         } else {
             pageError = 'The tournament is over for this week. Check back Monday!';
         }
+    } else if (currentRound === 6) {
+        // Results mode - no error, just show results
+        pageError = null;
+    }
+
+    // Get the champion (winner of round 5) for results mode
+    let champion = null;
+    if (currentRound === 6 && fullBracket[5] && fullBracket[5].length > 0) {
+        const finalMatchup = fullBracket[5][0];
+        if (finalMatchup.winnerId) {
+            champion = finalMatchup.winnerId === finalMatchup.item1.id ? finalMatchup.item1 : finalMatchup.item2;
+        }
     }
 
     return {
         bracket,
         fullBracket,
         currentRound,
-        pageError
+        pageError,
+        champion
     };
 }
 
