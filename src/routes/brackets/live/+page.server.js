@@ -15,7 +15,8 @@ export async function load({ locals, cookies }) {
         fullBracket: {},
         currentRound: 0,
         pageError: 'No live bracket found for this week.',
-        votedMatchupIds: [],
+        userVoteMap: new Map(),
+        champion: null,
       };
     }
 
