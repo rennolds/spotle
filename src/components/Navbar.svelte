@@ -7,6 +7,7 @@
   // New props to check if user is in JAM or REWIND mode
   export let playingJam = false;
   export let playingRewind = false;
+  export let isMenuOpen = false;
 
   // Props to hide specific icons
   export let showStats = true;
@@ -36,22 +37,13 @@
   <div class="navbar">
     <div class="navbar-left">
       <div class="icon-btn" on:click={handleMenuClick}>
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 28 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M25.7353 23.5882C26.3018 23.5885 26.8465 23.8067 27.2565 24.1977C27.6664 24.5886 27.9103 25.1223 27.9375 25.6881C27.9648 26.254 27.7733 26.8086 27.4027 27.2371C27.0321 27.6655 26.5109 27.935 25.9471 27.9897L25.7353 28H2.20588C1.63939 27.9997 1.09471 27.7815 0.684726 27.3906C0.274738 26.9996 0.0308647 26.466 0.00364079 25.9001C-0.0235831 25.3343 0.167929 24.7797 0.538493 24.3512C0.909057 23.9227 1.43027 23.6532 1.99412 23.5985L2.20588 23.5882H25.7353ZM25.7353 13.2941C26.3203 13.2941 26.8814 13.5265 27.2951 13.9402C27.7088 14.3539 27.9412 14.915 27.9412 15.5C27.9412 16.085 27.7088 16.6461 27.2951 17.0598C26.8814 17.4735 26.3203 17.7059 25.7353 17.7059H2.20588C1.62085 17.7059 1.05977 17.4735 0.646088 17.0598C0.232405 16.6461 0 16.085 0 15.5C0 14.915 0.232405 14.3539 0.646088 13.9402C1.05977 13.5265 1.62085 13.2941 2.20588 13.2941H25.7353ZM25.7353 3C26.3203 3 26.8814 3.2324 27.2951 3.64609C27.7088 4.05977 27.9412 4.62085 27.9412 5.20588C27.9412 5.79092 27.7088 6.35199 27.2951 6.76568C26.8814 7.17936 26.3203 7.41176 25.7353 7.41176H2.20588C1.62085 7.41176 1.05977 7.17936 0.646088 6.76568C0.232405 6.35199 0 5.79092 0 5.20588C0 4.62085 0.232405 4.05977 0.646088 3.64609C1.05977 3.2324 1.62085 3 2.20588 3H25.7353Z"
-            fill="white"
-          />
-          <circle cx="23" cy="5" r="5" fill="#FF6A00" />
-        </svg>
-        <!-- <Icon width={"1.75rem"} height={"1.75rem"} name={"menu"}></Icon> -->
+        {#if isMenuOpen}
+          <Icon width={"1.5rem"} height={"1.5rem"} name={"close"}></Icon>
+        {:else}
+          <Icon width={"1.5rem"} height={"1.5rem"} name={"menu"}></Icon>
+        {/if}
       </div>
-      <!-- Show mode indicator icons based on current game mode -->
+
       {#if playingJam}
         <div class="mode-indicator jam-mode">
           <svg
@@ -99,8 +91,8 @@
       {#if showStats}
         <div class="icon-btn" on:click={handleStatsClick}>
           <svg
-            width="24"
-            height="24"
+            width="22"
+            height="22"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -114,17 +106,17 @@
       {#if showMute}
         {#if $muted}
           <div class="icon-btn" on:click={handleMute}>
-            <Icon width={"1.75rem"} height={"1.75rem"} name={"muted"}></Icon>
+            <Icon width={"1.5rem"} height={"1.5rem"} name={"muted"}></Icon>
           </div>
         {:else}
           <div class="icon-btn" on:click={handleMute}>
-            <Icon width={"1.75rem"} height={"1.75rem"} name={"unmuted"}></Icon>
+            <Icon width={"1.5rem"} height={"1.5rem"} name={"unmuted"}></Icon>
           </div>
         {/if}
       {/if}
       {#if showHelp}
         <div class="icon-btn" on:click={handleHelpClick}>
-          <Icon width={"1.75rem"} height={"1.75rem"} name={"help"}></Icon>
+          <Icon width={"1.5rem"} height={"1.5rem"} name={"help"}></Icon>
         </div>
       {/if}
     </div>
@@ -161,6 +153,7 @@
 
   /* Added styles for navbar-left to properly align the mode indicators */
   .navbar-left {
+    margin-top: 7.5px;
     gap: 12px; /* Add spacing between menu button and mode indicator */
   }
 
