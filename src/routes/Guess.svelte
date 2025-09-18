@@ -331,14 +331,12 @@
 
   <div class="row">
     <div
-      class="item large {Math.abs(
-        artist.debut_album_year - mysteryArtist.debut_album_year
-      ) < 6
-        ? 'close'
-        : ''} 
-            {artist.debut_album_year == mysteryArtist.debut_album_year
+      class="item large {artist.debut_album_year ==
+      mysteryArtist.debut_album_year
         ? 'correct'
-        : ''}"
+        : Math.abs(artist.debut_album_year - mysteryArtist.debut_album_year) < 6
+          ? 'close'
+          : ''}"
     >
       <h3>Debut</h3>
       <div class="flex-container">
@@ -370,14 +368,11 @@
     </div>
 
     <div
-      class="item large {Math.abs(
-        artist.listener_rank - mysteryArtist.listener_rank
-      ) < 51
-        ? 'close'
-        : ''} 
-            {artist.listener_rank == mysteryArtist.listener_rank
+      class="item large {artist.listener_rank == mysteryArtist.listener_rank
         ? 'correct'
-        : ''}"
+        : Math.abs(artist.listener_rank - mysteryArtist.listener_rank) < 51
+          ? 'close'
+          : ''}"
     >
       <h3>Popularity</h3>
       <div class="flex-container">
@@ -418,11 +413,11 @@
     </div>
 
     <div
-      class="item small {getContinent(artist.country) ==
-      getContinent(mysteryArtist.country)
-        ? 'close'
-        : ''} 
-            {artist.country == mysteryArtist.country ? 'correct' : ''}"
+      class="item small {artist.country == mysteryArtist.country
+        ? 'correct'
+        : getContinent(artist.country) == getContinent(mysteryArtist.country)
+          ? 'close'
+          : ''}"
     >
       <img
         class="flag-img"
