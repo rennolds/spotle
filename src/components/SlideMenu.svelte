@@ -2,6 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import { fly } from "svelte/transition";
   import { browser } from "$app/environment";
+  import { highContrast } from "../routes/store.js";
 
   const dispatch = createEventDispatcher();
 
@@ -58,7 +59,7 @@
     on:click|stopPropagation
     transition:fly={{ x: -300, duration: 300 }}
   >
-    <div class="menu-close" on:click={handleClose}>
+    <button class="menu-close" on:click={handleClose}>
       <svg
         width="20"
         height="18"
@@ -71,24 +72,31 @@
           fill="white"
         />
       </svg>
-    </div>
+    </button>
 
     <div class="menu-content">
       <div class="menu-navigation">
-        <div class="menu-item" on:click={handleHome}>Home</div>
-        <div class="menu-item" on:click={handleFollowUs}>Follow Us</div>
-        <div class="menu-item" on:click={handlePrivacy}>Privacy</div>
+        <button class="menu-item" on:click={handleHome}>Home</button>
+        <button class="menu-item" on:click={handleFollowUs}>Follow Us</button>
+        <button class="menu-item" on:click={handlePrivacy}>Privacy</button>
+        <div class="menu-item">
+          <span>High Contrast Mode</span>
+          <label class="switch">
+            <input type="checkbox" bind:checked={$highContrast} />
+            <span class="slider round"></span>
+          </label>
+        </div>
       </div>
 
       <div class="menu-section">
         <h3 class="section-header">Need more Spotle?</h3>
-        <div class="menu-item sub-item" on:click={handleRewind}>
+        <button class="menu-item sub-item" on:click={handleRewind}>
           <div class="menu-item-content">
             <div class="menu-item-title">Rewind</div>
             <div class="menu-item-subtitle">Play the last week of Spotle</div>
           </div>
-        </div>
-        <div class="menu-item sub-item" on:click={handleJamMode}>
+        </button>
+        <button class="menu-item sub-item" on:click={handleJamMode}>
           <div class="menu-item-content">
             <div class="menu-item-title">
               <span>Jam</span>
@@ -103,26 +111,26 @@
               Solve Spotles as fast as you can
             </div>
           </div>
-        </div>
-        <div class="menu-item sub-item" on:click={handleCreateGame}>
+        </button>
+        <button class="menu-item sub-item" on:click={handleCreateGame}>
           <div class="menu-item-content">
             <div class="menu-item-title">Create</div>
             <div class="menu-item-subtitle">
               Make a Spotle for your friends!
             </div>
           </div>
-        </div>
+        </button>
       </div>
 
       <div class="menu-section">
         <h3 class="section-header">Our Games</h3>
 
-        <div class="game-card" on:click={handleHarmonies}>
+        <button class="game-card" on:click={handleHarmonies}>
           <div class="game-image harmonies-image"></div>
           <div class="game-title">Harmonies: Music Connections</div>
-        </div>
+        </button>
 
-        <div class="game-card" on:click={handleCrosstune}>
+        <button class="game-card" on:click={handleCrosstune}>
           <div class="new-indicator">
             <div class="line"></div>
             <span class="new-badge-container">
@@ -144,7 +152,7 @@
           </div>
           <div class="game-image crosstune-image"></div>
           <div class="game-title">Crosstune: A music crossword</div>
-        </div>
+        </button>
       </div>
     </div>
 
@@ -210,6 +218,12 @@
     text-align: left;
     width: 100%;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    font-family: inherit;
   }
 
   .menu-item:hover {
@@ -256,6 +270,58 @@
     margin-top: 2px;
   }
 
+  /* Toggle Switch Styles */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #f5793a;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+  .slider.round {
+    border-radius: 24px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
   .new-badge {
     width: 40px;
     height: 20px;
@@ -299,6 +365,9 @@
     width: 100%;
     transition: transform 0.2s ease;
     position: relative;
+    background: none;
+    border: none;
+    padding: 0;
   }
 
   .game-card:hover {

@@ -162,3 +162,5 @@ export const bestGuessImages = writable(
 bestGuessImages.subscribe((val) => {
     if (browser) return localStorage.setItem(bestGuessImagesName, JSON.stringify(val));
 });
+
+export const highContrast = writable(false);

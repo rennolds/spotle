@@ -1,45 +1,282 @@
 <script>
   import Icon from "./Icon.svelte";
+  import { highContrast } from "./store.js";
 
   const africa = [
-    "DZ", "AO", "BW", "BI", "CM", "CV", "CF", "TD", "KM", "YT", "CG", "CD", "BJ", 
-    "GQ", "ET", "ER", "DJ", "GA", "GM", "GH", "GN", "CI", "KE", "LS", "LR", "LY", 
-    "MG", "MW", "ML", "MR", "MU", "MA", "MZ", "NA", "NE", "NG", "GW", "RE", "RW", 
-    "SH", "ST", "SN", "SC", "SL", "SO", "ZA", "ZW", "SS", "EH", "SD", "SZ", "TG", 
-    "TN", "UG", "EG", "TZ", "BF", "ZM"
+    "DZ",
+    "AO",
+    "BW",
+    "BI",
+    "CM",
+    "CV",
+    "CF",
+    "TD",
+    "KM",
+    "YT",
+    "CG",
+    "CD",
+    "BJ",
+    "GQ",
+    "ET",
+    "ER",
+    "DJ",
+    "GA",
+    "GM",
+    "GH",
+    "GN",
+    "CI",
+    "KE",
+    "LS",
+    "LR",
+    "LY",
+    "MG",
+    "MW",
+    "ML",
+    "MR",
+    "MU",
+    "MA",
+    "MZ",
+    "NA",
+    "NE",
+    "NG",
+    "GW",
+    "RE",
+    "RW",
+    "SH",
+    "ST",
+    "SN",
+    "SC",
+    "SL",
+    "SO",
+    "ZA",
+    "ZW",
+    "SS",
+    "EH",
+    "SD",
+    "SZ",
+    "TG",
+    "TN",
+    "UG",
+    "EG",
+    "TZ",
+    "BF",
+    "ZM",
   ];
 
   const asia = [
-    "AF", "AZ", "BH", "BD", "AM", "BT", "IO", "BN", "MM", "KH", "LK", "CN", "TW", 
-    "CX", "CC", "CY", "GE", "PS", "HK", "IN", "ID", "IR", "IQ", "IL", "JP", "KZ", 
-    "JO", "KP", "KR", "KW", "KG", "LA", "LB", "MO", "MY", "MV", "MN", "OM", "NP", 
-    "PK", "PH", "TL", "QA", "RU", "SA", "SG", "VN", "SY", "TJ", "TH", "AE", "TR", 
-    "TM", "UZ", "YE", "XE", "XD", "XS"
+    "AF",
+    "AZ",
+    "BH",
+    "BD",
+    "AM",
+    "BT",
+    "IO",
+    "BN",
+    "MM",
+    "KH",
+    "LK",
+    "CN",
+    "TW",
+    "CX",
+    "CC",
+    "CY",
+    "GE",
+    "PS",
+    "HK",
+    "IN",
+    "ID",
+    "IR",
+    "IQ",
+    "IL",
+    "JP",
+    "KZ",
+    "JO",
+    "KP",
+    "KR",
+    "KW",
+    "KG",
+    "LA",
+    "LB",
+    "MO",
+    "MY",
+    "MV",
+    "MN",
+    "OM",
+    "NP",
+    "PK",
+    "PH",
+    "TL",
+    "QA",
+    "RU",
+    "SA",
+    "SG",
+    "VN",
+    "SY",
+    "TJ",
+    "TH",
+    "AE",
+    "TR",
+    "TM",
+    "UZ",
+    "YE",
+    "XE",
+    "XD",
+    "XS",
   ];
 
   const europe = [
-    "AL", "AD", "AZ", "AT", "AM", "BE", "BA", "BG", "BY", "HR", "CY", "CZ", "DK", 
-    "EE", "FO", "FI", "AX", "FR", "GE", "DE", "GI", "GR", "VA", "HU", "IS", "IE", 
-    "IT", "KZ", "LV", "LI", "LT", "LU", "MT", "MC", "MD", "ME", "NL", "NO", "PL", 
-    "PT", "RO", "RU", "SM", "RS", "SK", "SI", "ES", "SJ", "SE", "CH", "TR", "UA", 
-    "MK", "GB", "GB-ENG", "UK", "GG", "JE", "IM"
+    "AL",
+    "AD",
+    "AZ",
+    "AT",
+    "AM",
+    "BE",
+    "BA",
+    "BG",
+    "BY",
+    "HR",
+    "CY",
+    "CZ",
+    "DK",
+    "EE",
+    "FO",
+    "FI",
+    "AX",
+    "FR",
+    "GE",
+    "DE",
+    "GI",
+    "GR",
+    "VA",
+    "HU",
+    "IS",
+    "IE",
+    "IT",
+    "KZ",
+    "LV",
+    "LI",
+    "LT",
+    "LU",
+    "MT",
+    "MC",
+    "MD",
+    "ME",
+    "NL",
+    "NO",
+    "PL",
+    "PT",
+    "RO",
+    "RU",
+    "SM",
+    "RS",
+    "SK",
+    "SI",
+    "ES",
+    "SJ",
+    "SE",
+    "CH",
+    "TR",
+    "UA",
+    "MK",
+    "GB",
+    "GB-ENG",
+    "UK",
+    "GG",
+    "JE",
+    "IM",
   ];
 
   const north_america = [
-    "AG", "BS", "BB", "BM", "BZ", "VG", "CA", "KY", "CR", "CU", "DM", "DO", "SV", 
-    "GL", "GD", "GP", "GT", "HT", "HN", "JM", "MQ", "MX", "MS", "AN", "CW", "AW", 
-    "SX", "BQ", "NI", "UM", "PA", "PR", "BL", "KN", "AI", "LC", "MF", "PM", "VC", 
-    "TT", "TC", "US", "VI"
+    "AG",
+    "BS",
+    "BB",
+    "BM",
+    "BZ",
+    "VG",
+    "CA",
+    "KY",
+    "CR",
+    "CU",
+    "DM",
+    "DO",
+    "SV",
+    "GL",
+    "GD",
+    "GP",
+    "GT",
+    "HT",
+    "HN",
+    "JM",
+    "MQ",
+    "MX",
+    "MS",
+    "AN",
+    "CW",
+    "AW",
+    "SX",
+    "BQ",
+    "NI",
+    "UM",
+    "PA",
+    "PR",
+    "BL",
+    "KN",
+    "AI",
+    "LC",
+    "MF",
+    "PM",
+    "VC",
+    "TT",
+    "TC",
+    "US",
+    "VI",
   ];
 
   const oceania = [
-    "AS", "AU", "SB", "CK", "FJ", "PF", "KI", "GU", "NR", "NC", "VU", "NZ", "NU", 
-    "NF", "MP", "UM", "FM", "MH", "PW", "PG", "PN", "TK", "TO", "TV", "WF", "WS", 
-    "XX"
+    "AS",
+    "AU",
+    "SB",
+    "CK",
+    "FJ",
+    "PF",
+    "KI",
+    "GU",
+    "NR",
+    "NC",
+    "VU",
+    "NZ",
+    "NU",
+    "NF",
+    "MP",
+    "UM",
+    "FM",
+    "MH",
+    "PW",
+    "PG",
+    "PN",
+    "TK",
+    "TO",
+    "TV",
+    "WF",
+    "WS",
+    "XX",
   ];
 
   const south_america = [
-    "AR", "BO", "BR", "CL", "CO", "EC", "FK", "GF", "GY", "PY", "PE", "SR", "UY", "VE"
+    "AR",
+    "BO",
+    "BR",
+    "CL",
+    "CO",
+    "EC",
+    "FK",
+    "GF",
+    "GY",
+    "PY",
+    "PE",
+    "SR",
+    "UY",
+    "VE",
   ];
 
   function getContinent(countryCode) {
@@ -84,18 +321,24 @@
   }
 </script>
 
-<div class="guess-wrapper">
+<div class="guess-wrapper" class:high-contrast={$highContrast}>
   <div class="header-row">
     <img src={artist.image_uri} alt={artist.name} />
     <h2 class={artist.name.length > 15 ? "header-name-small" : ""}>
       {artist.name}
     </h2>
   </div>
-  
+
   <div class="row">
     <div
-      class="item large {Math.abs(artist.debut_album_year - mysteryArtist.debut_album_year) < 6 ? 'close' : ''} 
-            {artist.debut_album_year == mysteryArtist.debut_album_year ? 'correct' : ''}"
+      class="item large {Math.abs(
+        artist.debut_album_year - mysteryArtist.debut_album_year
+      ) < 6
+        ? 'close'
+        : ''} 
+            {artist.debut_album_year == mysteryArtist.debut_album_year
+        ? 'correct'
+        : ''}"
     >
       <h3>Debut</h3>
       <div class="flex-container">
@@ -116,17 +359,25 @@
         {/if}
       </div>
     </div>
-    
+
     <div
-      class="item small {artist.group_size == mysteryArtist.group_size ? 'correct' : ''}"
+      class="item small {artist.group_size == mysteryArtist.group_size
+        ? 'correct'
+        : ''}"
     >
       <h3>Members</h3>
       <h2>{artist.group_size == 1 ? "Solo" : artist.group_size}</h2>
     </div>
-    
+
     <div
-      class="item large {Math.abs(artist.listener_rank - mysteryArtist.listener_rank) < 51 ? 'close' : ''} 
-            {artist.listener_rank == mysteryArtist.listener_rank ? 'correct' : ''}"
+      class="item large {Math.abs(
+        artist.listener_rank - mysteryArtist.listener_rank
+      ) < 51
+        ? 'close'
+        : ''} 
+            {artist.listener_rank == mysteryArtist.listener_rank
+        ? 'correct'
+        : ''}"
     >
       <h3>Popularity</h3>
       <div class="flex-container">
@@ -148,24 +399,29 @@
       </div>
     </div>
   </div>
-  
+
   <div class="row">
     <div
-      class="item small {artist.gender == mysteryArtist.gender ? 'correct' : ''}"
+      class="item small {artist.gender == mysteryArtist.gender
+        ? 'correct'
+        : ''}"
     >
       <h3>Gender</h3>
       <h2>{artist.gender}</h2>
     </div>
-    
+
     <div
       class="item large {artist.genre == mysteryArtist.genre ? 'correct' : ''}"
     >
       <h3>Genre</h3>
       <h2>{artist.genre}</h2>
     </div>
-    
+
     <div
-      class="item small {getContinent(artist.country) == getContinent(mysteryArtist.country) ? 'close' : ''} 
+      class="item small {getContinent(artist.country) ==
+      getContinent(mysteryArtist.country)
+        ? 'close'
+        : ''} 
             {artist.country == mysteryArtist.country ? 'correct' : ''}"
     >
       <img
@@ -224,7 +480,6 @@
     min-width: 83px;
   }
 
-
   .item h2 {
     font-size: 21px;
     font-weight: 700;
@@ -232,13 +487,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    }
+  }
 
-    .item.large h2 {
+  .item.large h2 {
     font-size: 18px;
-    }
+  }
 
-  .item h3, .item h2 {
+  .item h3,
+  .item h2 {
     color: white;
     margin: 0;
     max-width: 100%;
@@ -281,8 +537,6 @@
     font-weight: 700;
     color: #fff;
   }
-
-
 
   .flag-img {
     width: 60px;
@@ -328,7 +582,8 @@
   }
 
   @keyframes flip-correct {
-    0% {}
+    0% {
+    }
     60% {
       transform: rotateY(0deg);
       background-color: #454545;
@@ -344,7 +599,8 @@
   }
 
   @keyframes flip-close {
-    0% {}
+    0% {
+    }
     60% {
       transform: rotateY(0deg);
       background-color: #454545;
@@ -356,6 +612,48 @@
     100% {
       transform: rotateY(0deg);
       background-color: #b8b105; /* Yellow */
+    }
+  }
+
+  .guess-wrapper.high-contrast .correct {
+    animation: flip-correct-hc 1.65s ease-in-out forwards;
+  }
+
+  .guess-wrapper.high-contrast .close {
+    animation: flip-close-hc 1.65s ease-in-out forwards;
+  }
+
+  @keyframes flip-correct-hc {
+    0% {
+    }
+    60% {
+      transform: rotateY(0deg);
+      background-color: #454545;
+    }
+    80% {
+      transform: rotateY(180deg);
+      background-color: #454545;
+    }
+    100% {
+      transform: rotateY(0deg);
+      background-color: #f5793a;
+    }
+  }
+
+  @keyframes flip-close-hc {
+    0% {
+    }
+    60% {
+      transform: rotateY(0deg);
+      background-color: #454545;
+    }
+    80% {
+      transform: rotateY(180deg);
+      background-color: #454545;
+    }
+    100% {
+      transform: rotateY(0deg);
+      background-color: #85c0f9;
     }
   }
 </style>

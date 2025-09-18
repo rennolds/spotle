@@ -5,6 +5,7 @@
   import { fly } from "svelte/transition";
   import moment from "moment";
   import "moment-timezone";
+  import { highContrast } from "./store.js";
   export let artist;
   export let result;
   export let guessCount;
@@ -48,24 +49,14 @@
       "You are seriously good at this.",
       "You're an all star!",
     ],
-    5: [
-      "Five. Impressive.",
-      "Wooo!!",
-      "Amazing!",
-      "Let's GOO!"
-    ],
+    5: ["Five. Impressive.", "Wooo!!", "Amazing!", "Let's GOO!"],
     6: [
       "Tell your friends!",
       "Another day, another Spotle.",
       "A respectable performance.",
       "Way to close it out.",
     ],
-    7: [
-      "Congrats!", 
-      "Nice job!",
-      "Not bad.",
-      "Way to get it done."
-    ],
+    7: ["Congrats!", "Nice job!", "Not bad.", "Way to get it done."],
     8: [
       "8 guesses...it'll pass.",
       "Pretty good.",
@@ -166,15 +157,15 @@
   function handleShare() {
     try {
       if (browser) {
-        console.log('published to google events');
-        gtag('event', 'shared_result', {
-          'artist': artist.artist,
-          'result': result,
-          'guesses': Number(guessCount),
+        console.log("published to google events");
+        gtag("event", "shared_result", {
+          artist: artist.artist,
+          result: result,
+          guesses: Number(guessCount),
         });
       }
-    } catch(error) {
-      console.error('Error publishing to google events');
+    } catch (error) {
+      console.error("Error publishing to google events");
       console.error(error);
     }
     navigator.clipboard.writeText(shareText);
@@ -250,7 +241,11 @@
     <div class="sub-header">{artist.artist}</div>
     <div class="buttons">
       {#if !playingRewind}
-      <button on:click={handleShare} style="background-color: #1DB954;" class="button">{shareBtnText}</button>
+        <button
+          on:click={handleShare}
+          class="button share-button"
+          class:high-contrast={$highContrast}>{shareBtnText}</button
+        >
       {/if}
       {#if !playingChallenge}
         <button class="button" style="background-color: #BA81C2;"
@@ -375,6 +370,14 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+  }
+
+  .share-button {
+    background-color: #1db954;
+  }
+
+  .share-button.high-contrast {
+    background-color: #f5793a;
   }
 
   .button:hover {

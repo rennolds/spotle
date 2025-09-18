@@ -36,9 +36,9 @@
   <div class="navbar">
     <div class="navbar-left">
       <div class="icon-btn" on:click={handleMenuClick}>
-        <svg
-          width="28"
-          height="28"
+        <!-- <svg
+          width="24"
+          height="24"
           viewBox="0 0 28 28"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -48,10 +48,10 @@
             fill="white"
           />
           <circle cx="23" cy="5" r="5" fill="#FF6A00" />
-        </svg>
-        <!-- <Icon width={"1.75rem"} height={"1.75rem"} name={"menu"}></Icon> -->
+        </svg> -->
+        <Icon width={"1.5rem"} height={"1.5rem"} name={"menu"}></Icon>
       </div>
-      <!-- Show mode indicator icons based on current game mode -->
+
       {#if playingJam}
         <div class="mode-indicator jam-mode">
           <svg
@@ -99,8 +99,8 @@
       {#if showStats}
         <div class="icon-btn" on:click={handleStatsClick}>
           <svg
-            width="24"
-            height="24"
+            width="22"
+            height="22"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -114,17 +114,17 @@
       {#if showMute}
         {#if $muted}
           <div class="icon-btn" on:click={handleMute}>
-            <Icon width={"1.75rem"} height={"1.75rem"} name={"muted"}></Icon>
+            <Icon width={"1.5rem"} height={"1.5rem"} name={"muted"}></Icon>
           </div>
         {:else}
           <div class="icon-btn" on:click={handleMute}>
-            <Icon width={"1.75rem"} height={"1.75rem"} name={"unmuted"}></Icon>
+            <Icon width={"1.5rem"} height={"1.5rem"} name={"unmuted"}></Icon>
           </div>
         {/if}
       {/if}
       {#if showHelp}
         <div class="icon-btn" on:click={handleHelpClick}>
-          <Icon width={"1.75rem"} height={"1.75rem"} name={"help"}></Icon>
+          <Icon width={"1.5rem"} height={"1.5rem"} name={"help"}></Icon>
         </div>
       {/if}
     </div>
@@ -161,6 +161,7 @@
 
   /* Added styles for navbar-left to properly align the mode indicators */
   .navbar-left {
+    margin-top: 7.5px;
     gap: 12px; /* Add spacing between menu button and mode indicator */
   }
 
