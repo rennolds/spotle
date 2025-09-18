@@ -59,21 +59,6 @@
     on:click|stopPropagation
     transition:fly={{ x: -300, duration: 300 }}
   >
-    <button class="menu-close" on:click={handleClose}>
-      <svg
-        width="20"
-        height="18"
-        viewBox="0 0 20 18"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M19.2099 1.7625L17.3417 0L9.93491 6.9875L2.52816 0L0.659912 1.7625L8.06666 8.75L0.659912 15.7375L2.52816 17.5L9.93491 10.5125L17.3417 17.5L19.2099 15.7375L11.8032 8.75L19.2099 1.7625Z"
-          fill="white"
-        />
-      </svg>
-    </button>
-
     <div class="menu-content">
       <div class="menu-navigation">
         <button class="menu-item" on:click={handleHome}>Home</button>
@@ -166,10 +151,10 @@
 <style>
   .slide-menu-overlay {
     position: fixed;
-    top: 0;
+    top: 100px;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 100px);
     background: rgba(0, 0, 0, 0.7);
     z-index: 9999;
     display: flex;
@@ -191,16 +176,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  .menu-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    z-index: 10000;
   }
 
   .menu-navigation {
@@ -444,6 +419,10 @@
 
   /* Desktop styles */
   @media (min-width: 768px) {
+    .slide-menu-overlay {
+      top: 50px;
+      height: calc(100vh - 50px);
+    }
     .slide-menu {
       max-width: 500px;
       margin: 0 auto;
