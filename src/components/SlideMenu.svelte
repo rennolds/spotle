@@ -65,7 +65,7 @@
         <button class="menu-item" on:click={handleFollowUs}>Follow Us</button>
         <button class="menu-item" on:click={handlePrivacy}>Privacy</button>
         <div class="menu-item">
-          <span>High Contrast Mode</span>
+          <span>Colorblind Mode</span>
           <label class="switch">
             <input type="checkbox" bind:checked={$highContrast} />
             <span class="slider round"></span>
@@ -179,7 +179,7 @@
   }
 
   .menu-navigation {
-    margin-top: 40px;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
