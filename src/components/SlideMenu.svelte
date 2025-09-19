@@ -1,10 +1,22 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher, onMount, onDestroy } from "svelte";
   import { fly } from "svelte/transition";
   import { browser } from "$app/environment";
   import { highContrast } from "../routes/store.js";
 
   const dispatch = createEventDispatcher();
+
+  onMount(() => {
+    if (browser) {
+      document.body.style.overflow = "hidden";
+    }
+  });
+
+  onDestroy(() => {
+    if (browser) {
+      document.body.style.overflow = "auto";
+    }
+  });
 
   // Close the slide menu
   function handleClose() {
