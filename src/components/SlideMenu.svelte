@@ -10,6 +10,9 @@
     if (browser) {
       document.body.style.overflow = "hidden";
     }
+    if (window.ramp && typeof window.ramp.spaNewPage === "function") {
+      window.ramp.spaNewPage("show-rewarded-video");
+    }
   });
 
   onDestroy(() => {

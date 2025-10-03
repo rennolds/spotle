@@ -17,9 +17,6 @@
 
   onMount(() => {
     console.log("CreateGame mounted");
-    if (window.ramp && typeof window.ramp.spaNewPage === "function") {
-      window.ramp.spaNewPage("show-rewarded-video");
-    }
   });
 
   function handleSearch(event) {

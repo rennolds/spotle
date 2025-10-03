@@ -67,9 +67,6 @@
 
   onMount(() => {
     console.log("RewindDateSelector mounted");
-    if (window.ramp && typeof window.ramp.spaNewPage === "function") {
-      window.ramp.spaNewPage("show-rewarded-video");
-    }
   });
 </script>
 
