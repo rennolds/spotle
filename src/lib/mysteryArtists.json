@@ -634,7 +634,7 @@
     "artist": "The Offspring",
     "song_uri": "https://p.scdn.co/mp3-preview/7e21330ba07a385699e1a87d44f4a886ea3fa6a0?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730158cbde70672dd821972907"
-  }, 
+  },
   {
     "date": "08/08/2022",
     "artist": "Lil Wayne",
@@ -1294,7 +1294,7 @@
     "artist": "The Offspring",
     "song_uri": "https://p.scdn.co/mp3-preview/7e21330ba07a385699e1a87d44f4a886ea3fa6a0?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730158cbde70672dd821972907"
-  }, 
+  },
   {
     "date": "11/27/2022",
     "artist": "Lil Wayne",
@@ -1733,7 +1733,7 @@
     "song_uri": "https://p.scdn.co/mp3-preview/ea58fe5f6c03dc8f61ed9168bfc4d404d1f486f2?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2733e0698e4ae5ffb82a005aeeb"
   },
-   {
+  {
     "date": "02/11/2023",
     "artist": "Mumford & Sons",
     "song_uri": "https://p.scdn.co/mp3-preview/a679c8f65021509550b9e2831638716e54cb367f?cid=98f79e400795491cbc5f69b713465708",
@@ -1953,7 +1953,7 @@
     "date": "03/19/2023",
     "artist": "Sam Smith",
     "song_uri": "https://p.scdn.co/mp3-preview/dad7e6d0f24ac5f4ef47c26c64cb6113d065f067?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae" 
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae"
   },
   {
     "date": "03/20/2023",
@@ -2154,10 +2154,10 @@
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273cc2cf912462d8ae4ef856434"
   },
   {
-  "date": "04/22/2023",
-  "artist": "Neon Trees",
-  "song_uri": "https://p.scdn.co/mp3-preview/2f070fe27132eedc8df3c98babc8984b69ba62cb?cid=98f79e400795491cbc5f69b713465708",
-  "image_uri": "https://i.scdn.co/image/ab67616d0000b2734a6c0376235e5aa44e59d2c2"
+    "date": "04/22/2023",
+    "artist": "Neon Trees",
+    "song_uri": "https://p.scdn.co/mp3-preview/2f070fe27132eedc8df3c98babc8984b69ba62cb?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734a6c0376235e5aa44e59d2c2"
   },
   {
     "date": "04/23/2023",
@@ -2206,7 +2206,7 @@
     "artist": "Fall Out Boy",
     "song_uri": "https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5"
-  },  
+  },
   {
     "date": "05/01/2023",
     "artist": "Rihanna",
@@ -2278,7 +2278,7 @@
     "artist": "Sia",
     "song_uri": "https://p.scdn.co/mp3-preview/d2b686ec5e818ab56c7131a72a9d51aeccdb74ca?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273d1410c1372fab1e516328fa8"
-  },  
+  },
   {
     "date": "05/13/2023",
     "artist": "Kanye West",
@@ -2757,7 +2757,7 @@
     "date": "07/31/2023",
     "artist": "Sam Smith",
     "song_uri": "https://p.scdn.co/mp3-preview/dad7e6d0f24ac5f4ef47c26c64cb6113d065f067?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae" 
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae"
   },
   {
     "date": "08/01/2023",
@@ -2878,7 +2878,7 @@
     "artist": "Fall Out Boy",
     "song_uri": "https://p.scdn.co/mp3-preview/75874dcd9270847ceb676d99afa7522791ee696d?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b27371565eda831124be86c603d5"
-  },  
+  },
   {
     "date": "08/21/2023",
     "artist": "Rihanna",
@@ -3016,7 +3016,7 @@
     "artist": "Logic",
     "song_uri": "https://p.scdn.co/mp3-preview/3bf8f4d3ea210e859802b6b98d18ea940a53d986?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273cfdf40cf325b609a52457805"
-  },  
+  },
   {
     "date": "09/13/2023",
     "artist": "Mariah Carey",
@@ -3401,7 +3401,6 @@
     "song_uri": "https://p.scdn.co/mp3-preview/be634674f46a6afdd90e59d7522196295eafc956?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273e803716268c173c3f9a0c057"
   },
-
   {
     "date": "11/17/2023",
     "artist": "Fleetwood Mac",
@@ -4132,7 +4131,7 @@
     "date": "03/17/2024",
     "artist": "Sam Smith",
     "song_uri": "https://p.scdn.co/mp3-preview/dad7e6d0f24ac5f4ef47c26c64cb6113d065f067?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae" 
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae"
   },
   {
     "date": "03/18/2024",
@@ -5663,7 +5662,7 @@
     "artist": "The Offspring",
     "song_uri": "https://p.scdn.co/mp3-preview/7e21330ba07a385699e1a87d44f4a886ea3fa6a0?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730158cbde70672dd821972907"
-  }, 
+  },
   {
     "date": "11/28/2024",
     "artist": "LMFAO",
@@ -6040,7 +6039,7 @@
     "date": "01/29/2025",
     "artist": "Sam Smith",
     "song_uri": "https://p.scdn.co/mp3-preview/dad7e6d0f24ac5f4ef47c26c64cb6113d065f067?cid=98f79e400795491cbc5f69b713465708",
-    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae" 
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273b11bdc91cb9ac6b14f5c1dae"
   },
   {
     "date": "01/30/2025",
@@ -6050,7 +6049,7 @@
   },
   {
     "date": "01/31/2025",
-    "artist": "TWICE (\ud2b8\uc640\uc774\uc2a4)",
+    "artist": "TWICE (트와이스)",
     "song_uri": "https://p.scdn.co/mp3-preview/eaf448cde4f65ad39d638e91faf4de696b974487?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273bd8c739ce7e59ae9414c7a26"
   },
@@ -6198,7 +6197,6 @@
     "song_uri": "https://p.scdn.co/mp3-preview/a13551566573594eb4d12c396775b3fb0fca6e66?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731d5cf960a92bb8b03fc2be7f"
   },
-
   {
     "date": "02/25/2025",
     "artist": "Quavo",
@@ -6261,7 +6259,7 @@
   },
   {
     "date": "03/07/2025",
-    "artist": "Gracie Abrams", 
+    "artist": "Gracie Abrams",
     "song_uri": "https://p.scdn.co/mp3-preview/aed073ed2859447c5b275cd7bace28302330b629",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2731dac3694b3289cd903cb3acf"
   },
@@ -6985,7 +6983,7 @@
     "song_uri": "https://p.scdn.co/mp3-preview/12e4a7ef3f1051424e6e282dfba83fe8448e122f?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273eaac2a7955f5b8967991cacb"
   },
-    {
+  {
     "date": "07/06/2025",
     "artist": "5 Seconds of Summer",
     "song_uri": "https://p.scdn.co/mp3-preview/b26976b3ae4e74fa17e86cfb0631d8442e35963a?cid=98f79e400795491cbc5f69b713465708",
@@ -7532,9 +7530,165 @@
     "image_uri": "https://i.scdn.co/image/ab67616d0000b273cbd2ee7dff77bfb2b5f0af52"
   },
   {
+    "date": "10/05/2025",
+    "artist": "3 Doors Down",
+    "song_uri": "https://p.scdn.co/mp3-preview/55c8389bc8dfbe118e97ecd05f027e9ad59cd99d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732868c4713a3912fd476b42f1"
+  },
+  {
     "date": "10/06/2025",
     "artist": "Hailee Steinfeld",
     "song_uri": "https://p.scdn.co/mp3-preview/31f6e6cc0119be916f272b2fd2d59e7b262ccb4b?cid=98f79e400795491cbc5f69b713465708",
     "image_uri": "https://i.scdn.co/image/ab67616d0000b2730506a838892be6229dca857b"
+  },
+  {
+    "date": "10/07/2025",
+    "artist": "2Pac",
+    "song_uri": "https://p.scdn.co/mp3-preview/d20079e7952f64534d9ceacd530b156b8cdfd8ea?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d81a092eb373ded457d94eec"
+  },
+  {
+    "date": "10/08/2025",
+    "artist": "Chappell Roan",
+    "song_uri": "https://p.scdn.co/mp3-preview/75ffd47fee75208bb0bd42858de25e23b0b13091?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27396fa88fb1789be437d5cb4b6"
+  },
+  {
+    "date": "10/09/2025",
+    "artist": "Chief Keef",
+    "song_uri": "https://p.scdn.co/mp3-preview/2284e6aedbab90b54f078c7e993711700b171837?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a76616abf60ce17491e95891"
+  },
+  {
+    "date": "10/10/2025",
+    "artist": "Céline Dion",
+    "song_uri": "https://p.scdn.co/mp3-preview/68c13229ec9b1b4a5ea580e801061fd7791857c4?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273def7146ca744f3b1bf838404"
+  },
+  {
+    "date": "10/11/2025",
+    "artist": "Aerosmith",
+    "song_uri": "https://p.scdn.co/mp3-preview/b56a69c9cddc7358e940daa656a8dd5874e5f58f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bbf0146981704a073405b6c2"
+  },
+  {
+    "date": "10/12/2025",
+    "artist": "Alan Walker",
+    "song_uri": "https://p.scdn.co/mp3-preview/dd79198f4b4c43aef9c8e8e1c4708a402862dd0e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273a108e07c661f9fc54de9c43a"
+  },
+  {     
+    "date": "10/13/2025",
+    "artist": "Prince",
+    "song_uri": "https://p.scdn.co/mp3-preview/390cf478a1f3fbdcf7b5346a6004d273ed47ed3f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27323cc0f0a925845a3de4aca38"
+  },
+  {
+    "date": "10/14/2025",
+    "artist": "Chris Stapleton",
+    "song_uri": "https://p.scdn.co/mp3-preview/ff420867ccf77f0d187a0aa48eb4eac7c1d2ba8e?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273540fc1d083eac5bcff8dad21"
+  },
+  {
+    "date": "10/15/2025",
+    "artist": "Journey",
+    "song_uri": "https://p.scdn.co/mp3-preview/50923c629a4d9ab470b0ca6a10495ecb945c1500?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27363fa4751355b66f236943275"
+  },
+  {
+    "date": "10/16/2025",
+    "artist": "Shakira",
+    "song_uri": "https://p.scdn.co/mp3-preview/5e6f328ae98e7665cb40b4580773ea0107c5631f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27327ddd747545c0d0cfe7595fa"
+  },
+  {
+    "date": "10/17/2025",
+    "artist": "Tame Impala",
+    "song_uri": "https://p.scdn.co/mp3-preview/21477d6bae6cd638929a0a13ca64942f43178cef?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2739e1cfc756886ac782e363d79"
+  },
+  {
+    "date": "10/18/2025",
+    "artist": "Anderson Paak",
+    "song_uri": "https://p.scdn.co/mp3-preview/2f06384101ad1a5aa6b02f6fc24b59789c2ab54d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273fcf75ead8a32ac0020d2ce86"
+  },
+  {
+    "date": "10/19/2025",
+    "artist": "Bebe Rexha",
+    "song_uri": "https://p.scdn.co/mp3-preview/08e77cc86cde4969b8411674a0f4eb4688a9f6a9?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273933c036cd61cd40d3f17a9c4"
+  },
+  {
+    "date": "10/20/2025",
+    "artist": "Destiny's Child",
+    "song_uri": "https://p.scdn.co/mp3-preview/f2c1a7cc994f3de56622f4d4281a35888d484817?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2733718df75b57340c1947747e8"
+  },
+  {
+    "date": "10/21/2025",
+    "artist": "Stevie Wonder",
+    "song_uri": "https://p.scdn.co/mp3-preview/b9ba15ee9e962b6b51b901bc0383286163b3dfc4?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273835ed5fb9b70f46c3177ffde"
+  },
+  {
+    "date": "10/22/2025",
+    "artist": "Depeche Mode",
+    "song_uri": "https://p.scdn.co/mp3-preview/52914be143f0dac1fad0f9bf11b079487bbac6f1?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2735952c4782caf4283105f2120"
+  },
+  {
+    "date": "10/23/2025",
+    "artist": "Nicki Minaj",
+    "song_uri": "https://p.scdn.co/mp3-preview/f654928ccaa4e6a9fb09a6eb3f208383eccc12a9?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2737e8f938c02fac3b564931116"
+  },
+  {
+    "date": "10/24/2025",
+    "artist": "The Beach Boys",
+    "song_uri": "https://p.scdn.co/mp3-preview/4ea74155d6f9a3c0f93f8fc06aac20c3d962c894",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273bde8dfd1922129f3d9e3732f"
+  },
+  {
+    "date": "10/25/2025",
+    "artist": "Machine Gun Kelly",
+    "song_uri": "https://p.scdn.co/mp3-preview/e070198e8b0e3052d00dfba9987ca1aa5749d339?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273d4d4929a3a86fe2f9fadbd42"
+  },
+  {
+    "date": "10/26/2025",
+    "artist": "LANY",
+    "song_uri": "https://p.scdn.co/mp3-preview/2f72970093a18606c43036bb0dfd8f2a19ccfd4d?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273c4dae9528b2a8408f463eb17"
+  },
+  {
+    "date": "10/27/2025",
+    "artist": "Mary J. Blige",
+    "song_uri": "https://p.scdn.co/mp3-preview/b80ade535b32133290c944b8d84524ec393a4b0d",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b273783c6c4294e14bd228624911"
+  },
+  {
+    "date": "10/28/2025",
+    "artist": "John Denver",
+    "song_uri": "https://p.scdn.co/mp3-preview/8546e92b9d87d68b2e00c13100f481c056e4d317",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734c9dede40f86ce4b25eb8fb9"
+  },
+  {
+    "date": "10/29/2025",
+    "artist": "FUN.",
+    "song_uri": "https://p.scdn.co/mp3-preview/ba5bc5a6ef6ee6dc8e122b22438923bf0326200f?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b27305fb4e9947c6edaf3836766e"
+  },
+  {
+    "date": "10/30/2025",
+    "artist": "Harry Styles",
+    "song_uri": "https://p.scdn.co/mp3-preview/f0c2adc40766cd8c1ec3f2bc6e1cc293a77ba684?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2732e8ed79e177ff6011076f5f0"
+  },
+  {
+    "date": "10/31/2025",
+    "artist": "KISS",
+    "song_uri": "https://p.scdn.co/mp3-preview/b1b157ab314c7b457e21318a7035c6a44555f1b7?cid=98f79e400795491cbc5f69b713465708",
+    "image_uri": "https://i.scdn.co/image/ab67616d0000b2734384b6976cadaec272114022"
   }
 ]
