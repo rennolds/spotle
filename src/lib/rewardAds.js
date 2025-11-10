@@ -196,6 +196,11 @@ function startContinueProtection() {
     try {
       const currentText = timerElement.innerHTML || timerElement.textContent || timerElement.innerText || '';
       
+      // Ensure pointer events are always enabled (production ads might try to disable)
+      if (timerElement.style.pointerEvents !== 'auto') {
+        timerElement.style.pointerEvents = 'auto';
+      }
+      
       // If the text has been changed away from our continue text, restore it immediately
       if (currentText !== rewardGrantedText) {
         consecutiveCorrections++;
@@ -581,6 +586,7 @@ function applyContinueTextStyling() {
       padding: "8px 24px",
       borderRadius: "100px",
       cursor: "pointer",
+      pointerEvents: "auto",
       transition: "transform 0.2s ease",
       boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
       display: "inline-block",
@@ -604,6 +610,15 @@ function applyContinueTextStyling() {
     
     // Apply all styles at once
     Object.assign(timerElement.style, styles);
+    
+    // Ensure parent containers allow pointer events (production ads might disable this)
+    let parent = timerElement.parentElement;
+    while (parent && parent !== document.body) {
+      if (parent.style.pointerEvents === 'none') {
+        parent.style.pointerEvents = 'auto';
+      }
+      parent = parent.parentElement;
+    }
     
     // Add hover effects only if not already added
     if (!timerElement.hasAttribute('data-hover-listeners')) {
