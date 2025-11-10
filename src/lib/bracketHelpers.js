@@ -7,7 +7,7 @@ import moment from 'moment-timezone';
  * @returns {string} The date of the anchor Sunday in 'YYYY-MM-DD' format.
  */
 function getAnchorSunday() {
-  const now = moment.tz('2025-09-13', 'America/New_York');
+  const now = moment.tz('2025-11-03', 'America/New_York');
   const dayOfWeek = now.day(); // Sunday = 0
 
   if (dayOfWeek === 0) {
@@ -50,7 +50,7 @@ export async function getCurrentBracket(supabase) {
  * @returns {string} The date of the upcoming anchor Sunday in 'YYYY-MM-DD' format.
  */
 function getUpcomingAnchorSunday() {
-  const now = moment.tz('2025-09-13', 'America/New_York');
+  const now = moment.tz('2025-11-03', 'America/New_York');
   const dayOfWeek = now.day(); // Sunday = 0, Monday = 1, ..., Saturday = 6
   
   // Get next week's anchor Sunday
@@ -86,7 +86,7 @@ export async function getUpcomingBracket(supabase) {
  * @returns {number} The current round number (1-5), or 0 if not a tournament day.
  */
 function getCurrentRound() {
-    const now = moment.tz('2025-09-13', 'America/New_York');
+    const now = moment.tz('2025-11-03', 'America/New_York');
     const dayOfWeek = now.day(); // Sunday = 0, Monday = 1, ..., Saturday = 6
     
     if (dayOfWeek >= 1 && dayOfWeek <= 5) {
@@ -230,7 +230,7 @@ export async function getBracketMatchups(supabase, bracketId) {
         });
     }
 
-    const today = moment.tz('2025-09-13', 'America/New_York');
+    const today = moment.tz('2025-11-03', 'America/New_York');
     let pageError = null;
     if (currentRound === 0) {
         if (today.day() === 0) {
