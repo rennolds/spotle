@@ -7,7 +7,7 @@ import moment from 'moment-timezone';
  * @returns {string} The date of the anchor Sunday in 'YYYY-MM-DD' format.
  */
 function getAnchorSunday() {
-  const now = moment.tz('2025-11-07', 'America/New_York');
+  const now = moment.tz('2025-11-08', 'America/New_York');
   const dayOfWeek = now.day(); // Sunday = 0
 
   if (dayOfWeek === 0) {
