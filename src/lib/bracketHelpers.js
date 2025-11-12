@@ -50,7 +50,7 @@ export async function getCurrentBracket(supabase) {
  * @returns {string} The date of the upcoming anchor Sunday in 'YYYY-MM-DD' format.
  */
 function getUpcomingAnchorSunday() {
-  const now = moment.tz('2025-11-03', 'America/New_York');
+  const now = moment.tz('2025-11-08', 'America/New_York');
   const dayOfWeek = now.day(); // Sunday = 0, Monday = 1, ..., Saturday = 6
   
   // Get next week's anchor Sunday
