@@ -1,5 +1,4 @@
 import { error } from "@sveltejs/kit";
-import { getBracketForGallery } from "$lib/bracketHelpers.js";
 
 const isUUID = (str) => {
   const uuidRegex =
@@ -25,17 +24,5 @@ export async function load({ params, locals: { supabase } }) {
   if (dbError || !bracketData) {
     console.error(`Error fetching bracket ID for slug/id "${slug}":`, dbError);
     throw error(404, "Bracket not found");
-  }
-
-  // Now, use the helper to fetch the full, structured bracket data.
-  try {
-    const bracketDetails = await getBracketForGallery(supabase, bracketData.id);
-    return bracketDetails;
-  } catch (e) {
-    console.error(
-      `Error constructing gallery bracket for id "${bracketData.id}":`,
-      e
-    );
-    throw error(500, "Could not load bracket data.");
   }
 }
