@@ -1,8 +1,7 @@
 import { createServerClient } from '@supabase/ssr';
-import { sequence } from '@sveltejs/kit/hooks';
 import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
 
-const supabase = async ({ event, resolve }) => {
+export async function handle({ event, resolve }) {
 	event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
 		cookies: {
 			getAll: () => event.cookies.getAll(),
@@ -46,6 +45,4 @@ const supabase = async ({ event, resolve }) => {
 			return name === 'content-range' || name === 'x-supabase-api-version';
 		}
 	});
-};
-
-export const handle = sequence(supabase);
+}

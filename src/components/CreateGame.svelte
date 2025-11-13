@@ -1,8 +1,8 @@
 <script>
-  import { onMount } from 'svelte';
-  import { createEventDispatcher } from 'svelte';
-  import SearchBar from './SearchBar.svelte';
-  import GameInfo from './GameInfo.svelte';
+  import { onMount } from "svelte";
+  import { createEventDispatcher } from "svelte";
+  import SearchBar from "./SearchBar.svelte";
+  import GameInfo from "./GameInfo.svelte";
   import { browser } from "$app/environment";
   import { isRewardAdReady, showRewardAd } from "$lib/rewardAds.js";
 
@@ -17,7 +17,6 @@
 
   onMount(() => {
     console.log("CreateGame mounted");
-    window.ramp.spaNewPage('show-rewarded-video');
   });
 
   function handleSearch(event) {
@@ -51,11 +50,12 @@
     const encodedNote = btoa(String.fromCharCode.apply(null, noteUint8Array));
 
     // Generate the URL with encoded parameters
-    let currentUrl = "";
+    // Use origin + pathname to avoid including existing query parameters
+    let baseUrl = "";
     if (browser) {
-      currentUrl = window.location.href;
+      baseUrl = window.location.origin + window.location.pathname;
     }
-    shareURL = `${currentUrl}?artist=${encodedArtistName}&note=${encodedNote}`;
+    shareURL = `${baseUrl}?artist=${encodedArtistName}&note=${encodedNote}`;
 
     if (browser) {
       // Analytics event if available

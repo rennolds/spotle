@@ -10,6 +10,9 @@
   let { bracket, fullBracket, currentRound, pageError, userVoteMap, champion } =
     data;
 
+  // Convert userVoteMap from plain object to Map for easier manipulation
+  userVoteMap = new Map(Object.entries(userVoteMap || {}));
+
   let displayedRound =
     currentRound > 0 ? (currentRound === 6 ? 5 : currentRound) : 1;
   let votedMatchups = new Set(userVoteMap.keys());
@@ -165,8 +168,9 @@
     displayedRound = parseInt(round);
   }
 
-  function handleSelect(matchupId, chosenItemId) {
-    if (votedMatchups.has(matchupId)) return;
+  function handleSelect(matchupId, chosenItemId, roundNum) {
+    // Only allow selections in the current active round
+    if (votedMatchups.has(matchupId) || roundNum !== currentRound) return;
 
     if (selections.get(matchupId) === chosenItemId) {
       selections.delete(matchupId); // Unselect
@@ -207,7 +211,7 @@
 
       if (res.ok) {
         for (const [matchupId, chosenItemId] of selections.entries()) {
-          userVoteMap.set(matchupId, chosenItemId);
+          userVoteMap.set(matchupId, true); // Mark as voted (we don't track which item)
           votedMatchups.add(matchupId);
         }
 
@@ -477,22 +481,21 @@
                   class:loser={matchup.winnerId &&
                     matchup.winnerId !== matchup.item1.id}
                   class:selected={selections.get(matchup.id) ===
-                    matchup.item1.id ||
-                    userVoteMap.get(matchup.id) === matchup.item1.id}
+                    matchup.item1.id}
                   class:leading={currentRound == roundNum &&
                     matchup.item1Votes > matchup.item2Votes}
                   class:trailing={currentRound == roundNum &&
                     matchup.item1Votes < matchup.item2Votes}
-                  class:show-results={roundNum < currentRound ||
+                  class:show-results={roundNum <= currentRound ||
                     votedMatchups.has(matchup.id) ||
                     currentRound === 6}
                   on:click={() =>
                     currentRound !== 6 &&
-                    handleSelect(matchup.id, matchup.item1.id)}
+                    handleSelect(matchup.id, matchup.item1.id, Number(roundNum))}
                   on:keydown={(e) =>
                     currentRound !== 6 &&
                     e.key === "Enter" &&
-                    handleSelect(matchup.id, matchup.item1.id)}
+                    handleSelect(matchup.id, matchup.item1.id, Number(roundNum))}
                   role="button"
                   tabindex="0"
                 >
@@ -563,22 +566,21 @@
                   class:loser={matchup.winnerId &&
                     matchup.winnerId !== matchup.item2.id}
                   class:selected={selections.get(matchup.id) ===
-                    matchup.item2.id ||
-                    userVoteMap.get(matchup.id) === matchup.item2.id}
+                    matchup.item2.id}
                   class:leading={currentRound == roundNum &&
                     matchup.item2Votes > matchup.item1Votes}
                   class:trailing={currentRound == roundNum &&
                     matchup.item2Votes < matchup.item1Votes}
-                  class:show-results={roundNum < currentRound ||
+                  class:show-results={roundNum <= currentRound ||
                     votedMatchups.has(matchup.id) ||
                     currentRound === 6}
                   on:click={() =>
                     currentRound !== 6 &&
-                    handleSelect(matchup.id, matchup.item2.id)}
+                    handleSelect(matchup.id, matchup.item2.id, Number(roundNum))}
                   on:keydown={(e) =>
                     currentRound !== 6 &&
                     e.key === "Enter" &&
-                    handleSelect(matchup.id, matchup.item2.id)}
+                    handleSelect(matchup.id, matchup.item2.id, Number(roundNum))}
                   role="button"
                   tabindex="0"
                 >

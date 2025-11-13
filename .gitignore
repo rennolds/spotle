@@ -8,11 +8,4 @@ node_modules
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-notebooks/artists_rerank.ipynb
-notebooks/Artists01.csv
-notebooks/Artists02.csv
-notebooks/Artists03.csv
-notebooks/Artists04.csv
-notebooks/Artists05.csv
-notebooks/Artists06.csv
-notebooks/temp_artists.csv
+notebooks/*

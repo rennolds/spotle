@@ -1,321 +1,237 @@
-import { supabase } from './supabaseClient';
+// bracketHelpers.js
+// Client-side helpers for Spotle Brackets (DB-driven participants + tallies)
+// Assumes the following views & functions exist server-side:
+//   - participants (matchups -> item1_id/item2_id/winner_item_id)
+//   - tallies_live  (matchup_id -> votes_1, votes_2, percent1_bp, updated_at)
+//   - results_final (matchup_id -> final_votes_1/2, winner_item_id)
+
 import moment from 'moment-timezone';
 
-/**
- * Determines the anchor Sunday for the current week's bracket.
- * The tournament runs Monday to Friday. The anchor is the Sunday of that week.
- * @returns {string} The date of the anchor Sunday in 'YYYY-MM-DD' format.
- */
-function getAnchorSunday() {
-  const now = moment.tz('2025-11-03', 'America/New_York');
-  const dayOfWeek = now.day(); // Sunday = 0
+/** ---------- Time helpers (America/Detroit) ---------- **/
 
-  if (dayOfWeek === 0) {
-    // It's Sunday. Get last week's anchor.
-    const anchor = now.subtract(7, 'days');
-    return anchor.format('YYYY-MM-DD');
-  } else {
-    // It's Mon-Sat. Get the anchor for the current week.
-    const anchor = now.subtract(dayOfWeek, 'days');
-    return anchor.format('YYYY-MM-DD');
-  }
+const TZ = 'America/Detroit';
+
+/** Return today's anchor Sunday (the Sunday of the current M–F bracket week). */
+export function getAnchorSunday(now = moment.tz(TZ)) {
+  // If it's Sunday, anchor is *this* Sunday; Mon–Sat use the previous Sunday.
+  // (You previously pulled "last week's" on Sundays; switching to "this Sunday"
+  // makes lookups unambiguous & matches prebuilt schedules.)
+  const dow = now.day(); // Sun=0
+  const anchor = now.clone().startOf('day').subtract(dow, 'days'); // go back to Sunday
+  return anchor.format('YYYY-MM-DD');
 }
 
-/**
- * Fetches the current live bracket from the database.
- * @param {SupabaseClient} supabase The Supabase client instance.
- * @returns {Promise<object|null>} The bracket object or null if not found.
- */
-export async function getCurrentBracket(supabase) {
-  const anchorSunday = getAnchorSunday();
+/** Return next week's anchor Sunday (for “upcoming”/Sunday results page). */
+export function getUpcomingAnchorSunday(now = moment.tz(TZ)) {
+  const thisSunday = moment.tz(TZ).startOf('day').subtract(now.day(), 'days');
+  return thisSunday.add(7, 'days').format('YYYY-MM-DD');
+}
 
+/** Round by weekday: Mon..Fri -> 1..5, Sat/Sun -> 6 (results mode). */
+export function getCurrentRound(now = moment.tz(TZ)) {
+  const d = now.day(); // Sun=0 .. Sat=6
+  if (d >= 1 && d <= 5) return d;
+  return 6; // weekend results
+}
+
+/** ---------- Bracket fetchers ---------- **/
+
+/** Get the current live bracket (by anchor_sunday). */
+export async function getCurrentBracket(supabase, now = moment.tz(TZ)) {
+  const anchorSunday = getAnchorSunday(now);
   const { data, error } = await supabase
     .from('brackets')
     .select('*')
     .eq('anchor_sunday', anchorSunday)
     .single();
 
-  // .single() throws an error if no row is found, which is expected.
-  // We'll treat "no row" as a non-error and return null.
+  // Treat “not found” as null (PGRST116 = no rows)
   if (error && error.code !== 'PGRST116') {
-    console.error('Error fetching current bracket:', error);
-    throw error; // Re-throw actual errors
+    console.error('getCurrentBracket error:', error);
+    throw error;
   }
-
-  return data;
+  return data ?? null;
 }
 
-/**
- * Gets the upcoming bracket anchor Sunday (for Sunday results page).
- * @returns {string} The date of the upcoming anchor Sunday in 'YYYY-MM-DD' format.
- */
-function getUpcomingAnchorSunday() {
-  const now = moment.tz('2025-11-03', 'America/New_York');
-  const dayOfWeek = now.day(); // Sunday = 0, Monday = 1, ..., Saturday = 6
-  
-  // Get next week's anchor Sunday
-  const upcomingAnchor = now.add(7 - dayOfWeek, 'days');
-  return upcomingAnchor.format('YYYY-MM-DD');
-}
-
-/**
- * Fetches the upcoming bracket from the database (for Sunday results page).
- * @param {SupabaseClient} supabase The Supabase client instance.
- * @returns {Promise<object|null>} The upcoming bracket object or null if not found.
- */
-export async function getUpcomingBracket(supabase) {
-  const upcomingAnchorSunday = getUpcomingAnchorSunday();
-
+/** Get the upcoming bracket (next week’s anchor_sunday). */
+export async function getUpcomingBracket(supabase, now = moment.tz(TZ)) {
+  const anchorSunday = getUpcomingAnchorSunday(now);
   const { data, error } = await supabase
     .from('brackets')
     .select('*')
-    .eq('anchor_sunday', upcomingAnchorSunday)
+    .eq('anchor_sunday', anchorSunday)
     .single();
 
   if (error && error.code !== 'PGRST116') {
-    console.error('Error fetching upcoming bracket:', error);
+    console.error('getUpcomingBracket error:', error);
     throw error;
   }
-
-  return data;
+  return data ?? null;
 }
+
+/** ---------- Round payload (client-friendly) ---------- **/
 
 /**
- * Gets the current round number based on the day of the week.
- * Monday is Round 1, Tuesday is Round 2, etc.
- * @returns {number} The current round number (1-5), or 0 if not a tournament day.
+ * Return a client-ready payload for a specific bracket+round.
+ * - Reads participants (item ids + winner)
+ * - Reads all items once (map by id)
+ * - Reads tallies_live for those matchups (percent basis points)
+ * - Builds { item1, item2, percents, updated_at, winnerId } per matchup
  */
-function getCurrentRound() {
-    const now = moment.tz('2025-11-03', 'America/New_York');
-    const dayOfWeek = now.day(); // Sunday = 0, Monday = 1, ..., Saturday = 6
-    
-    if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-        return dayOfWeek;
-    }
-    // Saturday/Sunday = results mode (round 6)
-    if (dayOfWeek === 6 || dayOfWeek === 0) {
-        return 6;
-    }
-    return 0; // Not a tournament day
-}
+export async function getBracketRound(supabase, bracketId, round) {
+  // 1) Fetch matchups for the round
+  const { data: matchupsData, error: pErr } = await supabase
+    .from('matchups')
+    .select('id, bracket_id, round, index_in_round, item1_id, item2_id, winner_item_id')
+    .eq('bracket_id', bracketId)
+    .eq('round', round)
+    .order('index_in_round', { ascending: true });
 
-const r1Pairings = {
-    1: [1, 32], 2: [16, 17], 3: [8, 25], 4: [9, 24],
-    5: [4, 29], 6: [13, 20], 7: [5, 28], 8: [12, 21],
-    9: [2, 31], 10: [15, 18], 11: [7, 26], 12: [10, 23],
-    13: [3, 30], 14: [14, 19], 15: [6, 27], 16: [11, 22]
-};
+  if (pErr) throw new Error(`matchups: ${pErr.message}`);
+  if (!matchupsData || matchupsData.length === 0) {
+    return { matchups: [], items: {}, updatedAt: null };
+  }
+  
+  // Map to expected structure
+  const parts = matchupsData.map(m => ({
+    matchup_id: m.id,
+    bracket_id: m.bracket_id,
+    round: m.round,
+    index_in_round: m.index_in_round,
+    left_item_id: m.item1_id,
+    right_item_id: m.item2_id,
+    winner_item_id: m.winner_item_id
+  }));
 
-function getR1Pairing(index_in_round) {
-    return r1Pairings[index_in_round];
-}
+  // 2) Fetch all items for the bracket (to render labels/images/audio)
+  const { data: items, error: iErr } = await supabase
+    .from('bracket_items')
+    .select('id, bracket_id, seed, label, sublabel, image_url, audio_url')
+    .eq('bracket_id', bracketId);
 
-/**
- * Fetches all necessary data for a given bracket and constructs the matchups for the current round.
- * @param {SupabaseClient} supabase The Supabase client instance.
- * @param {string} bracketId The UUID of the bracket.
- * @returns {Promise<object|null>} An object containing bracket details, matchups, and current round.
- */
-export async function getBracketMatchups(supabase, bracketId) {
-    // Fetch all necessary data at once
-    const [bracketRes, itemsRes, allMatchupsRes, votesRes] = await Promise.all([
-        supabase.from('brackets').select('*').eq('id', bracketId).single(),
-        supabase.from('bracket_items').select('*').eq('bracket_id', bracketId),
-        supabase.from('matchups').select('id, round, index_in_round').eq('bracket_id', bracketId).order('round').order('index_in_round'),
-        supabase.from('votes').select('matchup_id, chosen_item_id').eq('bracket_id', bracketId)
-    ]);
+  if (iErr) throw new Error(`items: ${iErr.message}`);
 
-    if (bracketRes.error) throw new Error(bracketRes.error.message);
-    if (itemsRes.error) throw new Error(itemsRes.error.message);
-    if (allMatchupsRes.error) throw new Error(allMatchupsRes.error.message);
-    if (votesRes.error) throw new Error(votesRes.error.message);
+  const byId = new Map(items.map(i => [i.id, i]));
 
-    const bracket = bracketRes.data;
-    const items = itemsRes.data;
-    const allMatchups = allMatchupsRes.data;
-    const votes = votesRes.data;
+  // 3) Fetch tallies for these matchups (one call with IN list)
+  const matchupIds = parts.map(p => p.matchup_id);
+  const { data: tallies, error: tErr } = await supabase
+    .from('tallies_live')
+    .select('matchup_id, item1_id, item2_id, percent1_bp, votes_1, votes_2, updated_at')
+    .in('matchup_id', matchupIds);
 
-    const itemsById = new Map(items.map(item => [item.id, item]));
-    const matchupsByRound = allMatchups.reduce((acc, m) => {
-        if (!acc[m.round]) acc[m.round] = [];
-        acc[m.round].push(m);
-        return acc;
-    }, {});
+  if (tErr) throw new Error(`tallies_live: ${tErr.message}`);
 
-    const voteCounts = votes.reduce((acc, vote) => {
-        if (!acc[vote.matchup_id]) acc[vote.matchup_id] = {};
-        if (!acc[vote.matchup_id][vote.chosen_item_id]) acc[vote.matchup_id][vote.chosen_item_id] = 0;
-        acc[vote.matchup_id][vote.chosen_item_id]++;
-        return acc;
-    }, {});
+  const talliesByMid = new Map(tallies.map(t => [t.matchup_id, t]));
 
-    const currentRound = getCurrentRound();
-    const winners = new Map(); // Map<matchupId, itemId>
-    const tbdItem = { id: 'TBD', label: 'TBD', seed: '', image_url: '/resources/cd.png' };
+  // 4) Build client DTO
+  const matchups = parts.map(p => {
+    const t = talliesByMid.get(p.matchup_id) || null;
+    const item1 = byId.get(p.left_item_id) || null;
+    const item2 = byId.get(p.right_item_id) || null;
 
-    // Helper to determine winner, including tie-breaker
-    const getWinner = (matchup, item1, item2) => {
-        if (!item1 || item1.id === 'TBD' || !item2 || item2.id === 'TBD') return null;
-        
-        const vCounts = voteCounts[matchup.id] || {};
-        const votes1 = vCounts[item1.id] || 0;
-        const votes2 = vCounts[item2.id] || 0;
-
-        if (votes1 > votes2) return item1.id;
-        if (votes2 > votes1) return item2.id;
-        return item1.seed < item2.seed ? item1.id : item2.id; // Tie-breaker
-    };
-
-    // Pre-calculate all winners for rounds that have finished
-    // In results mode (round 6), calculate all winners
-    const maxRound = currentRound === 6 ? 5 : currentRound - 1;
-    for (let roundNum = 1; roundNum <= maxRound; roundNum++) {
-        if (!matchupsByRound[roundNum]) continue;
-        for (const matchup of matchupsByRound[roundNum]) {
-            let item1, item2;
-            if (roundNum === 1) {
-                const pairing = getR1Pairing(matchup.index_in_round);
-                item1 = items.find(i => i.seed === pairing[0]);
-                item2 = items.find(i => i.seed === pairing[1]);
-            } else {
-                const prevMatchup1 = matchupsByRound[roundNum - 1][(matchup.index_in_round * 2) - 2];
-                const prevMatchup2 = matchupsByRound[roundNum - 1][(matchup.index_in_round * 2) - 1];
-                const winner1Id = winners.get(prevMatchup1.id);
-                const winner2Id = winners.get(prevMatchup2.id);
-                item1 = winner1Id ? itemsById.get(winner1Id) : null;
-                item2 = winner2Id ? itemsById.get(winner2Id) : null;
-            }
-            const winnerId = getWinner(matchup, item1, item2);
-            if (winnerId) {
-                winners.set(matchup.id, winnerId);
-            }
-        }
-    }
-
-    const fullBracket = {};
-    for (let roundNum = 1; roundNum <= 5; roundNum++) {
-        if (!matchupsByRound[roundNum]) continue;
-        fullBracket[roundNum] = matchupsByRound[roundNum].map(matchup => {
-            let item1, item2;
-            if (roundNum === 1) {
-                const pairing = getR1Pairing(matchup.index_in_round);
-                item1 = items.find(i => i.seed === pairing[0]) || tbdItem;
-                item2 = items.find(i => i.seed === pairing[1]) || tbdItem;
-            } else {
-                const prevMatchup1 = matchupsByRound[roundNum - 1]?.[(matchup.index_in_round * 2) - 2];
-                const prevMatchup2 = matchupsByRound[roundNum - 1]?.[(matchup.index_in_round * 2) - 1];
-                const winner1Id = prevMatchup1 ? winners.get(prevMatchup1.id) : null;
-                const winner2Id = prevMatchup2 ? winners.get(prevMatchup2.id) : null;
-                item1 = winner1Id ? itemsById.get(winner1Id) : tbdItem;
-                item2 = winner2Id ? itemsById.get(winner2Id) : tbdItem;
-            }
-
-            const matchupVoteCounts = voteCounts[matchup.id] || {};
-            const item1Votes = matchupVoteCounts[item1.id] || 0;
-            const item2Votes = matchupVoteCounts[item2.id] || 0;
-            const totalVotes = item1Votes + item2Votes;
-
-            let winnerId = null;
-            if (roundNum < currentRound || currentRound === 6) {
-                winnerId = getWinner(matchup, item1, item2);
-            }
-
-            return {
-                ...matchup,
-                item1, item2, item1Votes, item2Votes, totalVotes,
-                item1Percentage: totalVotes > 0 ? (item1Votes / totalVotes) * 100 : 0,
-                item2Percentage: totalVotes > 0 ? (item2Votes / totalVotes) * 100 : 0,
-                winnerId,
-            };
-        });
-    }
-
-    const today = moment.tz('2025-11-03', 'America/New_York');
-    let pageError = null;
-    if (currentRound === 0) {
-        if (today.day() === 0) {
-            pageError = 'Voting begins Monday at midnight EST.';
-        } else {
-            pageError = 'The tournament is over for this week. Check back Monday!';
-        }
-    } else if (currentRound === 6) {
-        // Results mode - no error, just show results
-        pageError = null;
-    }
-
-    // Get the champion (winner of round 5) for results mode
-    let champion = null;
-    if (currentRound === 6 && fullBracket[5] && fullBracket[5].length > 0) {
-        const finalMatchup = fullBracket[5][0];
-        if (finalMatchup.winnerId) {
-            champion = finalMatchup.winnerId === finalMatchup.item1.id ? finalMatchup.item1 : finalMatchup.item2;
-        }
+    // Percent handling (basis points → percentages)
+    let leftPct = null;
+    let rightPct = null;
+    if (t && typeof t.percent1_bp === 'number') {
+      leftPct = t.percent1_bp / 100.0;
+      rightPct = +(100 - leftPct).toFixed(2);
+      leftPct = +leftPct.toFixed(2);
     }
 
     return {
-        bracket,
-        fullBracket,
-        currentRound,
-        pageError,
-        champion
+      id: p.matchup_id,
+      round: p.round,
+      index_in_round: p.index_in_round,
+      item1,
+      item2,
+      // (Optionally show raw counts at end of day; during week you may hide)
+      votes_1: t?.votes_1 ?? null,
+      votes_2: t?.votes_2 ?? null,
+      leftPct,
+      rightPct,
+      updated_at: t?.updated_at ?? null,
+      winnerId: p.winner_item_id ?? null
     };
+  });
+
+  const updatedAt = matchups.reduce((acc, m) => {
+    if (!m.updated_at) return acc;
+    const ts = new Date(m.updated_at).getTime();
+    return acc ? Math.max(acc, ts) : ts;
+  }, null);
+
+  return {
+    matchups,
+    items: Object.fromEntries(byId), // if you like having a dictionary for client cache
+    updatedAt: updatedAt ? new Date(updatedAt).toISOString() : null
+  };
 }
 
+/** ---------- Results payload (weekend/after close) ---------- **/
+
 /**
- * Fetches a bracket's structure for the gallery/picks mode.
- * This version does not fetch votes or calculate official winners.
- * @param {SupabaseClient} supabase The Supabase client instance.
- * @param {string} bracketId The UUID of the bracket.
- * @returns {Promise<object|null>} An object containing bracket details and the structured matchups.
+ * Get final results for an entire bracket: counts + winner per matchup.
+ * This uses results_final (which reads frozen counts from matchups).
  */
-export async function getBracketForGallery(supabase, bracketId) {
-    const [bracketRes, itemsRes, allMatchupsRes] = await Promise.all([
-        supabase.from('brackets').select('*').eq('id', bracketId).single(),
-        supabase.from('bracket_items').select('*').eq('bracket_id', bracketId),
-        supabase.from('matchups').select('id, round, index_in_round').eq('bracket_id', bracketId).order('round').order('index_in_round'),
-    ]);
+export async function getBracketResults(supabase, bracketId) {
+  const { data: res, error: rErr } = await supabase
+    .from('results_final')
+    .select('matchup_id, item1_id, item2_id, votes_1, votes_2, winner_item_id');
 
-    if (bracketRes.error) throw new Error(bracketRes.error.message);
-    if (itemsRes.error) throw new Error(itemsRes.error.message);
-    if (allMatchupsRes.error) throw new Error(allMatchupsRes.error.message);
+  if (rErr) throw new Error(`results_final: ${rErr.message}`);
 
-    const bracket = bracketRes.data;
-    const items = itemsRes.data;
-    const allMatchups = allMatchupsRes.data;
-    const tbdItem = { id: 'TBD', label: 'TBD', seed: '', image_url: '/resources/cd.png' };
+  // Fetch items once
+  const { data: items, error: iErr } = await supabase
+    .from('bracket_items')
+    .select('id, bracket_id, seed, label, sublabel, image_url, audio_url')
+    .eq('bracket_id', bracketId);
 
-    const matchupsByRound = allMatchups.reduce((acc, m) => {
-        if (!acc[m.round]) acc[m.round] = [];
-        acc[m.round].push(m);
-        return acc;
-    }, {});
+  if (iErr) throw new Error(`items: ${iErr.message}`);
 
-    const fullBracket = {};
-    for (let roundNum = 1; roundNum <= 5; roundNum++) {
-        if (!matchupsByRound[roundNum]) continue;
+  const byId = new Map(items.map(i => [i.id, i]));
 
-        fullBracket[roundNum] = matchupsByRound[roundNum].map(matchup => {
-            let item1, item2;
-            if (roundNum === 1) {
-                const pairing = getR1Pairing(matchup.index_in_round);
-                item1 = items.find(i => i.seed === pairing[0]) || tbdItem;
-                item2 = items.find(i => i.seed === pairing[1]) || tbdItem;
-            } else {
-                item1 = tbdItem;
-                item2 = tbdItem;
-            }
+  const rows = res
+    .filter(r => byId.has(r.item1_id) && byId.has(r.item2_id))
+    .map(r => ({
+      matchup_id: r.matchup_id,
+      item1: byId.get(r.item1_id),
+      item2: byId.get(r.item2_id),
+      votes_1: r.votes_1,
+      votes_2: r.votes_2,
+      winnerId: r.winner_item_id
+    }));
 
-            return {
-                ...matchup,
-                item1,
-                item2,
-            };
-        });
-    }
+  // Group by round/index for rendering order (requires a join back to matchups)
+  const { data: metas, error: mErr } = await supabase
+    .from('matchups')
+    .select('id, round, index_in_round')
+    .eq('bracket_id', bracketId);
 
-    return {
-        bracket,
-        items,
-        fullBracket,
-    };
+  if (mErr) throw new Error(`matchups meta: ${mErr.message}`);
+
+  const metaById = new Map(metas.map(m => [m.id, m]));
+  rows.sort((a, b) => {
+    const ma = metaById.get(a.matchup_id) || { round: 99, index_in_round: 99 };
+    const mb = metaById.get(b.matchup_id) || { round: 99, index_in_round: 99 };
+    return ma.round - mb.round || ma.index_in_round - mb.index_in_round;
+  });
+
+  return { results: rows };
+}
+
+/** ---------- Page mode helper ---------- **/
+
+/**
+ * Quick page-mode decision:
+ * - Mon..Fri -> round = weekday number (1..5), standard voting view
+ * - Sat/Sun  -> results mode
+ */
+export function getPageMode(now = moment.tz(TZ)) {
+  const round = getCurrentRound(now);
+  return {
+    round,
+    isResults: round === 6,
+    anchorSunday: getAnchorSunday(now)
+  };
 }

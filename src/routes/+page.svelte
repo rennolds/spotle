@@ -805,7 +805,7 @@
 
   // Updated to toggle slide menu instead of navigating to splash screen
   function handleMenuClick() {
-    showSlideMenu = true;
+    showSlideMenu = !showSlideMenu;
   }
 
   function handleCloseSlideMenu() {
@@ -891,6 +891,7 @@
   <Navbar
     {playingJam}
     {playingRewind}
+    isMenuOpen={showSlideMenu}
     on:menu={handleMenuClick}
     on:help={toggleHelp}
     on:stats={handleStatsClick}

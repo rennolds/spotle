@@ -1,12 +1,12 @@
 <script>
-  import { onMount } from 'svelte';
-  import { createEventDispatcher, afterUpdate } from 'svelte';
-  import { fly } from 'svelte/transition';
-  import moment from 'moment';
+  import { onMount } from "svelte";
+  import { createEventDispatcher, afterUpdate } from "svelte";
+  import { fly } from "svelte/transition";
+  import moment from "moment";
   import "moment-timezone";
-  import { completedDates } from '../routes/store.js';
+  import { completedDates } from "../routes/store.js";
   import { isRewardAdReady, showRewardAd } from "$lib/rewardAds.js";
-  
+
   export let dates = []; // Array of dates in MM/DD/YYYY format
   export let currentIndex = 0; // Active date index
   export let lastSixDaysArtists = []; // Array containing the artists objects for each date
@@ -67,7 +67,6 @@
 
   onMount(() => {
     console.log("RewindDateSelector mounted");
-    window.ramp.spaNewPage("show-rewarded-video");
   });
 </script>
 

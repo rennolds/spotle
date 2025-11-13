@@ -164,3 +164,18 @@ bestGuessImages.subscribe((val) => {
 });
 
 export const bracketView = writable("bracket");
+/* highContrast - a boolean */
+let highContrastParsed = false;
+const highContrastName = "highContrast";
+if (browser) {
+    const retrieved = localStorage.getItem(highContrastName);
+    if (retrieved) {
+        highContrastParsed = JSON.parse(retrieved);
+    }
+}
+export const highContrast = writable(
+    browser && highContrastParsed === null ? false : highContrastParsed
+);
+highContrast.subscribe((val) => {
+    if (browser) return localStorage.setItem(highContrastName, JSON.stringify(val));
+});
