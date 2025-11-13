@@ -39,7 +39,7 @@ export async function POST(event) {
   
   console.log('Attempting to cast votes for', votesPayload.length, 'matchups');
 
-  // Call the batch vote function with duplicate prevention and sharding
+  // Call the batch vote function with duplicate prevention
   const { data, error } = await supabase.rpc('cast_votes_batch', {
     p_votes: votesForDB,
     p_user_id: user?.id ?? null,
@@ -51,12 +51,11 @@ export async function POST(event) {
     return json({ message: 'An error occurred while casting your votes.' }, { status: 500 });
   }
 
-  // Filter to only votes that were actually applied (not duplicates/invalid)
+  // Filter to only votes that were actually applied (not duplicates)
   const appliedVotes = (data || []).filter(v => v.applied);
   const acceptedMatchupIds = appliedVotes.map(v => v.matchup_id);
-  const rejectedCount = (data?.length || 0) - appliedVotes.length;
   
-  console.log('Votes cast successfully:', appliedVotes.length, 'applied,', rejectedCount, 'duplicates/invalid rejected');
+  console.log('Votes cast successfully:', appliedVotes.length, 'applied,', (data?.length || 0) - appliedVotes.length, 'duplicates rejected');
 
   // Set cookie for anonymous users
   if (!user) {
