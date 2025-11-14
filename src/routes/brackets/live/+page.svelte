@@ -3,12 +3,29 @@
   import moment from "moment-timezone";
   import SoundCloudPlayer from "../../../components/SoundCloudPlayer.svelte";
   import { bracketView } from "../../store.js";
+  import { page } from "$app/stores";
 
   /** @type {import('./$types').PageData} */
   export let data;
 
   let { bracket, fullBracket, currentRound, pageError, userVoteMap, champion } =
     data;
+
+  // Testing override: Allow URL parameter to simulate different rounds
+  // Usage: ?testRound=1 for Monday (Round 1), ?testRound=2 for Tuesday, etc.
+  let testMode = false;
+  $: if (typeof window !== 'undefined') {
+    const testRound = $page.url.searchParams.get('testRound');
+    if (testRound) {
+      const roundNum = parseInt(testRound);
+      if (roundNum >= 1 && roundNum <= 6) {
+        currentRound = roundNum;
+        testMode = true;
+      }
+    } else {
+      testMode = false;
+    }
+  }
 
   // Convert userVoteMap from plain object to Map for easier manipulation
   userVoteMap = new Map(Object.entries(userVoteMap || {}));
@@ -24,14 +41,102 @@
   let audioPlayers = {};
   let activeAudioItemId = null;
 
+  // Navigation state for 3-column view
+  let viewOffset = 0; // 0 means show default for current round, -1 means go back, +1 means go forward
+
   const roundNames = {
     1: "Round 1",
     2: "Sweet Sixteen",
     3: "Elite Eight",
     4: "Final Four",
     5: "Friday Finals",
-    6: "Results",
+    6: "Champion",
   };
+
+  // Determine which 3 rounds to display based on current round and navigation offset
+  $: effectiveRound = Math.max(1, Math.min(currentRound + viewOffset, 5));
+  
+  $: visibleRounds = (() => {
+    // Determine which view to show
+    // View 1: [1, 2, 3]   - Monday (Round 1)
+    // View 2: [2, 3, 4]   - Tuesday (Sweet Sixteen)  
+    // View 3: [3, 4, 5]   - Wednesday (Elite Eight)
+    // View 4: [4, 5, 6]   - Thursday (Final Four)
+    // View 5: [5, 6, null] - Friday+ (Finals)
+    
+    if (effectiveRound <= 1) return [1, 2, 3];
+    if (effectiveRound === 2) return [2, 3, 4];
+    if (effectiveRound === 3) return [3, 4, 5];
+    if (effectiveRound === 4) return [4, 5, 6];
+    if (effectiveRound >= 5) return [5, 6, null];
+    
+    return [1, 2, 3];
+  })();
+
+  // Navigation handlers
+  $: canNavigateBack = effectiveRound > 1;
+  $: canNavigateForward = effectiveRound < currentRound || (currentRound >= 5 && effectiveRound < 5);
+
+  function navigateBack() {
+    if (canNavigateBack) {
+      viewOffset = viewOffset - 1;
+    }
+  }
+
+  function navigateForward() {
+    if (canNavigateForward) {
+      viewOffset = viewOffset + 1;
+    }
+  }
+
+  // Generate TBD matchups for future rounds
+  function generateTBDMatchups(roundNum) {
+    const matchupCount = Math.pow(2, 5 - roundNum); // Round 1=16, 2=8, 3=4, 4=2, 5=1
+    const tbdMatchups = [];
+    
+    for (let i = 0; i < matchupCount; i++) {
+      tbdMatchups.push({
+        id: `tbd-${roundNum}-${i}`,
+        item1: {
+          id: `tbd-${roundNum}-${i}-1`,
+          label: "TBD",
+          seed: "?",
+          image_url: "/resources/cd.png",
+        },
+        item2: {
+          id: `tbd-${roundNum}-${i}-2`,
+          label: "TBD",
+          seed: "?",
+          image_url: "/resources/cd.png",
+        },
+        item1Votes: 0,
+        item2Votes: 0,
+        totalVotes: 0,
+        item1Percentage: 50,
+        item2Percentage: 50,
+      });
+    }
+    
+    return tbdMatchups;
+  }
+
+  // Get matchups for display, including TBD placeholders
+  function getDisplayMatchups(roundNum) {
+    if (!roundNum) return null; // For the special null column in final view
+    
+    // FIRST check if this is a future round - if so, show TBD regardless of data
+    if (roundNum > currentRound && currentRound < 6) {
+      return generateTBDMatchups(roundNum);
+    }
+    
+    // If the round has started/completed and exists in fullBracket, use it
+    if (fullBracket[roundNum] && fullBracket[roundNum].length > 0) {
+      return fullBracket[roundNum];
+    }
+    
+    // Otherwise return empty (shouldn't happen in normal flow)
+    return [];
+  }
 
   function handleTogglePlay(item) {
     if (activeAudioItemId === item.id) {
@@ -171,6 +276,9 @@
   function handleSelect(matchupId, chosenItemId, roundNum) {
     // Only allow selections in the current active round
     if (votedMatchups.has(matchupId) || roundNum !== currentRound) return;
+    
+    // Don't allow selecting TBD matchups
+    if (matchupId.startsWith('tbd-') || chosenItemId.startsWith('tbd-')) return;
 
     if (selections.get(matchupId) === chosenItemId) {
       selections.delete(matchupId); // Unselect
@@ -316,6 +424,14 @@
     </div>
   {/if}
 
+  <!-- Test Mode Indicator -->
+  {#if testMode}
+    <div class="test-mode-banner">
+      ⚠️ TEST MODE: Viewing as Round {currentRound}
+      <a href="/brackets/live" class="exit-test">Exit Test Mode</a>
+    </div>
+  {/if}
+
   <!-- Results message for Saturday/Sunday -->
   {#if currentRound === 6}
     <div class="results-message">
@@ -437,37 +553,67 @@
     </div>
   {/if}
 
-  <!-- Round selector for mobile -->
-  <div class="round-selector">
-    {#each Object.keys(fullBracket) as roundNum}
-      <button
-        class:active={displayedRound == roundNum}
-        on:click={() => setDisplayedRound(roundNum)}
-        disabled={roundNum > currentRound &&
-          currentRound > 0 &&
-          currentRound !== 6}
-      >
-        {roundNum == 5 ? "Final" : `R${roundNum}`}
-      </button>
-    {/each}
-  </div>
-
   {#if Object.keys(fullBracket).length > 0}
-    <div class="bracket-container" class:compact={$bracketView === "compact"}>
-      {#each Object.entries(fullBracket) as [roundNum, matchups]}
-        <div
-          class="round-container"
-          id="round-{roundNum}"
-          data-displayed-mobile={displayedRound == roundNum}
-          class:active-round={currentRound == roundNum}
-          class:results-mode={currentRound === 6}
-        >
-          <div class="round-header">
-            <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
-            <span class="round-date">{getRoundDate(roundNum)}</span>
+    <div class="bracket-wrapper">
+      <!-- Left Navigation Arrow -->
+      <button
+        class="nav-arrow nav-arrow-left"
+        on:click={navigateBack}
+        disabled={!canNavigateBack}
+        aria-label="Previous rounds"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="bracket-container" class:compact={$bracketView === "compact"}>
+        {#each visibleRounds as roundNum, idx}
+          {#if roundNum === 6}
+            <!-- Special Champion Column -->
+            <div class="round-container champion-column" class:results-mode={currentRound === 6}>
+              <div class="round-header">
+                <h2>{roundNames[6]}</h2>
+                <span class="round-date">{currentRound === 6 ? getRoundDate(5) : "TBD"}</span>
+              </div>
+            <div class="matchups-column">
+              {#if currentRound === 6 && topFinishers.champion}
+                <div class="champion-display">
+                  <div class="champion-trophy">🏆</div>
+                  <img src={topFinishers.champion.image_url} alt={topFinishers.champion.label} />
+                  <div class="champion-info">
+                    <div class="champion-name">{topFinishers.champion.label}</div>
+                    <div class="champion-seed">Seed #{topFinishers.champion.seed}</div>
+                    {#if topFinishers.champion.sublabel}
+                      <div class="champion-sublabel">{topFinishers.champion.sublabel}</div>
+                    {/if}
+                    <div class="champion-votes">{championTotalVotes} total votes</div>
+                  </div>
+                </div>
+              {:else}
+                <div class="champion-tbd">
+                  <div class="tbd-trophy">🏆</div>
+                  <div class="tbd-text">Champion TBD</div>
+                </div>
+              {/if}
+            </div>
           </div>
-          <div class="matchups-column">
-            {#each matchups as matchup}
+        {:else if roundNum}
+          {@const matchups = getDisplayMatchups(roundNum)}
+          {#if matchups && matchups.length > 0}
+            <div
+              class="round-container"
+              id="round-{roundNum}"
+              class:active-round={currentRound == roundNum}
+              class:results-mode={currentRound === 6}
+              class:tbd-round={roundNum > currentRound}
+            >
+              <div class="round-header">
+                <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
+                <span class="round-date">{getRoundDate(roundNum)}</span>
+              </div>
+              <div class="matchups-column">
+                {#each matchups as matchup}
               <div
                 class="matchup-card"
                 class:current={currentRound == roundNum && currentRound !== 6}
@@ -649,8 +795,23 @@
             {/each}
           </div>
         </div>
+          {/if}
+        {/if}
       {/each}
     </div>
+
+    <!-- Right Navigation Arrow -->
+    <button
+      class="nav-arrow nav-arrow-right"
+      on:click={navigateForward}
+      disabled={!canNavigateForward}
+      aria-label="Next rounds"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
 
     {#if currentRound > 0 && currentRound !== 6 && !hasVotedInCurrentRound && !isSubmitting}
       <div class="submit-bar">
@@ -755,6 +916,36 @@
 
   .timer-column .column-value {
     color: #ff4444;
+  }
+
+  .test-mode-banner {
+    background-color: #ff9800;
+    color: #000;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    margin: 0 auto 1rem auto;
+    border-radius: 8px;
+    font-weight: 600;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .exit-test {
+    background-color: #000;
+    color: #ff9800;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+
+  .exit-test:hover {
+    background-color: #222;
   }
 
   .results-message {
@@ -987,10 +1178,48 @@
     display: flex;
   }
 
-  .bracket-container {
+  .bracket-wrapper {
     display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-arrow {
+    background-color: #333;
+    border: none;
+    color: #cbff70;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    margin-top: 60px; /* Align with round headers */
+  }
+
+  .nav-arrow:hover:not(:disabled) {
+    background-color: #444;
+    transform: scale(1.1);
+  }
+
+  .nav-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .bracket-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-bottom: 2rem; /* Add space for the submit bar */
+    flex: 1;
   }
   .round-container {
     display: flex;
@@ -1240,6 +1469,101 @@
     border-color: #4caf50;
   }
 
+  /* Champion Column Styles */
+  .champion-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .champion-display {
+    background-color: #1e1e1e;
+    border: 2px solid #cbff70;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .champion-trophy {
+    font-size: 3rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  .champion-display img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid #cbff70;
+  }
+
+  .champion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .champion-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #cbff70;
+  }
+
+  .champion-seed {
+    font-size: 1rem;
+    color: #888;
+  }
+
+  .champion-sublabel {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+
+  .champion-votes {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  .champion-tbd {
+    background-color: #1e1e1e;
+    border: 2px dashed #666;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .tbd-trophy {
+    font-size: 3rem;
+    opacity: 0.3;
+  }
+
+  .tbd-text {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 600;
+  }
+
+  /* TBD Round Styles */
+  .tbd-round .item {
+    cursor: default;
+    pointer-events: none;
+  }
+
   /* Mobile Styles */
   @media (max-width: 899px) {
     .desktop-only {
@@ -1284,6 +1608,14 @@
 
     .column-label {
       font-size: 0.7rem;
+    }
+
+    .test-mode-banner {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      margin: 0 0 1rem 0;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
     .results-message {
@@ -1373,30 +1705,62 @@
       height: 2rem;
     }
 
-    .bracket-container {
+    .bracket-wrapper {
       flex-direction: column;
-      gap: 0;
+      gap: 1rem;
     }
-    .round-selector {
-      display: flex;
+
+    .nav-arrow {
+      width: 40px;
+      height: 40px;
+      margin-top: 0;
+      align-self: center;
     }
+
+    .nav-arrow-left {
+      order: -1;
+    }
+
+    .nav-arrow-right {
+      order: 1;
+    }
+
+    .bracket-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      order: 0;
+    }
+
     .round-container {
-      display: none;
+      width: 100%;
     }
-    .round-container[data-displayed-mobile="true"] {
-      display: flex;
-    }
-    .round-container h2 {
-      display: none;
-    }
+
     .round-date {
-      display: block; /* Show on mobile */
+      display: block;
     }
     .matchups-column {
       align-items: center;
     }
     .matchup-card {
-      width: 300px; /* Wider on mobile */
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .champion-display {
+      padding: 1.5rem;
+    }
+
+    .champion-display img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .champion-name {
+      font-size: 1.2rem;
+    }
+
+    .champion-trophy {
+      font-size: 2.5rem;
     }
   }
 
