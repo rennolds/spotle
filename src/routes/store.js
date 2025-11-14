@@ -163,6 +163,7 @@ bestGuessImages.subscribe((val) => {
     if (browser) return localStorage.setItem(bestGuessImagesName, JSON.stringify(val));
 });
 
+export const bracketView = writable("bracket");
 /* highContrast - a boolean */
 let highContrastParsed = false;
 const highContrastName = "highContrast";

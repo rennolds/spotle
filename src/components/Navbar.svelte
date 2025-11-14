@@ -1,7 +1,8 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import Icon from "../routes/Icon.svelte";
-  import { muted } from "../routes/store.js";
+  import { muted, bracketView } from "../routes/store.js";
+  import { page } from "$app/stores";
 
   // Always show menu button by removing the showBackButton prop
   // New props to check if user is in JAM or REWIND mode
@@ -13,6 +14,9 @@
   export let showStats = true;
   export let showHelp = true;
   export let showMute = true;
+
+  let onBracketRoute;
+  $: onBracketRoute = $page.url.pathname.startsWith("/brackets");
 
   const dispatch = createEventDispatcher();
 
@@ -88,8 +92,17 @@
     </div>
 
     <div class="navbar-right">
+      {#if onBracketRoute}
+        <div class="bracket-view-selector">
+          <label for="view-select">View</label>
+          <select id="view-select" bind:value={$bracketView}>
+            <option value="bracket">Bracket</option>
+            <option value="compact">Compact</option>
+          </select>
+        </div>
+      {/if}
       {#if showStats}
-        <div class="icon-btn" on:click={handleStatsClick}>
+        <button class="icon-btn" on:click={handleStatsClick}>
           <svg
             width="22"
             height="22"
@@ -101,7 +114,7 @@
             <path d="M10 8H14V22H10V8Z" fill="white" />
             <path d="M18 3H22V22H18V3Z" fill="white" />
           </svg>
-        </div>
+        </button>
       {/if}
       {#if showMute}
         {#if $muted}
@@ -160,6 +173,12 @@
   .icon-btn {
     margin: 0 7.5px;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Style for the NEW feature button - add a pulse animation to draw attention */
@@ -185,11 +204,44 @@
     justify-content: flex-end;
   }
 
+  .bracket-view-selector {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    color: white;
+  }
+
+  .bracket-view-selector label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .bracket-view-selector select {
+    margin-right: 10px;
+    background-color: #2c2c2c;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 4px 24px 4px 12px;
+    font-size: 0.9rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-13%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2013l128%20127.9c3.6%203.6%207.8%205.4%2013%205.4s9.4-1.8%2013-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-13%200-5-1.9-9.4-5.4-13z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 0.65em auto;
+    width: 120px;
+  }
+
   /* Desktop styles */
   @media (min-width: 768px) {
     .navbar {
       max-width: 800px;
       margin: 0 auto;
+    }
+    .bracket-view-selector {
+      display: flex;
     }
   }
 

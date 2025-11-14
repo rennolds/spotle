@@ -3,6 +3,7 @@
   import { browser } from "$app/environment";
   import moment from "moment";
   import "moment-timezone";
+  import { goto } from "$app/navigation";
 
   // Import components
   import Help from "./Help.svelte";
@@ -861,6 +862,10 @@
       handleCreate();
     } else if (destination === "jam") {
       playJam();
+    } else if (destination === "brackets-live") {
+      goto("/brackets/live");
+    } else if (destination === "brackets-gallery") {
+      goto("/brackets/gallery");
     }
   }
 
