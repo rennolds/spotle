@@ -850,6 +850,7 @@
 <style>
   .live-bracket-page {
     padding: 1rem;
+    padding-bottom: 6rem; /* Extra space for fixed submit bar */
     color: #fff;
     max-width: 100%;
     overflow-x: auto;
@@ -1356,21 +1357,22 @@
     border-color: #cbff70; /* Change color on selection */
   }
   .submit-bar {
-    position: sticky;
+    position: fixed;
     bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #cbff70;
     color: #121212;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: calc(100% - 2rem);
     max-width: 500px;
-    margin: 1.5rem auto 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    font-weight: 600;
   }
   .submit-bar button {
     background-color: #121212;
