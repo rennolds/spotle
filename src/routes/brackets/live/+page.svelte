@@ -274,7 +274,8 @@
   };
 
   // Update the gradient store when the effective round changes
-  $: $bracketRoundGradient = roundGradients[effectiveRound] || roundGradients[1];
+  $: $bracketRoundGradient =
+    roundGradients[effectiveRound] || roundGradients[1];
 
   onMount(() => {
     updateCountdown();
@@ -693,12 +694,56 @@
                           class="percentage-fill"
                           style="width: {matchup.item1Percentage}%"
                         />
+                        <span class="seed">{matchup.item1.seed}</span>
                         <div class="item-content">
-                          <span class="seed">{matchup.item1.seed}</span>
-                          <img
-                            src={matchup.item1.image_url}
-                            alt={matchup.item1.label}
-                          />
+                          <div class="image-wrapper">
+                            <img
+                              src={matchup.item1.image_url}
+                              alt={matchup.item1.label}
+                            />
+                            {#if matchup.item1.audio_url}
+                              <SoundCloudPlayer
+                                bind:this={audioPlayers[matchup.item1.id]}
+                                trackId={matchup.item1.audio_url}
+                                on:play={() =>
+                                  (activeAudioItemId = matchup.item1.id)}
+                                on:pause={() => {
+                                  if (activeAudioItemId === matchup.item1.id)
+                                    activeAudioItemId = null;
+                                }}
+                              />
+                              <button
+                                class="play-button"
+                                on:click|stopPropagation={() =>
+                                  handleTogglePlay(matchup.item1)}
+                              >
+                                {#if activeAudioItemId === matchup.item1.id}
+                                  <svg
+                                    width="35"
+                                    height="35"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
+                                      fill="white"
+                                    />
+                                  </svg>
+                                {:else}
+                                  <svg
+                                    width="35"
+                                    height="35"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path d="M8 5V19L19 12L8 5Z" fill="white" />
+                                  </svg>
+                                {/if}
+                              </button>
+                            {/if}
+                          </div>
                           <div class="item-details">
                             <span class="label">{matchup.item1.label}</span>
                             {#if matchup.item1.sublabel}
@@ -707,50 +752,6 @@
                               >
                             {/if}
                           </div>
-                          {#if matchup.item1.audio_url}
-                            <SoundCloudPlayer
-                              bind:this={audioPlayers[matchup.item1.id]}
-                              trackId={matchup.item1.audio_url}
-                              on:play={() =>
-                                (activeAudioItemId = matchup.item1.id)}
-                              on:pause={() => {
-                                if (activeAudioItemId === matchup.item1.id)
-                                  activeAudioItemId = null;
-                              }}
-                            />
-                            <button
-                              class="play-button"
-                              on:click|stopPropagation={() =>
-                                handleTogglePlay(matchup.item1)}
-                            >
-                              {#if activeAudioItemId === matchup.item1.id}
-                                <svg
-                                  width="20"
-                                  height="20"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
-                                    fill="white"
-                                  />
-                                </svg>
-                              {:else}
-                                <svg
-                                  width="20"
-                                  height="20"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path d="M8 5V19L19 12L8 5Z" fill="white" />
-                                </svg>
-                              {/if}
-                            </button>
-                          {:else}
-                            <div class="play-button-placeholder" />
-                          {/if}
                         </div>
                       </div>
                       <div
@@ -789,12 +790,56 @@
                           class="percentage-fill"
                           style="width: {matchup.item2Percentage}%"
                         />
+                        <span class="seed">{matchup.item2.seed}</span>
                         <div class="item-content">
-                          <span class="seed">{matchup.item2.seed}</span>
-                          <img
-                            src={matchup.item2.image_url}
-                            alt={matchup.item2.label}
-                          />
+                          <div class="image-wrapper">
+                            <img
+                              src={matchup.item2.image_url}
+                              alt={matchup.item2.label}
+                            />
+                            {#if matchup.item2.audio_url}
+                              <SoundCloudPlayer
+                                bind:this={audioPlayers[matchup.item2.id]}
+                                trackId={matchup.item2.audio_url}
+                                on:play={() =>
+                                  (activeAudioItemId = matchup.item2.id)}
+                                on:pause={() => {
+                                  if (activeAudioItemId === matchup.item2.id)
+                                    activeAudioItemId = null;
+                                }}
+                              />
+                              <button
+                                class="play-button"
+                                on:click|stopPropagation={() =>
+                                  handleTogglePlay(matchup.item2)}
+                              >
+                                {#if activeAudioItemId === matchup.item2.id}
+                                  <svg
+                                    width="35"
+                                    height="35"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
+                                      fill="white"
+                                    />
+                                  </svg>
+                                {:else}
+                                  <svg
+                                    width="35"
+                                    height="35"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path d="M8 5V19L19 12L8 5Z" fill="white" />
+                                  </svg>
+                                {/if}
+                              </button>
+                            {/if}
+                          </div>
                           <div class="item-details">
                             <span class="label">{matchup.item2.label}</span>
                             {#if matchup.item2.sublabel}
@@ -803,50 +848,6 @@
                               >
                             {/if}
                           </div>
-                          {#if matchup.item2.audio_url}
-                            <SoundCloudPlayer
-                              bind:this={audioPlayers[matchup.item2.id]}
-                              trackId={matchup.item2.audio_url}
-                              on:play={() =>
-                                (activeAudioItemId = matchup.item2.id)}
-                              on:pause={() => {
-                                if (activeAudioItemId === matchup.item2.id)
-                                  activeAudioItemId = null;
-                              }}
-                            />
-                            <button
-                              class="play-button"
-                              on:click|stopPropagation={() =>
-                                handleTogglePlay(matchup.item2)}
-                            >
-                              {#if activeAudioItemId === matchup.item2.id}
-                                <svg
-                                  width="20"
-                                  height="20"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
-                                    fill="white"
-                                  />
-                                </svg>
-                              {:else}
-                                <svg
-                                  width="20"
-                                  height="20"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path d="M8 5V19L19 12L8 5Z" fill="white" />
-                                </svg>
-                              {/if}
-                            </button>
-                          {:else}
-                            <div class="play-button-placeholder" />
-                          {/if}
                         </div>
                       </div>
                     </div>
@@ -879,13 +880,7 @@
 
     {#if currentRound > 0 && currentRound !== 6 && !hasVotedInCurrentRound && !isSubmitting}
       <div class="submit-bar">
-        <span>
-          {#if selections.size > 0}
-            {selections.size}/{matchupsInCurrentRound} picks selected
-          {:else}
-            Make your picks for Round {currentRound}
-          {/if}
-        </span>
+        <span>{selections.size}/{matchupsInCurrentRound} picks</span>
         <button on:click={handleSubmitVotes} disabled={selections.size === 0}
           >Submit</button
         >
@@ -1313,43 +1308,46 @@
     height: 100%;
   }
   .matchup-card {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     width: 250px; /* Default width for desktop */
-    transition: all 0.2s ease;
-    overflow: hidden; /* For the background fill */
   }
   .item {
-    padding: 0.5rem;
-    border-radius: 4px;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 0;
+    border-radius: 8px;
     position: relative; /* For z-indexing content above the fill */
-    border: 2px solid transparent; /* Add transparent border */
+    transition: all 0.2s ease;
+    overflow: hidden; /* Clip percentage fill */
+    min-height: 68px;
+  }
+  .seed {
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    color: #888;
+    width: 1.5rem;
+    text-align: right;
+    flex-shrink: 0;
+    z-index: 3;
   }
   .item-content {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
     position: relative;
     z-index: 2;
+    min-height: 68px;
   }
-  .item:first-child {
-    margin-bottom: 0.5rem;
+  .image-wrapper {
     position: relative;
-  }
-  .item:first-child::after {
-    content: "";
-    position: absolute;
-    bottom: calc(-0.25rem - 1px);
-    left: 0.5rem;
-    right: 0.5rem;
-    height: 1px;
-    background-color: #2a2a2a;
-  }
-
-  .item.selected:first-child::after {
-    display: none;
+    flex-shrink: 0;
+    width: 68px;
+    height: 100%;
   }
   .item.winner {
     font-weight: bold;
@@ -1358,29 +1356,20 @@
   .item.loser {
     opacity: 0.6;
   }
-  .seed {
-    font-size: 0.8rem;
-    color: #888;
-    width: 2rem;
-    text-align: right;
-    flex-shrink: 0;
-    margin-right: 0.5rem;
-    margin-left: -0.5rem; /* Pull seed to the left edge */
-  }
-  .item img {
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    flex-shrink: 0;
-    margin-right: 0.5rem;
+    display: block;
   }
   .item-details {
     display: flex;
     flex-direction: column;
     overflow: hidden;
     text-align: left;
-    flex-grow: 1; /* Allow details to take up space */
+    flex-grow: 1;
+    padding: 0.5rem;
+    justify-content: center;
   }
   .label {
     white-space: nowrap;
@@ -1394,31 +1383,29 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .play-button,
-  .play-button-placeholder {
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: transparent;
     border: none;
     padding: 0;
-    margin-left: auto;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: background-color 0.2s;
-  }
-
-  .play-button-placeholder {
-    cursor: default;
+    width: 50px;
+    height: 50px;
+    transition: opacity 0.2s;
+    z-index: 4;
   }
   .play-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 0.8;
   }
   .item.selected {
-    border-color: #cbff70; /* Change color on selection */
+    border-color: #cbff70;
+    border-width: 2px;
   }
   .submit-bar {
     position: fixed;
@@ -1427,25 +1414,29 @@
     transform: translateX(-50%);
     background-color: #cbff70;
     color: #121212;
-    padding: 1rem 1.5rem;
+    padding: 0.65rem 1rem;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100% - 2rem);
-    max-width: 500px;
+    gap: 1rem;
+    width: auto;
+    min-width: 200px;
+    max-width: 300px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     z-index: 100;
     font-weight: 600;
+    font-size: 0.95rem;
   }
   .submit-bar button {
     background-color: #121212;
     color: #cbff70;
     border: none;
-    padding: 0.5rem 1.5rem;
+    padding: 0.4rem 1.25rem;
     border-radius: 20px;
     font-weight: 600;
     cursor: pointer;
+    font-size: 0.9rem;
     transition:
       background-color 0.2s,
       color 0.2s;
