@@ -6,6 +6,7 @@
   import Ramp from "../Ramp.svelte";
   import { browser } from "$app/environment";
   import { goto } from "$app/navigation";
+  import { bracketRoundGradient } from "../store.js";
 
   const PUB_ID = 1025391;
   const WEBSITE_ID = 75339;
@@ -56,7 +57,7 @@
   }
 </script>
 
-<div class="brackets-layout">
+<div class="brackets-layout" style="background: {$bracketRoundGradient}; background-attachment: fixed;">
   <Ramp {PUB_ID} {WEBSITE_ID} />
   <Navbar
     showMute={false}
@@ -89,6 +90,11 @@
 </div>
 
 <style>
+  .brackets-layout {
+    min-height: 100vh;
+    width: 100%;
+  }
+
   main {
     padding-bottom: 100px; /* Space for banner ad */
   }

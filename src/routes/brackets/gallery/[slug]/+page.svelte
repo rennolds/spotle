@@ -1,5 +1,6 @@
 <script>
   import SoundCloudPlayer from "../../../../components/SoundCloudPlayer.svelte";
+  import { bracketRoundGradient } from "../../../store.js";
 
   /** @type {import('./$types').PageData} */
   export let data;
@@ -29,6 +30,18 @@
     4: "Final Four",
     5: "The Finals",
   };
+
+  // Round-specific gradients
+  const roundGradients = {
+    1: "linear-gradient(180deg, #48937D 0%, rgba(18, 18, 18, 0) 39.9%)",
+    2: "linear-gradient(180deg, #5D5D00 0%, rgba(18, 18, 18, 0) 39.9%)",
+    3: "linear-gradient(180deg, #B200A7 0%, rgba(18, 18, 18, 0) 39.9%)",
+    4: "linear-gradient(180deg, #364460 0%, rgba(53, 68, 95, 0) 39.9%)",
+    5: "linear-gradient(180deg, #6D6D6D 0%, rgba(109, 109, 109, 0) 39.9%)",
+  };
+
+  // Update the gradient store when the displayed round changes
+  $: $bracketRoundGradient = roundGradients[displayedRound] || roundGradients[1];
 
   function updateBracketWithPicks() {
     const newBracket = JSON.parse(JSON.stringify(fullBracket));
