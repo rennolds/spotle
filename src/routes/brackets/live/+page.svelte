@@ -588,13 +588,11 @@
         disabled={!canNavigateBack}
         aria-label="Previous rounds"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
           <path
-            d="M15 18L9 12L15 6"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            d="M16 5L8 12L16 19V5Z"
+            fill="currentColor"
+            transform="translate(-1, 0)"
           />
         </svg>
       </button>
@@ -641,13 +639,11 @@
         disabled={!canNavigateForward}
         aria-label="Next rounds"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
           <path
-            d="M9 18L15 12L9 6"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            d="M8 5L16 12L8 19V5Z"
+            fill="currentColor"
+            transform="translate(1, 0)"
           />
         </svg>
       </button>
@@ -1346,25 +1342,25 @@
   }
 
   .nav-arrow {
-    background-color: #333;
+    background-color: #cbff70;
     border: none;
-    color: #cbff70;
-    padding: 0.5rem;
+    color: #121212;
+    padding: 0;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
-    width: 44px;
-    height: 44px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
     visibility: visible;
     opacity: 1;
   }
 
   .nav-arrow:hover:not(:disabled) {
-    background-color: #444;
+    background-color: #b8e654;
     transform: scale(1.1);
   }
 
@@ -1806,8 +1802,8 @@
 
     .nav-bar .nav-arrow {
       margin-top: 0;
-      width: 44px;
-      height: 44px;
+      width: 32px;
+      height: 32px;
       flex-shrink: 0;
     }
 
@@ -2111,6 +2107,15 @@
   @media (min-width: 900px) {
     .round-header {
       display: none; /* Hidden on desktop - shown in nav bar instead */
+    }
+
+    /* Increase spacing between items in middle and right columns */
+    .round-container:nth-child(2) .matchup-card {
+      gap: 7rem;
+    }
+
+    .round-container:nth-child(3) .matchup-card {
+      gap: 18rem;
     }
   }
 
