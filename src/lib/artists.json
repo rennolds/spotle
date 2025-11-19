@@ -16213,20 +16213,5 @@
         "song_uri": "FIX LATER",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27352bdeb3a10f87ca9c4e541c0",
         "embedded_track": "FIX LATER"
-    },
-    {
-        "index": 1105,
-        "artist": "Frédéric Chopin",
-        "country": "pl",
-        "genre": "Classical",
-        "gender": "m",
-        "group_size": 1,
-        "debut_album_year": 1817,
-        "track_name": "",
-        "uri": "",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe55372097569b7b56b439365",
-        "song_uri": "",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273a749047278122f08e2de2a75",
-        "embedded_track": ""
     }
 ]
