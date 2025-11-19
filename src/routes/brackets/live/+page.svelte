@@ -594,6 +594,8 @@
             <div
               class="round-container champion-column"
               class:results-mode={currentRound === 6}
+              class:mobile-visible={roundNum === 6 &&
+                (effectiveRound >= 5 || currentRound === 6)}
             >
               <div class="round-header">
                 <h2>{roundNames[6]}</h2>
@@ -643,6 +645,7 @@
                 class:active-round={currentRound == roundNum}
                 class:results-mode={currentRound === 6}
                 class:tbd-round={roundNum > currentRound}
+                class:mobile-visible={roundNum === effectiveRound}
               >
                 <div class="round-header">
                   <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
@@ -912,7 +915,7 @@
     padding-bottom: 6rem; /* Extra space for fixed submit bar */
     color: #fff;
     max-width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
   }
   .bracket-header {
     background: #000;
@@ -1654,6 +1657,13 @@
 
   /* Mobile Styles */
   @media (max-width: 899px) {
+    .live-bracket-page {
+      padding: 1rem 0.5rem;
+      padding-bottom: 6rem;
+      overflow-x: hidden;
+      overflow-y: visible;
+    }
+
     .desktop-only {
       display: none !important;
     }
@@ -1794,44 +1804,86 @@
     }
 
     .bracket-wrapper {
-      flex-direction: column;
-      gap: 1rem;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: flex-start;
+      max-width: 100%;
+      min-height: auto;
+      padding: 0 0.5rem;
+      margin-bottom: 2rem;
     }
 
     .nav-arrow {
-      width: 40px;
-      height: 40px;
-      margin-top: 0;
-      align-self: center;
+      width: 44px;
+      height: 44px;
+      margin-top: 60px;
+      flex-shrink: 0;
     }
 
     .nav-arrow-left {
-      order: -1;
-    }
-
-    .nav-arrow-right {
-      order: 1;
-    }
-
-    .bracket-container {
-      grid-template-columns: 1fr;
-      gap: 2rem;
       order: 0;
     }
 
-    .round-container {
+    .nav-arrow-right {
+      order: 2;
+    }
+
+    .bracket-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      order: 1;
       width: 100%;
+      flex: 1;
+      min-height: 0;
+      padding: 0 0.25rem;
+    }
+
+    /* Hide all rounds by default on mobile */
+    .round-container {
+      display: none !important;
+      width: 100%;
+    }
+
+    /* Show only the mobile-visible round */
+    .round-container.mobile-visible {
+      display: flex !important;
+      flex-direction: column;
+    }
+
+    .round-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .round-header h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
     }
 
     .round-date {
       display: block;
+      font-size: 0.9rem;
     }
+
     .matchups-column {
       align-items: center;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
     }
+
     .matchup-card {
       width: 100%;
-      max-width: 350px;
+      max-width: 400px;
+      padding-left: 2.5rem;
+    }
+
+    /* Ensure seeds are visible on mobile with proper spacing */
+    .seed {
+      left: -2.5rem;
+      font-size: 0.8rem;
+      width: 2rem;
     }
 
     .champion-display {
