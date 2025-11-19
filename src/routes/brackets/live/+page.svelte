@@ -580,8 +580,8 @@
   {/if}
 
   {#if Object.keys(fullBracket).length > 0}
-    <!-- Mobile Navigation Bar -->
-    <div class="mobile-nav-bar">
+    <!-- Navigation Bar (Mobile & Desktop) -->
+    <div class="nav-bar">
       <button
         class="nav-arrow nav-arrow-left"
         on:click={navigateBack}
@@ -599,6 +599,7 @@
         </svg>
       </button>
 
+      <!-- Mobile: Single round header -->
       <div class="mobile-round-header">
         {#each visibleRounds as roundNum}
           {#if roundNum && roundNum === effectiveRound}
@@ -609,6 +610,27 @@
             <span class="round-date"
               >{currentRound === 6 ? getRoundDate(5) : "TBD"}</span
             >
+          {/if}
+        {/each}
+      </div>
+
+      <!-- Desktop: All three round headers -->
+      <div class="desktop-round-headers">
+        {#each visibleRounds as roundNum}
+          {#if roundNum === 6}
+            <div class="round-nav-item">
+              <h2>{roundNames[6]}</h2>
+              <span class="round-date"
+                >{currentRound === 6 ? getRoundDate(5) : "TBD"}</span
+              >
+            </div>
+          {:else if roundNum}
+            <div class="round-nav-item">
+              <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
+              <span class="round-date">{getRoundDate(roundNum)}</span>
+            </div>
+          {:else}
+            <div class="round-nav-item empty"></div>
           {/if}
         {/each}
       </div>
@@ -632,24 +654,6 @@
     </div>
 
     <div class="bracket-wrapper">
-      <!-- Left Navigation Arrow (Desktop) -->
-      <button
-        class="nav-arrow nav-arrow-left desktop-nav"
-        on:click={navigateBack}
-        disabled={!canNavigateBack}
-        aria-label="Previous rounds"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M15 18L9 12L15 6"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-
       <div class="bracket-container" class:compact={$bracketView === "compact"}>
         {#each visibleRounds as roundNum, idx}
           {#if roundNum === 6}
@@ -924,24 +928,6 @@
           {/if}
         {/each}
       </div>
-
-      <!-- Right Navigation Arrow (Desktop) -->
-      <button
-        class="nav-arrow nav-arrow-right desktop-nav"
-        on:click={navigateForward}
-        disabled={!canNavigateForward}
-        aria-label="Next rounds"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M9 18L15 12L9 6"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
     </div>
 
     {#if currentRound > 0 && currentRound !== 6 && !hasVotedInCurrentRound && !isSubmitting}
@@ -1304,15 +1290,55 @@
     display: flex;
   }
 
-  /* Mobile Navigation Bar - hidden on desktop */
-  .mobile-nav-bar {
-    display: none;
+  /* Navigation Bar - Desktop styles */
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 1rem;
+    margin: 0 auto 2rem auto;
+    max-width: 1500px;
+  }
+
+  .mobile-round-header {
+    display: none; /* Hidden on desktop */
+  }
+
+  .desktop-round-headers {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    justify-content: space-around;
+  }
+
+  .round-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  .round-nav-item h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #aaa;
+  }
+
+  .round-nav-item .round-date {
+    font-size: 0.8rem;
+    color: #777;
+    display: block;
+  }
+
+  .round-nav-item.empty {
+    visibility: hidden;
   }
 
   .bracket-wrapper {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    display: block;
     margin-bottom: 2rem;
     max-width: 1500px;
     margin-left: auto;
@@ -1333,7 +1359,6 @@
     width: 44px;
     height: 44px;
     flex-shrink: 0;
-    margin-top: 60px; /* Align with round headers */
     visibility: visible;
     opacity: 1;
   }
@@ -1739,14 +1764,14 @@
     }
 
     .live-bracket-page {
-      padding: 1rem 0;
+      padding: 0.5rem 0;
       padding-bottom: 6rem;
       overflow-x: hidden;
       overflow-y: visible;
     }
 
-    /* Show mobile navigation bar */
-    .mobile-nav-bar {
+    /* Mobile navigation bar */
+    .nav-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1775,16 +1800,15 @@
       color: #777;
     }
 
-    .mobile-nav-bar .nav-arrow {
+    .desktop-round-headers {
+      display: none; /* Hide on mobile */
+    }
+
+    .nav-bar .nav-arrow {
       margin-top: 0;
       width: 44px;
       height: 44px;
       flex-shrink: 0;
-    }
-
-    /* Hide desktop navigation arrows */
-    .desktop-nav {
-      display: none !important;
     }
 
     .desktop-only {
@@ -1796,12 +1820,12 @@
     }
 
     .bracket-header {
-      padding: 0.5rem 0.75rem;
-      margin: 0 0 1rem 0;
+      padding: 0.4rem 0.75rem;
+      margin: 0.5rem 1rem 0.75rem 1rem;
       max-width: none;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.5rem;
       text-align: left;
     }
 
@@ -1820,15 +1844,16 @@
     }
 
     .bracket-header h1 {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      margin: 0;
     }
 
     .column-value {
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .column-label {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
     }
 
     .test-mode-banner {
@@ -2056,12 +2081,36 @@
     .champion-trophy {
       font-size: 2.5rem;
     }
+
+    /* Submit bar in bottom right on mobile */
+    .submit-bar {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      left: auto;
+      transform: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: auto;
+      width: auto;
+      padding: 0.75rem 1rem;
+    }
+
+    .submit-bar span {
+      font-size: 0.85rem;
+    }
+
+    .submit-bar button {
+      width: 100%;
+      padding: 0.5rem 1.5rem;
+    }
   }
 
   /* Desktop Styles */
   @media (min-width: 900px) {
-    .round-date {
-      display: block; /* Show on desktop */
+    .round-header {
+      display: none; /* Hidden on desktop - shown in nav bar instead */
     }
   }
 
