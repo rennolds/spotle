@@ -75,8 +75,20 @@
 
   // Navigation handlers
   $: canNavigateBack = effectiveRound > 1;
-  $: canNavigateForward =
-    effectiveRound < currentRound || (currentRound >= 5 && effectiveRound < 5);
+  $: canNavigateForward = effectiveRound < 5;
+
+  // Debug logging
+  $: {
+    console.log("Navigation state:", {
+      currentRound,
+      viewOffset,
+      effectiveRound,
+      canNavigateBack,
+      canNavigateForward,
+      visibleRounds,
+      fullBracketKeys: Object.keys(fullBracket),
+    });
+  }
 
   function navigateBack() {
     if (canNavigateBack) {
@@ -568,10 +580,61 @@
   {/if}
 
   {#if Object.keys(fullBracket).length > 0}
-    <div class="bracket-wrapper">
-      <!-- Left Navigation Arrow -->
+    <!-- Mobile Navigation Bar -->
+    <div class="mobile-nav-bar">
       <button
         class="nav-arrow nav-arrow-left"
+        on:click={navigateBack}
+        disabled={!canNavigateBack}
+        aria-label="Previous rounds"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M15 18L9 12L15 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <div class="mobile-round-header">
+        {#each visibleRounds as roundNum}
+          {#if roundNum && roundNum === effectiveRound}
+            <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
+            <span class="round-date">{getRoundDate(roundNum)}</span>
+          {:else if roundNum === 6 && effectiveRound >= 5}
+            <h2>{roundNames[6]}</h2>
+            <span class="round-date"
+              >{currentRound === 6 ? getRoundDate(5) : "TBD"}</span
+            >
+          {/if}
+        {/each}
+      </div>
+
+      <button
+        class="nav-arrow nav-arrow-right"
+        on:click={navigateForward}
+        disabled={!canNavigateForward}
+        aria-label="Next rounds"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M9 18L15 12L9 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="bracket-wrapper">
+      <!-- Left Navigation Arrow (Desktop) -->
+      <button
+        class="nav-arrow nav-arrow-left desktop-nav"
         on:click={navigateBack}
         disabled={!canNavigateBack}
         aria-label="Previous rounds"
@@ -862,9 +925,9 @@
         {/each}
       </div>
 
-      <!-- Right Navigation Arrow -->
+      <!-- Right Navigation Arrow (Desktop) -->
       <button
-        class="nav-arrow nav-arrow-right"
+        class="nav-arrow nav-arrow-right desktop-nav"
         on:click={navigateForward}
         disabled={!canNavigateForward}
         aria-label="Next rounds"
@@ -1241,6 +1304,11 @@
     display: flex;
   }
 
+  /* Mobile Navigation Bar - hidden on desktop */
+  .mobile-nav-bar {
+    display: none;
+  }
+
   .bracket-wrapper {
     display: flex;
     align-items: flex-start;
@@ -1266,6 +1334,8 @@
     height: 44px;
     flex-shrink: 0;
     margin-top: 60px; /* Align with round headers */
+    visibility: visible;
+    opacity: 1;
   }
 
   .nav-arrow:hover:not(:disabled) {
@@ -1276,6 +1346,8 @@
   .nav-arrow:disabled {
     opacity: 0.3;
     cursor: not-allowed;
+    visibility: visible;
+    display: flex;
   }
 
   .bracket-container {
@@ -1657,11 +1729,62 @@
 
   /* Mobile Styles */
   @media (max-width: 899px) {
+    /* Override global centering that removes our padding */
+    :global(body) {
+      align-items: stretch !important;
+    }
+
+    :global(main) {
+      align-items: stretch !important;
+    }
+
     .live-bracket-page {
-      padding: 1rem 0.5rem;
+      padding: 1rem 0;
       padding-bottom: 6rem;
       overflow-x: hidden;
       overflow-y: visible;
+    }
+
+    /* Show mobile navigation bar */
+    .mobile-nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .mobile-round-header {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .mobile-round-header h2 {
+      font-size: 1.3rem;
+      margin: 0;
+      color: #cbff70;
+    }
+
+    .mobile-round-header .round-date {
+      display: block;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .mobile-nav-bar .nav-arrow {
+      margin-top: 0;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+
+    /* Hide desktop navigation arrows */
+    .desktop-nav {
+      display: none !important;
     }
 
     .desktop-only {
@@ -1804,40 +1927,19 @@
     }
 
     .bracket-wrapper {
-      display: flex;
-      flex-direction: row;
-      gap: 0.5rem;
-      align-items: flex-start;
-      max-width: 100%;
-      min-height: auto;
-      padding: 0 0.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .nav-arrow {
-      width: 44px;
-      height: 44px;
-      margin-top: 60px;
-      flex-shrink: 0;
-    }
-
-    .nav-arrow-left {
-      order: 0;
-    }
-
-    .nav-arrow-right {
-      order: 2;
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0;
     }
 
     .bracket-container {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      order: 1;
+      gap: 0;
       width: 100%;
-      flex: 1;
-      min-height: 0;
-      padding: 0 0.25rem;
+      padding: 0;
+      overflow: visible;
     }
 
     /* Hide all rounds by default on mobile */
@@ -1850,40 +1952,92 @@
     .round-container.mobile-visible {
       display: flex !important;
       flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
     }
 
     .round-header {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .round-header h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .round-date {
-      display: block;
-      font-size: 0.9rem;
+      display: none; /* Hidden on mobile - shown in top nav bar instead */
     }
 
     .matchups-column {
-      align-items: center;
-      gap: 1.5rem;
-      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 0 1rem 2rem 3rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .matchup-card {
-      width: 100%;
-      max-width: 400px;
-      padding-left: 2.5rem;
+      width: 75%;
+      max-width: none;
+      margin: 0;
+      position: relative;
+      gap: 1rem;
+    }
+
+    /* Bracket connector lines on mobile */
+    /* Horizontal lines from each item to the vertical connector */
+    .matchup-card .item::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 2px;
+      background-color: #666;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Vertical line connecting the two items */
+    .matchup-card::before {
+      content: "";
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: calc(100% - 4.7rem);
+      background-color: #666;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Horizontal line extending from center to the right (off screen) */
+    .matchup-card::after {
+      content: "";
+      position: absolute;
+      left: 111.5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 2px;
+      background-color: #666;
+      pointer-events: none;
+      z-index: 1;
     }
 
     /* Ensure seeds are visible on mobile with proper spacing */
     .seed {
-      left: -2.5rem;
+      left: -2rem;
       font-size: 0.8rem;
-      width: 2rem;
+      width: 1.5rem;
+    }
+
+    .item {
+      min-height: 75px;
+    }
+
+    .item-content {
+      min-height: 75px;
+    }
+
+    .image-wrapper {
+      width: 75px;
     }
 
     .champion-display {
