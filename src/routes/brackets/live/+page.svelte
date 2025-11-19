@@ -101,13 +101,13 @@
         item1: {
           id: `tbd-${roundNum}-${i}-1`,
           label: "TBD",
-          seed: "?",
+          seed: "",
           image_url: "/resources/cd.png",
         },
         item2: {
           id: `tbd-${roundNum}-${i}-2`,
           label: "TBD",
-          seed: "?",
+          seed: "",
           image_url: "/resources/cd.png",
         },
         item1Votes: 0,
@@ -1310,18 +1310,29 @@
   .matchup-card {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
     width: 250px; /* Default width for desktop */
+    overflow: visible; /* Allow seeds to show outside */
   }
   .item {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
+    background: linear-gradient(
+      135deg,
+      rgba(40, 40, 40, 0.9) 0%,
+      rgba(20, 20, 20, 0.95) 100%
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 0;
-    border-radius: 8px;
+    border-radius: 10px;
     position: relative; /* For z-indexing content above the fill */
     transition: all 0.2s ease;
-    overflow: hidden; /* Clip percentage fill */
+    overflow: visible; /* Allow seed to show outside */
     min-height: 68px;
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.1),
+      inset 0 4px 12px rgba(0, 0, 0, 0.6),
+      inset 0 -1px 2px rgba(255, 255, 255, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.3);
   }
   .seed {
     position: absolute;
@@ -1342,16 +1353,22 @@
     position: relative;
     z-index: 2;
     min-height: 68px;
+    overflow: hidden; /* Clip percentage fill within content */
+    border-radius: 10px;
   }
   .image-wrapper {
     position: relative;
     flex-shrink: 0;
     width: 68px;
     height: 100%;
+    padding: 4px;
   }
   .item.winner {
     font-weight: bold;
-    background-color: #2a2a2a;
+    background: rgba(42, 42, 42, 0.8);
+  }
+  .item.winner .item-content {
+    border-radius: 10px;
   }
   .item.loser {
     opacity: 0.6;
@@ -1361,10 +1378,12 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 6px;
   }
   .item-details {
     display: flex;
     flex-direction: column;
+    gap: 0.25rem;
     overflow: hidden;
     text-align: left;
     flex-grow: 1;
@@ -1372,12 +1391,13 @@
     justify-content: center;
   }
   .label {
+    font-size: 0.95rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   .sublabel {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #888;
     white-space: nowrap;
     overflow: hidden;
@@ -1404,8 +1424,13 @@
     opacity: 0.8;
   }
   .item.selected {
-    border-color: #cbff70;
-    border-width: 2px;
+    border: 2px solid #cbff70;
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.1),
+      inset 0 4px 12px rgba(0, 0, 0, 0.6),
+      inset 0 -1px 2px rgba(255, 255, 255, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(203, 255, 112, 0.3);
   }
   .submit-bar {
     position: fixed;
@@ -1494,6 +1519,7 @@
     background-color: #4a4a4a; /* Loser/trailing color */
     opacity: 0; /* Hidden by default */
     z-index: 1;
+    border-radius: 10px;
     transition:
       width 0.3s ease,
       opacity 0.3s ease;
