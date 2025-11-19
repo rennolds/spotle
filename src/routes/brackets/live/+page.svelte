@@ -14,8 +14,8 @@
   // Testing override: Allow URL parameter to simulate different rounds
   // Usage: ?testRound=1 for Monday (Round 1), ?testRound=2 for Tuesday, etc.
   let testMode = false;
-  $: if (typeof window !== 'undefined') {
-    const testRound = $page.url.searchParams.get('testRound');
+  $: if (typeof window !== "undefined") {
+    const testRound = $page.url.searchParams.get("testRound");
     if (testRound) {
       const roundNum = parseInt(testRound);
       if (roundNum >= 1 && roundNum <= 6) {
@@ -55,27 +55,28 @@
 
   // Determine which 3 rounds to display based on current round and navigation offset
   $: effectiveRound = Math.max(1, Math.min(currentRound + viewOffset, 5));
-  
+
   $: visibleRounds = (() => {
     // Determine which view to show
     // View 1: [1, 2, 3]   - Monday (Round 1)
-    // View 2: [2, 3, 4]   - Tuesday (Sweet Sixteen)  
+    // View 2: [2, 3, 4]   - Tuesday (Sweet Sixteen)
     // View 3: [3, 4, 5]   - Wednesday (Elite Eight)
     // View 4: [4, 5, 6]   - Thursday (Final Four)
     // View 5: [5, 6, null] - Friday+ (Finals)
-    
+
     if (effectiveRound <= 1) return [1, 2, 3];
     if (effectiveRound === 2) return [2, 3, 4];
     if (effectiveRound === 3) return [3, 4, 5];
     if (effectiveRound === 4) return [4, 5, 6];
     if (effectiveRound >= 5) return [5, 6, null];
-    
+
     return [1, 2, 3];
   })();
 
   // Navigation handlers
   $: canNavigateBack = effectiveRound > 1;
-  $: canNavigateForward = effectiveRound < currentRound || (currentRound >= 5 && effectiveRound < 5);
+  $: canNavigateForward =
+    effectiveRound < currentRound || (currentRound >= 5 && effectiveRound < 5);
 
   function navigateBack() {
     if (canNavigateBack) {
@@ -93,7 +94,7 @@
   function generateTBDMatchups(roundNum) {
     const matchupCount = Math.pow(2, 5 - roundNum); // Round 1=16, 2=8, 3=4, 4=2, 5=1
     const tbdMatchups = [];
-    
+
     for (let i = 0; i < matchupCount; i++) {
       tbdMatchups.push({
         id: `tbd-${roundNum}-${i}`,
@@ -116,24 +117,24 @@
         item2Percentage: 50,
       });
     }
-    
+
     return tbdMatchups;
   }
 
   // Get matchups for display, including TBD placeholders
   function getDisplayMatchups(roundNum) {
     if (!roundNum) return null; // For the special null column in final view
-    
+
     // FIRST check if this is a future round - if so, show TBD regardless of data
     if (roundNum > currentRound && currentRound < 6) {
       return generateTBDMatchups(roundNum);
     }
-    
+
     // If the round has started/completed and exists in fullBracket, use it
     if (fullBracket[roundNum] && fullBracket[roundNum].length > 0) {
       return fullBracket[roundNum];
     }
-    
+
     // Otherwise return empty (shouldn't happen in normal flow)
     return [];
   }
@@ -276,9 +277,9 @@
   function handleSelect(matchupId, chosenItemId, roundNum) {
     // Only allow selections in the current active round
     if (votedMatchups.has(matchupId) || roundNum !== currentRound) return;
-    
+
     // Don't allow selecting TBD matchups
-    if (matchupId.startsWith('tbd-') || chosenItemId.startsWith('tbd-')) return;
+    if (matchupId.startsWith("tbd-") || chosenItemId.startsWith("tbd-")) return;
 
     if (selections.get(matchupId) === chosenItemId) {
       selections.delete(matchupId); // Unselect
@@ -563,7 +564,13 @@
         aria-label="Previous rounds"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path
+            d="M15 18L9 12L15 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
         </svg>
       </button>
 
@@ -571,247 +578,292 @@
         {#each visibleRounds as roundNum, idx}
           {#if roundNum === 6}
             <!-- Special Champion Column -->
-            <div class="round-container champion-column" class:results-mode={currentRound === 6}>
-              <div class="round-header">
-                <h2>{roundNames[6]}</h2>
-                <span class="round-date">{currentRound === 6 ? getRoundDate(5) : "TBD"}</span>
-              </div>
-            <div class="matchups-column">
-              {#if currentRound === 6 && topFinishers.champion}
-                <div class="champion-display">
-                  <div class="champion-trophy">🏆</div>
-                  <img src={topFinishers.champion.image_url} alt={topFinishers.champion.label} />
-                  <div class="champion-info">
-                    <div class="champion-name">{topFinishers.champion.label}</div>
-                    <div class="champion-seed">Seed #{topFinishers.champion.seed}</div>
-                    {#if topFinishers.champion.sublabel}
-                      <div class="champion-sublabel">{topFinishers.champion.sublabel}</div>
-                    {/if}
-                    <div class="champion-votes">{championTotalVotes} total votes</div>
-                  </div>
-                </div>
-              {:else}
-                <div class="champion-tbd">
-                  <div class="tbd-trophy">🏆</div>
-                  <div class="tbd-text">Champion TBD</div>
-                </div>
-              {/if}
-            </div>
-          </div>
-        {:else if roundNum}
-          {@const matchups = getDisplayMatchups(roundNum)}
-          {#if matchups && matchups.length > 0}
             <div
-              class="round-container"
-              id="round-{roundNum}"
-              class:active-round={currentRound == roundNum}
+              class="round-container champion-column"
               class:results-mode={currentRound === 6}
-              class:tbd-round={roundNum > currentRound}
             >
               <div class="round-header">
-                <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
-                <span class="round-date">{getRoundDate(roundNum)}</span>
+                <h2>{roundNames[6]}</h2>
+                <span class="round-date"
+                  >{currentRound === 6 ? getRoundDate(5) : "TBD"}</span
+                >
               </div>
               <div class="matchups-column">
-                {#each matchups as matchup}
+                {#if currentRound === 6 && topFinishers.champion}
+                  <div class="champion-display">
+                    <div class="champion-trophy">🏆</div>
+                    <img
+                      src={topFinishers.champion.image_url}
+                      alt={topFinishers.champion.label}
+                    />
+                    <div class="champion-info">
+                      <div class="champion-name">
+                        {topFinishers.champion.label}
+                      </div>
+                      <div class="champion-seed">
+                        Seed #{topFinishers.champion.seed}
+                      </div>
+                      {#if topFinishers.champion.sublabel}
+                        <div class="champion-sublabel">
+                          {topFinishers.champion.sublabel}
+                        </div>
+                      {/if}
+                      <div class="champion-votes">
+                        {championTotalVotes} total votes
+                      </div>
+                    </div>
+                  </div>
+                {:else}
+                  <div class="champion-tbd">
+                    <div class="tbd-trophy">🏆</div>
+                    <div class="tbd-text">Champion TBD</div>
+                  </div>
+                {/if}
+              </div>
+            </div>
+          {:else if roundNum}
+            {@const matchups = getDisplayMatchups(roundNum)}
+            {#if matchups && matchups.length > 0}
               <div
-                class="matchup-card"
-                class:current={currentRound == roundNum && currentRound !== 6}
-                class:voted={votedMatchups.has(matchup.id) ||
-                  currentRound === 6}
+                class="round-container"
+                id="round-{roundNum}"
+                class:active-round={currentRound == roundNum}
                 class:results-mode={currentRound === 6}
+                class:tbd-round={roundNum > currentRound}
               >
-                <div
-                  class="item"
-                  class:winner={matchup.winnerId === matchup.item1.id}
-                  class:loser={matchup.winnerId &&
-                    matchup.winnerId !== matchup.item1.id}
-                  class:selected={selections.get(matchup.id) ===
-                    matchup.item1.id}
-                  class:leading={currentRound == roundNum &&
-                    matchup.item1Votes > matchup.item2Votes}
-                  class:trailing={currentRound == roundNum &&
-                    matchup.item1Votes < matchup.item2Votes}
-                  class:show-results={roundNum <= currentRound ||
-                    votedMatchups.has(matchup.id) ||
-                    currentRound === 6}
-                  on:click={() =>
-                    currentRound !== 6 &&
-                    handleSelect(matchup.id, matchup.item1.id, Number(roundNum))}
-                  on:keydown={(e) =>
-                    currentRound !== 6 &&
-                    e.key === "Enter" &&
-                    handleSelect(matchup.id, matchup.item1.id, Number(roundNum))}
-                  role="button"
-                  tabindex="0"
-                >
-                  <div
-                    class="percentage-fill"
-                    style="width: {matchup.item1Percentage}%"
-                  />
-                  <div class="item-content">
-                    <span class="seed">{matchup.item1.seed}</span>
-                    <img
-                      src={matchup.item1.image_url}
-                      alt={matchup.item1.label}
-                    />
-                    <div class="item-details">
-                      <span class="label">{matchup.item1.label}</span>
-                      {#if matchup.item1.sublabel}
-                        <span class="sublabel">{matchup.item1.sublabel}</span>
-                      {/if}
-                    </div>
-                    {#if matchup.item1.audio_url}
-                      <SoundCloudPlayer
-                        bind:this={audioPlayers[matchup.item1.id]}
-                        trackId={matchup.item1.audio_url}
-                        on:play={() => (activeAudioItemId = matchup.item1.id)}
-                        on:pause={() => {
-                          if (activeAudioItemId === matchup.item1.id)
-                            activeAudioItemId = null;
-                        }}
-                      />
-                      <button
-                        class="play-button"
-                        on:click|stopPropagation={() =>
-                          handleTogglePlay(matchup.item1)}
-                      >
-                        {#if activeAudioItemId === matchup.item1.id}
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
-                              fill="white"
-                            />
-                          </svg>
-                        {:else}
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M8 5V19L19 12L8 5Z" fill="white" />
-                          </svg>
-                        {/if}
-                      </button>
-                    {:else}
-                      <div class="play-button-placeholder" />
-                    {/if}
-                  </div>
+                <div class="round-header">
+                  <h2>{roundNames[roundNum] || `Round ${roundNum}`}</h2>
+                  <span class="round-date">{getRoundDate(roundNum)}</span>
                 </div>
-                <div
-                  class="item"
-                  class:winner={matchup.winnerId === matchup.item2.id}
-                  class:loser={matchup.winnerId &&
-                    matchup.winnerId !== matchup.item2.id}
-                  class:selected={selections.get(matchup.id) ===
-                    matchup.item2.id}
-                  class:leading={currentRound == roundNum &&
-                    matchup.item2Votes > matchup.item1Votes}
-                  class:trailing={currentRound == roundNum &&
-                    matchup.item2Votes < matchup.item1Votes}
-                  class:show-results={roundNum <= currentRound ||
-                    votedMatchups.has(matchup.id) ||
-                    currentRound === 6}
-                  on:click={() =>
-                    currentRound !== 6 &&
-                    handleSelect(matchup.id, matchup.item2.id, Number(roundNum))}
-                  on:keydown={(e) =>
-                    currentRound !== 6 &&
-                    e.key === "Enter" &&
-                    handleSelect(matchup.id, matchup.item2.id, Number(roundNum))}
-                  role="button"
-                  tabindex="0"
-                >
-                  <div
-                    class="percentage-fill"
-                    style="width: {matchup.item2Percentage}%"
-                  />
-                  <div class="item-content">
-                    <span class="seed">{matchup.item2.seed}</span>
-                    <img
-                      src={matchup.item2.image_url}
-                      alt={matchup.item2.label}
-                    />
-                    <div class="item-details">
-                      <span class="label">{matchup.item2.label}</span>
-                      {#if matchup.item2.sublabel}
-                        <span class="sublabel">{matchup.item2.sublabel}</span>
-                      {/if}
-                    </div>
-                    {#if matchup.item2.audio_url}
-                      <SoundCloudPlayer
-                        bind:this={audioPlayers[matchup.item2.id]}
-                        trackId={matchup.item2.audio_url}
-                        on:play={() => (activeAudioItemId = matchup.item2.id)}
-                        on:pause={() => {
-                          if (activeAudioItemId === matchup.item2.id)
-                            activeAudioItemId = null;
-                        }}
-                      />
-                      <button
-                        class="play-button"
-                        on:click|stopPropagation={() =>
-                          handleTogglePlay(matchup.item2)}
+                <div class="matchups-column">
+                  {#each matchups as matchup}
+                    <div
+                      class="matchup-card"
+                      class:current={currentRound == roundNum &&
+                        currentRound !== 6}
+                      class:voted={votedMatchups.has(matchup.id) ||
+                        currentRound === 6}
+                      class:results-mode={currentRound === 6}
+                    >
+                      <div
+                        class="item"
+                        class:winner={matchup.winnerId === matchup.item1.id}
+                        class:loser={matchup.winnerId &&
+                          matchup.winnerId !== matchup.item1.id}
+                        class:selected={selections.get(matchup.id) ===
+                          matchup.item1.id}
+                        class:leading={currentRound == roundNum &&
+                          matchup.item1Votes > matchup.item2Votes}
+                        class:trailing={currentRound == roundNum &&
+                          matchup.item1Votes < matchup.item2Votes}
+                        class:show-results={roundNum <= currentRound ||
+                          votedMatchups.has(matchup.id) ||
+                          currentRound === 6}
+                        on:click={() =>
+                          currentRound !== 6 &&
+                          handleSelect(
+                            matchup.id,
+                            matchup.item1.id,
+                            Number(roundNum)
+                          )}
+                        on:keydown={(e) =>
+                          currentRound !== 6 &&
+                          e.key === "Enter" &&
+                          handleSelect(
+                            matchup.id,
+                            matchup.item1.id,
+                            Number(roundNum)
+                          )}
+                        role="button"
+                        tabindex="0"
                       >
-                        {#if activeAudioItemId === matchup.item2.id}
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
-                              fill="white"
+                        <div
+                          class="percentage-fill"
+                          style="width: {matchup.item1Percentage}%"
+                        />
+                        <div class="item-content">
+                          <span class="seed">{matchup.item1.seed}</span>
+                          <img
+                            src={matchup.item1.image_url}
+                            alt={matchup.item1.label}
+                          />
+                          <div class="item-details">
+                            <span class="label">{matchup.item1.label}</span>
+                            {#if matchup.item1.sublabel}
+                              <span class="sublabel"
+                                >{matchup.item1.sublabel}</span
+                              >
+                            {/if}
+                          </div>
+                          {#if matchup.item1.audio_url}
+                            <SoundCloudPlayer
+                              bind:this={audioPlayers[matchup.item1.id]}
+                              trackId={matchup.item1.audio_url}
+                              on:play={() =>
+                                (activeAudioItemId = matchup.item1.id)}
+                              on:pause={() => {
+                                if (activeAudioItemId === matchup.item1.id)
+                                  activeAudioItemId = null;
+                              }}
                             />
-                          </svg>
-                        {:else}
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M8 5V19L19 12L8 5Z" fill="white" />
-                          </svg>
-                        {/if}
-                      </button>
-                    {:else}
-                      <div class="play-button-placeholder" />
-                    {/if}
-                  </div>
+                            <button
+                              class="play-button"
+                              on:click|stopPropagation={() =>
+                                handleTogglePlay(matchup.item1)}
+                            >
+                              {#if activeAudioItemId === matchup.item1.id}
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
+                                    fill="white"
+                                  />
+                                </svg>
+                              {:else}
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path d="M8 5V19L19 12L8 5Z" fill="white" />
+                                </svg>
+                              {/if}
+                            </button>
+                          {:else}
+                            <div class="play-button-placeholder" />
+                          {/if}
+                        </div>
+                      </div>
+                      <div
+                        class="item"
+                        class:winner={matchup.winnerId === matchup.item2.id}
+                        class:loser={matchup.winnerId &&
+                          matchup.winnerId !== matchup.item2.id}
+                        class:selected={selections.get(matchup.id) ===
+                          matchup.item2.id}
+                        class:leading={currentRound == roundNum &&
+                          matchup.item2Votes > matchup.item1Votes}
+                        class:trailing={currentRound == roundNum &&
+                          matchup.item2Votes < matchup.item1Votes}
+                        class:show-results={roundNum <= currentRound ||
+                          votedMatchups.has(matchup.id) ||
+                          currentRound === 6}
+                        on:click={() =>
+                          currentRound !== 6 &&
+                          handleSelect(
+                            matchup.id,
+                            matchup.item2.id,
+                            Number(roundNum)
+                          )}
+                        on:keydown={(e) =>
+                          currentRound !== 6 &&
+                          e.key === "Enter" &&
+                          handleSelect(
+                            matchup.id,
+                            matchup.item2.id,
+                            Number(roundNum)
+                          )}
+                        role="button"
+                        tabindex="0"
+                      >
+                        <div
+                          class="percentage-fill"
+                          style="width: {matchup.item2Percentage}%"
+                        />
+                        <div class="item-content">
+                          <span class="seed">{matchup.item2.seed}</span>
+                          <img
+                            src={matchup.item2.image_url}
+                            alt={matchup.item2.label}
+                          />
+                          <div class="item-details">
+                            <span class="label">{matchup.item2.label}</span>
+                            {#if matchup.item2.sublabel}
+                              <span class="sublabel"
+                                >{matchup.item2.sublabel}</span
+                              >
+                            {/if}
+                          </div>
+                          {#if matchup.item2.audio_url}
+                            <SoundCloudPlayer
+                              bind:this={audioPlayers[matchup.item2.id]}
+                              trackId={matchup.item2.audio_url}
+                              on:play={() =>
+                                (activeAudioItemId = matchup.item2.id)}
+                              on:pause={() => {
+                                if (activeAudioItemId === matchup.item2.id)
+                                  activeAudioItemId = null;
+                              }}
+                            />
+                            <button
+                              class="play-button"
+                              on:click|stopPropagation={() =>
+                                handleTogglePlay(matchup.item2)}
+                            >
+                              {#if activeAudioItemId === matchup.item2.id}
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"
+                                    fill="white"
+                                  />
+                                </svg>
+                              {:else}
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path d="M8 5V19L19 12L8 5Z" fill="white" />
+                                </svg>
+                              {/if}
+                            </button>
+                          {:else}
+                            <div class="play-button-placeholder" />
+                          {/if}
+                        </div>
+                      </div>
+                    </div>
+                  {/each}
                 </div>
               </div>
-            {/each}
-          </div>
-        </div>
+            {/if}
           {/if}
-        {/if}
-      {/each}
-    </div>
+        {/each}
+      </div>
 
-    <!-- Right Navigation Arrow -->
-    <button
-      class="nav-arrow nav-arrow-right"
-      on:click={navigateForward}
-      disabled={!canNavigateForward}
-      aria-label="Next rounds"
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-  </div>
+      <!-- Right Navigation Arrow -->
+      <button
+        class="nav-arrow nav-arrow-right"
+        on:click={navigateForward}
+        disabled={!canNavigateForward}
+        aria-label="Next rounds"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M9 18L15 12L9 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
 
     {#if currentRound > 0 && currentRound !== 6 && !hasVotedInCurrentRound && !isSubmitting}
       <div class="submit-bar">
@@ -1496,8 +1548,13 @@
   }
 
   @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
   }
 
   .champion-display img {
