@@ -14619,9 +14619,9 @@
         "debut_album_year": 1988,
         "track_name": "FIX LATER",
         "uri": "FIX LATER",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb1b7aaeedafb29af4c513ebd3",
+        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb917df61d55ce3ab98d43351a",
         "song_uri": "FIX LATER",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2739c8890c824bb9be2360e79c1",
+        "song_image_uri": "https://upload.wikimedia.org/wikipedia/en/3/35/Beckseachange.jpg",
         "embedded_track": "FIX LATER"
     },
     {
@@ -16213,5 +16213,20 @@
         "song_uri": "FIX LATER",
         "song_image_uri": "https://i.scdn.co/image/ab67616d0000b27352bdeb3a10f87ca9c4e541c0",
         "embedded_track": "FIX LATER"
+    },
+    {
+        "index": 1105,
+        "artist": "Frédéric Chopin",
+        "country": "pl",
+        "genre": "Classical",
+        "gender": "m",
+        "group_size": 1,
+        "debut_album_year": 1817,
+        "track_name": "",
+        "uri": "",
+        "image_uri": "https://i.scdn.co/image/ab6761610000e5ebe55372097569b7b56b439365",
+        "song_uri": "",
+        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b273a749047278122f08e2de2a75",
+        "embedded_track": ""
     }
 ]
