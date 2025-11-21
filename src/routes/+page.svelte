@@ -4,17 +4,19 @@
   import moment from "moment";
   import "moment-timezone";
 
-  // Import components
-  import Help from "./Help.svelte";
-  import Gameover from "./Gameover.svelte";
+  // Import components - core components loaded immediately
   import Ramp from "./Ramp.svelte";
-  import Stats from "./Stats.svelte";
   import SplashScreen from "../components/SplashScreen.svelte";
   import GameBoard from "../components/GameBoard.svelte";
   import CreateGame from "../components/CreateGame.svelte";
   import Navbar from "../components/Navbar.svelte";
   import SlideMenu from "../components/SlideMenu.svelte";
   import JamMode from "../components/JamMode.svelte";
+
+  // Lazy-loaded components (only when needed)
+  let Help;
+  let Gameover;
+  let Stats;
 
   // Import game state and utilities
   import {
@@ -34,8 +36,7 @@
   // Data imports
   import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
-  import eligibleArtistsData from "$lib/eligibleArtists.json";
-  import deepCutsData from "$lib/deepcuts.json";
+  // eligibleArtists and deepCuts will be lazy loaded when Jam mode starts
 
   // Constants
   const PUB_ID = 1025391;
@@ -70,6 +71,17 @@
   let challengeNote = "";
   let showSlideMenu = false;
   let showStats = false;
+
+  // Lazy load components when needed
+  $: if (showHelp && !Help) {
+    import("./Help.svelte").then((module) => (Help = module.default));
+  }
+  $: if (showStats && !Stats) {
+    import("./Stats.svelte").then((module) => (Stats = module.default));
+  }
+  $: if (showResults && !Gameover) {
+    import("./Gameover.svelte").then((module) => (Gameover = module.default));
+  }
 
   let playingJam = false;
   let jamIndex = 0;
@@ -202,9 +214,10 @@
   lastSixDaysArtists.reverse();
   lastSixDaysDates.reverse();
 
-  const eligibleArtists = eligibleArtistsData.artists;
-  const deepCutsArtists = deepCutsData.artists;
-  let currentArtistsList = eligibleArtists;
+  // These will be lazy loaded when Jam mode starts
+  let eligibleArtists = [];
+  let deepCutsArtists = [];
+  let currentArtistsList = [];
 
   // Error reporting function
   async function sendError(message) {
@@ -337,12 +350,18 @@
         );
       }
 
-      mysteryArtistList.forEach((entry, index) => {
-        if (entry.date === todaysDate) {
-          spotleNumber = index;
-          return;
-        }
-      });
+      // Calculate Spotle number based on days since 04/23/2022
+      const startDate = moment.tz(
+        "04/30/2022",
+        "MM/DD/YYYY",
+        "America/New_York"
+      );
+      const currentDate = moment.tz(
+        todaysDate,
+        "MM/DD/YYYY",
+        "America/New_York"
+      );
+      spotleNumber = currentDate.diff(startDate, "days") + 1; // +1 to start from day 1, not 0
 
       if ($currentGameDate == todaysDate) {
         guessCount = $guesses.length;
@@ -537,7 +556,7 @@
     }, 50);
   }
 
-  function playJam() {
+  async function playJam() {
     resetAllModes();
     playingGame = true;
     playingJam = true;
@@ -546,6 +565,22 @@
     tempGameOver = false;
 
     playingJam = true; // Enable JAM mode
+
+    // Lazy load the artist lists when Jam mode starts (only once)
+    if (eligibleArtists.length === 0) {
+      try {
+        const [eligibleData, deepCutsData] = await Promise.all([
+          import("$lib/eligibleArtists.json"),
+          import("$lib/deepcuts.json"),
+        ]);
+        eligibleArtists = eligibleData.default.artists;
+        deepCutsArtists = deepCutsData.default.artists;
+      } catch (error) {
+        console.error("Failed to load Jam mode data:", error);
+        sendError("Failed to load Jam mode artist lists");
+        return;
+      }
+    }
 
     if (browser && typeof gtag === "function") {
       gtag("event", "jam_mode_start", {});
@@ -900,13 +935,14 @@
     />
   {/if}
 
-  {#if showStats}
-    <Stats on:close={() => (showStats = false)} />
+  {#if showStats && Stats}
+    <svelte:component this={Stats} on:close={() => (showStats = false)} />
   {/if}
 
   <!-- Game over overlay -->
-  {#if showResults && !createGame}
-    <Gameover
+  {#if showResults && !createGame && Gameover}
+    <svelte:component
+      this={Gameover}
       {spotleNumber}
       {result}
       artist={mysteryArtistEntry}
@@ -915,13 +951,13 @@
       {playingRewind}
       on:close={handleOverlayClose}
       muted={$muted}
-    ></Gameover>
+    />
   {/if}
 
   <!-- Help overlay -->
-  {#if showHelp}
+  {#if showHelp && Help}
     <div class="help">
-      <Help on:close={toggleHelp}></Help>
+      <svelte:component this={Help} on:close={toggleHelp} />
     </div>
   {/if}
 
