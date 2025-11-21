@@ -34,9 +34,10 @@
   } from "./store.js";
 
   // Data imports
-  import artistList from "$lib/artists.json";
   import mysteryArtistList from "$lib/mysteryArtists.json";
-  // eligibleArtists and deepCuts will be lazy loaded when Jam mode starts
+  // All artist lists will be lazy loaded
+  let artistList = [];
+  let artistsLoaded = false;
 
   // Constants
   const PUB_ID = 1025391;
@@ -50,6 +51,25 @@
     .tz("America/New_York")
     .subtract(1, "days")
     .format("MM/DD/YYYY");
+
+  // Lazy load artists.json
+  async function loadArtists() {
+    if (!artistsLoaded && browser) {
+      try {
+        const module = await import("$lib/artists.json");
+        artistList = module.default;
+        artistsLoaded = true;
+      } catch (error) {
+        console.error("Failed to load artists:", error);
+        sendError("Failed to load artists.json");
+      }
+    }
+  }
+
+  // Start loading artists in the background when page loads
+  if (browser) {
+    loadArtists();
+  }
 
   // Game state
   let playingGame = false;
@@ -90,8 +110,8 @@
   let skippedArtists = [];
   let seenJamArtists = [];
 
-  // Process artists data
-  const artists = artistList.map((artist) => ({
+  // Process artists data - reactive so it updates when artistList loads
+  $: artists = artistList.map((artist) => ({
     name: artist.artist,
     listener_rank: artist.index,
     image_uri: artist.image_uri,
@@ -105,16 +125,23 @@
     gender: getGenderLabel(artist.gender),
   }));
 
-  // Find yesterday's artist
+  // Find yesterday's artist - use mysteryArtistEntry directly for splash screen
   const yesterdaysArtistEntry = mysteryArtistList.find(
     (entry) => entry.date === previousDay
   );
-  const yesterdaysArtist = artists.find(
-    (artist) => artist.name === yesterdaysArtistEntry?.artist
-  );
+  // Create minimal artist object for splash screen using data from mysteryArtistEntry
+  const yesterdaysArtist = yesterdaysArtistEntry
+    ? {
+        name: yesterdaysArtistEntry.artist,
+        image_uri: yesterdaysArtistEntry.image_uri,
+      }
+    : null;
 
-  // Check for challenge mode
-  if (browser) {
+  // Check for challenge mode - reactive to run when artists are loaded
+  let challengeModeChecked = false;
+  $: if (browser && artists.length > 0 && !challengeModeChecked) {
+    challengeModeChecked = true;
+
     const urlParams = new URLSearchParams(window.location.search);
     const encodedArtist = urlParams.get("artist");
     const encodedNote = urlParams.get("note");
@@ -185,34 +212,39 @@
 
   // Setup for Rewind mode
   let rewindIndex = 0;
-  const lastSixDaysArtists = [];
-  const lastSixDaysDates = [];
+  let lastSixDaysArtists = [];
+  let lastSixDaysDates = [];
 
-  // Get data for the past 7 days instead of 6
-  for (let i = 1; i <= 6; i++) {
-    const previousDay = moment()
-      .tz("America/New_York")
-      .subtract(i, "days")
-      .format("MM/DD/YYYY");
+  // Get data for the past 6 days - reactive so it updates when artists load
+  $: if (artists.length > 0) {
+    const tempArtists = [];
+    const tempDates = [];
 
-    const dayArtistEntry = mysteryArtistList.find(
-      (entry) => entry.date === previousDay
-    );
+    for (let i = 1; i <= 6; i++) {
+      const previousDay = moment()
+        .tz("America/New_York")
+        .subtract(i, "days")
+        .format("MM/DD/YYYY");
 
-    if (dayArtistEntry) {
-      const dayArtist = artists.find(
-        (artist) => artist.name === dayArtistEntry.artist
+      const dayArtistEntry = mysteryArtistList.find(
+        (entry) => entry.date === previousDay
       );
-      if (dayArtist) {
-        lastSixDaysArtists.push(dayArtist);
-        lastSixDaysDates.push(previousDay);
+
+      if (dayArtistEntry) {
+        const dayArtist = artists.find(
+          (artist) => artist.name === dayArtistEntry.artist
+        );
+        if (dayArtist) {
+          tempArtists.push(dayArtist);
+          tempDates.push(previousDay);
+        }
       }
     }
-  }
 
-  // Make sure the dates are sorted from newest to oldest
-  lastSixDaysArtists.reverse();
-  lastSixDaysDates.reverse();
+    // Make sure the dates are sorted from newest to oldest
+    lastSixDaysArtists = tempArtists.reverse();
+    lastSixDaysDates = tempDates.reverse();
+  }
 
   // These will be lazy loaded when Jam mode starts
   let eligibleArtists = [];
@@ -319,7 +351,12 @@
   }
 
   // Game mode functions
-  function playGame() {
+  async function playGame() {
+    // Ensure artists are loaded before starting
+    if (!artistsLoaded) {
+      await loadArtists();
+    }
+
     normalGame = true;
     playingRewind = false;
     playingGame = true;
@@ -333,7 +370,6 @@
       );
 
       if (mysteryArtistEntry === undefined || mysteryArtistEntry === null) {
-        console.log("Critical error.");
         sendError(
           "The artist for todays date is not defined or there is a syntax error with the artist."
         );
@@ -344,7 +380,6 @@
       );
 
       if (mysteryArtist === undefined || mysteryArtistEntry === null) {
-        console.log("Critical error.");
         sendError(
           "The artist for todays date IS set, but no matching artist in artists.json was found."
         );
@@ -390,13 +425,23 @@
     }
   }
 
-  function handleCreate() {
+  async function handleCreate() {
+    // Ensure artists are loaded before starting
+    if (!artistsLoaded) {
+      await loadArtists();
+    }
+
     resetAllModes();
     createGame = true;
     playingGame = true;
   }
 
-  function playRewind() {
+  async function playRewind() {
+    // Ensure artists are loaded before starting
+    if (!artistsLoaded) {
+      await loadArtists();
+    }
+
     resetAllModes();
     playingGame = true;
     playingRewind = true;
@@ -557,6 +602,11 @@
   }
 
   async function playJam() {
+    // Ensure artists are loaded before starting
+    if (!artistsLoaded) {
+      await loadArtists();
+    }
+
     resetAllModes();
     playingGame = true;
     playingJam = true;
