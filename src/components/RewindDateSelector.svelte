@@ -35,12 +35,8 @@
       if (dateSelectionCount % 2 === 0 && isRewardAdReady()) {
         try {
           await showRewardAd("Continue to Rewind in");
-          console.log("User watched reward ad for Rewind mode!");
         } catch (error) {
-          console.log(
-            "Reward ad failed or was skipped, continuing anyway:",
-            error
-          );
+
         }
       }
     }
@@ -65,9 +61,6 @@
     return null;
   }
 
-  onMount(() => {
-    console.log("RewindDateSelector mounted");
-  });
 </script>
 
 <div class="rewind-selector">

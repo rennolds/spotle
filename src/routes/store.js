@@ -116,7 +116,6 @@ let gameoverParsed = "";
 const gameoverName = "gameOver";
 if (browser) {
     const retrieved = localStorage.getItem(gameoverParsed);
-    console.log(retrieved);
     if (retrieved) {
         if (retrived == "true") {
             gameoverParsed = true;

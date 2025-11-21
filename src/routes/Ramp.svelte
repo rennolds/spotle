@@ -11,7 +11,6 @@
     let lastPathname;
     onMount(() => {
       if (!PUB_ID || !WEBSITE_ID) {
-        console.log("Missing Publisher Id and Website Id");
         return;
       }
       window.ramp = window.ramp || {};
