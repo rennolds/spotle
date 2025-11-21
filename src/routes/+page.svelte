@@ -12,7 +12,7 @@
   import Navbar from "../components/Navbar.svelte";
   import SlideMenu from "../components/SlideMenu.svelte";
   import JamMode from "../components/JamMode.svelte";
-  
+
   // Lazy-loaded components (only when needed)
   let Help;
   let Gameover;
@@ -71,20 +71,16 @@
   let challengeNote = "";
   let showSlideMenu = false;
   let showStats = false;
-  
+
   // Lazy load components when needed
   $: if (showHelp && !Help) {
-    import("./Help.svelte").then(module => Help = module.default);
+    import("./Help.svelte").then((module) => (Help = module.default));
   }
   $: if (showStats && !Stats) {
-    import("./Stats.svelte").then(module => Stats = module.default);
+    import("./Stats.svelte").then((module) => (Stats = module.default));
   }
   $: if (showResults && !Gameover) {
-    import("./Gameover.svelte").then(module => Gameover = module.default);
-  }
-  // Load Ramp on mount (ad component)
-  if (browser) {
-    import("./Ramp.svelte").then(module => Ramp = module.default);
+    import("./Gameover.svelte").then((module) => (Gameover = module.default));
   }
 
   let playingJam = false;
@@ -355,9 +351,17 @@
       }
 
       // Calculate Spotle number based on days since 04/23/2022
-      const startDate = moment.tz("04/30/2022", "MM/DD/YYYY", "America/New_York");
-      const currentDate = moment.tz(todaysDate, "MM/DD/YYYY", "America/New_York");
-      spotleNumber = currentDate.diff(startDate, 'days') + 1; // +1 to start from day 1, not 0
+      const startDate = moment.tz(
+        "04/30/2022",
+        "MM/DD/YYYY",
+        "America/New_York"
+      );
+      const currentDate = moment.tz(
+        todaysDate,
+        "MM/DD/YYYY",
+        "America/New_York"
+      );
+      spotleNumber = currentDate.diff(startDate, "days") + 1; // +1 to start from day 1, not 0
 
       if ($currentGameDate == todaysDate) {
         guessCount = $guesses.length;
@@ -567,7 +571,7 @@
       try {
         const [eligibleData, deepCutsData] = await Promise.all([
           import("$lib/eligibleArtists.json"),
-          import("$lib/deepcuts.json")
+          import("$lib/deepcuts.json"),
         ]);
         eligibleArtists = eligibleData.default.artists;
         deepCutsArtists = deepCutsData.default.artists;
@@ -937,7 +941,7 @@
 
   <!-- Game over overlay -->
   {#if showResults && !createGame && Gameover}
-    <svelte:component 
+    <svelte:component
       this={Gameover}
       {spotleNumber}
       {result}
