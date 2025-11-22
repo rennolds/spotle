@@ -235,3 +235,172 @@ export function getPageMode(now = moment.tz(TZ)) {
     anchorSunday: getAnchorSunday(now)
   };
 }
+
+/** ---------- UI Helper Functions ---------- **/
+
+/**
+ * Get the formatted date for a given round
+ */
+export function getRoundDate(bracket, roundNum) {
+  if (!bracket) return "";
+  const startDate = moment(bracket.anchor_sunday).tz("America/New_York");
+  return startDate.add(roundNum, "days").format("ddd, MMM D");
+}
+
+/**
+ * Update countdown timer to show time remaining until midnight
+ */
+export function updateCountdown() {
+  const now = moment.tz("America/New_York");
+  const midnight = now.clone().endOf("day");
+  const duration = moment.duration(midnight.diff(now));
+
+  const hours = String(duration.hours()).padStart(2, "0");
+  const minutes = String(duration.minutes()).padStart(2, "0");
+  const seconds = String(duration.seconds()).padStart(2, "0");
+
+  return `${hours}:${minutes}:${seconds}`;
+}
+
+/**
+ * Generate TBD (To Be Determined) matchups for future rounds
+ */
+export function generateTBDMatchups(roundNum) {
+  const matchupCount = Math.pow(2, 5 - roundNum); // Round 1=16, 2=8, 3=4, 4=2, 5=1
+  const tbdMatchups = [];
+
+  for (let i = 0; i < matchupCount; i++) {
+    tbdMatchups.push({
+      id: `tbd-${roundNum}-${i}`,
+      item1: {
+        id: `tbd-${roundNum}-${i}-1`,
+        label: "TBD",
+        seed: "",
+        image_url: "/resources/cd.png",
+      },
+      item2: {
+        id: `tbd-${roundNum}-${i}-2`,
+        label: "TBD",
+        seed: "",
+        image_url: "/resources/cd.png",
+      },
+      item1Votes: 0,
+      item2Votes: 0,
+      totalVotes: 0,
+      item1Percentage: 50,
+      item2Percentage: 50,
+    });
+  }
+
+  return tbdMatchups;
+}
+
+/**
+ * Get matchups for display, including TBD placeholders for future rounds
+ */
+export function getDisplayMatchups(fullBracket, roundNum, currentRound) {
+  if (!roundNum) return null; // For the special null column in final view
+
+  // If this is a future round, show TBD
+  if (roundNum > currentRound && currentRound < 6) {
+    return generateTBDMatchups(roundNum);
+  }
+
+  // If the round has started/completed and exists in fullBracket, use it
+  if (fullBracket[roundNum] && fullBracket[roundNum].length > 0) {
+    return fullBracket[roundNum];
+  }
+
+  // Otherwise return empty
+  return [];
+}
+
+/**
+ * Calculate which rounds should be visible based on effective round
+ */
+export function calculateVisibleRounds(effectiveRound) {
+  // View 1: [1, 2, 3]   - Monday (Round 1)
+  // View 2: [2, 3, 4]   - Tuesday (Sweet Sixteen)
+  // View 3: [3, 4, 5]   - Wednesday (Elite Eight)
+  // View 4: [4, 5, 6]   - Thursday (Final Four)
+  // View 5: [5]         - Friday+ (Finals)
+
+  if (effectiveRound <= 1) return [1, 2, 3];
+  if (effectiveRound === 2) return [2, 3, 4];
+  if (effectiveRound === 3) return [3, 4, 5];
+  if (effectiveRound === 4) return [4, 5, 6];
+  if (effectiveRound >= 5) return [5];
+
+  return [1, 2, 3];
+}
+
+/**
+ * Calculate the top 4 finishers from bracket results
+ */
+export function calculateTopFinishers(currentRound, fullBracket) {
+  if (currentRound !== 6 || !fullBracket[5] || !fullBracket[5][0]) {
+    return { champion: null, second: null, third: null, fourth: null };
+  }
+
+  const finalMatchup = fullBracket[5][0];
+  const champion =
+    finalMatchup.winnerId === finalMatchup.item1.id
+      ? finalMatchup.item1
+      : finalMatchup.item2;
+  const runnerUp =
+    finalMatchup.winnerId === finalMatchup.item1.id
+      ? finalMatchup.item2
+      : finalMatchup.item1;
+
+  // For 3rd and 4th place, we need to look at the semifinal losers
+  let third = null;
+  let fourth = null;
+
+  if (fullBracket[4] && fullBracket[4].length >= 2) {
+    const semifinal1 = fullBracket[4][0];
+    const semifinal2 = fullBracket[4][1];
+
+    // Find the losers of the semifinals
+    const semifinal1Loser =
+      semifinal1.winnerId === semifinal1.item1.id
+        ? semifinal1.item2
+        : semifinal1.item1;
+    const semifinal2Loser =
+      semifinal2.winnerId === semifinal2.item1.id
+        ? semifinal2.item2
+        : semifinal2.item1;
+
+    // Determine 3rd and 4th based on seed (lower seed = better placement)
+    if (semifinal1Loser.seed < semifinal2Loser.seed) {
+      third = semifinal1Loser;
+      fourth = semifinal2Loser;
+    } else {
+      third = semifinal2Loser;
+      fourth = semifinal1Loser;
+    }
+  }
+
+  return { champion, second: runnerUp, third, fourth };
+}
+
+/**
+ * Calculate total votes for a specific item across all matchups
+ */
+export function calculateItemTotalVotes(fullBracket, itemId) {
+  if (!itemId) return 0;
+
+  return Object.values(fullBracket).reduce((total, roundMatchups) => {
+    return (
+      total +
+      roundMatchups.reduce((roundTotal, matchup) => {
+        // Count votes for item in this matchup
+        if (matchup.item1.id === itemId) {
+          return roundTotal + (matchup.item1Votes || 0);
+        } else if (matchup.item2.id === itemId) {
+          return roundTotal + (matchup.item2Votes || 0);
+        }
+        return roundTotal;
+      }, 0)
+    );
+  }, 0);
+}
