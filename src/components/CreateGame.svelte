@@ -15,9 +15,6 @@
   let copyButtonText = "COPY";
   const dispatch = createEventDispatcher();
 
-  onMount(() => {
-    console.log("CreateGame mounted");
-  });
 
   function handleSearch(event) {
     dispatch("selectArtist", event.detail);
@@ -30,12 +27,8 @@
     if (isRewardAdReady()) {
       try {
         await showRewardAd("Your share link will be ready in");
-        console.log("User watched reward ad before creating game!");
       } catch (error) {
-        console.log(
-          "Reward ad failed or was skipped, continuing anyway:",
-          error
-        );
+
       }
     }
 
@@ -109,7 +102,7 @@
           text: shareText,
         })
         .then(() => {
-          console.log("Thanks for sharing!");
+
         })
         .catch(console.error);
     } else {

@@ -685,7 +685,6 @@ export function initRewardAds() {
   // Listen for when reward ad is ready
   window.addEventListener("rewardedAdVideoRewardReady", () => {
     rewardAdReady = true;
-    console.log("✅ Reward ad is ready");
   });
 
   // Listen for user accepting to watch ad
@@ -722,7 +721,6 @@ export function initRewardAds() {
 
   // Listen for ad completion
   window.addEventListener("rewardedAdCompleted", () => {
-    console.log("✅ Reward ad completed");
   });
 
   // Listen for reward granted

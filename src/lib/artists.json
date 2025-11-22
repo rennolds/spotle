@@ -8851,7 +8851,7 @@
     },
     {
         "index": 592,
-        "artist": "Fr\u00e9d\u00e9ric Chopin",
+        "artist": "Frederic Chopin",
         "country": "pl",
         "genre": "Classical",
         "gender": "m",
@@ -13356,7 +13356,7 @@
         "genre": "Rock",
         "gender": "m",
         "group_size": 5,
-        "debut_album_year": 2004,
+        "debut_album_year": 2002,
         "track_name": "I'm Just a Kid",
         "uri": "spotify:artist:2p4FqHnazRucYQHyDCdBrJ",
         "image_uri": "https://i.scdn.co/image/ab6761610000e5eb14be52ba7ed12e0177ebe08b",
@@ -14619,9 +14619,9 @@
         "debut_album_year": 1988,
         "track_name": "FIX LATER",
         "uri": "FIX LATER",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb1b7aaeedafb29af4c513ebd3",
+        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb917df61d55ce3ab98d43351a",
         "song_uri": "FIX LATER",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2739c8890c824bb9be2360e79c1",
+        "song_image_uri": "https://upload.wikimedia.org/wikipedia/en/3/35/Beckseachange.jpg",
         "embedded_track": "FIX LATER"
     },
     {
@@ -15084,9 +15084,9 @@
         "debut_album_year": 1979,
         "track_name": "FIX LATER",
         "uri": "FIX LATER",
-        "image_uri": "https://i.scdn.co/image/ab6761610000e5eb6d2f8e8fbf5b13b1baa1eeff",
+        "image_uri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPpP3KWXcYs8GWtsF5-zkYewiIJAyG8Gf97R_O4RpADd4hvSrcZr66moPw&s=10",
         "song_uri": "FIX LATER",
-        "song_image_uri": "https://i.scdn.co/image/ab67616d0000b2732c6e84a32f587dc16880dc47",
+        "song_image_uri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOg9Z_O9g-S40qTXDKFv78esiwJiHMGkUazZnJxi07oA&s=10",
         "embedded_track": "FIX LATER"
     },
     {
@@ -16202,7 +16202,7 @@
     {
         "index": 1104,
         "artist": "Sex Pistols",
-        "country": "us",
+        "country": "gb",
         "genre": "Rock",
         "gender": "m",
         "group_size": 4,

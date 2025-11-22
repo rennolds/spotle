@@ -40,12 +40,8 @@
     if (isRewardAdReady()) {
       try {
         await showRewardAd("Continue to Jam in");
-        console.log("User watched reward ad before starting Jam!");
       } catch (error) {
-        console.log(
-          "Reward ad failed or was skipped, continuing anyway:",
-          error
-        );
+
       }
     }
 
@@ -162,7 +158,7 @@
               text: shareText,
             })
             .then(() => {
-              console.log("Thanks for sharing!");
+
             })
             .catch(console.error);
         } else {
@@ -170,7 +166,7 @@
           navigator.clipboard
             .writeText(shareText)
             .then(() => {
-              console.log("copied");
+
             })
             .catch((error) => {
               alert(`Copy failed! ${error}`);
@@ -250,8 +246,6 @@
       timeBonusTimer = setTimeout(() => {
         showTimeBonus = false;
       }, 2000);
-
-      console.log("Time bonus applied: +15 seconds");
     }
   }
 
@@ -266,7 +260,6 @@
   }
 
   onMount(() => {
-    console.log("JamMode mounted");
     // Don't automatically start the timer - wait for user to click START
     if (!showIntro) {
       initTimer();

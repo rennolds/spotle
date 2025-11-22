@@ -1,58 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<meta name="description" content="Play Spotle, the music daily artist guessing game. Guess the artist in 10 tries!">
-		<meta property="og:title" content="Spotle - The daily music artist guessing game!">
-		<meta property="og:description" content="Play Spotle, the daily music artist guessing game.">
-		<meta property="og:image" content="%sveltekit.assets%/spotle_share.jpg">
-		<meta property="og:image:width" content="1200">
-		<meta property="og:image:height" content="630">
-		<meta property="og:url" content="https://spotle.io">
-		<meta name="color-scheme" content="only">
-		<meta name="darkreader-lock">
-		
-		<!-- Explicitly load the Inter font -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-		
-		<title>Spotle: Music Wordle Game </title>
-		%sveltekit.head%
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Play Spotle, the music daily artist guessing game. Guess the artist in 10 tries!"
+    />
+    <meta
+      property="og:title"
+      content="Spotle - The daily music artist guessing game!"
+    />
+    <meta
+      property="og:description"
+      content="Play Spotle, the daily music artist guessing game."
+    />
+    <meta property="og:image" content="%sveltekit.assets%/spotle_share.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://spotle.io" />
+    <meta name="color-scheme" content="only" />
+    <meta name="darkreader-lock" />
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HNK31HM2H9"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-		gtag('config', 'G-HNK31HM2H9');
-		</script>
-		
-		<!-- Ensure default styling has dark background and proper font -->
-		<style>
-		    html, body {
-		        height: 100%;
-		        margin: 0;
-		        padding: 0;
-		        background-color: #121212;
-		        font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-		    }
-		    
-		    body {
-		        color: #fff;
-		    }
-		    
-		    * {
-		        font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-		    }
-		</style>
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+    <!-- Optimized font loading: async load with fallback -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    /></noscript>
+
+    <title>Spotle: Music Wordle Game</title>
+    %sveltekit.head%
+
+    <!-- Google tag (gtag.js) - deferred for better performance -->
+    <script
+      defer
+      src="https://www.googletagmanager.com/gtag/js?id=G-HNK31HM2H9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-HNK31HM2H9");
+    </script>
+
+    <!-- Ensure default styling has dark background and proper font -->
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        color: #fff;
+      }
+
+      * {
+        font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
 </html>
