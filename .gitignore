@@ -9,6 +9,6 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 notebooks/*
-load_test_vote.py
 LOAD_TEST_README.md
 load_test_requirements.txt
+load_test_vote.py

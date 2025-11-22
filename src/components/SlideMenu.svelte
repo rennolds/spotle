@@ -66,6 +66,14 @@
       window.open("https://crosstune.io", "_blank");
     }
   }
+
+  function handleLiveBracket() {
+    dispatch("navigate", { destination: "brackets-live" });
+  }
+
+  function handleBracketGallery() {
+    dispatch("navigate", { destination: "brackets-gallery" });
+  }
 </script>
 
 <div class="slide-menu-overlay" on:click={handleClose}>
@@ -120,6 +128,22 @@
             </div>
           </div>
         </button>
+      </div>
+
+      <div class="menu-section">
+        <h3 class="section-header">Spotle Brackets</h3>
+        <div class="menu-item sub-item" on:click={handleLiveBracket}>
+          <div class="menu-item-content">
+            <div class="menu-item-title">Live Bracket</div>
+            <div class="menu-item-subtitle">Vote for your favorite songs, every week</div>
+          </div>
+        </div>
+        <!-- <div class="menu-item sub-item" on:click={handleBracketGallery}>
+          <div class="menu-item-content">
+            <div class="menu-item-title">Bracket Gallery</div>
+            <div class="menu-item-subtitle">View past tournament results</div>
+          </div>
+        </div> -->
       </div>
 
       <div class="menu-section">

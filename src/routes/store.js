@@ -162,6 +162,11 @@ bestGuessImages.subscribe((val) => {
     if (browser) return localStorage.setItem(bestGuessImagesName, JSON.stringify(val));
 });
 
+export const bracketView = writable("bracket");
+
+/* bracketRoundGradient - stores the current gradient for bracket pages */
+export const bracketRoundGradient = writable("linear-gradient(180deg, #48937D 0%, rgba(18, 18, 18, 0) 39.9%)");
+
 /* highContrast - a boolean */
 let highContrastParsed = false;
 const highContrastName = "highContrast";
