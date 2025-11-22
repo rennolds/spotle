@@ -446,6 +446,38 @@
     gap: 0.75rem;
     flex: 1;
     justify-items: center;
+    position: relative;
+  }
+
+  /* Desktop only: Background logo */
+  @media (min-width: 900px) {
+    .bracket-wrapper,
+    .finals-wrapper {
+      min-height: 800px;
+      position: relative;
+    }
+
+    .bracket-wrapper::before,
+    .finals-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 130px;
+      left: 0;
+      right: 0;
+      height: 600px;
+      background-image: url("/resources/bracket-logo.svg");
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bracket-container {
+      position: relative;
+      z-index: 1;
+    }
   }
 
   .bracket-container:has(:global(.round-container:nth-child(3))) {
