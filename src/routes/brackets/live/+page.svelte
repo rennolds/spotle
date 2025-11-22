@@ -16,6 +16,7 @@
   import BracketResultsDisplay from "../../../components/brackets/BracketResultsDisplay.svelte";
   import ChampionColumn from "../../../components/brackets/ChampionColumn.svelte";
   import RoundColumn from "../../../components/brackets/RoundColumn.svelte";
+  import FinalsColumn from "../../../components/brackets/FinalsColumn.svelte";
   import SubmitBar from "../../../components/brackets/SubmitBar.svelte";
 
   /** @type {import('./$types').PageData} */
@@ -23,21 +24,6 @@
 
   let { bracket, fullBracket, currentRound, pageError, userVoteMap, champion } =
     data;
-
-  // Testing override: Allow URL parameter to simulate different rounds
-  let testMode = false;
-  $: if (typeof window !== "undefined") {
-    const testRound = $page.url.searchParams.get("testRound");
-    if (testRound) {
-      const roundNum = parseInt(testRound);
-      if (roundNum >= 1 && roundNum <= 6) {
-        currentRound = roundNum;
-        testMode = true;
-      }
-    } else {
-      testMode = false;
-    }
-  }
 
   // Convert userVoteMap from plain object to Map
   userVoteMap = new Map(Object.entries(userVoteMap || {}));
@@ -53,21 +39,23 @@
 
   // Navigation state for 3-column view
   let viewOffset = 0;
+  let canNavigateBack = false;
+  let canNavigateForward = false;
 
   const roundNames = {
     1: "Round 1",
     2: "Sweet Sixteen",
     3: "Elite Eight",
     4: "Final Four",
-    5: "Friday Finals",
-    6: "Champion",
+    5: "Finals",
+    6: "Winner",
   };
 
   // Determine which 3 rounds to display based on current round and navigation offset
   $: effectiveRound = Math.max(1, Math.min(currentRound + viewOffset, 5));
   $: visibleRounds = calculateVisibleRounds(effectiveRound);
 
-  // Navigation handlers
+  // Navigation handlers - can navigate if effectiveRound is not at boundaries
   $: canNavigateBack = effectiveRound > 1;
   $: canNavigateForward = effectiveRound < 5;
 
@@ -133,13 +121,17 @@
 
   function navigateBack() {
     if (canNavigateBack) {
-      viewOffset = viewOffset - 1;
+      // Set offset to directly achieve the target effectiveRound
+      const targetRound = effectiveRound - 1;
+      viewOffset = targetRound - currentRound;
     }
   }
 
   function navigateForward() {
     if (canNavigateForward) {
-      viewOffset = viewOffset + 1;
+      // Set offset to directly achieve the target effectiveRound
+      const targetRound = effectiveRound + 1;
+      viewOffset = targetRound - currentRound;
     }
   }
 
@@ -267,14 +259,6 @@
     {timeRemaining}
   />
 
-  <!-- Test Mode Indicator -->
-  {#if testMode}
-    <div class="test-mode-banner">
-      ⚠️ TEST MODE: Viewing as Round {currentRound}
-      <a href="/brackets/live" class="exit-test">Exit Test Mode</a>
-    </div>
-  {/if}
-
   <!-- Results Display for Saturday/Sunday -->
   {#if currentRound === 6}
     <BracketResultsDisplay {topFinishers} {championTotalVotes} />
@@ -294,11 +278,36 @@
       on:navigateForward={navigateForward}
     />
 
-    <div class="bracket-wrapper">
+    <!-- Special Finals Layout (Desktop Only) -->
+    {#if effectiveRound === 5 && visibleRounds.includes(5)}
+      {@const finalsMatchup = fullBracket[5]?.[0]}
+      {#if finalsMatchup}
+        <div class="finals-wrapper desktop-only">
+          <FinalsColumn
+            matchup={finalsMatchup}
+            {currentRound}
+            {votedMatchups}
+            {selections}
+            {activeAudioItemId}
+            {topFinishers}
+            {audioPlayers}
+            on:select={handleSelect}
+            on:togglePlay={handleTogglePlay}
+            on:audioPlay={handleAudioPlay}
+            on:audioPause={handleAudioPause}
+          />
+        </div>
+      {/if}
+    {/if}
+
+    <div
+      class="bracket-wrapper"
+      class:hide-on-desktop-finals={effectiveRound === 5}
+    >
       <div class="bracket-container" class:compact={$bracketView === "compact"}>
         {#each visibleRounds as roundNum}
           {#if roundNum === 6}
-            <!-- Championship Column (Desktop only) -->
+            <!-- Winner Column (Desktop only) -->
             <ChampionColumn
               {topFinishers}
               {currentRound}
@@ -370,36 +379,6 @@
     overflow-x: hidden;
   }
 
-  .test-mode-banner {
-    background-color: #ff9800;
-    color: #000;
-    text-align: center;
-    padding: 0.75rem 1rem;
-    margin: 0 auto 1rem auto;
-    border-radius: 8px;
-    font-weight: 600;
-    max-width: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .exit-test {
-    background-color: #000;
-    color: #ff9800;
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: background-color 0.2s;
-  }
-
-  .exit-test:hover {
-    background-color: #222;
-  }
-
   .mobile-only {
     display: none;
   }
@@ -423,12 +402,42 @@
     font-weight: 500;
   }
 
+  .finals-wrapper {
+    display: block;
+    margin-bottom: 2rem;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+  }
+
   .bracket-wrapper {
     display: block;
     margin-bottom: 2rem;
     max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* Hide regular bracket view on desktop when showing Finals */
+  @media (min-width: 900px) {
+    .bracket-wrapper.hide-on-desktop-finals {
+      display: none;
+    }
+
+    .desktop-only {
+      display: block;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .desktop-only {
+      display: none !important;
+    }
+
+    .finals-wrapper {
+      display: none !important;
+    }
   }
 
   .bracket-container {
@@ -474,14 +483,6 @@
 
     .mobile-only {
       display: flex;
-    }
-
-    .test-mode-banner {
-      padding: 0.5rem 0.75rem;
-      font-size: 0.85rem;
-      margin: 0 0 1rem 0;
-      flex-direction: column;
-      gap: 0.5rem;
     }
 
     .votes-submitted-bar {

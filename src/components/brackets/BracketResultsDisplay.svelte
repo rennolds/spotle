@@ -18,7 +18,7 @@
   <div class="results-content">
     <!-- Champion (left half) -->
     <div class="champion-section">
-      <h3 class="section-header">This week's champion</h3>
+      <h3 class="section-header">This week's winner</h3>
       {#if topFinishers.champion}
         <div class="finisher-card champion-card">
           <img

@@ -174,6 +174,8 @@
     flex-shrink: 0;
     visibility: visible;
     opacity: 1;
+    position: relative;
+    z-index: 10;
   }
 
   .nav-arrow:hover:not(:disabled) {
