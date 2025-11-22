@@ -118,6 +118,30 @@
     flex: 1;
   }
 
+  /* Desktop-only: Align left and right column labels */
+  @media (min-width: 900px) {
+    .round-nav-item:first-child:not(:only-child) {
+      margin-left: -4rem;
+    }
+
+    .round-nav-item:first-child:not(:only-child) h2 {
+      text-align: left;
+    }
+
+    .round-nav-item:last-child:not(:only-child) {
+      margin-right: -4rem;
+    }
+
+    .round-nav-item:last-child:not(:only-child) h2 {
+      text-align: right;
+    }
+
+    /* Dates stay centered under their labels */
+    .round-nav-item .round-date {
+      text-align: center;
+    }
+  }
+
   .round-nav-item h2 {
     font-size: 1.2rem;
     margin: 0;
